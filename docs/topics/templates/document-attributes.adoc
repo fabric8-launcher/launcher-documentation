@@ -1,0 +1,14 @@
+:toc:
+:toclevels: 4
+:numbered:
+
+:imagesdir: images
+
+//uncomment to add styles
+//:stylesdir: topics/styles
+//:stylesheet: style.css
+
+:ProductName: Obsidian Toaster
+:ProductShortName: Obsidian
+
+:experience-http-api-guide-name: HTTP API Level 0 Experience

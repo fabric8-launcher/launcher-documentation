@@ -1,1 +1,65 @@
-Obsidian Toaster Documentation
+# Obsidian Toaster Documentation
+
+This repository holds the documentation for Obsidian Toaster. 
+
+
+## Directory Structure
+
+* `docs/` - This folder contains all the Obsidian Toaster guides and related content. 
+** `topics/` - This folder contains `adoc` files representing shared content between guides.
+*** `images/` - This folder contains all images used in the guides.
+*** `styles/` - This folder contains all stylesheets used in the guides.
+*** `templates/` - This folder contains template data, such as common attributes, used in the guides.
+** `GUIDE_NAME/` - There is a folder for each guide.
+*** `master.adoc` - This is the primary file for the guide. Common files or _topics_ are included from the `topics/` folder.
+*** `buildGuide.sh` - This is a script to build this individual guide.
+*** `topics/` - This is a symlink to `../topics/`, which makes building each guide a lot easier.
+* `scripts/` - This folder contains scripts needed for building guides in the repository.
+
+## Building the Guides
+
+. Ensure you have link:http://asciidoctor.org[AsciiDoctor] installed and configured.
+. Run the `scripts/buildGuides.sh` script to build all guides.
+. All guides will be generated as single HTML files in `html/`.
+
+## Contributing
+
+To start contributing:
+
+. Fork the link:https://github.com/obsidian-toaster/documentation[main project]
+
+. Clone your fork.
++
+[source,options="nowrap"]
+----
+$ git clone git@github.com:USERNAME/documentation.git
+----
+
+. Add the main project as a remote.
++
+[source,options="nowrap"]
+----
+$ cd documentation
+$ git remote add upstream git@github.com:obsidian-toaster/documentation.git
+$ git fetch upstream
+----
+
+. Create a branch for your contribution based on `upstream/master`.
++
+[source,options="nowrap"]
+----
+$ git checkout -b my-awesome-idea upstream/master
+----
+
+. Make your changes.
+
+. Commit your work and push it to your fork.
++
+[source,options="nowrap"]
+----
+$ git add docs/topics/my-awesome-idea.adoc
+$ git commit -m "Added my awesome idea."
+$ git push origin HEAD
+----
+
+. File a pull request to upstream/master.
