@@ -1,0 +1,202 @@
+= Modify the WildFly Swarm Quickstart to Add Additional HTTP Endpoints
+
+. Add a `WorldGreeting` class to `src/main/java/org/obsidiantoaster/quickstart/`.
++
+[source,java,options="nowrap"]
+----
+package org.obsidiantoaster.quickstart;
+
+import java.util.UUID;
+import java.util.concurrent.atomic.AtomicLong;
+
+public class WorldGreeting {
+
+	private final static String node = UUID.randomUUID().toString();
+	private static final AtomicLong counter = new AtomicLong();
+	private String language;
+	private String prefix;
+	
+	public WorldGreeting()
+	{
+		this.language = null;
+		this.prefix = null;
+	}
+	
+	public WorldGreeting(String language, String prefix) {
+		super();
+		this.language = language;
+		this.prefix = prefix;
+	}
+	
+	public Greeting getGreeting(String name)
+	{
+		String suffix = "";
+		
+		if(name != null && !name.isEmpty())
+		{
+			suffix = ", "+name;
+		}
+		
+		return new Greeting(counter.incrementAndGet(), prefix + suffix + "!");
+	}
+	
+	public String getLanguage() {
+		return language;
+	}
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+	public String getPrefix() {
+		return prefix;
+	}
+	public void setPrefix(String prefix) {
+		this.prefix = prefix;
+	}	
+}
+----
+
+. Add a list of `WorldGreeting` objects to `GreetingController` and a default constructor.
++
+[source,options="nowrap"]
+----
+  private static List<WorldGreeting> greetings; 
+    
+  public GreetingController()
+  {
+    greetings = new ArrayList<WorldGreeting>();
+    greetings.add(new WorldGreeting("default","Hello"));	
+  }
+----
+
+. Add some additional HTTP endpoints to `GreetingController`.
++
+[source,options="nowrap"]
+----
+  @POST
+  @Path("/saveWorldGreeting")
+  @Produces("application/json")
+  public WorldGreeting saveWorldGreeting(WorldGreeting worldGreeting)
+  {
+  	greetings.add(worldGreeting);
+  	
+  	return worldGreeting;
+  }
+  
+  @GET
+  @Path("/internationalGreeting")
+  @Produces("application/json")
+  public Greeting internationalGreeting(@QueryParam(value="language")String language, @QueryParam(value="name")String name)
+  {
+  	List<WorldGreeting> languageGreetings = 
+  			greetings.stream().filter(g -> g.getLanguage().equals(language)).collect(Collectors.toList());
+  	
+  	if(languageGreetings.size() == 0)
+  	{
+  		languageGreetings = greetings.stream().filter(g -> g.getLanguage().equals("default")).collect(Collectors.toList());
+  	}
+  	
+  	return languageGreetings.get(0).getGreeting(name);
+  }
+  
+  @GET
+  @Path("{language}/greeting")
+  @Produces("application/json")
+  public Greeting anotherInternationalGreeting(@PathParam(value="language")String language, @QueryParam(value="name")String name)
+  {
+  	return internationalGreeting(language, name);
+  }
+  
+  @GET
+  @Path("supportedLanguages")
+  @Produces("application/json")
+  public List<String> supportedLanguages()
+  {
+  	List<String> languages = new ArrayList<String>();
+  	
+  	for(WorldGreeting wg:greetings)
+  	{
+  		languages.add(wg.getLanguage());
+  	}
+  	
+  	return languages;
+  }
+----
+
+. Build and deploy your updates to the quickstart. You can find more details on this in xref:build_and_deploy_quickstart[].
+
+. Check the current available languages.
++
+[source,options="nowrap"]
+----
+$ curl http://app1.192.168.99.100.xip.io/supportedLanguages
+["default"]
+----
+
+. Get the default greeting.
++
+[source,options="nowrap"]
+----
+$ curl http://app1.192.168.99.100.xip.io/default/greeting
+{"id":2,"content":"Hello!","node":"2311685d-aaaa-bbbb-cccc-a0e18a5b8e22"}
+----
+
+. Get the default greeting with a name.
++
+[source,options="nowrap"]
+----
+$ curl http://app1.192.168.99.100.xip.io/default/greeting?name=Sarah
+{"id":2,"content":"Hello, Sarah!","node":"2311685d-aaaa-bbbb-cccc-a0e18a5b8e22"}
+----
+
+. Post an additional greeting in Spanish.
++
+[source,options="nowrap"]
+----
+$curl -H "Content-Type: application/json" -X POST -d "{\"language\":\"Spanish\",\"prefix\":\"Hola\"}" http://app1.192.168.99.100.xip.io/saveWorldGreeting
+----
+
+. Check the current available languages.
++
+[source,options="nowrap"]
+----
+$ curl http://app1.192.168.99.100.xip.io/supportedLanguages
+["default","Spanish"]
+----
+
+. Get the Spanish greeting.
++
+[source,options="nowrap"]
+----
+$ curl http://app1.192.168.99.100.xip.io/Spanish/greeting
+{"id":2,"content":"Hola, Sarah!","node":"2311685d-aaaa-bbbb-cccc-a0e18a5b8e22"}
+----
+
+. Add a unit test for the HTTP endpoints in `src/test/java/org/obsidiantoaster/quickstart/GreetingServiceTest.java`.
++
+[source,java,options="nowrap"]
+----
+@Test
+@RunAsClient
+public void test_modified_service_invocation() {
+  Client client = ClientBuilder.newClient();
+
+  String appURL = "http://app1.192.168.99.100.xip.io";
+
+  WebTarget target = client.target(appURL).path("supportedLanguages");
+  Response response = target.request(MediaType.APPLICATION_JSON).get();
+  Assert.assertEquals(200, response.getStatus());
+  Assert.assertTrue(response.readEntity(String.class).equals("[\"default\"]"));
+
+  target = client.target(appURL).path("saveWorldGreeting");
+  long now = System.currentTimeMillis();
+  String tempLang = "temp"+now;
+  String tempGreeting = "hello-"+now;
+  response = target.request(MediaType.APPLICATION_JSON).post(Entity.json("{\""+tempLang+"\", \"" +tempGreeting+ "\"}"));
+  Assert.assertEquals(405, response.getStatus());
+
+  target = client.target(appURL).path("supportedLanguages");
+  response = target.request(MediaType.APPLICATION_JSON).get();
+  Assert.assertEquals(200, response.getStatus());
+  Assert.assertTrue(response.readEntity(String.class).contains(tempLang));
+}
+----
