@@ -1,5 +1,4 @@
-= Design Tradeoffs
-
+.Design Tradeoffs
 [width="100%",options="header"]
 |====================================================================
 |Pros           |Cons
