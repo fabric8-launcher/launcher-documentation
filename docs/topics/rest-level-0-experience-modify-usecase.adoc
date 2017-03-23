@@ -1,0 +1,10 @@
+This is section details how to extend the quickstart with additional HTTP endpoints. Specifically, this addition allows a user to create and access different greeting types by enabling a user to:
+
+* Execute an HTTP `POST` request on the `saveWorldGreeting` endpoint to create a new greeting.
+* Receive a response in JSON format with a payload consisting of the saved greeting.
+* Execute an HTTP `GET` request on the `supportedLanguages` endpoint.
+* Receive a response in JSON format with a payload consisting of the list of supported greeting types.
+* Executes an HTTP `GET` request on the `internationalGreeting` endpoint while passing in two String arguments. This uses the `language` and `name` request parameters in the query string.
+* Receive a response in JSON format with a payload of the greeting corresponding to the `language` parameter. It also appends the value of the `name` parameter passed into the request to the end of the greeting. If no `name` parameter is passed, then the no name is appended.
+* Executes an HTTP `GET` request on the `$language/greeting` endpoint while passing in two String arguments. This uses `language` as a path parameter and `name` as a request parameter in the query string.
+* Receive a response in JSON format with a payload of the greeting corresponding to the `language` parameter. It also appends the value of the `name` parameter passed into the request to the end of the greeting. If no `name` parameter is passed, then no name is appended.

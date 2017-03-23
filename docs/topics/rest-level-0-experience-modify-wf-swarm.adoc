@@ -1,5 +1,10 @@
 = Modify the WildFly Swarm Quickstart to Add Additional HTTP Endpoints
 
+
+include::rest-level-0-experience-modify-usecase.adoc[]
+
+To modify the WildFly Swarm quickstart:
+
 . Add a `WorldGreeting` class to `src/main/java/org/obsidiantoaster/quickstart/`.
 +
 [source,java,options="nowrap"]
