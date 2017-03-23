@@ -1,5 +1,10 @@
 = Modify the Vert.x Quickstart to Add Additional HTTP Endpoints
 
+
+include::rest-level-0-experience-modify-usecase.adoc[]
+
+To modify the Vert.x quickstart:
+
 . Add a `WorldGreeting` class to `src/main/java/org/obsidiantoaster/quickstart/`.
 +
 [source,java,options="nowrap"]
