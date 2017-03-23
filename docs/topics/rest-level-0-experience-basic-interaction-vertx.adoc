@@ -1,0 +1,23 @@
+= Interacting with the Unmodified Vert.x Quickstart
+
+The quickstart provides a default HTTP endpoint that accepts GET requests.
+
+. Use `curl` to execute a `GET` request against the quickstart. You can also use a browser to do this.
++
+[source,options="nowrap"]
+----
+$ curl http://app1.192.168.99.100.xip.io/greeting
+{
+  "content" : "Hello, World!"
+}
+----
+
+. Use `curl` to execute a `GET` request with the `name` URL parameter against the quickstart. You can also use a browser to do this.
++
+[source,options="nowrap"]
+----
+$ curl http://app1.192.168.99.100.xip.io/greeting?name=Sarah
+{
+  "content" : "Hello, Sarah!"
+}
+----

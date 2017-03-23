@@ -2,18 +2,15 @@
 [[build_and_deploy_quickstart]]
 = Prerequisite: Deploy Your Quickstart and Determine It's Route
 
-Before proceeding, this assumes you have already followed the instructions in the `README.md` to deploy your quickstart, and you have determined it's route and URL.
+Before proceeding, you need to have already followed the instructions in the `README.md` to deploy your quickstart, and you have determined it's URL.
 
-.Example Deploying the Quickstart with the Wildfly Swarm Quickstart
+.Example Deploying the Quickstart
 [source,options="nowrap"]
 ----
 $ mvn clean fabric8:deploy -Popenshift  -DskipTests
 [INFO] Scanning for projects...
 ...
 ----
-
-IMPORTANT: The `mvn` command will vary depending on your quickstart. The correct commands are available in the `README.md` of your quickstart.
-
 
 You can check the status of your quickstart and see if the pod is running using `get pods` command.
 
