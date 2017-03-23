@@ -1,4 +1,4 @@
-= Interacting with the Unmodified Spring Boot Tomcat Quickstart
+= Interact with the Unmodified Spring Boot Tomcat Quickstart
 
 The quickstart provides a default HTTP endpoint that accepts GET requests.
 
