@@ -1,4 +1,4 @@
-= Interacting with the Unmodified WildFly Swarm Quickstart
+= Interact with the Unmodified WildFly Swarm Quickstart
 
 The quickstart provides a default HTTP endpoint that accepts GET requests.
 

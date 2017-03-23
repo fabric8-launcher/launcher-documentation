@@ -8,7 +8,7 @@ include::topics/rest-level-0-experience-intro.adoc[leveloffset=+1]
 
 include::topics/rest-level-0-experience-design-tradeoffs.adoc[leveloffset=+1]
 
-== Creating an HTTP Endpoint with {ProductShortName}
+== Create an HTTP Endpoint with {ProductShortName}
 
 include::topics/experience-deploy-quickstart.adoc[leveloffset=+2]
 

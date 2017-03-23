@@ -172,7 +172,7 @@ $ curl http://app1.192.168.99.100.xip.io/supportedLanguages
 +
 [source,options="nowrap"]
 ----
-$ curl http://app1.192.168.99.100.xip.io/Spanish/greeting
+$ curl http://app1.192.168.99.100.xip.io/Spanish/greeting?name=Sarah
 {"id":3,"content":"Hola, Sarah!","node":"2311685d-aaaa-bbbb-cccc-a0e18a5b8e22"}
 ----
 

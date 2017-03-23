@@ -2,7 +2,7 @@
 [[build_and_deploy_quickstart]]
 = Prerequisite: Deploy Your Quickstart and Determine It's Route
 
-Before proceeding, you need to have already followed the instructions in the `README.md` to deploy your quickstart, and you have determined it's URL.
+Before proceeding, follow the instructions in the `README.md` to deploy your quickstart and determine it's URL.
 
 .Example Deploying the Quickstart
 [source,options="nowrap"]
@@ -12,9 +12,9 @@ $ mvn clean fabric8:deploy -Popenshift  -DskipTests
 ...
 ----
 
-You can check the status of your quickstart and see if the pod is running using `get pods` command.
+Check the status of your quickstart and ensure your pod is running.
 
-.Example Checking the Status the Quickstart Pod
+.Example to Check the Status the Quickstart Pod
 [source,options="nowrap"]
 ----
 $ oc get pods -w
@@ -25,7 +25,7 @@ app1-build                       0/1       Completed   0          1h
 
 Once your quickstart is deployed and started, you can check its route information for the URL to access it.
 
-.Example Checking the Available Routes 
+.Example to Check the Available Routes 
 [source,options="nowrap"]
 ----
 $ oc get routes

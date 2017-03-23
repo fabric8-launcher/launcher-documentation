@@ -192,9 +192,9 @@ $ curl http://app1.192.168.99.100.xip.io/api/supportedLanguages
 +
 [source,options="nowrap"]
 ----
-$ curl http://app1.192.168.99.100.xip.io/api/Spanish/greeting
+$ curl http://app1.192.168.99.100.xip.io/api/Spanish/greeting?name=Sarah
 {
-  "content" : "Hola!"
+  "content" : "Hola, Sarah!"
 }
 ----
 
