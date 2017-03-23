@@ -6,12 +6,10 @@
 ----
 package org.obsidiantoaster.quickstart.service;
 
-import java.util.UUID;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class WorldGreeting {
 
-	private final static String node = UUID.randomUUID().toString();
 	private static final AtomicLong counter = new AtomicLong();
 	private String language;
 	private String prefix;
@@ -129,7 +127,7 @@ $ curl http://app1.192.168.99.100.xip.io/supportedLanguages
 [source,options="nowrap"]
 ----
 $ curl http://app1.192.168.99.100.xip.io/default/greeting
-{"id":2,"content":"Hello!","node":"2311685d-aaaa-bbbb-cccc-a0e18a5b8e22"}
+{"id":1,"content":"Hello!"}
 ----
 
 . Get the default greeting with a name.
@@ -137,14 +135,14 @@ $ curl http://app1.192.168.99.100.xip.io/default/greeting
 [source,options="nowrap"]
 ----
 $ curl http://app1.192.168.99.100.xip.io/default/greeting?name=Sarah
-{"id":2,"content":"Hello, Sarah!","node":"2311685d-aaaa-bbbb-cccc-a0e18a5b8e22"}
+{"id":2,"content":"Hello, Sarah!"}
 ----
 
 . Post an additional greeting in Spanish.
 +
 [source,options="nowrap"]
 ----
-$curl -H "Content-Type: application/json" -X POST -d "{\"language\":\"Spanish\",\"prefix\":\"Hola\"}" http://app1.192.168.99.100.xip.io/saveWorldGreeting
+$ curl -H "Content-Type: application/json" -X POST -d "{\"language\":\"Spanish\",\"prefix\":\"Hola\"}" http://app1.192.168.99.100.xip.io/saveWorldGreeting
 ----
 
 . Check the current available languages.
@@ -160,7 +158,7 @@ $ curl http://app1.192.168.99.100.xip.io/supportedLanguages
 [source,options="nowrap"]
 ----
 $ curl http://app1.192.168.99.100.xip.io/Spanish/greeting
-{"id":2,"content":"Hola, Sarah!","node":"2311685d-aaaa-bbbb-cccc-a0e18a5b8e22"}
+{"id":3,"content":"Hola, Sarah!"}
 ----
 
 . Add a unit test for the HTTP endpoints in `src/test/java/org/obsidiantoaster/quickstart/RestApplicationTest.java`.

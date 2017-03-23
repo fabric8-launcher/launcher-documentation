@@ -153,7 +153,9 @@ $ curl http://app1.192.168.99.100.xip.io/api/supportedLanguages
 [source,options="nowrap"]
 ----
 $ curl http://app1.192.168.99.100.xip.io/api/default/greeting
-{"id":2,"content":"Hello!","node":"2311685d-aaaa-bbbb-cccc-a0e18a5b8e22"}
+{
+  "content" : "Hello!"
+}
 ----
 
 . Get the default greeting with a name.

@@ -1,0 +1,5 @@
+The {ProductShortName} API Level 0 Experience provides a basic example of mapping business operations to a remote procedure call endpoint over HTTP using a REST framework. This corresponds to link:https://martinfowler.com/articles/richardsonMaturityModel.html#level0[Level 0 in the Richardson Maturity Model]. Creating an HTTP endpoint using REST and its underlying principals to define your API enables you to quickly prototype and design your API in a flexible manner. More background information on REST is available in xref:about_rest[].
+
+This is an introduction to the mechanics of opening a service that is called remotely.
+
+Building your API with {ProductShortName} gives you all the advantages that come with using microservices including flexibility and choice of framework and languages. At the same time {ProductShortName} provides useful infrastructure for interoperability and running your microservices such as `ConfigMap`, health checking, and single sign-on.
