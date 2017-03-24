@@ -24,11 +24,18 @@
 
 :MinishiftVersion: v1.0.0-beta.5
 
+:experience-crud-spring-boot-tomcat-guide-name: CRUD Experience - {SpringBoot}
+:experience-crud-vertx-guide-name: CRUD Experience - {VertX}
+:experience-crud-wf-swarm-guide-name: CRUD Experience - {WildFlySwarm}
+
 :link-http-api-level-0-spring-boot-tomcat-quickstart: https://github.com/snowdrop/rest_springboot-tomcat
 :link-http-api-level-0-vertx-quickstart: https://github.com/openshiftio-vertx-boosters/vertx-http-booster
 :link-http-api-level-0-wf-swarm-quickstart: https://github.com/wildfly-swarm-openshiftio-boosters/rest-http
 :link-openshift-local-guide: https://github.com/minishift/minishift#installation
 
+:link-crud-spring-boot-tomcat-quickstart: https://github.com/obsidian-toaster-quickstarts/rest_jdbc_springboot
+:link-crud-vertx-quickstart: https://github.com/obsidian-toaster-quickstarts/rest_jdbc_vertx
+:link-crud-wf-swarm-quickstart: https://github.com/obsidian-toaster-quickstarts/rest_jdbc_swarm
 
 :link-oso-console-cli-token: https://console.dev-preview-int.openshift.com/console/command-line
 :link-oso-auth: https://api.preview.openshift.com

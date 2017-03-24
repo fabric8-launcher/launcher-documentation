@@ -1,0 +1,127 @@
+[[common-crud-database-interaction]]
+= Interacting with the CRUD API
+
+.  Once the application is running, you can access it using the _application URL_. To obtain the URL, execute the following command:
++
+[source,bash,options="nowrap",subs="attributes+"]
+--
+oc get route <APPLICATION_NAME> -o jsonpath={$.spec.host}
+--
++
+----
+NAME                  HOST/PORT               PATH       SERVICE                  TERMINATION   LABELS
+{app-name}    {app-name}-myproject.192.168.99.100.nip.io                  {app-name}:
+----
+
+. To access the web interface of the database application, navigate to the _application URL_ in your browser: `++http://{app-name}-myproject.192.168.99.100.nip.io++`.
++
+Alternatively, you can make requests directly on the `api/fruits/*` endpoint using `curl` or `http`:
++
+.List all entries in the database:
+[source,bash,subs="attributes+""]
+--
+http http://{app-name}-myproject.192.168.99.100.nip.io/api/fruits
+--
++
+----
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 100
+Content-Type: application/json
+Date: Wed, 29 Mar 2017 11:39:02 GMT
+
+[
+    {
+        "id": 1,
+        "name": "Cherry"
+    },
+    {
+        "id": 2,
+        "name": "Apple"
+    },
+    {
+        "id": 3,
+        "name": "Banana"
+    },
+    {
+        "id": 4,
+        "name": "Orange"
+    }
+]
+----
++
+.Retrieve an entry with a specific ID
+[source,bash,options="nowrap",subs="attributes+"]
+--
+http http://{app-name}-myproject.192.168.99.100.nip.io/api/fruits/3
+--
++
+----
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 100
+Content-Type: application/json
+Date: Wed, 29 Mar 2017 11:39:02 GMT
+
+{
+    "id": 3,
+    "name": "Banana"
+
+}
+----
+
++
+.Create a new entry:
+[source,bash,options="nowrap",subs="attributes+"]
+--
+http POST http://{app-name}-myproject.192.168.99.100.nip.io/api/fruits name=apple
+--
++
+----
+HTTP/1.1 201 Created
+Connection: keep-alive
+Content-Length: 24
+Content-Type: application/json
+Date: Wed, 29 Mar 2017 12:46:59 GMT
+
+{
+    "id": 5,
+    "name": "apple"
+}
+
+----
++
+.Update an Entry
+[source,bash,options="nowrap",subs="attributes+"]
+--
+http PUT http://{app-name}-myproject.192.168.99.100.nip.io/api/fruits/1 name=pineapple
+--
++
+----
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 27
+Content-Type: application/json
+Date: Wed, 29 Mar 2017 11:41:48 GMT
+
+{
+    "id": 1,
+    "name": "pineapple"
+}
+
+----
++
+.Delete an Entry:
+[source,bash,options="nowrap",subs="attributes+"]
+--
+http DELETE http://{app-name}-myproject.192.168.99.100.nip.io/api/fruits/1
+--
++
+----
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 0
+Date: Wed, 29 Mar 2017 11:42:36 GMT
+----
++
+If you receive an HTTP Error code `503` as a response after executing these commands, it means that the application is not ready yet.
