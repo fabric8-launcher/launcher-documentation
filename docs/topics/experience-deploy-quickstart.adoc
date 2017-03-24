@@ -1,8 +1,8 @@
 
 [[build_and_deploy_quickstart]]
-= Prerequisite: Deploy Your Quickstart and Determine It's Route
+= Prerequisite: Deploy Your Quickstart and Determine its Route
 
-Before proceeding, follow the instructions in the `README.md` to deploy your quickstart and determine it's URL.
+Before proceeding, follow the instructions in the `README.md` to deploy your quickstart and determine its URL.
 
 .Example Deploying the Quickstart
 [source,options="nowrap"]
