@@ -122,7 +122,7 @@ public List<String> supportedLanguages() {
 +
 [source,options="nowrap"]
 ----
-$ curl http://app1.192.168.99.100.xip.io/supportedLanguages
+$ curl http://app1.192.168.99.100.nio.io/api/supportedLanguages
 ["default"]
 ----
 
@@ -130,30 +130,30 @@ $ curl http://app1.192.168.99.100.xip.io/supportedLanguages
 +
 [source,options="nowrap"]
 ----
-$ curl http://app1.192.168.99.100.xip.io/default/greeting
-{"id":1,"content":"Hello!"}
+$ curl http://app1.192.168.99.100.nio.io/api/default/greeting
+{"content":"Hello!"}
 ----
 
 . Get the default greeting with a name.
 +
 [source,options="nowrap"]
 ----
-$ curl http://app1.192.168.99.100.xip.io/default/greeting?name=Sarah
-{"id":2,"content":"Hello, Sarah!"}
+$ curl http://app1.192.168.99.100.nio.io/api/default/greeting?name=Sarah
+{"content":"Hello, Sarah!"}
 ----
 
 . Post an additional greeting in Spanish.
 +
 [source,options="nowrap"]
 ----
-$ curl -H "Content-Type: application/json" -X POST -d "{\"language\":\"Spanish\",\"prefix\":\"Hola\"}" http://app1.192.168.99.100.xip.io/saveWorldGreeting
+$ curl -H "Content-Type: application/json" -X POST -d "{\"language\":\"Spanish\",\"prefix\":\"Hola\"}" http://app1.192.168.99.100.nio.io/api/saveWorldGreeting
 ----
 
 . Check the current available languages.
 +
 [source,options="nowrap"]
 ----
-$ curl http://app1.192.168.99.100.xip.io/supportedLanguages
+$ curl http://app1.192.168.99.100.nio.io/api/supportedLanguages
 ["default","Spanish"]
 ----
 
@@ -161,8 +161,8 @@ $ curl http://app1.192.168.99.100.xip.io/supportedLanguages
 +
 [source,options="nowrap"]
 ----
-$ curl http://app1.192.168.99.100.xip.io/Spanish/greeting?name=Sarah
-{"id":3,"content":"Hola, Sarah!"}
+$ curl http://app1.192.168.99.100.nio.io/api/Spanish/greeting?name=Sarah
+{"content":"Hola, Sarah!"}
 ----
 
 . Add a unit test for the HTTP endpoints in `src/test/java/org/obsidiantoaster/quickstart/RestApplicationTest.java`.
@@ -172,19 +172,19 @@ $ curl http://app1.192.168.99.100.xip.io/Spanish/greeting?name=Sarah
 @Test
 public void test_modified_service_invocation() {
     	     	 
-  String appURL = "http://app1.192.168.99.100.xip.io";
+  String appURL = "http://app1.192.168.99.100.nio.io";
 
-  String response  = template.getForObject(appURL+"/supportedLanguages",String.class);
+  String response  = template.getForObject(appURL+"/api/supportedLanguages",String.class);
   Assert.assertTrue(response.equals("[\"default\"]"));
 
   long now = System.currentTimeMillis();
   String tempLang = "temp"+now;
   String tempGreeting = "hello-"+now;
   WorldGreeting wgRequest = new WorldGreeting(tempLang,tempGreeting);
-  WorldGreeting wgResponse = template.postForEntity(appURL+"/saveWorldGreeting", wgRequest, WorldGreeting.class).getBody();
+  WorldGreeting wgResponse = template.postForEntity(appURL+"/api/saveWorldGreeting", wgRequest, WorldGreeting.class).getBody();
   Assert.assertTrue(wgRequest.equals(wgResponse));
             
-  response  = template.getForObject(appURL+"/supportedLanguages",String.class);
+  response  = template.getForObject(appURL+"/api/supportedLanguages",String.class);
   Assert.assertTrue(response.contains(tempLang));
 }
 ----

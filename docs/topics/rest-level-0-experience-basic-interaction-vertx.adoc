@@ -6,7 +6,7 @@ The quickstart provides a default HTTP endpoint that accepts GET requests.
 +
 [source,options="nowrap"]
 ----
-$ curl http://app1.192.168.99.100.xip.io/greeting
+$ curl http://app1.192.168.99.100.nio.io/api/greeting
 {
   "content" : "Hello, World!"
 }
@@ -16,7 +16,7 @@ $ curl http://app1.192.168.99.100.xip.io/greeting
 +
 [source,options="nowrap"]
 ----
-$ curl http://app1.192.168.99.100.xip.io/greeting?name=Sarah
+$ curl http://app1.192.168.99.100.nio.io/api/greeting?name=Sarah
 {
   "content" : "Hello, Sarah!"
 }

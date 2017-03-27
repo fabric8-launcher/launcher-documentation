@@ -149,7 +149,7 @@ router.get("/api/supportedLanguages").handler(this::supportedLanguages);
 +
 [source,options="nowrap"]
 ----
-$ curl http://app1.192.168.99.100.xip.io/api/supportedLanguages
+$ curl http://app1.192.168.99.100.nio.io/api/supportedLanguages
 [ "default" ]
 ----
 
@@ -157,7 +157,7 @@ $ curl http://app1.192.168.99.100.xip.io/api/supportedLanguages
 +
 [source,options="nowrap"]
 ----
-$ curl http://app1.192.168.99.100.xip.io/api/default/greeting
+$ curl http://app1.192.168.99.100.nio.io/api/default/greeting
 {
   "content" : "Hello!"
 }
@@ -167,7 +167,7 @@ $ curl http://app1.192.168.99.100.xip.io/api/default/greeting
 +
 [source,options="nowrap"]
 ----
-$ curl http://app1.192.168.99.100.xip.io/api/default/greeting?name=Sarah
+$ curl http://app1.192.168.99.100.nio.io/api/default/greeting?name=Sarah
 {
   "content" : "Hello, Sarah!"
 }
@@ -177,14 +177,14 @@ $ curl http://app1.192.168.99.100.xip.io/api/default/greeting?name=Sarah
 +
 [source,options="nowrap"]
 ----
-$ curl -H "Content-Type: application/json" -X POST -d "{\"language\":\"Spanish\",\"prefix\":\"Hola\"}" http://app1.192.168.99.100.xip.io/api/saveWorldGreeting
+$ curl -H "Content-Type: application/json" -X POST -d "{\"language\":\"Spanish\",\"prefix\":\"Hola\"}" http://app1.192.168.99.100.nio.io/api/saveWorldGreeting
 ----
 
 . Check the current available languages.
 +
 [source,options="nowrap"]
 ----
-$ curl http://app1.192.168.99.100.xip.io/api/supportedLanguages
+$ curl http://app1.192.168.99.100.nio.io/api/supportedLanguages
 [ "default", "Spanish" ]
 ----
 
@@ -192,7 +192,7 @@ $ curl http://app1.192.168.99.100.xip.io/api/supportedLanguages
 +
 [source,options="nowrap"]
 ----
-$ curl http://app1.192.168.99.100.xip.io/api/Spanish/greeting?name=Sarah
+$ curl http://app1.192.168.99.100.nio.io/api/Spanish/greeting?name=Sarah
 {
   "content" : "Hola, Sarah!"
 }
@@ -207,7 +207,7 @@ public void callNewLanguageGreetingTest(TestContext context) {
     // Send a request and get a response
     Async async = context.async();
     
-    String appURL = "http://app1.192.168.99.100.xip.io";
+    String appURL = "http://app1.192.168.99.100.nio.io";
     int port = 80;
     
     client
