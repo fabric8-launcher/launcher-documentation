@@ -30,5 +30,5 @@ Once your quickstart is deployed and started, you can check its route informatio
 ----
 $ oc get routes
 NAME                 HOST/PORT                                         PATH      SERVICES             PORT      TERMINATION
-app1                 app1.192.168.99.100.nio.io                        app1                           8080
+app1                 app1.192.168.99.100.nip.io                        app1                           8080
 ----
