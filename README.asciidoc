@@ -62,4 +62,44 @@ $ git commit -m "Added my awesome idea."
 $ git push origin HEAD
 ----
 
-. File a pull request to upstream/master.
+. File a pull request to `upstream/master`.
+
+### Add a New Guide
+
+. Create a new folder for the guide under `docs/` e.g. `docs/my-new-guide`.
+
+. Under that folder:
+** Create a `master.adoc` file.
+
+** Create a symlink called `topics` to `../topics`.
++
+[source,options="nowrap"]
+----
+ln -s ../topics topics
+----
+
+** Copy the `buildGuide.sh` script from another guide's folder and modify line 3. This defines the output name of the html file. This should match the folder name.
+
+. Add the default content to master.adoc.
++
+[source,options="nowrap"]
+----
+include::topics/templates/document-attributes.adoc[]
+
+:my-new-guide:
+
+= {my-new-guide-guide-name}
+----
+
+. Update `docs/topics/templates/document-attributes.adoc` by adding the guide name attribute.
++
+[source,options="nowrap"]
+----
+:my-new-guide-guide-name: My Awesome New guide
+----
+
+. Run the `scripts/buildGuides.sh` script to ensure the new guide builds with the others.
+
+. Open the generated html file to ensure everything looks correct.
+
+You have now created the scaffolding for a new guide. When you are ready for some initial review and feedback, file a pull request to `upstream/master`.
