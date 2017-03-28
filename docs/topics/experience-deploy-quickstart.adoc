@@ -19,8 +19,10 @@ Check the status of your quickstart and ensure your pod is running.
 ----
 $ oc get pods -w
 NAME                             READY     STATUS      RESTARTS   AGE
-app1                             1/1       Running     0          1h
-app1-build                       0/1       Completed   0          1h
+app1                             1/1       Running     0          1m
+app1-build                       0/1       Completed   0          1m
+app2                             1/1       Running     0          1m
+app2-build                       0/1       Completed   0          1m
 ----
 
 Once your quickstart is deployed and started, you can check its route information for the URL to access it.

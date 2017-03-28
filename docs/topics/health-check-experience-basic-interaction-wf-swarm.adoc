@@ -1,0 +1,63 @@
+= Interact with the Unmodified {WildFlySwarm} Booster
+
+Once you have the {WildFlySwarm} booster deployed, you will have two applications running: `hello-service` and `name-service`. The `name-service` exposes a REST endpoint which returns a name as a String. The `hello-service` exposes a REST endpoint that returns a hello message as a String. When you call the REST endpoint in `hello-service`, the `hello-service` application makes a call to `name-service` to obtain a name String to use in the hello message String. 
+
+. Use `curl` to execute a `GET` request against the `hello-service`. You can also use a browser to do this.
++
+[source,options="nowrap"]
+----
+$ curl http://hello-service.192.168.99.100.nip.io/greeting
+Hello World!
+----
+
+. Scale down the number of `name-service` pods, which are used by `hello-service`, to 0.
++
+[source,option="nowrap"]
+----
+$ oc get pods
+NAME                        READY     STATUS      RESTARTS   AGE
+hello-service-1-aaaaa       1/1       Running     0          6m
+hello-service-s2i-1-build   0/1       Completed   0          6m
+name-service-1-bbbbb        1/1       Running     0          6m
+name-service-s2i-1-build    0/1       Completed   0          6m
+
+$ oc scale pod name-service-1-bbbbb --replicas=0 
+----
+
+. Use `curl` to execute a `GET` request against the `hello-service` again. This should return an error since `name-service`, which is used by `hello-service` is unavailable and has failed . You can also use a browser to do this.
++
+[source,options="nowrap"]
+----
+$ curl http://hello-service.192.168.99.100.nip.io/greeting
+<html><body><h1>503 Service Unavailable</h1>
+No server is available to handle this request.
+</body></html>
+----
+
+. Scale up the number of `name-service` pods to 1.
++
+[source,option="nowrap"]
+--
+$ oc scale pod name-service-1-bbbbb --replicas=1
+--
+
+. Ensure that the `name-service` pods are running again.
++
+[source,options="nowrap"]
+----
+$ oc get pods -w
+NAME                        READY     STATUS      RESTARTS   AGE
+hello-service-1-aaaaa       1/1       Running     0          10m
+hello-service-s2i-1-build   0/1       Completed   0          10m
+name-service-1-bbbbb        1/1       Running     0          1m
+name-service-s2i-1-build    0/1       Completed   0          10m
+
+----
+
+. Use `curl` to execute a `GET` request against the `hello-service` again. It should now succeed. You can also use a browser to do this.
++
+[source,options="nowrap"]
+----
+$ curl http://hello-service.192.168.99.100.nip.io/greeting
+Hello World!
+----
