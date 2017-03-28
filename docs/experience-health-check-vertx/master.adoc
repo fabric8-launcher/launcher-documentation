@@ -1,0 +1,16 @@
+include::topics/templates/document-attributes.adoc[]
+
+:health-check-vertx:
+
+= {experience-health-check-vertx-guide-name}
+include::topics/health-check-experience-intro.adoc[leveloffset=+1]
+
+
+== Create an HTTP Endpoint with a Health Check Using {ProductShortName}
+
+include::topics/health-check-experience-deploy-quickstart.adoc[leveloffset=+2]
+
+include::topics/health-check-experience-basic-interaction-vertx.adoc[leveloffset=+2]
+
+//level 2
+include::topics/health-check-experience-resources.adoc[leveloffset=+1]

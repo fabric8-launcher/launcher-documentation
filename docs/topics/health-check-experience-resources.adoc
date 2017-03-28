@@ -1,0 +1,9 @@
+[[about_rest]]
+= Health Check Resources
+
+More background and related information on health checking can be found here:
+
+* link:https://docs.openshift.com/container-platform/latest/dev_guide/application_health.html[Overview of Application Health in Openshift]
+* link:https://kubernetes.io/docs/user-guide/walkthrough/k8s201/#health-checking[Health Checking in Kubernetes]
+* link:https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/[Kubernetes Liveness and Readiness Probes]
+* link:https://kubernetes.io/docs/api-reference/v1/definitions/#_v1_probe[Kubernetes Probes]

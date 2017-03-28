@@ -22,6 +22,9 @@
 :experience-configmap-spring-boot-tomcat-guide-name: ConfigMap Experience - {SpringBoot}
 :experience-configmap-vertx-guide-name: ConfigMap Experience - {VertX}
 :experience-configmap-wf-swarm-guide-name: ConfigMap Experience - {WildFlySwarm}
+:experience-health-check-spring-boot-tomcat-guide-name: Health Check Mission - {SpringBoot}
+:experience-health-check-vertx-guide-name: Health Check Mission - {VertX}
+:experience-health-check-wf-swarm-guide-name: Health Check Mission - {WildFlySwarm}
 :openshift-local-guide-name: Install and Configure {OpenShiftLocal}
 :minishift-installation-guide-name: Installing the Launchpad on {OpenShiftLocal}
 
