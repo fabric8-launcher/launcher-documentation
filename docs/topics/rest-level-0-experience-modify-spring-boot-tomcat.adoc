@@ -6,7 +6,7 @@ To modify the Spring Boot Tomcat quickstart:
 
 . Add a `WorldGreeting` class to `src/main/java/org/obsidiantoaster/quickstart/service`.
 +
-[source,java,options="nowrap"]
+[source,java,options="nowrap",subs="attributes+"]
 ----
 package org.obsidiantoaster.quickstart.service;
 
@@ -59,7 +59,7 @@ public class WorldGreeting {
 
 . Add a list of `WorldGreeting` objects to `GreetingController` and a default constructor.
 +
-[source,options="nowrap"]
+[source,options="nowrap",subs="attributes+"]
 ----
 private static List<WorldGreeting> greetings; 
 
@@ -72,7 +72,7 @@ public GreetingController() {
 
 . Add some additional HTTP endpoints to `GreetingController`.
 +
-[source,options="nowrap"]
+[source,options="nowrap",subs="attributes+"]
 ----
 @RequestMapping(path="/saveWorldGreeting",method=RequestMethod.POST)
 public WorldGreeting saveWorldGreeting(@RequestBody WorldGreeting worldGreeting) {
@@ -120,59 +120,59 @@ public List<String> supportedLanguages() {
 
 . Check the current available languages.
 +
-[source,options="nowrap"]
+[source,options="nowrap",subs="attributes+"]
 ----
-$ curl http://app1.192.168.99.100.nip.io/api/supportedLanguages
+$ curl http://{app-name}-myproject.192.168.99.100.nip.io/supportedLanguages
 ["default"]
 ----
 
 . Get the default greeting.
 +
-[source,options="nowrap"]
+[source,options="nowrap",subs="attributes+"]
 ----
-$ curl http://app1.192.168.99.100.nip.io/api/default/greeting
+$ curl http://{app-name}-myproject.192.168.99.100.nip.io/default/greeting
 {"content":"Hello!"}
 ----
 
 . Get the default greeting with a name.
 +
-[source,options="nowrap"]
+[source,options="nowrap",subs="attributes+"]
 ----
-$ curl http://app1.192.168.99.100.nip.io/api/default/greeting?name=Sarah
+$ curl http://{app-name}-myproject.192.168.99.100.nip.io/default/greeting?name=Sarah
 {"content":"Hello, Sarah!"}
 ----
 
 . Post an additional greeting in Spanish.
 +
-[source,options="nowrap"]
+[source,options="nowrap",subs="attributes+"]
 ----
-$ curl -H "Content-Type: application/json" -X POST -d "{\"language\":\"Spanish\",\"prefix\":\"Hola\"}" http://app1.192.168.99.100.nip.io/api/saveWorldGreeting
+$ curl -H "Content-Type: application/json" -X POST -d "{\"language\":\"Spanish\",\"prefix\":\"Hola\"}" http://{app-name}-myproject.192.168.99.100.nip.io/saveWorldGreeting
 ----
 
 . Check the current available languages.
 +
-[source,options="nowrap"]
+[source,options="nowrap",subs="attributes+"]
 ----
-$ curl http://app1.192.168.99.100.nip.io/api/supportedLanguages
+$ curl http://{app-name}-myproject.192.168.99.100.nip.io/supportedLanguages
 ["default","Spanish"]
 ----
 
 . Get the Spanish greeting.
 +
-[source,options="nowrap"]
+[source,options="nowrap",subs="attributes+"]
 ----
-$ curl http://app1.192.168.99.100.nip.io/api/Spanish/greeting?name=Sarah
+$ curl http://{app-name}-myproject.192.168.99.100.nip.io/Spanish/greeting?name=Sarah
 {"content":"Hola, Sarah!"}
 ----
 
 . Add a unit test for the HTTP endpoints in `src/test/java/org/obsidiantoaster/quickstart/RestApplicationTest.java`.
 +
-[source,java,options="nowrap"]
+[source,java,options="nowrap",subs="attributes+"]
 ----
 @Test
 public void test_modified_service_invocation() {
     	     	 
-  String appURL = "http://app1.192.168.99.100.nip.io";
+  String appURL = "http://{app-name}-myproject.192.168.99.100.nip.io";
 
   String response  = template.getForObject(appURL+"/api/supportedLanguages",String.class);
   Assert.assertTrue(response.equals("[\"default\"]"));

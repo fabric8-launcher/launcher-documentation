@@ -10,12 +10,24 @@
 
 :ProductName: Obsidian Toaster
 :ProductShortName: Obsidian
+:OpenShiftOnline: OpenShift Online
+:OpenShiftLocal: Minishift
+:WildFlySwarm: WildFly Swarm
+:SpringBoot: Spring Boot Tomcat
+:VertX: Vert.x
 
-:experience-http-api-spring-boot-tomcat-guide-name: HTTP API Level 0 Experience - Spring Boot Tomcat
-:experience-http-api-vertx-guide-name: HTTP API Level 0 Experience - Vert.x
-:experience-http-api-wf-swarm-guide-name: HTTP API Level 0 Experience - WildFly Swarm
-:minishift-installation-guide-name: Installing the Launchpad on Minishift
+:experience-http-api-spring-boot-tomcat-guide-name: HTTP API Level 0 Experience - {SpringBoot}
+:experience-http-api-vertx-guide-name: HTTP API Level 0 Experience - {VertX}
+:experience-http-api-wf-swarm-guide-name: HTTP API Level 0 Experience - {WildFlySwarm}
+:openshift-local-guide-name: Install and Configure {OpenShiftLocal}
+:minishift-installation-guide-name: Installing the Launchpad on {OpenShiftLocal}
 
-:link-http-api-level-0-spring-boot-tomcat-quickstart: https://github.com/obsidian-toaster-quickstarts/rest_springboot-tomcat
-:link-http-api-level-0-vertx-quickstart: https://github.com/obsidian-toaster-quickstarts/http_vertx
-:link-http-api-level-0-wf-swarm-quickstart: https://github.com/obsidian-toaster-quickstarts/rest_wildfly-swarm
+
+:link-http-api-level-0-spring-boot-tomcat-quickstart: https://github.com/snowdrop/rest_springboot-tomcat
+:link-http-api-level-0-vertx-quickstart: https://github.com/openshiftio-vertx-boosters/vertx-http-booster
+:link-http-api-level-0-wf-swarm-quickstart: https://github.com/wildfly-swarm-openshiftio-boosters/rest-http
+:link-openshift-local-guide: https://github.com/minishift/minishift#installation
+
+
+:link-oso-console-cli-token: https://console.dev-preview-int.openshift.com/console/command-line
+:link-oso-auth: https://api.preview.openshift.com
