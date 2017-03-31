@@ -1,6 +1,6 @@
 
 #Name of the html output file
-GUIDE_HTML_NAME=experience-crud-wf-swarm.html
+GUIDE_HTML_NAME=experience-configmap-spring-boot-tomcat.html
 OUTPUT_DIR=../../html
 
 rm -r $OUTPUT_DIR/images/

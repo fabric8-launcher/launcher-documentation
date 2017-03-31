@@ -1,0 +1,19 @@
+include::topics/templates/document-attributes.adoc[]
+
+:configmap-wf-swarm:
+:app-name: wildfly-swarm-configmap
+
+= {experience-configmap-wf-swarm-guide-name}
+
+include::topics/configmap-experience-intro.adoc[leveloffset=+1]
+
+include::topics/configmap-experience-design-tradeoffs.adoc[leveloffset=+1]
+
+== Deploy an Application that Uses ConfigMap with {ProductShortName}
+
+include::topics/configmap-experience-deploy-booster.adoc[leveloffset=+2]
+
+include::topics/configmap-experience-basic-interaction-wf-swarm.adoc[leveloffset=+2]
+
+//level 2
+include::topics/configmap-experience-resources.adoc[leveloffset=+1]
