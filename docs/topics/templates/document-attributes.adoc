@@ -14,6 +14,7 @@
 :experience-http-api-spring-boot-tomcat-guide-name: HTTP API Level 0 Experience - Spring Boot Tomcat
 :experience-http-api-vertx-guide-name: HTTP API Level 0 Experience - Vert.x
 :experience-http-api-wf-swarm-guide-name: HTTP API Level 0 Experience - WildFly Swarm
+:minishift-installation-guide-name: Minishift Installation
 
 :link-http-api-level-0-spring-boot-tomcat-quickstart: https://github.com/obsidian-toaster-quickstarts/rest_springboot-tomcat
 :link-http-api-level-0-vertx-quickstart: https://github.com/obsidian-toaster-quickstarts/http_vertx

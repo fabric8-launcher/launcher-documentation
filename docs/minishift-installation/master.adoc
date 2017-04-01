@@ -1,0 +1,11 @@
+include::topics/templates/document-attributes.adoc[]
+
+:minishift-installation:
+
+= {minishift-installation-guide-name}
+
+Place your content here.
+
+== New Section
+
+and some here as well.
