@@ -1,11 +1,11 @@
-# Obsidian Toaster Documentation
+# appdev.openshift.io Documentation
 
 This repository holds the documentation for Obsidian Toaster. 
 
 
 ## Directory Structure
 
-* `docs/` - This folder contains all the Obsidian Toaster guides and related content. 
+* `docs/` - This folder contains all the appdev.openshift.io guides and related content.
 ** `topics/` - This folder contains `adoc` files representing shared content between guides.
 *** `images/` - This folder contains all images used in the guides.
 *** `styles/` - This folder contains all stylesheets used in the guides.
@@ -26,21 +26,21 @@ This repository holds the documentation for Obsidian Toaster.
 
 To start contributing:
 
-. Fork the link:https://github.com/obsidian-toaster/documentation[main project]
+. Fork the link:https://github.com/openshiftio/appdev-documentation[upstream repository] into your user namespace
 
 . Clone your fork.
 +
 [source,options="nowrap"]
 ----
-$ git clone git@github.com:USERNAME/documentation.git
+$ git clone git@github.com:USERNAME/appdev-documentation.git
 ----
 
 . Add the main project as a remote.
 +
 [source,options="nowrap"]
 ----
-$ cd documentation
-$ git remote add upstream git@github.com:obsidian-toaster/documentation.git
+$ cd appdev-documentation
+$ git remote add upstream git@github.com:openshiftio/appdev-documentation.git
 $ git fetch upstream
 ----
 
