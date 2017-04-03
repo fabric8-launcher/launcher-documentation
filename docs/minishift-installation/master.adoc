@@ -25,7 +25,7 @@ Because the Launchpad puts generated starter applications called Boosters into y
 
 == Installing Minishift on your system
 
-The Minishift installation instructions are detailed https://github.com/minishift/minishift#installation[here], and because of the virtual machine dependency, is platform-specific.  The rest of this guide assume you have installed Minishift and its prerequisites, and that the command `minishift status` returns successfully (even if it reports `Stopped`).  Grab a release of `v1.0.0-beta.5` from the releases page as shown in the Minishift documentation, follow the instructions for installation, and test it's available on your system `$PATH`.
+The Minishift installation instructions are detailed https://github.com/minishift/minishift#installation[here], and because of the virtual machine dependency, is platform-specific.  The rest of this guide assumes you have installed Minishift and its prerequisites, and that the command `minishift status` returns successfully (even if it reports `Stopped`).  Grab a release of `v1.0.0-beta.5` from the releases page as shown in the Minishift documentation, follow the instructions for installation, and test it's available on your system `$PATH`.
 
 == Fire up Minishift
 
@@ -35,7 +35,7 @@ Execute from the command line:
 
 `minishift start --memory=4096`
 
-Note: you may, depending upon your system setup, need to manually specify an alternative VM driver, for instance like `--vm-driver=VirtualBox`.  We advise you to accept the default so long as that works for you.
+Note: you may, depending upon your system setup, need to manually specify an alternative VM driver, for instance like `--vm-driver=virtualbox`.  We advise you to accept the default so long as that works for you.
 
 A successful first run here will likely include console logging that looks a little like this:
 
