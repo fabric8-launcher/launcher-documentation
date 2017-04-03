@@ -14,8 +14,5 @@ include::topics/experience-deploy-quickstart.adoc[leveloffset=+2]
 
 include::topics/rest-level-0-experience-basic-interaction-wf-swarm.adoc[leveloffset=+2]
 
-include::topics/rest-level-0-experience-modify-wf-swarm.adoc[leveloffset=+2]
-
-
 //level 2
 include::topics/rest-level-0-experience-resources.adoc[leveloffset=+1]
