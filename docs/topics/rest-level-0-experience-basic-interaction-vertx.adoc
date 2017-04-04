@@ -4,9 +4,9 @@ The quickstart provides a default HTTP endpoint that accepts GET requests.
 
 . Use `curl` to execute a `GET` request against the quickstart. You can also use a browser to do this.
 +
-[source,options="nowrap"]
+[source,options="nowrap",subs="attributes+"]
 ----
-$ curl http://app1.192.168.99.100.nip.io/api/greeting
+$ curl http://{app-name}-myproject.192.168.99.100.nip.io/greeting
 {
   "content" : "Hello, World!"
 }
@@ -14,9 +14,9 @@ $ curl http://app1.192.168.99.100.nip.io/api/greeting
 
 . Use `curl` to execute a `GET` request with the `name` URL parameter against the quickstart. You can also use a browser to do this.
 +
-[source,options="nowrap"]
+[source,options="nowrap",subs="attributes+"]
 ----
-$ curl http://app1.192.168.99.100.nip.io/api/greeting?name=Sarah
+$ curl http://{app-name}-myproject.192.168.99.100.nip.io/greeting?name=Sarah
 {
   "content" : "Hello, Sarah!"
 }
