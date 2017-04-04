@@ -35,7 +35,7 @@ Execute from the command line:
 
 `minishift start --memory=4096`
 
-Note: you may, depending upon your system setup, need to manually specify an alternative VM driver, for instance like `--vm-driver=virtualbox`.  We advise you to accept the default so long as that works for you.
+Note: You may, depending upon your system setup, need to manually specify an alternative VM driver, for instance like `--vm-driver=virtualbox` (VirtualBox 5.x https://www.virtualbox.org/[installed separately]).  We advise you to accept the default so long as that works for you. On Mac OS X, the xhyve driver is a bit unreliable, although `--vm-driver=virtualbox` is a reliable alternative.
 
 A successful first run here will likely include console logging that looks a little like this:
 
