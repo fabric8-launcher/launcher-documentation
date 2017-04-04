@@ -105,17 +105,25 @@ Now you'll be presented with several options, so let's be careful filling these 
 
 2. You personal access token for GitHub.  Remember setting that up above?  Paste it in here.
 
-3. OpenShift Console URL.  Be careful here; this must match the output of `minishift console --url`, or you can grab it from your browser's address bar if you leave off the path after the root.  Example: `https://192.168.42.152:8443`.
+3. Local OpenShift API URL.  Be careful here; this must match the output of `minishift console --url`, or you can grab it from your browser's address bar if you leave off the path after the root.  Example: `https://192.168.42.152:8443`.
 
-4. OpenShift user name: `developer`, assuming we logged in as `developer` above.
+4. Target OpenShift Console URL.  Same as above.
 
-5. OpenShift password: `developer`, same assumptions as in Step 4.
+5. OpenShift user name: `developer`, assuming we logged in as `developer` above.
 
-6. KeyCloak URL and Realm: Leave 'em as-is.  In the Minishift template we're now using, these options will be removed in future versions.
+6. OpenShift password: `developer`, same assumptions as in Step 4.
 
-7. Launchpad Backend URL: Here we have to be careful.  Replace `PROJECTNAME` default with the project name we'd used above, in our case, `launchpad`.  And also check the IP address in the String is correct (again, can be done by looking at your browser's address bar.  This step will be removed in future versions of the template as well.
+7. KeyCloak URL and Realm: Leave 'em as-is.  In the Minishift template we're now using, these options will be removed in future versions.
 
-8. We're done.  Hit `Create`.
+8. Catalog Git Repository: Accept the default, unless if you are an advanced user looking to test a new Catalog for development purposes.
+
+9. Catalog Git Reference: Same as above; accept the default unless you want to point to a particular SHA, branch, or tag.
+
+10. Catalog Index Period: Leave at 0.
+
+11. Launchpad Backend URL: Here we have to be careful.  Replace `PROJECTNAME` default with the project name we'd used above, in our case, `launchpad`.  And also check the IP address in the String is correct (again, can be done by looking at your browser's address bar.  This step will be removed in future versions of the template as well.
+
+12. We're done.  Hit `Create`.
 
 You'll see a screen confirming that the application has been created, and it will invite you to go to the overview.  Once you do, you should see the three services which comprise Launchpad starting up.
 
