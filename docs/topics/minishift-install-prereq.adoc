@@ -1,0 +1,11 @@
+= Prerequisite: Install Minishift
+
+In order to use Launchpad on a local cloud, you must have Minishift `{MinishiftVersion}` or greater installed and configured. The installation steps are available link:https://github.com/minishift/minishift#installation[in the project's `README`] and vary by platform.
+
+To verify you have Minishift installed and configured:
+
+[source,options="nowrap",subs="attributes+"]
+----
+$ minishift status
+Stopped
+----

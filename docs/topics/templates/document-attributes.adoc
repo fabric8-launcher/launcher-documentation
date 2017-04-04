@@ -22,6 +22,7 @@
 :openshift-local-guide-name: Install and Configure {OpenShiftLocal}
 :minishift-installation-guide-name: Installing the Launchpad on {OpenShiftLocal}
 
+:MinishiftVersion: v1.0.0-beta.5
 
 :link-http-api-level-0-spring-boot-tomcat-quickstart: https://github.com/snowdrop/rest_springboot-tomcat
 :link-http-api-level-0-vertx-quickstart: https://github.com/openshiftio-vertx-boosters/vertx-http-booster
