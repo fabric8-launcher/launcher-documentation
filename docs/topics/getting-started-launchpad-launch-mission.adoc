@@ -1,0 +1,18 @@
+[[launchpad-launch-mission]]
+= Launch Your Mission Project
+
+To launch your mission from the launch screen, you have the following options.
+
+== Launch Using Continuous Deployment
+
+To launch using continuous deployment, click the _Open in OpenShift_ button. This will:
+
+* Create a new GitHub repository associated with your account containing the mission's code.
+* Deploy a continuous deployment pod to {OpenShiftLocal} to deploy your mission's code.
+* The continuous deployment pod will then build and deploy your mission's code to {OpenShiftLocal}.
+
+Once your mission is deployed, you can then interact with it's application or applications. You can find more details on how to interact with a mission in the interaction section of each mission's guide. For example, if you deployed the {VertX} HTTP API Level 0 mission, use the link:{link-experience-http-api-vertx}#interact[Interact with the Unmodified Vert.x Quickstart] section in {experience-http-api-vertx-guide-name}. You can find a full list of mission guides in xref:available-missions[].
+
+== Launch Manually
+
+To launch manually, click on _Download Zip_ and follow the instructions in the mission's guide. For example, if you deployed the {VertX} HTTP API Level 0 mission, use the link:{link-experience-http-api-vertx}#build_and_deploy_booster[Build and Deploy Your Booster] section in {experience-http-api-vertx-guide-name}. You can find more details on how to interact with a mission in the interaction section of each mission's guide. You can find a full list of mission guides in xref:available-missions[].

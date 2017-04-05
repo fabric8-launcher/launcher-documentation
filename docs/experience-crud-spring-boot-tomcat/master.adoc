@@ -13,7 +13,7 @@ include::topics/crud-experience-intro.adoc[leveloffset=+1]
 include::topics/crud-experience-design-tradeoffs.adoc[leveloffset=+1]
 
 
-== Create an CRUD Endpoint with {ProductShortName}
+== Create a CRUD Endpoint
 
 // deployment
 include::topics/crud-experience-deploy-quickstart.adoc[leveloffset=+2]

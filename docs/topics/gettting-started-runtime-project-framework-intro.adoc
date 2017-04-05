@@ -1,0 +1,1 @@
+Runtime project frameworks are preconfigured project scaffolds you can use to build your own project. The Launchpad provides a simple interface for choosing your dependencies and runtime and creating a complete project scaffold with everything configured. This enables you to rapidly create and deploy cloud-native applications.

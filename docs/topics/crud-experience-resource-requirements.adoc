@@ -1,7 +1,7 @@
 // common topics must start at level H1
-= Prerequisites for the {ProductName} Booster
+= Prerequisites for the Booster
 
-== Local System Resources Required for {ProductName} Boosters
+== Local System Resources Required for Boosters
 
 |===
 |Resource Name | Resource Description | Supported Version | Location
@@ -27,7 +27,7 @@
 |link:https://git-scm.com/book/en/v2/Getting-Started-Installing-Git[Git Documentation^]
 |===
 
-== Web Resources Required for {ProductName} Boosters
+== Web Resources Required for Boosters
 
 To build and deploy this Booster, you need access to:
 

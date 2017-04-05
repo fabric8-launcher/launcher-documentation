@@ -1,0 +1,5 @@
+= Install the Launchpad on {OpenShiftLocal}
+
+Launchpad is the place where everything starts. It is a project wizard that helps you create functional sample applications called _missions_ that you can quickly deploy and use. It also helps you generate _runtime project frameworks_ which serve as scaffolding for rapidly developing cloud-native applications. Both the missions and the runtime project frameworks provide different runtime options such as {VertX}, {WildFlySwarm}, and {SpringBoot}.
+
+Before you can use the Launchpad, you need to install it on {OpenShiftLocal} and configure it to integrate with your GitHub account. Follow the instructions in link:{link-launchpad-openshift-local-install-guide}[{minishift-installation-guide-name}] to get this set up.

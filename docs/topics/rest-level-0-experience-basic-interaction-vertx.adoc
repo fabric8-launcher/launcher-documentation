@@ -1,3 +1,4 @@
+[[interact]]
 = Interact with the Unmodified Vert.x Quickstart
 
 The quickstart provides a default HTTP endpoint that accepts GET requests.

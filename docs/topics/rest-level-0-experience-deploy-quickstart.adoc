@@ -1,10 +1,10 @@
 
-[[build_and_deploy_quickstart]]
-= Build and Deploy Your Quickstart
+[[build_and_deploy_booster]]
+= Build and Deploy Your Booster
 
-== Deploy your Quickstart to {OpenShiftOnline}
+== Deploy your Booster to {OpenShiftOnline}
 
-[[deploy-quickstart-oso-cli]]
+[[deploy-booster-oso-cli]]
 === Deploy Using the `oc` CLI Client
 
 . Get your authentication token for using the `oc` CLI client with your {OpenShiftOnline} account. You can find this in the link:{link-oso-console-cli-token}[{OpenShiftOnline} Web console^].
@@ -23,7 +23,7 @@ $ oc login {link-oso-auth} --token=MYTOKEN
 $ oc new-project NEW-PROJECT-NAME
 ----
 
-. Navigate to the root directory of your quickstart.
+. Navigate to the root directory of your booster.
 
 . Use maven to start the deployment to {OpenShiftOnline}.
 +
@@ -35,7 +35,7 @@ $ mvn clean fabric8:deploy -Popenshift -DskipTests
 This command uses the Fabric8 Maven Plugin to launch the S2I process on {OpenShiftOnline} and to start the pod.
 
 
-. Check the status of your quickstart and ensure your pod is running.
+. Check the status of your booster and ensure your pod is running.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -47,7 +47,7 @@ NAME                             READY     STATUS      RESTARTS   AGE
 +
 You `app1` pod should have a status of `Running` once its fully deployed and started.
 
-. Once your quickstart is deployed and started, determine its route.
+. Once your booster is deployed and started, determine its route.
 +
 .Example Route Information
 [source,bash,options="nowrap",subs="attributes+"]
@@ -59,7 +59,7 @@ NAME                 HOST/PORT                                     PATH      SER
 +
 A pod's route information gives you the base URL which you use to access it. In the example above, you would use `http://{app-name}-myproject.192.168.99.100.nip.io` as the base URL to access the application.
 
-== Deploy your Quickstart to {OpenShiftLocal}
+== Deploy your Booster to {OpenShiftLocal}
 
 . Before you can use {OpenShiftLocal}, you need to have it installed, configured, and running. You can find more details in link:{link-openshift-local-guide}[{openshift-local-guide-name}]. 
 
@@ -85,4 +85,4 @@ A pod's route information gives you the base URL which you use to access it. In 
 
 === Deploy Using the `oc` CLI Client
 
-You can deploy your quickstart to {OpenShiftLocal} by following the same process in xref:deploy-quickstart-oso-cli[], but instead of using the {OpenShiftOnline}, use your {OpenShiftLocal} URL to access the Web console and with the `oc` CLI client.
+You can deploy your booster to {OpenShiftLocal} by following the same process in xref:deploy-booster-oso-cli[], but instead of using the {OpenShiftOnline}, use your {OpenShiftLocal} URL to access the Web console and with the `oc` CLI client.

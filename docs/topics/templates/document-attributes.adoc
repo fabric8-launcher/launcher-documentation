@@ -8,8 +8,6 @@
 //:stylesdir: topics/styles
 //:stylesheet: style.css
 
-:ProductName: Obsidian Toaster
-:ProductShortName: Obsidian
 :OpenShiftOnline: OpenShift Online
 :OpenShiftLocal: Minishift
 :WildFlySwarm: WildFly Swarm
@@ -26,7 +24,8 @@
 :experience-health-check-vertx-guide-name: Health Check Mission - {VertX}
 :experience-health-check-wf-swarm-guide-name: Health Check Mission - {WildFlySwarm}
 :openshift-local-guide-name: Install and Configure {OpenShiftLocal}
-:minishift-installation-guide-name: Installing the Launchpad on {OpenShiftLocal}
+:minishift-installation-guide-name: Install and Configure the Launchpad on {OpenShiftLocal}
+:getting-started-guide-name: Getting Started
 
 :MinishiftVersion: v1.0.0-beta.5
 
@@ -38,9 +37,28 @@
 :link-http-api-level-0-vertx-quickstart: https://github.com/openshiftio-vertx-boosters/vertx-http-booster
 :link-http-api-level-0-wf-swarm-quickstart: https://github.com/wildfly-swarm-openshiftio-boosters/rest-http
 :link-openshift-local-guide: https://github.com/minishift/minishift#installation
+
 :link-configmap-spring-boot-tomcat-booster: https://github.com/snowdrop/rest_configmap_springboot-tomcat
 :link-configmap-vertx-booster: https://github.com/openshiftio-vertx-boosters/vertx-configmap-booster
 :link-configmap-wf-swarm-booster: https://github.com/wildfly-swarm-openshiftio-boosters/configmap
+
+:link-launchpad-openshift-local-install-guide: minishift-installation.html
+
+:link-experience-http-api-spring-boot-tomcat: experience-http-api-spring-boot-tomcat.html
+:link-experience-http-api-vertx: experience-http-api-vertx.html
+:link-experience-http-api-wf-swarm: experience-http-api-wf-swarm.html
+
+:link-experience-crud-spring-boot-tomcat: experience-crud-spring-boot-tomcat.html
+:link-experience-crud-vertx: experience-crud-vertx.html
+:link-experience-crud-wf-swarm: experience-crud-wf-swarm.html
+
+:link-experience-configmap-spring-boot-tomcat: experience-configmap-spring-boot-tomcat.html
+:link-experience-configmap-vertx: experience-configmap-vertx.html
+:link-experience-configmap-wf-swarm: experience-configmap-wf-swarm.html
+
+:link-experience-health-check-spring-boot-tomcat: experience-health-check-spring-boot-tomcat.html
+:link-experience-health-check-vertx: experience-health-check-vertx.html
+:link-experience-health-check-wf-swarm: experience-health-check-wf-swarm.html
 
 :link-crud-spring-boot-tomcat-quickstart: https://github.com/obsidian-toaster-quickstarts/rest_jdbc_springboot
 :link-crud-vertx-quickstart: https://github.com/obsidian-toaster-quickstarts/rest_jdbc_vertx

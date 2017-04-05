@@ -1,4 +1,4 @@
-The {ProductShortName} ConfigMap Experience provides a basic example of using ConfigMap to take advantage of external configuration sources. This experience shows you how to:
+The ConfigMap Experience provides a basic example of using ConfigMap to take advantage of external configuration sources. This experience shows you how to:
 
 * Setup and configuration of ConfigMap.
 * Use the configuration provided by ConfigMap within an application.

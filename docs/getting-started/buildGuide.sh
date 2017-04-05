@@ -1,6 +1,6 @@
 
 #Name of the html output file
-GUIDE_HTML_NAME=experience-http-api-wf-swarm.html
+GUIDE_HTML_NAME=getting-started.html
 OUTPUT_DIR=../../html
 
 rm -r $OUTPUT_DIR/images/

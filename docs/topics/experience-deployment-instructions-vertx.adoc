@@ -1,4 +1,4 @@
-= Deploying the {ProductShortName} CRUD Booster Application and Obtaining the Application URL
+= Deploying the CRUD Booster Application and Obtaining the Application URL
 
 You can build and deploy the Vert.x CRUD Booster application to Openshift from source using a Jenkins Conitnuous Integration server instance running in your Openshift project.
 

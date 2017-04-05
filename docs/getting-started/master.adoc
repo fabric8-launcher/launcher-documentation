@@ -1,0 +1,35 @@
+include::topics/templates/document-attributes.adoc[]
+
+:getting-started:
+
+= {getting-started-guide-name}
+
+include::topics/getting-started-intro.adoc[leveloffset=+1]
+
+include::topics/getting-started-install-launchpad-openshift-local.adoc[leveloffset=+1]
+
+== Missions
+
+include::topics/getting-started-mission-intro.adoc[leveloffset=+2]
+
+include::topics/getting-started-launchpad-create-mission.adoc[leveloffset=+2]
+
+include::topics/getting-started-launchpad-launch-mission.adoc[leveloffset=+2]
+
+
+== Runtime Project Frameworks
+include::topics/gettting-started-runtime-project-framework-intro.adoc[leveloffset=+2]
+
+include::topics/getting-started-launchpad-create-runtime-project-framework.adoc[leveloffset=+2]
+
+include::topics/getting-started-launchpad-launch-runtime-project-framework.adoc[leveloffset=+2]
+
+
+include::topics/getting-started-next-steps.adoc[leveloffset=+1]
+
+
+[appendix]
+include::topics/getting-started-available-missions.adoc[leveloffset=+1]
+
+[appendix]
+include::topics/getting-started-available-runtime-project-frameworks.adoc[leveloffset=+1]

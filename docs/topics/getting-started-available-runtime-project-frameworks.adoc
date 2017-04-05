@@ -1,0 +1,8 @@
+[[available-runtime-project-frameworks]]
+= Available Runtime Project Frameworks
+
+{SpringBoot}:: Testing
+
+{VertX}:: Testing
+
+{WildFlySwarm}:: Testing
