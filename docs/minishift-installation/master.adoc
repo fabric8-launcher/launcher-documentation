@@ -1,142 +1,15 @@
 include::topics/templates/document-attributes.adoc[]
 
 :Installing the Launchpad on Minishift:
-:imagesdir: images
 
 = {minishift-installation-guide-name}
 
-This guide will walk you through the process of installing the Launchpad application to run on a local cloud as provisioned by Minishift, an all-in-one VM which includes a community version of OpenShift Origin.
+This guide walks you through the process of installing the _Launchpad_ application to run on a local cloud as provisioned by link:https://www.openshift.org/minishift/[Minishift], an all-in-one VM which includes a community version of OpenShift Origin.
 
-== Creating a GitHub Personal Access Token
+include::topics/minishift-install-prereq.adoc[leveloffset=+1]
 
-Because the Launchpad puts generated starter applications called Boosters into your GitHub namespace, we need to give it access to do so.  GitHub provides a mechanism for us to do this through personal access tokens.  These instructions assume you already have a GitHub account; if not - get one! :)
+include::topics/minishift-install-start-configure-minishift.adoc[leveloffset=+1]
 
-1. Using your browser, navigate to `https://github.com/settings/tokens`.
+include::topics/minishift-install-create-gh-personal-access-token.adoc[leveloffset=+1]
 
-2. Select `Generate new token`.
-
-3. Set a token description, perhaps `Launchpad on Minishift`.
-
-4. Select the following parent scopes and all their children: `repo` and `admin:repo_hook`.
-
-5. Hit `Generate token`.
-
-6. Follow the GitHub guidance: "Make sure to copy your new personal access token now. You won’t be able to see it again!"  Copy the hex code somewhere where we may refer to it later.  If you lose it, no worries, just delete the token we've just created and make a new one using these same instructions.
-
-== Installing Minishift on your system
-
-The Minishift installation instructions are detailed https://github.com/minishift/minishift#installation[here], and because of the virtual machine dependency, is platform-specific.  The rest of this guide assumes you have installed Minishift and its prerequisites, and that the command `minishift status` returns successfully (even if it reports `Stopped`).  Grab a release of `v1.0.0-beta.5` from the releases page as shown in the Minishift documentation, follow the instructions for installation, and test it's available on your system `$PATH`.
-
-== Fire up Minishift
-
-Once installation is done (you'll only have to perform this on your system once), let's fire it up, which in turn will give us a fresh version of OpenShift.  Because the following command will trigger the download of VM and docker images, check your network activity and be advised that this might take a bit.  Again, the longer startup is a one-time thing so long as the VM and docker images remain cached in your user directory.
-
-Execute from the command line:
-
-`minishift start --memory=4096`
-
-Note: You may, depending upon your system setup, need to manually specify an alternative VM driver, for instance like `--vm-driver=virtualbox` (VirtualBox 5.x https://www.virtualbox.org/[installed separately]).  We advise you to accept the default so long as that works for you. On Mac OS X, the xhyve driver is a bit unreliable, although `--vm-driver=virtualbox` is a reliable alternative.
-
-A successful first run here will likely include console logging that looks a little like this:
-
-```
-$ minishift start --memory=4096
-Starting local OpenShift cluster using 'kvm' hypervisor...
-Downloading ISO 'https://github.com/minishift/minishift-b2d-iso/releases/download/v1.0.2/minishift-b2d.iso'
-
- ... boring stuff ...
-
-   OpenShift server started.
-   The server is accessible via web console at:
-       https://192.168.42.152:8443
-
-   You are logged in as:
-       User:     developer
-       Password: developer
-
-   To login as administrator:
-       oc login -u system:admin
-
-```
-
-Wonderful.  We've now got OpenShift running in a single-node cluster on your local machine.  Note that the above output shows we have a web console, in the case of the run above, located at something like `https://192.168.42.152:8443`, and that we can log in as `developer`/`developer`.  Pop open your favorite web browser and do it.
-
-image::minishift_login.png[Login]
-
-You may have to allow your browser to bypass SSL security policies as it tries to protect you from using `HTTPS` without a certificate, shown here in Chrome.
-
-image::minishift_sslwarning.png[SSL warning]
-
-After login, you should be be at the console home.
-
-image::minishift_consolehome.png[OpenShift Console Home]
-
-The default installation has a single project preconfigured; it's OK, we can trash it.  Hit the trash button icon and confirm that it's OK to remove by typing the project's name `myproject` when prompted.
-
-Now we've got a clean installation, ready for us to do some work.
-
-== Create the Launchpad application
-
-First let's create a new OpenShift project to house our Launchpad application.  Hit the `New Project` button.
-
-image::minishift_newproject.png[New Project Button]
-
-Next we'll name our project and, optionally, give it a fancy display name and description.  Let's use the name `launchpad` for this project.
-
-image::minishift_projectconfig.png[New Project Config]
-
-Hit `Create`.
-
-Now that we have a project, a top-level container for our application, it's time to add our services into it.  OpenShift accepts `YAML` templates to describe services to be deployed, and we'll use the Launchpad one here.  Select `Import YAML/JSON`.
-
-image::minishift_yamljson.png[Import YAML/JSON]
-
-Now paste the contents from https://raw.githubusercontent.com/openshiftio/launchpad-templates/master/openshift/launchpad-template.yaml[here] into the TXT box provided.  Note that this template is always the latest development version; for a proper release, replace `master` in the URL with the latest tag available in Git.
-
-We are currently working on getting this template into the Catalog so that you may avoid this step, but for now, this is the process.  Interested parties may monitor progress https://github.com/openshiftio/launchpad-templates/issues/2[on GitHub].
-
-Once pasted, hit `Create`, then `Continue`, selecting only the option to `Process the template`.
-
-image::minishift_processtemplate.png[Process Template]
-
-Now you'll be presented with several options, so let's be careful filling these out.
-
-1. Your GitHub username.
-
-2. You personal access token for GitHub.  Remember setting that up above?  Paste it in here.
-
-3. Local OpenShift API URL.  Be careful here; this must match the output of `minishift console --url`, or you can grab it from your browser's address bar if you leave off the path after the root.  Example: `https://192.168.42.152:8443`.
-
-4. Target OpenShift Console URL.  Same as above.
-
-5. OpenShift user name: `developer`, assuming we logged in as `developer` above.
-
-6. OpenShift password: `developer`, same assumptions as in Step 4.
-
-7. KeyCloak URL and Realm: Leave 'em as-is.  In the Minishift template we're now using, these options will be removed in future versions.
-
-8. Catalog Git Repository: Accept the default, unless if you are an advanced user looking to test a new Catalog for development purposes.
-
-9. Catalog Git Reference: Same as above; accept the default unless you want to point to a particular SHA, branch, or tag.
-
-10. Catalog Index Period: Leave at 0.
-
-11. Launchpad Backend URL: Here we have to be careful.  Replace `PROJECTNAME` default with the project name we'd used above, in our case, `launchpad`.  And also check the IP address in the String is correct (again, can be done by looking at your browser's address bar.  This step will be removed in future versions of the template as well.
-
-12. We're done.  Hit `Create`.
-
-You'll see a screen confirming that the application has been created, and it will invite you to go to the overview.  Once you do, you should see the three services which comprise Launchpad starting up.
-
-image::minishift_launchpad_booting.png[Launchpad booting]
-
-The grey circles reference that the docker images for these services are being pulled down from the network; this is another one-time step that may take some time.  Eventually the circles will turn a light blue to note that they're starting, then a deeper blue to indicate when they're running.  When all services are running, you're ready to use the Launchpad application.  Click the link at the top of all services (the one ending in `nip.io`, and a new browser tab will pop up with the Launchpad.
-
-Congratulations!  You're now running on your local cloud the same service we'll be hosting over at `launch.openshift.io`!
-
-
-
-
-
-
-
-
+include::topics/minishift-install-create-launchpad-app.adoc[leveloffset=+1]

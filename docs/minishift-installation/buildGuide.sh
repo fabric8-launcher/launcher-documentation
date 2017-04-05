@@ -1,5 +1,9 @@
 
 #Name of the html output file
 GUIDE_HTML_NAME=minishift-installation.html
+OUTPUT_DIR=../../html
 
-asciidoctor master.adoc -o ../../html/$GUIDE_HTML_NAME
+rm -r $OUTPUT_DIR/images/
+cp -r topics/images/ $OUTPUT_DIR/images/
+
+asciidoctor master.adoc -o $OUTPUT_DIR/$GUIDE_HTML_NAME

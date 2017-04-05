@@ -1,0 +1,48 @@
+= Create the Launchpad Application
+
+. Click _New Project_ to create a new OpenShift project to house the Launchpad application. 
++
+image::minishift_newproject.png[New Project Button]
+
+. Name the project and optionally provide a description. This example uses `launchpad` for the project's name.
++
+image::minishift_projectconfig.png[New Project Config]
+
+. Click _Create_ to complete the project creation.
+
+. Click _Import YAML/JSON_ to add services to your new project from a template.
++
+image::minishift_yamljson.png[Import YAML/JSON]
+
+. Paste the contents from https://raw.githubusercontent.com/openshiftio/launchpad-templates/master/openshift/launchpad-template.yaml[here] into the text box provided. 
++
+NOTE: The template from this link is always the latest development version. You can replace `master` in this URL with the name of a tag if you want to use a specific release. A full list of tags is available link:https://github.com/openshiftio/launchpad-templates/tags[here]. 
++
+NOTE: We are working on removing this step entirely, but for now it is required. The full details and a current status are available link:https://github.com/openshiftio/launchpad-templates/issues/2[on GitHub].
+
+. Click _Create_, ensure that only the _Process the template_ option is selected, and click _Continue_.
++
+image::minishift_processtemplate.png[Process Template]
+
+. Fill out the following fields. 
+** Your GitHub username.
+** Your personal access token for GitHub
+** The OpenShift Console URL from Minishift. This should be the same base URL you are currently using to complete the form, for example `https://192.168.42.152:8443`.
+** OpenShift username and password from Minishift. 
+** KeyCloak URL and Realm can be left as is.
+** Launchpad Backend URL must be updated to replace `PROJECTNAME` with the name of your project. This example uses `launchpad`. You also need to confirm that the IP address in the string matches your Openshift Console URL.
++
+WARNING: Before proceeding to the next steps, confirm all the fields are correct.
+
+
+. Click `Create` to complete the setup. You will see a screen confirming that the application has been created, and it will invite you to go to the overview.  
+
+. Proceed to the overview page and confirm that the three services for Launchpad are starting up.
++
+image::minishift_launchpad_booting.png[Launchpad booting]
++
+The grey circles reference that the docker images for these services are being pulled down from the network. This is a one time step that may take some time.  Eventually the circles will turn a light blue to note that they are starting, then a deeper blue to indicate when they are running.  
+
+. When all services are running, you are ready to use the Launchpad application.  Click the link at the top of all services, which should end in `nip.io`, and a new browser tab will open with the Launchpad.
+
+You are now running on your local cloud the same service we will be hosting over at `launch.openshift.io`.
