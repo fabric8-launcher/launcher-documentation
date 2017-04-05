@@ -1,0 +1,36 @@
+[[about-crud]]
+= CRUD resources
+
+// content here
+https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
+
+More background and related information on REST can be found here:
+
+* link:https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm[Architectural Styles and
+the Design of Network-based Software Architectures - Representational State Transfer (REST)]
+* link:https://martinfowler.com/articles/richardsonMaturityModel.html[Richardson Maturity Model]
+* link:https://www.jcp.org/en/jsr/detail?id=311[JSR 311: JAX-RS: The JavaTM API for RESTful Web Services]
+
+ifdef::http-api-spring-boot-tomcat[]
+* link:https://spring.io/guides/gs/rest-service/[Building a RESTful Service with Spring]
+endif::http-api-spring-boot-tomcat[]
+
+ifdef::http-api-vertx[]
+* link:http://vertx.io/blog/some-rest-with-vert-x/[Some Rest with Vert.x]
+endif::http-api-vertx[]
+
+ifdef::http-api-wf-swarm[]
+* link:http://resteasy.jboss.org/docs.html[RESTEasy Documentation]
+endif::http-api-wf-swarm[]
+
+ifndef::http-api-spring-boot-tomcat[]
+* link:{link-http-api-level-0-spring-boot-tomcat-quickstart}[HTTP API Rest Level 0 - Spring Boot Tomcat Quickstart]
+endif::http-api-spring-boot-tomcat[]
+
+ifndef::http-api-vertx[]
+* link:{link-http-api-level-0-vertx-quickstart}[HTTP API Rest Level 0 - Vert.x Quickstart]
+endif::http-api-vertx[]
+
+ifndef::http-api-wf-swarm[]
+* link:{link-http-api-level-0-wf-swarm-quickstart}[HTTP API Rest Level 0 - WildFly Swarm Quickstart]
+endif::http-api-wf-swarm[]

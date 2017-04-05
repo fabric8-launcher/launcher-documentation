@@ -1,5 +1,5 @@
 
-[[build_and_deploy_quickstart]]
+[[crud_build_and_deploy_quickstart]]
 = Prerequisite: Deploy Your Quickstart and Determine its Route
 
 Before proceeding, follow the instructions in the `README.md` to deploy your quickstart and determine its URL.
@@ -25,7 +25,7 @@ app1-build                       0/1       Completed   0          1h
 
 Once your quickstart is deployed and started, you can check its route information for the URL to access it.
 
-.Example to Check the Available Routes 
+.Example to Check the Available Routes
 [source,options="nowrap",subs="attributes+"]
 ----
 $ oc get routes

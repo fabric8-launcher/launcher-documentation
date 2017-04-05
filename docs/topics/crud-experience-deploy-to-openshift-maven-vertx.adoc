@@ -1,0 +1,30 @@
+= Deploy the Application to OpenShift using Maven
+
+To deploy the application using Maven, launch:
+
+The first command creates an PostgreSQL database.
+This database is epehemeral, so the data is lost if you stop the database.
+// The data does not persist if the database is stopped.
+
+[source,bash]
+--
+oc new-app \
+ -p POSTGRESQL_USER=luke \
+ -p POSTGRESQL_PASSWORD=secret \
+ -p POSTGRESQL_DATABASE=my_data \
+ -p DATABASE_SERVICE_NAME=my-database \
+ --name=my-database \
+ --template=postgresql-ephemeral
+--
+
+The second command builds and deploys the application to the OpenShift instance on which you are logged in.
+
+// better way to say this?
+The database credentials are stored in an OpenShift secret deployed during the application deployment.
+
+[source,bash]
+--
+mvn fabric8:deploy -Popenshift
+--
+
+Wait for the deployment process to complete.

@@ -1,0 +1,26 @@
+include::topics/templates/document-attributes.adoc[]
+
+//redefine this
+:crud-vertx-experience:
+
+= {experience-crud-vertx-guide-name}
+
+include::topics/crud-experience-intro.adoc[leveloffset=+1]
+
+== Create an CRUD Endpoint with {ProductShortName}
+
+include::topics/crud-experience-deploy-database.adoc[leveloffset=+2]
+
+include::topics/crud-experience-deploy-quickstart.adoc[leveloffset=+2]
+
+include::topics/crud-experience-database-interaction.adoc[leveloffset=+2]
+
+// integration tests
+include::topics/crud-experience-integration-testing.adoc[leveloffset=+2]
+
+// include additional resources
+include::topics/crud-experience-resources.adoc[leveloffset=+1]
+
+////
+TODO:
+////

@@ -1,0 +1,41 @@
+// common topics must start at level H1
+= Prerequisites for the {ProductName} Booster
+
+== Local System Resources Required for {ProductName} Boosters
+
+|===
+|Resource Name | Resource Description | Supported Version | Location
+
+|Oracle Java
+|Software Developers: JDK (Java SE Development Kit). For Java Developers. Includes a complete JRE plus tools for developing, debugging, and monitoring Java applications
+|8.0
+|link:http://www.oracle.com/technetwork/java/javase/downloads/index.html[JDK Download Link^]
+
+|Apache Maven
+|Apache Maven software project management.
+|v. 3.2.0 or later
+|link:https://maven.apache.org/download.cgi?Preferred=ftp://mirror.reverse.net/pub/apache/[Maven Download link^]
+
+|Openshift CLI
+|The Red Hat OpenShift Enterprise CLI provides commands for managing your applications on OpenShift Online.
+|v. 3.3.0 or later
+|link:https://docs.openshift.com/enterprise/3.2/cli_reference/get_started_cli.html[OpenShift Online Documentation^]
+
+|git
+|git version management
+|v. 2.x or later
+|link:https://git-scm.com/book/en/v2/Getting-Started-Installing-Git[Git Documentation^]
+|===
+
+== Web Resources Required for {ProductName} Boosters
+
+To build and deploy this Booster, you need access to:
+
+* an instance of Openshift
+
+* an account on an link:{link-openshift-online-web-console}[OpenShift Online^] instance.
+
+[NOTE]
+--
+If you do not have access, you can create a temporary free user account by signing up for the link:https://www.openshift.com/devpreview/register.html[OpenShift Online Developer Preview^].
+--

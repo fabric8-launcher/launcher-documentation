@@ -1,0 +1,39 @@
+include::topics/templates/document-attributes.adoc[]
+
+//redefine this for srping boot
+:crud-spring-boot-tomcat-experience:
+
+// this name needs to be defined in the attribute file
+= {experience-crud-spring-boot-tomcat-guide-name}
+
+include::topics/crud-experience-intro.adoc[leveloffset=+1]
+
+// design tradeoffs
+
+include::topics/crud-experience-resource-requirements.adoc[leveloffset=+1]
+
+== Create an CRUD Endpoint with {ProductShortName}
+
+// deployment
+include::topics/experience-deploy-quickstart.adoc[leveloffset=+2]
+
+// basic interaction
+//include::topics/OBST-common-deployment-options-openshift-online.adoc[leveloffset=+1]
+
+//modification
+
+//include::topics/OBST-vertx-crud-deploy-to-openshift-maven.adoc[leveloffset=+2]
+
+//Interacting with the database
+//include::topics/OBST-common-crud-database-interaction.adoc[leveloffset=+2]
+
+
+//Interacting with the database
+include::topics/crud-experience-database-interaction.adoc[leveloffset=+2]
+
+// integration tests
+include::topics/crud-experience-integration-testing.adoc[leveloffset=+2]
+
+
+// include additional resources
+include::topics/crud-experience-resources.adoc[leveloffset=+1]

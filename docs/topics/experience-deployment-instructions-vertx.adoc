@@ -1,0 +1,30 @@
+= Deploying the {ProductShortName} CRUD Booster Application and Obtaining the Application URL
+
+You can build and deploy the Vert.x CRUD Booster application to Openshift from source using a Jenkins Conitnuous Integration server instance running in your Openshift project.
+
+. To define the build pipeline for the CRUD application, deploy the Jenkins CI server instance to your project by executing the following command:
++
+[source,bash,option="nowrap"]
+--
+oc new-app -f src/openshift/openshift-pipeline-template.yml
+--
++
+. To start the build, execute the following command:
++
+[source,bash,option="nowrap"]
+--
+oc start-build vertx-crud
+--
++
+. When your application is fully deployed, execute the following command to obtain its path:
++
+[source,bash,option="nowrap"]
+--
+oc get route vertx-crud -o jsonpath={$.spec.host}
+--
++
+This returns the application URL that you can use to access the web interface or interact with the application endpoints:
++
+----
+vertx-crud-crud-experience.int.open.paas.redhat.com
+----

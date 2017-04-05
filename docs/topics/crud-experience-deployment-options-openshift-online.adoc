@@ -1,0 +1,20 @@
+[[common-deploy-to-openshift-online]]
+= Deploying {Booster} to OpenShift Online
+
+// latest token URL: https://api.dev-preview-stg.openshift.com/oauth/token/request
+. Navigate to link:https://api.dev-preview-stg.openshift.com/oauth/token/request[OpenShift Online^] to obtain the token used
+by the `oc` client for authentication and project access.
++
+. Execute the following command, replacing `$MYTOKEN` with the API token previously obtained from the Web Console:
++
+[source,bash,option="nowrap"]
+--
+oc login https://api.dev-preview-int.openshift.com --token=$MYTOKEN
+--
++
+. To check that you have a project on your OpenShift instance, execute the command `oc get projects`. If this returns an error, execute the following command to create a new project:
++
+[source,bash,option="nowrap"]
+--
+oc new-project myproject
+--

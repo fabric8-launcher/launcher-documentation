@@ -1,0 +1,12 @@
+[[crud-integration-testing]]
+= Running Integration Tests
+
+This booster contains a set of integration tests.
+To run them, you must be connected to an OpenShift instance and select the project that contains your CRUD application and database.
+
+To run the integration tests, execute the following command:
+
+[source,bash,option="nowrap"]
+--
+mvn clean verify -Popenshift -Popenshift-it
+--
