@@ -1,0 +1,66 @@
+apiVersion: v1
+kind: Template
+metadata:
+  name: pipeline
+  annotations:
+    description: 'This template creates a Build Configuration that uses a Jenkins pipeline
+      strategy. '
+    iconClass: icon-jenkins
+    tags: instant-app,jenkins
+
+parameters:
+- name: PROJECT
+  description: The name assigned to all of the application objects defined in this template.
+  displayName: Application Name
+  required: true
+  value: jenkins
+- name: GIT_SOURCE_URL
+  description: The source URL for the application
+  displayName: Source URL
+  required: true
+  value: https://github.com/openshiftio/appdev-documentation.git
+- name: GIT_SOURCE_REF
+  description: The source Ref for the application
+  displayName: Source Ref
+  required: true
+  value: master
+- description: A secret string used to configure the GitHub webhook.
+  displayName: GitHub Webhook Secret
+  from: '[a-zA-Z0-9]{40}'
+  generate: expression
+  name: GITHUB_WEBHOOK_SECRET
+  required: true
+
+objects:
+- apiVersion: v1
+  kind: BuildConfig
+  metadata:
+    name: ${PROJECT}
+    annotations:
+      pipeline.alpha.openshift.io/uses: '[{"name": "jenkins", "namespace": "", "kind":
+        "DeploymentConfig"}]'
+  spec:
+    triggers:
+    - type: ConfigChange
+    - type: GitHub
+      github:
+        secret: "${GITHUB_WEBHOOK_SECRET}"
+    source:
+      git:
+        ref: ${GIT_SOURCE_REF}
+        uri: ${GIT_SOURCE_URL}
+    strategy:
+      jenkinsPipelineStrategy:
+        jenkinsfilePath: ci/Jenkinsfile
+      type: JenkinsPipeline
+
+- apiVersion: v1
+  kind: ImageStream
+  metadata:
+    name: docsbuilder-maven
+    annotations:
+      openshift.io/display-name: 'appdev.openshift.io Documentation Builder Jenkins Slave'
+    labels:
+      role: jenkins-slave
+  spec:
+    dockerImageRepository: openshiftio/appdev-documentation-builder
