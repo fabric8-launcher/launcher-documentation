@@ -29,11 +29,12 @@ image::minishift_processtemplate.png[Process Template]
 ** Your personal access token for GitHub
 ** The OpenShift Console URL from Minishift. This should be the same base URL you are currently using to complete the form, for example `https://192.168.42.152:8443`.
 ** OpenShift username and password from Minishift. 
-** KeyCloak URL and Realm can be left as is.
+** KeyCloak URL and Realm should be cleared out
+** Catalog Git Repository and `gitref` should be generally left as-is, unless you are developing against a specific fork you'd like to use.
+** Catalog index period may be left to 0 unless you'd like the catalog to index at some interval in minutes.
 ** Launchpad Backend URL must be updated to replace `PROJECTNAME` with the name of your project. This example uses `launchpad`. You also need to confirm that the IP address in the string matches your Openshift Console URL.
 +
 WARNING: Before proceeding to the next steps, confirm all the fields are correct.
-
 
 . Click `Create` to complete the setup. You will see a screen confirming that the application has been created, and it will invite you to go to the overview.  
 
