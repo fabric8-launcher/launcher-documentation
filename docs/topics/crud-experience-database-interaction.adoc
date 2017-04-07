@@ -5,20 +5,26 @@
 +
 [source,bash,options="nowrap",subs="attributes+"]
 --
-oc get route <APPLICATION_NAME> -o jsonpath={$.spec.host}
+oc get route {app-name} -o jsonpath={$.spec.host}
 --
 +
+[source,option="nowrap",subs="attributes+"]
 ----
 NAME                  HOST/PORT               PATH       SERVICE                  TERMINATION   LABELS
-{app-name}    {app-name}-myproject.192.168.99.100.nip.io                  {app-name}:
+{app-name}    {app-name}-myproject.192.168.99.100.nip.io                  {app-name}
 ----
 
-. To access the web interface of the database application, navigate to the _application URL_ in your browser: `++http://{app-name}-myproject.192.168.99.100.nip.io++`.
+. To access the web interface of the database application, navigate to the _application URL_ in your browser:
+
+[source,bash,subs="attributes+"]
+--
+http://{app-name}-myproject.192.168.99.100.nip.io
+--
 +
 Alternatively, you can make requests directly on the `api/fruits/*` endpoint using `curl` or `http`:
 +
 .List all entries in the database:
-[source,bash,subs="attributes+""]
+[source,bash,subs="attributes+"]
 --
 http http://{app-name}-myproject.192.168.99.100.nip.io/api/fruits
 --

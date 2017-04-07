@@ -2,7 +2,7 @@ include::topics/templates/document-attributes.adoc[]
 
 //redefine this
 :crud-wf-swarm-experience:
-
+:app-name: wildfly-swarm-crud
 // this name needs to be defined in the attribute file
 = {experience-crud-wf-swarm-guide-name}
 //{crud-wf-swarm-rest-quickstart-guide-name}
@@ -10,24 +10,12 @@ include::topics/templates/document-attributes.adoc[]
 include::topics/crud-experience-intro.adoc[leveloffset=+1]
 
 // design tradeoffs
-
-include::topics/crud-experience-resource-requirements.adoc[leveloffset=+1]
+include::topics/crud-experience-design-tradeoffs.adoc[leveloffset=+1]
 
 == Create an CRUD Endpoint with {ProductShortName}
 
 // deployment
 include::topics/experience-deploy-quickstart.adoc[leveloffset=+2]
-
-// basic interaction
-//include::topics/OBST-common-deployment-options-openshift-online.adoc[leveloffset=+1]
-
-//modification
-
-//include::topics/OBST-vertx-crud-deploy-to-openshift-maven.adoc[leveloffset=+2]
-
-//Interacting with the database
-//include::topics/OBST-common-crud-database-interaction.adoc[leveloffset=+2]
-
 
 //Interacting with the database
 include::topics/crud-experience-database-interaction.adoc[leveloffset=+2]

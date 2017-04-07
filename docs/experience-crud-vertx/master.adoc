@@ -2,10 +2,14 @@ include::topics/templates/document-attributes.adoc[]
 
 //redefine this
 :crud-vertx-experience:
+:app-name: vertx-crud
+:vertx-runtime-name: Vert.x
 
 = {experience-crud-vertx-guide-name}
 
 include::topics/crud-experience-intro.adoc[leveloffset=+1]
+
+include::topics/crud-experience-design-tradeoffs.adoc[leveloffset=+1]
 
 == Create an CRUD Endpoint with {ProductShortName}
 
@@ -15,7 +19,6 @@ include::topics/crud-experience-deploy-quickstart.adoc[leveloffset=+2]
 
 include::topics/crud-experience-database-interaction.adoc[leveloffset=+2]
 
-// integration tests
 include::topics/crud-experience-integration-testing.adoc[leveloffset=+2]
 
 // include additional resources
