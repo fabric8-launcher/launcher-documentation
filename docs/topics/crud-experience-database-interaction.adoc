@@ -15,7 +15,7 @@ NAME                  HOST/PORT               PATH       SERVICE                
 ----
 
 . To access the web interface of the database application, navigate to the _application URL_ in your browser:
-
++
 [source,bash,subs="attributes+"]
 --
 http://{app-name}-myproject.192.168.99.100.nip.io
