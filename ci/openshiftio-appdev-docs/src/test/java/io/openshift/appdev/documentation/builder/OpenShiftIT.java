@@ -36,14 +36,14 @@ public class OpenShiftIT {
         assistant.awaitApplicationReadinessOrFail();
         // Check that the route is served.
         await().atMost(5, TimeUnit.MINUTES).catchUncaughtExceptions().until(() -> get().getStatusCode() < 500);
-        await().atMost(5, TimeUnit.MINUTES).catchUncaughtExceptions().until(() -> get("/")
+        await().atMost(5, TimeUnit.MINUTES).catchUncaughtExceptions().until(() -> get("/health")
             .getStatusCode() < 500);
 
     }
 
     @Test
     public void testThatWeServeAsExpected() throws MalformedURLException {
-        get("/").then().statusCode(equalTo(200));
+        get("/health").then().statusCode(equalTo(200));
     }
 
 }

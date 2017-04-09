@@ -28,6 +28,7 @@ public class HttpApplication extends AbstractVerticle {
     // Create a router object.
     Router router = Router.router(vertx);
 
+    router.get("/health").handler(rc -> rc.response().end("OK"));
     router.get("/*").handler(StaticHandler.create().setDirectoryListing(true));
 
     // Create the HTTP server and pass the "accept" method to the request handler.

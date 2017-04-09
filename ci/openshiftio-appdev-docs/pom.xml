@@ -188,6 +188,18 @@
                 </goals>
               </execution>
             </executions>
+            <configuration>
+              <enricher>
+                <includes>
+                  <include>vertx-health-check</include>
+                </includes>
+                <config>
+                  <vertx-health-check>
+                    <path>/health</path>
+                  </vertx-health-check>
+                </config>
+              </enricher>
+            </configuration>
           </plugin>
         </plugins>
       </build>

@@ -48,13 +48,14 @@ public class HttpApplicationTest {
     }
 
     @Test
-    public void getGetIndex(TestContext context) {
+    public void getHealth(TestContext context) {
         // Send a request and get a response
         Async async = context.async();
-        client.get(8080, "localhost", "/")
+        client.get(8080, "localhost", "/health")
             .send(resp -> {
                     assertThat(resp.succeeded()).isTrue();
                     assertThat(resp.result().statusCode()).isEqualTo(200);
+                    async.complete();
             });
     }
 
