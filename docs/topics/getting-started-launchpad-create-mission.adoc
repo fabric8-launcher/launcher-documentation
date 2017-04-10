@@ -6,7 +6,7 @@ After you have the Launchpad running on {OpenShiftLocal}, you can use it to crea
 To create a mission:
 
 . Navigate to the Launchpad using your browser.
-. Select _Begin by selecting a functional quickstart_ and click _Next_.
+. Select _Begin by selecting a functional booster_ and click _Next_.
 . Choose the booster you would like to run from the dropdown. Each booster illustrates a concept and has a specific runtime configured. You can come back to the Launchpad later and try another booster. 
 . You may update any of the pre-filled details or leave them with the default details. Click _Finish_.
 

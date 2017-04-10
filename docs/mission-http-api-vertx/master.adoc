@@ -1,0 +1,19 @@
+include::topics/templates/document-attributes.adoc[]
+
+:http-api-vertx:
+:app-name: vertx-rest
+
+= {mission-http-api-vertx-guide-name}
+
+include::topics/rest-level-0-mission-intro.adoc[leveloffset=+1]
+
+include::topics/rest-level-0-mission-design-tradeoffs.adoc[leveloffset=+1]
+
+== Create an HTTP Endpoint
+
+include::topics/rest-level-0-mission-deploy-booster.adoc[leveloffset=+2]
+
+include::topics/rest-level-0-mission-basic-interaction-vertx.adoc[leveloffset=+2]
+
+//level 2
+include::topics/rest-level-0-mission-resources.adoc[leveloffset=+1]

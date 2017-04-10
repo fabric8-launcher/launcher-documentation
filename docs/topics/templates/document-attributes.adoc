@@ -14,28 +14,28 @@
 :SpringBoot: Spring Boot Tomcat
 :VertX: Vert.x
 
-:experience-http-api-spring-boot-tomcat-guide-name: HTTP API Level 0 Experience - {SpringBoot}
-:experience-http-api-vertx-guide-name: HTTP API Level 0 Experience - {VertX}
-:experience-http-api-wf-swarm-guide-name: HTTP API Level 0 Experience - {WildFlySwarm}
-:experience-configmap-spring-boot-tomcat-guide-name: ConfigMap Experience - {SpringBoot}
-:experience-configmap-vertx-guide-name: ConfigMap Experience - {VertX}
-:experience-configmap-wf-swarm-guide-name: ConfigMap Experience - {WildFlySwarm}
-:experience-health-check-spring-boot-tomcat-guide-name: Health Check Mission - {SpringBoot}
-:experience-health-check-vertx-guide-name: Health Check Mission - {VertX}
-:experience-health-check-wf-swarm-guide-name: Health Check Mission - {WildFlySwarm}
+:mission-http-api-spring-boot-tomcat-guide-name: HTTP API Level 0 Mission - {SpringBoot}
+:mission-http-api-vertx-guide-name: HTTP API Level 0 Mission - {VertX}
+:mission-http-api-wf-swarm-guide-name: HTTP API Level 0 Mission - {WildFlySwarm}
+:mission-configmap-spring-boot-tomcat-guide-name: ConfigMap Mission - {SpringBoot}
+:mission-configmap-vertx-guide-name: ConfigMap Mission - {VertX}
+:mission-configmap-wf-swarm-guide-name: ConfigMap Mission - {WildFlySwarm}
+:mission-health-check-spring-boot-tomcat-guide-name: Health Check Mission - {SpringBoot}
+:mission-health-check-vertx-guide-name: Health Check Mission - {VertX}
+:mission-health-check-wf-swarm-guide-name: Health Check Mission - {WildFlySwarm}
 :openshift-local-guide-name: Install and Configure {OpenShiftLocal}
 :minishift-installation-guide-name: Install and Configure the Launchpad on {OpenShiftLocal}
 :getting-started-guide-name: Getting Started
 
 :MinishiftVersion: v1.0.0-beta.5
 
-:experience-crud-spring-boot-tomcat-guide-name: CRUD Experience - {SpringBoot}
-:experience-crud-vertx-guide-name: CRUD Experience - {VertX}
-:experience-crud-wf-swarm-guide-name: CRUD Experience - {WildFlySwarm}
+:mission-crud-spring-boot-tomcat-guide-name: CRUD Mission - {SpringBoot}
+:mission-crud-vertx-guide-name: CRUD Mission - {VertX}
+:mission-crud-wf-swarm-guide-name: CRUD Mission - {WildFlySwarm}
 
-:link-http-api-level-0-spring-boot-tomcat-quickstart: https://github.com/snowdrop/rest_springboot-tomcat
-:link-http-api-level-0-vertx-quickstart: https://github.com/openshiftio-vertx-boosters/vertx-http-booster
-:link-http-api-level-0-wf-swarm-quickstart: https://github.com/wildfly-swarm-openshiftio-boosters/rest-http
+:link-http-api-level-0-spring-boot-tomcat-booster: https://github.com/snowdrop/rest_springboot-tomcat
+:link-http-api-level-0-vertx-booster: https://github.com/openshiftio-vertx-boosters/vertx-http-booster
+:link-http-api-level-0-wf-swarm-booster: https://github.com/wildfly-swarm-openshiftio-boosters/rest-http
 :link-openshift-local-guide: https://github.com/minishift/minishift#installation
 
 :link-configmap-spring-boot-tomcat-booster: https://github.com/snowdrop/rest_configmap_springboot-tomcat
@@ -43,26 +43,23 @@
 :link-configmap-wf-swarm-booster: https://github.com/wildfly-swarm-openshiftio-boosters/configmap
 
 :link-launchpad-openshift-local-install-guide: minishift-installation.html
+:link-getting-started-guide: getting-started.html
 
-:link-experience-http-api-spring-boot-tomcat: experience-http-api-spring-boot-tomcat.html
-:link-experience-http-api-vertx: experience-http-api-vertx.html
-:link-experience-http-api-wf-swarm: experience-http-api-wf-swarm.html
+:link-mission-http-api-spring-boot-tomcat: mission-http-api-spring-boot-tomcat.html
+:link-mission-http-api-vertx: mission-http-api-vertx.html
+:link-mission-http-api-wf-swarm: mission-http-api-wf-swarm.html
 
-:link-experience-crud-spring-boot-tomcat: experience-crud-spring-boot-tomcat.html
-:link-experience-crud-vertx: experience-crud-vertx.html
-:link-experience-crud-wf-swarm: experience-crud-wf-swarm.html
+:link-mission-crud-spring-boot-tomcat: mission-crud-spring-boot-tomcat.html
+:link-mission-crud-vertx: mission-crud-vertx.html
+:link-mission-crud-wf-swarm: mission-crud-wf-swarm.html
 
-:link-experience-configmap-spring-boot-tomcat: experience-configmap-spring-boot-tomcat.html
-:link-experience-configmap-vertx: experience-configmap-vertx.html
-:link-experience-configmap-wf-swarm: experience-configmap-wf-swarm.html
+:link-mission-configmap-spring-boot-tomcat: mission-configmap-spring-boot-tomcat.html
+:link-mission-configmap-vertx: mission-configmap-vertx.html
+:link-mission-configmap-wf-swarm: mission-configmap-wf-swarm.html
 
-:link-experience-health-check-spring-boot-tomcat: experience-health-check-spring-boot-tomcat.html
-:link-experience-health-check-vertx: experience-health-check-vertx.html
-:link-experience-health-check-wf-swarm: experience-health-check-wf-swarm.html
-
-:link-crud-spring-boot-tomcat-quickstart: https://github.com/obsidian-toaster-quickstarts/rest_jdbc_springboot
-:link-crud-vertx-quickstart: https://github.com/obsidian-toaster-quickstarts/rest_jdbc_vertx
-:link-crud-wf-swarm-quickstart: https://github.com/obsidian-toaster-quickstarts/rest_jdbc_swarm
+:link-mission-health-check-spring-boot-tomcat: mission-health-check-spring-boot-tomcat.html
+:link-mission-health-check-vertx: mission-health-check-vertx.html
+:link-mission-health-check-wf-swarm: mission-health-check-wf-swarm.html
 
 :link-oso-console-cli-token: https://console.dev-preview-int.openshift.com/console/command-line
 :link-oso-auth: https://api.preview.openshift.com

@@ -1,0 +1,19 @@
+= Interact with the Unmodified {SpringBoot} Booster
+
+The booster provides a default HTTP endpoint that accepts GET requests.
+
+. Use `curl` to execute a `GET` request against the booster. You can also use a browser to do this.
++
+[source,options="nowrap",subs="attributes+"]
+----
+$ curl http://{app-name}-myproject.192.168.99.100.nip.io/greeting
+{"content":"Hello, World!"}
+----
+
+. Use `curl` to execute a `GET` request with the `name` URL parameter against the booster. You can also use a browser to do this.
++
+[source,options="nowrap",subs="attributes+"]
+----
+$ curl http://{app-name}-myproject.192.168.99.100.nip.io/greeting?name=Sarah
+{"content":"Hello, Sarah!"}
+----

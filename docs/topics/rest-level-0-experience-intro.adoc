@@ -1,8 +1,0 @@
-The API Level 0 Experience provides a basic example of mapping business operations to a remote procedure call endpoint over HTTP using a REST framework. This corresponds to link:https://martinfowler.com/articles/richardsonMaturityModel.html#level0[Level 0 in the Richardson Maturity Model]. Creating an HTTP endpoint using REST and its underlying principals to define your API enables you to quickly prototype and design your API in a flexible manner. More background information on REST is available in xref:about_rest[].
-
-This is an introduction to the mechanics of opening a service that is called remotely. Specifically, this quickstart is an application that allows a user to:
-
-* Execute an HTTP `GET` request on the `greeting` endpoint.
-* Receive a response in JSON format with a payload consisting of the `Hello, World!` String.
-* Execute an HTTP `GET` request on the `greeting` endpoint while passing in a String argument. This uses the `name` request parameter in the query string.
-* Receive a response in JSON format with a payload of `Hello, $name!` with `$name` replaced by the value of the `name` parameter passed into the request.

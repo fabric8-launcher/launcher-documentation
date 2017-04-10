@@ -1,0 +1,15 @@
+include::topics/templates/document-attributes.adoc[]
+
+:health-check-wf-swarm:
+
+= {mission-health-check-wf-swarm-guide-name}
+include::topics/health-check-mission-intro.adoc[leveloffset=+1]
+
+== Create an HTTP Endpoint with a Health Check
+
+include::topics/health-check-mission-deploy-booster.adoc[leveloffset=+2]
+
+include::topics/health-check-mission-basic-interaction-wf-swarm.adoc[leveloffset=+2]
+
+//level 2
+include::topics/health-check-mission-resources.adoc[leveloffset=+1]

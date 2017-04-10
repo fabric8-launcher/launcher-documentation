@@ -1,0 +1,3 @@
+= Deploy Using the Launchpad
+
+Once you have the Launchpad link:{link-launchpad-openshift-local-install-guide}[installed an configured], you can use it to link:{link-getting-started-guide}#launchpad-create-mission[create and deploy missions] to {OpenShiftLocal}.

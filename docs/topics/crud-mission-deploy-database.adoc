@@ -1,0 +1,12 @@
+[[mission-crud-deploy-database]]
+= Deploying the Database
+
+You must have a PostgreSQL database deployed to you OpenShift project for the CRUD API to function properly.
+
+To deploy the database to your project, execute the following command:
+
+[source,bash,option="nowrap"]
+--
+oc new-app -p POSTGRESQL_USER=luke -p POSTGRESQL_PASSWORD=secret -p POSTGRESQL_DATABASE=my_data -p DATABASE_SERVICE_NAME=my-database --name=my-database --template=postgresql-ephemeral
+--
+//mvn fabric8:deploy -Popenshift
