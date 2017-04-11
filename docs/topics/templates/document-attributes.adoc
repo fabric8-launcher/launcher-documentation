@@ -1,6 +1,8 @@
 :toc:
 :toclevels: 4
 :numbered:
+:docinfodir: topics/styles
+:docinfo1: 
 
 :imagesdir: images
 
