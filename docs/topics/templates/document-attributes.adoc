@@ -26,6 +26,7 @@
 :openshift-local-guide-name: Install and Configure {OpenShiftLocal}
 :minishift-installation-guide-name: Install and Configure the Launchpad on {OpenShiftLocal}
 :getting-started-guide-name: Getting Started
+:landing-page-name: Welcome
 
 :MinishiftVersion: v1.0.0-beta.5
 

@@ -1,0 +1,7 @@
+include::topics/templates/document-attributes.adoc[]
+
+:landing-page:
+
+= {landing-page-name}
+
+Take a look at the link:{link-getting-started-guide}[{getting-started-guide-name}] to get started using the Launchpad to launch missions.
