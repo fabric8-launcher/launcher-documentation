@@ -1,6 +1,4 @@
-= Update your Mission
-
-== Update Using Continuous Delivery
+= Update Using Continuous Delivery
 
 This approach allows you to deploy updates directly from the GitHub repository created by the Launchpad. 
 

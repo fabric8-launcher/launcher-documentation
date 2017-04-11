@@ -14,7 +14,7 @@ include::booster-deploy-launchpad-openshift-local.adoc[leveloffset=+2]
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc login {link-oso-auth} --token=MYTOKEN
+$ oc login {link-osl-auth} --token=MYTOKEN
 ----
 
 . Create a new project in {OpenShiftLocal}.

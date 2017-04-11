@@ -68,4 +68,6 @@
 
 :link-oso-console-cli-token: https://console.dev-preview-int.openshift.com/console/command-line
 :link-oso-auth: https://api.preview.openshift.com
+:link-osl-auth: {OpenShiftLocal}_URL
+
 :link-rhsso: https://github.com/obsidian-toaster-quickstarts/redhat-sso
