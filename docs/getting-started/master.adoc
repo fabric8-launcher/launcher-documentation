@@ -16,6 +16,8 @@ include::topics/getting-started-launchpad-create-mission.adoc[leveloffset=+2]
 
 include::topics/getting-started-launchpad-launch-mission.adoc[leveloffset=+2]
 
+include::topics/getting-started-launchpad-update-mission.adoc[leveloffset=+2]
+
 
 == Runtime Project Frameworks
 include::topics/gettting-started-runtime-project-framework-intro.adoc[leveloffset=+2]
