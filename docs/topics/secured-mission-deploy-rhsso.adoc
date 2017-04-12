@@ -4,7 +4,9 @@
 Before you can use {OpenShiftLocal}, you need to have it installed, configured, and running.
 You can find details on installing {OpenShiftLocal} for your platform in link:{link-openshift-local-guide}[{openshift-local-guide-name}].
 
-NOTE: You must use a different boot iso image than the default in order for RH SSO to startup.
+NOTE: You only need to do this once for any of the secured booster missions. They can share the same RH SSO/{OpenShiftLocal} setup.
+
+NOTE: You must use a different boot iso image than the default in order for RH SSO to startup:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----

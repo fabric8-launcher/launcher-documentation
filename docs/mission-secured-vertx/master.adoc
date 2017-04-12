@@ -1,0 +1,43 @@
+include::topics/templates/document-attributes.adoc[]
+
+:secured-vertx-mission:
+:app-name: vertx-secured
+:runtime-name: {VertX}
+
+= {mission-secured-vertx-guide-name}
+
+include::topics/secured-mission-intro.adoc[leveloffset=+1]
+
+
+The configuration of the adapter is defined within the `/app/src/main/fabric8/template.yml` file using these properties:
+[source,yaml]
+----
+- description: The URL for the SSO server (e.g. https://secure-sso-myproject.example.com/auth).  This
+    is the URL through which the user will be redirected when a login or token is
+    required by the application.
+  name: SSO_AUTH_SERVER_URL
+  value: ${SSO_AUTH_SERVER_URL}
+  required: true
+- description: The RH-SSO realm to be used.
+  name: REALM
+  value: master
+  required: true
+- description: Realm's public key.
+  name: REALM_PUBLIC_KEY
+  value: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoETnPmN55xBJjRzN/cs30OzJ9olkteLVNRjzdTxFOyRtS2ovDfzdhhO9XzUcTMbIsCOAZtSt8K+6yvBXypOSYvI75EUdypmkcK1KoptqY5KEBQ1KwhWuP7IWQ0fshUwD6jI1QWDfGxfM/h34FvEn/0tJ71xN2P8TI2YanwuDZgosdobx/PAvlGREBGuk4BgmexTOkAdnFxIUQcCkiEZ2C41uCrxiS4CEe5OX91aK9HKZV4ZJX6vnqMHmdDnsMdO+UFtxOBYZio+a1jP4W3d7J5fGeiOaXjQCOpivKnP2yU2DPdWmDMyVb67l8DRA+jh0OJFKZ5H2fNgE3II59vdsRwIDAQAB
+  required: true
+- description: RH-SSO client id.
+  name: CLIENT_ID
+  value: demoapp
+  required: true
+----
+
+When you deploy the Booster, you will specify the value for the SSO_AUTH_SERVER_URL
+property based on the URL assigned to the RH SSO when you
+go through the <<SSO_AUTH_SERVER_URL>> step of <<mission-secured-deploy-rhsso>>.
+
+include::topics/secured-mission-deploy-rhsso.adoc[leveloffset=+1]
+
+include::topics/secured-mission-deploy-booster.adoc[leveloffset=+1]
+
+include::topics/secured-mission-basic-interction.adoc[leveloffset=+1]
