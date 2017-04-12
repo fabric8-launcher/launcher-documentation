@@ -14,9 +14,7 @@ image::minishift_projectconfig.png[New Project Config]
 +
 image::minishift_yamljson.png[Import YAML/JSON]
 
-. Paste the contents from https://raw.githubusercontent.com/openshiftio/launchpad-templates/master/openshift/launchpad-template.yaml[here] into the text box provided. 
-+
-NOTE: The template from this link is always the latest development version. You can replace `master` in this URL with the name of a tag if you want to use a specific release. A full list of tags is available link:https://github.com/openshiftio/launchpad-templates/tags[here]. 
+. Paste the contents from link:{link-launchpad-yaml}[here] into the text box provided. 
 +
 NOTE: We are working on removing this step entirely, but for now it is required. The full details and a current status are available link:https://github.com/openshiftio/launchpad-templates/issues/2[on GitHub].
 
