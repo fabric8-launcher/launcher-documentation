@@ -21,19 +21,9 @@ include::topics/getting-started-launchpad-launch-mission.adoc[leveloffset=+2]
 include::topics/getting-started-launchpad-update-mission-cd.adoc[leveloffset=+3]
 include::topics/getting-started-launchpad-update-mission-manual.adoc[leveloffset=+3]
 
-== Runtime Project Frameworks
-include::topics/gettting-started-runtime-project-framework-intro.adoc[leveloffset=+2]
-
-include::topics/getting-started-launchpad-create-runtime-project-framework.adoc[leveloffset=+2]
-
-include::topics/getting-started-launchpad-launch-runtime-project-framework.adoc[leveloffset=+2]
-
 
 include::topics/getting-started-next-steps.adoc[leveloffset=+1]
 
 
 [appendix]
 include::topics/getting-started-available-missions.adoc[leveloffset=+1]
-
-[appendix]
-include::topics/getting-started-available-runtime-project-frameworks.adoc[leveloffset=+1]
