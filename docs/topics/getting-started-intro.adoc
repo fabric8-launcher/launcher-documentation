@@ -1,1 +1,1 @@
-About 
+This guide takes you through setting up and configuring the Launchpad to create and deploy mission booster applications.
