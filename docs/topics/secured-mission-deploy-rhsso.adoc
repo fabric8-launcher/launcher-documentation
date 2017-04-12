@@ -1,0 +1,38 @@
+[[mission-secured-deploy-rhsso]]
+= Deploy RH SSO to {OpenShiftLocal}
+
+Before you can use {OpenShiftLocal}, you need to have it installed, configured, and running.
+You can find details on installing {OpenShiftLocal} for your platform in link:{link-openshift-local-guide}[{openshift-local-guide-name}].
+
+NOTE: You must use a different boot iso image than the default in order for RH SSO to startup.
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+minishift start --memory=6000 --vm-driver=virtualbox --iso-url=https://github.com/minishift/minishift-centos-iso/releases/download/v1.0.0-rc.4/minishift-centos7.iso
+----
+
+== Deploy the SSO server.
+
+From the sso directory of this Booster project, simply run the following command:
+[source,shell]
+----
+mvn fabric8:deploy
+----
+
+[[SSO_AUTH_SERVER_URL]]
+== Determine the SSO_AUTH_SERVER_URL value
+For each of the secured REST quick starts, you will need to configure the RH SSO authorization endpoint. This project
+contains a command line program that you can run to determine this information. It was built when you deployed the
+RH SSO server, so you can now run the program using:
+
+[source,shell]
+----
+[sso 698]$ java -jar target/sso-client.jar --displaySSOURL
+Successful oc get routes: Yes
+Using auth server URL: https://secure-sso-sso.e8ca.engint.openshiftapps.com/auth
+Available application endpoint names: [secured-vertx-rest, secured-swarm-rest, secured-springboot-rest]
+
+The line starting with *"Using auth server URL:"* is the line that provides the SSO_AUTH_SERVER_URL. In this case it is
+'https://secure-sso-sso.e8ca.engint.openshiftapps.com/auth'. Save that someplace and proceed with deploying one of the
+secured REST quick starts.
+----

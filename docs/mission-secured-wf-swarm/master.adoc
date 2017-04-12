@@ -1,0 +1,35 @@
+include::topics/templates/document-attributes.adoc[]
+
+:secured-wf-swarm-mission:
+:app-name: wildfly-swarm-secured
+:runtime-name: {WildFlySwarm}
+
+= {mission-secured-wf-swarm-guide-name}
+
+include::topics/secured-mission-intro.adoc[leveloffset=+1]
+
+
+The configuration of the adapter is defined within the `app/src/main/webapp/WEB-INF/keycloak.json` file using these properties:
+[source,json]
+----
+{
+  "realm": "${sso.realm:master}",
+  "resource": "${sso.clientId:secured-swarm-endpoint}",
+  "realm-public-key": "${sso.realm.public.key:MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoETnPmN55xBJjRzN/cs30OzJ9olkteLVNRjzdTxFOyRtS2ovDfzdhhO9XzUcTMbIsCOAZtSt8K+6yvBXypOSYvI75EUdypmkcK1KoptqY5KEBQ1KwhWuP7IWQ0fshUwD6jI1QWDfGxfM/h34FvEn/0tJ71xN2P8TI2YanwuDZgosdobx/PAvlGREBGuk4BgmexTOkAdnFxIUQcCkiEZ2C41uCrxiS4CEe5OX91aK9HKZV4ZJX6vnqMHmdDnsMdO+UFtxOBYZio+a1jP4W3d7J5fGeiOaXjQCOpivKnP2yU2DPdWmDMyVb67l8DRA+jh0OJFKZ5H2fNgE3II59vdsRwIDAQAB}",
+  "auth-server-url": "${sso.auth.server.url:http://localhost:8180/auth}",
+  "ssl-required": "external",
+  "disable-trust-manager": true,
+  "bearer-only": true,
+  "use-resource-role-mappings": true
+}
+----
+
+When you deploy the Booster, you will specify the value for the sso.auth.server.url
+property based on the URL assigned to the RH SSO when you
+go through the <<SSO_AUTH_SERVER_URL>> step of <<mission-secured-deploy-rhsso>>.
+
+include::topics/secured-mission-deploy-rhsso.adoc[leveloffset=+1]
+
+include::topics/secured-mission-deploy-booster.adoc[leveloffset=+1]
+
+include::topics/secured-mission-basic-interction.adoc[leveloffset=+1]

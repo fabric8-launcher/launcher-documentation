@@ -1,0 +1,129 @@
+The Secured application Booster expands on the HTTP API Booster to illustrate securing a REST endpoint using Red Hat SSO.
+
+= Project Structure
+The Booster project is split into two Apache Maven modules - `app` and `sso`.
+The `app` module exposes the REST Service using {runtime-name}.
+The `sso` module is a submodule link to the [redhat-sso](https://github.com/obsidian-toaster-quickstarts/redhat-sso) project
+ that contains the OpenShift objects required to deploy the Red Hat SSO Server 7.0 as well as a Java command line client
+ driver to test access to the secured endpoint.
+
+The goal of this project is to deploy the Booster in an {OpenShiftLocal} environment.
+
+= Red Hat SSO
+
+
+== Realm Model
+The JSON description of the RH SSO master realm that we deploy in this Booster can be found in the
+src/resources/master.json file of the {link-rhsso}[RH SSO Booster]. There are 4 pre-configured application client definitions that model the command line
+client and the 3 REST secured endpoints. There are also two pre-configured users in the RH SSO master realm that can be
+used to validate various authentication and authorization outcomes; admin and alice.
+
+=== The Application Clients
+The OAuth2.0 specification that RH SSO supports has the notion of application clients that access secured resources on
+behalf of resource owners. The master realm has 4 application clients defined.
+
+
+==== The demoapp Client
+This is a confidential type client with a client secret that is used to obtain an access token that contains grants
+for the alice user which enable alice to access the {WildFlySwarm}, {VertX} and {SpringBoot} based
+REST Booster deployments.
+
+==== The secured-swarm-endpoint Client
+The secured-swarm-endpoint is a bearer-only type of client that requires a swarm-admin role for accessing the
+associated resources that represents the secured {WildFlySwarm} Booster.
+
+==== The secured-vertx-endpoint Client
+The secured-vertx-endpoint is a bearer-only type of client that requires a vertx-admin role for accessing the
+associated resources that represents the secured {VertX} Booster.
+
+==== The secured-springboot-endpoint Client
+The secured-springboot-endpoint is a bearer-only type of client that requires a springboot-admin role for accessing the
+associated resources that represents the secured {SpringBoot} Booster.
+
+== The Users
+The realm model for the secured Boosters includes an admin and alice user.
+
+=== The admin User
+The admin user has a password of admin, and is the realm adminstrator. This user has full access to the RH SSO administration
+console, but none of the role mappings that are required to access the secured endpoints. You can use this user to
+illustrate the behavior of an authenticated, but unauthorized user.
+
+=== The alice User
+The alice user is the canonical application user that will demonstrate successful authenticated and authorized access
+ to the secured endpoints. A representation of the role mappings is provided in this decoded JWT bearer token
+
+[source,json]
+----
+{
+  "jti": "5a785440-8cb4-4500-a9fc-0c3aec1e62d5",
+  "exp": 1489698336,
+  "nbf": 0,
+  "iat": 1489698276,
+  "iss": "https://secure-sso-sso.192.168.99.100.nip.io/auth/realms/master", <1>
+  "aud": "demoapp",
+  "sub": "c0175ccb-0892-4b31-829f-dda873815fe8",
+  "typ": "Bearer",
+  "azp": "demoapp",
+  "session_state": "7d296305-0c71-4dda-80d9-5b5ea4a584c1",
+  "client_session": "31cd83c8-6315-4daf-9aa7-e50e80611c2d",
+  "allowed-origins": [],
+  "realm_access": {
+    "roles": [ <2>
+      "vertx-admin"
+    ]
+  },
+  "resource_access": { <3>
+    "secured-swarm-endpoint": {
+      "roles": [
+        "swarm-admin" <4>
+      ]
+    },
+    "secured-vertx-endpoint": {
+      "roles": [
+        "vertx-admin" <5>
+      ]
+    },
+    "secured-springboot-endpoint": {
+      "roles": [
+        "springboot-admin" <6>
+      ]
+    },
+    "account": {
+      "roles": [
+        "manage-account",
+        "view-profile"
+      ]
+    }
+  },
+  "name": "Alice InChains",
+  "preferred_username": "alice", <7>
+  "given_name": "Alice",
+  "family_name": "InChains",
+  "email": "alice@keycloak.org"
+}
+----
+
+<1> The iss(user) field corresponds to the RH SSO realm instance URL that
+issues the token. This must be configured in the secured endpoint deployments in order for the token
+to be verified.
+<2> The roles object provides the roles that have been granted to the user at the global realm level. In this case
+alice has been granted the vertx-admin role. We will see that the Vert.X secured endpoint will look to the
+realm level for authorized roles.
+<3> The resource_access object contains resource specific role grants. Under this object you will find an object
+for each of the secured endpoints.
+<4> The resource_access.secured-swarm-endpoint.roles object contains the roles granted to alice for the secured-swarm-endpoint
+resource.
+<5> The resource_access.secured-vertx-endpoint.roles object contains the roles granted to alice for the secured-vertx-endpoint
+resource.
+<6> The resource_access.secured-springboot-endpoint.roles object contains the roles granted to alice for the secured-springboot-endpoint
+resource.
+<7> The preferred_username field provides the username that was used to generate the access token.
+
+= Security Constraints
+
+Each secured Booster establishes a security context that is managed by Red Hat SSO using
+adaptor code that verifies a signed JSON web token, like the one shown for the alice
+user in the previous section, using configuration information that allows the adaptor code to verify the token.
+
+The configuration information includes things like the realm name, the realm public key,
+the RH SSO server auth URL, and resource target.

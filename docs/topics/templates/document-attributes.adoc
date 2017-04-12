@@ -23,6 +23,8 @@
 :mission-health-check-spring-boot-tomcat-guide-name: Health Check Mission - {SpringBoot}
 :mission-health-check-vertx-guide-name: Health Check Mission - {VertX}
 :mission-health-check-wf-swarm-guide-name: Health Check Mission - {WildFlySwarm}
+:mission-secured-wf-swarm-guide-name: Secured Mission - {WildFlySwarm}
+
 :openshift-local-guide-name: Install and Configure {OpenShiftLocal}
 :minishift-installation-guide-name: Install and Configure the Launchpad on {OpenShiftLocal}
 :getting-started-guide-name: Getting Started
@@ -64,3 +66,4 @@
 
 :link-oso-console-cli-token: https://console.dev-preview-int.openshift.com/console/command-line
 :link-oso-auth: https://api.preview.openshift.com
+:link-rhsso: https://github.com/obsidian-toaster-quickstarts/redhat-sso
