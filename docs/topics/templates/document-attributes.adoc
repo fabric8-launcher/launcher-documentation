@@ -64,6 +64,8 @@
 :link-mission-health-check-vertx: mission-health-check-vertx.html
 :link-mission-health-check-wf-swarm: mission-health-check-wf-swarm.html
 
+:link-mission-secured-wf-swarm: mission-secured-wf-swarm.html
+
 :link-oso-console-cli-token: https://console.dev-preview-int.openshift.com/console/command-line
 :link-oso-auth: https://api.preview.openshift.com
 :link-rhsso: https://github.com/obsidian-toaster-quickstarts/redhat-sso
