@@ -1,7 +1,7 @@
 include::topics/templates/document-attributes.adoc[]
 
 :configmap-spring-boot-tomcat:
-:app-name: springboot-rest-configmap
+:app-name: spring-boot-configmap
 
 = {mission-configmap-spring-boot-tomcat-guide-name}
 
