@@ -23,24 +23,24 @@ NOTE: We are working on removing this step entirely, but for now it is required.
 image::minishift_processtemplate.png[Process Template]
 
 . Fill out the following fields. 
-** Your GitHub username.
-** Your personal access token for GitHub
-** The OpenShift Console URL from Minishift. This should be the same base URL you are currently using to complete the form, for example `https://192.168.42.152:8443`.
-** OpenShift username and password from Minishift. 
-** KeyCloak URL and Realm should be cleared out
-** Catalog Git Repository and `gitref` should be generally left as-is, unless you are developing against a specific fork you'd like to use.
-** Catalog index period may be left to 0 unless you'd like the catalog to index at some interval in minutes.
-** Launchpad Backend URL must be updated to replace `PROJECTNAME` with the name of your project. This example uses `launchpad`. You also need to confirm that the IP address in the string matches your Openshift Console URL.
+** _Your GitHub username_.
+** _Your GitHub Mission Control access token_ is your personal access token for GitHub.
+** The _Target OpenShift Console URL_ is the OpenShift Console URL from {OpenShiftLocal}. This should be the same base URL you are currently using to complete the form, for example `https://192.168.42.152:8443`.
+** OpenShift username and password from {OpenShiftLocal}. 
+** _KeyCloak URL_ and _KeyCloak Realm_ should be cleared out
+** _Catalog Git Repository_ and _Catalog Git Reference_ should be generally left as-is, unless you are developing against a specific fork you would like to use.
+** _Catalog Index Period_ may be left to `0` unless you would like the catalog to index at some interval in minutes.
+** _Launchpad Frontend Host_ must be updated to replace `$PROJECTNAME` with the name of your project. This example uses `launchpad`. You also need to update `$HOSTNAMEORIP` in the string to the IP address of your OpenShift Console URL.
 +
 WARNING: Before proceeding to the next steps, confirm all the fields are correct.
 
-. Click `Create` to complete the setup. You will see a screen confirming that the application has been created, and it will invite you to go to the overview.  
+. Click `Create` to complete the setup. You will see a screen confirming that the application has been created. Click _Continue to overview_.
 
-. Proceed to the overview page and confirm that the three services for Launchpad are starting up.
+. On the overview page, wait and confirm that the three services for Launchpad are starting up.
 +
 image::minishift_launchpad_booting.png[Launchpad booting]
 +
-The grey circles reference that the docker images for these services are being pulled down from the network. This is a one time step that may take some time.  Eventually the circles will turn a light blue to note that they are starting, then a deeper blue to indicate when they are running.  
+The grey circles reference that the docker images for these services are being pulled down from the network. This is a one time step that may take some time. Eventually the circles will turn a light blue to note that they are starting, then a deeper blue to indicate when they are running. 
 
 . When all services are running, you are ready to use the Launchpad application.  Click the link at the top of all services, which should end in `nip.io`, and a new browser tab will open with the Launchpad.
 

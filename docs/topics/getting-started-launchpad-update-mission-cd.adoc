@@ -42,3 +42,38 @@ $ git push
 A new build will appear in the _Recent Runs_ list and the status of the `Build` and `Deploy` stages will appear. Optionally, you can click _View Log_ in your build to see the logs in Jenkins.
 
 . After the `Deploy` stage is complete, return to the deployed version of your mission's booster application and verify your changes appear.
+
+== Optional: Trigger Builds Automatically with UltraHook
+
+To configure {OpenShiftLocal} to automatically trigger a build when a new commit is made to GitHub:
+
+. Sign up for an UltraHook API Key link:http://www.ultrahook.com/register[here] and remember your _namespace_ from the form.
+
+. Follow the instructions on the confirmation page to install UltraHook.
+
+. From your project's overview page, click _Builds_ then _Pipelines_ then _Edit Pipeline_.
+
+. Click _Show advanced options_.
+
+. Under _Triggers_, copy the URL under _GitHub webhooks_.
+
+. From the terminal, start UltraHook.
++
+[source,options="nowrap",subs="attributes+"]
+----
+$ ultrahook github MINISHIFT_WEBHOOK_URL
+----
+
+. Navigate to the _Webhooks_ section of your booster's GitHub project: `http://github.com/USERNAME/PROJECTNAME/settings/hooks/`
+
+. Click _Add webhook_.
+
+. In the _Add webhook_ enter:
++
+** For _Payload URL_ enter the `http://github.ULTRAHOOK_NAMESPACE.ultrahook.com` replacing `ULTRAHOOK_NAMESPACE` with your namespace.
+** For _Content type_ choose `application/json`.
+** For _Which events would you like to trigger this webhook?_, choose `Just the push event`.
+
+. Click _Add webhook_.
+
+{OpenShiftLocal} now automatically triggers a build for your booster's project for every new commit to the GitHub as long as UltraHook is running.

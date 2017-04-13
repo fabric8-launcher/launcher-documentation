@@ -7,7 +7,10 @@ To create a mission:
 
 . Navigate to the Launchpad using your browser.
 . Select _Begin by selecting a functional booster_ and click _Next_.
-. Choose the booster you would like to run from the dropdown. Each booster illustrates a concept and has a specific runtime configured. You can come back to the Launchpad later and try another booster. 
+. Choose the mission and runtime you would like to run, for example `rest-http` and `{VertX}`. 
++
+NOTE: Each mission illustrates a concept and is implemented in at least one runtime. You can come back to the Launchpad later and try another booster. 
+
 . You may update any of the pre-filled details or leave them with the default details. Click _Finish_.
 
 You have just created your mission project are now on the launch screen. Follow the steps in xref:launchpad-launch-mission[] to launch your mission.
