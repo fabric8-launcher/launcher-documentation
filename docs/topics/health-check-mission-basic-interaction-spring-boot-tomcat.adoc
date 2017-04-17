@@ -6,7 +6,7 @@ Once you have the {SpringBoot} booster deployed, you will have two applications 
 +
 [source,options="nowrap"]
 ----
-$ curl http://hello-service.192.168.99.100.nip.io/greeting
+$ curl http://hello-service.192.168.99.100.nip.io/api/greeting
 Hello World!
 ----
 
@@ -28,7 +28,7 @@ $ oc scale pod name-service-1-bbbbb --replicas=0
 +
 [source,options="nowrap"]
 ----
-$ curl http://hello-service.192.168.99.100.nip.io/greeting
+$ curl http://hello-service.192.168.99.100.nip.io/api/greeting
 <html><body><h1>503 Service Unavailable</h1>
 No server is available to handle this request.
 </body></html>
@@ -58,6 +58,6 @@ name-service-s2i-1-build    0/1       Completed   0          10m
 +
 [source,options="nowrap"]
 ----
-$ curl http://hello-service.192.168.99.100.nip.io/greeting
+$ curl http://hello-service.192.168.99.100.nip.io/api/greeting
 Hello World!
 ----
