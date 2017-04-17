@@ -26,9 +26,32 @@ $ oc new-project NEW-PROJECT-NAME
 
 . Navigate to the root directory of your booster.
 
-. Deploy your ConfigMap configuration to {OpenShiftLocal} using the `app-config.yml` in the root of the booster.
+ifdef::configmap-vertx[]
+. Deploy your ConfigMap configuration to {OpenShiftLocal} using `src/main/fabric8/configmap.yml`.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc create configmap app-config --from-file=src/main/fabric8/configmap.yml
+----
+
+. Verify your ConfigMap configuration has been deployed.
 +
 [source,options="nowrap"]
+----
+$ oc get configmap app-config -o yaml
+
+apiVersion: v1
+data:
+  app-config.yml: |-
+    greeting:
+      message: Hello World!
+...
+----
+endif::configmap-vertx[]
+ifdef::configmap-wf-swarm[]
+. Deploy your ConfigMap configuration to {OpenShiftLocal} using `app-config.yml` in the root of the booster.
++
+[source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc create configmap app-config --from-file=app-config.yml
 ----
@@ -46,13 +69,22 @@ data:
       message: Hello World!
 ...
 ----
+endif::configmap-wf-swarm[]
 
 . Use maven to start the deployment to {OpenShiftLocal}.
 +
+ifdef::configmap-vertx[]
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn clean fabric8:deploy -Popenshift
+----
+endif::configmap-vertx[]
+ifndef::configmap-vertx[]
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ mvn clean fabric8:deploy -Popenshift -DskipTests
 ----
+endif::configmap-vertx[]
 +
 This command uses the Fabric8 Maven Plugin to launch the S2I process on {OpenShiftLocal} and to start the pod.
 
@@ -80,5 +112,22 @@ NAME                 HOST/PORT                                     PATH      SER
 ----
 +
 A pod's route information gives you the base URL which you use to access it. In the example above, you would use `http://{app-name}-myproject.192.168.99.100.nip.io` as the base URL to access the application.
+
+ifdef::configmap-spring-boot-tomcat[]
+. Verify your ConfigMap configuration has been deployed.
++
+[source,options="nowrap"]
+----
+$ oc get configmap PROJECT_NAME -o yaml
+
+apiVersion: v1
+data:
+  app-config.yml: |-
+    greeting:
+      message: Hello World!
+...
+----
+endif::configmap-spring-boot-tomcat[]
+
 
 include::booster-deploy-openshift-online.adoc[leveloffset=+1]
