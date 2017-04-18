@@ -16,7 +16,7 @@
 :OpenShiftLocal: Minishift
 :WildFlySwarm: WildFly Swarm
 :SpringBoot: Spring Boot Tomcat
-:VertX: Vert.x
+:VertX: Eclipse Vert.x
 
 :mission-http-api-spring-boot-tomcat-guide-name: HTTP API Level 0 Mission - {SpringBoot}
 :mission-http-api-vertx-guide-name: HTTP API Level 0 Mission - {VertX}
