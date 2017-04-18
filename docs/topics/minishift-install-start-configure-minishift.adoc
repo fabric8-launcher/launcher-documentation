@@ -1,8 +1,8 @@
-= Start and Configure Minishift for Launchpad
+= Start and Configure {OpenShiftLocal} for Launchpad
 
-NOTE: Starting Minishift may trigger a download of large virtual machines or Linux container images. This may take a while. Subsequent startups should be shorter as long as the virtual machines and Linux container images remained cached.
+NOTE: Starting {OpenShiftLocal} may trigger a download of large virtual machines or Linux container images. This may take a while. Subsequent startups should be shorter as long as the virtual machines and Linux container images remained cached.
 
-. Start Minishift.
+. Start {OpenShiftLocal}.
 +
 [source,options="nowrap",subs="attributes+"]
 ----
@@ -22,9 +22,14 @@ Downloading ISO 'https://github.com/minishift/minishift-b2d-iso/releases/downloa
        oc login -u system:admin
 ----
 +
-NOTE: Minishift, by default, will select a virtual machine driver. Depending upon your system setup, you may need manually specify an alternative virtual machine driver using the `--vm-driver` flag, for example `--vm-driver=VirtualBox` would use VirutalBox. Virtual machine software, such as link:https://www.virtualbox.org/[VirtualBox 5.x], is installed separately. On macOS, the `xhyve` driver may be unreliable and the `VirtualBox` is a reliable alternative. If your system works without specifying the virtual machine driver, we recommend you use the default configuration.
+[NOTE]
+====
+{OpenShiftLocal}, by default, will select a virtual machine driver. Depending upon your system setup, you may need manually specify an alternative virtual machine driver using the `--vm-driver` flag, for example `--vm-driver=VirtualBox` would use VirutalBox. Virtual machine software, such as link:https://www.virtualbox.org/[VirtualBox 5.x], is installed separately. On macOS, the `xhyve` driver may be unreliable and the `VirtualBox` is a reliable alternative. If your system works without specifying the virtual machine driver, we recommend you use the default configuration.
+
+Depending on your operating system, virtual machine driver, and the number of boosters you run, you may need to increase the amount memory you give you to {OpenShiftLocal}.
+====
 +
-You now have a OpenShift running in a single-node cluster on your local machine. The log information provided by Minishift provides the address you need to use to access the web console as well as the credentials to log in. In the above example, the console is located at `https://192.168.42.152:8443`, the username is `developer` and the password is `developer`.
+You now have a OpenShift running in a single-node cluster on your local machine. The log information provided by {OpenShiftLocal} provides the address you need to use to access the web console as well as the credentials to log in. In the above example, the console is located at `https://192.168.42.152:8443`, the username is `developer` and the password is `developer`.
 
 . Open the web console using a web browser and authenticate.
 +
@@ -32,7 +37,7 @@ image::minishift_login.png[Login]
 +
 [NOTE]
 ====
-Since Minishift is for development purposes, it uses HTTPS for the web console but does not provide a certificate. You may need to allow your browser to bypass SSL security policies as it tries to protect you from using `HTTPS` without a certificate. The below screenshot shows the warning message in the Chrome browser.
+Since {OpenShiftLocal} is for development purposes, it uses HTTPS for the web console but does not provide a certificate. You may need to allow your browser to bypass SSL security policies as it tries to protect you from using `HTTPS` without a certificate. The below screenshot shows the warning message in the Chrome browser.
 
 image::minishift_sslwarning.png[SSL warning]
 ====
