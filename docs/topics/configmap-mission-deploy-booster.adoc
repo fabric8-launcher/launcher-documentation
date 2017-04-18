@@ -24,6 +24,15 @@ $ oc login {link-osl-auth} --token=MYTOKEN
 $ oc new-project NEW-PROJECT-NAME
 ----
 
+ifdef::configmap-vertx[]
+. Add a policy for the project.
++
+[source,options="nowrap",subs="attributes+"]
+----
+$ oc policy add-role-to-user view -n $(oc project -q) -z default
+----
+endif::configmap-vertx[]
+
 . Navigate to the root directory of your booster.
 
 ifdef::configmap-vertx[]
@@ -94,12 +103,15 @@ This command uses the Fabric8 Maven Plugin to launch the S2I process on {OpenShi
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc get pods -w
-NAME                             READY     STATUS      RESTARTS   AGE
-{app-name}-1-aaaaa       1/1       Running     0          58s
-{app-name}-s2i-1-build   0/1       Completed   0          2m
+NAME                                       READY     STATUS      RESTARTS   AGE
+{app-name}-1-aaaaa               1/1       Running     0          58s
+{app-name}-s2i-1-build           0/1       Completed   0          2m
 ----
 +
 Your `{app-name}-1-aaaaa` pod should have a status of `Running` once its fully deployed and started.
+ifdef::configmap-vertx[]
+You should also wait for your pod to be _ready_ before proceeding, which is shown in the `READY` column. For example, `{app-name}-1-aaaaa` is _ready_ when the `READY` column is `1/1`.
+endif::configmap-vertx[]
 
 . Once your booster is deployed and started, determine its route.
 +
@@ -107,7 +119,7 @@ Your `{app-name}-1-aaaaa` pod should have a status of `Running` once its fully d
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc get routes
-NAME                 HOST/PORT                                     PATH      SERVICES             PORT      TERMINATION
+NAME                           HOST/PORT                                     PATH      SERVICES             PORT      TERMINATION
 {app-name}   {app-name}-myproject.192.168.99.100.nip.io      {app-name}   8080
 ----
 +
