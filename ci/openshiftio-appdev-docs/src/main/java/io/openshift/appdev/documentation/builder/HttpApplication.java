@@ -23,13 +23,17 @@ import io.vertx.ext.web.handler.StaticHandler;
 
 public class HttpApplication extends AbstractVerticle {
 
+   private static final String INDEX_PAGE = "index.html";
+
   @Override
   public void start(Future<Void> future) {
     // Create a router object.
     Router router = Router.router(vertx);
 
     router.get("/health").handler(rc -> rc.response().end("OK"));
-    router.get("/*").handler(StaticHandler.create().setDirectoryListing(true));
+    router.get("/*").handler(
+            StaticHandler.create().
+                    setIndexPage(INDEX_PAGE));
 
     // Create the HTTP server and pass the "accept" method to the request handler.
     vertx
