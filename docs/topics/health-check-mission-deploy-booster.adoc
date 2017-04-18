@@ -8,7 +8,7 @@ include::booster-deploy-launchpad-openshift-local.adoc[leveloffset=+2]
 [[deploy-booster-osl-cli]]
 === Deploy Using the `oc` CLI Client
 
-. Get your authentication token for using the `oc` CLI client with your {OpenShiftLocal} account. You can find this in the {OpenShiftLocal} Web console. In the above example, your token would be located at `https://192.168.99.100:8443/console/command-line`. 
+. Get your authentication token for using the `oc` CLI client with your {OpenShiftLocal} account. You can find this in the {OpenShiftLocal} Web console. In the above example, your token would be located at `https://192.168.99.100:8443/console/command-line`.
 
 . Authenticate your `oc` CLI client with your {OpenShiftLocal} account by using your authentication token.
 +
@@ -42,13 +42,11 @@ This command uses the Fabric8 Maven Plugin to launch the S2I process on {OpenShi
 ----
 $ oc get pods -w
 NAME                             READY     STATUS      RESTARTS   AGE
-hello-service-1-aaaaa             1/1       Running     0          58s
-hello-service-s2i-1-build         0/1       Completed   0          2m
-name-service-1-bbbbb              1/1       Running     0          58s
-name-service-s2i-1-build          0/1       Completed   0          2m
+{app-name}-1-qqa2d   1/1       Running   0           14s
+{app-name}-1-deploy  0/1       Completed 0           22s
 ----
 +
-Your `hello-service` and `name-service` pods should have a status of `Running` once they are fully deployed and started.
+Your `health-check` pod should have a status of `Running` once it's fully deployed and started.
 
 . Once your booster is deployed and started, determine its route.
 +
@@ -56,11 +54,10 @@ Your `hello-service` and `name-service` pods should have a status of `Running` o
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc get routes
-NAME                 HOST/PORT                                     PATH      SERVICES             PORT      TERMINATION
-hello-service   hello-service-myproject.192.168.99.100.nip.io      hello-service  8080
-name-service    name-service-myproject.192.168.99.100.nip.io       name-service  8080
+NAME                   HOST/PORT                                            PATH      SERVICES               PORT      TERMINATION   WILDCARD
+{app-name}   {app-name}-myproject.192.168.64.3.nip.io             {app-name}   8080                    None
 ----
 +
-A pod's route information gives you the base URL which you use to access it. In the example above, you would use `http://hello-service-myproject.192.168.99.100.nip.io` and `http://hello-service-myproject.192.168.99.100.nip.io` as the base URLs to access the applications.
+A pod's route information gives you the base URL which you use to access it. In the example above, you would use `http://{app-name}-myproject.192.168.64.3.nip.io ` as the base URL to access the applications.
 
 include::booster-deploy-openshift-online.adoc[leveloffset=+1]
