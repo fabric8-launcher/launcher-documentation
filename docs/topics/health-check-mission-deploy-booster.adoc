@@ -42,8 +42,8 @@ This command uses the Fabric8 Maven Plugin to launch the S2I process on {OpenShi
 ----
 $ oc get pods -w
 NAME                             READY     STATUS      RESTARTS   AGE
-health-check-1-qqa2d   1/1       Running   0           14s
-health-check-1-deploy  0/1       Completed 0           22s
+{app-name}-1-qqa2d   1/1       Running   0           14s
+{app-name}-1-deploy  0/1       Completed 0           22s
 ----
 +
 Your `health-check` pod should have a status of `Running` once it's fully deployed and started.
@@ -55,9 +55,9 @@ Your `health-check` pod should have a status of `Running` once it's fully deploy
 ----
 $ oc get routes
 NAME                   HOST/PORT                                            PATH      SERVICES               PORT      TERMINATION   WILDCARD
-health-check   health-check-myproject.192.168.64.3.nip.io             health-check   8080                    None
+{app-name}   {app-name}-myproject.192.168.64.3.nip.io             {app-name}   8080                    None
 ----
 +
-A pod's route information gives you the base URL which you use to access it. In the example above, you would use `http://health-check-myproject.192.168.64.3.nip.io ` as the base URL to access the applications.
+A pod's route information gives you the base URL which you use to access it. In the example above, you would use `http://{app-name}-myproject.192.168.64.3.nip.io ` as the base URL to access the applications.
 
 include::booster-deploy-openshift-online.adoc[leveloffset=+1]

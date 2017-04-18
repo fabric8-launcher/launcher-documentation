@@ -1,26 +1,26 @@
 = Interact with the Unmodified {WildFlySwarm} Booster
 
-Once you have the {WildFlySwarm} booster deployed, you will have a service called  `wfswarm-health-check` running that exposes a two REST endpoints: `/api/greeting` which returns a name as a String and `/api/killme`, which forces the service to become unresponsive as means to simulate a failure.
+Once you have the {WildFlySwarm} booster deployed, you will have a service called  `{app-name}` running that exposes a two REST endpoints: `/api/greeting` which returns a name as a String and `/api/killme`, which forces the service to become unresponsive as means to simulate a failure.
 
 In the following we demonstrate the basic interactions on the command line that can be used verify the service availability and simulate a failure that causes the Openshift self-healing capabilities to be trigger on the service. Alternatively you can use the service web interface to perform these steps (See #4).
 
-. Use `curl` to execute a `GET` request against the `wfswarm-health-check` service. You can also use a browser to do this.
+. Use `curl` to execute a `GET` request against the `{app-name}` service. You can also use a browser to do this.
 +
-[source,options="nowrap"]
+[source,options="nowrap",subs="attributes+]
 ----
-$ curl http://wfswarm-health-check-myproject.192.168.64.3.nip.io/api/greeting
+$ curl http://{app-name}-myproject.192.168.64.3.nip.io/api/greeting
 {"content":"Hello, World!"}
 ----
 
 . To simulate a service internal failure and to trigger the openshift selfhealing capabilities, invoke the `/api/killme` endpoint and verify the availability of the `/api/greeting` endpoint shortly after that. It should return a HTTP status 503:
 +
-[source,option="nowrap"]
+[source,option="nowrap",subs="attributes+]
 ----
-$ curl http://wfswarm-health-check-myproject.192.168.64.3.nip.io/api/killme
+$ curl http://{app-name}-myproject.192.168.64.3.nip.io/api/killme
 
 (followed by)
 
-$ curl http://wfswarm-health-check-myproject.192.168.64.3.nip.io/api/greeting
+$ curl http://{app-name}-myproject.192.168.64.3.nip.io/api/greeting
 
 <html>
   <head><title>Error</title></head>
@@ -30,18 +30,18 @@ $ curl http://wfswarm-health-check-myproject.192.168.64.3.nip.io/api/greeting
 
 . While performing these operations you can use the Openshift console, or the `oc` client tools to watch the self-healing capabilities in action. Use `oc get pods -w` to continuously watch the service state from another terminal window. You should see that number pods in a `READY` state moves to zero (`0/1`) and after a while (~30 sec to 1 min) back up to one (`1/1`). In addition the `RESTARTS` count increases every time you kill the service:
 +
-[source,options="nowrap"]
+[source,options="nowrap",subs="attributes+]
 ----
 $ oc get pods -w
 NAME                           READY     STATUS    RESTARTS   AGE
-wfswarm-health-check-1-26iy7   0/1       Running   5          18m
-wfswarm-health-check-1-26iy7   1/1       Running   5         19m
+{app-name}-1-26iy7   0/1       Running   5          18m
+{app-name}-1-26iy7   1/1       Running   5         19m
 
 ----
 
 . Alternatively to the interaction using the terminal window, you can use the web interface provided by the service to invoke the different methods and watch the service move through the life cycle phases:
 +
-[source,option="nowrap"]
+[source,option="nowrap",subs="attributes+]
 --
-$ http://wfswarm-health-check-myproject.192.168.64.3.nip.io
+$ http://{app-name}-myproject.192.168.64.3.nip.io
 --

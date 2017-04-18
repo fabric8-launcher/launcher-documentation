@@ -1,6 +1,7 @@
 include::topics/templates/document-attributes.adoc[]
 
 :health-check-wf-swarm:
+:app-name: wfswarm-health-check
 
 = {mission-health-check-wf-swarm-guide-name}
 include::topics/health-check-mission-intro.adoc[leveloffset=+1]
