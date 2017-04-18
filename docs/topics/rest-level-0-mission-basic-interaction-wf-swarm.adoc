@@ -6,14 +6,14 @@ The booster provides a default HTTP endpoint that accepts GET requests.
 +
 [source,options="nowrap",subs="attributes+"]
 ----
-$ curl http://{app-name}-myproject.192.168.99.100.nip.io/greeting
-{"content":"Hello, World!","node":"2311685d-aaaa-bbbb-cccc-a0e18a5b8e22"}
+$ curl http://{app-name}-myproject.192.168.99.100.nip.io/api/greeting
+{"content":"Hello, World!"}
 ----
 
 . Use `curl` to execute a `GET` request with the `name` URL parameter against the booster. You can also use a browser to do this.
 +
 [source,options="nowrap",subs="attributes+"]
 ----
-$ curl http://{app-name}-myproject.192.168.99.100.nip.io/greeting?name=Sarah
-{"content":"Hello, Sarah!","node":"2311685d-aaaa-bbbb-cccc-a0e18a5b8e22"}
+$ curl http://{app-name}-myproject.192.168.99.100.nip.io/api/greeting?name=Sarah
+{"content":"Hello, Sarah!"}
 ----
