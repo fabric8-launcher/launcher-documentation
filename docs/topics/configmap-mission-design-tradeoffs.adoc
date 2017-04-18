@@ -3,7 +3,11 @@
 |====================================================================
 |Pros           |Cons
 a|
-* pro
+* Configuration is separate from deployments
+* Can be updated independently
+* Can be shared across services
 a|
-* con
+* Configuration is separate from deployments
+* Has to be maintained separately
+* Requires coordination beyond the scope of a service
 |====================================================================
