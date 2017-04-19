@@ -28,7 +28,14 @@ $ git clone git@github.com:USERNAME/PROJECT-NAME.git
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc login {link-osl-auth} --token=MYTOKEN
+$ oc login {link-osl-auth}
+  ...follow prompts for username and password; ie. developer/developer
+
+  - or -
+
+$ oc login {link-osl-auth} --token=$MYTOKEN
+ ...@see how to obtain your token in note below
+
 $ oc project PROJECT-NAME
 ----
 +

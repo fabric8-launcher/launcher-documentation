@@ -8,18 +8,18 @@ include::topics/getting-started-intro.adoc[leveloffset=+1]
 
 include::topics/getting-started-install-launchpad-openshift-local.adoc[leveloffset=+1]
 
-== Missions
+== Boosters
 
-include::topics/getting-started-mission-intro.adoc[leveloffset=+2]
+include::topics/getting-started-booster-intro.adoc[leveloffset=+2]
 
-include::topics/getting-started-launchpad-create-mission.adoc[leveloffset=+2]
+include::topics/getting-started-launchpad-create-booster.adoc[leveloffset=+2]
 
-include::topics/getting-started-launchpad-launch-mission.adoc[leveloffset=+2]
+include::topics/getting-started-launchpad-launch-booster.adoc[leveloffset=+2]
 
-=== Update your Mission
+=== Update your Booster
 
-include::topics/getting-started-launchpad-update-mission-cd.adoc[leveloffset=+3]
-include::topics/getting-started-launchpad-update-mission-manual.adoc[leveloffset=+3]
+include::topics/getting-started-launchpad-update-booster-cd.adoc[leveloffset=+3]
+include::topics/getting-started-launchpad-update-booster-manual.adoc[leveloffset=+3]
 
 
 include::topics/getting-started-next-steps.adoc[leveloffset=+1]
