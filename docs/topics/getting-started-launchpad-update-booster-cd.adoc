@@ -2,7 +2,7 @@
 
 This approach allows you to deploy updates directly from the GitHub repository created by the Launchpad. 
 
-To update your mission using continuous delivery:
+To update your Booster using continuous delivery:
 
 . Clone your project from GitHub.
 +

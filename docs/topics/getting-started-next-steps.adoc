@@ -1,3 +1,5 @@
 = Next Steps
 
-* Use the Launchpad to xref:launchpad-create-mission[create] and xref:launchpad-launch-mission[launch] another xref:available-missions[available mission].
+* Use the Launchpad to xref:launchpad-create-booster[create] and xref:launchpad-launch-booster[launch] another xref:available-missions[available mission].
++
+NOTE: Running more Boosters concurrently will take additional resources; you may have to allocate more memory to {OpenShiftLocal} or remove or scale down services running in existing {OpenShiftLocal} projects.
