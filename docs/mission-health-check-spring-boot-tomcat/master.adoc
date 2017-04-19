@@ -1,6 +1,7 @@
 include::topics/templates/document-attributes.adoc[]
 
 :health-check-spring-boot-tomcat:
+:app-name: spring-boot-health-check
 
 = {mission-health-check-spring-boot-tomcat-guide-name}
 include::topics/health-check-mission-intro.adoc[leveloffset=+1]
