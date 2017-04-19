@@ -8,7 +8,7 @@ include::booster-deploy-launchpad-openshift-local.adoc[leveloffset=+2]
 [[deploy-booster-osl-cli]]
 === Deploy Using the `oc` CLI Client
 
-. Get your authentication token for using the `oc` CLI client with {OpenShiftLocal}. You can find this in the {OpenShiftLocal} Web console. In the above example, your token would be located at `https://192.168.99.100:8443/console/command-line`. 
+. Get your authentication token for using the `oc` CLI client with {OpenShiftLocal}. You can find this in the {OpenShiftLocal} Web console. In the above example, your token would be located at `https://192.168.99.100:8443/console/command-line`.
 
 . Authenticate your `oc` CLI client with your {OpenShiftLocal} account by using your authentication token.
 +
@@ -122,9 +122,8 @@ $ oc get configmap PROJECT_NAME -o yaml
 
 apiVersion: v1
 data:
-  app-config.yml: |-
-    greeting:
-      message: Hello World!
+  application.properties: |
+    greeting.message: Hello %s from a ConfigMap!
 ...
 ----
 endif::configmap-spring-boot-tomcat[]
