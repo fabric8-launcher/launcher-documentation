@@ -18,9 +18,9 @@
 :SpringBoot: Spring Boot Tomcat
 :VertX: Eclipse Vert.x
 
-:mission-http-api-spring-boot-tomcat-guide-name: HTTP API Level 0 Mission - {SpringBoot}
-:mission-http-api-vertx-guide-name: HTTP API Level 0 Mission - {VertX}
-:mission-http-api-wf-swarm-guide-name: HTTP API Level 0 Mission - {WildFlySwarm}
+:mission-http-api-spring-boot-tomcat-guide-name: API Level 0 Mission - {SpringBoot}
+:mission-http-api-vertx-guide-name: API Level 0 Mission - {VertX}
+:mission-http-api-wf-swarm-guide-name: API Level 0 Mission - {WildFlySwarm}
 :mission-configmap-spring-boot-tomcat-guide-name: ConfigMap Mission - {SpringBoot}
 :mission-configmap-vertx-guide-name: ConfigMap Mission - {VertX}
 :mission-configmap-wf-swarm-guide-name: ConfigMap Mission - {WildFlySwarm}

@@ -31,4 +31,4 @@ Once your Booster is deployed, you can then interact with its application or app
 
 == Launch Manually
 
-To launch manually, click on _Download Zip_ and follow the instructions in the mission's guide. For example, if you deployed the {VertX} HTTP API Level 0 mission, use the link:{link-mission-http-api-vertx}#build_and_deploy_booster[Build and Deploy Your Booster] section in {mission-http-api-vertx-guide-name}. You can find more details on how to interact with a mission in the interaction section of each mission's guide. You can find a full list of mission guides in xref:available-missions[].
+To launch manually, click on _Download Zip_ and follow the instructions in the mission's guide. For example, if you deployed the {VertX} API Level 0 mission, use the link:{link-mission-http-api-vertx}#build_and_deploy_booster[Build and Deploy Your Booster] section in {mission-http-api-vertx-guide-name}. You can find more details on how to interact with a mission in the interaction section of each mission's guide. You can find a full list of mission guides in xref:available-missions[].
