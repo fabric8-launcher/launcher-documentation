@@ -12,9 +12,9 @@ $ curl http://{app-name}-myproject.192.168.99.100.nip.io/api/greeting
 
 . Update the deployed ConfigMap configuration.
 +
-[source,options="nowrap"]
+[source,options="nowrap",subs="attributes+"]
 ----
-$ oc edit configmap app-config
+$ oc edit configmap {app-name}
 ----
 +
 Change the value for the `greeting.message` key to `Bonjour!` and save the file. After you save this, the changes will be propagated to your OpenShift instance.
