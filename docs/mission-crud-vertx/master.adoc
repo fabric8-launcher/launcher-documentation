@@ -2,7 +2,7 @@ include::topics/templates/document-attributes.adoc[]
 
 //redefine this
 :crud-vertx-mission:
-:app-name: vertx-crud
+:app-name: crud-vertx
 :vertx-runtime-name: {VertX}
 
 = {mission-crud-vertx-guide-name}
@@ -13,7 +13,7 @@ include::topics/crud-mission-design-tradeoffs.adoc[leveloffset=+1]
 
 == Create a CRUD Endpoint
 
-include::topics/crud-mission-deploy-database.adoc[leveloffset=+2]
+//include::topics/crud-mission-deploy-database.adoc[leveloffset=+2]
 
 include::topics/crud-mission-deploy-booster.adoc[leveloffset=+2]
 

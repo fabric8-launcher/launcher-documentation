@@ -10,8 +10,7 @@ oc get route {app-name} -o jsonpath={$.spec.host}
 +
 [source,option="nowrap",subs="attributes+"]
 ----
-NAME                  HOST/PORT               PATH       SERVICE                  TERMINATION   LABELS
-{app-name}    {app-name}-myproject.192.168.99.100.nip.io                  {app-name}
+{app-name}-myproject.192.168.99.100.nip.io
 ----
 
 . To access the web interface of the database application, navigate to the _application URL_ in your browser:
@@ -21,12 +20,12 @@ NAME                  HOST/PORT               PATH       SERVICE                
 http://{app-name}-myproject.192.168.99.100.nip.io
 --
 +
-Alternatively, you can make requests directly on the `api/fruits/*` endpoint using `curl` or `http`:
+Alternatively, you can make requests directly on the `api/fruits/*` endpoint using `curl`:
 +
 .List all entries in the database:
 [source,bash,subs="attributes+"]
 --
-http http://{app-name}-myproject.192.168.99.100.nip.io/api/fruits
+curl http://{app-name}-myproject.192.168.99.100.nip.io/api/fruits
 --
 +
 ----
@@ -59,7 +58,7 @@ Date: Wed, 29 Mar 2017 11:39:02 GMT
 .Retrieve an entry with a specific ID
 [source,bash,options="nowrap",subs="attributes+"]
 --
-http http://{app-name}-myproject.192.168.99.100.nip.io/api/fruits/3
+curl http://{app-name}-myproject.192.168.99.100.nip.io/api/fruits/3
 --
 +
 ----
@@ -80,7 +79,7 @@ Date: Wed, 29 Mar 2017 11:39:02 GMT
 .Create a new entry:
 [source,bash,options="nowrap",subs="attributes+"]
 --
-http POST http://{app-name}-myproject.192.168.99.100.nip.io/api/fruits name=apple
+curl POST http://{app-name}-myproject.192.168.99.100.nip.io/api/fruits name=apple
 --
 +
 ----
@@ -92,7 +91,7 @@ Date: Wed, 29 Mar 2017 12:46:59 GMT
 
 {
     "id": 5,
-    "name": "apple"
+    "name": "Apple"
 }
 
 ----
@@ -100,7 +99,7 @@ Date: Wed, 29 Mar 2017 12:46:59 GMT
 .Update an Entry
 [source,bash,options="nowrap",subs="attributes+"]
 --
-http PUT http://{app-name}-myproject.192.168.99.100.nip.io/api/fruits/1 name=pineapple
+curl PUT http://{app-name}-myproject.192.168.99.100.nip.io/api/fruits/1 name=pineapple
 --
 +
 ----
@@ -120,7 +119,7 @@ Date: Wed, 29 Mar 2017 11:41:48 GMT
 .Delete an Entry:
 [source,bash,options="nowrap",subs="attributes+"]
 --
-http DELETE http://{app-name}-myproject.192.168.99.100.nip.io/api/fruits/1
+curl DELETE http://{app-name}-myproject.192.168.99.100.nip.io/api/fruits/1
 --
 +
 ----
