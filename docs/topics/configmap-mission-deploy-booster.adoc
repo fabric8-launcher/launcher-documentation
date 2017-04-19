@@ -116,9 +116,9 @@ A pod's route information gives you the base URL which you use to access it. In 
 ifdef::configmap-spring-boot-tomcat[]
 . Verify your ConfigMap configuration has been deployed.
 +
-[source,options="nowrap"]
+[source,options="nowrap",subs="attributes+"]
 ----
-$ oc get configmap PROJECT_NAME -o yaml
+$ oc get configmap {app-name} -o yaml
 
 apiVersion: v1
 data:
