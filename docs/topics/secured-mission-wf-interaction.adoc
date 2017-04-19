@@ -1,0 +1,127 @@
+
+.Sample oc get routes output
+[format="csv", options="header"]
+[cols="3,6,1,2,1,2"]
+|===
+NAME,HOST/PORT,PATH,SERVICES,PORT,TERMINATION
+secure-sso,secure-sso-myproject.192.168.99.110.nip.io,,secure-sso,<all>,passthrough
+wfswarm-rest-http-secured,wfswarm-rest-http-secured-myproject.192.168.99.110.nip.io,,wfswarm-rest-http-secured,<all>,
+sso,sso-myproject.192.168.99.110.nip.io,,sso,<all>,
+|===
+
+The deployed application names is also available via the output of the java command line client used to display the
+SSO_AUTH_SERVER_URL. If you look at the following output:
+
+[source,shell,subs="attributes+"]
+----
+[sso 698]$ java -jar target/sso-client.jar --displaySSOURL
+Successful oc get routes: Yes
+Using auth server URL: https://secure-sso-myproject.192.168.99.110.nip.io/auth
+Available application endpoint names: [wfswarm-rest-http-secured] <1>
+----
+<1> The line beginning with *Available application endpoint names:* shows the non-SSO related application names.
+In this case, it is wfswarm-rest-http-secured.
+
+## Example Client Output
+
+### wfswarm-rest-http-secured with default user
+[source,shell]
+----
+[redhat-sso 657]$ java -jar target/sso-client.jar --app wfswarm-rest-http-secured
+Successful oc get routes: Yes
+Using auth server URL: https://secure-sso-sso.e8ca.engint.openshiftapps.com
+Available application endpoint names: [secured-vertx-rest, wfswarm-rest-http-secured, secured-springboot-rest]
+
+Requesting greeting...
+{
+  "id" : 15,
+  "content" : "Hello, World!",
+  "node" : "5c1517b5-0438-493e-baf2-0330982a8765"
+}
+----
+
+### wfswarm-rest-http-secured with default user, --from parameter
+[source,shell]
+----
+[redhat-sso 657]$ java -jar target/sso-client.jar --app wfswarm-rest-http-secured --from Scott
+Successful oc get routes: Yes
+Using auth server URL: https://secure-sso-myproject.192.168.99.110.nip.io/auth
+Available application endpoint names: [wfswarm-rest-http-secured]
+
+Requesting greeting...
+{
+  "id" : 3,
+  "content" : "Hello, Scott!",
+  "node" : "5c1517b5-0438-493e-baf2-0330982a8765"
+}
+----
+
+### wfswarm-rest-http-secured with default user, bad password
+[source,shell]
+----
+[redhat-sso 658]$ java -jar target/sso-client.jar --app wfswarm-rest-http-secured --password bad
+Successful oc get routes: Yes
+Using auth server URL: https://secure-sso-sso.e8ca.engint.openshiftapps.com
+Available application endpoint names: [secured-vertx-rest, wfswarm-rest-http-secured, secured-springboot-rest]
+Exception in thread "main" java.lang.RuntimeException: Failed to request token
+	at client.authz.AuthzClient.obtainAccessToken(AuthzClient.java:67)
+	at client.GreetingAuthzClient.init(GreetingAuthzClient.java:94)
+	at client.GreetingAuthzClient.main(GreetingAuthzClient.java:61)
+Caused by: javax.ws.rs.NotAuthorizedException: HTTP 401 Unauthorized
+	at org.jboss.resteasy.client.jaxrs.internal.ClientInvocation.handleErrorStatus(ClientInvocation.java:214)
+	at org.jboss.resteasy.client.jaxrs.internal.ClientInvocation.extractResult(ClientInvocation.java:189)
+	at org.jboss.resteasy.client.jaxrs.internal.ClientInvocation.invoke(ClientInvocation.java:492)
+	at org.jboss.resteasy.client.jaxrs.internal.ClientInvocationBuilder.post(ClientInvocationBuilder.java:199)
+	at client.authz.AuthzClient.obtainAccessToken(AuthzClient.java:63)
+	... 2 more
+----
+
+### wfswarm-rest-http-secured with admin user
+[source,shell]
+----
+[redhat-sso 660]$ java -jar target/sso-client.jar --app wfswarm-rest-http-secured --user admin --password admin
+Successful oc get routes: Yes
+Using auth server URL: https://secure-sso-sso.e8ca.engint.openshiftapps.com
+Available application endpoint names: [secured-vertx-rest, wfswarm-rest-http-secured, secured-springboot-rest]
+Exception in thread "main" javax.ws.rs.ForbiddenException: HTTP 403 Forbidden
+	at org.jboss.resteasy.client.jaxrs.internal.ClientInvocation.handleErrorStatus(ClientInvocation.java:216)
+	at org.jboss.resteasy.client.jaxrs.internal.ClientInvocation.extractResult(ClientInvocation.java:189)
+	at org.jboss.resteasy.client.jaxrs.internal.proxy.extractors.BodyEntityExtractor.extractEntity(BodyEntityExtractor.java:60)
+	at org.jboss.resteasy.client.jaxrs.internal.proxy.ClientInvoker.invoke(ClientInvoker.java:107)
+	at org.jboss.resteasy.client.jaxrs.internal.proxy.ClientProxy.invoke(ClientProxy.java:76)
+	at com.sun.proxy.$Proxy22.greeting(Unknown Source)
+	at client.GreetingAuthzClient.getGreeting(GreetingAuthzClient.java:139)
+	at client.GreetingAuthzClient.main(GreetingAuthzClient.java:62)
+----
+
+### wfswarm-rest-http-secured with admin user, debug level 2
+[source,shell]
+----
+[sstark@rhcsb sso]$ java -jar target/sso-client.jar --app wfswarm-rest-http-secured --user admin --password admin --debug 2
+Successful oc get routes: Yes
+Using auth server URL: https://secure-sso-myproject.192.168.99.100.nip.io/auth
+Available application endpoint names: [wfswarm-rest-http-secured]
+Sending POST to: https://secure-sso-myproject.192.168.99.100.nip.io/auth/realms/master/protocol/openid-connect/token
+Headers:
+  Accept: application/json
+  Content-Type: application/x-www-form-urlencoded
+Body: grant_type=password&username=admin&password=admin&client_id=demoapp&client_secret=1daa57a2-b60e-468b-a3ac-25bd2dc2eadc
+-----------
+
+Token: eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiIwODNiMmUzNi0yMDY0LTQ2OTYtYjZlMS00MGViNmE3ZDhhODgiLCJleHAiOjE0OTI2MzIzMTIsIm5iZiI6MCwiaWF0IjoxNDkyNjMyMjUyLCJpc3MiOiJodHRwczovL3NlY3VyZS1zc28tbXlwcm9qZWN0LjE5Mi4xNjguOTkuMTAwLm5pcC5pby9hdXRoL3JlYWxtcy9tYXN0ZXIiLCJhdWQiOiJkZW1vYXBwIiwic3ViIjoiMjYyNjc3ZmEtMTAyYi00ZDYwLTlhNjEtYjFjYTJhZmQ2NjNhIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGVtb2FwcCIsInNlc3Npb25fc3RhdGUiOiIyODE3ZjRkYS04OTVkLTQ2MmMtYjBkNi1mYWI4MjU3ODNhZWMiLCJjbGllbnRfc2Vzc2lvbiI6ImIzZjNmNzQ5LTg0NzItNDE1OC05Y2Y0LWExMzM4M2RlN2FmOSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJjcmVhdGUtcmVhbG0iLCJhZG1pbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7Im1hc3Rlci1yZWFsbSI6eyJyb2xlcyI6WyJtYW5hZ2UtZXZlbnRzIiwidmlldy1pZGVudGl0eS1wcm92aWRlcnMiLCJ2aWV3LXJlYWxtIiwibWFuYWdlLXJlYWxtIiwibWFuYWdlLWlkZW50aXR5LXByb3ZpZGVycyIsImltcGVyc29uYXRpb24iLCJ2aWV3LWV2ZW50cyIsImNyZWF0ZS1jbGllbnQiLCJtYW5hZ2UtdXNlcnMiLCJ2aWV3LXVzZXJzIiwidmlldy1jbGllbnRzIiwibWFuYWdlLWNsaWVudHMiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJ2aWV3LXByb2ZpbGUiXX19LCJuYW1lIjoiIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW4ifQ.mTlSe7g5f-XvkZgkQb61e5Rr7g85aowcGvzVESEVCp3Hp_tPB244ovVqssrJ97fABa5FxszuJdY3teM9oj-tjUhK5jfUKbwGHrVcdvumRbMv6SJ2TKxA24L9TaDrBqda3GzCUgRCQtu01yyjYeRruXVK9z3YybQic6Zrx2auaAo3PkUZAoe3qcoXcgwlekao4_yXGmZ54U3duOLf_J_dduOdldxrc07DrHh-GQu_xYUWvOYMkj_aGOn2dTYnM-G6Uw_BYshdRW2xUJgDE_a8Ff7iHBDNpROGuC0_7z22J8nYgUO5gnpwTl5BUmo0liSMfxnPY_3Wa_n3413S2qc21g
+
+Requesting greeting...
+Sending GET to: http://wfswarm-rest-http-secured-myproject.192.168.99.100.nip.io/greeting?name=World
+Headers:
+  Accept: application/json
+  Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiIwODNiMmUzNi0yMDY0LTQ2OTYtYjZlMS00MGViNmE3ZDhhODgiLCJleHAiOjE0OTI2MzIzMTIsIm5iZiI6MCwiaWF0IjoxNDkyNjMyMjUyLCJpc3MiOiJodHRwczovL3NlY3VyZS1zc28tbXlwcm9qZWN0LjE5Mi4xNjguOTkuMTAwLm5pcC5pby9hdXRoL3JlYWxtcy9tYXN0ZXIiLCJhdWQiOiJkZW1vYXBwIiwic3ViIjoiMjYyNjc3ZmEtMTAyYi00ZDYwLTlhNjEtYjFjYTJhZmQ2NjNhIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGVtb2FwcCIsInNlc3Npb25fc3RhdGUiOiIyODE3ZjRkYS04OTVkLTQ2MmMtYjBkNi1mYWI4MjU3ODNhZWMiLCJjbGllbnRfc2Vzc2lvbiI6ImIzZjNmNzQ5LTg0NzItNDE1OC05Y2Y0LWExMzM4M2RlN2FmOSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJjcmVhdGUtcmVhbG0iLCJhZG1pbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7Im1hc3Rlci1yZWFsbSI6eyJyb2xlcyI6WyJtYW5hZ2UtZXZlbnRzIiwidmlldy1pZGVudGl0eS1wcm92aWRlcnMiLCJ2aWV3LXJlYWxtIiwibWFuYWdlLXJlYWxtIiwibWFuYWdlLWlkZW50aXR5LXByb3ZpZGVycyIsImltcGVyc29uYXRpb24iLCJ2aWV3LWV2ZW50cyIsImNyZWF0ZS1jbGllbnQiLCJtYW5hZ2UtdXNlcnMiLCJ2aWV3LXVzZXJzIiwidmlldy1jbGllbnRzIiwibWFuYWdlLWNsaWVudHMiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJ2aWV3LXByb2ZpbGUiXX19LCJuYW1lIjoiIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW4ifQ.mTlSe7g5f-XvkZgkQb61e5Rr7g85aowcGvzVESEVCp3Hp_tPB244ovVqssrJ97fABa5FxszuJdY3teM9oj-tjUhK5jfUKbwGHrVcdvumRbMv6SJ2TKxA24L9TaDrBqda3GzCUgRCQtu01yyjYeRruXVK9z3YybQic6Zrx2auaAo3PkUZAoe3qcoXcgwlekao4_yXGmZ54U3duOLf_J_dduOdldxrc07DrHh-GQu_xYUWvOYMkj_aGOn2dTYnM-G6Uw_BYshdRW2xUJgDE_a8Ff7iHBDNpROGuC0_7z22J8nYgUO5gnpwTl5BUmo0liSMfxnPY_3Wa_n3413S2qc21g
+Exception in thread "main" javax.ws.rs.ForbiddenException: HTTP 403 Forbidden
+	at org.jboss.resteasy.client.jaxrs.internal.ClientInvocation.handleErrorStatus(ClientInvocation.java:216)
+	at org.jboss.resteasy.client.jaxrs.internal.ClientInvocation.extractResult(ClientInvocation.java:189)
+	at org.jboss.resteasy.client.jaxrs.internal.proxy.extractors.BodyEntityExtractor.extractEntity(BodyEntityExtractor.java:60)
+	at org.jboss.resteasy.client.jaxrs.internal.proxy.ClientInvoker.invoke(ClientInvoker.java:107)
+	at org.jboss.resteasy.client.jaxrs.internal.proxy.ClientProxy.invoke(ClientProxy.java:76)
+	at com.sun.proxy.$Proxy21.greeting(Unknown Source)
+	at client.GreetingAuthzClient.getGreeting(GreetingAuthzClient.java:171)
+	at client.GreetingAuthzClient.main(GreetingAuthzClient.java:79)
+----

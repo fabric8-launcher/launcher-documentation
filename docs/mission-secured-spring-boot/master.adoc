@@ -2,6 +2,8 @@ include::topics/templates/document-attributes.adoc[]
 
 :secured-spring-boot-mission:
 :runtime-name: {SpringBoot}
+// This is used by the secured-mission-common-interaction.adoc to include the runtime specific information
+:runtime-tag: sb
 
 = {mission-secured-vertx-guide-name}
 
@@ -59,4 +61,4 @@ include::topics/secured-mission-deploy-rhsso.adoc[leveloffset=+1]
 
 include::topics/secured-mission-deploy-booster.adoc[leveloffset=+1]
 
-include::topics/secured-mission-basic-interction.adoc[leveloffset=+1]
+include::topics/secured-mission-common-interaction.adoc[leveloffset=+1]
