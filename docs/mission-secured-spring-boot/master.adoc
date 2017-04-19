@@ -1,7 +1,6 @@
 include::topics/templates/document-attributes.adoc[]
 
 :secured-spring-boot-mission:
-:app-name: spring-boot-secured
 :runtime-name: {SpringBoot}
 
 = {mission-secured-vertx-guide-name}

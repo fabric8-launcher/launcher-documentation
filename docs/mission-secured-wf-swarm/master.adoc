@@ -1,7 +1,6 @@
 include::topics/templates/document-attributes.adoc[]
 
 :secured-wf-swarm-mission:
-:app-name: wildfly-swarm-secured
 :runtime-name: {WildFlySwarm}
 
 = {mission-secured-wf-swarm-guide-name}

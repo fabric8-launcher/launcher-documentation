@@ -1,7 +1,6 @@
 include::topics/templates/document-attributes.adoc[]
 
 :http-api-vertx:
-:app-name: http-vertx
 
 = {mission-http-api-vertx-guide-name}
 

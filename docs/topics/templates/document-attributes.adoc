@@ -18,6 +18,8 @@
 :SpringBoot: Spring Boot Tomcat
 :VertX: Eclipse Vert.x
 
+:app-name: PROJECT_NAME
+
 :mission-http-api-spring-boot-tomcat-guide-name: API Level 0 Mission - {SpringBoot}
 :mission-http-api-vertx-guide-name: API Level 0 Mission - {VertX}
 :mission-http-api-wf-swarm-guide-name: API Level 0 Mission - {WildFlySwarm}

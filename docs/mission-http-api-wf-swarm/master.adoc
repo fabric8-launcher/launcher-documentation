@@ -1,7 +1,6 @@
 include::topics/templates/document-attributes.adoc[]
 
 :http-api-wf-swarm:
-:app-name: wfswarm-rest-http
 
 = {mission-http-api-wf-swarm-guide-name}
 

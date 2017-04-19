@@ -1,7 +1,6 @@
 include::topics/templates/document-attributes.adoc[]
 
 :http-api-spring-boot-tomcat:
-:app-name: spring-boot-http
 
 = {mission-http-api-spring-boot-tomcat-guide-name}
 
