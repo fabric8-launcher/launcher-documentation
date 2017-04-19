@@ -1,0 +1,66 @@
+= Interact with the Secured {runtime-name} Booster
+
+The booster provides a default HTTP endpoint that accepts GET requests provided
+the caller is authenticated and authorized. The sso directory of this booster
+contains a Java client that authenticates against the RH SSO server you
+deployed and then performs a `GET` request against the booster using the access
+token returned by the authentication step.
+
+The Java client is packaged as an executable jar and is located at target/sso-client.jar.
+To run the client, use `java -jar target/sso-client.jar -app ...`.
+The full set of command arguments that you can specify can be seen by passing -help:
++
+[source,options="nowrap",subs="attributes+"]
+----
+[sstark sso]$ java -jar target/sso-client.jar --help
+Specifiy the name of the application endpoint with --app
+Usage: client.GreetingAuthzClient [options]
+  Options:
+    --app
+      The name of the rest endpoint to access
+    --debug
+      The debugging level, > 0 means more verbosity
+      Default: 0
+    --displaySSOURL
+      Obtain and display the RH SSO server auth URL and then exit
+      Default: false
+    --from
+      The name to pass to the greeting endpoint
+      Default: World
+    --outputCurlScript
+      Generate a bash script to the given filename that performs the query
+      using cURL
+    --password
+      The SSO Realm password to authenticate with
+      Default: password
+    --user
+      The SSO Realm username to authenticate as
+      Default: alice
+----
+
+The only required argument is the --app argument. This needs to match up to the name of the service endpoint as known by {OpenShiftLocal}.
+You can get a list of the using the `oc get routes` command. The following table shows sample output where
+the {runtime-name} secured booster had been deployed.
+
+// Need :runtime-tag: attribute defined by including doc
+include::secured-mission-{runtime-tag}-interaction.adoc[]
+
+## Decoding JWT
+There is a nice online decoder that you can use to decode a JWT to see it's contents at https://jwt.io/#debugger-io[JWT Debugger].
+To use it, go to the site, and first use the Algorithm drop down menu to choose RS256. At that point you will a text input
+box in the VERIFY SIGNATURE section that has text beginning with "-----BEGIN PUBLIC KEY-----". Copy the entire
+"-----BEGIN...-----END PUBLIC KEY-----" block from here:
+
+[source,base64]
+----
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoETnPmN55xBJjRzN/cs30OzJ9olkteLVNRjzdTxFOyRtS2ovDfzdhhO9XzUcTMbIsCOAZtSt8K+6yvBXypOSYvI75EUdypmkcK1KoptqY5KEBQ1KwhWuP7IWQ0fshUwD6jI1QWDfGxfM/h34FvEn/0tJ71xN2P8TI2YanwuDZgosdobx/PAvlGREBGuk4BgmexTOkAdnFxIUQcCkiEZ2C41uCrxiS4CEe5OX91aK9HKZV4ZJX6vnqMHmdDnsMdO+UFtxOBYZio+a1jP4W3d7J5fGeiOaXjQCOpivKnP2yU2DPdWmDMyVb67l8DRA+jh0OJFKZ5H2fNgE3II59vdsRwIDAQAB
+-----END PUBLIC KEY-----
+----
+
+and replace all of the text in that input box with this text. This is the master realm public key from this quick start's
+RH SSO server deployment.
+
+Now, take the base64 encoding of a token from one of the client runs where you specified a --debug value > 0, and paste it
+into the left text input box titled *Encoded PASTE a TOKEN HERE*. When you do that, it's header, payload sections will populate,
+and there should be a Signature Verified box at the bottom.
