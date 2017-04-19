@@ -2,7 +2,7 @@ The API Level 0 Mission provides a basic example of mapping business operations 
 
 This is an introduction to the mechanics of opening a service that is called remotely. Specifically, this booster is an application that allows a user to:
 
-* Execute an HTTP `GET` request on the `greeting` endpoint.
+* Execute an HTTP `GET` request on the `api/greeting` endpoint.
 * Receive a response in JSON format with a payload consisting of the `Hello, World!` String.
-* Execute an HTTP `GET` request on the `greeting` endpoint while passing in a String argument. This uses the `name` request parameter in the query string.
+* Execute an HTTP `GET` request on the `api/greeting` endpoint while passing in a String argument. This uses the `name` request parameter in the query string.
 * Receive a response in JSON format with a payload of `Hello, $name!` with `$name` replaced by the value of the `name` parameter passed into the request.
