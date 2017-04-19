@@ -1,7 +1,6 @@
 include::topics/templates/document-attributes.adoc[]
 
 :configmap-wf-swarm:
-:app-name: wildfly-swarm-configmap
 
 = {mission-configmap-wf-swarm-guide-name}
 

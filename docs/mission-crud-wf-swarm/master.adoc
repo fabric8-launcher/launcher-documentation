@@ -2,7 +2,6 @@ include::topics/templates/document-attributes.adoc[]
 
 //redefine this
 :crud-wf-swarm-mission:
-:app-name: wfswarm-rest-http-crud
 
 // this name needs to be defined in the attribute file
 = {mission-crud-wf-swarm-guide-name}

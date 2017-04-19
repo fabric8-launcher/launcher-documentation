@@ -2,7 +2,6 @@ include::topics/templates/document-attributes.adoc[]
 
 //redefine this for srping boot
 :crud-spring-boot-tomcat-mission:
-:app-name: spring-boot-crud
 
 // this name needs to be defined in the attribute file
 = {mission-crud-spring-boot-tomcat-guide-name}

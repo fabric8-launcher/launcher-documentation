@@ -1,7 +1,6 @@
 include::topics/templates/document-attributes.adoc[]
 
 :secured-vertx-mission:
-:app-name: vertx-secured
 :runtime-name: {VertX}
 
 = {mission-secured-vertx-guide-name}

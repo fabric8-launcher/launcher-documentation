@@ -1,7 +1,6 @@
 include::topics/templates/document-attributes.adoc[]
 
 :configmap-vertx:
-:app-name: vertx-http-configmap
 
 = {mission-configmap-vertx-guide-name}
 
