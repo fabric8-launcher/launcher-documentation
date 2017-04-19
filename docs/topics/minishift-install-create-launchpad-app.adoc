@@ -1,4 +1,4 @@
-= Create the Launchpad Application
+= Create the Launchpad Application Manually
 
 . Click _New Project_ to create a new OpenShift project to house the Launchpad application. 
 +

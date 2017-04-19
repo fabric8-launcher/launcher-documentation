@@ -1,0 +1,29 @@
+= Create the Launchpad Application Using an Automated Script
+
+You can install the Launchpad to {OpenShiftLocal} using link:{link-launchpad-install-script}[an automated script]. The script will:
+
+* Create a project in {OpenShiftLocal}.
+* Deploy the Launchpad to that project using the link:{link-launchpad-yaml}[latest template].
+* Configure the Launchpad with your GitHub username and personal access token.
+* Update the Jenkins _serviceaccount_ to use the `admin` role.
+
+Once you have link:{link-launchpad-install-script}[downloaded] the script, run it and pass in the appropriate parameters:
+
+[source,options="nowrap",subs="attributes+"]
+----
+$ ./deploy_launchpad_mission.sh -p LAUNCHPAD_PROJECT_NAME -i developer:developer -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN
+----
+
+Alternatively, you can use your {OpenShiftLocal} access token instead of a username and password:
+
+[source,options="nowrap",subs="attributes+"]
+----
+$ ./deploy_launchpad_mission.sh -p LAUNCHPAD_PROJECT_NAME -i OPENSHIFT_TOKEN -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN
+----
+
+You can also specify the version of the Launchpad template to use:
+
+[source,options="nowrap",subs="attributes+"]
+----
+$ ./deploy_launchpad_mission.sh -p projectName -i username:password -g myGithubUser:myGithubToken -v v3
+----
