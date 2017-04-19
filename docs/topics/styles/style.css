@@ -9999,9 +9999,10 @@ td > .progress:first-child:last-child {
   width: 100%;
 }
 
-#footer-text {
+#footer-text:before {
   content: url(images/redhat.svg);
   height: 60px;
+  display: block;
 }
 
 #footer + p {
