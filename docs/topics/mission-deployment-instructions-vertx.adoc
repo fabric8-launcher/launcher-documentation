@@ -20,7 +20,7 @@ oc start-build vertx-crud
 +
 [source,bash,option="nowrap"]
 --
-oc get route vertx-crud -o jsonpath={$.spec.host}
+oc get route {app-name} -o jsonpath={$.spec.host}
 --
 +
 This returns the application URL that you can use to access the web interface or interact with the application endpoints:
