@@ -1,15 +1,7 @@
 [[vertx-crud-introduction]]
 = Introduction
 
-This Booster showcases simple database interaction in a Cloud environment.
-The example application exposes an HTTP API, which provides _CRUD_ endpoints to manipulate data through _create_, _read_, _update_, and _delete_ operations.
-The API consumes and provides JSON documents which contain information about the request to be processed and the response returned from the system.
-
-This project exposes a CRUD HTTP endpoint and a UI to use this service.
-
-The CRUD endpoint is implemented using a {VertX} application and JDBC.
-
-The UI allows you interact with service using a web interface, or by making HTTP requests directly on the service endpoints.
+This Booster showcases simple database interaction in a Cloud environment. The example application exposes an HTTP API, which provides _CRUD_ endpoints to manipulate data through _create_, _read_, _update_, and _delete_ operations. The API consumes and provides JSON documents which contain information about the request to be processed and the response returned from the system. This project exposes a CRUD HTTP endpoint and a UI to use this service. The CRUD endpoint is implemented using a reactive {VertX} application and the {VertX} asynchronous JDBC client. The UI allows you interact with service using a web interface, or by making HTTP requests directly on the service endpoints.
 
 The project also includes integration tests to verify the functionality of the service.
 
@@ -25,5 +17,4 @@ The CRUD endpoint follows the HTTP recommendations in terms of HTTP verb and sta
 To build and deploy this Booster you can:
 
 * deploy it to OpenShift using Apache Maven.
-
 * deploy it to OpenShift using a pipeline.
