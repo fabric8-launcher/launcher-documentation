@@ -17,6 +17,7 @@ endif::http-api-spring-boot-tomcat[]
 
 ifdef::http-api-vertx[]
 * link:http://vertx.io/blog/some-rest-with-vert-x/[Some Rest with {VertX}]
+* link:http://vertx.io/blog/using-the-asynchronous-sql-client/[Using the {VertX} asynchronous SQL client]
 endif::http-api-vertx[]
 
 ifdef::http-api-wf-swarm[]
