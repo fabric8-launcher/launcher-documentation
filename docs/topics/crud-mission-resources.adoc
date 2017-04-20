@@ -1,13 +1,13 @@
 [[about-crud]]
 = CRUD resources
 
-// content here
-https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
+More background and related information on CURD, HTTP API and REST can be found here:
 
-More background and related information on REST can be found here:
-
-* link:https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm[Architectural Styles and
+* link:https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html[HTTP Verbs]
+* link:https://www.ics.uci.edu/~fielding/pubs/dissertation/fielding_dissertation.pdf[Architectural Styles and
 the Design of Network-based Software Architectures - Representational State Transfer (REST)]
+* link:https://speakerdeck.com/glaforge/the-never-ending-rest-api-design-debate[The never ending REST API design debase]
+* link:http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven[REST APIs must be Hypertext driven]
 * link:https://martinfowler.com/articles/richardsonMaturityModel.html[Richardson Maturity Model]
 * link:https://www.jcp.org/en/jsr/detail?id=311[JSR 311: JAX-RS: The JavaTM API for RESTful Web Services]
 
@@ -17,6 +17,7 @@ endif::http-api-spring-boot-tomcat[]
 
 ifdef::http-api-vertx[]
 * link:http://vertx.io/blog/some-rest-with-vert-x/[Some Rest with {VertX}]
+* link:http://vertx.io/blog/using-the-asynchronous-sql-client/[Using the {VertX} asynchronous SQL client]
 endif::http-api-vertx[]
 
 ifdef::http-api-wf-swarm[]
