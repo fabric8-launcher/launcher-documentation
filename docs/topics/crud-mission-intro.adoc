@@ -1,10 +1,8 @@
-The CRUD application Booster expands on the API Level 0 Booster to provide a basic example of performing _create_, _read_, _update_ and _delete_ (_CRUD_) operations on a PostgreSQL database using a simple HTTP API.
+The CRUD application Booster expands on the API Level 0 Booster to provide a basic example of performing _create_, _read_, _update_ and _delete_ (_CRUD_) operations on a PostgreSQL database using a simple HTTP API. _CURD_ operations are the four basic functions of persistent storage, widely used when developing HTTP API dealing with a database.
 
-The Booster also demonstrates the ability of the HTTP application to locate and connect to a database. Each runtime determines in an opinionated manner to implement the connectivity solution that is best suited in the given case. The runtime can choose between using _JDBC_, _JPA_, or _ORM_.
+The Booster also demonstrates the ability of the HTTP application to locate and connect to a database in OpenShift. Each runtime determines in an opinionated manner to implement the connectivity solution that is best suited in the given case. The runtime can choose between using _JDBC_, _JPA_, or an _ORM_.
 
-The Booster application exposes an HTTP _CRUD_ API, which provides endpoints that allow you to manipulate data by performing  _CRUD_ operations over HTTP.
-The API uses JSON formatting to receive requests and return responses to the user. The user can also use an UI provided by the booster to use the application.
-Specifically, this Booster provides an application that allows you to:
+The Booster application exposes an HTTP _CRUD_ API, which provides endpoints that allow you to manipulate data by performing  _CRUD_ operations over HTTP. The _CRUD_ operations are mapped to HTTP `Verbs`. The API uses JSON formatting to receive requests and return responses to the user. The user can also use an UI provided by the booster to use the application. Specifically, this Booster provides an application that allows you to:
 
 * Navigate to the application web interface in your browser. This exposes a simple website allowing you to perform _CRUD_ operations on the data in the `my_data` database.
 * Execute an HTTP `GET` request on the `api/fruits/*` endpoint.
@@ -13,8 +11,8 @@ Specifically, this Booster provides an application that allows you to:
 * Receive a response in JSON format containing the name of the fruit with the given ID. If no item matches the specified ID, the call results in an HTTP error 404.
 * Execute an HTTP `POST` request on the `api/fruits/*` endpoint, passing in a valid ID as an argument, to create a new entry in the database.
 * Execute an HTTP `PUT` request on the `api/fruits/*` endpoint passing in a valid index and a name as an argument. This updates the name of the item with the given ID to match the name specified in your request.
-* Execute an HTTP `DELETE` request on the `api/fruits/*` endpoint, passing in a valid ID as an argument. This removes the item with the specified ID from the database and returns an HTTP code `204` (No Content) as a response. If you pas in an invalid ID, the call results in an HTTP error `404`.
+* Execute an HTTP `DELETE` request on the `api/fruits/*` endpoint, passing in a valid ID as an argument. This removes the item with the specified ID from the database and returns an HTTP code `204` (No Content) as a response. If you pass in an invalid ID, the call results in an HTTP error `404`.
 
 This Booster also contains a set of automated xref:crud-integration-testing[integration test] that can be used to verify that the application is fully integrated with the database.
 
-This Booster does not showcase a fully matured RESTful model (level 3), but it does use compatible HTTP verbs and status, following the good practices.
+This Booster does not showcase a fully matured RESTful model (level 3), but it does use compatible HTTP verbs and status, following the recommended HTTP API practices.
