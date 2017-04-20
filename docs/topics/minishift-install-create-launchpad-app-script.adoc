@@ -25,5 +25,15 @@ You can also specify the version of the Launchpad template to use:
 
 [source,options="nowrap",subs="attributes+"]
 ----
-$ ./deploy_launchpad_mission.sh -p projectName -i username:password -g myGithubUser:myGithubToken -v v3
+$ ./deploy_launchpad_mission.sh -p LAUNCHPAD_PROJECT_NAME -i developer:developer -g myGithubUser:myGithubToken -v v3
 ----
+
+Once the script completes, return to the {OpenShiftLocal} web console and click on your Launchpad project. This is your project's overview page and you can see its current status.
+
+image::minishift_launchpad_booting.png[Launchpad booting]
+
+The grey circles reference that the docker images for these services are being pulled down from the network. This is a one time step that may take some time. Eventually the circles will turn a light blue to note that they are starting, then a deeper blue to indicate when they are running. 
+
+When all services are running, you are ready to use the Launchpad application.  Click the link at the top of all services, which should end in `nip.io`, and a new browser tab will open with the Launchpad.
+
+You are now running on your local cloud the same service we will be hosting over at `launch.openshift.io`.
