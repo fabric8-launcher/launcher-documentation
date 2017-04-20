@@ -48,7 +48,7 @@ Your `my-database` pod should have a status of `Running` and should be indicated
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ mvn clean fabric8:deploy -Popenshift -DskipTests
+$ mvn clean fabric8:deploy -Popenshift
 ----
 +
 This command uses the Fabric8 Maven Plugin to launch the S2I process on {OpenShiftLocal} and to start the pod.
