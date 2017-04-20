@@ -3,6 +3,7 @@
 
 To launch your Booster from the launch screen, you have the following options.
 
+[[launchpad-launch-booster-cd]]
 == Launch Using Continuous Delivery
 
 To launch using continuous delivery, click the _Launch on OpenShift_ button.
@@ -13,7 +14,7 @@ This will:
 * Create a pipeline to continuously deliver your mission's code.
 * The pipeline will then build and deploy your mission's code to {OpenShiftLocal}.  The first launch and deployment should take under 10 minutes on most systems (depending upon resources and internet connection) as the docker images powering the build are downloaded and cached; subsequent runs will be faster.
 
-Click on the _See it here!_ link under _openshift project created_ to go to your Booster's page in {OpenShiftLocal}.
+Click on the _See it here!_ link under _Creating your project on the OpenShift cloud_ to go to your Booster's page in {OpenShiftLocal}.
 
 To view the status of your project:
 
@@ -25,10 +26,11 @@ NOTE: It may take a few minutes for the link to appear.
 * Use your {OpenShiftLocal} credentials, for example `developer` for both the username and password.
 * Ensure all the boxes are checked and click _Allow selected permissions_.
 
-You will be redirected to the startup logs in the `jenkins` pod. You have also given the {OpenShiftLocal} access to the `jenkins` pod and its logging information. Once you see the build start in the Jenkins logs, if you return to the _Overview_ page for your project in {OpenShiftLocal}, you can that the pipelines now show the build status.
+You will be redirected to the startup logs in the `jenkins` pod. You have also given {OpenShiftLocal} access to the `jenkins` pod and its logging information. Once you see the build start in the Jenkins logs, if you return to the _Overview_ page for your project in {OpenShiftLocal}, you can that the pipelines now show the build status.
 
-Once your Booster is deployed, you can then interact with its application or applications. You can find more details on how to interact with a mission in the interaction section of each mission's guide. For example, if you deployed the {VertX} REST HTTP mission, use the link:{link-mission-http-api-vertx}#interact[Interact with the Unmodified {VertX} Booster] section in {mission-http-api-vertx-guide-name}. You can find a full list of mission guides in xref:available-missions[].
+Once your Booster is deployed, you can then interact with its application or applications. You can find more details on how to interact with a mission in the interaction section of each mission's guide. For example, if you deployed the {VertX} REST HTTP mission, use the link:{link-mission-http-api-vertx}#interact[Interact with the Unmodified {VertX} Booster] section in {mission-http-api-vertx-guide-name}. You can find a full list of mission guides in xref:available-missions[Available Missions].
 
+[[launchpad-launch-booster-manual]]
 == Launch Manually
 
 To launch manually, click on _Download Zip_ and follow the instructions in the mission's guide. For example, if you deployed the {VertX} API Level 0 mission, use the link:{link-mission-http-api-vertx}#build_and_deploy_booster[Build and Deploy Your Booster] section in {mission-http-api-vertx-guide-name}. You can find more details on how to interact with a mission in the interaction section of each mission's guide. You can find a full list of mission guides in xref:available-missions[].

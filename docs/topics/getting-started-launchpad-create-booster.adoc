@@ -1,5 +1,5 @@
 [[launchpad-create-booster]]
-= Use the Launchpad to launch a Booster
+= Use the Launchpad to Launch a Booster
 
 After you have the Launchpad running on {OpenShiftLocal}, you can use it to create a new project, your Booster.
 
@@ -7,10 +7,23 @@ To create a Booster:
 
 . Navigate to the Launchpad using your browser.
 . Select _Prepare for Takeoff_.
-. Choose the mission and runtime you would like to run, for example `Health Check` and `{VertX}`.
+. At the bottom of the launch option explanations, choose a launch option, for example `Continuous Delivery`, and click _Next_.
+. Choose the mission, for example `REST API Level 0` and click _Next_.
+. Choose the runtime you would like to run, for example `{VertX}`.
 +
-NOTE: Each mission illustrates a concept and is implemented as a Booster in at least one runtime. You can come back to the Launchpad later and try another booster.
+NOTE: Each mission illustrates a concept and is implemented as a Booster in at least one runtime. You can come back to the Launchpad later and try another mission and runtime.
 
-. You may update any of the pre-filled details or leave them with the default details. Click _Finish_.
+. You may update any of the pre-filled details or leave them with the default details. Click _Next_.
 
-Your Booster is now prepared for launch; follow the steps in xref:launchpad-launch-booster[] for takeoff.
+Your Booster is now prepared for launch. Depending on your launch option, follow the steps in xref:launchpad-launch-booster-cd[] or xref:launchpad-launch-booster-manual[] for takeoff.
+
+[IMPORTANT]
+====
+If you are launching the CRUD mission through continuous delivery, you must deploy the Postgres database before launching your mission.
+
+.Deploy the Postgres Database
+[source,options="nowrap",subs="attributes+"]
+----
+$ oc new-app -e POSTGRESQL_USER=luke -ePOSTGRESQL_PASSWORD=secret -ePOSTGRESQL_DATABASE=my_data openshift/postgresql-92-centos7 --name=my-database
+----
+====
