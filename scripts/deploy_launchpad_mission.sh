@@ -6,13 +6,14 @@
 # 3) Patch jenkins to use admin as role
 #
 # Command to be used
-# ./deploy_launchpad.sh -p projectName -i username:password -g myGithubUser:myGithubToken OR
-# ./deploy_launchpad.sh -p projectName -t myOpenShiftToken -g myGithubUser:myGithubToken
-#
+# ./deploy_launchpad_mission.sh -p projectName -i username:password -g myGithubUser:myGithubToken OR
+# ./deploy_launchpad_mission.sh -p projectName -t myOpenShiftToken -g myGithubUser:myGithubToken OR
+# ./deploy_launchpad_mission.sh -p projectName -i username:password -g myGithubUser:myGithubToken -v v3
 
 # Set Default values
 PROJECTNAME="myproject"
 id="developer:developer"
+VERSION="v3"
 
 while getopts p:g:t:i: option
 do
@@ -22,10 +23,10 @@ do
                 g) github=${OPTARG};;
                 i) id=${OPTARG};;
                 t) TOKEN=${OPTARG};;
+                v) VERSION=${OPTARG};;
         esac
 done
 
-VERSION="v3"
 CONSOLE_URL=$(minishift console --url)
 IFS=':' read -a IDENTITY <<< "$id"
 IFS=':' read -a GITHUB_IDENTITY <<< "$github"
@@ -78,6 +79,7 @@ oc new-app launchpad -n $PROJECTNAME \
     -p LAUNCHPAD_BACKEND_CATALOG_INDEX_PERIOD="0" \
     -p LAUNCHPAD_FRONTEND_HOST=launchpad-frontend-$PROJECTNAME.$HOSTNAMEORIP.nip.io
 echo "------------------------------------------"
+
 #
 # Replace edit role with admin in order to allow the jenkins serviceaccount to by example create rolebindings, ...
 # Log on to the platform using system:admin user
