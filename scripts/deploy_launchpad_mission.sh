@@ -25,7 +25,7 @@ do
         esac
 done
 
-VERSION="v2"
+VERSION="v3"
 CONSOLE_URL=$(minishift console --url)
 IFS=':' read -a IDENTITY <<< "$id"
 IFS=':' read -a GITHUB_IDENTITY <<< "$github"
