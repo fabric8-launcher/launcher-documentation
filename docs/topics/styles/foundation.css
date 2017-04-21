@@ -754,7 +754,7 @@ b.button:after {
 #header > h1 {
   color: #000;
   font-weight: bold;
-  border-bottom: 1px solid #ddd;
+  /*border-bottom: 1px solid #ddd;*/
   margin-bottom: -28px;
   padding-bottom: 32px
 }
