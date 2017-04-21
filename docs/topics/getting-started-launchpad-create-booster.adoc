@@ -1,9 +1,9 @@
 [[launchpad-create-booster]]
 = Use the Launchpad to Launch a Booster
 
-After you have the Launchpad running on {OpenShiftLocal}, you can use it to create a new project, your Booster.
+After you have the Launchpad running on {OpenShiftLocal}, you can use it to create a new project, your booster.
 
-To create a Booster:
+To create a booster:
 
 . Navigate to the Launchpad using your browser.
 . Select _Prepare for Takeoff_.
@@ -11,11 +11,11 @@ To create a Booster:
 . Choose the mission, for example `REST API Level 0` and click _Next_.
 . Choose the runtime you would like to run, for example `{VertX}`.
 +
-NOTE: Each mission illustrates a concept and is implemented as a Booster in at least one runtime. You can come back to the Launchpad later and try another mission and runtime.
+NOTE: Each mission illustrates a concept and is implemented as a booster in at least one runtime. You can come back to the Launchpad later and try another mission and runtime.
 
 . You may update any of the pre-filled details or leave them with the default details. Click _Next_.
 
-Your Booster is now prepared for launch. Depending on your launch option, follow the steps in xref:launchpad-launch-booster-cd[] or xref:launchpad-launch-booster-manual[] for takeoff.
+Your booster is now prepared for launch. Depending on your launch option, follow the steps in xref:launchpad-launch-booster-cd[] or xref:launchpad-launch-booster-manual[] for takeoff.
 
 [IMPORTANT]
 ====
