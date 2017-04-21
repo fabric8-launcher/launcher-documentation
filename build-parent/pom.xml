@@ -38,7 +38,7 @@
     <version.wildfly.nosql.feature-pack>1.0.0.Alpha3</version.wildfly.nosql.feature-pack>
 
     <version.wildfly>7.0.6.GA-redhat-2</version.wildfly>
-    <version.org.wildfly.core>2.2.1.Final</version.org.wildfly.core>
+    <version.org.wildfly.core>2.1.15.Final-redhat-1</version.org.wildfly.core>
     <version.jboss-logmanager-ext>1.0.0.Alpha3</version.jboss-logmanager-ext>
     <!-- Weld SE version must be aligned with the version used in WildFly -->
     <version.weld-se>2.3.5.Final</version.weld-se>
@@ -119,14 +119,6 @@
 
   <dependencyManagement>
     <dependencies>
-      <dependency>
-        <groupId>org.wildfly.core</groupId>
-        <artifactId>wildfly-core-parent</artifactId>
-        <type>pom</type>
-        <version>${version.org.wildfly.core}</version>
-        <scope>import</scope>
-      </dependency>
-
       <dependency>
         <groupId>org.jboss.eap</groupId>
         <artifactId>jboss-eap-parent</artifactId>
@@ -438,19 +430,6 @@
         <groupId>org.jboss.eap</groupId>
         <artifactId>wildfly-feature-pack</artifactId>
         <version>${version.wildfly}</version>
-        <type>zip</type>
-        <scope>provided</scope>
-        <exclusions>
-          <exclusion>
-            <groupId>org.wildfly.core</groupId>
-            <artifactId>wildfly-core-feature-pack</artifactId>
-          </exclusion>
-        </exclusions>
-      </dependency>
-      <dependency>
-        <groupId>org.wildfly.core</groupId>
-        <artifactId>wildfly-core-feature-pack</artifactId>
-        <version>${version.org.wildfly.core}</version>
         <type>zip</type>
         <scope>provided</scope>
       </dependency>
