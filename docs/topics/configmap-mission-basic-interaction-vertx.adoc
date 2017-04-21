@@ -7,18 +7,18 @@ The booster provides a default HTTP endpoint that accepts GET requests.
 [source,options="nowrap",subs="attributes+"]
 ----
 $ curl http://{app-name}-myproject.192.168.99.100.nip.io/api/greeting
-{"content":"Hello, World!"}
+{"content":"Hello, World from a ConfigMap !"}
 ----
 
 . Update the deployed ConfigMap configuration.
 +
-Using your favorite text editor, open `src/main/fabric8/configmap.yml`. Change the value for the `greeting.message` key to `Bonjour!` and save the file.
+Using your favorite text editor, open `app-config.yml`. Change the value for the `message` key to `Bonjour, %s from a ConfigMap!` and save the file.
 
 . Apply the new version of the ConfigMap configuration.
 +
 [source,options="nowrap",subs="attributes+"]
 ----
-$ oc apply -f src/main/fabric8/configmap.yml
+oc apply -f app-config.yml
 ----
 
 . Use `curl` to execute a `GET` request against the booster with the updated ConfigMap configuration. You can also use a browser to do this.
@@ -26,7 +26,7 @@ $ oc apply -f src/main/fabric8/configmap.yml
 [source,options="nowrap",subs="attributes+"]
 ----
 $ curl http://{app-name}-myproject.192.168.99.100.nip.io/api/greeting
-{"content":"Bonjour!"}
+{"content":"Bonjour, World from a ConfigMap !"}
 ----
 +
 You should see your updated greeting.
