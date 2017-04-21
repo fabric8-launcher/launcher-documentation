@@ -36,11 +36,11 @@ endif::configmap-vertx[]
 . Navigate to the root directory of your booster.
 
 ifdef::configmap-vertx[]
-. Deploy your ConfigMap configuration to {OpenShiftLocal} using `src/main/fabric8/configmap.yml`.
+. Deploy your ConfigMap configuration to {OpenShiftLocal} using `app-config.yml`.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc create configmap app-config --from-file=src/main/fabric8/configmap.yml
+$ oc create configmap app-config --from-file=app-config.yml
 ----
 
 . Verify your ConfigMap configuration has been deployed.
@@ -52,8 +52,8 @@ $ oc get configmap app-config -o yaml
 apiVersion: v1
 data:
   app-config.yml: |-
-    greeting:
-      message: Hello World!
+      message : "Hello, %s from a ConfigMap !"
+      level : INFO
 ...
 ----
 endif::configmap-vertx[]
