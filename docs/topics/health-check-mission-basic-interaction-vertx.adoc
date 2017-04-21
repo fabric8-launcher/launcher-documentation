@@ -1,63 +1,74 @@
 = Interact with the Unmodified {VertX} Booster
 
-Once you have the {VertX} booster deployed, you will have two applications running: `hello-service` and `name-service`. The `name-service` exposes a REST endpoint which returns a name as a String. The `hello-service` exposes a REST endpoint that returns a hello message as a String. When you call the REST endpoint in `hello-service`, the `hello-service` application makes a call to `name-service` to obtain a name String to use in the hello message String. 
+Once you have the {VertX} booster deployed, you will have a service called `{app-name}` running that exposes the following REST endpoints:
 
-. Use `curl` to execute a `GET` request against the `hello-service`. You can also use a browser to do this.
+/api/greeting::
+This endpoint returns a JSON containing greeting of `name` parameter (or World as default value).
+
+/api/killme::
+This endpoint forces the service to become unresponsive which is meant to simulate a failure in the service.
+
+The following steps demonstrate how to verify the service availability and simulate a failure. This failure of an available service causes the OpenShift self-healing capabilities to be trigger on the service.
+
+NOTE: The below steps use the command line to interact with the service. Alternatively, you can use the web interface to perform the same steps (See #4).
+
+. Use `curl` to execute a `GET` request against the `{app-name}` service. You can also use a browser to do this.
 +
-[source,options="nowrap"]
+[source,options="nowrap",subs="attributes"]
 ----
-$ curl http://hello-service.192.168.99.100.nip.io/api/greeting
-Hello World!
+$ curl http://{app-name}-myproject.192.168.64.3.nip.io/api/greeting
+{"content":"Hello, World!"}
 ----
 
-. Scale down the number of `name-service` pods, which are used by `hello-service`, to 0.
+. Invoke the /api/killme endpoint and verify the availability of the /api/greeting endpoint shortly after that.
 +
-[source,option="nowrap"]
-----
-$ oc get pods
-NAME                        READY     STATUS      RESTARTS   AGE
-hello-service-1-aaaaa       1/1       Running     0          6m
-hello-service-s2i-1-build   0/1       Completed   0          6m
-name-service-1-bbbbb        1/1       Running     0          6m
-name-service-s2i-1-build    0/1       Completed   0          6m
-
-$ oc scale pod name-service-1-bbbbb --replicas=0 
-----
-
-. Use `curl` to execute a `GET` request against the `hello-service` again. This should return an error since `name-service`, which is used by `hello-service` is unavailable and has failed . You can also use a browser to do this.
+Invoking the /api/killme endpoint simulates an internal service failure and triggers the OpenShift self-healing capabilities. When invoking /api/greeting after simulating the failure, the service should return a HTTP status 503.
 +
-[source,options="nowrap"]
+[source,option="nowrap",subs="attributes"]
 ----
-$ curl http://hello-service.192.168.99.100.nip.io/api/greeting
-<html><body><h1>503 Service Unavailable</h1>
-No server is available to handle this request.
-</body></html>
+$ curl http://{app-name}-myproject.192.168.64.3.nip.io/api/killme
+
+(followed by)
+
+$ curl http://{app-name}-myproject.192.168.64.3.nip.io/api/greeting
+
+<html>
+  <head><title>Error</title></head>
+  <body>503 - Service Unavailable</body>
+</html>
 ----
 
-. Scale up the number of `name-service` pods to 1.
+. Use `oc get pods -w` to continuously watch the self-healing capabilities in action.
 +
-[source,option="nowrap"]
---
-$ oc scale pod name-service-1-bbbbb --replicas=1
---
-
-. Ensure that the `name-service` pods are running again.
+While invoking the service failure, you can watch the self-healing capabilities in action on OpenShift console, or with the oc client tools. You should see the number pods in a READY state move to zero (0/1) and after a short period (less than one minute) move back up to one (1/1). In addition the RESTARTS count increases every time you you invoke the service failure.
 +
-[source,options="nowrap"]
+[source,options="nowrap",subs="attributes"]
 ----
 $ oc get pods -w
-NAME                        READY     STATUS      RESTARTS   AGE
-hello-service-1-aaaaa       1/1       Running     0          10m
-hello-service-s2i-1-build   0/1       Completed   0          10m
-name-service-1-bbbbb        1/1       Running     0          1m
-name-service-s2i-1-build    0/1       Completed   0          10m
+NAME                           READY     STATUS    RESTARTS   AGE
+{app-name}-1-26iy7   0/1       Running   5          18m
+{app-name}-1-26iy7   1/1       Running   5         19m
 
 ----
 
-. Use `curl` to execute a `GET` request against the `hello-service` again. It should now succeed. You can also use a browser to do this.
+. Optional: Use the web interface to invoke the service.
 +
-[source,options="nowrap"]
-----
-$ curl http://hello-service.192.168.99.100.nip.io/api/greeting
-Hello World!
-----
+Alternatively to the interaction using the terminal window, you can use the web interface provided by the service to invoke the different methods and watch the service move through the life cycle phases.
++
+[source,option="nowrap",subs="attributes"]
+--
+$ http://{app-name}-myproject.192.168.64.3.nip.io
+--
+
+= Running Integration Tests
+
+This booster contains a set of integration tests.
+To run them, you must be connected to an OpenShift instance and select the project that will be used for testing.
+
+To run the integration tests, execute the following command:
+
+[source,bash,option="nowrap"]
+--
+$ mvn clean verify -Popenshift,openshift-it
+--
+
