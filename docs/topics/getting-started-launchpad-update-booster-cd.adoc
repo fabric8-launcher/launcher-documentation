@@ -2,7 +2,7 @@
 
 This approach allows you to deploy updates directly from the GitHub repository created by the Launchpad. 
 
-To update your Booster using continuous delivery:
+To update your booster using continuous delivery:
 
 . Clone your project from GitHub.
 +
@@ -13,7 +13,7 @@ $ git clone git@github.com:USERNAME/PROJECT-NAME.git
 
 . Open your project in your desired IDE or editor.
 
-. Perform any updates you want to the the project. For example, if you were using the {VertX} HTTP Booster, you could update the `src/main/resources/webroot/index.html` to have a different title in the `<h1>` element.
+. Perform any updates you want to the the project. For example, if you were using the {VertX} HTTP booster, you could update the `src/main/resources/webroot/index.html` to have a different title in the `<h1>` element.
 +
 .Example update to `index.html`
 [source,options="nowrap",subs="attributes+"]
