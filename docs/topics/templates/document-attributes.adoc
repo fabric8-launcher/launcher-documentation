@@ -10,7 +10,8 @@
 
 //uncomment to add styles
 :stylesdir: topics/styles
-:stylesheet: style.css
+//:stylesheet: style.css
+:stylesheet: asciidoc-default.css
 
 :OpenShiftOnline: OpenShift Online
 :OpenShiftLocal: Minishift
