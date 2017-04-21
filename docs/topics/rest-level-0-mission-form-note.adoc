@@ -1,0 +1,1 @@
+NOTE: You can also use a form provided by the booster to perform these same interactions. The form is located at the root of the project `http://{app-name}-myproject.192.168.99.100.nip.io`.

@@ -17,3 +17,5 @@ $ curl http://{app-name}-myproject.192.168.99.100.nip.io/api/greeting
 $ curl http://{app-name}-myproject.192.168.99.100.nip.io/api/greeting?name=Sarah
 {"content":"Hello, Sarah!"}
 ----
+
+include::rest-level-0-mission-form-note.adoc[leveloffset=+1]
