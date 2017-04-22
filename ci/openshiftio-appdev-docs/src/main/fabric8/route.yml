@@ -3,6 +3,8 @@ kind: Route
 metadata:
   name: ${project.artifactId}
 spec:
+  host: appdev.openshift.io
+  path: "/docs"
   port:
     targetPort: 8080
   to:

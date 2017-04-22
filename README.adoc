@@ -2,8 +2,7 @@
 
 This repository holds the documentation for appdev.openshift.io.
 
-Generated docs are built and deployed on every commit to the authoritative repository (https://github.com/openshiftio/appdev-documentation[upstream/master]) and are available, for the time being, at http://openshiftio-appdev-docs-appdev-documentation.tsrv.devshift.net/[http://openshiftio-appdev-docs-appdev-documentation.tsrv.devshift.net/].
-
+Generated docs are built and deployed on every commit to the authoritative repository (https://github.com/openshiftio/appdev-documentation[upstream/master]) and are available at http://appdev.openshift.io/docs/[http://appdev.openshift.io/docs].
 
 ## Directory Structure
 
