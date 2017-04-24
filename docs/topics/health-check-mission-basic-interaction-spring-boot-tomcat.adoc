@@ -24,7 +24,7 @@ $ curl http://{app-name}-myproject.192.168.64.3.nip.io/api/greeting
 +
 Invoking the /api/killme endpoint simulates an internal service failure and triggers the OpenShift self-healing capabilities. When invoking /api/greeting after simulating the failure, the service should return a HTTP status 503.
 +
-[source,option="nowrap",subs="attributes"]
+[source,option="nowrap",subs="attributes+"]
 ----
 $ curl http://{app-name}-myproject.192.168.64.3.nip.io/api/killme
 
