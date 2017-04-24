@@ -1,25 +1,11 @@
 = Prerequisite: Install {OpenShiftLocal}
 
-In order to use Launchpad on a local cloud, you must have {OpenShiftLocal} `{MinishiftVersion}` or greater installed and configured. The installation steps are available link:https://github.com/minishift/minishift#installation[in the project's `README`] and vary by platform.
+In order to use Launchpad on a local cloud, you must have {OpenShiftLocal} `{MinishiftVersion}` installed and configured. The installation steps are available link:https://docs.openshift.org/latest/minishift/getting-started/installing.html[in the OpenShift documentation] and vary by platform.
 
 To verify you have {OpenShiftLocal} installed and configured:
 
-[source,options="nowrap",subs="attributes+"]
+[source,bash,options="nowrap",subs="attributes+"]
 ----
-$ minishift status
-Stopped
+$ minishift version
+Minishift version: 1.0.0-beta5
 ----
-
-[NOTE]
-====
-If you have installed {OpenShiftLocal} and not run yet run it or have run `minishift delete`, you will receive the following:
-
-[source,options="nowrap",subs="attributes+"]
-----
-$ minishift status
-Does Not Exist
-----
-
-This also indicates that {OpenShiftLocal} is correctly installed and configured.
- 
-====

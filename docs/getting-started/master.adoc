@@ -8,6 +8,7 @@ include::topics/getting-started-intro.adoc[leveloffset=+1]
 
 include::topics/getting-started-install-launchpad-openshift-local.adoc[leveloffset=+1]
 
+[[boosters]]
 == Boosters
 
 include::topics/getting-started-booster-intro.adoc[leveloffset=+2]

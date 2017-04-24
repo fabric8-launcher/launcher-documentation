@@ -1,3 +1,4 @@
+[[update-cd]]
 = Update Using Continuous Delivery
 
 This approach allows you to deploy updates directly from the GitHub repository created by the Launchpad. 
@@ -41,7 +42,7 @@ $ git push
 +
 A new build will appear in the _Recent Runs_ list and the status of the `Build` and `Deploy` stages will appear. Optionally, you can click _View Log_ in your build to see the logs in Jenkins.
 
-. After the `Deploy` stage is complete, return to the deployed version of your mission's booster application and verify your changes appear.
+. After the `Deploy` stage is complete, return to the deployed version of your mission's booster application and observe that your changes appear.
 
 == Optional: Trigger Builds Automatically with UltraHook
 
