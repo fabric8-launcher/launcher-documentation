@@ -1825,7 +1825,9 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] {
   line-height: 15px;
   padding-bottom: 10px;
   padding-top: 10px;
-  width: 100%;
+  width: 20%;
+  float: left;
+  height: 95px;
 }
 
 #footer-text:before {
@@ -1838,6 +1840,17 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] {
   background-color: #040404;
   padding: 10px;
   text-align: right;
+  float:right;
+  width: 50%;
+  height: 95px;
+  padding-top: 60px;
+}
+
+#footer + p + p {
+  background-color: #040404;
+  height: 95px;
+  color: #ddd;
+  padding-top: 10px;
 }
 
 #footer + p a {
@@ -1858,7 +1871,9 @@ body:before {
   content: url(images/openshift-io_white.png);
   background: #030303;
   border-top: 3px solid #39a5dc;
-  height: 60px;
+  height: 70px;
   width: 100%;
   display: inline-block;
+  padding-top: 8px;
+  padding-left: 8px;
 }
