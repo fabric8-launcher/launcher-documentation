@@ -4,7 +4,7 @@ NOTE: Starting {OpenShiftLocal} may trigger a download of large virtual machines
 
 . Start {OpenShiftLocal}.
 +
-[source,options="nowrap",subs="attributes+"]
+[source,bash,options="nowrap",subs="attributes+"]
 ----
 $ minishift start --memory=4096
 Starting local OpenShift cluster using 'kvm' hypervisor...

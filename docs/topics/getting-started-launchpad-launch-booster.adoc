@@ -30,9 +30,11 @@ You will be redirected to the startup logs in the `jenkins` pod. You have also g
 
 Once your booster is deployed, you can then interact with its application or applications. You can find more details on how to interact with a mission's booster in the _interaction section_ of each mission's guide. For example, if you deployed the {VertX} REST HTTP mission booster, use the link:{link-mission-http-api-vertx}#interact[Interact with the Unmodified {VertX} Booster] section in {mission-http-api-vertx-guide-name}. You can find a full list of mission guides in xref:available-missions[Available Missions].
 
-NOTE: Each mission guide covers deploying as well as interacting with the booster. If you have already deployed your booster using the steps above, you can skip the _deployment section_ in the mission guide and proceed to the _interaction section_.
+NOTE: Each mission guide covers deploying as well as interacting with the booster. If you have already deployed your booster using the steps above, skip the _deployment section_ in the mission guide which covers the process for xref:launchpad-launch-booster-manual[launching manually].
 
 [[launchpad-launch-booster-manual]]
 == Launch Manually
 
-To launch manually, click on _Download Zip_ and follow the instructions in the mission's guide. For example, if you deployed the {VertX} API Level 0 mission, use the link:{link-mission-http-api-vertx}#build_and_deploy_booster[Build and Deploy Your Booster] section in {mission-http-api-vertx-guide-name}. You can find more details on how to interact with a mission in the interaction section of each mission's guide. You can find a full list of mission guides in xref:available-missions[].
+To launch manually, click on _Download as Zip_.
+
+This will download a zip archive containing your booster project that you have to manually build and deploy. Each mission's guide provides complete instructions for building and deploying the booster project. For example, if you deployed the {VertX} API Level 0 mission, use the link:{link-mission-http-api-vertx}#build_and_deploy_booster[Build and Deploy Your Booster] section in {mission-http-api-vertx-guide-name}. You can find more details on how to interact with a mission in the _interaction section_ of each mission's guide. You can find a full list of mission guides in xref:available-missions[].

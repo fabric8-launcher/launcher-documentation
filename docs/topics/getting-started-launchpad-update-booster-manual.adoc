@@ -49,6 +49,8 @@ $ mvn clean fabric8:deploy -Popenshift -DskipTests
 ----
 +
 This command uses the Fabric8 Maven Plugin to launch the S2I process on {OpenShiftLocal} and to start the pod.
++
+NOTE: A mission's booster may contain tests that assume the build process is running on OpenShift. Since you are building your mission's booster outside of OpenShift before deploying it, you can use `-DskipTests` to skip the testing process. When xref:update-cd[updating using continuous deployment], these tests will not be skipped.
 
 . Navigate back to the {OpenShiftLocal} Web console and ensure your mission's project is selected.
 
@@ -56,4 +58,4 @@ This command uses the Fabric8 Maven Plugin to launch the S2I process on {OpenShi
 +
 A new build will appear in the list and the status will appear. 
 
-. After the build is complete, return to the deployed version of your mission's booster application and verify your changes appear.
+. After the build is complete, return to the deployed version of your mission's booster application and observe that your changes appear.

@@ -1,4 +1,4 @@
-= Create the Launchpad Application Using an Automated Script
+= Using an Automated Script
 
 You can install the Launchpad to {OpenShiftLocal} using link:{link-launchpad-install-script}[an automated script]. The script will:
 
@@ -7,33 +7,43 @@ You can install the Launchpad to {OpenShiftLocal} using link:{link-launchpad-ins
 * Configure the Launchpad with your GitHub username and personal access token.
 * Update the Jenkins _serviceaccount_ to use the `admin` role.
 
-Once you have link:{link-launchpad-install-script}[downloaded] the script, run it and pass in the appropriate parameters:
+To use the automated script: 
 
-[source,options="nowrap",subs="attributes+"]
+. link:{link-launchpad-install-script}[Download] the script.
+. Run the script.
+** Run the script with username and password.
++
+[source,bash,options="nowrap",subs="attributes+"]
 ----
 $ ./deploy_launchpad_mission.sh -p LAUNCHPAD_PROJECT_NAME -i developer:developer -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN
 ----
 
-Alternatively, you can use your {OpenShiftLocal} access token instead of a username and password:
-
-[source,options="nowrap",subs="attributes+"]
+** Run the script with {OpenShiftLocal} access token.
++
+[source,bash,options="nowrap",subs="attributes+"]
 ----
 $ ./deploy_launchpad_mission.sh -p LAUNCHPAD_PROJECT_NAME -i OPENSHIFT_TOKEN -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN
 ----
 
-You can also specify the version of the Launchpad template to use:
-
-[source,options="nowrap",subs="attributes+"]
+** Run the script and specify the version of the Launchpad template to use.
++
+[source,bash,options="nowrap",subs="attributes+"]
 ----
 $ ./deploy_launchpad_mission.sh -p LAUNCHPAD_PROJECT_NAME -i developer:developer -g myGithubUser:myGithubToken -v v3
 ----
 
-Once the script completes, return to the {OpenShiftLocal} web console and click on your Launchpad project. This is your project's overview page and you can see its current status.
-
+. Once the script completes, return to the {OpenShiftLocal} web console and click on your Launchpad project. 
++
+This is your project's overview page and you can see its current status.
++
 image::minishift_launchpad_booting.png[Launchpad booting]
-
++
 The grey circles reference that the docker images for these services are being pulled down from the network. This is a one time step that may take some time. Eventually the circles will turn a light blue to note that they are starting, then a deeper blue to indicate when they are running. 
++
+When all services are running, you are ready to use the Launchpad application.  
 
-When all services are running, you are ready to use the Launchpad application.  Click the link at the top of all services, which should end in `nip.io`, and a new browser tab will open with the Launchpad.
+. Click the link at the top of all services, which should end in `nip.io`.
++
+A new browser tab will open with the Launchpad.
 
-You are now running on your local cloud the same service we will be hosting over at `launch.openshift.io`.
+You are now running on your local cloud the same service we will be hosting over at `launch.openshift.io`. See the link:{link-getting-started-guide}#boosters[{getting-started-guide-name}] for more details on using the Launchpad to launch mission booster applications.
