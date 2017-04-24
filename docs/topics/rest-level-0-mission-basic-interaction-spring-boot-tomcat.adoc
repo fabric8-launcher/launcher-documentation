@@ -19,3 +19,15 @@ $ curl http://{app-name}-myproject.192.168.99.100.nip.io/api/greeting?name=Sarah
 ----
 
 include::rest-level-0-mission-form-note.adoc[leveloffset=+1]
+
+= Running Integration Tests
+
+This booster contains a set of integration tests.
+To run them, you must be connected to an OpenShift instance and select the project that will be used for testing.
+
+To run the integration tests, execute the following command:
+
+[source,bash,option="nowrap"]
+--
+$ mvn clean verify -Popenshift,openshift-it
+--
