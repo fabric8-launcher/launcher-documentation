@@ -1,0 +1,10 @@
+# Release Instructions
+
+After the catalog update has been made, update the following lines with the latest version:
+
+* link:https://github.com/openshiftio/appdev-documentation/blob/master/scripts/deploy_launchpad_mission.sh#L16[Catalog Version in Build Script]
+* link:https://github.com/openshiftio/appdev-documentation/blob/master/ci/openshiftio-appdev-docs/src/main/java/io/openshift/appdev/documentation/builder/HttpApplication.java#L27[Link to Launchpad Template YAML file in Vert.X Link Indirection]
+
+Usually, this will mean going from `vX` to `vX+1` e.g. `v3` to `v4`.
+
+To get this update merged, follow the _Contributing_ process outlined in the link:https://github.com/openshiftio/appdev-documentation/blob/master/README.adoc[README] file of the repo. This update can happen anytime after the catalog has been updated, including after the release train has been completed. 
