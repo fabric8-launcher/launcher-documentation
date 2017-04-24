@@ -13,9 +13,9 @@
 # Set Default values
 PROJECTNAME="myproject"
 id="developer:developer"
-VERSION="v3"
+VERSION="v4"
 
-while getopts p:g:t:i: option
+while getopts p:g:t:i:v: option
 do
         case "${option}"
         in
@@ -39,6 +39,7 @@ echo "Console: $CONSOLE_URL"
 echo "Github user: ${GITHUB_IDENTITY[0]}"
 echo "Github token: ${GITHUB_IDENTITY[1]}"
 echo "Identity: ${IDENTITY[0]}, ${IDENTITY[1]}"
+echo "Version: $VERSION"
 echo "------------------------------------------"
 
 echo "------------------- Log on to OpenShift Platform -----------------------"
