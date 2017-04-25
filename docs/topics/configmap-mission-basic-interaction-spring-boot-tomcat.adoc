@@ -47,3 +47,24 @@ $ curl http://{app-name}-myproject.192.168.99.100.nip.io/api/greeting
 ----
 +
 You should see your updated greeting.
+
+= Running Integration Tests
+
+This booster contains a set of integration tests.
+To run them, you must be connected to an OpenShift instance and select the project that will be used for testing.
+
+To run the integration tests, execute the following command:
+
+[source,bash,options="nowrap",subs="attributes+"]
+--
+$ mvn clean verify -Popenshift,openshift-it
+--
+[WARNING]
+--
+Be sure that view access rights for service account are added before executing tests.
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc policy add-role-to-user view -n $(oc project -q) -z default
+----
+--
