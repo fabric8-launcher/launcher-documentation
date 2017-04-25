@@ -10000,7 +10000,7 @@ td > .progress:first-child:last-child {
 }
 
 #footer-text:before {
-  content: url(images/redhat.svg);
+  content: url(/docs/images/redhat.svg);
   height: 60px;
   display: block;
 }
@@ -10026,7 +10026,7 @@ td > .progress:first-child:last-child {
 }
 
 body:before {
-  content: url(images/openshift-io_white.png);
+  content: url(/docs/images/openshift-io_white.png);
   background: #030303;
   border-top: 3px solid #39a5dc;
   height: 60px;
