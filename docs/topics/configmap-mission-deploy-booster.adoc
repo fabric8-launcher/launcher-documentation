@@ -24,14 +24,14 @@ $ oc login {link-osl-auth} --token=MYTOKEN
 $ oc new-project NEW-PROJECT-NAME
 ----
 
-ifdef::configmap-vertx[]
+ifdef::configmap-vertx,configmap-spring-boot-tomcat[]
 . Add a policy for the project.
 +
 [source,options="nowrap",subs="attributes+"]
 ----
 $ oc policy add-role-to-user view -n $(oc project -q) -z default
 ----
-endif::configmap-vertx[]
+endif::configmap-vertx,configmap-spring-boot-tomcat[]
 
 . Navigate to the root directory of your booster.
 
@@ -82,18 +82,18 @@ endif::configmap-wf-swarm[]
 
 . Use maven to start the deployment to {OpenShiftLocal}.
 +
-ifdef::configmap-vertx[]
+ifdef::configmap-vertx,configmap-spring-boot-tomcat[]
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ mvn clean fabric8:deploy -Popenshift
 ----
-endif::configmap-vertx[]
-ifndef::configmap-vertx[]
+endif::configmap-vertx,configmap-spring-boot-tomcat[]
+ifdef::configmap-wf-swarm[]
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ mvn clean fabric8:deploy -Popenshift -DskipTests
 ----
-endif::configmap-vertx[]
+endif::configmap-wf-swarm[]
 +
 This command uses the Fabric8 Maven Plugin to launch the S2I process on {OpenShiftLocal} and to start the pod.
 
