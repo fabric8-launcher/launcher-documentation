@@ -86,4 +86,4 @@
 :link-rhsso: https://github.com/obsidian-toaster-quickstarts/redhat-sso
 :link-launchpad-yaml: /latest-launchpad-template
 
-:link-launchpad-install-script: https://raw.githubusercontent.com/openshiftio/appdev-documentation/master/scripts/deploy_launchpad_mission.sh
+:link-launchpad-install-script: https://raw.githubusercontent.com/openshiftio/appdev-documentation/production/scripts/deploy_launchpad_mission.sh
