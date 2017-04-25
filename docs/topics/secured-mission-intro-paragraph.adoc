@@ -1,0 +1,1 @@
+The Secured application Booster expands on the API Level 0 Booster to illustrate securing a REST endpoint using Red Hat SSO.
