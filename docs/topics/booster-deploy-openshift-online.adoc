@@ -26,6 +26,6 @@ Error from server: User "username" cannot get project "default"
 +
 [source,subs="attributes+"]
 ----
-oc new-project <project_name>
+oc new-project {project-name}
 ----
 --

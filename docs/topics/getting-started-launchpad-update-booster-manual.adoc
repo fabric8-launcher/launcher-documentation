@@ -36,7 +36,7 @@ $ oc login {link-osl-auth}
 $ oc login {link-osl-auth} --token=$MYTOKEN
  ...@see how to obtain your token in note below
 
-$ oc project PROJECT-NAME
+$ oc project {project-name}
 ----
 +
 NOTE: You can find your token in the {OpenShiftLocal} Web console. For example, if your {link-osl-auth} is `https://192.168.99.100:8443`, your token would be located at `https://192.168.99.100:8443/console/command-line`. 
