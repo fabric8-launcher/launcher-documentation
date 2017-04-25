@@ -56,28 +56,28 @@
 :link-configmap-vertx-booster: https://github.com/openshiftio-vertx-boosters/vertx-configmap-booster
 :link-configmap-wf-swarm-booster: https://github.com/wildfly-swarm-openshiftio-boosters/configmap
 
-:link-launchpad-openshift-local-install-guide: minishift-installation.html
-:link-getting-started-guide: getting-started.html
+:link-launchpad-openshift-local-install-guide: /docs/minishift-installation.html
+:link-getting-started-guide: /docs/getting-started.html
 
-:link-mission-http-api-spring-boot-tomcat: mission-http-api-spring-boot-tomcat.html
-:link-mission-http-api-vertx: mission-http-api-vertx.html
-:link-mission-http-api-wf-swarm: mission-http-api-wf-swarm.html
+:link-mission-http-api-spring-boot-tomcat: /docs/mission-http-api-spring-boot-tomcat.html
+:link-mission-http-api-vertx: /docs/mission-http-api-vertx.html
+:link-mission-http-api-wf-swarm: /docs/mission-http-api-wf-swarm.html
 
-:link-mission-crud-spring-boot-tomcat: mission-crud-spring-boot-tomcat.html
-:link-mission-crud-vertx: mission-crud-vertx.html
-:link-mission-crud-wf-swarm: mission-crud-wf-swarm.html
+:link-mission-crud-spring-boot-tomcat: /docs/mission-crud-spring-boot-tomcat.html
+:link-mission-crud-vertx: /docs/mission-crud-vertx.html
+:link-mission-crud-wf-swarm: /docs/mission-crud-wf-swarm.html
 
-:link-mission-configmap-spring-boot-tomcat: mission-configmap-spring-boot-tomcat.html
-:link-mission-configmap-vertx: mission-configmap-vertx.html
-:link-mission-configmap-wf-swarm: mission-configmap-wf-swarm.html
+:link-mission-configmap-spring-boot-tomcat: /docs/mission-configmap-spring-boot-tomcat.html
+:link-mission-configmap-vertx: /docs/mission-configmap-vertx.html
+:link-mission-configmap-wf-swarm: /docs/mission-configmap-wf-swarm.html
 
-:link-mission-health-check-spring-boot-tomcat: mission-health-check-spring-boot-tomcat.html
-:link-mission-health-check-vertx: mission-health-check-vertx.html
-:link-mission-health-check-wf-swarm: mission-health-check-wf-swarm.html
+:link-mission-health-check-spring-boot-tomcat: /docs/mission-health-check-spring-boot-tomcat.html
+:link-mission-health-check-vertx: /docs/mission-health-check-vertx.html
+:link-mission-health-check-wf-swarm: /docs/mission-health-check-wf-swarm.html
 
-:link-mission-secured-spring-boot: mission-secured-spring-boot.html
-:link-mission-secured-vertx: mission-secured-vertx.html
-:link-mission-secured-wf-swarm: mission-secured-wf-swarm.html
+:link-mission-secured-spring-boot: /docs/mission-secured-spring-boot.html
+:link-mission-secured-vertx: /docs/mission-secured-vertx.html
+:link-mission-secured-wf-swarm: /docs/mission-secured-wf-swarm.html
 
 :link-oso-console-cli-token: https://console.dev-preview-int.openshift.com/console/command-line
 :link-oso-auth: https://api.preview.openshift.com
