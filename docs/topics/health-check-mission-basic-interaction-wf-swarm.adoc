@@ -8,7 +8,7 @@ In the following we demonstrate the basic interactions on the command line that 
 +
 [source,options="nowrap",subs="attributes"]
 ----
-$ curl http://{app-name}-myproject.192.168.64.3.nip.io/api/greeting
+$ curl http://{app-name}-{project-name}.192.168.64.3.nip.io/api/greeting
 {"content":"Hello, World!"}
 ----
 
@@ -16,11 +16,11 @@ $ curl http://{app-name}-myproject.192.168.64.3.nip.io/api/greeting
 +
 [source,option="nowrap",subs="attributes+"]
 ----
-$ curl http://{app-name}-myproject.192.168.64.3.nip.io/api/killme
+$ curl http://{app-name}-{project-name}.192.168.64.3.nip.io/api/killme
 
 (followed by)
 
-$ curl http://{app-name}-myproject.192.168.64.3.nip.io/api/greeting
+$ curl http://{app-name}-{project-name}.192.168.64.3.nip.io/api/greeting
 
 <html>
   <head><title>Error</title></head>
@@ -43,5 +43,5 @@ NAME                           READY     STATUS    RESTARTS   AGE
 +
 [source,option="nowrap",subs="attributes"]
 --
-$ http://{app-name}-myproject.192.168.64.3.nip.io
+$ http://{app-name}-{project-name}.192.168.64.3.nip.io
 --
