@@ -34,7 +34,11 @@ public class HttpApplication extends AbstractVerticle {
     router.get("/latest-launchpad-template").handler(rc -> 
         rc.response().setStatusCode(302).putHeader("Location", LAUNCHPAD_TEMPLATE_LATEST_URL).end());
     router.get("/*").handler(
+             StaticHandler.create().
+                     setIndexPage(INDEX_PAGE));
+    router.get("/docs/*").handler(
             StaticHandler.create().
+                    setWebRoot(StaticHandler.DEFAULT_WEB_ROOT + "/docs").
                     setIndexPage(INDEX_PAGE));
 
     // Create the HTTP server and pass the "accept" method to the request handler.

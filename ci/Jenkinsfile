@@ -3,8 +3,7 @@ node("docsbuilder-maven") {
   stage("Build Documentation") {
     sh "pwd && ls -l"
     sh "./scripts/buildGuides.sh"
-    sh "mkdir -p ci/openshiftio-appdev-docs/src/main/resources"
-    sh "mv ./html/ ./ci/openshiftio-appdev-docs/src/main/resources/webroot"
+    sh "mv ./html/ ./ci/openshiftio-appdev-docs/src/main/resources/webroot/docs"
   }
   stage("Build and Deploy Server") {
     sh "cd ci/openshiftio-appdev-docs && mvn fabric8:deploy -Popenshift"
