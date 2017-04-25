@@ -1,0 +1,5 @@
+To launch manually, click on _Download Zip_ and follow the instructions in the mission's guide. This will:
+
+* Scaffold a maven project
+* Wrap it into a zip
+* Download to your local machine and execute it

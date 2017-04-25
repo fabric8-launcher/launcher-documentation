@@ -1,4 +1,4 @@
-The CRUD application Booster expands on the API Level 0 Booster to provide a basic example of performing _create_, _read_, _update_ and _delete_ (_CRUD_) operations on a PostgreSQL database using a simple HTTP API. _CRUD_ operations are the four basic functions of persistent storage, widely used when developing HTTP API dealing with a database.
+include::crud-mission-intro-paragraph.adoc[]
 
 The Booster also demonstrates the ability of the HTTP application to locate and connect to a database in OpenShift. Each runtime determines in an opinionated manner to implement the connectivity solution that is best suited in the given case. The runtime can choose between using _JDBC_, _JPA_, or an _ORM_.
 

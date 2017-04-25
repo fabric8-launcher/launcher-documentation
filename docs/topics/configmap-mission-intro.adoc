@@ -1,4 +1,5 @@
-The ConfigMap Mission provides a basic example of using ConfigMap to take advantage of external configuration sources. This mission shows you how to:
+include::configmap-mission-intro-paragraph.adoc[]
+This mission shows you how to:
 
 * Setup and configuration of ConfigMap.
 * Use the configuration provided by ConfigMap within an application.

@@ -1,4 +1,5 @@
-The API Level 0 Mission provides a basic example of mapping business operations to a remote procedure call endpoint over HTTP using a REST framework. This corresponds to link:https://martinfowler.com/articles/richardsonMaturityModel.html#level0[Level 0 in the Richardson Maturity Model]. Creating an HTTP endpoint using REST and its underlying principals to define your API enables you to quickly prototype and design your API in a flexible manner. More background information on REST is available in xref:about_rest[].
+include::rest-level-0-mission-intro-paragraph.adoc[]
+More background information on REST is available in xref:about_rest[].
 
 This is an introduction to the mechanics of opening a service that is called remotely. Specifically, this booster is an application that allows a user to:
 

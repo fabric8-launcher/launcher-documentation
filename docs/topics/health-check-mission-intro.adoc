@@ -1,5 +1,4 @@
-
-When you deploy an application, its important to know if it is available and if it can start handling incoming requests. Implementing the _health check_ pattern allows you to monitor the health of an application, which includes if an application is available and whether it is able to service requests.
+include::health-check-mission-intro-paragraph.adoc[]
 
 In order to understand the health check pattern, you need first understand the following concepts:
 

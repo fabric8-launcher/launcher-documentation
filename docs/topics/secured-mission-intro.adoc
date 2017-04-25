@@ -1,4 +1,4 @@
-The Secured application Booster expands on the API Level 0 Booster to illustrate securing a REST endpoint using Red Hat SSO.
+include::secured-mission-intro-paragraph.adoc[]
 
 = Project Structure
 The Booster project is split into two Apache Maven modules - `app` and `sso`.
