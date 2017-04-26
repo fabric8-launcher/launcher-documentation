@@ -6,6 +6,9 @@ You can find details on installing {OpenShiftLocal} for your platform in link:{l
 
 NOTE: You only need to do this once for any of the secured booster missions. They can share the same RH SSO/{OpenShiftLocal} setup.
 
+NOTE: If you have already run the minishift command with a different memory setting/iso-url value, you need to stop it and completely delete the ~/.minishift directory
+before running the following startup sequence.
+
 NOTE: You must use a different boot iso image than the default in order for RH SSO to startup:
 
 [source,bash,options="nowrap",subs="attributes+"]

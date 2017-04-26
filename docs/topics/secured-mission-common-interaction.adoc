@@ -46,10 +46,16 @@ the {runtime-name} secured booster had been deployed.
 include::secured-mission-{runtime-tag}-interaction.adoc[]
 
 ## Decoding JWT
-There is a nice online decoder that you can use to decode a JWT to see it's contents at https://jwt.io/#debugger-io[JWT Debugger].
-To use it, go to the site, and first use the Algorithm drop down menu to choose RS256. At that point you will a text input
-box in the VERIFY SIGNATURE section that has text beginning with "-----BEGIN PUBLIC KEY-----". Copy the entire
-"-----BEGIN...-----END PUBLIC KEY-----" block from here:
+There is a nice online decoder that you can use to decode a JWT to see it's contents at https://jwt.io/#debugger-io[JWT Debugger], and the screen
+is shown here:
+
+image:jwt-debugger.png[JWT Debugger Screen]
+
+To use it, go to the site, and first use the Algorithm drop down menu to choose RS256. Make sure the web form has actually updated to
+display the RSASHA256(...) information in the Signature section. If it does not, try switching back to HS256 and then back to RS256.
+
+At that point you will a text input box in the VERIFY SIGNATURE section that has text beginning with "-----BEGIN PUBLIC KEY-----".
+Copy the entire "-----BEGIN...-----END PUBLIC KEY-----" block from here:
 
 [source,base64]
 ----
