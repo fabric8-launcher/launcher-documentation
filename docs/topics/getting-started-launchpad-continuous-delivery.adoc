@@ -3,3 +3,5 @@ To launch using continuous delivery, click the _Open in OpenShift_ button. This 
 * Create a new GitHub repository associated with your account containing the mission's code
 * Create a pipeline to continuously deliver your mission's code.
 * The pipeline will then build and deploy your mission's code OpenShift
+
+IMPORTANT: Before proceeding, make sure you have granted *launch.openshift.io* access to GitHub and OpenShift; this one-time step can be done https://sso.openshift.io/auth/realms/launchpad/account/identity[here].
