@@ -1,0 +1,1 @@
+Now you can push changes and the get built tested and deployed. See the link:http://appdev.openshift.io/docs/getting-started.html#launchpad-launch-booster-cd[CI section of the docs]
