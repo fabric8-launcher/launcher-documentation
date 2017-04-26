@@ -86,5 +86,7 @@
 
 :link-rhsso: https://github.com/obsidian-toaster-quickstarts/redhat-sso
 :link-launcher-yaml: /latest-launcher-template
+:link-launcher-oso: https://launch.openshift.io/wizard/
+
 
 :link-launcher-install-script: https://raw.githubusercontent.com/openshiftio/appdev-documentation/production/scripts/deploy_launchpad_mission.sh
