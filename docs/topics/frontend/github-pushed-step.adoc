@@ -1,0 +1,3 @@
+:linkattrs:
+
+Code is pushed that has been generated from one of the boosters for more information about boosters and there missions have a look at the link:http://appdev.openshift.io/docs/getting-started.html#available-missions[available missions, window="_blank"]

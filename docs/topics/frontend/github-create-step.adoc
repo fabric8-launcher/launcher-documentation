@@ -1,0 +1,3 @@
+:linkattrs:
+
+A new github project has been created link:http://appdev.openshift.io/docs/getting-started.html#available-missions[available missions, window="_blank"]
