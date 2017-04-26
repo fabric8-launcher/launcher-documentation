@@ -19,6 +19,7 @@
 :WildFlySwarm: WildFly Swarm
 :SpringBoot: Spring Boot Tomcat
 :VertX: Eclipse Vert.x
+:launcher: launch.openshift.io
 
 :app-name: MY_APP_NAME
 :project-name: MY_PROJECT_NAME
@@ -38,7 +39,7 @@
 :mission-secured-wf-swarm-guide-name: Secured Mission - {WildFlySwarm}
 
 :openshift-local-guide-name: Install and Configure {OpenShiftLocal}
-:minishift-installation-guide-name: Install and Configure the Launchpad on {OpenShiftLocal}
+:minishift-installation-guide-name: Install and Configure the {launcher} Application on {OpenShiftLocal}
 :getting-started-guide-name: Getting Started Guide
 :landing-page-name: Welcome
 
@@ -57,7 +58,7 @@
 :link-configmap-vertx-booster: https://github.com/openshiftio-vertx-boosters/vertx-configmap-booster
 :link-configmap-wf-swarm-booster: https://github.com/wildfly-swarm-openshiftio-boosters/configmap
 
-:link-launchpad-openshift-local-install-guide: /docs/minishift-installation.html
+:link-launcher-openshift-local-install-guide: /docs/minishift-installation.html
 :link-getting-started-guide: /docs/getting-started.html
 
 :link-mission-http-api-spring-boot-tomcat: /docs/mission-http-api-spring-boot-tomcat.html
@@ -85,6 +86,6 @@
 :link-osl-auth: {OpenShiftLocal}_URL
 
 :link-rhsso: https://github.com/obsidian-toaster-quickstarts/redhat-sso
-:link-launchpad-yaml: /latest-launchpad-template
+:link-launcher-yaml: /latest-launcher-template
 
-:link-launchpad-install-script: https://raw.githubusercontent.com/openshiftio/appdev-documentation/production/scripts/deploy_launchpad_mission.sh
+:link-launcher-install-script: https://raw.githubusercontent.com/openshiftio/appdev-documentation/production/scripts/deploy_launchpad_mission.sh

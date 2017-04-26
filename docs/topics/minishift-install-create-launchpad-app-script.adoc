@@ -1,49 +1,49 @@
 = Using an Automated Script
 
-You can install the Launchpad to {OpenShiftLocal} using link:{link-launchpad-install-script}[an automated script]. The script will:
+You can install the {launcher} application to {OpenShiftLocal} using link:{link-launcher-install-script}[an automated script]. The script will:
 
 * Create a project in {OpenShiftLocal}.
-* Deploy the Launchpad to that project using the link:{link-launchpad-yaml}[latest template].
-* Configure the Launchpad with your GitHub username and personal access token.
+* Deploy the {launcher} application to that project using the link:{link-launcher-yaml}[latest template].
+* Configure the {launcher} application with your GitHub username and personal access token.
 * Update the Jenkins _serviceaccount_ to use the `admin` role.
 
 To use the automated script: 
 
-. link:{link-launchpad-install-script}[Download] the script.
+. link:{link-launcher-install-script}[Download] the script.
 . Run the script.
 ** Run the script with username and password.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ ./deploy_launchpad_mission.sh -p LAUNCHPAD_PROJECT_NAME -i developer:developer -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN
+$ ./deploy_launchpad_mission.sh -p PROJECT_NAME -i developer:developer -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN
 ----
 
 ** Run the script with {OpenShiftLocal} access token.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ ./deploy_launchpad_mission.sh -p LAUNCHPAD_PROJECT_NAME -i OPENSHIFT_TOKEN -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN
+$ ./deploy_launchpad_mission.sh -p PROJECT_NAME -i OPENSHIFT_TOKEN -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN
 ----
 
-** Run the script and specify the version of the Launchpad template to use.
+** Run the script and specify the version of the {launcher} application template to use.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ ./deploy_launchpad_mission.sh -p LAUNCHPAD_PROJECT_NAME -i developer:developer -g myGithubUser:myGithubToken -v v3
+$ ./deploy_launchpad_mission.sh -p PROJECT_NAME -i developer:developer -g myGithubUser:myGithubToken -v v3
 ----
 
-. Once the script completes, return to the {OpenShiftLocal} web console and click on your Launchpad project. 
+. Once the script completes, return to the {OpenShiftLocal} web console and click on your {launcher} application project. 
 +
 This is your project's overview page and you can see its current status.
 +
-image::minishift_launchpad_booting.png[Launchpad booting]
+image::minishift_launchpad_booting.png[{launcher} application booting]
 +
 The grey circles reference that the docker images for these services are being pulled down from the network. This is a one time step that may take some time. Eventually the circles will turn a light blue to note that they are starting, then a deeper blue to indicate when they are running. 
 +
-When all services are running, you are ready to use the Launchpad application.  
+When all services are running, you are ready to use the {launcher} application.  
 
 . Click the link at the top of all services, which should end in `nip.io`.
 +
-A new browser tab will open with the Launchpad.
+A new browser tab will open with the {launcher} application.
 
-You are now running on your local cloud the same service we will be hosting over at `launch.openshift.io`. See the link:{link-getting-started-guide}#boosters[{getting-started-guide-name}] for more details on using the Launchpad to launch mission booster applications.
+You are now running on your local cloud the same service we will be hosting over at `launch.openshift.io`. See the link:{link-getting-started-guide}#boosters[{getting-started-guide-name}] for more details on using the {launcher} application to launch mission booster applications.

@@ -1,9 +1,9 @@
-[[launchpad-launch-booster]]
+[[launcher-launch-booster]]
 = Launch Your Booster
 
 To launch your booster from the launch screen, you have the following options.
 
-[[launchpad-launch-booster-cd]]
+[[launcher-launch-booster-cd]]
 == Launch Using Continuous Delivery
 
 To launch using continuous delivery, click the _Launch on OpenShift_ button.
@@ -12,7 +12,7 @@ This will:
 
 * Create a new GitHub repository associated with your account containing the mission's code.
 * Create a pipeline to continuously deliver your mission's code.
-* The pipeline will then build and deploy your mission's code to {OpenShiftLocal}.  The first launch and deployment should take under 10 minutes on most systems (depending upon resources and internet connection) as the Docker images powering the build are downloaded and cached. While the Docker images are being downloaded, you will see `Jenkins doesn’t have label launchpad-maven`; that's OK. Subsequent runs will be faster.
+* The pipeline will then build and deploy your mission's code to {OpenShiftLocal}.  The first launch and deployment should take under 10 minutes on most systems (depending upon resources and internet connection) as the Docker images powering the build are downloaded and cached. While the Docker images are being downloaded, you will see _Jenkins doesn’t have label..._ , which is expected. Subsequent runs will be faster.
 
 Click on the _See it here!_ link under _Creating your project on the OpenShift cloud_ to go to your booster's page in {OpenShiftLocal}.
 
@@ -30,9 +30,9 @@ You will be redirected to the startup logs in the `jenkins` pod. You have also g
 
 Once your booster is deployed, you can then interact with its application or applications. You can find more details on how to interact with a mission's booster in the _interaction section_ of each mission's guide. For example, if you deployed the {VertX} REST HTTP mission booster, use the link:{link-mission-http-api-vertx}#interact[Interact with the Unmodified {VertX} Booster] section in {mission-http-api-vertx-guide-name}. You can find a full list of mission guides in xref:available-missions[Available Missions].
 
-NOTE: Each mission guide covers deploying as well as interacting with the booster. If you have already deployed your booster using the steps above, skip the _deployment section_ in the mission guide which covers the process for xref:launchpad-launch-booster-manual[launching manually].
+NOTE: Each mission guide covers deploying as well as interacting with the booster. If you have already deployed your booster using the steps above, skip the _deployment section_ in the mission guide which covers the process for xref:launcher-launch-booster-manual[launching manually].
 
-[[launchpad-launch-booster-manual]]
+[[launcher-launch-booster-manual]]
 == Launch Manually
 
 To launch manually, click on _Download as Zip_.

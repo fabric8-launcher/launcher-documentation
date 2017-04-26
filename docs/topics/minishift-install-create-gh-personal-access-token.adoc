@@ -2,17 +2,17 @@
 
 IMPORTANT: You must have link:http://github.com[GitHub] account to set up a personal access token. If you do not have a GitHub account, you can create one link:http://github.com/join[here].
 
-Launchpad adds generated starter applications called _Boosters_ to your GitHub namespace. This requires Launchpad to have access to your GitHub account, which is granted using a GitHub personal access token.
+The {launcher} application adds generated starter applications called _Boosters_ to your GitHub namespace. This requires the {launcher} application to have access to your GitHub account, which is granted using a GitHub personal access token.
 
 To create a GitHub personal access token:
 
 . Using a web browser, navigate to `https://github.com/settings/tokens`.
 . Select _Generate new token_.
-. Add a token description, for example `Launchpad on Minishift`.
+. Add a token description, for example `{launcher} on Minishift`.
 . Select the following parent scopes and all their children:
 ** `repo` 
 ** `admin:repo_hook`
 . Click  _Generate token_.
-. Save the hex code of the personal access token. You need this to complete the installation of Launchpad on {OpenShiftLocal}.
+. Save the hex code of the personal access token. You need this to complete the installation of the {launcher} application on {OpenShiftLocal}.
 +
 IMPORTANT: This hex code only appears once and cannot be recreated. If you lose this hex code you will need to create a new personal access token.

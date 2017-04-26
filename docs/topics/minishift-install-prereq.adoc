@@ -1,6 +1,6 @@
 = Prerequisite: Install {OpenShiftLocal}
 
-In order to use Launchpad on a local cloud, you must have {OpenShiftLocal} `{MinishiftVersion}` installed and configured. The installation steps are available link:https://docs.openshift.org/latest/minishift/getting-started/installing.html[in the OpenShift documentation] and vary by platform.
+In order to use the {launcher} application on a local cloud, you must have {OpenShiftLocal} `{MinishiftVersion}` installed and configured. The installation steps are available link:https://docs.openshift.org/latest/minishift/getting-started/installing.html[in the OpenShift documentation] and vary by platform.
 
 To verify you have {OpenShiftLocal} installed and configured:
 

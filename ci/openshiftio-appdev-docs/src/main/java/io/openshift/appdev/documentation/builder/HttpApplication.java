@@ -24,15 +24,15 @@ import io.vertx.ext.web.handler.StaticHandler;
 public class HttpApplication extends AbstractVerticle {
 
    private static final String INDEX_PAGE = "index.html";
-   private static final String LAUNCHPAD_TEMPLATE_LATEST_URL = "https://raw.githubusercontent.com/openshiftio/launchpad-templates/v3/openshift/launchpad-template.yaml";
+   private static final String LAUNCHER_TEMPLATE_LATEST_URL = "https://raw.githubusercontent.com/openshiftio/launchpad-templates/v3/openshift/launchpad-template.yaml";
   @Override
   public void start(Future<Void> future) {
     // Create a router object.
     Router router = Router.router(vertx);
 
     router.get("/health").handler(rc -> rc.response().end("OK"));
-    router.get("/latest-launchpad-template").handler(rc -> 
-        rc.response().setStatusCode(302).putHeader("Location", LAUNCHPAD_TEMPLATE_LATEST_URL).end());
+    router.get("/latest-launcher-template").handler(rc -> 
+        rc.response().setStatusCode(302).putHeader("Location", LAUNCHER_TEMPLATE_LATEST_URL).end());
     router.get("/*").handler(
              StaticHandler.create().
                      setIndexPage(INDEX_PAGE));
