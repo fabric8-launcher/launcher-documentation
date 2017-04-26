@@ -79,5 +79,9 @@ $ ultrahook -k YOUR_ULTRAHOOK_KEY github MINISHIFT_WEBHOOK_URL
 
 . Click _Add webhook_.
 
-Every new commit pushed to the GitHub project of the booster will now issue an event that the ultrahook client (if it is running !) will capture in order
-to call the https://docs.openshift.org/latest/dev_guide/builds/index.html#build-triggers[trigger] endpoint of our pipeline BuildConfig
+Every new commit pushed to the GitHub project of the booster will now issue an event that the ultrahook client (if it is running!) will capture in order
+to call the https://docs.openshift.org/latest/dev_guide/builds/index.html#build-triggers[trigger] endpoint of our pipeline BuildConfig.
+
+You might have noticed that one webhook was already set up in GitHub.
+With {OpenShiftLocal}, that webhook points to a local IP address, which can't work.
+You can delete that webhook and keep the UltraHook one.
