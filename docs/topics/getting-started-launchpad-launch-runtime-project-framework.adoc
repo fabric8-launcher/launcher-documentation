@@ -1,4 +1,4 @@
-[[launchpad-launch-runtime-project-framework]]
+[[launcher-launch-runtime-project-framework]]
 = Launch Your Runtime Project Framework Project
 
 To launch your runtime project framework from the launch screen, you have the following options.

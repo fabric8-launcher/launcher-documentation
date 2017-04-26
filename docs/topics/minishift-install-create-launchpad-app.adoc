@@ -1,10 +1,10 @@
 = Manually
 
-. Click _New Project_ to create a new OpenShift project to house the Launchpad application. 
+. Click _New Project_ to create a new OpenShift project to house the {launcher} application. 
 +
 image::minishift_newproject.png[New Project Button]
 
-. Name the project and optionally provide a description. This example uses `launchpad` for the project's name.
+. Name the project and optionally provide a description. This example uses `my-launcher` for the project's name.
 +
 image::minishift_projectconfig.png[New Project Config]
 
@@ -14,7 +14,7 @@ image::minishift_projectconfig.png[New Project Config]
 +
 image::minishift_yamljson.png[Import YAML/JSON]
 
-. Paste the contents from link:{link-launchpad-yaml}[here] into the text box provided. 
+. Paste the contents from link:{link-launcher-yaml}[here] into the text box provided. 
 +
 NOTE: We are working on removing this step entirely, but for now it is required. The full details and a current status are available link:https://github.com/openshiftio/launchpad-templates/issues/2[on GitHub].
 
@@ -29,22 +29,22 @@ image::minishift_processtemplate.png[Process Template]
 ** OpenShift username and password from {OpenShiftLocal}, for example `developer` for the username and password. 
 ** _KeyCloak URL_ and _KeyCloak Realm_ should be cleared out
 +
-WARNING: You must clear these fields out for Launchpad on {OpenShiftLocal} to be configured correctly.
+WARNING: You must clear these fields out for the {launcher} application on {OpenShiftLocal} to be configured correctly.
 
 ** _Catalog Git Repository_ and _Catalog Git Reference_ should be generally left as-is, unless you are developing against a specific fork you would like to use.
 ** _Catalog Index Period_ may be left to `0` unless you would like the catalog to index at some interval in minutes.
-** _Launchpad Frontend Host_ must be updated to replace `$PROJECTNAME` with the name of your project. You also need to update `$HOSTNAMEORIP` in the string to the IP address of your OpenShift Console URL. This example uses `https://192.168.42.152:8443` and `launchpad`.
+** _{launcher} Frontend Host_ must be updated to replace `$PROJECTNAME` with the name of your project. You also need to update `$HOSTNAMEORIP` in the string to the IP address of your OpenShift Console URL. This example uses `https://192.168.42.152:8443` and `{launcher}`.
 +
 WARNING: Before proceeding to the next steps, confirm all the fields are correct.
 
 . Click `Create` to complete the setup. You will see a screen confirming that the application has been created. Click _Continue to overview_.
 
-. On the overview page, wait and confirm that the three services for Launchpad are starting up.
+. On the overview page, wait and confirm that the three services for the {launcher} application are starting up.
 +
-image::minishift_launchpad_booting.png[Launchpad booting]
+image::minishift_launchpad_booting.png[{launcher} booting]
 +
 The grey circles reference that the docker images for these services are being pulled down from the network. This is a one time step that may take some time. Eventually the circles will turn a light blue to note that they are starting, then a deeper blue to indicate when they are running. 
 
-. When all services are running, you are ready to use the Launchpad application.  Click the link at the top of all services, which should end in `nip.io`, and a new browser tab will open with the Launchpad.
+. When all services are running, you are ready to use the {launcher} application.  Click the link at the top of all services, which should end in `nip.io`, and a new browser tab will open with the {launcher} application.
 
-You are now running on your local cloud the same service we will be hosting over at `launch.openshift.io`. See the link:{link-getting-started-guide}#boosters[{getting-started-guide-name}] for more details on using the Launchpad to launch mission booster applications.
+You are now running on your local cloud the same service we will be hosting over at `launch.openshift.io`. See the link:{link-getting-started-guide}#boosters[{getting-started-guide-name}] for more details on using {launcher} to launch mission booster applications.

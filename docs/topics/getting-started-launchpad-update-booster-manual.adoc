@@ -1,6 +1,6 @@
 = Update Manually
 
-This approach allows you to deploy updates directly from a local version of the GitHub repository created by the Launchpad. 
+This approach allows you to deploy updates directly from a local version of the GitHub repository created by {launcher}. 
 
 To update your mission manually:
 

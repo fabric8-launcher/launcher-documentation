@@ -1,7 +1,7 @@
-[[launchpad-create-runtime-project-framework]]
-= Use the Launchpad to Create a Runtime Project Framework Project
+[[launcher-create-runtime-project-framework]]
+= Use {launcher} to Create a Runtime Project Framework Project
 
-After you have the Launchpad running on {OpenShiftLocal}, you can use it to create a runtime project framework project.
+After you have the {launcher} application running on {OpenShiftLocal}, you can use it to create a runtime project framework project.
 
 To create a runtime project framework:
 
@@ -9,8 +9,8 @@ To create a runtime project framework:
 . Choose the project type you would like to run. You may update any of the pre-filled details or leave them with the default details. Click _Next_.
 . Fill in the setup options and choose any dependencies you would like to have preconfigured. Click _Finish_
 
-NOTE: You can come back to the Launchpad later and try different options. 
+NOTE: You can come back to the {launcher} application later and try different options. 
 
 
-You have just created your runtime project framework project are now on the launch screen. Follow the steps in xref:launchpad-launch-runtime-project-framework[] to deploy it.
+You have just created your runtime project framework project and are now on the launch screen. Follow the steps in xref:launcher-launch-runtime-project-framework[] to deploy it.
 
