@@ -1,3 +1,5 @@
+:icons: font
+
 To launch using continuous delivery, click the _Use OpenShift Online to build and deploy_ button. This will:
 
 * Create a new GitHub repository in your namespace containing the mission's code
