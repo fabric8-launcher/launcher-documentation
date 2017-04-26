@@ -1,0 +1,26 @@
+
+[[use_jbds]]
+= Using JBDS with a Booster Project
+
+You can download Red Hat JBoss Developer Studio link:https://developers.redhat.com/products/devstudio/download/[here].
+
+To import the booster project:
+
+. Ensure JBDS is running.
+. Click _File_ -> _Import_.
+. Choose _Maven_ -> _Existing Maven Projects_.
+. Click _Browse_, navigate to the root of your booster project, and click _Open_.
+. Ensure the `pom.xml` file is selected and click _Finish_.
+
+Once the import is complete, you can begin editing your project. You can use the `git` CLI to commit and push any changes made in JBDS, but you can also do this directly in JBDS.
+
+To commit and push changes to your GitHub repository:
+
+. Ensure you have saved all files with chances that you intend to commit.
+. Right click on the root of the project _Project Explorer_ or _Package Explorer_ view.
+. Choose _Team_ -> _Commit..._.
+. Drag all the changes you want to commit from the _Unstaged Changes_ section to the _Staged Changes_ section.
+. Enter your commit message and click _Commit and Push_.
+. Click _OK_ in the _Push Results_ window when prompted.
+
+Your changes are now available in your GitHub repository.
