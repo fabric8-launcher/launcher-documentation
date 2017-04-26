@@ -5,7 +5,7 @@ include::topics/templates/document-attributes.adoc[]
 // This is used by the secured-mission-common-interaction.adoc to include the runtime specific information
 :runtime-tag: sb
 
-= {mission-secured-vertx-guide-name}
+= {mission-secured-spring-boot-guide-name}
 
 include::topics/secured-mission-intro.adoc[leveloffset=+1]
 
@@ -23,6 +23,7 @@ keycloak.ssl-required=external
 keycloak.resource=${client.id}
 keycloak.credentials.secret=${secret}
 keycloak.use-resource-role-mappings=true
+keycloak.bearer-only=true
 
 keycloak.securityConstraints[0].securityCollections[0].name=admin stuff
 keycloak.securityConstraints[0].securityCollections[0].authRoles[0]=springboot-admin
