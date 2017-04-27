@@ -81,7 +81,6 @@
 :link-mission-secured-vertx: /docs/mission-secured-vertx.html
 :link-mission-secured-wf-swarm: /docs/mission-secured-wf-swarm.html
 
-:link-oso-console-cli-token: https://console.dev-preview-int.openshift.com/console/command-line
 :link-oso-auth: https://api.preview.openshift.com
 :link-osl-auth: {OpenShiftLocal}_URL
 
