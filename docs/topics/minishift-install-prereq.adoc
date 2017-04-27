@@ -9,3 +9,13 @@ To verify you have {OpenShiftLocal} installed and configured:
 $ minishift version
 Minishift version: 1.0.0-beta5
 ----
+
+You also need to have the `oc` binary setup on your path as detailed link:https://docs.openshift.org/latest/minishift/getting-started/quickstart.html#starting-minishift[here]. To verify you have `oc` on your path:
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc version
+oc v1.4.1+3f9807a
+kubernetes v1.4.0+776c994
+features: Basic-Auth
+----
