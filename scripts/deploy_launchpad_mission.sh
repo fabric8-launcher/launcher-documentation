@@ -77,12 +77,3 @@ oc new-app launchpad -n $PROJECTNAME \
     -p LAUNCHPAD_MISSIONCONTROL_OPENSHIFT_PASSWORD=${IDENTITY[1]} \
     -p LAUNCHPAD_FRONTEND_HOST=launchpad-frontend-$PROJECTNAME.$HOSTNAMEORIP.nip.io
 echo "------------------------------------------"
-
-#
-# Replace edit role with admin in order to allow the jenkins serviceaccount to by example create rolebindings, ...
-# Log on to the platform using system:admin user
-#
-echo "------------------ Patch Jenkins to have admin role ------------------------"
-oc login -u system:admin
-oc patch template/jenkins-ephemeral -n openshift --type='json' -p='[{"op": "replace", "path": "/objects/3/roleRef/name", "value":"admin"}]'
-echo "------------------------------------------"
