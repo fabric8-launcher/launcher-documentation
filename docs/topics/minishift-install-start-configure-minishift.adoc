@@ -35,11 +35,13 @@ You now have OpenShift running in a single-node cluster on your local machine. T
 +
 image::minishift_login.png[Login]
 +
-[NOTE]
+[IMPORTANT]
 ====
-Since {OpenShiftLocal} is for development purposes, it uses HTTPS for the web console and only provides a self-signed certificate. You may need to allow your browser to bypass SSL security policies as it tries to protect you from using `HTTPS` without a cerficate signed by a certificate authority. The below screenshot shows the warning message in the Chrome browser.
+Since {OpenShiftLocal} is for development purposes, it uses HTTPS for the web console and only provides a self-signed certificate. You may need to allow your browser to bypass SSL security policies as it tries to protect you from using `HTTPS` without a certificate signed by a certificate authority. The below screenshot shows the warning message in the Chrome browser.
 
 image::minishift_sslwarning.png[SSL warning]
+
+At this time, Safari on macOS does not work with {OpenShiftLocal}. Details on this issue are tracked link:https://github.com/openshiftio/appdev-planning/issues/16[here]. Other browsers, such as Chrome, on macOS do work with {OpenShiftLocal}.
 ====
 
 . Delete the preconfigured project.
