@@ -12,7 +12,7 @@ This will:
 
 * Create a new GitHub repository associated with your account containing the mission's code.
 * Create a pipeline to continuously deliver your mission's code.
-* The pipeline will then build and deploy your mission's code to {OpenShiftLocal}.  The first launch and deployment should take under 10 minutes on most systems (depending upon resources and internet connection) as the Docker images powering the build are downloaded and cached. While the Docker images are being downloaded, you will see _Jenkins doesn’t have label..._ , which is expected. Subsequent runs will be faster.
+* The pipeline will then build and deploy your mission's code to {OpenShiftLocal}.  The first launch and deployment should take under 10 minutes on most systems (depending upon resources and internet connection) as the Docker images powering the build are downloaded and cached. While the Docker images are being downloaded, you will see _Jenkins doesn't have label..._ , which is expected. Subsequent runs will be faster.
 
 Click on the _See it here!_ link under _Creating your project on the OpenShift cloud_ to go to your booster's page in {OpenShiftLocal}.
 
