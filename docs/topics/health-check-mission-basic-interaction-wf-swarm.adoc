@@ -6,7 +6,7 @@ In the following we demonstrate the basic interactions on the command line that 
 
 . Use `curl` to execute a `GET` request against the `{app-name}` service. You can also use a browser to do this.
 +
-[source,options="nowrap",subs="attributes"]
+[source,bash,options="nowrap",subs="attributes"]
 ----
 $ curl http://{app-name}-{project-name}.192.168.64.3.nip.io/api/greeting
 {"content":"Hello, World!"}
@@ -14,7 +14,7 @@ $ curl http://{app-name}-{project-name}.192.168.64.3.nip.io/api/greeting
 
 . To simulate a service internal failure and to trigger the openshift selfhealing capabilities, invoke the `/api/killme` endpoint and verify the availability of the `/api/greeting` endpoint shortly after that. It should return a HTTP status 503:
 +
-[source,option="nowrap",subs="attributes+"]
+[source,bash,option="nowrap",subs="attributes+"]
 ----
 $ curl http://{app-name}-{project-name}.192.168.64.3.nip.io/api/killme
 
@@ -30,7 +30,7 @@ $ curl http://{app-name}-{project-name}.192.168.64.3.nip.io/api/greeting
 
 . While performing these operations you can use the Openshift console, or the `oc` client tools to watch the self-healing capabilities in action. Use `oc get pods -w` to continuously watch the service state from another terminal window. You should see that number pods in a `READY` state moves to zero (`0/1`) and after a while (~30 sec to 1 min) back up to one (`1/1`). In addition the `RESTARTS` count increases every time you kill the service:
 +
-[source,options="nowrap",subs="attributes"]
+[source,bash,options="nowrap",subs="attributes"]
 ----
 $ oc get pods -w
 NAME                           READY     STATUS    RESTARTS   AGE
@@ -41,7 +41,7 @@ NAME                           READY     STATUS    RESTARTS   AGE
 
 . Alternatively to the interaction using the terminal window, you can use the web interface provided by the service to invoke the different methods and watch the service move through the life cycle phases:
 +
-[source,option="nowrap",subs="attributes"]
+[source,bash,option="nowrap",subs="attributes"]
 --
 $ http://{app-name}-{project-name}.192.168.64.3.nip.io
 --

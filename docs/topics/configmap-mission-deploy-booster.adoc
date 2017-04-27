@@ -27,7 +27,7 @@ $ oc new-project {project-name}
 ifdef::configmap-vertx,configmap-spring-boot-tomcat[]
 . Add a policy for the project.
 +
-[source,options="nowrap",subs="attributes+"]
+[source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc policy add-role-to-user view -n $(oc project -q) -z default
 ----
@@ -45,7 +45,7 @@ $ oc create configmap app-config --from-file=app-config.yml
 
 . Verify your ConfigMap configuration has been deployed.
 +
-[source,options="nowrap"]
+[source,bash,options="nowrap"]
 ----
 $ oc get configmap app-config -o yaml
 
@@ -67,7 +67,7 @@ $ oc create configmap app-config --from-file=app-config.yml
 
 . Verify your ConfigMap configuration has been deployed.
 +
-[source,options="nowrap"]
+[source,bash,options="nowrap"]
 ----
 $ oc get configmap app-config -o yaml
 
@@ -128,7 +128,7 @@ A pod's route information gives you the base URL which you use to access it. In 
 ifdef::configmap-spring-boot-tomcat[]
 . Verify your ConfigMap configuration has been deployed.
 +
-[source,options="nowrap",subs="attributes+"]
+[source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc get configmap {app-name} -o yaml
 

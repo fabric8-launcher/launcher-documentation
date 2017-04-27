@@ -52,7 +52,7 @@ NAME                           READY     STATUS    RESTARTS   AGE
 +
 Alternatively to the interaction using the terminal window, you can use the web interface provided by the service to invoke the different methods and watch the service move through the life cycle phases.
 +
-[source,option="nowrap",subs="attributes+"]
+[source,bash,option="nowrap",subs="attributes+"]
 --
 http://{app-name}-{project-name}.192.168.64.3.nip.io
 --

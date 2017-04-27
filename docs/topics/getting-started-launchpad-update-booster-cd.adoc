@@ -7,7 +7,7 @@ To update your booster using continuous delivery:
 
 . Clone your project from GitHub.
 +
-[source,options="nowrap",subs="attributes+"]
+[source,bash,options="nowrap",subs="attributes+"]
 ----
 $ git clone git@github.com:USERNAME/PROJECT-NAME.git
 ----
@@ -17,7 +17,7 @@ $ git clone git@github.com:USERNAME/PROJECT-NAME.git
 . Perform any updates you want to the the project. For example, if you were using the {VertX} HTTP booster, you could update the `src/main/resources/webroot/index.html` to have a different title in the `<h1>` element.
 +
 .Example update to `index.html`
-[source,options="nowrap",subs="attributes+"]
+[source,xml,options="nowrap",subs="attributes+"]
 ----
 <div class="container">
 
@@ -27,7 +27,7 @@ $ git clone git@github.com:USERNAME/PROJECT-NAME.git
 
 . Commit and push your changes back to GitHub.
 +
-[source,options="nowrap",subs="attributes+"]
+[source,bash,options="nowrap",subs="attributes+"]
 ----
 $ git add src/main/resources/webroot/index.html
 $ git commit -m "Updated title of main page"
@@ -62,7 +62,7 @@ machine, then it will forward the HTTP request to an Openshift Build Trigger end
 
 . From the terminal, start UltraHook.
 +
-[source,options="nowrap",subs="attributes+"]
+[source,bash,options="nowrap",subs="attributes+"]
 ----
 $ ultrahook -k YOUR_ULTRAHOOK_KEY github MINISHIFT_WEBHOOK_URL
 ----

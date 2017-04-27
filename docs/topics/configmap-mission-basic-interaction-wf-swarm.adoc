@@ -4,7 +4,7 @@ The booster provides a default HTTP endpoint that accepts GET requests.
 
 . Use `curl` to execute a `GET` request against the booster. You can also use a browser to do this.
 +
-[source,options="nowrap",subs="attributes+"]
+[source,bash,options="nowrap",subs="attributes+"]
 ----
 $ curl http://{app-name}-{project-name}.192.168.99.100.nip.io/api/greeting
 {"content":"Hello World from a ConfigMap!"}
@@ -12,7 +12,7 @@ $ curl http://{app-name}-{project-name}.192.168.99.100.nip.io/api/greeting
 
 . Update the deployed ConfigMap configuration.
 +
-[source,options="nowrap"]
+[source,bash,options="nowrap"]
 ----
 $ oc edit configmap app-config
 ----
@@ -21,7 +21,7 @@ Change the value for the `greeting.message` key to `Bonjour %s from a ConfigMap!
 
 . Rollout the new version of your application so the ConfigMap configuration changes are picked up.
 +
-[source,options="nowrap",subs="attributes+"]
+[source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc rollout latest dc/{app-name}
 ----
@@ -40,7 +40,7 @@ You `{app-name}-1-aaaaa` pod should have a status of `Running` once its fully de
 
 . Use `curl` to execute a `GET` request against the booster with the updated ConfigMap configuration. You can also use a browser to do this.
 +
-[source,options="nowrap",subs="attributes+"]
+[source,bash,options="nowrap",subs="attributes+"]
 ----
 $ curl http://{app-name}-{project-name}.192.168.99.100.nip.io/api/greeting
 {"content":"Bonjour World from a ConfigMap!"}

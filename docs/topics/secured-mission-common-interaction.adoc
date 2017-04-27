@@ -9,10 +9,10 @@ token returned by the authentication step.
 The Java client is packaged as an executable jar and is located at target/sso-client.jar.
 To run the client, use `java -jar target/sso-client.jar -app ...`.
 The full set of command arguments that you can specify can be seen by passing -help:
-+
-[source,options="nowrap",subs="attributes+"]
+
+[source,bash,options="nowrap",subs="attributes+"]
 ----
-[sstark sso]$ java -jar target/sso-client.jar --help
+$ java -jar target/sso-client.jar --help
 Specifiy the name of the application endpoint with --app
 Usage: client.GreetingAuthzClient [options]
   Options:
