@@ -8,7 +8,7 @@
 oc get route {app-name} -o jsonpath={$.spec.host}
 --
 +
-[source,option="nowrap",subs="attributes+"]
+[source,bash,option="nowrap",subs="attributes+"]
 ----
 {app-name}-{project-name}.192.168.99.100.nip.io
 ----

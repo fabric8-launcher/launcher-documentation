@@ -14,7 +14,7 @@ NOTE: The below steps use the command line to interact with the service. Alterna
 
 . Use `curl` to execute a `GET` request against the `{app-name}` service. You can also use a browser to do this.
 +
-[source,options="nowrap",subs="attributes"]
+[source,bash,options="nowrap",subs="attributes"]
 ----
 $ curl http://{app-name}-{project-name}.192.168.64.3.nip.io/api/greeting
 {"content":"Hello, World!"}
@@ -24,7 +24,7 @@ $ curl http://{app-name}-{project-name}.192.168.64.3.nip.io/api/greeting
 +
 Invoking the /api/killme endpoint simulates an internal service failure and triggers the OpenShift self-healing capabilities. When invoking /api/greeting after simulating the failure, the service should return a HTTP status 503.
 +
-[source,option="nowrap",subs="attributes+"]
+[source,bash,option="nowrap",subs="attributes+"]
 ----
 $ curl http://{app-name}-{project-name}.192.168.64.3.nip.io/api/killme
 
@@ -42,7 +42,7 @@ $ curl http://{app-name}-{project-name}.192.168.64.3.nip.io/api/greeting
 +
 While invoking the service failure, you can watch the self-healing capabilities in action on OpenShift console, or with the oc client tools. You should see the number pods in a READY state move to zero (0/1) and after a short period (less than one minute) move back up to one (1/1). In addition the RESTARTS count increases every time you you invoke the service failure.
 +
-[source,options="nowrap",subs="attributes"]
+[source,bash,options="nowrap",subs="attributes"]
 ----
 $ oc get pods -w
 NAME                           READY     STATUS    RESTARTS   AGE
@@ -55,7 +55,7 @@ NAME                           READY     STATUS    RESTARTS   AGE
 +
 Alternatively to the interaction using the terminal window, you can use the web interface provided by the service to invoke the different methods and watch the service move through the life cycle phases.
 +
-[source,option="nowrap",subs="attributes"]
+[source,bash,option="nowrap",subs="attributes"]
 --
 $ http://{app-name}-{project-name}.192.168.64.3.nip.io
 --

@@ -4,7 +4,7 @@ The booster provides a default HTTP endpoint that accepts GET requests.
 
 . Use `curl` to execute a `GET` request against the booster. You can also use a browser to do this.
 +
-[source,options="nowrap",subs="attributes+"]
+[source,bash,options="nowrap",subs="attributes+"]
 ----
 $ curl http://{app-name}-{project-name}.192.168.99.100.nip.io/api/greeting
 {"content":"Hello, World from a ConfigMap !"}
