@@ -1,4 +1,5 @@
 :icons: font
+:linkattrs:
 
 To launch using continuous delivery, click the _Use OpenShift Online to build and deploy_ button. This will:
 
@@ -6,4 +7,4 @@ To launch using continuous delivery, click the _Use OpenShift Online to build an
 * Create a pipeline to continuously deliver your mission's code on each push to your repository's master branch
 * The pipeline will then build and deploy the codebase on OpenShift Online
 
-IMPORTANT: Before proceeding, make sure you have granted *launch.openshift.io* access to GitHub and OpenShift; this one-time step can be done https://sso.openshift.io/auth/realms/launchpad/account/identity[here].
+IMPORTANT: Before proceeding, make sure you have granted *launch.openshift.io* access to GitHub and OpenShift; this one-time step can be done https://sso.openshift.io/auth/realms/launchpad/account/identity[here, window="_blank"].
