@@ -925,17 +925,6 @@ b.button:after {
   padding-left: 0.125em
 }
 
-#footer {
-  max-width: 100%;
-  background-color: #222;
-  padding: 1.25em
-}
-
-#footer-text {
-  color: #ddd;
-  line-height: 1.44
-}
-
 .sect1 {
   padding-bottom: 1.25em
 }
@@ -1819,57 +1808,6 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] {
   display: none
 }
 
-#footer {
-  background-color: #040404;
-  font-size: 10px;
-  line-height: 15px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  width: 50%;
-  float: left;
-}
-
-#footer-text:before {
-  content: url(/docs/images/redhat.svg);
-  height: 60px;
-  display: block;
-}
-
-#footer + p {
-  background-color: #040404;
-  padding: 10px;
-  text-align: right;
-  float:right;
-  width: 100%;
-  height: 95px;
-}
-
-#footer + p + p {
-  background-color: #040404;
-  height: 95px;
-  color: #ddd;
-  padding-top: 10px;
-}
-
-#footer + p a {
-  color: #ddd;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-@media only screen and (max-width : 670px) {
-  #footer + p + p {
-    display:none;
-  }
-  #footer + p {
-    height: inherit;
-    margin-bottom: 0;
-  }
-  #footer {
-    width: 100%;
-  }
-}
-
 #content {
   margin: 20px;
 }
@@ -1879,12 +1817,95 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] {
 }
 
 body:before {
-  content: url(/docs/images/openshift-io_white.png);
-  background: #030303;
-  border-top: 3px solid #39a5dc;
+  content: "";
+  background: no-repeat 5%/35% url(images/openshift-io_white.png) #030303;
   height: 70px;
   width: 100%;
   display: inline-block;
-  padding-top: 8px;
-  padding-left: 8px;
+  padding: 8px 35px;
 }
+
+#footer-text {
+  font-size: smaller;
+  float: right;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.row {
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.col-xs-2 {
+    width: 16.66666667%;
+}
+
+.col-xs-10 {
+    width: 83.33333333%;
+}
+
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+    float: left;
+}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+footer {
+  background-color: #010101;
+  font-size: 12px;
+  height: 60px;
+  padding: 15px 0;
+  width: 100%; }
+  footer   .conditions   a:first-child {
+    margin-left: 70px; }
+  footer   .logo   a {
+    background: url(images/redhat.svg) no-repeat;
+    height: 34px;
+    width: 94px;
+    margin: 0;
+    top: auto;
+    background-size: 94px 30px;
+    display: inline-block; }
+  footer   .summit {
+    position: absolute;
+    right: 20px;
+    bottom: 0; }
+  footer   a {
+    color: #858585;
+    top: 7px;
+    position: relative;
+    margin-left: 15px; }
+    footer   a.legal {
+      border-right: 1px solid #858585;
+      padding-right: 15px; }
+
+@media (max-width: 1024px) {
+  footer   .conditions {
+    font-size: 12px; }
+    .footer-openshiftio   .conditions   a:first-child {
+      margin-left: 35px; }
+  .footer-openshiftio   .social {
+    display: none; } }
+
+@media (max-width: 768px) {
+  footer   .conditions {
+    display: none; }
+  .footer-openshiftio   .summit {
+    position: absolute;
+    right: 20px;
+    bottom: 0; }
+  .footer-openshiftio   a.legal:nth-child(2n) {
+    margin-left: 70px; }
+  .footer-content   a:first-child {
+    position: absolute;
+    right: 20px; } }
