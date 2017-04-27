@@ -32,15 +32,12 @@ curl http://{app-name}-myproject.192.168.99.100.nip.io/api/fruits
 [ {
   "id" : 1,
   "name" : "Apple",
-  "stock" : 10
 }, {
   "id" : 2,
   "name" : "Orange",
-  "stock" : 10
 }, {
   "id" : 3,
   "name" : "Pear",
-  "stock" : 10
 } ]
 ----
 +
@@ -54,7 +51,6 @@ curl http://{app-name}-myproject.192.168.99.100.nip.io/api/fruits/3
 {
   "id" : 3,
   "name" : "Pear",
-  "stock" : 10
 }
 ----
 
@@ -67,8 +63,8 @@ curl -H "Content-Type: application/json" -X POST -d '{"name":"apple"}'  http://{
 +
 ----
 {
+  "id" : 4,
   "name" : "apple",
-  "id" : 4
 }
 ----
 +
@@ -80,8 +76,8 @@ curl -H "Content-Type: application/json" -X PUT -d '{"name":"pineapple"}'  http:
 +
 ----
 {
+  "id" : 1,
   "name" : "pineapple",
-  "id" : 1
 }
 ----
 +
