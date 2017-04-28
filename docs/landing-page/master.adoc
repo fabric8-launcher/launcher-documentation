@@ -14,7 +14,7 @@ include::topics/templates/document-attributes.adoc[]
     }
     
     body {
-        background-image: url(images/hero-background-80.jpg);
+        background-image: url(docs/images/hero-background-80.jpg);
         background-size: cover;
     }
 
@@ -43,15 +43,15 @@ include::topics/templates/document-attributes.adoc[]
     }
     
     .Spring {
-        background-image: url(images/project-select-icons/spring-boot-logo.png)
+        background-image: url(docs/images/project-select-icons/spring-boot-logo.png)
     }
     
     .WildFly {
-        background-image: url(images/project-select-icons/wildfly-swarm.png)
+        background-image: url(docs/images/project-select-icons/wildfly-swarm.png)
     }
     
     .Vert {
-        background-image: url(images/project-select-icons/vertx.svg)
+        background-image: url(docs/images/project-select-icons/vertx.svg)
     }
 </style>
 <style>
@@ -162,20 +162,20 @@ include::topics/templates/document-attributes.adoc[]
     }
     
     .boot {
-        background-image: url(images/project-select-icons/spring-boot-logo.png)
+        background-image: url(docs/images/project-select-icons/spring-boot-logo.png)
     }
     
     .swarm {
-        background-image: url(images/project-select-icons/wildfly-swarm.png)
+        background-image: url(docs/images/project-select-icons/wildfly-swarm.png)
     }
     
     .vertx {
-        background-image: url(images/project-select-icons/vertx.svg)
+        background-image: url(docs/images/project-select-icons/vertx.svg)
     }
 </style>
 <div class="blank-slate-pf">
     <div class="blank-slate-pf-icon">
-        <img class="brand" src="images/brand.svg">
+        <img class="brand" src="docs/images/brand.svg">
     </div>
     <h2>You are moments away from continuous delivery of a new <br> application, built and deployed on <br> Red Hat OpenShift
         Online.</h2>
