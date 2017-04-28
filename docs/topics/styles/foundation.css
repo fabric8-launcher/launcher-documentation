@@ -1818,7 +1818,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] {
 
 body:before {
   content: "";
-  background: no-repeat 5%/35% url(images/openshift-io_white.png) #030303;
+  background: no-repeat 5%/25% url(images/openshift-io_white.png) #030303;
   height: 70px;
   width: 100%;
   display: inline-block;
