@@ -5,13 +5,7 @@ include::topics/templates/document-attributes.adoc[]
 
 ++++
 <style>
-    .app {
-        padding-top: 20px;
-        -ms-flex: 1;
-        flex: 1;
-    }
-    
-    .site {
+    .article {
         display: -ms-flexbox;
         display: flex;
         min-height: 100vh;
@@ -23,9 +17,16 @@ include::topics/templates/document-attributes.adoc[]
         background-image: url(images/hero-background-80.jpg);
         background-size: cover;
     }
+
+    *, :after, :before {
+        box-sizing: border-box;
+    }
     #content {
         margin-left: auto;
         margin-right: auto;
+        padding-top: 20px;
+        -ms-flex: 1;
+        flex: 1;
     }
 </style>
 <style>
@@ -68,7 +69,7 @@ include::topics/templates/document-attributes.adoc[]
     }
     
     .lead {
-        max-width: 800px;
+        max-width: 540px;
         font-weight: 300;
         line-height: 1.4;
     }
@@ -97,9 +98,11 @@ include::topics/templates/document-attributes.adoc[]
         font-size: 28px;
         padding-bottom: 20px;
         color: inherit;
+        font: inherit;
     }
     h2, h3 {
         color: inherit;
+        font: inherit;
     }
     h2 {
         font-size: 22px;
