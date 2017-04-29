@@ -19,6 +19,7 @@ package io.openshift.appdev.documentation.builder;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
 import io.vertx.ext.web.Router;
+import io.vertx.ext.web.handler.RedirectAuthHandler;
 import io.vertx.ext.web.handler.StaticHandler;
 
 public class HttpApplication extends AbstractVerticle {
@@ -33,15 +34,19 @@ public class HttpApplication extends AbstractVerticle {
     router.get("/health").handler(rc -> rc.response().end("OK"));
     router.get("/latest-launcher-template").handler(rc -> 
         rc.response().setStatusCode(302).putHeader("Location", LAUNCHER_TEMPLATE_LATEST_URL).end());
-    router.get("/*").handler(
-             StaticHandler.create().
-                     setIndexPage(INDEX_PAGE));
-    router.get("/docs/*").handler(
+     router.route("/").handler(context -> {
+        // Redirect to docs
+        context.response().putHeader("location", "/docs").setStatusCode(302).end();
+     });
+     router.get("/docs/*").handler(
             StaticHandler.create().
                     setWebRoot(StaticHandler.DEFAULT_WEB_ROOT + "/docs").
                     setIndexPage(INDEX_PAGE));
 
-    // Create the HTTP server and pass the "accept" method to the request handler.
+
+
+
+     // Create the HTTP server and pass the "accept" method to the request handler.
     vertx
         .createHttpServer()
         .requestHandler(router::accept)
