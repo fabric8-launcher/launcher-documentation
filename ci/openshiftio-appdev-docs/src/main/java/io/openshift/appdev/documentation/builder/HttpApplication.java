@@ -25,7 +25,7 @@ import io.vertx.ext.web.handler.StaticHandler;
 public class HttpApplication extends AbstractVerticle {
 
    private static final String INDEX_PAGE = "index.html";
-   private static final String LAUNCHER_TEMPLATE_LATEST_URL = "https://raw.githubusercontent.com/openshiftio/launchpad-templates/v3/openshift/launchpad-template.yaml";
+   private static final String LAUNCHER_TEMPLATE_LATEST_URL = "https://raw.githubusercontent.com/openshiftio/launchpad-templates/v4/openshift/launchpad-template.yaml";
   @Override
   public void start(Future<Void> future) {
     // Create a router object.
