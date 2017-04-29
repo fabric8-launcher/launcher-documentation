@@ -1,4 +1,4 @@
-To launch manually, click on _I will build and run locally_ and follow the instructions in the mission's guide. This will:
+To launch manually, click on _I will build and run locally_ and follow the instructions in the project's guide (found linked in the README). This will:
 
 * Scaffold a Maven project
-* Allow you the project as a ZIP file
+* Allow you to download the project as a ZIP file
