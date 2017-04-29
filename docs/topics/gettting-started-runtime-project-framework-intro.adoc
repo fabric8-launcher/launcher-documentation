@@ -1,1 +1,1 @@
-Runtime project frameworks are preconfigured project scaffolds you can use to build your own project. {launcher} provides a simple interface for choosing your dependencies and runtime and creating a complete project scaffold with everything configured. This enables you to rapidly create and deploy cloud native applications.
+We offer a choice of runtime frameworks to best fit your needs. WildFly Swarm delivers a microservices approach to Java EE, Vert.x excels at reactive, asynchronous applications, and Spring Boot users may bring their projects to OpenShift as well.
