@@ -3,6 +3,7 @@ node("docsbuilder-maven") {
   stage("Build Documentation") {
     sh "pwd && ls -l"
     sh "./scripts/buildGuides.sh"
+    sh "mkdir -p src/main/resources/webroot"
     sh "mv ./html/ ./ci/openshiftio-appdev-docs/src/main/resources/webroot/docs"
   }
   stage("Build and Deploy Server") {
