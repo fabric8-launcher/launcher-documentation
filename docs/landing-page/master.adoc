@@ -29,7 +29,7 @@ footer{background-color:#010101;font-size:12px;height:60px;padding:15px 0;width:
         </h1>
       </div>
       <div class="col-md-4">
-        <a class="btn btn-lg" (click)="launch()">Prepare for Takeoff</a>
+        
       </div>
     </div>
   </div>
