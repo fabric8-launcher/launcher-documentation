@@ -4,223 +4,91 @@ include::topics/templates/document-attributes.adoc[]
 :toc!:
 
 ++++
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.23.3/css/patternfly.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.23.3/css/patternfly-additions.min.css">
 <style>
-    .article {
-        display: -ms-flexbox;
-        display: flex;
-        min-height: 100vh;
-        -ms-flex-direction: column;
-        flex-direction: column;
-    }
-    
-    body {
-        background-image: url(/docs/images/hero-background-80.jpg);
-        background-size: cover;
-    }
+@import url(https://overpass-30e2.kxcdn.com/overpass.css);.app{padding-top:20px;-ms-flex:1;flex:1;font-family:overpass;font-size:11pt}.site{display:-ms-flexbox;display:flex;min-height:100vh;-ms-flex-direction:column;flex-direction:column}.btn{font-size:11pt}.form-control{font-size:10pt}
+img.header-logo{width:70%}.navbar{color:#ddd;font-size:16px;border-top:0}.nav-item-icon{white-space:nowrap}.navbar-pf   .navbar-header{min-height:75px;margin-left:10px;margin-right:10px;border:0}.nav.navbar-nav.navbar-right{margin-top:10px}.navbar-brand{padding:15px 20px;margin:0}@media (max-width:768px){.navbar-fixed-top{position:fixed;top:auto}.navbar-collapse{max-height:none}body{margin:0}}
+footer{background-color:#010101;font-size:12px;height:60px;padding:15px 0;width:100%}footer   .conditions   a:first-child{margin-left:70px}footer   .logo   a{background:url(images/redhat.svg) no-repeat;height:34px;width:94px;margin:0;top:auto;background-size:94px 30px;display:inline-block}footer   .summit{position:absolute;right:20px;bottom:0}footer   a{color:#858585;top:7px;position:relative;margin-left:15px}footer   a.legal{border-right:1px solid #858585;padding-right:15px}@media (max-width:1024px){footer   .conditions{font-size:12px}footer   .conditions   a:first-child{margin-left:35px}footer   .social{display:none}}@media (max-width:768px){footer   .conditions{display:none}footer   .summit{position:absolute;right:20px;bottom:0}footer   a.legal:nth-child(2n){margin-left:70px}.footer-content   a:first-child{position:absolute;right:20px}}
+#intro{margin-top:-20px;background:url(images/Background_img._1300x450.png);min-height:450px;background-size:cover;background-position:0;font-family:overpass,sans-serif}#intro   h1{color:#fff;font-size:46pt;font-weight:700}#intro   h2{color:#c00;font-weight:700}#intro   .row{margin-top:5px}#intro   .btn{background-image:none;background-color:#c00;border-color:#c00;color:#fff;padding:9px 40px;margin-top:40px;margin-bottom:30px;line-height:1.44;font-size:18px}#runtimes{background-color:#f5f5f5;font-family:overpass,sans-serif}#runtimes   h1{color:#c00;font-weight:700}#runtimes   .card-pf{background-color:#d1d1d1;height:245px}#runtimes   .card-pf   .card-pf-title{color:#000;font-size:18pt;font-family:Overpass,sans-serif;text-align:center}#runtimes   .card-pf   .card-pf-icon-circle{background-color:#fff;border-color:#fff}.boot, .icon, .swarm, .vertx{background-size:100% 100%;background-repeat:no-repeat;background-position:50%;margin:auto;width:80px;height:80px}.boot{background-image:url(images/project-select-icons/spring-boot-logo.png)}.swarm{background-image:url(images/project-select-icons/wildfly-swarm.png)}.vertx{background-image:url(images/project-select-icons/vertx.svg)}
 
-    *, :after, :before {
-        box-sizing: border-box;
-    }
-    #content {
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 20px;
-        -ms-flex: 1;
-        flex: 1;
-    }
+#content {
+  max-width: none !important;
+  margin: 0px !important;
+  padding: 0px !important;
+}
 </style>
-<style>
-    .icon,
-    .Spring,
-    .Vert,
-    .WildFly {
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        background-position: 50%;
-        margin: auto;
-        width: 80px;
-        height: 80px
-    }
-    
-    .Spring {
-        background-image: url(/docs/images/project-select-icons/spring-boot-logo.png)
-    }
-    
-    .WildFly {
-        background-image: url(/docs/images/project-select-icons/wildfly-swarm.png)
-    }
-    
-    .Vert {
-        background-image: url(/docs/images/project-select-icons/vertx.svg)
-    }
-</style>
-<style>
-    .blank-slate-pf {
-        color: #fff;
-        border: 0;
-        background-color: transparent;
-        padding: 0;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-    
-    .blank-slate-pf-icon img {
-        width: 30%
-    }
-    
-    .lead {
-        max-width: 540px;
-        font-weight: 300;
-        line-height: 1.4;
-    }
-    
-    .form-horizontal,
-    .lead {
-        text-align: left;
-        margin: auto
-    }
-    
-    .form-horizontal {
-        max-width: 600px
-    }
-    
-    button {
-        font-size: 1.5em
-    }
-    
-    .btn-reg {
-        width: 420px;
-        white-space: normal
-    }
-    
-    h1 {
-        font-weight: 600;
-        font-size: 28px;
-        padding-bottom: 20px;
-        color: inherit;
-        font: inherit;
-    }
-    h2, h3 {
-        color: inherit;
-        font: inherit;
-    }
-    h2 {
-        font-size: 22px;
-    }
-    
-    .card-pf {
-        background: #fff;
-        border-top: 2px solid transparent;
-        box-shadow: 0 1px 1px rgba(3,3,3,.175);
-        margin: 0 -10px 20px;
-        padding: 0 20px;
-    }
 
-    .card-pf-body {
-        color: #363636;
-        margin: 20px 0 0;
-        padding: 0 0 20px;
-    }
-    
-    .card-pf-view.card-pf-view-single-select {
-        border-radius: 10px;
-        cursor: auto
-    }
-
-    .card-pf-view .card-pf-title {
-        font-size: 20px;
-        font-weight: 300;
-        margin-bottom: 0;
-        margin-top: 15px;
-    }
-
-    a:focus, a:hover {
-        color: #00659c;
-        text-decoration: underline;
-    }
-    a:active, a:hover {
-        outline: 0;
-    }
-    a {
-        color: #0088ce;
-        text-decoration: none;
-    }
-    a {
-        background-color: transparent;
-    }
-    
-    .boot,
-    .icon,
-    .swarm,
-    .vertx {
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        background-position: 50%;
-        margin: auto;
-        width: 80px;
-        height: 80px
-    }
-    
-    .boot {
-        background-image: url(/docs/images/project-select-icons/spring-boot-logo.png)
-    }
-    
-    .swarm {
-        background-image: url(/docs/images/project-select-icons/wildfly-swarm.png)
-    }
-    
-    .vertx {
-        background-image: url(/docs/images/project-select-icons/vertx.svg)
-    }
-</style>
-<div class="blank-slate-pf">
-    <div class="blank-slate-pf-icon">
-        <img class="brand" src="/docs/images/brand.svg">
+<section id="intro">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h2>launch.openshift.io</h2>
+        <h1>
+          Continuous application delivery, built and deployed on OpenShift
+        </h1>
+      </div>
+      <div class="col-md-4">
+        <a class="btn btn-lg" (click)="launch()">Prepare for Takeoff</a>
+      </div>
     </div>
-    <h2>You are moments away from continuous delivery of a new <br> application, built and deployed on <br> Red Hat OpenShift
-        Online.</h2>
-    <h3>Currently supported runtimes:</h3>
-    <div class="lead">
-        <div class="container-fluid container-cards-pf">
-            <div class="row row-cards-pf">
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                    <div class="card-pf card-pf-view card-pf-view-select card-pf-view-single-select" id="vertx">
-                        <div class="card-pf-body">
-                            <div class="card-pf-top-element icon vertx"></div>
-                            <a href="https://projects.eclipse.org/projects/rt.vertx" target="_blank">
-                                <h2 class="card-pf-title text-center">
-                                    Eclipse Vert.x
-                                </h2>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                    <div class="card-pf card-pf-view card-pf-view-select card-pf-view-single-select" id="swarm">
-                        <div class="card-pf-body">
-                            <div class="card-pf-top-element icon swarm"></div>
-                            <a href="http://wildfly-swarm.io/" target="_blank">
-                                <h2 class="card-pf-title text-center">
-                                    WildFly Swarm
-                                </h2>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                    <div class="card-pf card-pf-view card-pf-view-select card-pf-view-single-select" id="boot">
-                        <div class="card-pf-body">
-                            <div class="card-pf-top-element icon boot"></div>
-                            <a href="https://projects.spring.io/spring-boot/" target="_blank">
-                                <h2 class="card-pf-title text-center">
-                                    Spring Boot
-                                </h2>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+  </div>
+</section>
+
+<section id="runtimes" style="margin-top:-18px">
+  <div class="container container-cards-pf">
+    <div class="row">
+      <div class="col-xs-6 cold-sm-12 col-md-12 card-title">
+        <h1>Available Runtimes</h1>
+      </div>
+    </div>
+    <div class="row row-cards-pf">
+
+      <div class="col-md-4">
+        <a href="http://wildfly-swarm.io" target="_blank">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-single-select">
+            <div class="card-pf-body">
+              <div class="card-pf-top-element">
+                <div class="fa icon swarm card-pf-icon-circle"></div>
+              </div>
             </div>
-        </div>
+            <h2 class="card-pf-title">
+              WildFly Swarm
+            </h2>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="https://projects.eclipse.org/projects/rt.vertx" target="_blank">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-single-select">
+            <div class="card-pf-body">
+              <div class="card-pf-top-element">
+                <div class="fa icon vertx card-pf-icon-circle"></div>
+              </div>
+            </div>
+            <h2 class="card-pf-title">
+              Eclipse Vert.x
+            </h2>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="https://projects.spring.io/spring-boot/" target="_blank">
+          <div class="card-pf card-pf-view card-pf-view-select card-pf-view-single-select">
+            <div class="card-pf-body">
+              <div class="card-pf-top-element">
+                <div class="fa icon boot card-pf-icon-circle"></div>
+              </div>
+            </div>
+            <h2 class="card-pf-title">
+              Spring Boot
+            </h2>
+          </div>
+        </a>
+      </div>
     </div>
-</div>
+  </div>
+</section>
 ++++
