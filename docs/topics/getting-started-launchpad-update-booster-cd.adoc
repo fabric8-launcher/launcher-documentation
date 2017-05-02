@@ -1,7 +1,7 @@
 [[update-cd]]
 = Update Using Continuous Delivery
 
-This approach allows you to deploy updates directly from the GitHub repository created by the {launcher}. 
+This approach allows you to deploy updates directly from the GitHub repository created by the {launcher}.
 
 To update your booster using continuous delivery:
 
@@ -67,13 +67,13 @@ machine, then it will forward the HTTP request to an Openshift Build Trigger end
 $ ultrahook -k YOUR_ULTRAHOOK_KEY github MINISHIFT_WEBHOOK_URL
 ----
 
-. Navigate to the _Webhooks_ section of your booster's GitHub project: `http://github.com/USERNAME/PROJECTNAME/settings/hooks/`
+. Navigate to the _Webhooks_ section of your booster's GitHub project: `+++http://github.com/USERNAME/PROJECTNAME/settings/hooks/+++`
 
 . Click _Add webhook_.
 
 . In the _Add webhook_ enter:
 +
-** For _Payload URL_ enter the `http://github.ULTRAHOOK_NAMESPACE.ultrahook.com` replacing `ULTRAHOOK_NAMESPACE` with your namespace.
+** For _Payload URL_ enter the `+++http://github.ULTRAHOOK_NAMESPACE.ultrahook.com+++` replacing `ULTRAHOOK_NAMESPACE` with your namespace.
 ** For _Content type_ choose `application/json`.
 ** For _Which events would you like to trigger this webhook?_, choose `Just the push event`.
 
