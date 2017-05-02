@@ -4,3 +4,5 @@ html
 **/*.iml
 **/*.idea
 target
+ci/openshiftio-appdev-docs/src/main/resources/webroot
+ci/openshiftio-appdev-docs/.vertx
