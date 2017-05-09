@@ -1,0 +1,24 @@
+= Checking the Application Log Output
+
+To verify that the health check pattern works, you can use the Web console to display the log messages provided by the pod running the health endpoint.
+
+. Log in to your {OpenShiftOnline} Web console.
+
+. Navigate to the project that contains your health check application.
+
+. In the sidebar, navigate to _Applications_ > _Pods_, and click on the name of the pod containing the `health` endpoint.
+
+. On the pod details page, click on the _Events_ tab to view the log messages from your application.
+
+The health check application provides the following message types:
+
+[options="header",cols="e,1"]
+|===
+|Message | Status
+|Unhealthy | Readiness probe failed
+|Killing | The Docker container running the service is being killed before being re-created.
+|Pulling | Pulling the latest docker image to create a new container.
+|Pulled | Docker image downloaded successfully.
+|Created | Docker container has been successfully created
+|Started | Docker container is ready to handle requests
+|===
