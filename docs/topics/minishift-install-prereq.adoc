@@ -10,7 +10,10 @@ $ minishift version
 Minishift version: 1.0.0
 ----
 
-You also need to have the `oc` binary setup on your path as detailed link:https://docs.openshift.org/latest/minishift/getting-started/quickstart.html#starting-minishift[here]. To verify you have `oc` on your path:
+WARNING: You must have the `oc` binary installed and it *MUST* match the version of {OpenShiftLocal} you are using. To ensure you have the correct version of the `oc` binary installed and configured  on your path, follow the instructions in the link:https://docs.openshift.org/latest/minishift/getting-started/quickstart.html#starting-minishift[OpenShift documentation]. 
+
+
+To verify you have `oc` on your path:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
