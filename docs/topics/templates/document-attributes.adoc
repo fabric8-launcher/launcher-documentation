@@ -43,7 +43,7 @@
 :getting-started-guide-name: Getting Started Guide
 :landing-page-name: Welcome
 
-:MinishiftVersion: v1.0.0-beta.5
+:MinishiftVersion: 1.0.0
 
 :mission-crud-spring-boot-tomcat-guide-name: CRUD Mission - {SpringBoot}
 :mission-crud-vertx-guide-name: CRUD Mission - {VertX}
