@@ -2,7 +2,7 @@
 [width="100%",options="header"]
 |====================================================================
 |Pros           |Cons
-a| * Each runtime decides how the database interactions are implemented. One can use JDBC while others can use JPA or an ORM. Each runtime decides what would be the best way.
+a| * Each runtime decides how the database interactions are implemented. One can use JDBC while others can use JPA or access ORM APIs directly. Each runtime decides what would be the best way.
 
  * Each runtime decides how the schema is going to be created.
 a|
