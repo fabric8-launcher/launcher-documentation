@@ -14,6 +14,8 @@ This will:
 * Create a pipeline to continuously deliver your mission's code.
 * The pipeline will then build and deploy your mission's code to {OpenShiftLocal}.  The first launch and deployment should take under 10 minutes on most systems (depending upon resources and internet connection) as the Docker images powering the build are downloaded and cached. While the Docker images are being downloaded, you will see _Jenkins doesn't have label..._ , which is expected. Subsequent runs will be faster.
 
+NOTE: In the GitHub repository, a webhook is created under _Settings_ -> _Webhooks_. This link points to {OpenShiftLocal} and will not be accessible from outside the host {OpenShiftLocal} is running on.
+
 Click on the _See it here!_ link under _Creating your project on the OpenShift cloud_ to go to your booster's page in {OpenShiftLocal}.
 
 To view the status of your project:
