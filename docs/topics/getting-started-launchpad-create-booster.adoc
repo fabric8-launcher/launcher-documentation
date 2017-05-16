@@ -11,7 +11,7 @@ To create a booster:
 +
 NOTE: `Continuous Delivery` will build and deploy your booster directly from your GitHub repository while `Zip` requires you to manually build and deploy your application.
 
-. Choose the mission, for example `REST API Level 0` and click _Next_.
+. Choose the mission, for example `{name-mission-http-api}` and click _Next_.
 . Choose the runtime you would like to run, for example `{VertX}`.
 +
 NOTE: Each mission illustrates a concept and is implemented as a booster in at least one runtime. You can come back to the {launcher} application later and try another mission and runtime.
