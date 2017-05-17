@@ -42,6 +42,8 @@
 :minishift-installation-guide-name: Install and Configure the {launcher} Application on {OpenShiftLocal}
 :getting-started-guide-name: Getting Started Guide
 :landing-page-name: Welcome
+:contrib-guide-name: Contribution Guide
+
 
 :MinishiftVersion: 1.0.0
 
