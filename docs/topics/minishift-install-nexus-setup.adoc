@@ -1,0 +1,170 @@
+= Using a Nexus Repository Server With the {launcher} Application on your {OpenShiftLocal}
+
+While developing your cloud-native applications with Java and Maven you may be required to build them repeatedly.
+You can deploy a Nexus Repository server alongside the {launcher} application on your {OpenShiftLocal} and use it to fetch artifacts from the Maven Central Repository and cache them locally.
+This helps you speed up your builds and rolling updates and alleviates network load during build time.
+
+== Prerequisites for Deploying Nexus on {OpenShiftLocal}.
+
+
+* Set up your {OpenShiftLocal}. For detailed steps on how to do this, follow the instructions in link:{link-launcher-openshift-local-install-guide}[{minishift-installation-guide-name}].
+
+////
+* Set up your project for use with Maven. For more information on how to do this see the link:https://maven.apache.org/guides/getting-started/index.html[Maven Getting Started Guide^]
+////
+
+////
+* Verify that your application image has a `MAVEN_MIRROR_URL` environment variable. If it does not have this environmental variable, follow the link:https://books.sonatype.com/nexus-book/reference/config.html[Nexus documentation^] to configure your build.
+////
+
+////
+* Ensure that you give each pod enough resources to function. You may have to edit the link:https://docs.openshift.com/container-platform/3.4/dev_guide/deployments/how_deployments_work.html#creating-a-deployment-configuration[pod template] in the Nexus deployment configuration to request more resources.
+////
+
+* Configure your {OpenShiftLocal} to use at least 4096 MiB of RAM and use the required `oc` CLI tool version.
++
+[source,bash,subs="attributes+"]
+--
+minishift delete # Delete the previous instance of {OpenShiftLocal}
+minishift config set memory 4096
+minishift config set openshift-version v3.6.0-alpha.1
+minishift start
+--
++
+[WARNING]
+--
+The procedure described below works with {Minishift} 1.0.0-rc2 It has not been tested with the CDK.
+You also need to use version 3.6.0-alpha.1 or later of the `oc` CLI tool.
+--
+
+* Deploy the {launcher} application to your {OpenShiftLocal}.
+
+* Deploy a Booster application to your {OpenShiftLocal}.
+
+== Configuring your {OpenShiftLocal} to Use Nexus.
+
+. Log in to your {OpenShiftLocal} instance.
++
+[source,bash,subs="attributes+"]
+--
+oc login https://192.168.42.10:8443 -u developer -p developer
+--
++
+. You can reuse the Docker daemon instance used by {OpenShiftLocal} to download the latest versions of the Nexus Docker container image.
++
+[source,bash,subs="attributes+"]
+--
+eval $(minishift docker-env)
+docker pull openshift/jenkins-2-centos7
+docker pull openshiftio/launchpad-jenkins-slave
+docker pull sonatype/nexus
+--
+
+== Setting up the Nexus Application
+
+.  Create a new project to contain the Nexus server. You can also use the _New Project_ button on the Web console to do this.
++
+[source,bash,subs="attributes+"]
+--
+oc new-project NEXUS_PROJECT_NAME
+--
++
+. Deploy the Nexus container image.
++
+[source,bash,subs="attributes+"]
+--
+oc new-app sonatype/nexus
+--
++
+. Expose the service route URL of the Nexus server.
++
+[source,bash,subs="attributes+"]
+--
+oc expose svc/nexus
+--
++
+. Attach a 1 GiB persistent storage volume to the Nexus application.
++
+// NOTE: seems that minishift (with oc v 3.6.0alpha1) is fine with USING '1G'  for volume size, while openshift Online requires the syntax '1Gi'.
++
+[source,bash,subs="attributes+"]
+--
+oc volumes dc/nexus --add --name 'nexus-volume-1' --type 'pvc' --mount-path '/sonatype-work/' --claim-name 'nexus-pv' --claim-size '1Gi' --overwrite
+--
++
+. Find the external address of the Nexus instance:
++
+[source,bash,subs="attributes+"]
+--
+oc get routes
+--
++
+----
+NAME      HOST/PORT                              PATH      SERVICES   PORT       TERMINATION
+nexus     nexus-{NEXUS_PROJECT_NAME}.192.168.42.106.nip.io             nexus      8080:8080
+----
+[NOTE]
+--
+Nexus comes pre-configured for the Central Repository, but you may need others for your application. For many Red Hat images, it is recommended to add the jboss-ga repository at Maven repository.
+--
++
+.  Navigate to the project containing your Booster application.
++
+[source,bash,subs="attributes+"]
+--
+oc project BOOSTER_PROJECT_NAME
+--
++
+. Assign the `admin` role to your Jenkins instance and the `edit` permissions to your OpenShift account.
+You might want to skip this step if you have already assigned these permissions to your account.
++
+[source,bash,subs="attributes+"]
+--
+oc policy add-role-to-user edit system:serviceaccount:BOOSTER_PROJECT_NAME:default
+oc policy add-role-to-user admin system:serviceaccount:BOOSTER_PROJECT_NAME:jenkins
+--
++
+. Obtain the Jenkins server URL and use it to access the Jenkins instance from your browser.
++
+[source,bash,subs="attributes+"]
+--
+oc get routes jenkins
+--
++
+----
+NAME      HOST/PORT                                         PATH      SERVICES   PORT      TERMINATION
+jenkins   jenkins-{app-name}.192.168.42.106.nip.io             jenkins    <all>     edge/Redirect
+----
++
+. Navigate to `+++jenkins-{app-name}.192.168.42.106.nip.io/configure+++`, and log in using your OpenShift credentials to access the Jenkins configuration page.
++
+. In the section titled _Kubernetes Pod Template_,  click on  on _Add Evironmental Variable_ and choose the _Global Environmental Variable_ option from the drop-down menu.
++
+. Define a new environment variable with the following properties:
+* Name: `MAVEN_MIRROR_URL`
+* Value: `nexus-{NEXUS_PROJECT_NAME}.192.168.42.106.nip.io/nexus/content/groups/public/`
++
+[NOTE]
+--
+The actual value of the `MAVEN_MIRROR_URL` environmental variable corresponds to the service route of the pod running the Nexus server instance on your {OpenShiftLocal}.
+
+To obtain this route, navigate to the project that contains your Nexus instance and execute the command `oc get routes nexus`.
+--
++
+. Click _Apply_ to confirm the configuration changes.
++
+. Redeploy the Jenkins server instance with the latest configuration changes.
++
+[source,bash,subs="attributes+"]
+--
+oc rollout latest dc/jenkins
+--
++
+[WARNING]
+--
+KNOWN ISSUE: Redeploying your instance of Jenkins server causes other ongoing builds to hang.
+--
++
+.  Navigate to the project that contains your Booster and use the Web console to go to _Builds_ > _Pipelines_ and click _Start Pipeline_ to rebuild your Booster application.
++
+Your Jenkins instance is now configured to use the Nexus server as a proxy for retrieving artifacts form the Maven Central Repository when a pipeline build is triggered.
