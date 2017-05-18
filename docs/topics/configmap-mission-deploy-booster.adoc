@@ -8,7 +8,7 @@ include::booster-deploy-launchpad-openshift-local.adoc[leveloffset=+2]
 [[deploy-booster-osl-cli]]
 === Deploy Using the `oc` CLI Client
 
-. Get your authentication token for using the `oc` CLI client with {OpenShiftLocal}. You can find this in the {OpenShiftLocal} Web console. In the above example, your token would be located at `https://192.168.99.100:8443/console/command-line`.
+. Get your authentication token for using the `oc` CLI client with your {OpenShiftLocal}. You can find this in the Web console for your {OpenShiftLocal}. In the above example, your token would be located at `https://192.168.99.100:8443/console/command-line`.
 
 . Authenticate your `oc` CLI client with your {OpenShiftLocal} account by using your authentication token.
 +
@@ -17,7 +17,7 @@ include::booster-deploy-launchpad-openshift-local.adoc[leveloffset=+2]
 $ oc login {link-osl-auth} --token=MYTOKEN
 ----
 
-. Create a new project in {OpenShiftLocal}.
+. Create a new project in your {OpenShiftLocal}.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -36,7 +36,7 @@ endif::configmap-vertx,configmap-spring-boot-tomcat[]
 . Navigate to the root directory of your booster.
 
 ifdef::configmap-vertx[]
-. Deploy your ConfigMap configuration to {OpenShiftLocal} using `app-config.yml`.
+. Deploy your ConfigMap configuration to your {OpenShiftLocal} using `app-config.yml`.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -58,7 +58,7 @@ data:
 ----
 endif::configmap-vertx[]
 ifdef::configmap-wf-swarm[]
-. Deploy your ConfigMap configuration to {OpenShiftLocal} using `app-config.yml` in the root of the booster.
+. Deploy your ConfigMap configuration to your {OpenShiftLocal} using `app-config.yml` in the root of the booster.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -80,7 +80,7 @@ data:
 ----
 endif::configmap-wf-swarm[]
 
-. Use maven to start the deployment to {OpenShiftLocal}.
+. Use maven to start the deployment to your {OpenShiftLocal}.
 +
 ifdef::configmap-vertx,configmap-spring-boot-tomcat[]
 [source,bash,options="nowrap",subs="attributes+"]
@@ -95,7 +95,7 @@ $ mvn clean fabric8:deploy -Popenshift -DskipTests
 ----
 endif::configmap-wf-swarm[]
 +
-This command uses the Fabric8 Maven Plugin to launch the S2I process on {OpenShiftLocal} and to start the pod.
+This command uses the Fabric8 Maven Plugin to launch the S2I process on your {OpenShiftLocal} and to start the pod.
 
 
 . Check the status of your booster and ensure your pod is running.

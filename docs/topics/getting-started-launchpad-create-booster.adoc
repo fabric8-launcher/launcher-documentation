@@ -1,7 +1,7 @@
 [[launcher-create-booster]]
 = Use the {launcher} Application to Launch a Booster
 
-After you have the {launcher} application running on {OpenShiftLocal}, you can use it to create a new project, your booster.
+After you have the {launcher} application running on your {OpenShiftLocal}, you can use it to create a new project, your booster.
 
 To create a booster:
 

@@ -2,7 +2,7 @@
 
 == Deploy Using the `oc` CLI Client
 
-You can deploy your booster to {OpenShiftOnline} by following the same process in xref:deploy-booster-osl-cli[], but instead of using the {OpenShiftLocal}, use your {OpenShiftOnline} URL to access the Web console and with the `oc` CLI client. You will also need to get your authentication token for using the `oc` CLI client with your {OpenShiftLocal} account. You can find this in the {OpenShiftOnline} Web console.
+You can deploy your booster to {OpenShiftOnline} by following the same process in xref:deploy-booster-osl-cli[], but instead of using a {OpenShiftLocal}, use your {OpenShiftOnline} URL to access the Web console and with the `oc` CLI client. You will also need to get your authentication token for using the `oc` CLI client with your {OpenShiftOnline} account. You can find this in the {OpenShiftOnline} Web console.
 
 [WARNING]
 --

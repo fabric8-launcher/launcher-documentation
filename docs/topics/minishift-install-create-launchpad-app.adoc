@@ -25,11 +25,11 @@ image::minishift_processtemplate.png[Process Template]
 . Fill out the following fields. 
 ** _Your GitHub username_.
 ** _Your GitHub Mission Control access token_ is your personal access token for GitHub.
-** The _Target OpenShift Console URL_ is the OpenShift Console URL from {OpenShiftLocal}. This should be the same base URL you are currently using to complete the form, for example `https://192.168.42.152:8443`.
-** OpenShift username and password from {OpenShiftLocal}, for example `developer` for the username and password. 
+** The _Target OpenShift Console URL_ is the OpenShift Console URL from your {OpenShiftLocal}. This should be the same base URL you are currently using to complete the form, for example `https://192.168.42.152:8443`.
+** OpenShift username and password from your {OpenShiftLocal}, for example `developer` for the username and password. 
 ** _KeyCloak URL_ and _KeyCloak Realm_ should be cleared out
 +
-WARNING: You must clear these fields out for the {launcher} application on {OpenShiftLocal} to be configured correctly.
+WARNING: You must clear these fields out for the {launcher} application on your {OpenShiftLocal} to be configured correctly.
 
 ** _Catalog Git Repository_ and _Catalog Git Reference_ should be generally left as-is, unless you are developing against a specific fork you would like to use.
 ** _Catalog Index Period_ may be left to `0` unless you would like the catalog to index at some interval in minutes.

@@ -7,7 +7,7 @@ The `sso` module is a submodule link to the [redhat-sso](https://github.com/obsi
  that contains the OpenShift objects required to deploy the Red Hat SSO Server 7.0 as well as a Java command line client
  driver to test access to the secured endpoint.
 
-The goal of this project is to deploy the Booster in an {OpenShiftLocal} environment.
+The goal of this project is to deploy the Booster in a {OpenShiftLocal} environment.
 
 = Red Hat SSO
 
