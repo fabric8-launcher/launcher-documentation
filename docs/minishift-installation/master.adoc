@@ -4,7 +4,7 @@ include::topics/templates/document-attributes.adoc[]
 
 = {minishift-installation-guide-name}
 
-This guide walks you through the process of installing the {launcher} application to run on a local cloud as provisioned by link:https://www.openshift.org/minishift/[{OpenShiftLocal}], an all-in-one VM which includes a community version of OpenShift Origin.
+This guide walks you through the process of installing the {launcher} application to run on a local cloud as provisioned by a {OpenShiftLocal}. This includes link:https://www.openshift.org/minishift/[{Minishift}], an all-in-one VM which includes a community version of OpenShift Origin and link:https://developers.redhat.com/products/cdk/overview/[{CDK}].
 
 include::topics/minishift-install-prereq.adoc[leveloffset=+1]
 

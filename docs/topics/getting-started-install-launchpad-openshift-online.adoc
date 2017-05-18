@@ -15,4 +15,4 @@ NOTE: Each mission illustrates a concept and is implemented as a booster in at l
 
 . Enter an _OpenShift Project name_. You can also update any of the additional metadata fields or leave them as the default. Click _Next_.
 
-Your booster is now prepared for launch. Depending on your launch option, you can follow the steps for xref:launcher-launch-booster-cd[] or xref:launcher-launch-booster-manual[] outlined in the _Using {launcher} with {OpenShiftLocal}_ section.
+Your booster is now prepared for launch. Depending on your launch option, you can follow the steps for xref:launcher-launch-booster-cd[] or xref:launcher-launch-booster-manual[] outlined in the _Using {launcher} with a {OpenShiftLocal}_ section.

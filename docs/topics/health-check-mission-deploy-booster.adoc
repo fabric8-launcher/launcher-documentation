@@ -17,7 +17,7 @@ include::booster-deploy-launchpad-openshift-local.adoc[leveloffset=+2]
 $ oc login {link-osl-auth} --token=MYTOKEN
 ----
 
-. Create a new project in {OpenShiftLocal}.
+. Create a new project in your {OpenShiftLocal}.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -26,14 +26,14 @@ $ oc new-project {project-name}
 
 . Navigate to the root directory of your booster.
 
-. Use maven to start the deployment to {OpenShiftLocal}.
+. Use maven to start the deployment to your {OpenShiftLocal}.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ mvn clean fabric8:deploy -Popenshift -DskipTests
 ----
 +
-This command uses the Fabric8 Maven Plugin to launch the S2I process on {OpenShiftLocal} and to start the pod.
+This command uses the Fabric8 Maven Plugin to launch the S2I process on your {OpenShiftLocal} and to start the pod.
 
 
 . Check the status of your booster and ensure your pod is running.
