@@ -38,7 +38,7 @@ Usage: client.GreetingAuthzClient [options]
       Default: alice
 ----
 
-The only required argument is the --app argument. This needs to match up to the name of the service endpoint as known by {OpenShiftLocal}.
+The only required argument is the --app argument. This needs to match up to the name of the service endpoint as known by your {OpenShiftLocal}.
 You can get a list of the using the `oc get routes` command. The following table shows sample output where
 the {runtime-name} secured booster had been deployed.
 

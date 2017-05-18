@@ -27,7 +27,7 @@ include::topics/getting-started-launchpad-update-booster-cd.adoc[leveloffset=+3]
 include::topics/getting-started-launchpad-update-booster-manual.adoc[leveloffset=+3]
 
 
-include::topics/getting-started-install-launchpad-openshift-online.adoc[leveloffset=+2]
+include::topics/getting-started-install-launchpad-openshift-online.adoc[leveloffset=+1]
 
 
 include::topics/getting-started-next-steps.adoc[leveloffset=+1]

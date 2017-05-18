@@ -1,9 +1,7 @@
-== Deploy Booster to {OpenShiftLocal}
-Once you have {OpenShiftLocal} running, check the console output for the URL you can use to access it.
+== Deploy Booster to your {OpenShiftLocal}
+Once you have your {OpenShiftLocal} running, check the console output for the URL you can use to access it.
 
-The {runtime-name} Booster needs to be packaged and deployed. This process will generate the uber jar file, the OpenShift resources
-and deploy them within the current project of the {OpenShiftLocal} server. Make sure you pass in the SSO_AUTH_SERVER_URL you
-obtained during the <<SSO_AUTH_SERVER_URL>> step.
+The {runtime-name} Booster needs to be packaged and deployed. This process will generate the uber jar file, the OpenShift resources and deploy them within the current project of the your {OpenShiftLocal} server. Make sure you pass in the SSO_AUTH_SERVER_URL you obtained during the <<SSO_AUTH_SERVER_URL>> step.
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----

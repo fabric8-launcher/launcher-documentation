@@ -39,20 +39,20 @@ $ oc login {link-osl-auth} --token=$MYTOKEN
 $ oc project {project-name}
 ----
 +
-NOTE: You can find your token in the {OpenShiftLocal} Web console. For example, if your {link-osl-auth} is `https://192.168.99.100:8443`, your token would be located at `https://192.168.99.100:8443/console/command-line`. 
+NOTE: You can find your token in your {OpenShiftLocal} Web console. For example, if your {link-osl-auth} is `https://192.168.99.100:8443`, your token would be located at `https://192.168.99.100:8443/console/command-line`. 
 
-. Use maven to start the deployment to {OpenShiftLocal}.
+. Use maven to start the deployment to your {OpenShiftLocal}.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ mvn clean fabric8:deploy -Popenshift -DskipTests
 ----
 +
-This command uses the Fabric8 Maven Plugin to launch the S2I process on {OpenShiftLocal} and to start the pod.
+This command uses the Fabric8 Maven Plugin to launch the S2I process on your {OpenShiftLocal} and to start the pod.
 +
 NOTE: A mission's booster may contain tests that assume the build process is running on OpenShift. Since you are building your mission's booster outside of OpenShift before deploying it, you can use `-DskipTests` to skip the testing process. When xref:update-cd[updating using continuous deployment], these tests will not be skipped.
 
-. Navigate back to the {OpenShiftLocal} Web console and ensure your mission's project is selected.
+. Navigate back to your {OpenShiftLocal} Web console and ensure your mission's project is selected.
 
 . Click on _Builds_ then _Builds_.
 +
