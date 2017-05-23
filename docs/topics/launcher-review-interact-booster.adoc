@@ -1,0 +1,6 @@
+= Interact with your Booster
+
+. Navigate to project's overview page in the OpenShift Web console.
+. Click on the link for booster application at the top of the page. It will look something like `http://booster-rest-http-spring-mydemo.1ab5.starter-us-east-1.openshiftapps.com`.
+
+You are now at your booster's main page. For more details on interacting with your booster, see the booster's mission guide.
