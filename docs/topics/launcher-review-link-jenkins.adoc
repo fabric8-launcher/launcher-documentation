@@ -1,0 +1,12 @@
+= Connect the Jenkins Pod with the OpenShift Web Console
+
+. Navigate to project's overview page in the OpenShift Web console.
+. Click _View Log_ in the pipeline at the top.
++
+NOTE: It may take a few minutes for the link to appear.
+
+. Click _Login with OpenShift_. at the login prompt for Jenkins. 
+. Click _Login with Red Hat_, which will authenticate you with your Red Hat account.
+. Ensure all the boxes are checked and click _Allow selected permissions_.
+
+This directs you to the Jenkins pod that is deploying your application. You have also granted the OpenShift Web console access to read information about the deployment that Jenkins pod is performing.

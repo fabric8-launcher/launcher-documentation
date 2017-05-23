@@ -1,0 +1,25 @@
+= Update your Booster using Continuous Delivery
+
+. Clone your project from GitHub.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git clone git@github.com:USERNAME/PROJECT-NAME.git
+----
+
+. Open your project in your desired IDE or editor.
+
+. Perform any updates you want to the the project.
+
+. Commit and push your changes back to GitHub.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git add .
+$ git commit -m "Made an update"
+$ git push
+----
+
+. Navigate to project's overview page in the OpenShift Web console.
+
+You will notice a new deployment running. Once complete, click on the link for booster application at the top of the page and observe your changes appear.
