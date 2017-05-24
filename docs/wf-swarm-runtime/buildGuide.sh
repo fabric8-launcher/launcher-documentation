@@ -1,6 +1,4 @@
-
-#Name of the html output file
-GUIDE_HTML_NAME=mission-crud-wf-swarm.html
+GUIDE_HTML_NAME=wf-swarm-runtime.html
 OUTPUT_DIR=../../html
 
 rm -r $OUTPUT_DIR/images/

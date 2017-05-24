@@ -1,6 +1,4 @@
-
-#Name of the html output file
-GUIDE_HTML_NAME=mission-secured-spring-boot.html
+GUIDE_HTML_NAME=spring-boot-runtime.html
 OUTPUT_DIR=../../html
 
 rm -r $OUTPUT_DIR/images/
