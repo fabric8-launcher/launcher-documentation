@@ -1,15 +1,3 @@
-include::topics/templates/document-attributes.adoc[]
-
-:secured-wf-swarm-mission:
-:runtime-name: {WildFlySwarm}
-// This is used by the secured-mission-common-interaction.adoc to include the runtime specific information
-:runtime-tag: wf
-
-= {mission-secured-wf-swarm-guide-name}
-
-include::topics/secured-mission-intro.adoc[leveloffset=+1]
-
-
 The configuration of the adapter is defined within the `app/src/main/webapp/WEB-INF/keycloak.json` file using these properties:
 [source,json]
 ----
@@ -28,9 +16,3 @@ The configuration of the adapter is defined within the `app/src/main/webapp/WEB-
 When you deploy the Booster, you will specify the value for the sso.auth.server.url
 property based on the URL assigned to the RH SSO when you
 go through the <<SSO_AUTH_SERVER_URL>> step of <<mission-secured-deploy-rhsso>>.
-
-include::topics/secured-mission-deploy-rhsso.adoc[leveloffset=+1]
-
-include::topics/secured-mission-deploy-booster.adoc[leveloffset=+1]
-
-include::topics/secured-mission-common-interaction.adoc[leveloffset=+1]

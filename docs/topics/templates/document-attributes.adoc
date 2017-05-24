@@ -1,5 +1,5 @@
 :toc:
-:toclevels: 4
+:toclevels: 3
 :numbered:
 :docinfodir: topics/styles
 :docinfo1:
@@ -48,7 +48,9 @@
 :getting-started-guide-name: Getting Started Guide
 :landing-page-name: Welcome
 :contrib-guide-name: Contribution Guide
-
+:spring-boot-runtime-guide-name: {SpringBoot} Runtime Guide
+:vertx-runtime-guide-name: {VertX} Runtime Guide
+:wf-swarm-runtime-guide-name: {WildFlySwarm} Runtime Guide
 
 :MinishiftVersion: 1.0.0
 :CDKVersion: 3.0.0
@@ -68,26 +70,31 @@
 
 :link-launcher-openshift-local-install-guide: /docs/minishift-installation.html
 :link-getting-started-guide: /docs/getting-started.html
+:link-spring-boot-runtime-guide: /docs/spring-boot-runtime.html
+:link-vertx-runtime-guide: /docs/vertx-runtime.html
+:link-wf-swarm-runtime-guide: /docs/wf-swarm-runtime.html
 
-:link-mission-http-api-spring-boot-tomcat: /docs/mission-http-api-spring-boot-tomcat.html
-:link-mission-http-api-vertx: /docs/mission-http-api-vertx.html
-:link-mission-http-api-wf-swarm: /docs/mission-http-api-wf-swarm.html
 
-:link-mission-crud-spring-boot-tomcat: /docs/mission-crud-spring-boot-tomcat.html
-:link-mission-crud-vertx: /docs/mission-crud-vertx.html
-:link-mission-crud-wf-swarm: /docs/mission-crud-wf-swarm.html
+:link-mission-http-api-spring-boot-tomcat: {link-spring-boot-runtime-guide}#mission-http-api-spring-boot-tomcat
+:link-mission-configmap-spring-boot-tomcat: {link-spring-boot-runtime-guide}#mission-configmap-spring-boot-tomcat
+:link-mission-crud-spring-boot-tomcat: {link-spring-boot-runtime-guide}#mission-crud-spring-boot-tomcat
+:link-mission-health-check-spring-boot-tomcat: {link-spring-boot-runtime-guide}#mission-health-check-spring-boot-tomcat
+:link-mission-secured-spring-boot: {link-spring-boot-runtime-guide}#mission-secured-spring-boot
 
-:link-mission-configmap-spring-boot-tomcat: /docs/mission-configmap-spring-boot-tomcat.html
-:link-mission-configmap-vertx: /docs/mission-configmap-vertx.html
-:link-mission-configmap-wf-swarm: /docs/mission-configmap-wf-swarm.html
+:link-mission-http-api-vertx: {link-vertx-runtime-guide}#mission-http-api-vertx
+:link-mission-configmap-vertx: {link-vertx-runtime-guide}#mission-configmap-vertx
+:link-mission-crud-vertx: {link-vertx-runtime-guide}#mission-crud-vertx
+:link-mission-health-check-vertx: {link-vertx-runtime-guide}#mission-health-check-vertx
+:link-mission-secured-vertx: {link-vertx-runtime-guide}#mission-secured-vertx
 
-:link-mission-health-check-spring-boot-tomcat: /docs/mission-health-check-spring-boot-tomcat.html
-:link-mission-health-check-vertx: /docs/mission-health-check-vertx.html
-:link-mission-health-check-wf-swarm: /docs/mission-health-check-wf-swarm.html
+:link-mission-http-api-wf-swarm: {link-wf-swarm-runtime-guide}#mission-http-api-wf-swarm
+:link-mission-configmap-wf-swarm: {link-wf-swarm-runtime-guide}#mission-configmap-wf-swarm
+:link-mission-crud-wf-swarm: {link-wf-swarm-runtime-guide}#mission-crud-wf-swarm
+:link-mission-health-check-wf-swarm: {link-wf-swarm-runtime-guide}#mission-health-check-wf-swarm
+:link-mission-secured-wf-swarm: {link-wf-swarm-runtime-guide}#mission-secured-wf-swarm
 
-:link-mission-secured-spring-boot: /docs/mission-secured-spring-boot.html
-:link-mission-secured-vertx: /docs/mission-secured-vertx.html
-:link-mission-secured-wf-swarm: /docs/mission-secured-wf-swarm.html
+
+
 
 :link-oso-auth: https://api.preview.openshift.com
 :link-osl-auth: LOCAL_OPENSHIFT_URL
