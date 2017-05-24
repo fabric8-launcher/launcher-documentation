@@ -3,7 +3,7 @@
 
 include::booster-deploy-openshift-local.adoc[leveloffset=+1]
 
-include::booster-deploy-launchpad-openshift-local.adoc[leveloffset=+2]
+include::booster-deploy-launchpad-openshift-local.adoc[leveloffset=+1]
 
 [[deploy-booster-osl-cli]]
 === Deploy Using the `oc` CLI Client

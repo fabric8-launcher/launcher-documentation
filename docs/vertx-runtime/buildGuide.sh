@@ -1,6 +1,4 @@
-
-#Name of the html output file
-GUIDE_HTML_NAME=mission-crud-spring-boot-tomcat.html
+GUIDE_HTML_NAME=vertx-runtime.html
 OUTPUT_DIR=../../html
 
 rm -r $OUTPUT_DIR/images/
