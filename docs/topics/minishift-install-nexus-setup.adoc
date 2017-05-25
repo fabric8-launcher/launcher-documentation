@@ -1,23 +1,25 @@
 = Using a Nexus Repository Server With the {launcher} Application on your {OpenShiftLocal}
 
-Developing your cloud-native applications with Java and Maven requires you to rebuild them repeatedly.
+While developing your cloud-native applications with Java and Maven you may be required to build them repeatedly.
 You can deploy a Nexus Repository server alongside the {launcher} application on your {OpenShiftLocal} and use it to fetch artifacts from the Maven Central Repository and cache them locally.
-This helps you speed up your rolling updates and alleviates network load during build time.
-
-This tutorial assumes that you are working with a project that is already set up for use with Maven. If you are interested in using Maven with your Java project, it is highly recommended that you look at their guide.
-
-In addition, be sure to check your application’s image for Maven mirror capabilities. Many images that use Maven have a MAVEN_MIRROR_URL environment variable that you can use to simplify this process. If it does not have this capability, read the Nexus documentation to configure your build properly.
-
-Furthermore, make sure that you give each pod enough resources to function. You may have to edit the pod template in the Nexus deployment configuration to request more resources.
-
-
+This helps you speed up your builds and rolling updates and alleviates network load during build time.
 
 == Prerequisites for Deploying Nexus on {OpenShiftLocal}.
 
 
 * Set up your {OpenShiftLocal}. For detailed steps on how to do this, follow the instructions in link:{link-launcher-openshift-local-install-guide}[{minishift-installation-guide-name}].
 
+////
 * Set up your project for use with Maven. For more information on how to do this see the link:https://maven.apache.org/guides/getting-started/index.html[Maven Getting Started Guide^]
+////
+
+////
+* Verify that your application image has a `MAVEN_MIRROR_URL` environment variable. If it does not have this environmental variable, follow the link:https://books.sonatype.com/nexus-book/reference/config.html[Nexus documentation^] to configure your build.
+////
+
+////
+* Ensure that you give each pod enough resources to function. You may have to edit the link:https://docs.openshift.com/container-platform/3.4/dev_guide/deployments/how_deployments_work.html#creating-a-deployment-configuration[pod template] in the Nexus deployment configuration to request more resources.
+////
 
 * Configure your {OpenShiftLocal} to use at least 4096 MiB of RAM and use the required `oc` CLI tool version.
 +
@@ -67,7 +69,7 @@ docker pull sonatype/nexus
 oc new-project NEXUS_PROJECT_NAME
 --
 +
-. Create a new application based on the Nexus container image.
+. Deploy the Nexus container image.
 +
 [source,bash,subs="attributes+"]
 --
@@ -83,11 +85,27 @@ oc expose svc/nexus
 +
 . Attach a 1 GiB persistent storage volume to the Nexus application.
 +
-// NOTE: seems that minishift (with oc v 3.6.0alpha1) is fine with USING '1G'  for volume size, while openshift Online requires '1Gi'.
+// NOTE: seems that minishift (with oc v 3.6.0alpha1) is fine with USING '1G'  for volume size, while openshift Online requires the syntax '1Gi'.
 +
 [source,bash,subs="attributes+"]
 --
 oc volumes dc/nexus --add --name 'nexus-volume-1' --type 'pvc' --mount-path '/sonatype-work/' --claim-name 'nexus-pv' --claim-size '1Gi' --overwrite
+--
++
+. Find the external address of the Nexus instance:
++
+[source,bash,subs="attributes+"]
+--
+oc get routes
+--
++
+----
+NAME      HOST/PORT                              PATH      SERVICES   PORT       TERMINATION
+nexus     nexus-{NEXUS_PROJECT_NAME}.192.168.42.106.nip.io             nexus      8080:8080
+----
+[NOTE]
+--
+Nexus comes pre-configured for the Central Repository, but you may need others for your application. For many Red Hat images, it is recommended to add the jboss-ga repository at Maven repository.
 --
 +
 .  Navigate to the project containing your Booster application.
@@ -97,7 +115,8 @@ oc volumes dc/nexus --add --name 'nexus-volume-1' --type 'pvc' --mount-path '/so
 oc project BOOSTER_PROJECT_NAME
 --
 +
-. Assign the `admin` and `edit` permissions to your OpenShift account. You might want to skip this step if you have already assigned these permissions to your account.
+. Assign the `admin` role to your Jenkins instance and the `edit` permissions to your OpenShift account.
+You might want to skip this step if you have already assigned these permissions to your account.
 +
 [source,bash,subs="attributes+"]
 --
@@ -123,7 +142,7 @@ jenkins   jenkins-{app-name}.192.168.42.106.nip.io             jenkins    <all> 
 +
 . Define a new environment variable with the following properties:
 * Name: `MAVEN_MIRROR_URL`
-* Value: `nexus-infra.192.168.42.106.nip.io/nexus/content/groups/public/`
+* Value: `nexus-{NEXUS_PROJECT_NAME}.192.168.42.106.nip.io/nexus/content/groups/public/`
 +
 [NOTE]
 --
