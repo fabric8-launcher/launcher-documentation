@@ -5,54 +5,17 @@ In order to use the {launcher} application on a local cloud, you must have a {Op
 == Install {Minishift}
 The installation steps for {Minishift} are available link:https://docs.openshift.org/latest/minishift/getting-started/installing.html[in the OpenShift documentation] and vary by platform.
 
-To verify you have {Minishift} installed and configured:
-
+. Verify you have {Minishift} installed and configured.
++
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ minishift version
 Minishift version: 1.0.0
 ----
 
-== Install the {CDK}
 
-. link:https://developers.redhat.com/products/cdk/download/[Download {CDK} {CDKVersion}] for your platform. You need to use this file to run the {CDK} so move it to an accessible location. In these steps, the location is referred to as `CDK_HOME`.
-
-. Rename the downloaded file to `minishift` for GNU/Linux and macOS or `minishift.exe` for Windows. This file also must be marked as executable.
-
-. Using the command line, navigate to `CDK_HOME` and run the setup command.
+. Verify the `oc` CLI tools is on your path.
 +
-[source,bash,options="nowrap",subs="attributes+"]
-----
-$ cd CDK_HOME
-$ ./minishift setup-cdk
-----
-
-. Add `CDK_HOME` and the `oc` CLI tool associated with your {CDK} install to your path and add your RHN credentials as the `MINISHIFT_USERNAME` and `MINISHIFT_PASSWORD` environment variables.
-+
-[source,bash,options="nowrap",subs="attributes+"]
-----
-$ export PATH=$PATH:CDK_HOME
-$ export PATH=$PATH:~/.minishift/cache/oc/v3.4.1.2
-$ export MINISHIFT_USERNAME=RHN_USERNAME
-$ export MINISHIFT_PASSWORD=RHN_PASSWORD
-----
-
-. Verify you have the {CDK} installed and configured.
-+
-[source,bash,options="nowrap",subs="attributes+"]
-----
-$ minishift version
-Minishift version: 1.0.0-beta.4-1
-CDK Version: 3.0.0-beta.2
-----
-
-== Verify the `oc` CLI Tools is on your Path
-
-WARNING: You must have the `oc` binary installed and it *MUST* match the version of {OpenShiftLocal} you are using. To ensure you have the correct version of the `oc` binary installed and configured  on your path, follow the instructions in the link:https://docs.openshift.org/latest/minishift/getting-started/quickstart.html#starting-minishift[OpenShift documentation]. 
-
-
-To verify you have `oc` on your path:
-
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc version
@@ -60,3 +23,32 @@ oc v1.5.0
 kubernetes v1.5.2+43a9be4
 features: Basic-Auth GSSAPI Kerberos SPNEGO
 ----
++
+WARNING: You must have the `oc` binary installed and it *MUST* match the version of {Minishift} you are using. To ensure you have the correct version of the `oc` binary installed and configured  on your path, follow the instructions in the link:https://docs.openshift.org/latest/minishift/getting-started/quickstart.html#starting-minishift[OpenShift documentation]. 
+
+== Install the {CDK}
+
+The installation steps for the {CDK} are available link:https://access.redhat.com/documentation/en-us/red_hat_container_development_kit/3.0/html-single/installation_guide/[in the {CDK} Installation Guide] and vary by platform.
+
+
+. Verify you have the {CDK} and the `oc` CLI tools installed and configured:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ minishift version
+Minishift version: 1.0.0+4f8cb6d
+CDK Version: 3.0.0
+----
+
+. Verify the `oc` CLI tools is on your path.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc version
+oc v3.5.5.8
+kubernetes v1.5.2+43a9be4
+features: Basic-Auth
+----
++
+WARNING: You must use the `oc` binary installed with the {CDK}.
+
