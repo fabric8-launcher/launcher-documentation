@@ -72,6 +72,7 @@ oc expose svc/nexus
 . Attach a 1 GiB persistent storage volume to the Nexus application.
 +
 // NOTE: seems that minishift (with oc v 3.6.0alpha1) is fine with USING '1G'  for volume size, while openshift Online requires '1Gi'.
++
 [source,bash,subs="attributes+"]
 --
 oc volumes dc/nexus --add --name 'nexus-volume-1' --type 'pvc' --mount-path '/sonatype-work/' --claim-name 'nexus-pv' --claim-size '1Gi' --overwrite
