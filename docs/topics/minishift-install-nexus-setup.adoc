@@ -1,11 +1,23 @@
-= Using a Nexus Server With the {launcher} Application on {OpenShiftLocal}
+= Using a Nexus Repository Server With the {launcher} Application on your {OpenShiftLocal}
 
-You can deploy Nexus server alongside the {launcher} application running on top of your {OpenShiftLocal} and use it to fetch artifacts from the Maven Central Repository.
+Developing your cloud-native applications with Java and Maven requires you to rebuild them repeatedly.
+You can deploy a Nexus Repository server alongside the {launcher} application on your {OpenShiftLocal} and use it to fetch artifacts from the Maven Central Repository and cache them locally.
 This helps you speed up your rolling updates and alleviates network load during build time.
+
+This tutorial assumes that you are working with a project that is already set up for use with Maven. If you are interested in using Maven with your Java project, it is highly recommended that you look at their guide.
+
+In addition, be sure to check your application’s image for Maven mirror capabilities. Many images that use Maven have a MAVEN_MIRROR_URL environment variable that you can use to simplify this process. If it does not have this capability, read the Nexus documentation to configure your build properly.
+
+Furthermore, make sure that you give each pod enough resources to function. You may have to edit the pod template in the Nexus deployment configuration to request more resources.
+
+
 
 == Prerequisites for Deploying Nexus on {OpenShiftLocal}.
 
+
 * Set up your {OpenShiftLocal}. For detailed steps on how to do this, follow the instructions in link:{link-launcher-openshift-local-install-guide}[{minishift-installation-guide-name}].
+
+* Set up your project for use with Maven. For more information on how to do this see the link:https://maven.apache.org/guides/getting-started/index.html[Maven Getting Started Guide^]
 
 * Configure your {OpenShiftLocal} to use at least 4096 MiB of RAM and use the required `oc` CLI tool version.
 +
