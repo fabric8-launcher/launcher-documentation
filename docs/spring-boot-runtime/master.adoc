@@ -1,4 +1,7 @@
 include::topics/templates/document-attributes.adoc[]
+//override for a cleaner TOC
+:toclevels: 2
+
 
 = {spring-boot-runtime-guide-name}
 
@@ -8,54 +11,50 @@ This guide covers concepts as well as practical details needed by developers to 
 == Runtime Details
 //https://projects.spring.io/spring-boot/
 
+include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
+
 [[mission-http-api-spring-boot-tomcat]]
-== {mission-http-api-spring-boot-tomcat-guide-name}
+=== {mission-http-api-spring-boot-tomcat-guide-name}
 
 :http-api-spring-boot-tomcat:
 
-include::topics/rest-level-0-mission-intro.adoc[leveloffset=+2]
+include::topics/rest-level-0-mission-intro.adoc[leveloffset=+3]
 
-include::topics/rest-level-0-mission-design-tradeoffs.adoc[leveloffset=+2]
-
-=== Create an HTTP Endpoint
+include::topics/rest-level-0-mission-design-tradeoffs.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-deploy-booster.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-basic-interaction-spring-boot-tomcat.adoc[leveloffset=+3]
 
-//level 2
-include::topics/rest-level-0-mission-resources.adoc[leveloffset=+2]
+include::topics/rest-level-0-mission-resources.adoc[leveloffset=+3]
+
 
 [[mission-configmap-spring-boot-tomcat]]
-== {mission-configmap-spring-boot-tomcat-guide-name}
+=== {mission-configmap-spring-boot-tomcat-guide-name}
 :configmap-spring-boot-tomcat:
 
-include::topics/configmap-mission-intro.adoc[leveloffset=+2]
+include::topics/configmap-mission-intro.adoc[leveloffset=+3]
 
-include::topics/configmap-mission-design-tradeoffs.adoc[leveloffset=+2]
-
-=== Deploy an Application that Uses ConfigMap
+include::topics/configmap-mission-design-tradeoffs.adoc[leveloffset=+3]
 
 include::topics/configmap-mission-deploy-booster.adoc[leveloffset=+3]
 
 include::topics/configmap-mission-basic-interaction-spring-boot-tomcat.adoc[leveloffset=+3]
 
-//level 2
-include::topics/configmap-mission-resources.adoc[leveloffset=+2]
+include::topics/configmap-mission-resources.adoc[leveloffset=+3]
+
 
 
 [[mission-crud-spring-boot-tomcat]]
-== {mission-crud-spring-boot-tomcat-guide-name}
+=== {mission-crud-spring-boot-tomcat-guide-name}
 //redefine this for spring boot
 :crud-spring-boot-tomcat-mission:
 
-include::topics/crud-mission-intro.adoc[leveloffset=+2]
+include::topics/crud-mission-intro.adoc[leveloffset=+3]
 
 // design tradeoffs
-include::topics/crud-mission-design-tradeoffs.adoc[leveloffset=+2]
+include::topics/crud-mission-design-tradeoffs.adoc[leveloffset=+3]
 
-
-=== Create a CRUD Endpoint
 
 // deployment
 include::topics/crud-mission-deploy-booster.adoc[leveloffset=+3]
@@ -67,41 +66,40 @@ include::topics/crud-mission-database-interaction.adoc[leveloffset=+3]
 include::topics/crud-mission-integration-testing.adoc[leveloffset=+3]
 
 // include additional resources
-include::topics/crud-mission-resources.adoc[leveloffset=+2]
+include::topics/crud-mission-resources.adoc[leveloffset=+3]
 
 
 [[mission-health-check-spring-boot-tomcat]]
-== {mission-health-check-spring-boot-tomcat-guide-name}
+=== {mission-health-check-spring-boot-tomcat-guide-name}
 :health-check-spring-boot-tomcat:
 
-include::topics/health-check-mission-intro.adoc[leveloffset=+2]
-
-=== Create an HTTP Endpoint with a Health Check
+include::topics/health-check-mission-intro.adoc[leveloffset=+3]
 
 include::topics/health-check-mission-deploy-booster.adoc[leveloffset=+3]
 
 include::topics/health-check-mission-basic-interaction-spring-boot-tomcat.adoc[leveloffset=+3]
 
-//level 2
-include::topics/health-check-mission-resources.adoc[leveloffset=+2]
+include::topics/health-check-mission-resources.adoc[leveloffset=+3]
+
 
 [[mission-secured-spring-boot]]
-== {mission-secured-spring-boot-guide-name}
+=== {mission-secured-spring-boot-guide-name}
 :secured-spring-boot-mission:
 :runtime-name: {SpringBoot}
 // This is used by the secured-mission-common-interaction.adoc to include the runtime specific information
 :runtime-tag: sb
 
 
-include::topics/secured-mission-intro.adoc[leveloffset=+2]
+include::topics/secured-mission-intro.adoc[leveloffset=+3]
 
-include::topics/secured-mission-springboot-adapter.adoc[leveloffset=+2]
+include::topics/secured-mission-springboot-adapter.adoc[leveloffset=+3]
 
-include::topics/secured-mission-deploy-rhsso.adoc[leveloffset=+2]
+include::topics/secured-mission-deploy-rhsso.adoc[leveloffset=+3]
 
-include::topics/secured-mission-deploy-booster.adoc[leveloffset=+2]
+include::topics/secured-mission-deploy-booster.adoc[leveloffset=+3]
 
-include::topics/secured-mission-common-interaction.adoc[leveloffset=+2]
+include::topics/secured-mission-common-interaction.adoc[leveloffset=+3]
+
 
 == Creating an Application from Scratch
 //todo

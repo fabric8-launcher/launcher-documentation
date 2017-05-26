@@ -1,5 +1,8 @@
 include::topics/templates/document-attributes.adoc[]
 
+//override for a cleaner TOC
+:toclevels: 2
+
 = {wf-swarm-runtime-guide-name}
 
 This guide covers concepts as well as practical details needed by developers to use the {WildFlySwarm} runtime.
@@ -7,55 +10,47 @@ This guide covers concepts as well as practical details needed by developers to 
 == Runtime Details
 //http://wildfly-swarm.io
 
-//todo
+include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
 [[mission-http-api-wf-swarm]]
-== {mission-http-api-wf-swarm-guide-name}
+=== {mission-http-api-wf-swarm-guide-name}
 :http-api-wf-swarm:
 
-include::topics/rest-level-0-mission-intro.adoc[leveloffset=+2]
+include::topics/rest-level-0-mission-intro.adoc[leveloffset=+3]
 
-include::topics/rest-level-0-mission-design-tradeoffs.adoc[leveloffset=+2]
-
-=== Create an HTTP Endpoint
+include::topics/rest-level-0-mission-design-tradeoffs.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-deploy-booster.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-basic-interaction-wf-swarm.adoc[leveloffset=+3]
 
-//level 2
-include::topics/rest-level-0-mission-resources.adoc[leveloffset=+2]
+include::topics/rest-level-0-mission-resources.adoc[leveloffset=+3]
 
 
 [[mission-configmap-wf-swarm]]
-== {mission-configmap-wf-swarm-guide-name}
+=== {mission-configmap-wf-swarm-guide-name}
 :configmap-wf-swarm:
 
-include::topics/configmap-mission-intro.adoc[leveloffset=+2]
+include::topics/configmap-mission-intro.adoc[leveloffset=+3]
 
-include::topics/configmap-mission-design-tradeoffs.adoc[leveloffset=+2]
-
-=== Deploy an Application that Uses ConfigMap
+include::topics/configmap-mission-design-tradeoffs.adoc[leveloffset=+3]
 
 include::topics/configmap-mission-deploy-booster.adoc[leveloffset=+3]
 
 include::topics/configmap-mission-basic-interaction-wf-swarm.adoc[leveloffset=+3]
 
-//level 2
-include::topics/configmap-mission-resources.adoc[leveloffset=+2]
+include::topics/configmap-mission-resources.adoc[leveloffset=+3]
 
 [[mission-crud-wf-swarm]]
-== {mission-crud-wf-swarm-guide-name}
+=== {mission-crud-wf-swarm-guide-name}
 //redefine this
 :crud-wf-swarm-mission:
 //{crud-wf-swarm-rest-booster-guide-name}
 
-include::topics/crud-mission-intro.adoc[leveloffset=+2]
+include::topics/crud-mission-intro.adoc[leveloffset=+3]
 
 // design tradeoffs
-include::topics/crud-mission-design-tradeoffs.adoc[leveloffset=+2]
-
-=== Create a CRUD Endpoint
+include::topics/crud-mission-design-tradeoffs.adoc[leveloffset=+3]
 
 // deployment
 include::topics/crud-mission-deploy-booster.adoc[leveloffset=+3]
@@ -66,43 +61,40 @@ include::topics/crud-mission-database-interaction.adoc[leveloffset=+3]
 // integration tests
 include::topics/crud-mission-integration-testing.adoc[leveloffset=+3]
 
-
 // include additional resources
-include::topics/crud-mission-resources.adoc[leveloffset=+2]
+include::topics/crud-mission-resources.adoc[leveloffset=+3]
 
 
 [[mission-health-check-wf-swarm]]
-== {mission-health-check-wf-swarm-guide-name}
+=== {mission-health-check-wf-swarm-guide-name}
 :health-check-wf-swarm:
 
-include::topics/health-check-mission-intro.adoc[leveloffset=+2]
-
-=== Create an HTTP Endpoint with a Health Check
+include::topics/health-check-mission-intro.adoc[leveloffset=+3]
 
 include::topics/health-check-mission-deploy-booster.adoc[leveloffset=+3]
 
 include::topics/health-check-mission-basic-interaction-wf-swarm.adoc[leveloffset=+3]
 
-//level 2
-include::topics/health-check-mission-resources.adoc[leveloffset=+2]
+include::topics/health-check-mission-resources.adoc[leveloffset=+3]
+
 
 [[mission-secured-wf-swarm]]
-== {mission-secured-wf-swarm-guide-name}
+=== {mission-secured-wf-swarm-guide-name}
 :secured-wf-swarm-mission:
 :runtime-name: {WildFlySwarm}
 // This is used by the secured-mission-common-interaction.adoc to include the runtime specific information
 :runtime-tag: wf
 
 
-include::topics/secured-mission-intro.adoc[leveloffset=+2]
+include::topics/secured-mission-intro.adoc[leveloffset=+3]
 
-include::topics/secured-mission-wf-swarm-keycloak-json.adoc[leveloffset=+2]
+include::topics/secured-mission-wf-swarm-keycloak-json.adoc[leveloffset=+3]
 
-include::topics/secured-mission-deploy-rhsso.adoc[leveloffset=+2]
+include::topics/secured-mission-deploy-rhsso.adoc[leveloffset=+3]
 
-include::topics/secured-mission-deploy-booster.adoc[leveloffset=+2]
+include::topics/secured-mission-deploy-booster.adoc[leveloffset=+3]
 
-include::topics/secured-mission-common-interaction.adoc[leveloffset=+2]
+include::topics/secured-mission-common-interaction.adoc[leveloffset=+3]
 
 
 

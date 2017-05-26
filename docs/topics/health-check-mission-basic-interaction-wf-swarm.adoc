@@ -8,19 +8,19 @@ In the following we demonstrate the basic interactions on the command line that 
 +
 [source,bash,options="nowrap",subs="attributes"]
 ----
-$ curl http://{app-name}-{project-name}.192.168.64.3.nip.io/api/greeting
+$ curl http://{app-name}-{project-name}.1ab5.starter-us-east-1.openshiftapps.com/api/greeting
 {"content":"Hello, World!"}
 ----
 
-. To simulate a service internal failure and to trigger the openshift selfhealing capabilities, invoke the `/api/killme` endpoint and verify the availability of the `/api/greeting` endpoint shortly after that. It should return a HTTP status 503:
+. To simulate a service internal failure and to trigger the OpenShift selfhealing capabilities, invoke the `/api/killme` endpoint and verify the availability of the `/api/greeting` endpoint shortly after that. It should return a HTTP status 503:
 +
 [source,bash,option="nowrap",subs="attributes+"]
 ----
-$ curl http://{app-name}-{project-name}.192.168.64.3.nip.io/api/killme
+$ curl http://{app-name}-{project-name}.1ab5.starter-us-east-1.openshiftapps.com/api/killme
 
 (followed by)
 
-$ curl http://{app-name}-{project-name}.192.168.64.3.nip.io/api/greeting
+$ curl http://{app-name}-{project-name}.1ab5.starter-us-east-1.openshiftapps.com/api/greeting
 
 <html>
   <head><title>Error</title></head>
@@ -43,7 +43,7 @@ NAME                           READY     STATUS    RESTARTS   AGE
 +
 [source,bash,option="nowrap",subs="attributes"]
 --
-$ http://{app-name}-{project-name}.192.168.64.3.nip.io
+$ http://{app-name}-{project-name}.1ab5.starter-us-east-1.openshiftapps.com
 --
 
 include::health-check-mission-web-console-log-output.adoc[leveloffset=+1]
