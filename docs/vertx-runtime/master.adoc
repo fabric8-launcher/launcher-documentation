@@ -1,5 +1,8 @@
 include::topics/templates/document-attributes.adoc[]
 
+//override for a cleaner TOC
+:toclevels: 2
+
 = {vertx-runtime-guide-name}
 
 This guide covers concepts as well as practical details needed by developers to use the {VertX} runtime.
@@ -7,53 +10,47 @@ This guide covers concepts as well as practical details needed by developers to 
 == Runtime Details
 //https://projects.eclipse.org/projects/rt.vertx
 
+include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
+
 [[mission-http-api-vertx]]
-== {mission-http-api-vertx-guide-name}
+=== {mission-http-api-vertx-guide-name}
 :http-api-vertx:
 
-include::topics/rest-level-0-mission-intro.adoc[leveloffset=+2]
+include::topics/rest-level-0-mission-intro.adoc[leveloffset=+3]
 
-include::topics/rest-level-0-mission-design-tradeoffs.adoc[leveloffset=+2]
-
-=== Create an HTTP Endpoint
+include::topics/rest-level-0-mission-design-tradeoffs.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-deploy-booster.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-basic-interaction-vertx.adoc[leveloffset=+3]
 
-//level 2
-include::topics/rest-level-0-mission-resources.adoc[leveloffset=+2]
+include::topics/rest-level-0-mission-resources.adoc[leveloffset=+3]
 
 
 [[mission-configmap-vertx]]
-== {mission-configmap-vertx-guide-name}
+=== {mission-configmap-vertx-guide-name}
 :configmap-vertx:
 
-include::topics/configmap-mission-intro.adoc[leveloffset=+2]
+include::topics/configmap-mission-intro.adoc[leveloffset=+3]
 
-include::topics/configmap-mission-design-tradeoffs.adoc[leveloffset=+2]
-
-=== Deploy an Application that Uses ConfigMap
+include::topics/configmap-mission-design-tradeoffs.adoc[leveloffset=+3]
 
 include::topics/configmap-mission-deploy-booster.adoc[leveloffset=+3]
 
 include::topics/configmap-mission-basic-interaction-vertx.adoc[leveloffset=+3]
 
-//level 2
-include::topics/configmap-mission-resources.adoc[leveloffset=+2]
+include::topics/configmap-mission-resources.adoc[leveloffset=+3]
 
 
 [[mission-crud-vertx]]
-== {mission-crud-vertx-guide-name}
+=== {mission-crud-vertx-guide-name}
 //redefine this
 :crud-vertx-mission:
 :vertx-runtime-name: {VertX}
 
-include::topics/crud-mission-intro.adoc[leveloffset=+2]
+include::topics/crud-mission-intro.adoc[leveloffset=+3]
 
-include::topics/crud-mission-design-tradeoffs.adoc[leveloffset=+2]
-
-=== Create a CRUD Endpoint
+include::topics/crud-mission-design-tradeoffs.adoc[leveloffset=+3]
 
 //include::topics/crud-mission-deploy-database.adoc[leveloffset=+3]
 
@@ -64,42 +61,39 @@ include::topics/crud-mission-database-interaction.adoc[leveloffset=+3]
 include::topics/crud-mission-integration-testing.adoc[leveloffset=+3]
 
 // include additional resources
-include::topics/crud-mission-resources.adoc[leveloffset=+2]
+include::topics/crud-mission-resources.adoc[leveloffset=+3]
 
 
 [[mission-health-check-vertx]]
-== {mission-health-check-vertx-guide-name}
+=== {mission-health-check-vertx-guide-name}
 :health-check-vertx:
 
-include::topics/health-check-mission-intro.adoc[leveloffset=+2]
-
-=== Create an HTTP Endpoint with a Health Check
+include::topics/health-check-mission-intro.adoc[leveloffset=+3]
 
 include::topics/health-check-mission-deploy-booster.adoc[leveloffset=+3]
 
 include::topics/health-check-mission-basic-interaction-vertx.adoc[leveloffset=+3]
 
-//level 2
-include::topics/health-check-mission-resources.adoc[leveloffset=+2]
+include::topics/health-check-mission-resources.adoc[leveloffset=+3]
 
 
 [[mission-secured-vertx]]
-== {mission-secured-vertx-guide-name}
+=== {mission-secured-vertx-guide-name}
 :secured-vertx-mission:
 :runtime-name: {VertX}
 // This is used by the secured-mission-common-interaction.adoc to include the runtime specific information
 :runtime-tag: vx
 
 
-include::topics/secured-mission-intro.adoc[leveloffset=+2]
+include::topics/secured-mission-intro.adoc[leveloffset=+3]
 
-include::topics/secured-mission-vertx-keycloak-json.adoc[leveloffset=+2]
+include::topics/secured-mission-vertx-keycloak-json.adoc[leveloffset=+3]
 
-include::topics/secured-mission-deploy-rhsso.adoc[leveloffset=+2]
+include::topics/secured-mission-deploy-rhsso.adoc[leveloffset=+3]
 
-include::topics/secured-mission-deploy-booster.adoc[leveloffset=+2]
+include::topics/secured-mission-deploy-booster.adoc[leveloffset=+3]
 
-include::topics/secured-mission-common-interaction.adoc[leveloffset=+2]
+include::topics/secured-mission-common-interaction.adoc[leveloffset=+3]
 
 
 
