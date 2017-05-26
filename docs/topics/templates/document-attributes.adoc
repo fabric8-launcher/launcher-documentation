@@ -29,19 +29,22 @@
 
 :name-mission-http-api: REST API Level 0
 
-:mission-http-api-spring-boot-tomcat-guide-name: {name-mission-http-api} Mission - {SpringBoot}
-:mission-http-api-vertx-guide-name: {name-mission-http-api} Mission - {VertX}
-:mission-http-api-wf-swarm-guide-name: {name-mission-http-api} Mission - {WildFlySwarm}
-:mission-configmap-spring-boot-tomcat-guide-name: ConfigMap Mission - {SpringBoot}
-:mission-configmap-vertx-guide-name: ConfigMap Mission - {VertX}
-:mission-configmap-wf-swarm-guide-name: ConfigMap Mission - {WildFlySwarm}
-:mission-health-check-spring-boot-tomcat-guide-name: Health Check Mission - {SpringBoot}
-:mission-health-check-vertx-guide-name: Health Check Mission - {VertX}
-:mission-health-check-wf-swarm-guide-name: Health Check Mission - {WildFlySwarm}
+:mission-http-api-spring-boot-tomcat-guide-name: {name-mission-http-api} Mission - {SpringBoot} Booster
+:mission-http-api-vertx-guide-name: {name-mission-http-api} Mission - {VertX} Booster
+:mission-http-api-wf-swarm-guide-name: {name-mission-http-api} Mission - {WildFlySwarm} Booster
+:mission-configmap-spring-boot-tomcat-guide-name: ConfigMap Mission - {SpringBoot} Booster
+:mission-configmap-vertx-guide-name: ConfigMap Mission - {VertX} Booster
+:mission-configmap-wf-swarm-guide-name: ConfigMap Mission - {WildFlySwarm} Booster
+:mission-health-check-spring-boot-tomcat-guide-name: Health Check Mission - {SpringBoot} Booster
+:mission-health-check-vertx-guide-name: Health Check Mission - {VertX} Booster
+:mission-health-check-wf-swarm-guide-name: Health Check Mission - {WildFlySwarm} Booster
+:mission-secured-spring-boot-guide-name: Secured Mission - {SpringBoot} Booster
+:mission-secured-vertx-guide-name: Secured Mission - {VertX} Booster
+:mission-secured-wf-swarm-guide-name: Secured Mission - {WildFlySwarm} Booster
+:mission-crud-spring-boot-tomcat-guide-name: CRUD Mission - {SpringBoot} Booster
+:mission-crud-vertx-guide-name: CRUD Mission - {VertX} Booster
+:mission-crud-wf-swarm-guide-name: CRUD Mission - {WildFlySwarm} Booster
 
-:mission-secured-spring-boot-guide-name: Secured Mission - {SpringBoot}
-:mission-secured-vertx-guide-name: Secured Mission - {VertX}
-:mission-secured-wf-swarm-guide-name: Secured Mission - {WildFlySwarm}
 
 :openshift-local-guide-name: Install and Configure a {OpenShiftLocal}
 :minishift-installation-guide-name: Install and Configure the {launcher} Application on a {OpenShiftLocal}
@@ -54,10 +57,6 @@
 
 :MinishiftVersion: 1.0.0
 :CDKVersion: 3.0.0
-
-:mission-crud-spring-boot-tomcat-guide-name: CRUD Mission - {SpringBoot}
-:mission-crud-vertx-guide-name: CRUD Mission - {VertX}
-:mission-crud-wf-swarm-guide-name: CRUD Mission - {WildFlySwarm}
 
 :link-http-api-level-0-spring-boot-tomcat-booster: https://github.com/snowdrop/rest_springboot-tomcat
 :link-http-api-level-0-vertx-booster: https://github.com/openshiftio-vertx-boosters/vertx-http-booster
@@ -96,7 +95,7 @@
 
 
 
-:link-oso-auth: https://api.preview.openshift.com
+:link-oso-auth: OPENSHIFT_URL
 :link-osl-auth: LOCAL_OPENSHIFT_URL
 
 :link-rhsso: https://github.com/obsidian-toaster-quickstarts/redhat-sso

@@ -1,0 +1,6 @@
+[[missions-intro]]
+= Missions
+Missions are working applications that showcase different fundamental pieces of building cloud native applications and services, such as creating HTTP APIs, interoperating with a database, or implementing the health check pattern. A booster is the implementation of a mission in a specific runtime. Boosters are preconfigured, functioning applications based on a mission that demonstrate a fundamental aspect of modern application development running in an environment similar to production. Missions and boosters can be used as a proof of technology demonstration, a teaching tool, or even a sandbox for understanding how to develop applications. They can also be updated or extended for your own use case. 
+
+NOTE: Each mission has different boosters that show how to implement the same mission in different runtimes. For example, the {name-mission-http-api} mission has a {SpringBoot} booster, {VertX} booster, and a {WildFlySwarm} booster.
+

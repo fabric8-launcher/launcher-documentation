@@ -1,31 +1,5 @@
 = Deploy your Booster to {OpenShiftOnline}
 
-== Deploy Using the `oc` CLI Client
+== Deploy Using {launcher}
 
-You can deploy your booster to {OpenShiftOnline} by following the same process in xref:deploy-booster-osl-cli[], but instead of using a {OpenShiftLocal}, use your {OpenShiftOnline} URL to access the Web console and with the `oc` CLI client. You will also need to get your authentication token for using the `oc` CLI client with your {OpenShiftOnline} account. You can find this in the {OpenShiftOnline} Web console.
-
-[WARNING]
---
-When deploying your booster to {OpenShiftOnline} using the fabric8 Maven plugin, you must deploy to an existing project. Otherwise, the build will fail.
-
-. To verify if a project already exists on your {OpenShiftOnline} instance, execute the following command:
-+
-[source,bash]
-----
-oc status
-----
-+
-. If you receive the following error, you have no projects on your instance:
-+
-[source,subs="attributes+"]
-----
-Error from server: User "username" cannot get project "default"
-----
-+
-. To create a project, execute the following command:
-+
-[source,subs="attributes+"]
-----
-oc new-project {project-name}
-----
---
+Navigate to link:{link-launcher-oso}[{launcher}] in {OpenShiftOnline} and use it to create and launch your booster.
