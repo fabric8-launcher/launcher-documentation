@@ -1,1 +1,7 @@
-For more details on building, deploying and interacting with your booster, see the booster's mission guide.
+:icons: font
+
+Your project is available for download and is ready build and deploy locally. Refer to the mission details in your runtime's guide for more information on building, deploying, and interacting with your booster.
+
+* link:http://appdev.openshift.io/docs/spring-boot-runtime.html[Spring Boot Tomcat Runtime Guide]
+* link:http://appdev.openshift.io/docs/vertx-runtime.html[Eclipse Vert.x Runtime Guide]
+* link:http://appdev.openshift.io/docs/wf-swarm-runtime.html[WildFly Swarm Runtime Guide]
