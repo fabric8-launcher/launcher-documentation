@@ -94,7 +94,7 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.wildfly</groupId>
+      <groupId>org.jboss.eap</groupId>
       <artifactId>wildfly-feature-pack</artifactId>
       <type>zip</type>
       <scope>provided</scope>

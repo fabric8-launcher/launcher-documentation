@@ -17,8 +17,8 @@
   <groupId>org.wildfly.swarm</groupId>
   <artifactId>netflix-rxnetty</artifactId>
 
-  <name> RX-Netty</name>
-  <description> RX-Netty</description>
+  <name>RX-Netty</name>
+  <description>RX-Netty</description>
 
   <packaging>jar</packaging>
 
@@ -88,7 +88,7 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.wildfly</groupId>
+      <groupId>org.jboss.eap</groupId>
       <artifactId>wildfly-servlet-feature-pack</artifactId>
       <type>zip</type>
       <scope>provided</scope>
@@ -100,7 +100,7 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.wildfly</groupId>
+      <groupId>org.jboss.eap</groupId>
       <artifactId>wildfly-feature-pack</artifactId>
       <type>zip</type>
       <scope>provided</scope>

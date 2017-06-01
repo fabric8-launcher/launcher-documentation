@@ -37,7 +37,7 @@
     <version.orientdb.config-api>1.2.0</version.orientdb.config-api>
     <version.wildfly.nosql.feature-pack>1.0.0.Alpha3</version.wildfly.nosql.feature-pack>
 
-    <version.wildfly>10.1.0.Final</version.wildfly>
+    <version.wildfly>7.0.6.GA-redhat-2</version.wildfly>
     <version.org.wildfly.core>2.2.1.Final</version.org.wildfly.core>
     <version.jboss-logmanager-ext>1.0.0.Alpha3</version.jboss-logmanager-ext>
     <!-- Weld SE version must be aligned with the version used in WildFly -->
@@ -128,8 +128,8 @@
       </dependency>
 
       <dependency>
-        <groupId>org.wildfly</groupId>
-        <artifactId>wildfly-parent</artifactId>
+        <groupId>org.jboss.eap</groupId>
+        <artifactId>jboss-eap-parent</artifactId>
         <version>${version.wildfly}</version>
         <type>pom</type>
         <scope>import</scope>
@@ -428,14 +428,14 @@
 
       <!-- Feature Packs -->
       <dependency>
-        <groupId>org.wildfly</groupId>
+        <groupId>org.jboss.eap</groupId>
         <artifactId>wildfly-servlet-feature-pack</artifactId>
         <version>${version.wildfly}</version>
         <type>zip</type>
         <scope>provided</scope>
       </dependency>
       <dependency>
-        <groupId>org.wildfly</groupId>
+        <groupId>org.jboss.eap</groupId>
         <artifactId>wildfly-feature-pack</artifactId>
         <version>${version.wildfly}</version>
         <type>zip</type>

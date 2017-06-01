@@ -17,8 +17,8 @@
   <groupId>org.wildfly.swarm</groupId>
   <artifactId>servo</artifactId>
 
-  <name> Servo</name>
-  <description> Servo</description>
+  <name>Servo</name>
+  <description>Servo</description>
 
   <packaging>jar</packaging>
 
@@ -72,7 +72,7 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.wildfly</groupId>
+      <groupId>org.jboss.eap</groupId>
       <artifactId>wildfly-servlet-feature-pack</artifactId>
       <type>zip</type>
       <scope>provided</scope>

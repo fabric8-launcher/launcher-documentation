@@ -67,7 +67,7 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.wildfly</groupId>
+      <groupId>org.jboss.eap</groupId>
       <artifactId>wildfly-undertow</artifactId>
       <scope>provided</scope>
     </dependency>
