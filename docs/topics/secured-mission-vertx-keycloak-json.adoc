@@ -1,4 +1,8 @@
-The configuration of the adapter is defined within the `/app/src/main/fabric8/template.yml` file using these properties:
+= SSO Adapter
+
+The adapter configuration is defined in the following file.
+
+.src/main/fabric8/template.yml
 [source,yaml]
 ----
 - description: The URL for the SSO server (e.g. https://secure-sso-myproject.example.com/auth).  This
@@ -21,6 +25,4 @@ The configuration of the adapter is defined within the `/app/src/main/fabric8/te
   required: true
 ----
 
-When you deploy the Booster, you will specify the value for the SSO_AUTH_SERVER_URL
-property based on the URL assigned to the RH SSO when you
-go through the <<SSO_AUTH_SERVER_URL>> step of <<mission-secured-deploy-rhsso>>.
+NOTE: You will determine the value for ${SSO_AUTH_SERVER_URL} in the <<SSO_AUTH_SERVER_URL>> step of <<mission-secured-deploy-rhsso>>.

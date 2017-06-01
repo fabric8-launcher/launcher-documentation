@@ -1,14 +1,17 @@
-= Interact with the Secured {runtime-name} Booster
+= Interact with the Secured Booster
 
-The booster provides a default HTTP endpoint that accepts GET requests provided
-the caller is authenticated and authorized. The sso directory of this booster
-contains a Java client that authenticates against the RH SSO server you
-deployed and then performs a `GET` request against the booster using the access
-token returned by the authentication step.
+The Secured booster provides a default HTTP endpoint that accepts `GET` requests if the caller is authenticated and authorized. The `sso` directory of the booster contains a Java client you can use to interact with the Secured booster. The client first authenticates against the {RHSSO} server and then performs a `GET` request against the Secured booster using the access token returned by the authentication step.
 
-The Java client is packaged as an executable jar and is located at target/sso-client.jar.
-To run the client, use `java -jar target/sso-client.jar -app ...`.
-The full set of command arguments that you can specify can be seen by passing -help:
+The Java client is packaged as an executable JAR and is located at `target/sso-client.jar`. 
+
+To run the client:
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ java -jar target/sso-client.jar -app ...
+----
+
+To see the full set of command arguments:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -38,35 +41,44 @@ Usage: client.GreetingAuthzClient [options]
       Default: alice
 ----
 
-The only required argument is the --app argument. This needs to match up to the name of the service endpoint as known by your {OpenShiftLocal}.
-You can get a list of the using the `oc get routes` command. The following table shows sample output where
-the {runtime-name} secured booster had been deployed.
+You must specify the Secured booster endpoint name using the `--app` argument. You can get a list of the endpoints using the `oc get routes` command. The following table shows sample output from the `oc get routes` where you can obtain the Secured booster endpoint name.
 
 // Need :runtime-tag: attribute defined by including doc
-include::secured-mission-{runtime-tag}-interaction.adoc[]
+include::secured-mission-{runtime-tag}-interaction.adoc[leveloffset=+1]
 
-## Decoding JWT
-There is a nice online decoder that you can use to decode a JWT to see it's contents at https://jwt.io/#debugger-io[JWT Debugger], and the screen
-is shown here:
+== Decoding JWT
+
+When using debug value greater than 0, for example `--debug 2`, you will notice the output returns a `token`:
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ java -jar target/sso-client.jar ... --debug 2
+Successful oc get routes: Yes
+...
+Token: eyJhbGciOiJSUzI1NiJ9.ey.....
+----
+
+This is a link:https://jwt.io[JSON Web Token], and you can decode it using the link:https://jwt.io/#debugger-io[JWT Debugger]:
 
 image:jwt-debugger.png[JWT Debugger Screen]
 
-To use it, go to the site, and first use the Algorithm drop down menu to choose RS256. Make sure the web form has actually updated to
-display the RSASHA256(...) information in the Signature section. If it does not, try switching back to HS256 and then back to RS256.
+To use the debugger:
 
-At that point you will a text input box in the VERIFY SIGNATURE section that has text beginning with "-----BEGIN PUBLIC KEY-----".
-Copy the entire "-----BEGIN...-----END PUBLIC KEY-----" block from here:
+. Go to link:https://jwt.io/#debugger-io[JWT Debugger].
+. Select `RS256` from the _Algorithm_ drop down menu. 
++
+NOTE: Make sure the web form has actually updated to display the RSASHA256(...) information in the Signature section. If it does not, try switching back to HS256 and then back to RS256.
 
-[source,base64]
+. Paste the following content in the top text box in the _VERIFY SIGNATURE_ section.
++
+[source,base64,options="nowrap",subs="attributes+"]
 ----
 -----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoETnPmN55xBJjRzN/cs30OzJ9olkteLVNRjzdTxFOyRtS2ovDfzdhhO9XzUcTMbIsCOAZtSt8K+6yvBXypOSYvI75EUdypmkcK1KoptqY5KEBQ1KwhWuP7IWQ0fshUwD6jI1QWDfGxfM/h34FvEn/0tJ71xN2P8TI2YanwuDZgosdobx/PAvlGREBGuk4BgmexTOkAdnFxIUQcCkiEZ2C41uCrxiS4CEe5OX91aK9HKZV4ZJX6vnqMHmdDnsMdO+UFtxOBYZio+a1jP4W3d7J5fGeiOaXjQCOpivKnP2yU2DPdWmDMyVb67l8DRA+jh0OJFKZ5H2fNgE3II59vdsRwIDAQAB
 -----END PUBLIC KEY-----
 ----
++
+NOTE: This is the master realm public key from the Secured booster's {RHSSO} server deployment.
 
-and replace all of the text in that input box with this text. This is the master realm public key from this quick start's
-RH SSO server deployment.
-
-Now, take the base64 encoding of a token from one of the client runs where you specified a --debug value > 0, and paste it
-into the left text input box titled *Encoded PASTE a TOKEN HERE*. When you do that, it's header, payload sections will populate,
-and there should be a Signature Verified box at the bottom.
+. Paste the `token` output from the client output in the _Encoded_ box.
+. You will see `Signature Verified` on the debugger page.

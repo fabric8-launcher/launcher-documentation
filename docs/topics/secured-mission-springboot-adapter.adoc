@@ -1,7 +1,8 @@
-The configuration of the adapter is defined within the `app/src/main/resources/application.properties`
-and `/app/src/main/fabric8/template.yml` files using these properties:
+= SSO Adapter
 
-.application.properties
+The adapter configuration is defined in the following files.
+
+.app/src/main/resources/application.properties
 [source,properties]
 ----
 keycloak.realm=${realm}
@@ -18,7 +19,7 @@ keycloak.securityConstraints[0].securityCollections[0].authRoles[0]=springboot-a
 keycloak.securityConstraints[0].securityCollections[0].patterns[0]=/greeting
 ----
 
-.template.yml
+.app/src/main/fabric8/template.yml
 [source,yaml]
 ----
 ...
@@ -42,6 +43,4 @@ keycloak.securityConstraints[0].securityCollections[0].patterns[0]=/greeting
   required: true
 ----
 
-When you deploy the Booster, you will specify the value for the SSO_AUTH_SERVER_URL
-property based on the URL assigned to the RH SSO when you
-go through the <<SSO_AUTH_SERVER_URL>> step of <<mission-secured-deploy-rhsso>>.
+NOTE: You will determine the value for ${SSO_AUTH_SERVER_URL} in the <<SSO_AUTH_SERVER_URL>> step of <<mission-secured-deploy-rhsso>>.
