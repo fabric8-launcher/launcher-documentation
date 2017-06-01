@@ -1,6 +1,5 @@
 
-
-.Sample oc get routes output
+.Sample `oc get routes` output
 [format="csv", options="header"]
 [cols="3,6,1,2,1,2"]
 |===
@@ -10,25 +9,23 @@ secured-springboot-rest,secured-springboot-rest-myproject.192.168.99.100.nip.io,
 sso,sso-myproject.192.168.99.100.nip.io,,sso,<all>,
 |===
 
-The deployed application names is also available via the output of the java command line client used to display the
-SSO_AUTH_SERVER_URL. If you look at the following output:
+The Secured booster endpoint name is also available using the Java client:
 
-[source,shell,subs="attributes+"]
+[source,bash,options="nowrap",subs="attributes+"]
 ----
-[sstark@rhcsb sso]$ java -jar target/sso-client.jar --displaySSOURL
+$ java -jar target/sso-client.jar --displaySSOURL
 Successful oc get routes: Yes
 Using auth server URL: https://secure-sso-myproject.192.168.99.100.nip.io/auth
 Available application endpoint names: [secured-springboot-rest] <1>
 ----
-<1> The line beginning with *Available application endpoint names:* shows the non-SSO related application names.
-In this case, it is secured-springboot-rest
+<1> The line beginning with `Available application endpoint names:` shows the non-SSO related application names. In this case, it is `secured-springboot-rest`.
 
-## Example Client Output
+= Example Client Output
 
-### secured-springboot-rest with default user
-[source,shell]
+.Authentication with Default User
+[source,bash,options="nowrap",subs="attributes+"]
 ----
-[sstark@rhcsb sso]$ java -jar target/sso-client.jar --app secured-springboot-rest
+$ java -jar target/sso-client.jar --app secured-springboot-rest
 Successful oc get routes: Yes
 Using auth server URL: https://secure-sso-myproject.192.168.99.100.nip.io/auth
 Available application endpoint names: [secured-springboot-rest]
@@ -40,10 +37,10 @@ Requesting greeting...
 }
 ----
 
-### secured-springboot-rest with default user, --from parameter
-[source,shell]
+.Authentication with Default User Using `--from` Parameter
+[source,bash,options="nowrap",subs="attributes+"]
 ----
-[sstark@rhcsb sso]$ java -jar target/sso-client.jar --app secured-springboot-rest --from Scott
+$ java -jar target/sso-client.jar --app secured-springboot-rest --from Scott
 Successful oc get routes: Yes
 Using auth server URL: https://secure-sso-myproject.192.168.99.100.nip.io/auth
 Available application endpoint names: [secured-springboot-rest]
@@ -55,10 +52,10 @@ Requesting greeting...
 }
 ----
 
-### secured-springboot-rest with default user, bad password
-[source,shell]
+.Authentication with Default User Using Invalid Password
+[source,bash,options="nowrap",subs="attributes+"]
 ----
-[sstark@rhcsb sso]$ java -jar target/sso-client.jar --app secured-springboot-rest --password bad
+$ java -jar target/sso-client.jar --app secured-springboot-rest --password bad
 Successful oc get routes: Yes
 Using auth server URL: https://secure-sso-myproject.192.168.99.100.nip.io/auth
 Available application endpoint names: [secured-springboot-rest]
@@ -75,10 +72,10 @@ Caused by: javax.ws.rs.NotAuthorizedException: HTTP 401 Unauthorized
 	... 2 more
 ----
 
-### secured-springboot-rest with admin user
-[source,shell]
+.Authentication with admin User
+[source,bash,options="nowrap",subs="attributes+"]
 ----
-[sstark@rhcsb sso]$ java -jar target/sso-client.jar --app secured-springboot-rest --user admin --password admin
+$ java -jar target/sso-client.jar --app secured-springboot-rest --user admin --password admin
 Successful oc get routes: Yes
 Using auth server URL: https://secure-sso-myproject.192.168.99.100.nip.io/auth
 Available application endpoint names: [secured-springboot-rest]
@@ -95,10 +92,10 @@ Exception in thread "main" javax.ws.rs.ForbiddenException: HTTP 403 Forbidden
 	at client.GreetingAuthzClient.main(GreetingAuthzClient.java:79)
 ----
 
-### secured-springboot-rest with admin user, debug 2
-[source,shell]
+.Authentication with admin User using `debug 2`
+[source,bash,options="nowrap",subs="attributes+"]
 ----
-[sstark@rhcsb sso]$ java -jar target/sso-client.jar --app secured-springboot-rest --user admin --password admin --debug 2
+$ java -jar target/sso-client.jar --app secured-springboot-rest --user admin --password admin --debug 2
 Successful oc get routes: Yes
 Using auth server URL: https://secure-sso-myproject.192.168.99.100.nip.io/auth
 Available application endpoint names: [secured-springboot-rest]
