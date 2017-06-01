@@ -1,43 +1,36 @@
-= Update your Booster Manually
+:icons: font
+
+.Next Steps: Update your Booster Manually
+
+You can build and deploy your booster application using the Fabric8 Maven Plugin to launch the S2I process on OpenShift.
 
 . Clone your project from GitHub.
 +
-[source,bash,options="nowrap",subs="attributes+"]
+[source,bash,subs="attributes+"]
 ----
 $ git clone git@github.com:USERNAME/PROJECT-NAME.git
 ----
 
 . Open your project in your desired IDE or editor.
-
 . Perform any updates you want to the the project.
 
-. Ensure you are logged in with your `oc` CLI client.
+. Log in with your `oc` CLI client and change to your booster's project.
 +
-[source,bash,options="nowrap",subs="attributes+"]
+[source,bash,subs="attributes+"]
 ----
-$ oc login OPENSHIFT_URL
-  ...follow prompts for username and password
-
-  - or -
-
-$ oc login OPENSHIFT_URL --token=$MYTOKEN
- ...@see how to obtain your token in note below
-
+$ oc login OPENSHIFT_CONSOLE_URL
 $ oc project PROJECT_NAME
 ----
-+
-NOTE: You can find your token in your Open Web console. For example, if your OPENSHIFT_URL is `https://console.starter-us-east-1.openshift.com`, your token would be located at `https://console.starter-us-east-1.openshift.com/console/command-line`. 
 
-. Use maven to start the deployment to OpenShift.
+. Use Maven to start the deployment to OpenShift.
 +
-[source,bash,options="nowrap",subs="attributes+"]
+[source,bash,subs="attributes+"]
 ----
 $ mvn clean fabric8:deploy -Popenshift -DskipTests
 ----
-+
-This command uses the Fabric8 Maven Plugin to launch the S2I process on OpenShift and to start the pod.
-+
-NOTE: A mission's booster may contain tests that assume the build process is running on OpenShift. Since you are building your mission's booster outside of OpenShift before deploying it, you can use `-DskipTests` to skip the testing process. 
-. Navigate to project's overview page in the OpenShift Web console.
+//+
+//NOTE: A mission's booster may contain tests that assume the build process is running on OpenShift. Since you are building your mission's booster outside of OpenShift before deploying it, you can use `-DskipTests` to skip the testing process. 
 
-You will notice a new deployment running. Once complete, click on the link for booster application at the top of the page and observe your changes appear.
+. Click _See it here!_ in _Creating your project on OpenShift Online_.
+
+Notice a new deployment is running! Once complete, click on the link for booster application at the top of the page and observe your changes appear.
