@@ -1,4 +1,8 @@
-The configuration of the adapter is defined within the `app/src/main/webapp/WEB-INF/keycloak.json` file using these properties:
+= SSO Adapter
+
+The adapter configuration is defined in the following file.
+
+.src/main/webapp/WEB-INF/keycloak.json
 [source,json]
 ----
 {
@@ -13,6 +17,4 @@ The configuration of the adapter is defined within the `app/src/main/webapp/WEB-
 }
 ----
 
-When you deploy the Booster, you will specify the value for the sso.auth.server.url
-property based on the URL assigned to the RH SSO when you
-go through the <<SSO_AUTH_SERVER_URL>> step of <<mission-secured-deploy-rhsso>>.
+NOTE: You will determine the value for ${sso.auth.server.url} in the <<SSO_AUTH_SERVER_URL>> step of <<mission-secured-deploy-rhsso>>.

@@ -77,7 +77,7 @@ include::topics/health-check-mission-basic-interaction-wf-swarm.adoc[leveloffset
 
 include::topics/health-check-mission-resources.adoc[leveloffset=+3]
 
-
+////
 [[mission-secured-wf-swarm]]
 === {mission-secured-wf-swarm-guide-name}
 :secured-wf-swarm-mission:
@@ -88,14 +88,13 @@ include::topics/health-check-mission-resources.adoc[leveloffset=+3]
 
 include::topics/secured-mission-intro.adoc[leveloffset=+3]
 
-include::topics/secured-mission-wf-swarm-keycloak-json.adoc[leveloffset=+3]
-
-include::topics/secured-mission-deploy-rhsso.adoc[leveloffset=+3]
+//this needs to be a level lower due to secured-mission-intro.adoc
+include::topics/secured-mission-wf-swarm-keycloak-json.adoc[leveloffset=+4]
 
 include::topics/secured-mission-deploy-booster.adoc[leveloffset=+3]
 
 include::topics/secured-mission-common-interaction.adoc[leveloffset=+3]
-
+////
 
 
 
