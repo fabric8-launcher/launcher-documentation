@@ -1,0 +1,163 @@
+=  Configuring Persistent Maven Repository Settings for CI/CD Builds on a {OpenShiftLocal}
+
+[CAUTION]
+--
+Executing multiple concurrent CI/CD builds while using persistent Maven repository settings may result in build failures due to multiple Jenkins attempting to simultaneously download and store artifacts in the shared `$USER_HOME/jenkins/.m2` directory.
+--
+
+== Assign the Cluster Administrator Role to `developer`.
+
+. Log in to your {OpenShiftLocal} as an administrator:
++
+[source,bash,subs="attributes+"]
+--
+oc login -u system:admin
+--
++
+. Assign the `cluster-admin` role to `developer`:
++
+[source,bash,subs="attributes+"]
+--
+oadm policy add-cluster-role-to-user cluster-admin developer
+--
++
+. Create the `/var/lib/maven` directory inside your {OpenShiftLocal}:
++
+[source,bash,subs="attributes+"]
+--
+minishift ssh -- mkdir -p /var/lib/maven
+--
++
+. Change the access permissions on the `/var/lib/maven` directory:
++
+[source,bash,subs="attributes+"]
+--
+minishift ssh -- sudo chmod 777 /var/lib/maven
+--
++
+[WARNING]
+--
+Stopping your {OpenShiftLocal} resets the permission settings on the `/var/lib/maven` directory.
+You must set the permissions after each restart of your {OpenShiftLocal}.
+--
+
+== Create a Persistent Volume Claim Object.
+
+. Log in to your {OpenShiftLocal} as `developer`:
++
+[source,bash,subs="attributes+"]
+--
+oc login -u developer -p developer
+--
++
+// no `oc project` required?
++
+. Create a Persistent Volume inside your {OpenShiftLocal} with the following properties:
++
+[source,bash,subs="attributes+"]
+--
+cat << EOF | oc create -f -
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: jenkins-maven
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 1Gi
+  hostPath:
+    path: /var/lib/maven
+  persistentVolumeReclaimPolicy: Recycle
+EOF
+--
++
+You will later use this object to create a Persistent Volume onto which you mount the `/var/lib/maven` directory.
+
+== Build the Modified Jenkins Image.
+
+. Clone the link:https://github.com/cmoulliard/jenkins/tree/add-persistentvolumeclaim[repository] containing a Jenkins Docker-formatted image link:https://github.com/openshift/jenkins/compare/master...cmoulliard:add-persistentvolumeclaim[modified] to mount a Persistent Volume Claim to the pod.
++
+[source,bash,subs="attributes+"]
+--
+git clone https://github.com/cmoulliard/jenkins.git
+--
++
+. Navigate to your local clone of the repository:
++
+[source,bash,subs="attributes+"]
+--
+cd jenkins
+--
++
+. Checkout the branch containing the modified image template:
++
+[source,bash,subs="attributes+"]
+--
+git checkout add-persistentvolumeclaim
+--
++
+. Build the modified Jenkins image:
++
+[source,bash,subs="attributes+"]
+--
+eval $(minishift docker-env)
+make build TARGET=centos7 VERSION=2
+--
+
+== Deploy the {launcher} Application Using the Modified Jenkins Image.
+
+. link:{link-launcher-openshift-local-install-guide}#create-launcher-app-script[Deploy the {launcher} application using the script].
+Ensure that you specify `master` as the template version.
++
+[source,bash,subs="attributes+",options="nowrap"]
+--
+./deploy_launchpad_mission.sh -p launch -i developer:developer -g $GITHUB_USERNAME:$GITHUB_ACCESS_TOKEN -v master
+--
++
+. Redeploy the pod running the `launchpad-frontend` application.
++
+[source,bash,subs="attributes+",options="nowrap"]
+--
+oc rollout latest dc/launchpad-frontend
+--
++
+[WARNING]
+--
+Expect the CI/CD build to fail at this point, because you have not created the Persistent Volume yet.
+--
++
+. Patch the deployment configuration of the Jenkins pod in the project containing the {launcher} application to use the latest  `jenkins-2-centos7` image.
++
+[source,bash,subs="attributes+",options="nowrap"]
+--
+oc patch dc/jenkins --type='json' -p='[{"op": "replace", "path": "/spec/template/spec/containers/0/image", "value":"openshift/jenkins-2-centos8:latest"}]'
+--
++
+. Cancel the CI/CD deployment that is automatically triggered by the configuration change.
++
+. Switch to the project that contains the {launcher} application:
++
+[source,bash,subs="attributes+"]
+--
+oc project LAUNCHER_APPLICATION
+--
++
+[IMPORTANT]
+--
+Persistent Volume Claims are specific to projects.
+Before creating a Persistent Volume Claim, ensure that you select the project in which you want to place it.
+--
++
+. Create the Persistent Volume Claim:
++
+[source,bash,subs="attributes+",options="nowrap"]
+--
+oc set volume dc/jenkins --add --claim-size 1Gi --claim-name jenkins-maven --mount-path /home/jenkins/.m2 --name jenkins-maven
+--
++
+. Redeploy the pod containing the `launchpad-frontend` application.
++
+Since the Persistent Volume Claim has been created, the CI/CD build succeeds, and the {launcher} application is redeployed with the updated configuration.
+
+Downloaded Maven artifacts will be persistently stored in the shared `$USER_HOME/jenkins/.m2` directory and can be used by Jenkins without having to be re-downloaded upon each build.
