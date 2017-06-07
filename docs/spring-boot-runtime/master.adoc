@@ -109,6 +109,7 @@ include::topics/secured-mission-common-interaction.adoc[leveloffset=+3]
 
 [appendix]
 == S2I process
+include::topics/appendix-s2i-build-process.adoc[leveloffset=+2]
 
 [appendix]
 == Breakdown of POM components

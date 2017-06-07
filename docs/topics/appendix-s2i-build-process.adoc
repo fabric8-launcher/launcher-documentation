@@ -1,0 +1,14 @@
+//= The Source-to-Image (S2I) Build Process
+link:https://docs.openshift.com/container-platform/3.4/architecture/core_concepts/builds_and_image_streams.html#source-build[Source-to-Image] (S2I) is a build tool that allows you to generate reproducible Docker-formatted container images from application sources hosted in an online SCM repository.
+With S2I builds you can easily deliver the latest version of your application into production while achieving shorter build times, decreased resource and network usage, improved security and a number of link:https://docs.openshift.com/container-platform/3.4/architecture/core_concepts/builds_and_image_streams.html#source-build[advantages].
+
+You need to provide three key elements as the input to the S2I process:
+
+* application sources (hosted in an online SCM repository, such as a Git Hub repo)
+
+* link:https://docs.openshift.com/container-platform/3.4/creating_images/s2i.html#s2i-scripts[S2I scripts]
+
+* the Builder image, which serves as the foundation for the assembled image and provides the ecosystem within which your application is running
+
+The process combines these inputs by injecting your application sources and dependencies into the Builder image according to instructions specified in the S2I script and generates a Docker-formatted container image that runs the assembled application. For more detail, check the
+link:https://docs.openshift.com/container-platform/3.4/creating_images/s2i.html[S2I build requirements] and link:https://docs.openshift.com/enterprise/3.0/dev_guide/builds.html#source-to-image-strategy-options[build options] sections of the link:https://docs.openshift.com/container-platform/3.4/welcome/index.html[OpenShift Container Platform documentation].
