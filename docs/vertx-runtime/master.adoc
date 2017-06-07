@@ -7,8 +7,7 @@ include::topics/templates/document-attributes.adoc[]
 
 This guide covers concepts as well as practical details needed by developers to use the {VertX} runtime.
 
-== Runtime Details
-//https://projects.eclipse.org/projects/rt.vertx
+include::topics/vertx-runtime-overview.adoc[leveloffset=+1]
 
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
@@ -105,12 +104,11 @@ include::topics/secured-mission-common-interaction.adoc[leveloffset=+3]
 //Building your app
 
 [appendix]
-== S2I Process
-include::topics/appendix-s2i-build-process.adoc[leveloffset=+2]
+include::topics/appendix-s2i-build-process.adoc[leveloffset=+1]
 
 [appendix]
 == Breakdown of POM Components
 //https://github.com/openshiftio/appdev-documentation/issues/240
 
 [appendix]
-== Additional Resources
+include::topics/vertx-dev-guide-additional-resources.adoc[leveloffset=+1]
