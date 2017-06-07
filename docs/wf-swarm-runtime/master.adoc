@@ -109,8 +109,7 @@ include::topics/secured-mission-common-interaction.adoc[leveloffset=+3]
 include::topics/appendix-s2i-build-process.adoc[leveloffset=+1]
 
 [appendix]
-== Breakdown of POM Components
-//https://github.com/openshiftio/appdev-documentation/issues/240
+include::topics/http-api-wf-swarm-pom.adoc[leveloffset=+1]
 
 [appendix]
 == Additional Resources
