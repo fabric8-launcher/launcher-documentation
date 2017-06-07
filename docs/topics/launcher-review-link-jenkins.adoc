@@ -1,7 +1,7 @@
 :icons: font
 
-.Next Steps: Grant Access to Jenkins Pod
-You need to grant the OpenShift Web console access to read information about the deployment that Jenkins pod is performing.
+.Next Steps: Grant Access to the Jenkins Pod
+You need to grant the OpenShift Web console access to read information about the deployment that the Jenkins pod is performing.
 
 . Click _See it here!_ in _Creating your project on OpenShift Online_.
 . Click _View Log_ in the pipeline at the top.
