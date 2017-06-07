@@ -1,0 +1,208 @@
+[[breakdown_pom]]
+= Breakdown of POM Components
+
+.link:https://github.com/openshiftio-vertx-boosters/vertx-http-booster/blob/master/pom.xml[vertx-http-booster/pom.xml]
+[source,xml,options="nowrap",subs="attributes+"]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent> <1>
+    <groupId>io.openshift</groupId>
+    <artifactId>booster-parent</artifactId>
+    <version>4</version>
+  </parent>
+  <groupId>io.openshift.booster</groupId>
+  <artifactId>http-vertx</artifactId>
+  <version>7-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>Vert.x - HTTP</name>
+  <description>Exposes an HTTP API using Vert.x</description>
+
+  <properties> <2>
+    <vertx.version>3.4.1</vertx.version>
+    <vertx-maven-plugin.version>1.0.8</vertx-maven-plugin.version>
+    <vertx.verticle>io.openshift.booster.HttpApplication</vertx.verticle>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.vertx</groupId>
+        <artifactId>vertx-dependencies</artifactId> <3>
+        <version>${vertx.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-core</artifactId> <4>
+    </dependency>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-web</artifactId> <5>
+    </dependency>
+
+    <!-- Testing -->
+    <dependency> <6>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-web-client</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-unit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>3.6.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.jayway.restassured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <version>2.9.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.jayway.awaitility</groupId>
+      <artifactId>awaitility</artifactId>
+      <version>1.7.0</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>io.fabric8</groupId>
+        <artifactId>vertx-maven-plugin</artifactId> <7>
+        <version>${vertx-maven-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>vmp</id>
+            <goals>
+              <goal>initialize</goal>
+              <goal>package</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <redeploy>true</redeploy>
+        </configuration>
+      </plugin>
+    </plugins>
+
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.eclipse.m2e</groupId>
+          <artifactId>lifecycle-mapping</artifactId> <8>
+          <version>1.0.0</version>
+          <configuration>
+            <lifecycleMappingMetadata>
+              <pluginExecutions>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>io.fabric8</groupId>
+                    <artifactId>vertx-maven-plugin</artifactId>
+                    <versionRange>[1.0.6,)</versionRange>
+                    <goals>
+                      <goal>initialize</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore/>
+                  </action>
+                </pluginExecution>
+              </pluginExecutions>
+            </lifecycleMappingMetadata>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>openshift</id> <9>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>io.fabric8</groupId>
+            <artifactId>fabric8-maven-plugin</artifactId>
+            <version>3.2.28</version>
+            <executions>
+              <execution>
+                <id>fmp</id>
+                <goals>
+                  <goal>resource</goal>
+                  <goal>build</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <enricher>
+                <includes>
+                  <include>vertx-health-check</include>
+                </includes>
+                <config>
+                  <vertx-health-check>
+                    <path>/</path>
+                  </vertx-health-check>
+                </config>
+              </enricher>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>openshift-it</id> <10>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>integration-test</goal>
+                  <goal>verify</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>
+----
+
+<1> link:https://github.com/openshiftio/booster-parent/blob/master/pom.xml[Parent POM] which contains the necessary dependencies and the required versions for the booster projects.
+<2> These are properties for setting the {VertX} and {VertX} Maven plugin version to use as well as the name of the {VertX} verticle.
+<3> link:https://github.com/vert-x3/vertx-dependencies/blob/master/pom.xml[BOM] for building {VertX} applications with Maven.
+<4> link:https://github.com/eclipse/vert.x/blob/master/pom.xml[POM] containing core functionality of {VertX}. More details on the core components of {VertX} are avialble in the link:http://vertx.io/docs/vertx-core/java/[{VertX} documentation].
+<5> link:https://github.com/vert-x3/vertx-web/blob/master/pom.xml[POM] containing the components for building web applications with {VertX}.
+<6> Various dependencies needed for testing the application. This includes several {VertX} components such as link:http://vertx.io/docs/vertx-web-client/java/[vertx-web-client] and link:http://vertx.io/docs/vertx-unit/java/[vertx-unit] as well as other projects such as  link:https://joel-costigliola.github.io/assertj/[assertj] for assertions, link:https://github.com/rest-assured/rest-assured[rest-assured] for testing REST services, and link:https://github.com/awaitility/awaitility[awaitility] for doing asynchronous operations.
+<7> link:https://vmp.fabric8.io[{VertX} Fabric8 Maven Plugin] used for packaging and deploying {VertX} applications
+<8> link:https://wiki.eclipse.org/M2E_compatible_maven_plugins[Lifecycle metadata] that works with the {VertX} Fabric8 Maven Plugin for building and deploy the application.
+<9> This is the profile for building and deploying the booster to OpenShift. It uses the link:http://fabric8.io/gitbook/mavenPlugin.html[Fabric8 Maven Plugin (FMP)] to build and deploy the application with the S2I Build Process.
+<10> This profile is for running integration tests when the application is running on OpenShift. For example, a test may require a database pod or a ConfigMap value.

@@ -112,8 +112,8 @@ include::topics/secured-mission-common-interaction.adoc[leveloffset=+3]
 include::topics/appendix-s2i-build-process.adoc[leveloffset=+2]
 
 [appendix]
-== Breakdown of POM components
-//https://github.com/openshiftio/appdev-documentation/issues/240
+include::topics/http-api-spring-boot-pom.adoc[leveloffset=+1]
+
 
 [appendix]
 == Additional Resources
