@@ -1,0 +1,174 @@
+[[breakdown_pom]]
+= Breakdown of POM Components
+
+.link:https://github.com/snowdrop/spring-boot-http-booster/blob/master/pom.xml[spring-boot-http-booster/pom.xml]
+[source,xml,options="nowrap",subs="attributes+"]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright 2016-2017 Red Hat, Inc, and individual contributors.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+
+  <parent> <1>
+    <groupId>io.openshift</groupId>
+    <artifactId>booster-parent</artifactId>
+    <version>4</version>
+  </parent>
+
+  <groupId>io.openshift.booster</groupId>
+  <artifactId>spring-boot-http</artifactId>
+  <version>5-SNAPSHOT</version>
+
+  <name>Spring Boot - HTTP</name>
+  <description>Spring Boot - HTTP</description>
+
+
+  <properties> <2>
+    <spring-boot.version>1.4.1.RELEASE</spring-boot.version>
+    <tomcat.version>8.5.4</tomcat.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId> <3>
+        <version>${spring-boot.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <!-- Override Tomcat version --> <4>
+      <dependency>
+        <groupId>org.apache.tomcat.embed</groupId>
+        <artifactId>tomcat-embed-core</artifactId>
+        <version>${tomcat.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.tomcat.embed</groupId>
+        <artifactId>tomcat-embed-el</artifactId>
+        <version>${tomcat.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.tomcat.embed</groupId>
+        <artifactId>tomcat-embed-websocket</artifactId>
+        <version>${tomcat.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId> <5>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId> <6>
+    </dependency>
+
+    <!-- Testing -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId> <7>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+        <filtering>true</filtering>
+      </testResource>
+    </testResources>
+
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId> 
+        <version>${spring-boot.version}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>repackage</goal> <8>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>openshift</id> <9>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>io.fabric8</groupId>
+            <artifactId>fabric8-maven-plugin</artifactId> 
+            <executions>
+              <execution>
+                <id>fmp</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>resource</goal>
+                  <goal>build</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>openshift-it</id> <10>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>integration-test</goal>
+                  <goal>verify</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>
+----
+
+//http://docs.spring.io/spring-boot/docs/1.4.1.RELEASE/reference/htmlsingle/#using-boot-starter
+
+<1> link:https://github.com/openshiftio/booster-parent/blob/master/pom.xml[Parent POM] which contains the necessary dependencies and the required versions for the booster projects.
+<2> These are properties for setting the {SpringBoot} and Tomcat version to use.
+<3> link:https://github.com/spring-projects/spring-boot/blob/v1.4.1.RELEASE/spring-boot-parent/pom.xml[BOM] for building {SpringBoot} applications with Maven. More details on using the parent pom are available in the link:http://docs.spring.io/spring-boot/docs/1.4.1.RELEASE/reference/htmlsingle/#using-boot-maven-parent-pom[{SpringBoot} documentation].
+<4> Setting to override the specific version of Tomcat used by the {SpringBoot} application.
+<5> link:https://github.com/spring-projects/spring-boot/tree/v1.4.1.RELEASE/spring-boot-starters/spring-boot-starter-web/pom.xml[Starter POM] for building web applications using Spring, specifically Spring MVC with Tomcat as the embedded container.
+<6> link:https://github.com/spring-projects/spring-boot/tree/v1.4.1.RELEASE/spring-boot-starters/spring-boot-starter-actuator/pom.xml[Starter POM] for using {SpringBoot}’s actuator. The actuator provides monitoring and management for your application.
+<7> link:https://github.com/spring-projects/spring-boot/tree/v1.4.1.RELEASE/spring-boot-starters/spring-boot-starter-test/pom.xml[Starter POM] for testing Spring Boot applications with libraries including JUnit, Hamcrest and Mockito. 
+<8> This Maven goal is part of the {SpringBoot} Maven plugin and will repackage the existing jar file that is created during the `package` goal.
+<9> This is the profile for building and deploying the booster to OpenShift. It uses the link:http://fabric8.io/gitbook/mavenPlugin.html[Fabric8 Maven Plugin (FMP)] to build and deploy the application with the S2I Build Process.
+<10> This profile is for running integration tests when the application is running on OpenShift. For example, a test may require a database pod or a ConfigMap value.
