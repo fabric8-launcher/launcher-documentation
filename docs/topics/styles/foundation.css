@@ -1817,7 +1817,7 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] {
 }
 
 #header {
-  margin: 20px;
+  margin: 0 20px;
 }
 
 body:before {
