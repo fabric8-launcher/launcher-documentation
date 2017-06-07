@@ -1,0 +1,6 @@
+[[vertx-additional-resources]]
+= Additional Resources
+
+* link:http://vertx.io[{VertX} project]
+* link:https://developers.redhat.com/promotions/building-reactive-microservices-in-java/[Building Reactive Microservices in Java book]
+* link:http://escoffier.me/vertx-hol/#_vert_x[Vert.x - From zero to (micro)-hero]
