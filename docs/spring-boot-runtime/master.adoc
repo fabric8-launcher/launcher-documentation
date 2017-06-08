@@ -7,9 +7,7 @@ include::topics/templates/document-attributes.adoc[]
 
 This guide covers concepts as well as practical details needed by developers to use the {SpringBoot} runtime.
 
-
-== Runtime Details
-//https://projects.spring.io/spring-boot/
+include::topics/sb-tomcat-runtime-overview.adoc[leveloffset=+1]
 
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
@@ -115,4 +113,4 @@ include::topics/http-api-spring-boot-pom.adoc[leveloffset=+1]
 
 
 [appendix]
-== Additional Resources
+include::topics/sb-tomcat-dev-guide-additional-resources.adoc[leveloffset=+1]
