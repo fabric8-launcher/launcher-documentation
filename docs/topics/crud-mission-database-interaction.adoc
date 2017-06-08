@@ -1,5 +1,5 @@
 [[common-crud-database-interaction]]
-= Interacting with the CRUD API
+= Interacting with the Application API
 
 .  Once the application is running, you can access it using the _application URL_. To obtain the URL, execute the following command:
 +
