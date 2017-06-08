@@ -1,0 +1,6 @@
+[[wf-swarm-additional-resources]]
+= Additional Resources
+
+* link:https://howto.wildfly-swarm.io/[{WildFlySwarm} HowTo Guide]
+* link:https://reference.wildfly-swarm.io/[{WildFlySwarm} Reference]
+* link:https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-guide/content/v/2017.6.0/index.html[{WildFlySwarm} User Guide]
