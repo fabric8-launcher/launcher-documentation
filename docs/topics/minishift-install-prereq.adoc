@@ -13,7 +13,7 @@ $ minishift version
 Minishift version: 1.0.0
 ----
 
-. Determine the command to add the correct version of the `oc` binary to your path and run the command. 
+. Determine the command to add the correct version of the `oc` binary to your path and run the command.
 +
 .Example Result of `oc-env`
 [source,bash,options="nowrap",subs="attributes+"]
@@ -44,7 +44,7 @@ features: Basic-Auth GSSAPI Kerberos SPNEGO
 The installation steps for the {CDK} are available link:https://access.redhat.com/documentation/en-us/red_hat_container_development_kit/3.0/html-single/installation_guide/[in the {CDK} Installation Guide] and vary by platform.
 
 
-. Verify you have the {CDK} and the `oc` CLI tools installed and configured:
+. Verify you have the {CDK} and the `oc` CLI tools installed and configured.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -64,4 +64,3 @@ features: Basic-Auth
 ----
 +
 WARNING: You must use the `oc` binary installed with the {CDK}.
-
