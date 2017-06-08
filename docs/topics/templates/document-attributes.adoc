@@ -42,9 +42,9 @@
 :mission-secured-spring-boot-guide-name: Secured Mission - {SpringBoot} Booster
 :mission-secured-vertx-guide-name: Secured Mission - {VertX} Booster
 :mission-secured-wf-swarm-guide-name: Secured Mission - {WildFlySwarm} Booster
-:mission-crud-spring-boot-tomcat-guide-name: CRUD Mission - {SpringBoot} Booster
-:mission-crud-vertx-guide-name: CRUD Mission - {VertX} Booster
-:mission-crud-wf-swarm-guide-name: CRUD Mission - {WildFlySwarm} Booster
+:mission-crud-spring-boot-tomcat-guide-name: Relational Database Backend Mission - {SpringBoot} Booster
+:mission-crud-vertx-guide-name: Relational Database Backend Mission - {VertX} Booster
+:mission-crud-wf-swarm-guide-name: Relational Database Backend Mission - {WildFlySwarm} Booster
 
 
 :openshift-local-guide-name: Install and Configure a {OpenShiftLocal}

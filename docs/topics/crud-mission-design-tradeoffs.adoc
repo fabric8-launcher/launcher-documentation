@@ -9,5 +9,5 @@ a|
 
 // not sure this has to be here.
 // is the database application scalable in the Missions?
- * The example PostgreSQL database provided with the CRUD Missions is not backed up with persistent storage. Changes to the database are lost if you stop or redeploy the database application.
+ * The example PostgreSQL database provided with the Relational Database Backend Missions is not backed up with persistent storage. Changes to the database are lost if you stop or redeploy the database application.
 |====================================================================
