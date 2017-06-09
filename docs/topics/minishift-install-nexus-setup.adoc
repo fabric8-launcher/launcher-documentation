@@ -103,9 +103,10 @@ oc get routes
 NAME      HOST/PORT                              PATH      SERVICES   PORT       TERMINATION
 nexus     nexus-{NEXUS_PROJECT_NAME}.192.168.42.106.nip.io             nexus      8080:8080
 ----
++
 [NOTE]
 --
-Nexus comes pre-configured for the Central Repository, but you may need others for your application. For many Red Hat images, it is recommended to add the jboss-ga repository at Maven repository.
+Nexus comes pre-configured for the Maven Central Repository, but you may need other repositories for your application. To access images provided by Red Hat, add the `jboss-ga` Maven repository to your Nexus instance.
 --
 +
 .  Navigate to the project containing your Booster application.
