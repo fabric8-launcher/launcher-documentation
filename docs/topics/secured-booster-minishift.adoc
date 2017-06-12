@@ -1,0 +1,20 @@
+= Configure Your {OpenShiftLocal} for the Secured Booster
+
+You can use your {OpenShiftLocal} to run your secured booster, but you need to update it from the default configuration.
+
+
+. Before you can use your {OpenShiftLocal}, you need to have it installed, configured, and running. You can find details on installing a {OpenShiftLocal} for your platform in link:{link-openshift-local-guide}[{openshift-local-guide-name}].
++
+NOTE: You only need to do this once for any of the secured booster missions. They can share the same RH SSO/{OpenShiftLocal} setup.
+
+
+. Delete the current {OpenShiftLocal} configuration and restart it with a new ISO.
++
+IMPORTANT: You must use a different boot iso image than the default in order for RH SSO to startup. If you have already run the `minishift` command with a different memory setting and iso-url value, you need to stop it and completely delete the `~/.minishift` directory before running the following startup sequence.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ minishift delete
+$ rm -r ~/.minishift
+$ minishift start --memory=6144 --vm-driver=virtualbox --iso-url=https://github.com/minishift/minishift-centos-iso/releases/download/v1.0.0/minishift-centos7.iso
+----
