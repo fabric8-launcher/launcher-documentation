@@ -1,5 +1,3 @@
-include::secured-mission-intro-paragraph.adoc[]
-
 = Project Structure
 The project is split into two Apache Maven modules:
 
