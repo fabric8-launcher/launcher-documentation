@@ -76,6 +76,27 @@ include::topics/health-check-mission-basic-interaction-wf-swarm.adoc[leveloffset
 
 include::topics/health-check-mission-resources.adoc[leveloffset=+3]
 
+[[mission-circuit-breaker-wf-swarm]]
+=== {mission-circuit-breaker-wf-swarm-guide-name}
+:circuit-breaker-wf-swarm:
+
+// circuit breaker intro
+//include::topics/circuit-breaker-mission-intro.adoc[leveloffset=+3]
+//TODO
+
+// deploy CB boster
+//include::topics/circuit-breaker-mission-deploy-booster.adoc[leveloffset=+3]
+//TODO
+
+// CB basic interaction
+//include::topics/circuit-breaker-mission-basic-interaction-wf-swarm.adoc[leveloffset=+3]
+//TODO
+
+// CB resources
+//include::topics/circuit-breaker-mission-resources.adoc[leveloffset=+3]
+//TODO
+
+
 
 [[mission-secured-wf-swarm]]
 === {mission-secured-wf-swarm-guide-name}

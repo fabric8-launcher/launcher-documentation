@@ -39,6 +39,9 @@
 :mission-health-check-spring-boot-tomcat-guide-name: Health Check Mission - {SpringBoot} Booster
 :mission-health-check-vertx-guide-name: Health Check Mission - {VertX} Booster
 :mission-health-check-wf-swarm-guide-name: Health Check Mission - {WildFlySwarm} Booster
+:mission-circuit-breaker-spring-boot-tomcat-guide-name: Circuit Breaker Mission - {SpringBoot} Booster
+:mission-circuit-breaker-vertx-guide-name: Circuit Breaker Mission - {VertX} Booster
+:mission-circuit-breaker-wf-swarm-guide-name: Circuit Breaker Mission - {WildFlySwarm} Booster
 :mission-secured-spring-boot-guide-name: Secured Mission - {SpringBoot} Booster
 :mission-secured-vertx-guide-name: Secured Mission - {VertX} Booster
 :mission-secured-wf-swarm-guide-name: Secured Mission - {WildFlySwarm} Booster

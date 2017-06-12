@@ -1,0 +1,19 @@
+include::circuit-breaker-mission-intro-paragraph.adoc[]
+
+This mission shows you how to:
+
+//* TODO
+//* TODO
+//* TODO
+
+= About Circuit Breaker
+
+////
+TODO
+Implementing a Circuit Breaker pattern as part your architecture helps prevent this. With the Circuit Breaker pattern, a service client invokes a remote service at regular time intervals. If the call to the remote service fails repeatedly, and the number of consecutive failures exceeds a specified limit, the circuit breaker makes the service unavailable for a specified time period, thus preventing any remote calls from other services from reaching the failed service. once the timeout period expires, the circuit breaker allows a limited number of test calls to pass through to the remote service. If these test calls result in failure, the timeout period restarts and the service remains unavailable. If the calls succeed, the Circuit Breaker makes the service available to remote calls by other services.
+////
+
+= Why is Circuit Breaker Important
+
+In an architecture where multiple services rely on each other for functionality, the failure of one of one service, if unchecked, can rapidly propagate to its dependent services, causing the entire architecture to collapse. Implementing a Circuit Breaker pattern as part your architecture helps prevent this.
+With the Circuit Breaker pattern, a service client invokes a remote service at regular time intervals. If the call to the remote service fails repeatedly, and the number of consecutive failures exceeds a specified limit, the circuit breaker makes the service unavailable for a specified time period, thus preventing any remote calls from other services from reaching the failed service. once the timeout period expires, the circuit breaker allows a limited number of test calls to pass through to the remote service. If these test calls result in failure, the timeout period restarts and the service remains unavailable. If the calls succeed, the Circuit Breaker makes the service available to remote calls by other services.
