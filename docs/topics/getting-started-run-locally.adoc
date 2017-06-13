@@ -1,0 +1,26 @@
+= Run Locally 
+
+. Clone, build, and run a booster application on your local machine.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git clone git@github.com:wildfly-swarm-openshiftio-boosters/wfswarm-rest-http.git
+$ cd wfswarm-rest-http
+$ mvn wildfly-swarm:run -DskipTests
+----
+
+. Interact your booster.
++
+Use `curl` to execute a `GET` request against the booster.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl http://localhost:8080/api/greeting
+{"content":"Hello, World!"}
+$ curl http://localhost:8080/api/greeting?name=Sarah
+{"content":"Hello, Sarah!"}
+----
++
+You can also use a browser to do this by opening the booster's URL in a browser: `http://localhost:8080`. This presents a simple HTML form that enables you to make these same `GET` requests.
+
+You now have a running microservice on your local machine that you can interact with. This booster provides a microservice running using {WildFlySwarm}, specifically the link:https://github.com/wildfly-swarm-openshiftio-boosters/wfswarm-rest-http[{mission-http-api-wf-swarm-guide-name}]. 

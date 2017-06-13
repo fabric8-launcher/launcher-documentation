@@ -6,35 +6,18 @@ include::topics/templates/document-attributes.adoc[]
 
 include::topics/getting-started-intro.adoc[leveloffset=+1]
 
-== Using {launcher} with {OpenShiftLocal}
+include::topics/getting-started-run-locally.adoc[leveloffset=+1]
 
-This section takes you through setting up and configuring the {launcher} application to create and deploy mission booster applications.
+include::topics/getting-started-change-locally.adoc[leveloffset=+1]
 
-include::topics/getting-started-install-launchpad-openshift-local.adoc[leveloffset=+2]
+include::topics/getting-started-push-changes-osl.adoc[leveloffset=+1]
 
-[[boosters]]
-=== Boosters
+include::topics/getting-started-push-changes-oso.adoc[leveloffset=+1]
 
-include::topics/getting-started-booster-intro.adoc[leveloffset=+3]
-
-include::topics/getting-started-launchpad-create-booster.adoc[leveloffset=+3]
-
-include::topics/getting-started-launchpad-launch-booster.adoc[leveloffset=+3]
-
-=== Update your Booster
-
-include::topics/getting-started-launchpad-update-booster-cd.adoc[leveloffset=+3]
-include::topics/getting-started-launchpad-update-booster-manual.adoc[leveloffset=+3]
-
-
-include::topics/getting-started-install-launchpad-openshift-online.adoc[leveloffset=+1]
-
+include::topics/getting-started-cd-oso.adoc[leveloffset=+1]
 
 include::topics/getting-started-next-steps.adoc[leveloffset=+1]
 
-
-[appendix]
-include::topics/getting-started-available-missions.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/getting-started-use-jbds.adoc[leveloffset=+1]
