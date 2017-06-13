@@ -9,7 +9,7 @@ The `sso` module is a submodule link to the link:https://github.com/obsidian-toa
 
 = {RHSSO} Realm Model
 
-The `master` realm is used to secure this booster. It is defined using the `src/resources/master.json` JSON description. There are four pre-configured application client definitions that provide a model for command line clients and the three secured REST endpoints. There are also two pre-configured users in the {RHSSO} `master` realm that can be used to validate various authentication and authorization outcomes:  `admin` and `alice`.
+The `master` realm is used to secure this booster. It is defined using the `src/main/resources/master.json` JSON description. There are four pre-configured application client definitions that provide a model for command line clients and the three secured REST endpoints. There are also two pre-configured users in the {RHSSO} `master` realm that can be used to validate various authentication and authorization outcomes:  `admin` and `alice`.
 
 == {RHSSO} Users
 The realm model for the secured boosters includes two users:
