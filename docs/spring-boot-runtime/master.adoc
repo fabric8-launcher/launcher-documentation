@@ -109,14 +109,13 @@ include::topics/health-check-mission-resources.adoc[leveloffset=+3]
 
 include::topics/secured-mission-intro-paragraph.adoc[leveloffset=+3]
 
-include::topics/secured-spring-boot-clone-booster.adoc[leveloffset=+3]
+include::topics/secured-booster-minishift.adoc[leveloffset=+3]
 
 include::topics/secured-mission-intro.adoc[leveloffset=+3]
 
 //this needs to be a level lower due to secured-mission-intro.adoc
 include::topics/secured-mission-springboot-adapter.adoc[leveloffset=+4]
 
-include::topics/secured-booster-minishift.adoc[leveloffset=+3]
 
 
 include::topics/secured-mission-deploy-booster.adoc[leveloffset=+3]
@@ -124,7 +123,7 @@ include::topics/secured-mission-deploy-booster.adoc[leveloffset=+3]
 include::topics/secured-mission-common-interaction.adoc[leveloffset=+3]
 
 
-== Creating an Application from Scratch
+//== Creating an Application from Scratch
 //todo
 //Building blocks
 //Minimum Viable App

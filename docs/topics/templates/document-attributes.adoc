@@ -59,7 +59,7 @@
 :vertx-runtime-guide-name: {VertX} Runtime Guide
 :wf-swarm-runtime-guide-name: {WildFlySwarm} Runtime Guide
 
-:MinishiftVersion: 1.0.0
+:MinishiftVersion: 1.1.0
 :CDKVersion: 3.0.0
 
 :link-http-api-level-0-spring-boot-tomcat-booster: https://github.com/snowdrop/rest_springboot-tomcat

@@ -1,4 +1,4 @@
-= Configure Your {OpenShiftLocal} for the Secured Booster
+= Configure Your {OpenShiftLocal}
 
 You can use your {OpenShiftLocal} to run your secured booster, but you need to update it from the default configuration.
 
@@ -16,5 +16,12 @@ IMPORTANT: You must use a different boot iso image than the default in order for
 ----
 $ minishift delete
 $ rm -r ~/.minishift
-$ minishift start --memory=6144 --vm-driver=virtualbox --iso-url=https://github.com/minishift/minishift-centos-iso/releases/download/v1.0.0/minishift-centos7.iso
+$ minishift start --memory=6144 --iso-url=https://github.com/minishift/minishift-centos-iso/releases/download/v1.0.0/minishift-centos7.iso
+----
+
+. Install {launcher} on {OpenShiftLocal} using the link:{link-launcher-openshift-local-install-guide}#create-launcher-app-script[instructions in the {openshift-local-guide-name} guide] making sure to specify `master` for the catalog version.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ ./deploy_launchpad_mission.sh -p PROJECT_NAME -i developer:developer -g myGithubUser:myGithubToken -v master
 ----
