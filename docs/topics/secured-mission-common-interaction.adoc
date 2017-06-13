@@ -2,46 +2,9 @@
 
 The Secured booster provides a default HTTP endpoint that accepts `GET` requests if the caller is authenticated and authorized. The `sso` directory of the booster contains a Java client you can use to interact with the Secured booster. The client first authenticates against the {RHSSO} server and then performs a `GET` request against the Secured booster using the access token returned by the authentication step.
 
-The Java client is packaged as an executable JAR and is located at `target/sso-client.jar`. 
+The Java client is packaged as an executable JAR. It is located at `target/sso-client.jar` and takes arguments from the CLI. You can use the `--help` argument to see a full list of available arguments.
 
-To run the client:
-
-[source,bash,options="nowrap",subs="attributes+"]
-----
-$ java -jar target/sso-client.jar -app ...
-----
-
-To see the full set of command arguments:
-
-[source,bash,options="nowrap",subs="attributes+"]
-----
-$ java -jar target/sso-client.jar --help
-Specifiy the name of the application endpoint with --app
-Usage: client.GreetingAuthzClient [options]
-  Options:
-    --app
-      The name of the rest endpoint to access
-    --debug
-      The debugging level, > 0 means more verbosity
-      Default: 0
-    --displaySSOURL
-      Obtain and display the RH SSO server auth URL and then exit
-      Default: false
-    --from
-      The name to pass to the greeting endpoint
-      Default: World
-    --outputCurlScript
-      Generate a bash script to the given filename that performs the query
-      using cURL
-    --password
-      The SSO Realm password to authenticate with
-      Default: password
-    --user
-      The SSO Realm username to authenticate as
-      Default: alice
-----
-
-You must specify the Secured booster endpoint name using the `--app` argument. You can get a list of the endpoints using the `oc get routes` command. The following table shows sample output from the `oc get routes` where you can obtain the Secured booster endpoint name.
+When using the Java client to interact with the booster, you must specify the Secured booster endpoint name using the `--app` argument. You can get a list of the endpoints using the `oc get routes` command. The following table shows sample output from the `oc get routes` where you can obtain the Secured booster endpoint name.
 
 // Need :runtime-tag: attribute defined by including doc
 include::secured-mission-{runtime-tag}-interaction.adoc[leveloffset=+1]

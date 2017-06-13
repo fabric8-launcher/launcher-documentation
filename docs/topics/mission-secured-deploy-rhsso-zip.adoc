@@ -1,0 +1,52 @@
+[[mission-secured-deploy-rhsso-zip]]
+= Deploy RH SSO to your {OpenShiftLocal} Manually
+
+== Download the Secured Booster ZIP File from your {launcher} Application
+
+. Navigate to your {launcher} application running on your {OpenShiftLocal} and click _Prepare for Takeoff_.
+. Choose _I will build and run locally_.
+. Select `Secured` and click _Next_.
+. Select your runtime and click _Next_.
+. You may update any project information before clicking _Next_.
+. Click _Download as ZIP File_.
+. Unzip your ZIP file.
+
+== Deploy the SSO server.
+
+Run the following commands from your booster's project directory:
+
+[source,bash,options="nowrap"]
+----
+$ cd sso
+$ mvn fabric8:deploy
+----
+
+[[SSO_AUTH_SERVER_URL]]
+== Determine the SSO_AUTH_SERVER_URL Value
+For the Secured REST booster, you need to configure the {RHSSO} authorization endpoint. The booster project generates 
+`target/sso-client.jar` when you built the {RHSSO} server. You can run `target/sso-client.jar` from the command line to determine the `SSO_AUTH_SERVER_URL`.
+
+[source,bash,options="nowrap"]
+----
+$ java -jar target/sso-client.jar --displaySSOURL
+Successful oc get routes: Yes
+Using auth server URL: https://secure-sso-sso.e8ca.engint.openshiftapps.com/auth
+Available application endpoint names: [secured-vertx-rest, secured-swarm-rest, secured-springboot-rest]
+----
+
+The line starting with `Using auth server URL:` is the line that provides the `SSO_AUTH_SERVER_URL`. In this case it is `https://secure-sso-sso.e8ca.engint.openshiftapps.com/auth`. You will need this value later.
+
+== Deploy Booster to your {OpenShiftLocal}
+
+Package and deploy your {runtime-name} Booster:
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ cd ../app
+$ mvn fabric8:deploy -DSSO_AUTH_SERVER_URL=<SSO_AUTH_SERVER_URL from above...> -Popenshift -DskipTests=true
+$ cd ..
+----
+
+IMPORTANT: Make sure you pass in the SSO_AUTH_SERVER_URL you obtained during the <<SSO_AUTH_SERVER_URL>> step.
+
+This process will generate the uber JAR file as well as the OpenShift resources and deploy them to the current project on your {OpenShiftLocal} server.

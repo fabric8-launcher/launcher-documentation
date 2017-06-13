@@ -7,18 +7,6 @@
 NOTE: There is not enough quota available to run this booster in {OpenShiftOnline}.
 
 
-include::secured-mission-deploy-rhsso.adoc[leveloffset=+1]
+include::mission-secured-deploy-rhsso-zip.adoc[leveloffset=+1]
 
-== Deploy Booster to your {OpenShiftLocal}
-
-Package and deploy your {runtime-name} Booster:
-
-[source,bash,options="nowrap",subs="attributes+"]
-----
-$ cd app
-$ mvn fabric8:deploy -DSSO_AUTH_SERVER_URL=<SSO_AUTH_SERVER_URL from above...> -Popenshift -DskipTests=true
-----
-
-IMPORTANT: Make sure you pass in the SSO_AUTH_SERVER_URL you obtained during the <<SSO_AUTH_SERVER_URL>> step.
-
-This process will generate the uber JAR file as well as the OpenShift resources and deploy them to the current project on your {OpenShiftLocal} server. 
+include::mission-secured-deploy-rhsso-cd.adoc[leveloffset=+1]

@@ -43,4 +43,4 @@ keycloak.securityConstraints[0].securityCollections[0].patterns[0]=/greeting
   required: true
 ----
 
-NOTE: You will determine the value for ${SSO_AUTH_SERVER_URL} in the <<SSO_AUTH_SERVER_URL>> step of <<mission-secured-deploy-rhsso>>.
+NOTE: You will determine the value for ${SSO_AUTH_SERVER_URL} in the <<SSO_AUTH_SERVER_URL>> step of <<mission-secured-deploy-rhsso-zip>>.
