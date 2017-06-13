@@ -1,5 +1,7 @@
 = Next Steps
 
-* Use {launcher} to xref:launcher-create-booster[create] and xref:launcher-launch-booster[launch] another xref:available-missions[available mission].
-+
-NOTE: Running more boosters concurrently will take additional resources; you may have to allocate more memory to your {OpenShiftLocal} or remove or scale down services running in your existing {OpenShiftLocal} projects.
+Take a look the different runtime guides to learn more about runtimes as well as their boosters:
+
+* link:{link-spring-boot-runtime-guide}[{spring-boot-runtime-guide-name}]
+* link:{link-vertx-runtime-guide}[{vertx-runtime-guide-name}]
+* link:{link-wf-swarm-runtime-guide}[{wf-swarm-runtime-guide-name}]

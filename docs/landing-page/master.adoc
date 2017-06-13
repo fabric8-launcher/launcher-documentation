@@ -2,6 +2,7 @@ include::topics/templates/document-attributes.adoc[]
 
 :landing-page:
 :toc!:
+:title: launch.openshift.io
 
 ++++
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.23.3/css/patternfly.min.css">
@@ -31,6 +32,9 @@ footer{background-color:#010101;font-size:12px;height:60px;padding:15px 0;width:
       <div class="col-md-4">
         <a class="btn btn-lg" href="/docs/getting-started.html">Get Started Now</a>
       </div>
+      <div class="col-md-4">
+        <a class="btn btn-lg" href="/docs/minishift-installation.html">Run a Single-node OpenShift Cluster</a>
+      </div>
     </div>
   </div>
 </section>
@@ -45,7 +49,7 @@ footer{background-color:#010101;font-size:12px;height:60px;padding:15px 0;width:
     <div class="row row-cards-pf">
 
       <div class="col-md-4">
-        <a href="http://wildfly-swarm.io" target="_blank">
+        <a href="/docs/wf-swarm-runtime.html" target="_blank">
           <div class="card-pf card-pf-view card-pf-view-select card-pf-view-single-select">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
@@ -60,7 +64,7 @@ footer{background-color:#010101;font-size:12px;height:60px;padding:15px 0;width:
       </div>
 
       <div class="col-md-4">
-        <a href="https://projects.eclipse.org/projects/rt.vertx" target="_blank">
+        <a href="/docs/vertx-runtime.html" target="_blank">
           <div class="card-pf card-pf-view card-pf-view-select card-pf-view-single-select">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
@@ -75,7 +79,7 @@ footer{background-color:#010101;font-size:12px;height:60px;padding:15px 0;width:
       </div>
 
       <div class="col-md-4">
-        <a href="https://projects.spring.io/spring-boot/" target="_blank">
+        <a href="/docs/spring-boot-runtime.html" target="_blank">
           <div class="card-pf card-pf-view card-pf-view-select card-pf-view-single-select">
             <div class="card-pf-body">
               <div class="card-pf-top-element">
