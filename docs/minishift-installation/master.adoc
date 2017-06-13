@@ -18,6 +18,8 @@ include::topics/minishift-install-create-launchpad-app-script.adoc[leveloffset=+
 
 include::topics/minishift-install-create-launchpad-app.adoc[leveloffset=+2]
 
+include::topics/minishift-install-next-steps.adoc[leveloffset=+1]
+
 // temporary location for Nexus install
 == Appendix A
 include::topics/minishift-install-nexus-setup.adoc[leveloffset=+2]

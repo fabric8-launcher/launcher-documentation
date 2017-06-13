@@ -47,4 +47,4 @@ The grey circles reference that the docker images for these services are being p
 
 . When all services are running, you are ready to use the {launcher} application.  Click the link at the top of all services, which should end in `nip.io`, and a new browser tab will open with the {launcher} application.
 
-You are now running on your local cloud the same service we will be hosting over at `launch.openshift.io`. See the link:{link-getting-started-guide}#boosters[{getting-started-guide-name}] for more details on using {launcher} to launch mission booster applications.
+You are now running on your local cloud the same service we will be hosting over at `launch.openshift.io`.

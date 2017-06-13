@@ -1,3 +1,4 @@
+[[install-local-cloud]]
 = Prerequisite: Install a {OpenShiftLocal}
 
 In order to use the {launcher} application on a local cloud, you must have a {OpenShiftLocal} installed and configured. You can use either {Minishift} `{MinishiftVersion}` or {CDK} `{CDKVersion}`.
