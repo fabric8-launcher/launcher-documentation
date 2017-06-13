@@ -1,3 +1,4 @@
+[[create-launcher-app-script]]
 = Using an Automated Script
 
 You can install the {launcher} application to your {OpenShiftLocal} using link:{link-launcher-install-script}[an automated script]. The script will:

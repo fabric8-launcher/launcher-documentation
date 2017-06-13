@@ -13,6 +13,7 @@ The Secured booster endpoint name is also available using the Java client:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
+$ cd sso
 $ java -jar target/sso-client.jar --displaySSOURL
 Successful oc get routes: Yes
 Using auth server URL: https://secure-sso-myproject.192.168.99.100.nip.io/auth

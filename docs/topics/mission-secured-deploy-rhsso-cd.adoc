@@ -1,0 +1,58 @@
+[[mission-secured-deploy-rhsso-cd]]
+= Deploy RH SSO to your {OpenShiftLocal} using your {launcher} Application
+
+== Deploy the Secured Booster using your {launcher} Application
+
+. Navigate to your {launcher} application running on your {OpenShiftLocal} and click _Prepare for Takeoff_.
+. Choose _Use OpenShift Online to build and deploy_.
+. Select `Secured` and click _Next_.
+. Select your runtime and click _Next_.
+. You may update any project information before clicking _Next_.
+. Click the _Launch on OpenShift_ button.
++
+This will:
++
+** Create a new GitHub repository associated with your account containing the mission's code.
+** Create a pipeline to continuously deliver your mission's code.
+** The pipeline will then build and deploy your mission's code to your {OpenShiftLocal}.  
+
+. Click on the _See it here!_ link under _Creating your project on the OpenShift cloud_ to go to your booster's page in the OpenShift Web console.
+
+To view the status of your project:
+
+. In the pipeline at the top, click _View Log_.
++
+NOTE: It may take a few minutes for the link to appear.
+
+. This will prompt you with a log in for Jenkins. Click _Login with OpenShift_
+. Use your {OpenShiftLocal} credentials, for example `developer` for both the username and password.
+. Ensure all the boxes are checked and click _Allow selected permissions_.
+
+You will be redirected to the startup logs in the `jenkins` pod. You have also given your {OpenShiftLocal} access to the `jenkins` pod and its logging information. Once you see the build start in the Jenkins logs, if you return to the _Overview_ page for your project in your {OpenShiftLocal}, you can see that the pipelines now show the build status.
+
+
+== Build your Secured Booster's Client
+
+. Clone your project from GitHub.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git clone git@github.com:USERNAME/PROJECT-NAME.git
+----
+
+. Build your booster's project.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ cd PROJECT-NAME/sso
+$ mvn install
+$ cd ..
+----
+
+. Login with `oc` to your {OpenShiftLocal}.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc login 
+$ oc project PROJECT-NAME
+----
