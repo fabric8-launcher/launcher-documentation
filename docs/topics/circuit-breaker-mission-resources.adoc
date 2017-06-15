@@ -1,0 +1,3 @@
+== Circuit Breaker Resources
+
+http://microservices.io/patterns/reliability/circuit-breaker.html
