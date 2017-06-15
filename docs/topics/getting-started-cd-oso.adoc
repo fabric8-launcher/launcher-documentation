@@ -1,6 +1,6 @@
 = Continuous Delivery using {OpenShiftOnline}
 
-In addition to building on your local machine and pushing to a local or public cloud, you also have the ability to set up continuous delivery for a booster. Specifically you can use link:{link-launcher-oso}[{launcher}] to clone a new booster repository to your GitHub account and have it deployed to your {OpenShiftOnline} account. This will also automatically set up a webhook that will redeploy your booster to {OpenShiftOnline} every time a new commit is made to that GitHub repository.
+You can also set up continuous delivery using link:{link-launcher-oso}[{launcher}] on {OpenShiftOnline}. In addition to cloning a booster repository to your GitHub account and deploying it to your {OpenShiftOnline} account, it will also automatically set up a webhook that will redeploy your booster to {OpenShiftOnline} every time a new commit is made to that GitHub repository.
 
 . Navigate to link:{link-launcher-oso}[{launcher}] using your browser.
 . Select _Prepare for Takeoff_.
