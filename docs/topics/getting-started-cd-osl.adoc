@@ -1,0 +1,107 @@
+= Continuous Delivery using {OpenShiftLocal}
+
+In addition to building on your local machine and pushing to a local or public cloud, you also have the ability to set up continuous delivery for a booster. Specifically you can use the {launcher} application to clone a new booster repository to your GitHub account and have it deployed to your {OpenShiftLocal}. 
+
+. link:{link-launcher-openshift-local-install-guide}#create-launcher-app[Install the {launcher}] application to your {OpenShiftLocal}.
+. Navigate to the {launcher} application on your {OpenShiftLocal} using your browser. 
++
+[NOTE]
+====
+You can use the following command to open the Web Console of your {OpenShiftLocal} in your browser in order to navigate to your {launcher} application:
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ minishift console
+----
+====
+. Select _Prepare for Takeoff_.
+. Choose _Use {OpenShiftOnline} to build and deploy_.
+. Choose `REST API Level 0` and click _Next_.
+. Choose the {WildFlySwarm} runtime.
+. Enter an _OpenShift Project name_. You can also update any of the additional metadata fields or leave them as the default. Click _Next_.
+. Click the _Launch on OpenShift_ button.
++
+This will:
++
+** Create a new GitHub repository associated with your account containing the booster's code.
+** Create a pipeline to continuously deliver your booster's code.
+** The pipeline will then build and deploy your booster's code to your {OpenShiftLocal}.
+
+. Click on the _See it here!_ link under _Creating your project on the OpenShift cloud_ to go to your booster's page in the OpenShift Web console.
+
+To view the status of your project:
+
+. Click _View Log_ in the pipeline at the top.
++
+NOTE: It may take a few minutes for the link to appear.
+
+. Click _Login with OpenShift_ at the login prompt for Jenkins. 
+. Log in with your {OpenShiftLocal} credentials, for example `developer` for the username and password.
+. Ensure all the boxes are checked and click _Allow selected permissions_.
++
+This grants the OpenShift Web console the correct permissions and directs you to the Jenkins pod that is deploying your application.
+
+
+Once your deployment is complete, interact with your booster using the URL for the booster application at the top of the page:
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl wfswarm-rest-http-my-osl-demo.192.168.64.2.nip.io/api/greeting/
+{"content":"Hello, World!"}
+$ curl wfswarm-rest-http-my-osl-demo.192.168.64.2.nip.io/api/greeting?name=Sarah
+{"content":"Hello, Sarah!"}
+----
+
+IMPORTANT: Your booster application is not the same as your Jenkins pod, and it will only appear after the Jenkins pod deploys it. This may take a few minutes.
+
+At this point, you have created a new booster repository in your GitHub account and deployed it to {OpenShiftLocal}. To push changes to this booster in {OpenShiftLocal}, you can push a new commit to the GitHub repository and start a build pipeline.
+
+
+. Clone your project from GitHub.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git clone git@github.com:USERNAME/PROJECT-NAME.git
+----
+
+. Open your project in your desired IDE or editor, such as xref:use_jbds[JBDS].
+. Update `src/main/java/io/openshift/booster/GreetingEndpoint.java` to present a different greeting. 
++
+.Example update to `GreetingEndpoint.java`
+[source,java,options="nowrap",subs="attributes+"]
+----
+@Path("/")
+public class GreetingEndpoint {
+  
+  private static final String template = "Greetings, %s!";
+  ...
+}
+----
+
+. Save your changes.
+. Commit and push your changes back to GitHub.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git add .
+$ git commit -m "Made an update"
+$ git push
+----
+
+. Navigate back to the {OpenShiftLocal} Web console and ensure your mission's project is selected.
+. Click on _Builds_ then _Pipelines_.
+. Click _Start Pipeline_ to start a new build with your updates.
++
+A new build will appear in the _Recent Runs_ list and the status of the `Build` and `Deploy` stages will appear. Optionally, you can click _View Log_ in your build to see the logs in Jenkins.
+
+. After the `Deploy` stage is complete, return to the deployed version of your mission's booster application and observe that your changes appear.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl wfswarm-rest-http-my-osl-demo.192.168.64.2.nip.io/api/greeting/
+{"content":"Greetings, World!"}
+$ curl wfswarm-rest-http-my-osl-demo.192.168.64.2.nip.io/api/greeting?name=Sarah
+{"content":"Greetings, Sarah!"}
+----
+
+NOTE: If you would like changes in your booster committed to GitHub to be automatically pushed to your {OpenShiftLocal}, you can xref:ultrahook-setup[configure UltraHook] 

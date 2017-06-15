@@ -43,7 +43,7 @@ Your booster is deployed when the main pod has a status of `Completed` and `READ
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ $ oc get pods
+$ oc get pods
 NAME                            READY     STATUS      RESTARTS   AGE
 wfswarm-rest-http-1-123ab       1/1       Running     0          1m
 wfswarm-rest-http-s2i-1-build   0/1       Completed   0          4m

@@ -1,11 +1,18 @@
 = Run Locally 
 
-. Clone, build, and run a booster application on your local machine.
+. Navigate to link:{link-launcher-oso}[{launcher}] using your browser.
+. Select _Prepare for Takeoff_.
+. Choose _I will build and run locally_.
+. Choose `REST API Level 0` and click _Next_.
+. Choose the {WildFlySwarm} runtime.
+. You can update any of the additional metadata fields or leave them as the default. Click _Next_.
+. Click the _Download as ZIP File_ button.
+. Unzip the ZIP file.
+. Build and run the booster application on your local machine.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ git clone git@github.com:wildfly-swarm-openshiftio-boosters/wfswarm-rest-http.git
-$ cd wfswarm-rest-http
+$ cd booster-rest-http-wildfly-swarm
 $ mvn wildfly-swarm:run -DskipTests
 ----
 
