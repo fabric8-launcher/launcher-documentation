@@ -9,7 +9,7 @@ $ cd wfswarm-rest-http
 $ mvn wildfly-swarm:run -DskipTests
 ----
 
-. Interact your booster.
+. Interact with your booster.
 +
 Use `curl` to execute a `GET` request against the booster.
 +
