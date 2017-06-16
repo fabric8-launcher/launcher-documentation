@@ -59,7 +59,7 @@ NAME                HOST/PORT                                              PATH 
 wfswarm-rest-http   wfswarm-rest-http-my-wfs-booster.192.168.64.2.nip.io             wfswarm-rest-http   8080                    None
 ----
 
-. Interact your booster.
+. Interact with your booster.
 +
 Use `curl` to execute a `GET` request against the booster.
 +
