@@ -3,7 +3,10 @@
 
 include::booster-deploy-openshift-online.adoc[leveloffset=+1]
 
+// this is intentionally a level 3
 === Deploy Using the `oc` CLI Client
+
+include::oc-client-deploy-booster-download-note.adoc[leveloffset=+3]
 
 . Get your authentication token for using the `oc` CLI client with your {OpenShiftOnline} account. You can find this in the _Command Line Tools_ section your {OpenShiftOnline} Web console. 
 
