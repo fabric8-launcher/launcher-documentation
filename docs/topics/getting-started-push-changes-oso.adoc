@@ -62,7 +62,7 @@ wfswarm-rest-http   wfswarm-rest-http-my-oso-wfs-booster.1ab5.starter-us-east-1.
            wfswarm-rest-http   8080                    None
 ----
 
-. Interact your booster.
+. Interact with your booster.
 +
 Use `curl` to execute a `GET` request against the booster.
 +
