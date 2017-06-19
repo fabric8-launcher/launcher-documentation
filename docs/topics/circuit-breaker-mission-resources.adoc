@@ -1,3 +1,7 @@
+[[circuit_breaker_resources]]
 == Circuit Breaker Resources
 
-http://microservices.io/patterns/reliability/circuit-breaker.html
+Follow the links below for more background information on the design principles behind the Circuit Breaker pattern  
+
+* link:http://microservices.io/patterns/reliability/circuit-breaker.html[microservices.io: Microservice Patterns: Circuit Breaker]
+* link:https://martinfowler.com/bliki/CircuitBreaker.html[Martin Fowler: CircuitBreaker]

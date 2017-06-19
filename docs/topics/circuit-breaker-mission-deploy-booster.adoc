@@ -1,0 +1,66 @@
+[[build_and_deploy_booster]]
+= Build and Deploy Your Booster
+
+include::booster-deploy-openshift-online.adoc[leveloffset=+1]
+
+[[deploy-booster-osl-cli]]
+=== Deploy Using the `oc` CLI Client
+
+include::oc-client-deploy-booster-download-note.adoc[leveloffset=+3]
+
+. Get your authentication token for using the `oc` CLI client with your {OpenShiftOnline} account. You can find this in the _Command Line Tools_ section your {OpenShiftOnline} Web console.
+
+. Authenticate your `oc` CLI client with your {OpenShiftOnline} account by using your authentication token.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc login {link-oso-auth} --token=MYTOKEN
+----
+
+. Create a new project in your {OpenShiftOnline}.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc new-project {project-name}
+----
+
+. Navigate to the root directory of your booster.
+
+. Use Maven to start the deployment to your {OpenShiftOnline}.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn clean fabric8:deploy -Popenshift -DskipTests
+----
++
+This command uses the Fabric8 Maven Plugin to launch the S2I process on your {OpenShiftOnline} and to start the pod.
+
+. Check the status of your booster and ensure your pod is running.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get pods -w
+NAME                            READY     STATUS      RESTARTS  AGE
+{app-name}-greeting-1-p2x5m     1/1       Running   0           17s
+{app-name}-greeting-1-deploy    0/1       Completed 0           22s
+{app-name}-name-1-7mffj         1/1       Running   0           14s
+{app-name}-name-1-deploy        0/1       Completed 0           28s
+----
++
+Both the `{app-name}-greeting` and `{app-name}-name` pods should have a status of `Running` once they are fully deployed and started. You should also wait for your pods to be ready before proceeding, which is shown in the `READY` column. For example, `PROJECT_NAME-1-aaaaa` is ready when the `READY` column is `1/1`.
+// :app-name: springboot-cb
+
+. Once your booster is deployed and started, determine its route.
++
+.Example Route Information
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get routes
+NAME                     HOST/PORT                                                        PATH      SERVICES              PORT      TERMINATION   WILDCARD
+{app-name}-greeting   {app-name}-{project-name}.1ab5.starter-us-east-1.openshiftapps.com            {app-name}-greeting   8080                    None
+{app-name}-name       {app-name}-{project-name}.1ab5.starter-us-east-1.openshiftapps.com            {app-name}-name       8080                    None
+----
++
+A pod's route information gives you the base URL which you use to access it. In the example above, you would use `+++http://{app-name}-{project-name}.1ab5.starter-us-east-1.openshiftapps.com+++` as the base URL to access the applications.
+
+include::booster-deploy-openshift-local.adoc[leveloffset=+1]
