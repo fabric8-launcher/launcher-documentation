@@ -81,20 +81,21 @@ include::topics/health-check-mission-resources.adoc[leveloffset=+3]
 :circuit-breaker-wf-swarm:
 
 // circuit breaker intro
-//include::topics/circuit-breaker-mission-intro.adoc[leveloffset=+3]
-//TODO
+include::topics/circuit-breaker-mission-intro.adoc[leveloffset=+3]
+
+// CB design tradeoffs
+include::topics/circuit-breaker-mission-design-tradeoffs.adoc[leveloffset=+3]
 
 // deploy CB boster
-//include::topics/circuit-breaker-mission-deploy-booster.adoc[leveloffset=+3]
-//TODO
+include::topics/circuit-breaker-mission-deploy-booster.adoc[leveloffset=+3]
 
 // CB basic interaction
-//include::topics/circuit-breaker-mission-basic-interaction-wf-swarm.adoc[leveloffset=+3]
+include::topics/circuit-breaker-mission-basic-interaction-wf-swarm.adoc[leveloffset=+3]
 //TODO
 
 // CB resources
-//include::topics/circuit-breaker-mission-resources.adoc[leveloffset=+3]
-//TODO
+include::topics/circuit-breaker-mission-resources.adoc[leveloffset=+3]
+
 
 
 
