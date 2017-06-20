@@ -1,4 +1,4 @@
-[[about_rest]]
+[[about_health_check]]
 = Health Check Resources
 
 More background and related information on health checking can be found here:
