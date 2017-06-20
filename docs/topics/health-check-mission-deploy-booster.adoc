@@ -1,9 +1,9 @@
-[[build_and_deploy_booster]]
+[[health_check_build_and_deploy_booster]]
 = Build and Deploy Your Booster
 
 include::booster-deploy-openshift-online.adoc[leveloffset=+1]
 
-[[deploy-booster-osl-cli]]
+[[health_check_deploy-booster-osl-cli]]
 === Deploy Using the `oc` CLI Client
 
 include::oc-client-deploy-booster-download-note.adoc[leveloffset=+3]
