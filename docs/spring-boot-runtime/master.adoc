@@ -136,6 +136,5 @@ include::topics/appendix-s2i-build-process.adoc[leveloffset=+1]
 [appendix]
 include::topics/http-api-spring-boot-pom.adoc[leveloffset=+1]
 
-
 [appendix]
 include::topics/sb-tomcat-dev-guide-additional-resources.adoc[leveloffset=+1]
