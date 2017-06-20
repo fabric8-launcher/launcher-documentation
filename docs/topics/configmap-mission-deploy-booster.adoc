@@ -1,4 +1,4 @@
-[[build_and_deploy_booster]]
+[[configmap_build_and_deploy_booster]]
 = Build and Deploy Your Booster
 
 include::booster-deploy-openshift-online.adoc[leveloffset=+1]
