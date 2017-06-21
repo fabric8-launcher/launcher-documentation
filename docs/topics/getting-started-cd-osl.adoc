@@ -103,5 +103,3 @@ $ curl wfswarm-rest-http-my-osl-demo.192.168.64.2.nip.io/api/greeting/
 $ curl wfswarm-rest-http-my-osl-demo.192.168.64.2.nip.io/api/greeting?name=Sarah
 {"content":"Greetings, Sarah!"}
 ----
-
-NOTE: If you would like changes in your booster committed to GitHub to be automatically pushed to your {OpenShiftLocal}, you can xref:ultrahook-setup[configure UltraHook] 

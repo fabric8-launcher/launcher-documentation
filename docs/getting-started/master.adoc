@@ -23,6 +23,3 @@ include::topics/getting-started-next-steps.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/getting-started-use-jbds.adoc[leveloffset=+1]
-
-[appendix]
-include::topics/getting-started-ultrahook-setup.adoc[leveloffset=+1]
