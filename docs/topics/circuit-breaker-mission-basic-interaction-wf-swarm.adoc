@@ -14,8 +14,8 @@ Exposes the following endpoints:
 
 * the `/api/greeting` endpoint that you can call to get a personalized greeting response.
 +
-Calling the `/api/greeting` endpoint also calls the `/api/name` endpoint of the `{app-name}-name` service.
-This call happens behind the scenes and is protected by the Circuit Breaker.
+When you call the `/api/greeting` endpoint, it issues a call against the `/api/name` endpoint of the `{app-name}-name` service as part of processing your request.
+The call made against the `/api/name` endpoint is protected by the Circuit Breaker.
 +
 If the remote endpoint is available, it responds with an HTTP code `200` and you receive the following greeting:
 +
