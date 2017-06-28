@@ -1,0 +1,30 @@
+
+:runtime: ${runtime}
+
+ifeval::["{runtime}" == "Spring Boot"]
+:localRunCMD: mvn spring-boot:run
+:OSORunCMD: mvn clean fabric8:deploy -Popenshift -DskipTests
+:guideURL: http://appdev.openshift.io/docs/spring-boot-runtime.html
+:fileLocation: src/main/resources/static/index.html
+endif::[]
+
+ifeval::["{runtime}" == "Eclipse Vert.x"]
+:localRunCMD: mvn vertx:run
+:OSORunCMD: mvn clean fabric8:deploy -Popenshift -DskipTests
+:guideURL: http://appdev.openshift.io/docs/vertx-runtime.html
+:fileLocation: /src/main/resources/webroot/index.html
+endif::[]
+
+ifeval::["{runtime}" == "WildFly Swarm"]
+:localRunCMD: mvn wildfly-swarm:run
+:OSORunCMD: mvn clean fabric8:deploy -Popenshift -DskipTests
+:guideURL: http://appdev.openshift.io/docs/wf-swarm-runtime.html
+:fileLocation: /src/main/webapp/index.html
+endif::[]
+
+
+
+= ${mission} - ${runtime} Booster
+
+
+IMPORTANT: While you can run and interact with this booster on our local host, it requires that you also have a database installed and configured. This booster runs best when deployed on OpenShift with a PostGres database. For more details on using this booster with a single-node OpenShift cluster, CI/CD deployments, as well as the rest of the runtime, see the link:{guideURL}[${runtime} Runtime Guide].
