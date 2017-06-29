@@ -1,0 +1,20 @@
+Vert.x Health Check Booster
+---------------------------
+
+The purpose of this booster is to demonstrate how the Kubernetes health
+checks works in order to determine if a container is still alive (=
+liveness) and ready to serve (= readiness) the traffic for the
+application`s HTTP endpoints. To demonstrate this behavior, the
+application configures a `/health` HTTP endpoint which is used by
+Kubernetes to issue HTTP requests. If the container is still alive, as
+the Health HTTP endpoint is able to reply, the management platform will
+receive 200 as return code and then no further action is required. But,
+once you click the `kill me` button, the HTTP endpoint does not return a
+response, then the platform will restart the pod. As the pod will be
+down for a certain period of time, this UI polls periodically the
+service until it is restarted. During this amount of time, do NOT
+refresh the page, as it won’t be served until the application has been
+restarted.
+
+Using the greeting service
+~~~~~~~~~~~~~~~~~~~~~~~~~~
