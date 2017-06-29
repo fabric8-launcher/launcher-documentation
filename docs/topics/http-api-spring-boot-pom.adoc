@@ -102,7 +102,7 @@
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId> 
+        <artifactId>spring-boot-maven-plugin</artifactId>
         <version>${spring-boot.version}</version>
         <executions>
           <execution>
@@ -122,7 +122,7 @@
         <plugins>
           <plugin>
             <groupId>io.fabric8</groupId>
-            <artifactId>fabric8-maven-plugin</artifactId> 
+            <artifactId>fabric8-maven-plugin</artifactId>
             <executions>
               <execution>
                 <id>fmp</id>
@@ -163,12 +163,13 @@
 //http://docs.spring.io/spring-boot/docs/1.4.1.RELEASE/reference/htmlsingle/#using-boot-starter
 
 <1> link:https://github.com/openshiftio/booster-parent/blob/master/pom.xml[Parent POM] which contains the necessary dependencies and the required versions for the booster projects.
-<2> These are properties for setting the {SpringBoot} and Tomcat version to use.
+<2> Properties for setting the {SpringBoot} and Tomcat version to use.
 <3> link:https://github.com/spring-projects/spring-boot/blob/v1.4.1.RELEASE/spring-boot-parent/pom.xml[BOM] for building {SpringBoot} applications with Maven. More details on using the parent pom are available in the link:http://docs.spring.io/spring-boot/docs/1.4.1.RELEASE/reference/htmlsingle/#using-boot-maven-parent-pom[{SpringBoot} documentation].
 <4> Setting to override the specific version of Tomcat used by the {SpringBoot} application.
 <5> link:https://github.com/spring-projects/spring-boot/tree/v1.4.1.RELEASE/spring-boot-starters/spring-boot-starter-web/pom.xml[Starter POM] for building web applications using Spring, specifically Spring MVC with Tomcat as the embedded container.
 <6> link:https://github.com/spring-projects/spring-boot/tree/v1.4.1.RELEASE/spring-boot-starters/spring-boot-starter-actuator/pom.xml[Starter POM] for using {SpringBoot}’s actuator. The actuator provides monitoring and management for your application.
-<7> link:https://github.com/spring-projects/spring-boot/tree/v1.4.1.RELEASE/spring-boot-starters/spring-boot-starter-test/pom.xml[Starter POM] for testing Spring Boot applications with libraries including JUnit, Hamcrest and Mockito. 
-<8> This Maven goal is part of the {SpringBoot} Maven plugin and will repackage the existing jar file that is created during the `package` goal.
-<9> This is the profile for building and deploying the booster to OpenShift. It uses the link:http://fabric8.io/gitbook/mavenPlugin.html[Fabric8 Maven Plugin (FMP)] to build and deploy the application with the S2I Build Process.
-<10> This profile is for running integration tests when the application is running on OpenShift. For example, a test may require a database pod or a ConfigMap value.
+<7> link:https://github.com/spring-projects/spring-boot/tree/v1.4.1.RELEASE/spring-boot-starters/spring-boot-starter-test/pom.xml[Starter POM] for testing Spring Boot applications with libraries including JUnit, Hamcrest and Mockito.
+<8> This Maven goal is part of the link:http://docs.spring.io/spring-boot/docs/1.5.4.RELEASE/maven-plugin/index.html[Spring Boot Maven Plugin].  It repackages existing JAR and WAR archives (which are created during the `package` goal) so that they can be executed from the command line using the `java -jar` command.
+Specify the `layout=NONE` attribute to package a non-executable JAR file with nested dependencies and no main class.
+<9> The profile for building and deploying the booster to OpenShift. It uses the link:http://fabric8.io/gitbook/mavenPlugin.html[Fabric8 Maven Plugin (FMP)] to build and deploy the application with the S2I Build Process.
+<10> The profile for running integration tests when the application is deployed on OpenShift. For example, a test can require a database pod or a ConfigMap value.
