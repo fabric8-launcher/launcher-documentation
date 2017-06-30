@@ -26,7 +26,7 @@ $ oc new-project {project-name}
 
 . Navigate to the root directory of your booster.
 
-. Deploy the Postgres database to your {OpenShiftOnline}.
+. Deploy the PostgreSQL database to your {OpenShiftOnline}.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
