@@ -22,10 +22,24 @@ import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.RedirectAuthHandler;
 import io.vertx.ext.web.handler.StaticHandler;
 
+import java.io.IOException;
+import java.util.Properties;
+
 public class HttpApplication extends AbstractVerticle {
 
-   private static final String INDEX_PAGE = "index.html";
-   private static final String LAUNCHER_TEMPLATE_LATEST_URL = "https://raw.githubusercontent.com/openshiftio/launchpad-templates/v5/openshift/launchpad-template.yaml";
+    private static final String propFileLocation = "/application.properties";
+    private static final Properties props = loadProperties();
+
+    private static Properties loadProperties() {
+        Properties props = new Properties();
+        try {
+            props.load(HttpApplication.class.getResourceAsStream(propFileLocation));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return props;
+    }
+
   @Override
   public void start(Future<Void> future) {
     // Create a router object.
@@ -33,7 +47,7 @@ public class HttpApplication extends AbstractVerticle {
 
     router.get("/health").handler(rc -> rc.response().end("OK"));
     router.get("/latest-launcher-template").handler(rc -> 
-        rc.response().setStatusCode(302).putHeader("Location", LAUNCHER_TEMPLATE_LATEST_URL).end());
+        rc.response().setStatusCode(302).putHeader("Location", props.getProperty("launcher.template_url.latest")).end());
      router.route("/").handler(context -> {
         // Redirect to docs
         context.response().putHeader("location", "/docs").setStatusCode(302).end();
@@ -41,7 +55,7 @@ public class HttpApplication extends AbstractVerticle {
      router.get("/docs/*").handler(
             StaticHandler.create().
                     setWebRoot(StaticHandler.DEFAULT_WEB_ROOT + "/docs").
-                    setIndexPage(INDEX_PAGE));
+                    setIndexPage(props.getProperty("launcher.index_page")));
 
 
 
