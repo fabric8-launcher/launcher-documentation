@@ -92,15 +92,15 @@ include::topics/circuit-breaker-mission-design-tradeoffs.adoc[leveloffset=+3]
 // deploy CB booster
 include::topics/circuit-breaker-mission-deploy-booster.adoc[leveloffset=+3]
 
-
 // CB basic interaction
 include::topics/circuit-breaker-mission-basic-interaction-spring-boot-tomcat.adoc[leveloffset=+3]
 //TODO
 
+//Hystrix Dashboard
+include::topics/circuit-breaker-mission-access-hystrix-dashboard-spring-boot.adoc[leveloffset=+3]
+
 // CB resources
 include::topics/circuit-breaker-mission-resources.adoc[leveloffset=+3]
-//TODO
-
 
 [[mission-secured-spring-boot]]
 === {mission-secured-spring-boot-guide-name}
