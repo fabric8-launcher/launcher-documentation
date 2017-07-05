@@ -14,7 +14,7 @@ $ curl http://{app-name}-{project-name}.1ab5.starter-us-east-1.openshiftapps.com
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc edit configmap {app-name}
+$ oc edit configmap app-config
 ----
 +
 Change the value for the `greeting.message` key to `Bonjour!` and save the file. After you save this, the changes will be propagated to your OpenShift instance.
