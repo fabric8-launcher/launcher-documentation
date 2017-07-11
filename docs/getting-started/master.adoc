@@ -6,17 +6,12 @@ include::topics/templates/document-attributes.adoc[]
 
 include::topics/getting-started-intro.adoc[leveloffset=+1]
 
-include::topics/getting-started-run-locally.adoc[leveloffset=+1]
 
-include::topics/getting-started-change-locally.adoc[leveloffset=+1]
-
-include::topics/getting-started-push-changes-osl.adoc[leveloffset=+1]
-
-include::topics/getting-started-push-changes-oso.adoc[leveloffset=+1]
-
-include::topics/getting-started-cd-osl.adoc[leveloffset=+1]
+include::topics/getting-started-create-booster.adoc[leveloffset=+1]
 
 include::topics/getting-started-cd-oso.adoc[leveloffset=+1]
+
+include::topics/getting-started-cd-osl.adoc[leveloffset=+1]
 
 include::topics/getting-started-next-steps.adoc[leveloffset=+1]
 
