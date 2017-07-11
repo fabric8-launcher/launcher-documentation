@@ -6,7 +6,14 @@ More background and related information on REST can be found here:
 * link:https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm[Architectural Styles and
 the Design of Network-based Software Architectures - Representational State Transfer (REST)]
 * link:https://martinfowler.com/articles/richardsonMaturityModel.html[Richardson Maturity Model]
-* link:https://www.jcp.org/en/jsr/detail?id=311[JSR 311: JAX-RS: The JavaTM API for RESTful Web Services]
+
+ifndef::http-api-nodejs[]
+  * link:https://www.jcp.org/en/jsr/detail?id=311[JSR 311: JAX-RS: The JavaTM API for RESTful Web Services]
+endif::http-api-nodejs[]
+
+ifdef::http-api-nodejs[]
+  * link:https://expressjs.com/[Express Web Framework]
+endif::http-api-nodejs[]
 
 ifdef::http-api-spring-boot-tomcat[]
 * link:https://spring.io/guides/gs/rest-service/[Building a RESTful Service with Spring]
@@ -32,5 +39,6 @@ ifndef::http-api-wf-swarm[]
 * link:{link-http-api-level-0-wf-swarm-booster}[{mission-http-api-wf-swarm-guide-name}]
 endif::http-api-wf-swarm[]
 
-
-
+ifndef::http-api-nodejs[]
+  * link:{link-http-api-level-0-nodejs-booster}[{mission-http-api-nodejs-guide-name}]
+endif::http-api-nodejs[]
