@@ -1,55 +1,29 @@
+[[cd-oso]]
 = Continuous Delivery using {OpenShiftOnline}
 
-You can also set up continuous delivery using link:{link-launcher-oso}[{launcher}] on {OpenShiftOnline}. In addition to cloning a booster repository to your GitHub account and deploying it to your {OpenShiftOnline} account, it will also automatically set up a webhook that will redeploy your booster to {OpenShiftOnline} every time a new commit is made to that GitHub repository.
+After using {launcher} to launch your booster, click on the _See it here!_ link under _Creating your project on the OpenShift cloud_ to go to your booster's page in the OpenShift Web console.
 
-. Navigate to link:{link-launcher-oso}[{launcher}] using your browser.
-. Select _Prepare for Takeoff_.
-. Choose _Use {OpenShiftOnline} to build and deploy_.
-+
-IMPORTANT: When using _Use {OpenShiftOnline} to build and deploy_, ensure you have followed the link to grant {launcher} access to your GitHub and {OpenShiftOnline} accounts. When you are on the `sso.openshift.io` page, you will need to click _Add_ for *BOTH* _GitHub_ and _OpenShift v3_ 
-
-. Choose `REST API Level 0` and click _Next_.
-. Choose the {WildFlySwarm} runtime.
-. Enter an _OpenShift Project name_. You can also update any of the additional metadata fields or leave them as the default. Click _Next_.
-. Click the _Launch on OpenShift_ button.
-+
-This will:
-+
-** Create a new GitHub repository associated with your account containing the booster's code.
-** Create a pipeline to continuously deliver your booster's code.
-** The pipeline will then build and deploy your booster's code to {OpenShiftOnline}.  
-
-. Click on the _See it here!_ link under _Creating your project on the OpenShift cloud_ to go to your booster's page in the OpenShift Web console.
-
-To view the status of your project:
+To view the build status of your project from the OpenShift Web console:
 
 . Click _View Log_ in the pipeline at the top.
 +
 NOTE: It may take a few minutes for the link to appear.
 
-. Click _Login with OpenShift_ at the login prompt for Jenkins. 
+. Click _Login with OpenShift_ at the login prompt for Jenkins.
 . Click _Login with Red Hat_.
 . Ensure all the boxes are checked and click _Allow selected permissions_.
 +
 This grants the OpenShift Web console the correct permissions and directs you to the Jenkins pod that is deploying your application.
 
-
-Once your deployment is complete, interact with your booster using the url for the booster application at the top of the page:
+Once your deployment is complete, interact with your booster using the url for the booster application at the top of the page. You can find more details on interacting with your booster in it's `README.adoc` on GitHub.
 
 IMPORTANT: Your booster application is not the same as your Jenkins pod, and it will only appear after the Jenkins pod deploys it. This may take a few minutes.
 
-[source,bash,options="nowrap",subs="attributes+"]
-----
-$ curl wfswarm-rest-http-my-oso-demo.1ab5.starter-us-east-1.openshiftapps.com/api/greeting/
-{"content":"Hello, World!"}
-$ curl wfswarm-rest-http-my-oso-demo.1ab5.starter-us-east-1.openshiftapps.com/api/greeting?name=Sarah
-{"content":"Hello, Sarah!"}
-----
 
-At this point, you have created a new booster repository in your GitHub account and deployed it to {OpenShiftOnline}. To push changes to this booster in {OpenShiftOnline}, you can push a new commit to the GitHub repository.
+To push changes to this booster in {OpenShiftOnline}, you can push a new commit to the GitHub repository:
 
 
-. Clone your project from GitHub.
+. If you have not already done so, clone your project from GitHub.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -57,19 +31,7 @@ $ git clone git@github.com:USERNAME/PROJECT-NAME.git
 ----
 
 . Open your project in your desired IDE or editor, such as xref:use_jbds[JBDS].
-. Update `src/main/java/io/openshift/booster/GreetingEndpoint.java` to present a different greeting. 
-+
-.Example update to `GreetingEndpoint.java`
-[source,java,options="nowrap",subs="attributes+"]
-----
-@Path("/")
-public class GreetingEndpoint {
-  
-  private static final String template = "Greetings, %s!";
-  ...
-}
-----
-
+. Make an update to the project.
 . Save your changes.
 . Commit and push your changes back to GitHub.
 +
@@ -82,13 +44,6 @@ $ git push
 
 . Navigate Openshift Web Console and confirm a new deployment has started.
 . Confirm your changes once your deployment is complete.
-+
-[source,bash,options="nowrap",subs="attributes+"]
-----
-$ curl wfswarm-rest-http-my-oso-demo.1ab5.starter-us-east-1.openshiftapps.com/api/greeting/
-{"content":"Greetings, World!"}
-$ curl wfswarm-rest-http-my-oso-demo.1ab5.starter-us-east-1.openshiftapps.com/api/greeting?name=Sarah
-{"content":"Greetings, Sarah!"}
-----
 
-You now have continuous delivery working with your booster, which automatically push changes in your booster to your {OpenShiftOnline} account.
+
+This confirms you have continuous delivery working with your booster, which automatically pushes changes in your booster to your {OpenShiftOnline} account.
