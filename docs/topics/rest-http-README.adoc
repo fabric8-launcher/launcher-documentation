@@ -22,6 +22,13 @@ ifeval::["{runtime}" == "WildFly Swarm"]
 :fileLocation: src/main/webapp/index.html
 endif::[]
 
+ifeval::["{runtime}" == "Node.js"]
+:localRunCMD: npm start
+:OSORunCMD: npm run openshift
+:guideURL: http://appdev.openshift.io/docs/nodejs-runtime.html
+:fileLocation: public/index.html
+endif::[]
+
 
 
 = ${mission} - ${runtime} Booster
