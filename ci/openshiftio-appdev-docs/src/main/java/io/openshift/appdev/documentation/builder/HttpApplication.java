@@ -40,38 +40,34 @@ public class HttpApplication extends AbstractVerticle {
         return props;
     }
 
-  @Override
-  public void start(Future<Void> future) {
-    // Create a router object.
-    Router router = Router.router(vertx);
+    @Override
+    public void start(Future<Void> future) {
+        // Create a router object.
+        Router router = Router.router(vertx);
 
-    router.get("/health").handler(rc -> rc.response().end("OK"));
-    router.get("/latest-launcher-template").handler(rc -> 
+        router.get("/health").handler(rc -> rc.response().end("OK"));
+        router.get("/latest-launcher-template").handler(rc -> 
         rc.response().setStatusCode(302).putHeader("Location", props.getProperty("launcher.template_url.latest")).end());
-     router.route("/").handler(context -> {
-        // Redirect to docs
-        context.response().putHeader("location", "/docs").setStatusCode(302).end();
-     });
-     router.get("/docs/*").handler(
-            StaticHandler.create().
-                    setWebRoot(StaticHandler.DEFAULT_WEB_ROOT + "/docs").
-                    setIndexPage(props.getProperty("launcher.index_page")));
+        router.route("/").handler(context -> {
+            // Redirect to docs
+            context.response().putHeader("location", "/docs").setStatusCode(302).end();
+        });
+        router.get("/docs/*").handler(
+                StaticHandler.create().
+                setWebRoot(StaticHandler.DEFAULT_WEB_ROOT + "/docs").
+                setIndexPage(props.getProperty("launcher.index_page")));
 
-
-
-
-     // Create the HTTP server and pass the "accept" method to the request handler.
-    vertx
+        // Create the HTTP server and pass the "accept" method to the request handler.
+        vertx
         .createHttpServer()
         .requestHandler(router::accept)
         .listen(
-            // Retrieve the port from the configuration, default to 8080.
-            config().getInteger("http.port", 8080), ar -> {
-              if (ar.succeeded()) {
-                System.out.println("Server starter on port " + ar.result().actualPort());
-              }
-              future.handle(ar.mapEmpty());
-            });
-
-  }
+                // Retrieve the port from the configuration, default to 8080.
+                config().getInteger("http.port", 8080), ar -> {
+                    if (ar.succeeded()) {
+                        System.out.println("Server starter on port " + ar.result().actualPort());
+                    }
+                    future.handle(ar.mapEmpty());
+                });
+    }
 }
