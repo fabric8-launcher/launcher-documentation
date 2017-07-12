@@ -1,5 +1,5 @@
-Vert.x HTTP Booster
--------------------
+HTTP Booster
+------------
 
 An example of simple mapping of a business operation to a remote endpoint. By taking this approach, clients use the HTTP protocol as a transport mechanism to call services. Application engineers define the APIs using a broad interpretation of the REST fundamentals, encouraging freedom in design and quick prototyping.
 
