@@ -40,12 +40,12 @@ features: Basic-Auth GSSAPI Kerberos SPNEGO
 ----
 
 
-== Install the {CDK}
+== Install {CDK}
 
-The installation steps for the {CDK} are available link:https://access.redhat.com/documentation/en-us/red_hat_container_development_kit/3.0/html-single/installation_guide/[in the {CDK} Installation Guide] and vary by platform.
+The installation steps for {CDK} are available link:https://access.redhat.com/documentation/en-us/red_hat_container_development_kit/3.0/html-single/installation_guide/[in {CDK} Installation Guide] and vary by platform.
 
 
-. Verify you have the {CDK} and the `oc` CLI tools installed and configured.
+. Verify you have {CDK} and the `oc` CLI tools installed and configured.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -64,4 +64,4 @@ kubernetes v1.5.2+43a9be4
 features: Basic-Auth
 ----
 +
-WARNING: You must use the `oc` binary installed with the {CDK}.
+WARNING: You must use the `oc` binary installed with {CDK}.

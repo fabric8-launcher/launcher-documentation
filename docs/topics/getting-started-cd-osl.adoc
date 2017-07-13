@@ -64,7 +64,7 @@ At this point, you have created a new booster repository in your GitHub account 
 $ git clone git@github.com:USERNAME/PROJECT-NAME.git
 ----
 
-. Open your project in your desired IDE or editor, such as xref:use_jbds[JBDS].
+. Open your project in your desired IDE or editor, such as xref:use_devstudio[Developer Studio].
 . Update `src/main/java/io/openshift/booster/GreetingEndpoint.java` to present a different greeting. 
 +
 .Example update to `GreetingEndpoint.java`
