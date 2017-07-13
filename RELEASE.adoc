@@ -3,7 +3,9 @@
 After the catalog update has been made, update the following lines with the latest version:
 
 * link:https://github.com/openshiftio/appdev-documentation/blob/master/scripts/deploy_launchpad_mission.sh#L16[Catalog Version in Build Script]
-* link:https://github.com/openshiftio/appdev-documentation/blob/master/ci/openshiftio-appdev-docs/src/main/java/io/openshift/appdev/documentation/builder/HttpApplication.java#L27[Link to Launchpad Template YAML file in Vert.X Link Indirection]
+* link:https://github.com/openshiftio/appdev-documentation/blob/master/ci/openshiftio-appdev-docs/src/main/resources/application.properties#L1[Link to Launchpad Template YAML file in Vert.X Link Indirection]
+* link:https://github.com/openshiftio/appdev-documentation/blob/master/docs/topics/minishift-install-create-launchpad-app-script.adoc#L33[Update Install Instructions when using the `-v` option]
+
 
 Usually, this will mean going from `vX` to `vX+1` e.g. `v3` to `v4`.
 
