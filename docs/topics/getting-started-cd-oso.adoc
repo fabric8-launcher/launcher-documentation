@@ -1,3 +1,4 @@
+
 [[cd-oso]]
 = Continuous Delivery using {OpenShiftOnline}
 
@@ -9,11 +10,13 @@ To view the build status of your project from the OpenShift Web console:
 +
 NOTE: It may take a few minutes for the link to appear.
 
+
 . Click _Login with OpenShift_ at the login prompt for Jenkins.
 . Click _Login with Red Hat_.
 . Ensure all the boxes are checked and click _Allow selected permissions_.
 +
 This grants the OpenShift Web console the correct permissions and directs you to the Jenkins pod that is deploying your application.
+
 
 Once your deployment is complete, interact with your booster using the url for the booster application at the top of the page. You can find more details on interacting with your booster in it's `README.adoc` on GitHub.
 
@@ -31,6 +34,7 @@ $ git clone git@github.com:USERNAME/PROJECT-NAME.git
 ----
 
 . Open your project in your desired IDE or editor, such as xref:use_jbds[JBDS].
+
 . Make an update to the project.
 . Save your changes.
 . Commit and push your changes back to GitHub.
@@ -44,6 +48,7 @@ $ git push
 
 . Navigate Openshift Web Console and confirm a new deployment has started.
 . Confirm your changes once your deployment is complete.
+
 
 
 This confirms you have continuous delivery working with your booster, which automatically pushes changes in your booster to your {OpenShiftOnline} account.

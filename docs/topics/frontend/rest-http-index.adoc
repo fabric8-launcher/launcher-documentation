@@ -5,4 +5,3 @@ An example of simple mapping of a business operation to a remote endpoint. By ta
 
 Using the greeting service
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-

@@ -16,6 +16,7 @@ $ minishift console
 ====
 . Select _Prepare for Takeoff_.
 . Choose _Use {OpenShiftOnline} to build and deploy_.
+
 . Follow the instructions to create a booster of your choice.
 +
 This will:
@@ -37,6 +38,7 @@ NOTE: It may take a few minutes for the link to appear.
 . Ensure all the boxes are checked and click _Allow selected permissions_.
 +
 This grants the OpenShift Web console the correct permissions and directs you to the Jenkins pod that is deploying your application.
+
 
 Once your deployment is complete, interact with your booster using the URL for the booster application at the top of the page. For the specific details on interacting with your booster, take a look at your booster's `README.adoc` file.
 

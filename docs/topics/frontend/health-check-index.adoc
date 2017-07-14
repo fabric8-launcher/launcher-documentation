@@ -7,4 +7,3 @@ To demonstrate this behavior, the application configures a `/health` HTTP endpoi
 
 Using the greeting service
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
