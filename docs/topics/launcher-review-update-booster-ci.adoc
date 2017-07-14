@@ -7,7 +7,7 @@ Your booster is automatically configured to build and deploy with new commits.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ git clone git@github.com:USERNAME/PROJECT-NAME.git
+$ git clone ${repoUrl}
 ----
 
 . Open your project in your desired IDE or editor.
@@ -21,6 +21,5 @@ $ git commit -m "Made an update"
 $ git push
 ----
 
-. Click _See it here!_ in _Creating your project on OpenShift Online_.
 
-Notice a new deployment is running! Once complete, click on the link for booster application at the top of the page and observe your changes appear.
+More details on interacting with your booster can be found in your booster's `README.adoc`.

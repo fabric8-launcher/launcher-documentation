@@ -99,7 +99,7 @@
       </plugin>
 
       <plugin>
-        <artifactId>maven-war-plugin</artifactId>
+        <artifactId>maven-war-plugin</artifactId> <9>
         <configuration>
           <failOnMissingWebXml>false</failOnMissingWebXml>
         </configuration>
@@ -109,7 +109,7 @@
 
   <profiles>
     <profile>
-      <id>openshift</id> <9>
+      <id>openshift</id> <10>
       <build>
         <plugins>
           <plugin>
@@ -138,7 +138,7 @@
       </build>
     </profile>
     <profile>
-      <id>openshift-it</id> <10>
+      <id>openshift-it</id> <11>
       <build>
         <plugins>
           <plugin>
@@ -161,12 +161,13 @@
 ----
 
 <1> link:https://github.com/openshiftio/booster-parent/blob/master/pom.xml[Parent POM] which contains the necessary dependencies and the required versions for the booster projects.
-<2> These are properties for setting the {WildFlySwarm} and RESTEasy version.
+<2> Properties for setting the {WildFlySwarm} and RESTEasy version.
 <3> link:https://github.com/wildfly-swarm/wildfly-swarm/blob/master/boms/bom/pom.xml[BOM] for building {WildFlySwarm} applications with Maven.
 <4> link:https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-guide/content/v/2017.6.0/getting-started/concepts.html[Swarm Fraction] that brings link:https://jcp.org/en/jsr/detail?id=339[JAX-RS] functionality for creating REST services.
 <5> link:https://docs.jboss.org/resteasy/docs/3.1.3.Final/userguide/html_single/#RESTEasy_Client_Framework[RESTEasy client] dependency for connecting to other REST services which is used in testing.
 <6> link:https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-guide/content/v/2017.6.0/getting-started/concepts.html[Swarm Fraction] that brings link:http://arquillian.org[Arquillian] functionality for testing.
-<7> link:http://arquillian.org/guides/getting_started/#add_the_arquillian_apis[Arquillian APIs] for testing with link:http://junit.org[JUnit]. 
+<7> link:http://arquillian.org/guides/getting_started/#add_the_arquillian_apis[Arquillian APIs] for testing with link:http://junit.org[JUnit].
 <8> link:https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-guide/content/v/2017.6.0/getting-started/tooling/maven-plugin.html[{WildFlySwarm} Maven Plugin] used to create the application link:https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-guide/content/v/2017.6.0/getting-started/concepts.html[uberjar].
-<9> This is the profile for building and deploying the booster to OpenShift. It uses the link:http://fabric8.io/gitbook/mavenPlugin.html[Fabric8 Maven Plugin (FMP)] to build and deploy the application with the S2I Build Process.
-<10> This profile is for running integration tests when the application is running on OpenShift. For example, a test may require a database pod or a ConfigMap value.
+<9> The link:https://maven.apache.org/plugins/maven-war-plugin/[Maven WAR Plugin] collects all artifact dependencies, classes and resources of your web application, and packages them into a WAR file.
+<10> The profile for building and deploying the booster to OpenShift. It uses the link:http://fabric8.io/gitbook/mavenPlugin.html[Fabric8 Maven Plugin (FMP)] to build and deploy the application with the S2I Build Process.
+<11> The profile for running integration tests when the application is deployed on OpenShift. For example, a test can require a database pod or a ConfigMap value.

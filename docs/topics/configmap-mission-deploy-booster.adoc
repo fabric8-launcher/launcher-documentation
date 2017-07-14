@@ -79,6 +79,27 @@ data:
 ...
 ----
 endif::configmap-wf-swarm[]
+ifdef::configmap-spring-boot-tomcat[]
+. Deploy your ConfigMap configuration to your {OpenShiftOnline} using `src/main/etc/application.properties`.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc create configmap app-config --from-file=src/main/etc/application.properties
+----
+
+. Verify your ConfigMap configuration has been deployed.
++
+[source,bash,options="nowrap"]
+----
+$ oc get configmap app-config -o yaml
+
+apiVersion: v1
+data:
+  application.properties: |-
+      greeting.message=Hello %s from a ConfigMap!
+...
+----
+endif::configmap-spring-boot-tomcat[]
 
 . Use Maven to start the deployment to your {OpenShiftOnline}.
 +
@@ -124,20 +145,5 @@ NAME         HOST/PORT                                     PATH      SERVICES   
 ----
 +
 A pod's route information gives you the base URL which you use to access it. In the example above, you would use `http://{app-name}-{project-name}.1ab5.starter-us-east-1.openshiftapps.com` as the base URL to access the application.
-
-ifdef::configmap-spring-boot-tomcat[]
-. Verify your ConfigMap configuration has been deployed.
-+
-[source,bash,options="nowrap",subs="attributes+"]
-----
-$ oc get configmap {app-name} -o yaml
-
-apiVersion: v1
-data:
-  application.properties: |
-    greeting.message: Hello %s from a ConfigMap!
-...
-----
-endif::configmap-spring-boot-tomcat[]
 
 include::booster-deploy-openshift-local.adoc[leveloffset=+1]
