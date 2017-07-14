@@ -1,6 +1,5 @@
 
 :runtime: ${runtime}
-:runtime: WildFly Swarm
 
 ifeval::["{runtime}" == "Spring Boot"]
 :localRunCMD: mvn spring-boot:run
@@ -97,12 +96,9 @@ $ oc get route {secured-app-name} -o jsonpath={$.spec.host}
 ----
 
 
-You can use the form from at browser at your application's url or you can use the provided client:
+You can use the form at your application's url or you can use the provided client:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ java -jar target/sso-client.jar --app {secured-app-name}
 ----
-
-
-

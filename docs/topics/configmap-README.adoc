@@ -1,6 +1,5 @@
 
-//:runtime: ${runtime}
-:runtime: WildFly Swarm
+:runtime: ${runtime}
 
 ifeval::["{runtime}" == "Spring Boot"]
 :localRunCMD: mvn spring-boot:run
@@ -8,7 +7,7 @@ ifeval::["{runtime}" == "Spring Boot"]
 :OSOConfigMap: 
 :guideURL: http://appdev.openshift.io/docs/spring-boot-runtime.html
 :fileLocation: src/main/resources/static/index.html
-:app-name: booster-configmap-spring
+:app-name: booster-configmap-spring-boot
 :configmap-spring-boot-tomcat:
 endif::[]
 
@@ -133,7 +132,26 @@ data:
 endif::configmap-wf-swarm[]
 
 ifdef::configmap-spring-boot-tomcat[]
-//blank for now
+. Deploy your ConfigMap configuration using `src/main/etc/application.properties`.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc create configmap app-config --from-file=src/main/etc/application.properties
+----
+
+. Verify your ConfigMap configuration has been deployed.
++
+[source,bash,options="nowrap"]
+----
+$ oc get configmap app-config -o yaml
+
+apiVersion: v1
+data:
+  application.properties: |
+    # This properties file should be used to initialise a ConfigMap
+    greeting.message=Hello %s from a ConfigMap!
+...
+----
 endif::configmap-spring-boot-tomcat[]
 
 . Deploy your booster.
@@ -157,7 +175,7 @@ $ oc get route {app-name} -o jsonpath={$.spec.host}
 ----
 
 
-You can use the form from at browser at your application's url or you can use the `curl` command:
+You can use the form at your application's url or you can use the `curl` command:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----

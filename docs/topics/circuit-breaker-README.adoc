@@ -71,7 +71,7 @@ $ oc get route {name-app-name} -o jsonpath={$.spec.host}
 ----
 
 
-You can use the form from at browser at your application's url or you can use the `curl` command:
+You can use the form at your application's url or you can use the `curl` command:
 
 
 [source,bash,options="nowrap",subs="attributes+"]

@@ -1,6 +1,5 @@
 
 :runtime: ${runtime}
-:runtime: WildFly Swarm
 
 ifeval::["{runtime}" == "Spring Boot"]
 :localRunCMD: mvn spring-boot:run
@@ -85,7 +84,7 @@ $ oc get route {app-name} -o jsonpath={$.spec.host}
 ----
 
 
-You can use the form from at browser at your application's url or you can use the `curl` command:
+You can use the form at your application's url or you can use the `curl` command:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
