@@ -41,7 +41,7 @@
     <version.org.wildfly.core>2.1.15.Final-redhat-1</version.org.wildfly.core>
     <version.jboss-logmanager-ext>1.0.0.Alpha3</version.jboss-logmanager-ext>
     <!-- Weld SE version must be aligned with the version used in WildFly -->
-    <version.weld-se>2.3.5.Final</version.weld-se>
+    <version.weld-se>2.3.3.Final-redhat-1</version.weld-se>
 
     <version.org.objectweb.asm>5.0.4</version.org.objectweb.asm>
 
