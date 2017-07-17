@@ -25,7 +25,6 @@ import io.vertx.ext.web.handler.StaticHandler;
 import java.io.IOException;
 import java.util.Properties;
 
-
 public class HttpApplication extends AbstractVerticle {
 
     private static final String propFileLocation = "/application.properties";

@@ -25,7 +25,6 @@ Downloading ISO 'https://github.com/minishift/minishift-b2d-iso/releases/downloa
 +
 [NOTE]
 ====
-
 Your {OpenShiftLocal}, by default, will select a virtual machine driver. Depending upon your system setup, you may need manually specify an alternative virtual machine driver using the `--vm-driver` flag, for example `--vm-driver=virtualbox` would use VirtualBox. Virtual machine software, such as link:https://www.virtualbox.org/[VirtualBox 5.x], is installed separately. On macOS, the `xhyve` driver may be unreliable and the `VirtualBox` is a reliable alternative. If your system works without specifying the virtual machine driver, we recommend you use the default configuration.
 
 Depending on your operating system, virtual machine driver, and the number of boosters you run, you may need to increase the amount memory you give you to your {OpenShiftLocal}.
