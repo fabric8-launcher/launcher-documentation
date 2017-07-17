@@ -104,3 +104,121 @@ include::topics/templates/document-attributes.adoc[]
 . Open the generated html file to ensure everything looks correct.
 
 You have now created the scaffolding for a new guide. When you are ready for some initial review and feedback, file a pull request to `upstream/master`.
+
+### Merging Contributions
+// title OK?
+// following content up for revision.
+// externalize naming examples to variables?
+//add note about signing commits?
+
+. Once the changes in a pull request have been approved, you can merge them into `upstream/master`.
++
+[IMPORTANT]
+--
+Do not merge your own pull requests unless absolutely necessary. You are accountable for any errors, merge conflicts, or bugs resulting from incorrect merging. Let another contributor with the appropriate repository access privileges do it.
+--
++
+[NOTE]
+--
+As a best practice, always link:https://help.github.com/articles/signing-commits-with-gpg/[sign your contributions using a GPG key]. 
+--
++
+. Before merging, ensure that you have the contributor's fork of the link:https://github.com/openshiftio/appdev-documentation[upstream repository] in your list of remotes:
++
+[source,options="nowrap"]
+--
+git remote -v
+--
++
+. To add a remote fork for to you Git directory:
++
+.. Navigate to the contributor's fork on link:https://github.com/[GitHub].
+.. Click the _Clone or Download_ button.
+.. Select _Use SSH_.
+.. Copy the repository URL beginning with `git@github.com:`.
+.. Execute the following command, replacing `username` with the user name of the contributor:
++
+[source,options="nowrap"]
+--
+git remote add username git@github.com:username/appdev-documentation.git
+--
++
+.. Use `git remote -v` to verify that the fork is now listed among your remotes.
+.. Execute `git remote update` to fetch the latest state of the remotes to your working directory.
++
+. Create a new branch and set it to track the remote branch that introduces the changes in the pull request:
++
+[source,options="nowrap"]
+--
+git checkout -b pr-to-merge username/featurebranch
+--
++
+----
+Branch pr-to-merge set up to track remote branch <topic_branch> from <username> by rebasing.
+Switched to a new branch 'pr-to-merge'
+----
++
+. Fetch the latest state of `upstream` and rebase your topic branch:
++
+[source,options="nowrap"]
+--
+git fetch upstream
+--
++
+[source,options="nowrap"]
+--
+git rebase upstream/master
+--
++
+If you have multiple commits on your feature branch, squash them before merging.
++
+. Test if all the books build correctly with your changes, by executing the script `/scripts/buildGuides.sh`. If the output contains no errors, the guides build correctly.
++
+. Checkout your local `master`:
++
+[source,options="nowrap"]
+--
+git checkout master
+--
++
+. Rebase your local `master` against `upstream/master`:
++
+[source,options="nowrap"]
+--
+git rebase upstream/master
+--
++
+. Merge your topic branch into `master`:
++
+[source,options="nowrap"]
+--
+git merge pr-to-merge
+--
++
+. Execute `/scripts/buildGuides.sh` to test whether the guides build correctly with the changes introduced by your merge.
++
+. Push the latest changes into `upstream`:
++
+[source,options="nowrap"]
+--
+git push upstream/master
+--
++
+The changes are now merged into `upstream/master`.
++
+. Close the pull request for the changes you just merged:
+.. Obtain the commit hash of the last commit on `master`:
++
+[source,options="nowrap"]
+--
+git log -1 HEAD
+--
++
+.. Navigate to the pull request on GitHub.
+.. Paste the commit following line into a new comment, replacing <commit-hash> with the SHA-1 of your commit:
++
+----
+merged: <commit-hash>
+----
++
+.. Click _Close and comment_.
