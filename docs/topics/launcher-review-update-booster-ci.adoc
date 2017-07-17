@@ -11,7 +11,7 @@ $ git clone ${repoUrl}
 ----
 
 . Open your project in your desired IDE or editor.
-. Perform any updates you want to the the project.
+. Perform any updates you want to the project.
 . Commit and push your changes back to GitHub.
 +
 [source,bash,options="nowrap",subs="attributes+"]
