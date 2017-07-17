@@ -1,4 +1,8 @@
 [[sb-tomcat-additional-resources]]
 = Additional Resources
 
+* link:https://docs.openshift.org/latest/architecture/[OpenShift Architecture Overview]
 * link:https://projects.spring.io/spring-boot/[Spring Boot Project]
+* link:https://github.com/redhat-microservices/lab_springboot-openshift/[OpenShift Spring Boot Lab Microservices ]
+* link:https://spring.fabric8.io/[Creating Spring Boot Applications using Fabric8]
+* link:https://github.com/fabric8io/fabric8-maven-plugin/[Fabric8 Maven Plugin]
