@@ -22,42 +22,52 @@ import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.RedirectAuthHandler;
 import io.vertx.ext.web.handler.StaticHandler;
 
+import java.io.IOException;
+import java.util.Properties;
+
 public class HttpApplication extends AbstractVerticle {
 
-   private static final String INDEX_PAGE = "index.html";
-   private static final String LAUNCHER_TEMPLATE_LATEST_URL = "https://raw.githubusercontent.com/openshiftio/launchpad-templates/v5/openshift/launchpad-template.yaml";
-  @Override
-  public void start(Future<Void> future) {
-    // Create a router object.
-    Router router = Router.router(vertx);
+    private static final String propFileLocation = "/application.properties";
+    private static final Properties props = loadProperties();
 
-    router.get("/health").handler(rc -> rc.response().end("OK"));
-    router.get("/latest-launcher-template").handler(rc -> 
-        rc.response().setStatusCode(302).putHeader("Location", LAUNCHER_TEMPLATE_LATEST_URL).end());
-     router.route("/").handler(context -> {
-        // Redirect to docs
-        context.response().putHeader("location", "/docs").setStatusCode(302).end();
-     });
-     router.get("/docs/*").handler(
-            StaticHandler.create().
-                    setWebRoot(StaticHandler.DEFAULT_WEB_ROOT + "/docs").
-                    setIndexPage(INDEX_PAGE));
+    private static Properties loadProperties() {
+        Properties props = new Properties();
+        try {
+            props.load(HttpApplication.class.getResourceAsStream(propFileLocation));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return props;
+    }
 
+    @Override
+    public void start(Future<Void> future) {
+        // Create a router object.
+        Router router = Router.router(vertx);
 
+        router.get("/health").handler(rc -> rc.response().end("OK"));
+        router.get("/latest-launcher-template").handler(rc -> 
+        rc.response().setStatusCode(302).putHeader("Location", props.getProperty("launcher.template_url.latest")).end());
+        router.route("/").handler(context -> {
+            // Redirect to docs
+            context.response().putHeader("location", "/docs").setStatusCode(302).end();
+        });
+        router.get("/docs/*").handler(
+                StaticHandler.create().
+                setWebRoot(StaticHandler.DEFAULT_WEB_ROOT + "/docs").
+                setIndexPage(props.getProperty("launcher.index_page")));
 
-
-     // Create the HTTP server and pass the "accept" method to the request handler.
-    vertx
+        // Create the HTTP server and pass the "accept" method to the request handler.
+        vertx
         .createHttpServer()
         .requestHandler(router::accept)
         .listen(
-            // Retrieve the port from the configuration, default to 8080.
-            config().getInteger("http.port", 8080), ar -> {
-              if (ar.succeeded()) {
-                System.out.println("Server starter on port " + ar.result().actualPort());
-              }
-              future.handle(ar.mapEmpty());
-            });
-
-  }
+                // Retrieve the port from the configuration, default to 8080.
+                config().getInteger("http.port", 8080), ar -> {
+                    if (ar.succeeded()) {
+                        System.out.println("Server starter on port " + ar.result().actualPort());
+                    }
+                    future.handle(ar.mapEmpty());
+                });
+    }
 }

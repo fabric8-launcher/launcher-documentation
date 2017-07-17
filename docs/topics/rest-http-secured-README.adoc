@@ -3,23 +3,37 @@
 
 ifeval::["{runtime}" == "Spring Boot"]
 :localRunCMD: mvn spring-boot:run
-:OSORunCMD: mvn clean fabric8:deploy -Popenshift -DskipTests
 :guideURL: http://appdev.openshift.io/docs/spring-boot-runtime.html
 :fileLocation: src/main/resources/static/index.html
+:secured-app-name: secured-springboot-rest
+:sso-app-name: secure-sso
+:sso-app-url: https://{sso-app-name}-MY_PROJECT_NAME.192.168.42.158.nip.io
+:OSORunCMD: mvn clean fabric8:deploy -DSSO_AUTH_SERVER_URL={sso-app-url} -Popenshift -DskipTests
+:missionURL: http://appdev.openshift.io/docs/spring-boot-runtime.html#mission-secured-spring-boot
+
+
 endif::[]
 
 ifeval::["{runtime}" == "Eclipse Vert.x"]
 :localRunCMD: mvn vertx:run
-:OSORunCMD: mvn clean fabric8:deploy -Popenshift -DskipTests
 :guideURL: http://appdev.openshift.io/docs/vertx-runtime.html
 :fileLocation: /src/main/resources/webroot/index.html
+:secured-app-name: secured-vertx-rest
+:sso-app-name: secure-sso
+:sso-app-url: https://{sso-app-name}-MY_PROJECT_NAME.192.168.42.158.nip.io
+:OSORunCMD: mvn clean fabric8:deploy -DSSO_AUTH_SERVER_URL={sso-app-url} -Popenshift -DskipTests
+:missionURL: http://appdev.openshift.io/docs/vertx-runtime.html#mission-secured-vertx
 endif::[]
 
 ifeval::["{runtime}" == "WildFly Swarm"]
 :localRunCMD: mvn wildfly-swarm:run
-:OSORunCMD: mvn clean fabric8:deploy -Popenshift -DskipTests
 :guideURL: http://appdev.openshift.io/docs/wf-swarm-runtime.html
 :fileLocation: /src/main/webapp/index.html
+:secured-app-name: secured-swarm-rest
+:sso-app-name: secure-sso
+:sso-app-url: https://{sso-app-name}-MY_PROJECT_NAME.192.168.42.158.nip.io
+:OSORunCMD: mvn clean fabric8:deploy -DSSO_AUTH_SERVER_URL={sso-app-url} -Popenshift -DskipTests
+:missionURL: http://appdev.openshift.io/docs/wf-swarm-runtime.html#mission-secured-wf-swarm
 endif::[]
 
 
@@ -27,3 +41,64 @@ endif::[]
 = ${mission} - ${runtime} Booster
 
 IMPORTANT: This booster requires that you use link:https://access.redhat.com/products/red-hat-single-sign-on[Red Hat SSO] to issue access tokens for interacting with this booster and runs best when deployed on OpenShift. For more details on using this booster with a single-node OpenShift cluster, CI/CD deployments, as well as the rest of the runtime, see the link:{guideURL}[${runtime} Runtime Guide].
+
+
+== Run this Booster on a Single-node OpenShift Cluster
+If you have a single-node OpenShift cluster, such as Minishift or the Red Hat Container Development Kit, link:http://appdev.openshift.io/docs/minishift-installation.html[installed and running], you can also deploy your booster there. A single-node OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
+
+IMPORTANT: You *MUST* link:{missionURL}[update the configuration of your single-node OpenShift cluster as detailed in the mission documentation] before you can deploy this mission. 
+
+
+To deploy your booster to a running single-node OpenShift cluster:
+
+. Log in and create your project.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git clone git@github.com:${loggedUser}/${targetRepository}
+
+$ cd ${targetRepository}/sso
+
+$ oc login -u developer -p developer
+
+$ oc new-project MY_PROJECT_NAME
+
+$ mvn fabric8:deploy
+
+$ java -jar target/sso-client.jar --displaySSOURL
+Successful oc get routes: Yes
+Using auth server URL: {sso-app-url}
+Available application endpoint names: []
+
+$ cd ../app
+
+$ {OSORunCMD}
+
+$ cd ..
+----
+
+
+
+== Interact with this Booster on a Single-node OpenShift Cluster
+
+To interact with your booster while it's running on a Single-node Openshift Cluster, you first need to obtain the name of the application and it's URL:
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ java -jar sso/target/sso-client.jar --displaySSOURL
+Successful oc get routes: Yes
+Using auth server URL: {sso-app-url}
+Available application endpoint names: [{secured-app-name}]
+
+$ oc get route {secured-app-name} -o jsonpath={$.spec.host}
+
+{secured-app-name}-MY_PROJECT_NAME.192.168.42.158.nip.io
+----
+
+
+You can use the form at your application's url or you can use the provided client:
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ java -jar target/sso-client.jar --app {secured-app-name}
+----

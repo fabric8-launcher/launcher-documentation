@@ -13,7 +13,7 @@
 # Set Default values
 PROJECTNAME="myproject"
 id="developer:developer"
-VERSION="v4"
+VERSION="v6"
 
 while getopts p:g:t:i:v: option
 do

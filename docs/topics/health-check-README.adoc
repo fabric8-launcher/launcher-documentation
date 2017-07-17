@@ -6,6 +6,7 @@ ifeval::["{runtime}" == "Spring Boot"]
 :OSORunCMD: mvn clean fabric8:deploy -Popenshift -DskipTests
 :guideURL: http://appdev.openshift.io/docs/spring-boot-runtime.html
 :fileLocation: src/main/resources/static/index.html
+:app-name: booster-health-check-spr
 endif::[]
 
 ifeval::["{runtime}" == "Eclipse Vert.x"]
@@ -13,6 +14,7 @@ ifeval::["{runtime}" == "Eclipse Vert.x"]
 :OSORunCMD: mvn clean fabric8:deploy -Popenshift -DskipTests
 :guideURL: http://appdev.openshift.io/docs/vertx-runtime.html
 :fileLocation: src/main/resources/webroot/index.html
+:app-name: booster-health-check-ver
 endif::[]
 
 ifeval::["{runtime}" == "WildFly Swarm"]
@@ -20,12 +22,14 @@ ifeval::["{runtime}" == "WildFly Swarm"]
 :OSORunCMD: mvn clean fabric8:deploy -Popenshift -DskipTests
 :guideURL: http://appdev.openshift.io/docs/wf-swarm-runtime.html
 :fileLocation: src/main/webapp/index.html
+:app-name: booster-health-check-wildfly-swarm
 endif::[]
 
 
 
 = ${mission} - ${runtime} Booster
 
+IMPORTANT: While you can run and interact with this booster on our local host, you cannot take advantage of using the health check functionality with this booster without using OpenShift. For more details on using this booster with a single-node OpenShift cluster, CI/CD deployments, as well as the rest of the runtime, see the link:{guideURL}[${runtime} Runtime Guide].
 
 == Run this Booster Locally
 To run this booster on your local host:
@@ -51,4 +55,54 @@ $ curl http://localhost:8080/api/greeting?name=Sarah
 {"content":"Hello, Sarah!"}
 ----
 
-IMPORTANT: While you can run and interact with this booster on our local host, you cannot take advantage of using the health check functionality with this booster without using OpenShift. For more details on using this booster with a single-node OpenShift cluster, CI/CD deployments, as well as the rest of the runtime, see the link:{guideURL}[${runtime} Runtime Guide].
+== Run this Booster on a Single-node OpenShift Cluster
+If you have a single-node OpenShift cluster, such as Minishift or the Red Hat Container Development Kit, link:http://appdev.openshift.io/docs/minishift-installation.html[installed and running], you can also deploy your booster there. A single-node OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
+
+To deploy your booster to a running single-node OpenShift cluster:
+
+. Log in and create your project.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc login -u developer -p developer
+
+$ oc new-project MY_PROJECT_NAME
+
+$ {OSORunCMD}
+----
+
+
+== Interact with this Booster on a Single-node OpenShift Cluster
+
+To interact with your booster while it's running on a Single-node Openshift Cluster, you first need to obtain it's URL:
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get route {app-name} -o jsonpath={$.spec.host}
+
+{app-name}-MY_PROJECT_NAME.192.168.42.158.nip.io
+----
+
+
+You can use the form at your application's url or you can use the `curl` command:
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl http://{app-name}-MY_PROJECT_NAME.192.168.42.158.nip.io/api/greeting
+{"content":"Hello World from a ConfigMap!"}
+
+$ curl http://{app-name}-MY_PROJECT_NAME.192.168.42.158.nip.io/api/greeting?name=Sarah
+{"content":"Hello Sarah from a ConfigMap!"}
+
+$ curl http://{app-name}-MY_PROJECT_NAME.192.168.42.158.nip.io/api/killme
+
+$ oc get pods -w
+NAME                           READY     STATUS    RESTARTS   AGE
+{app-name}-1-26iy7   1/1       Running   5          18m
+----
+
+When `READY` changes to `0/1`, if you re-execute a `curl` command to `api/greeting` or attempt to access the application's URL, it will be unavailable. When `READY` changes back to `1/1`, `curl` commands and the application URL will be available again.
+
+
+== CI/CD Deployment
+As part of the process of creating this booster, launch.openshift.io set up a project with a CI/CD deployment of this booster. You can see the status of this deployment in the link:https://manage.openshift.com[OpenShift Online Web console]. You can also learn more about this booster and rest of the ${runtime} runtime in the link:{guideURL}[${runtime} Runtime Guide].

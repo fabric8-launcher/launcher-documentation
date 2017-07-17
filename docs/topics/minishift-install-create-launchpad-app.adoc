@@ -32,7 +32,6 @@ image::minishift_processtemplate.png[Process Template]
 WARNING: You must clear these fields out for the {launcher} application on your {OpenShiftLocal} to be configured correctly.
 
 ** _Catalog Git Repository_ and _Catalog Git Reference_ should be generally left as-is, unless you are developing against a specific fork you would like to use.
-** _Catalog Index Period_ may be left to `0` unless you would like the catalog to index at some interval in minutes.
 ** _{launcher} Frontend Host_ must be updated to replace `$PROJECTNAME` with the name of your project. You also need to update `$HOSTNAMEORIP` in the string to the IP address of your OpenShift Console URL. This example uses `+++192.168.42.152+++` and `{launcher}`.
 +
 WARNING: Before proceeding to the next steps, confirm all the fields are correct.
