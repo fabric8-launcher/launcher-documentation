@@ -68,6 +68,13 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <dependency>
+        <groupId>org.jboss.bom</groupId>
+        <artifactId>eap-runtime-artifacts</artifactId>
+        <version>7.0.6.GA</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
       #{dependencies}
     </dependencies>
   </dependencyManagement>
