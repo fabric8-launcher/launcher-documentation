@@ -9,6 +9,8 @@ include::topics/templates/document-attributes.adoc[]
 
 == File a Documentation Issue
 
+include::topics/contributing-labels.adoc[leveloffset=+2]
+
 
 [appendix]
 == Upstream Runtime Project Development Resources

@@ -1,0 +1,98 @@
+
+= Using GitHub Labels
+
+In the link:https://github.com/openshiftio/appdev-documentation[openshiftio/appdev-documentation] repository, labels are an important way of communicating the status of issues and pull requests. Please use them accordingly to help maintain efficient work environment.
+
+There are several groups of labels based on their meaning:
+
+== Issue Status
+
+Use the following labels to indicate what stage of its life cycle an issue or pull request is in.
+
+.Issue Statuses
+[options="header", cols="1,3"]
+|===
+| Label | Description
+
+| In Progress | The assignee is actively working on the issue or is waiting for input from someone. The draft of the issue is not ready.
+| SME Review | An SME is providing a review of the draft. This review comes before the peer review.
+| Peer Review | A peer (a writer) is providing a review of the draft. This review comes after the SME review.
+|===
+
+== Issue Type
+
+Use the following labels to describe what the content of the issue is.
+
+.Issue Types
+[options="header", cols="1,3"]
+|===
+| Label | Description
+
+| Bug | A part of the documentation is factually wrong or outdated, and needs fixing.
+| Enhancement | Documentation can be improved or its scope can be enlarged.
+| Discussion | The issue is likely to cause a lot of questions or a discussion.
+|===
+
+== Issue Relations
+
+The following labels describe the relation between issues and pull requests:
+
+.Issue and Pull Request Relations
+[options="header", cols="1,3"]
+|===
+| Label | Description
+
+| Has PR | A pull request resolving the issue exists and is linked.
+| Follow-up | The issue is a follow-up to a pull request filed by a non-writer.
+|===
+
+== Pull Request Type
+
+Use the following labels to describe what the content of the issue is.
+
+.Pull Request Types
+[options="header", cols="1,3a"]
+|===
+| Label | Description
+
+| Internal | The pull request was submitted by a writer, and should not be accepted until thoroughly proofread and edited.
+| Public | The pull request was submitted by a non-writer contributor. It may be accepted if it meets basic quality criteria, but the person merging the pull request must file a follow-up issue where they describe the necessary changes.
+
+WARNING: The contribution must be reviewed before merging to ensure the changes are factually correct.
+|===
+
+== Runtime, Mission, and Component Labels
+
+Use the following labels to describe what runtimes, mission, or components an issue or pull request concerns. To indicate that an issue is related to a certain booster, combine a runtime and a mission label.
+
+.Runtime Labels
+[options="header", cols="1,3a"]
+|===
+| Label | Description
+
+| WildFly Swarm | The issue or pull request relates to the WildFly Swarm runtime.
+| Spring Boot | The issue or pull request relates to the Spring Boot runtime.
+| Vert.x | The issue or pull request relates to the Eclipse Vert.x runtime.
+|===
+
+.Mission Labels
+[options="header", cols="1,3a"]
+|===
+| Label | Description
+
+| REST API | The issue or pull request relates to the Level-0 REST API Mission.
+| SSO | The issue or pull request relates to the Secure Mission.
+| ConfigMap | The issue or pull request relates to the ConfigMap Mission.
+| CRUD | The issue or pull request relates to the CRUD Mission.
+| Health Check | The issue or pull request relates to the Health Check Mission.
+|===
+
+.Component Labels
+[options="header", cols="1,3a"]
+|===
+| Label | Description
+
+| Frontend | The issue or pull request relates to the frontend HTMLs etc.
+| Infrastructure | The issue or pull request relates to publishing, building, CI, etc.
+|===
+
