@@ -21,4 +21,6 @@ $ git commit -m "Made an update"
 $ git push
 ----
 
+IMPORTANT: When changes are pushed to your GitHub repository, a new build is automatically triggered on your OpenShift project with those changes.
+
 More details on interacting with your booster can be found in your booster's `README.adoc`.
