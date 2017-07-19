@@ -80,11 +80,11 @@ Use the following labels to describe what runtimes, mission, or components an is
 |===
 | Label | Description
 
-| REST API | The issue or pull request relates to the Level-0 REST API Mission.
-| SSO | The issue or pull request relates to the Secure Mission.
-| ConfigMap | The issue or pull request relates to the ConfigMap Mission.
-| CRUD | The issue or pull request relates to the CRUD Mission.
-| Health Check | The issue or pull request relates to the Health Check Mission.
+| REST API | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-HTTP-API[Level-0 REST API] Mission.
+| SSO | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-Secured-HTTP-API[Secure] Mission.
+| ConfigMap | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-ConfigMap[ConfigMap] Mission.
+| CRUD | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-Relational-Database-Backend[CRUD] Mission.
+| Health Check | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-Health-Check[Health Check] Mission.
 |===
 
 .Component Labels
