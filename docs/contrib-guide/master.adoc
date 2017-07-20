@@ -25,7 +25,7 @@ include::topics/contributing-branches.adoc[leveloffset=+3]
 
 // TODO: Making changes
 
-// TODO: Building Locally
+include::topics/contributing-building-locally.adoc[leveloffset=+3]
 
 // TODO: Requirements
 
