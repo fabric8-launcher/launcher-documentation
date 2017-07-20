@@ -9,14 +9,17 @@ include::topics/templates/document-attributes.adoc[]
 
 == Documentation
 
-=== General Information
-
 include::topics/contributing-system-requirements.adoc[leveloffset=+3]
+
+=== Repository
 
 include::topics/contributing-repository-location.adoc[leveloffset=+3]
 
 include::topics/contributing-repository-filesystem-layout.adoc[leveloffset=+3]
 
+include::topics/contributing-branches.adoc[leveloffset=+3]
+
 include::topics/contributing-labels.adoc[leveloffset=+2]
+
 [appendix]
 == Upstream Runtime Project Development Resources
