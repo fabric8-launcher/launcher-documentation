@@ -27,6 +27,8 @@ include::topics/contributing-making-changes.adoc[leveloffset=+3]
 
 include::topics/contributing-building-locally.adoc[leveloffset=+3]
 
+include::topics/contributing-merging-changes.adoc[leveloffset=+3]
+
 // TODO: Requirements
 
 === Issues
@@ -34,8 +36,6 @@ include::topics/contributing-building-locally.adoc[leveloffset=+3]
 include::topics/contributing-github-issue-workflow.adoc[leveloffset=+3]
 
 include::topics/contributing-labels.adoc[leveloffset=+3]
-
-// TODO: Merging Changes
 
 // TODO: INTERNAL: JIRA Issue Workflow
 
