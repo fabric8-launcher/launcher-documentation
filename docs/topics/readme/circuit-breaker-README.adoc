@@ -1,0 +1,62 @@
+= ${mission} - ${runtime} Booster
+
+IMPORTANT: This runs best when deployed to OpenShift in order to use the circuit breaker functionality. For more details on using this booster with a single-node OpenShift cluster, CI/CD deployments, as well as the rest of the runtime, see the link:${guideURL}[${runtime} Runtime Guide].
+
+== Run this Booster on a Single-node OpenShift Cluster
+If you have a single-node OpenShift cluster, such as Minishift or the Red Hat Container Development Kit, link:http://appdev.openshift.io/docs/minishift-installation.html[installed and running], you can also deploy your booster there. A single-node OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
+
+To deploy your booster to a running single-node OpenShift cluster:
+
+. Log in and create your project.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git clone git@github.com:${loggedUser}/${targetRepository}
+
+$ cd ${targetRepository}
+
+$ oc login -u developer -p developer
+
+$ oc new-project MY_PROJECT_NAME
+
+$ ${OSORunCMD}
+----
+
+
+== Interact with this Booster on a Single-node OpenShift Cluster
+
+To interact with your booster while it's running on a Single-node Openshift Cluster, you first need to obtain it's URL:
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get route ${greeting-app-name} -o jsonpath={$.spec.host}
+
+${greeting-app-name}-MY_PROJECT_NAME.192.168.42.158.nip.io
+
+$ oc get route ${name-app-name} -o jsonpath={$.spec.host}
+
+${name-app-name}-MY_PROJECT_NAME.192.168.42.158.nip.io
+----
+
+
+You can use the form at your application's url or you can use the `curl` command:
+
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl http://${greeting-app-name}-MY_PROJECT_NAME.192.168.42.158.nip.io/api/greeting
+{"content":"Hello, World!"}
+
+$ curl -X PUT -H "Content-Type: application/json" -d '{"state": "fail"}' http://${name-app-name}-MY_PROJECT_NAME.192.168.42.158.nip.io/api/state
+
+$ curl http://${greeting-app-name}-MY_PROJECT_NAME.192.168.42.158.nip.io/api/greeting
+{"content":"Hello, Fallback!"}
+
+$ curl -X PUT -H "Content-Type: application/json" -d '{"state": "ok"}' http://${name-app-name}-MY_PROJECT_NAME.192.168.42.158.nip.io/api/state
+
+$ curl http://${greeting-app-name}-MY_PROJECT_NAME.192.168.42.158.nip.io/api/greeting
+{"content":"Hello, World!"}
+----
+
+== CI/CD Deployment
+As part of the process of creating this booster, launch.openshift.io set up a project with a CI/CD deployment of this booster. You can see the status of this deployment in the link:https://manage.openshift.com[OpenShift Online Web console]. You can also learn more about this booster and rest of the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].
