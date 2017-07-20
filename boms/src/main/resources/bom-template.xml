@@ -68,6 +68,13 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <!-- Hopefully commons-logging added here is only temporary -->
+      <!-- Once eap-runtime-artifacts correctly excludes it the below can be removed -->
+      <dependency>
+        <groupId>commons-logging</groupId>
+        <artifactId>commons-logging</artifactId>
+        <version>1.1.1.redhat-3</version>
+      </dependency>
       <dependency>
         <groupId>org.jboss.bom</groupId>
         <artifactId>eap-runtime-artifacts</artifactId>
