@@ -1,0 +1,44 @@
+
+= GitHub Issue Workflow
+
+Each issue in the _appdev-documentation_ repository goes through the following life cycle. In each stage, the descriptions list the actions the following people must take:
+
+.GitHub Issue Life Cycle
+. The issue is filed.
++
+--
+Reporter:: Describe the problem briefly, but in sufficient detail.
+
+Team Member:: Ensure the issue has correct labels. For more information, see xref:_using_github_labels[].
+--
+
+. A team member or a contributor assigns the issue.
++
+--
+Assignee:: Label the issue _In Progress_, address the issue. For more information, see xref:_making_changes[].
+--
+
+. The assignee files a pull request that addresses the issue.
++
+--
+Assignee:: Change the issue label from _In Progress_ to _SME Review_, ask an SME (a subject matter expert) to review the pull request.
+
+SME:: Provide feedback either in the pull request comments or by filing another pull request in the assignee's repository.
+--
+
+. All comments from the SME are addressed.
++
+--
+Assignee:: Change the issue label from _SME Review_ to _Peer Review_. Ask a writer to perform a peer review.
+
+Writer (Peer):: Provide feedback either in the pull request comments or by filing another pull request in the assignee's repository.
+--
+
+. If all comments from the peer have been addressed:
++
+--
+Team Member with Merge Access:: Merge the pull request. If further changes need to be made, file a follow-up issue.
+
+Assignee:: Close the issue if it has not been closed automatically. Remove the _Peer Review_ label.
+--
+

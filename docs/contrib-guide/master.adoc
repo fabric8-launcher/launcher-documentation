@@ -31,7 +31,7 @@ include::topics/contributing-building-locally.adoc[leveloffset=+3]
 
 === Issues
 
-// TODO: GitHub Issue Workflow
+include::topics/contributing-github-issue-workflow.adoc[leveloffset=+3]
 
 include::topics/contributing-labels.adoc[leveloffset=+3]
 
