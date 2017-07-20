@@ -9,7 +9,9 @@ include::topics/templates/document-attributes.adoc[]
 
 == Documentation
 
-include::contributing-system-requirements[leveloffset=+2]
+include::contributing-system-requirements.adoc[leveloffset=+2]
+
+include::contributing-repository-location.adoc[leveloffset=+2]
 
 include::topics/contributing-labels.adoc[leveloffset=+2]
 

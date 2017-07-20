@@ -1,0 +1,11 @@
+
+= Repository Location
+
+The repository for the mission and booster documentation, the Launchpad front page, and this contributor guide is hosted on GitHub in the link:https://github.com/openshiftio/appdev-documentation[openshiftio/appdev-documentation] repository.
+
+The runtime documentation repositories are hosted on the following locations:
+
+* WildFly Swarm: link:https://github.com/wildfly-swarm/wildfly-swarm-reference-guide[wildfly-swarm/wildfly-swarm-reference-guide] (reference guide) and link:https://github.com/wildfly-swarm/wildfly-swarm-users-guide[wildfly-swarm/wildfly-swarm-users-guide] (user's guide)
+* Spring Boot: link:https://github.com/spring-projects/spring-boot[spring-projects/spring-boot] in the `spring-boot-docs` subdirectory.
+* Eclipse Vert.x: link:https://github.com/eclipse/vert.x[eclipse/vert.x] in the `src/main/asciidoc` subdirectory.
+
