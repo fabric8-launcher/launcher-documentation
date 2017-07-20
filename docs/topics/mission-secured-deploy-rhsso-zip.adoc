@@ -1,6 +1,9 @@
 [[mission-secured-deploy-rhsso-zip]]
 = Deploy RH SSO to your {OpenShiftLocal} Manually
 
+:sso-app-name: secure-sso
+:sso-auth-url: https://{sso-app-name}-MY_PROJECT_NAME.192.168.42.158.nip.io/auth
+
 == Download the Secured Booster ZIP File from your {launcher} Application
 
 . Navigate to your {launcher} application running on your {OpenShiftLocal} and click _Prepare for Takeoff_.
@@ -23,18 +26,18 @@ $ mvn fabric8:deploy
 
 [[SSO_AUTH_SERVER_URL]]
 == Determine the SSO_AUTH_SERVER_URL Value
-For the Secured REST booster, you need to configure the {RHSSO} authorization endpoint. The booster project generates 
+For the Secured REST booster, you need to configure the {RHSSO} authorization endpoint. The booster project generates
 `target/sso-client.jar` when you built the {RHSSO} server. You can run `target/sso-client.jar` from the command line to determine the `SSO_AUTH_SERVER_URL`.
 
-[source,bash,options="nowrap"]
+[source,bash,options="nowrap",subs="attributes+"]
 ----
 $ java -jar target/sso-client.jar --displaySSOURL
 Successful oc get routes: Yes
-Using auth server URL: https://secure-sso-sso.e8ca.engint.openshiftapps.com/auth
-Available application endpoint names: [secured-vertx-rest, secured-swarm-rest, secured-springboot-rest]
+Using auth server URL: {sso-auth-url}
+Available application endpoint names: []
 ----
 
-The line starting with `Using auth server URL:` is the line that provides the `SSO_AUTH_SERVER_URL`. In this case it is `https://secure-sso-sso.e8ca.engint.openshiftapps.com/auth`. You will need this value later.
+The line starting with `Using auth server URL:` is the line that provides the `SSO_AUTH_SERVER_URL`. In this case it is `{sso-auth-url}`. You will need this value later.
 
 == Deploy Booster to your {OpenShiftLocal}
 
