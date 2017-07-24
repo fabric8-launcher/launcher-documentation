@@ -9,7 +9,7 @@ secured-springboot-rest,secured-springboot-rest-myproject.192.168.99.100.nip.io,
 sso,sso-myproject.192.168.99.100.nip.io,,sso,<all>,
 |===
 
-The Secured booster endpoint name is also available using the Java client:
+Alternatively, obtain the Secured booster endpoint name using the Java client:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -20,6 +20,14 @@ Using auth server URL: https://secure-sso-myproject.192.168.99.100.nip.io/auth
 Available application endpoint names: [secured-springboot-rest] <1>
 ----
 <1> The line beginning with `Available application endpoint names:` shows the non-SSO related application names. In this case, it is `secured-springboot-rest`.
+
+.Obtain the Access Token Manually
+Obtain the access token in JSON format and use the `jq` CLI tool to extract the token value. You can store the value inside an environmental variable, such as `MY_TOKEN`:
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+MY_TOKEN=$(curl -s -k -X POST https://secure-sso-{project-name}.192.168.99.100.nip.io/auth/realms/master/protocol/openid-connect/token -d client_id=demoapp -d client_secret=1daa57a2-b60e-468b-a3ac-25bd2dc2eadc -d grant_type=password -d username=alice -d password=password | jq -r .access_token)
+----
 
 = Example Client Output
 
@@ -38,6 +46,14 @@ Requesting greeting...
 }
 ----
 
+Alternatively, make a request against the `/greeting` endpoint using your token for authentication:
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+curl -k -v http://secured-springboot-rest-{project-name}-latest.192.168.99.100.nip.io/greeting -H "Authorization:Bearer $MY_TOKEN"
+----
+
+
 .Authentication with Default User Using `--from` Parameter
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -52,6 +68,14 @@ Requesting greeting...
   "content" : "Hello, Scott!"
 }
 ----
+
+Alternatively, make a request against the `/greeting` endpoint passing a custom name as a parameter:
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+curl -kv http://secured-springbot-rest-{project-name}.192.168.99.100.nip.io/greeting?name=Scott -H "Authorization:Bearer $MY_TOKEN"
+----
+
 
 .Authentication with Default User Using Invalid Password
 [source,bash,options="nowrap",subs="attributes+"]
