@@ -36,5 +36,5 @@
 <2> A npm script for deploying this application to {OpenShiftOnline}.  Run with "npm run openshift".  The "osc.strictSSL" option allows us to deploy to local {OpenShiftOnline} instances with self-sign certificates.
 <3> A npm script for running unit tests.  Run with "npm run test".
 <4> Specifies the files to be included in the binary that is uploaded to {OpenShiftOnline}.
-<5> A list of dependecies to be installed from the npm registry.
-<6> A list of development dependecies to be installed from the npm registry.  These are used for testing and deployment to {OpenShiftOnline}.
+<5> A list of dependencies to be installed from the npm registry.
+<6> A list of development dependencies to be installed from the npm registry.  These are used for testing and deployment to {OpenShiftOnline}.
