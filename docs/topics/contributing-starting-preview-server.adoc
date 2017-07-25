@@ -1,0 +1,34 @@
+
+= Starting Preview Server
+
+You can preview the Launchpad locally. To do that, perform the following steps:
+
+[discrete]
+== Prerequisites
+
+* Docker installed.
+* Docker daemon running.
+
+[discrete]
+== Procedure
+
+.Running Preview Server Locally
+. As a regular user, run the `$REPO_HOME/scripts/previewDocsServer.sh` script from the repository's base directory:
++
+--
+[source,options="nowrap"]
+----
+$ ./scripts/previewDocsServer.sh
+----
+
+NOTE: You will be asked to provide authentication for `sudo` to operate Docker. Being a member of the `docker` group is not a good security practice--see the Related Information section for more information.
+--
+. Navigate to `localhost:8080` in your browser.
+
+[discrete]
+== Related Information
+
+* Official link:https://www.docker.com/get-docker[Docker installation documentation].
+* Docker group security:
+** Project Atomic: link:https://www.projectatomic.io/blog/2015/08/why-we-dont-let-non-root-users-run-docker-in-centos-fedora-or-rhel/[Why we don't let non-root users run Docker in CentOS, Fedora, or RHEL].
+** On Docker Security: link:https://www.andreas-jung.com/contents/on-docker-security-docker-group-considered-harmful[Docker group considered harmful].
