@@ -16,6 +16,8 @@ minishift v1.1.0
 
 . Determine the command to add the correct version of the `oc` binary to your path and run the command.
 +
+WARNING: The below command may return `Cannot find OpenShift client binary.` if you have never started {Minishift}. To resolve this issue, you need to allow {Minishift} to start up at least once (`minishift start`). Once {Minishift} has completed it's initial startup, you need to stop it (`minishift stop`) before proceeding.
++
 .Example Result of `oc-env`
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -28,6 +30,7 @@ $ eval $(minishift oc-env)
 ----
 +
 WARNING: You must have the `oc` binary installed and it *MUST* match the version of {Minishift} you are using.
+
 
 . Verify the `oc` CLI tools is on your path.
 +
