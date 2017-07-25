@@ -14,7 +14,7 @@ image::minishift_projectconfig.png[New Project Config]
 +
 image::minishift_yamljson.png[Import YAML/JSON]
 
-. Paste the contents from link:{link-launcher-yaml}[here] into the text box provided.
+. Copy the contents of link:{link-launcher-yaml}[the current {launcher} template from the GitHub repository^] and paste it into the text box provided.
 +
 NOTE: We are working on removing this step entirely, but for now it is required. The full details and a current status are available link:https://github.com/openshiftio/launchpad-templates/issues/2[on GitHub].
 
@@ -27,14 +27,14 @@ image::minishift_processtemplate.png[Process Template]
 ** _Your GitHub Mission Control access token_ is your personal access token for GitHub.
 ** The _Target OpenShift Console URL_ is the OpenShift Console URL from your {OpenShiftLocal}. This should be the same base URL you are currently using to complete the form, for example `https://192.168.42.152:8443`.
 ** OpenShift username and password from your {OpenShiftLocal}, for example `developer` for the username and password.
-** _KeyCloak URL_ and _KeyCloak Realm_ should be cleared out
+** _KeyCloak URL_ and _KeyCloak Realm_ **MUST** be cleared out.
 +
 WARNING: You must clear these fields out for the {launcher} application on your {OpenShiftLocal} to be configured correctly.
 
 ** _Catalog Git Repository_ and _Catalog Git Reference_ should be generally left as-is, unless you are developing against a specific fork you would like to use.
-** _{launcher} Frontend Host_ must be updated to replace `$PROJECTNAME` with the name of your project. You also need to update `$HOSTNAMEORIP` in the string to the IP address of your OpenShift Console URL. This example uses `+++192.168.42.152+++` and `{launcher}`.
-+
-WARNING: Before proceeding to the next steps, confirm all the fields are correct.
+** _{launcher} Frontend Host_ must be entered. Usually this takes the form of `launchpad-frontend-$PROJECTNAME.$HOSTNAMEORIP.nip.io`, replacing `$PROJECTNAME` with the name of your project and `$HOSTNAMEORIP` with the IP address of your OpenShift Console URL. This example uses `my-launcher` and `+++192.168.42.152+++` to make `launchpad-frontend-my-launcher.192.168.42.152.nip.io`.
+
+. Before proceeding to the next steps, confirm all the fields are correct. Also confirm that _KeyCloak URL_ and _KeyCloak Realm_ **have been cleared out**.
 
 . Click `Create` to complete the setup. You will see a screen confirming that the application has been created. Click _Continue to overview_.
 
