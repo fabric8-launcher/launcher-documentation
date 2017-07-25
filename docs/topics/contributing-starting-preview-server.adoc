@@ -1,7 +1,7 @@
 
 = Starting Preview Server
 
-You can preview the Launchpad locally. To do that, perform the following steps:
+You can preview the documentation site locally. To do that, perform the following steps:
 
 [discrete]
 == Prerequisites
