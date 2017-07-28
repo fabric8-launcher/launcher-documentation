@@ -1,1 +1,3 @@
+Mission proficiency level: *{proficiency-foundational}*. For more information, see xref:proficiency_levels[].
+
 The ConfigMap Mission provides a basic example of using ConfigMap to take advantage of external configuration sources.

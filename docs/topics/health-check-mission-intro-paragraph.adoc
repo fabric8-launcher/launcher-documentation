@@ -1,1 +1,3 @@
+Mission proficiency level: *{proficiency-foundational}*. For more information, see xref:proficiency_levels[].
+
 When you deploy an application, its important to know if it is available and if it can start handling incoming requests. Implementing the _health check_ pattern allows you to monitor the health of an application, which includes if an application is available and whether it is able to service requests.

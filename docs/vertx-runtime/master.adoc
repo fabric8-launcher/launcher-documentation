@@ -141,3 +141,6 @@ include::topics/http-api-vertx-pom.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/vertx-dev-guide-additional-resources.adoc[leveloffset=+1]
+
+[appendix]
+include::topics/appendix-proficiency-levels.adoc[leveloffset=+1]
