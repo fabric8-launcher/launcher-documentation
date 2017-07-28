@@ -145,3 +145,6 @@ include::topics/http-api-wf-swarm-pom.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/wf-swarm-dev-guide-additional-resources.adoc[leveloffset=+1]
+
+[appendix]
+include::topics/appendix-proficiency-levels.adoc[leveloffset=+1]

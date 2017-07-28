@@ -147,3 +147,6 @@ include::topics/http-api-spring-boot-pom.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/sb-tomcat-dev-guide-additional-resources.adoc[leveloffset=+1]
+
+[appendix]
+include::topics/appendix-proficiency-levels.adoc[leveloffset=+1]
