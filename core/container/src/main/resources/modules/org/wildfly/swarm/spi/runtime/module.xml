@@ -10,6 +10,7 @@
     <artifact name="org.wildfly.swarm:spi:${project.version}">
       <filter>
         <include-set>
+          <path name="META-INF"/>
           <path name="org/wildfly/swarm/spi/runtime"/>
           <path name="org/wildfly/swarm/spi/runtime/annotations"/>
         </include-set>

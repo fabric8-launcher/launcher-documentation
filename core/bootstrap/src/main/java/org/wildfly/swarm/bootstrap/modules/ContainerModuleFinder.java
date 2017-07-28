@@ -32,6 +32,17 @@ public class ContainerModuleFinder extends AbstractSingleModuleFinder {
                         ClassFilters.acceptAll(),
                         null,
                         ModuleIdentifier.create("org.wildfly.swarm.spi"), false));
+        // Workaround for ENTSWM-132 - also add dependency to the spi runtime slot
+        builder.addDependency(
+                DependencySpec.createModuleDependencySpec(
+                        PathFilters.acceptAll(),
+                        PathFilters.acceptAll(),
+                        PathFilters.acceptAll(),
+                        PathFilters.acceptAll(),
+                        ClassFilters.acceptAll(),
+                        ClassFilters.acceptAll(),
+                        null,
+                        ModuleIdentifier.create("org.wildfly.swarm.spi", RUNTIME_SLOT), false));
 
         builder.addDependency(
                 DependencySpec.createModuleDependencySpec(
