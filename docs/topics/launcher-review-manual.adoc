@@ -1,7 +1,20 @@
 :icons: font
+:runtime: ${runtime}
 
-Your project is available for download and is ready build and deploy locally. Refer to the mission details in your runtime's guide for more information on building, deploying, and interacting with your booster.
+ifeval::["{runtime}" == "Spring Boot"]
+:guideURL: http://appdev.openshift.io/docs/spring-boot-runtime.html
+:guideName: Spring Boot Tomcat Runtime Guide
+endif::[]
 
-* link:http://appdev.openshift.io/docs/spring-boot-runtime.html[Spring Boot Tomcat Runtime Guide]
-* link:http://appdev.openshift.io/docs/vertx-runtime.html[Eclipse Vert.x Runtime Guide]
-* link:http://appdev.openshift.io/docs/wf-swarm-runtime.html[WildFly Swarm Runtime Guide]
+ifeval::["{runtime}" == "Eclipse Vert.x"]
+:guideURL: http://appdev.openshift.io/docs/vertx-runtime.html
+:guideName: Eclipse Vert.x Runtime Guide
+endif::[]
+
+ifeval::["{runtime}" == "WildFly Swarm"]
+:guideURL: http://appdev.openshift.io/docs/wf-swarm-runtime.html
+:guideName: WildFly Swarm Runtime Guide
+endif::[]
+
+
+Your project is available for download and is ready to build and deploy locally. Refer to the mission details in the link:{guideURL}[{guideName}^] for more information on building, deploying, and interacting with your booster.

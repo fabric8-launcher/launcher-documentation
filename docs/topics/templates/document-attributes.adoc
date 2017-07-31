@@ -21,6 +21,7 @@
 :WildFlySwarm: WildFly Swarm
 :SpringBoot: Spring Boot Tomcat
 :VertX: Eclipse Vert.x
+:NodeJS: Node.js
 :launcher: launch.openshift.io
 :RHSSO: Red Hat SSO
 
@@ -33,6 +34,7 @@
 :mission-http-api-spring-boot-tomcat-guide-name: {name-mission-http-api} Mission - {SpringBoot} Booster
 :mission-http-api-vertx-guide-name: {name-mission-http-api} Mission - {VertX} Booster
 :mission-http-api-wf-swarm-guide-name: {name-mission-http-api} Mission - {WildFlySwarm} Booster
+:mission-http-api-nodejs-guide-name: {name-mission-http-api} Mission - {NodeJS} Booster
 :mission-configmap-spring-boot-tomcat-guide-name: ConfigMap Mission - {SpringBoot} Booster
 :mission-configmap-vertx-guide-name: ConfigMap Mission - {VertX} Booster
 :mission-configmap-wf-swarm-guide-name: ConfigMap Mission - {WildFlySwarm} Booster
@@ -58,6 +60,7 @@
 :spring-boot-runtime-guide-name: {SpringBoot} Runtime Guide
 :vertx-runtime-guide-name: {VertX} Runtime Guide
 :wf-swarm-runtime-guide-name: {WildFlySwarm} Runtime Guide
+:nodejs-runtime-guide-name: {NodeJS} Runtime Guide
 
 :MinishiftVersion: 1.1.0
 :CDKVersion: 3.0.0
@@ -65,6 +68,7 @@
 :link-http-api-level-0-spring-boot-tomcat-booster: https://github.com/snowdrop/rest_springboot-tomcat
 :link-http-api-level-0-vertx-booster: https://github.com/openshiftio-vertx-boosters/vertx-http-booster
 :link-http-api-level-0-wf-swarm-booster: https://github.com/wildfly-swarm-openshiftio-boosters/rest-http
+:link-http-api-level-0-nodejs-booster: https://github.com/bucharest-gold/nodejs-rest-http
 :link-openshift-local-guide: https://github.com/minishift/minishift#installation
 
 :link-configmap-spring-boot-tomcat-booster: https://github.com/snowdrop/rest_configmap_springboot-tomcat
@@ -76,6 +80,7 @@
 :link-spring-boot-runtime-guide: /docs/spring-boot-runtime.html
 :link-vertx-runtime-guide: /docs/vertx-runtime.html
 :link-wf-swarm-runtime-guide: /docs/wf-swarm-runtime.html
+:link-nodejs-runtime-guide: /docs/nodejs-runtime.html
 
 
 :link-mission-http-api-spring-boot-tomcat: {link-spring-boot-runtime-guide}#mission-http-api-spring-boot-tomcat
@@ -96,7 +101,7 @@
 :link-mission-health-check-wf-swarm: {link-wf-swarm-runtime-guide}#mission-health-check-wf-swarm
 :link-mission-secured-wf-swarm: {link-wf-swarm-runtime-guide}#mission-secured-wf-swarm
 
-
+:link-mission-http-api-nodejs: {link-nodejs-runtime-guide}#mission-http-api-nodejs
 
 
 :link-oso-auth: OPENSHIFT_URL

@@ -1,0 +1,40 @@
+[[breakdown_pom]]
+= Breakdown of Package.json Properties
+
+.link:https://github.com/bucharest-gold/nodejs-rest-http/blob/master/package.json[nodejs-rest-http/package.json]
+[source,json,options="nowrap",subs="attributes+"]
+----
+{
+  "name": "nodejs-rest-http",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "PORT=8080 node ./bin/www", <1>
+    "openshift": "nodeshift --osc.strictSSL=false", <2>
+    "test": "tape test/*-test.js" <3>
+  },
+  "files": [ <4>
+    "package.json",
+    "app.js",
+    "public",
+    "bin"
+  ],
+  "dependencies": { <5>
+    "body-parser": "~1.17.1",
+    "debug": "~2.6.3",
+    "express": "^4.15.3"
+  },
+  "devDependencies": { <6>
+    "nodeshift": "^0.3.0",
+    "supertest": "^3.0.0",
+    "tape": "^4.6.3"
+  }
+}
+----
+
+<1> A npm script for starting this application.  Run with "npm start".
+<2> A npm script for deploying this application to {OpenShiftOnline}.  Run with "npm run openshift".  The "osc.strictSSL" option allows us to deploy to local {OpenShiftOnline} instances with self-sign certificates.
+<3> A npm script for running unit tests.  Run with "npm run test".
+<4> Specifies the files to be included in the binary that is uploaded to {OpenShiftOnline}.
+<5> A list of dependencies to be installed from the npm registry.
+<6> A list of development dependencies to be installed from the npm registry.  These are used for testing and deployment to {OpenShiftOnline}.

@@ -16,6 +16,8 @@ minishift v1.1.0
 
 . Determine the command to add the correct version of the `oc` binary to your path and run the command.
 +
+WARNING: The below command may return `Cannot find OpenShift client binary.` if you have never started {Minishift}. To resolve this issue, you need to allow {Minishift} to start up at least once (`minishift start`). Once {Minishift} has completed it's initial startup, you need to stop it (`minishift stop`) before proceeding.
++
 .Example Result of `oc-env`
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -29,6 +31,7 @@ $ eval $(minishift oc-env)
 +
 WARNING: You must have the `oc` binary installed and it *MUST* match the version of {Minishift} you are using.
 
+
 . Verify the `oc` CLI tools is on your path.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -40,12 +43,12 @@ features: Basic-Auth GSSAPI Kerberos SPNEGO
 ----
 
 
-== Install the {CDK}
+== Install {CDK}
 
-The installation steps for the {CDK} are available link:https://access.redhat.com/documentation/en-us/red_hat_container_development_kit/3.0/html-single/installation_guide/[in the {CDK} Installation Guide] and vary by platform.
+The installation steps for {CDK} are available link:https://access.redhat.com/documentation/en-us/red_hat_container_development_kit/3.0/html-single/installation_guide/[in {CDK} Installation Guide] and vary by platform.
 
 
-. Verify you have the {CDK} and the `oc` CLI tools installed and configured.
+. Verify you have {CDK} and the `oc` CLI tools installed and configured.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -64,4 +67,4 @@ kubernetes v1.5.2+43a9be4
 features: Basic-Auth
 ----
 +
-WARNING: You must use the `oc` binary installed with the {CDK}.
+WARNING: You must use the `oc` binary installed with {CDK}.

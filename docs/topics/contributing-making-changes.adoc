@@ -1,0 +1,27 @@
+
+= Making Changes
+
+When making contributions, follow the standard link:https://guides.github.com/introduction/flow/[GitHub flow]. Below, you will find more details about the steps that are required in the _appdev-documentation_ repository.
+
+[discrete]
+== Prerequisites
+
+* A GitHub account with GPG. For more information, see xref:_accounts[].
+
+[discrete]
+== Procedure
+
+.Contributor Workflow
+. Create a topic branch in your personal fork of the _appdev-documentation_ repository. If you want to resolve a particular issue with your changes, name the branch `issue-$ID`, where `$ID` is the numerical ID of the issue.
+. Commit and push your changes to the topic branch. Verify your changes are rendered correctly by previewing the build locally. For more information, see xref:_building_locally[].
+. Create a pull request against the branch you based your contribution off. Ensure you also:
++
+--
+.. Label the pull request appropriately. For more information about labels, see xref:_using_github_labels[].
+.. Reference the issue that your pull request resolves in the description, using the formulation `resolves $ID`, where `$ID` is the numerical ID of the issue. Doing this automatically closes the issue when the pull request is accepted.
+
+A team member (a reviewer) will review your changes for factual and stylistic correctness. If the changes are acceptable, the reviewer merges them and closes the pull request. The reviewer may ask you to make further modifications if necessary, or file a pull request against your branch with their suggested modifications.
+
+NOTE: Do not worry that your pull request was closed, the changes are merged manually as opposed to the GitHub web UI.
+--
+

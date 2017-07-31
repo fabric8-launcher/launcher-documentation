@@ -104,3 +104,4 @@ include::topics/templates/document-attributes.adoc[]
 . Open the generated html file to ensure everything looks correct.
 
 You have now created the scaffolding for a new guide. When you are ready for some initial review and feedback, file a pull request to `upstream/master`.
+

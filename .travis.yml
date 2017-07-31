@@ -1,0 +1,6 @@
+language: ruby
+before_install:
+    - sudo apt-get install libxml2-utils
+install:
+    - gem install asciidoctor
+script: ./scripts/buildGuides-CI.sh

@@ -1,4 +1,17 @@
-Developing cloud native applications and services is different than developing on-premise, monolithic applications. When learning how to create cloud native applications and services, developers need a local environment that matches the target cloud environment. The {launcher} application provides a painless way for developers to create functional, example applications called missions and easily build and deploy them to a cloud environment. The missions are working applications that showcase different fundamental pieces of building cloud native applications and services, such as creating HTTP APIs, interoperating with a database, or implementing the health check pattern. Each mission is comprised of different boosters that show how to implement the same mission in different runtimes and can be updated or extended for your own use case. Using {launcher} with the missions keeps you focused on learning to develop applications and services for the target cloud environment from the beginning.
+When you create cloud-native applications and services, you need a hosted or local development environment that matches the target cloud environment. This enables you to encounter and resolve deployment and environment issues in your applications and services in your local environment before deploying them to your target cloud environment. 
 
 [.lead]
-This guide takes you through the developer's journey of deploying a booster application in several ways.
+{OpenShiftOnline} provides a hosted solution for such an environment. A {OpenShiftLocal} provides an out-of-the-box solution for setting up such an environment on your local machine without the need for extensive setup and configuration. 
+
+[.lead]
+The {launcher} application gives you a hassle-free way of creating functional example applications called Missions as well as easy way to build and deploy those Missions a cloud environment. The Missions are designed to showcase various fundamental pieces of building cloud-native applications and services, such as:
+
+[.lead]
+* Creating HTTP APIs
+* Integrating your application with a relational database to provide persistent data storage
+* Implementing the health check and circuit-breaker patterns to ensure that your services can withstand a traffic overload and network issues
+* Externalizing the configuration of your applications to make them more secure and easier to scale
+* Securing your applications with {RHSSO} to provide authentication and authorization functionality
+
+[.lead]
+Each mission is comprised of different Boosters that show how to implement the same mission in different runtimes and any booster can be updated or extended for your own use case. The {launcher} application also handles creating an SCM repository in GitHub as well as configuring CI/CD between that repository and the OpenShift platform. This guide takes you through the developer's journey of deploying a Booster application in several ways.
