@@ -44,7 +44,7 @@ NOTE: The following steps use the command line to interact with the service. Alt
 +
 [source,bash,options="nowrap",subs="attributes"]
 ----
-$ curl http://{app-name}-greeting-{project-name}.1ab5.starter-us-east-1.openshiftapps.com/api/greeting
+$ curl http://{app-name}-greeting-{project-name}.{oso-route-hostname}/api/greeting
 {"content":"Hello, World!"}
 ----
 +
@@ -59,14 +59,14 @@ $ curl http://{app-name}-greeting-{project-name}.1ab5.starter-us-east-1.openshif
 +
 [source,bash,options="nowrap",subs="attributes"]
 ----
-$ curl -X PUT -H "Content-Type: application/json" -d '{"state": "fail"}' http://{app-name}-name-{project-name}.1ab5.starter-us-east-1.openshiftapps.com/api/state
+$ curl -X PUT -H "Content-Type: application/json" -d '{"state": "fail"}' http://{app-name}-name-{project-name}.{oso-route-hostname}/api/state
 ----
 +
 . The Circuit Breaker state indicator in the web interface changes from `CLOSED` to `OPEN` and the Circuit Breaker issues the fallback response when you invoke the `/api/greeting` endpoint.
 +
 [source,bash,option="nowrap",subs="attributes+"]
 ----
-$ curl http://{app-name}-greeting-{project-name}.1ab5.starter-us-east-1.openshiftapps.com/api/greeting
+$ curl http://{app-name}-greeting-{project-name}.{oso-route-hostname}/api/greeting
 {"content":"Hello, Fallback!"}
 ----
 +
@@ -79,7 +79,7 @@ To do this you can:
 +
 [source,bash,options="nowrap",subs="attributes"]
 ----
-$ curl -X PUT -H "Content-Type: application/json" -d '{"state": "ok"}' http://{app-name}-name-{project-name}.1ab5.starter-us-east-1.openshiftapps.com/api/state
+$ curl -X PUT -H "Content-Type: application/json" -d '{"state": "ok"}' http://{app-name}-name-{project-name}.{oso-route-hostname}/api/state
 ----
 +
 . Invoke the `/api/greeting` endpoint again.
@@ -87,7 +87,7 @@ If the `{app-name}-name` service is available, you should receive the `Hello Wor
 +
 [source,bash,options="nowrap",subs="attributes"]
 ----
-$ curl http://{app-name}-greeting-{project-name}.1ab5.starter-us-east-1.openshiftapps.com/api/greeting
+$ curl http://{app-name}-greeting-{project-name}.{oso-route-hostname}/api/greeting
 {"content":"Hello, World!"}
 ----
 

@@ -44,7 +44,7 @@ $ oc new-app --template=hystrix-dashboard
 --
 $ oc get route hystrix-dashboard
 NAME                HOST/PORT                                                    PATH      SERVICES            PORT      TERMINATION   WILDCARD
-hystrix-dashboard   hystrix-dashboard-{project-name}.192.168.42.158.nip.io                 hystrix-dashboard   <all>                   None
+hystrix-dashboard   hystrix-dashboard-{project-name}.{osl-route-hostname}                 hystrix-dashboard   <all>                   None
 --
 +
 . To access the Dashboard, open the Dashboard application route URL in your browser. Alternatively, you can navigate to the _Overview_ screen in the Web console and click the route URL in the header above the pod containing your Hystrix Dashboard application.

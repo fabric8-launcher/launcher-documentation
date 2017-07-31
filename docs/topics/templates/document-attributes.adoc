@@ -111,5 +111,13 @@
 :link-launcher-yaml: /latest-launcher-template
 :link-launcher-oso: https://launch.openshift.io/wizard/
 
+// Minishift route URL e.g: 192.168.42.152.nip.io
+:osl-route-hostname: LOCAL_OPENSHIFT_HOSTNAME
+
+// Minishift access URL e.g: 192.168.42.152.:8443
+:osl-login-url: LOCAL_OPENSHIFT_URL:PORT
+
+// OSO hostname e.g: 1ab5.starter-us-east-1.openshiftapps.com
+:oso-route-hostname: OPENSHIFT_ONLINE_HOSTNAME
 
 :link-launcher-install-script: https://raw.githubusercontent.com/openshiftio/appdev-documentation/production/scripts/deploy_launchpad_mission.sh
