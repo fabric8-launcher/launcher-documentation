@@ -57,10 +57,10 @@ Both the `{app-name}-greeting` and `{app-name}-name` pods should have a status o
 ----
 $ oc get routes
 NAME                     HOST/PORT                                                        PATH      SERVICES              PORT      TERMINATION   WILDCARD
-{app-name}-greeting   {app-name}-{project-name}.1ab5.starter-us-east-1.openshiftapps.com            {app-name}-greeting   8080                    None
-{app-name}-name       {app-name}-{project-name}.1ab5.starter-us-east-1.openshiftapps.com            {app-name}-name       8080                    None
+{app-name}-greeting   {app-name}-{project-name}.{oso-route-hostname}            {app-name}-greeting   8080                    None
+{app-name}-name       {app-name}-{project-name}.{oso-route-hostname}            {app-name}-name       8080                    None
 ----
 +
-A pod's route information gives you the base URL which you use to access it. In the example above, you would use `+++http://{app-name}-{project-name}.1ab5.starter-us-east-1.openshiftapps.com+++` as the base URL to access the applications.
+A pod's route information gives you the base URL which you use to access it. In the example above, you would use `+++http://{app-name}-{project-name}.{oso-route-hostname}+++` as the base URL to access the applications.
 
 include::booster-deploy-openshift-local.adoc[leveloffset=+1]

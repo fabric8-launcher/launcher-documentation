@@ -12,7 +12,7 @@
 -- Server Information ...
    OpenShift server started.
    The server is accessible via web console at:
-       https://192.168.99.100:8443
+       https://192.168.42.152:8443
 
    You are logged in as:
        User:     developer
@@ -29,4 +29,4 @@ navigate to it in {OpenShiftLocal} and use it to create and launch your booster.
 
 == Deploy Using the `oc` CLI Client
 
-You can deploy your booster to {OpenShiftLocal} by following the same process as deploying a booster to {OpenShiftOnline}, but instead of using a {OpenShiftOnline} URL, use your {OpenShiftLocal} URL to access the Web console and with the `oc` CLI client. 
+You can deploy your booster to {OpenShiftLocal} by following the same process as deploying a booster to {OpenShiftOnline}, but instead of using a {OpenShiftOnline} URL, use your {OpenShiftLocal} URL to access the Web console and with the `oc` CLI client.

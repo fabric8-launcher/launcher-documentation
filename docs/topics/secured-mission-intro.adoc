@@ -27,7 +27,7 @@ The `alice` user has a password of `password` and is the canonical application. 
   "exp": 1489698336,
   "nbf": 0,
   "iat": 1489698276,
-  "iss": "https://secure-sso-sso.192.168.99.100.nip.io/auth/realms/master", <1>
+  "iss": "https://secure-sso-sso.{osl-route-hostname}/auth/realms/master", <1>
   "aud": "demoapp",
   "sub": "c0175ccb-0892-4b31-829f-dda873815fe8",
   "typ": "Bearer",

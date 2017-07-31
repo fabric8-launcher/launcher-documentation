@@ -1,3 +1,4 @@
+// name variable defined locally, because it is only used in this topic
 :nexus-project-name: NEXUS_PROJECT_NAME
 
 = Using a Nexus Repository Server With the {launcher} Application on your {OpenShiftLocal}
@@ -49,7 +50,7 @@ You also need to use version 3.6.0-alpha.1 or later of the `oc` CLI tool.
 +
 [source,bash,subs="attributes+"]
 --
-oc login https://192.168.42.10:8443 -u developer -p developer
+oc login https://{osl-login-url} -u developer -p developer
 --
 +
 . You can reuse the Docker daemon instance used by {OpenShiftLocal} to download the latest versions of the Nexus Docker container image.
@@ -104,7 +105,7 @@ oc get routes
 [source,bash,subs="attributes+"]
 ----
 NAME      HOST/PORT                              PATH      SERVICES   PORT       TERMINATION
-nexus     nexus-{nexus-project-name}.192.168.42.106.nip.io             nexus      8080:8080
+nexus     nexus-{nexus-project-name}.{osl-route-hostname}             nexus      8080:8080
 ----
 +
 [NOTE]
@@ -119,7 +120,7 @@ Nexus comes pre-configured for the Maven Central Repository, but you may need ot
 oc project {project-name}
 --
 +
-. Assign the `admin` role to your Jenkins instance and the `edit` permissions to your OpenShift account.
+. Assign the `admin` role to your Jenkins application and the `edit` permissions to your OpenShift account.
 Skip this step if you have already assigned these permissions.
 +
 [source,bash,subs="attributes+"]
@@ -138,16 +139,16 @@ oc get routes jenkins
 [source,bash,subs="attributes+"]
 --
 NAME      HOST/PORT                                         PATH      SERVICES   PORT      TERMINATION
-jenkins   jenkins-{app-name}-{project-name}.192.168.42.106.nip.io             jenkins    <all>     edge/Redirect
+jenkins   jenkins-{app-name}-{project-name}.{osl-route-hostname}             jenkins    <all>     edge/Redirect
 --
 +
-. Navigate to `jenkins-{app-name}-{project-name}.192.168.42.106.nip.io/configure`, and log in using your OpenShift credentials to access the Jenkins configuration page.
+. Navigate to `jenkins-{app-name}-{project-name}.{osl-route-hostname}/configure`, and log in using your OpenShift credentials to access the Jenkins configuration page.
 +
-. In the section titled _Kubernetes Pod Template_,  click on  on _Add Evironmental Variable_ and choose the _Global Environmental Variable_ option from the drop-down menu.
+. Go to the section titled _Kubernetes Pod Template_,  click on _Add Evironmental Variable_, and select _Global Environmental Variable_ option from the drop-down menu.
 +
-. Define a new environment variable with the following properties:
+. Define a new environment variable:
 * Name: `MAVEN_MIRROR_URL`
-* Value: `nexus-{nexus-project-name}.192.168.42.106.nip.io/nexus/content/groups/public/`
+* Value: `nexus-{nexus-project-name}.{osl-route-hostname}/nexus/content/groups/public/`
 +
 [NOTE]
 --
@@ -171,5 +172,3 @@ KNOWN ISSUE: Redeploying your instance of Jenkins server causes other ongoing bu
 --
 +
 .  Navigate to the project that contains your Booster and use the Web console to go to _Builds_ > _Pipelines_ and click _Start Pipeline_ to rebuild your Booster application.
-+
-Your Jenkins instance is now configured to use the Nexus server as a proxy for retrieving artifacts form the Maven Central Repository when a pipeline build is triggered.

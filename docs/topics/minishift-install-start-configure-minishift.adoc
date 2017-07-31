@@ -30,7 +30,7 @@ Your {OpenShiftLocal}, by default, will select a virtual machine driver. Dependi
 Depending on your operating system, virtual machine driver, and the number of boosters you run, you may need to increase the amount memory you give you to your {OpenShiftLocal}.
 ====
 +
-You now have OpenShift running in a single-node cluster on your local machine. The log information provided by your {OpenShiftLocal} provides the address you need to use to access the web console as well as the credentials to log in. In the above example, the console is located at `https://192.168.42.152:8443`, the username is `developer` and the password is `developer`.
+You now have OpenShift running in a single-node cluster on your local machine. The log information provided by your {OpenShiftLocal} provides the address you need to use to access the web console as well as the credentials to log in. In the above example, the console is located at `+++https://192.168.42.152:8443+++`, the username is `developer` and the password is `developer`.
 
 . Open the web console using a web browser and authenticate.
 +
