@@ -2,7 +2,7 @@ node("docsbuilder-maven") {
   checkout scm
   stage("Build Documentation") {
     sh "pwd && ls -l"
-    sh "echo :revnumber: \$(date "+%Y-%m-%d") >> ./docs/topics/templates/document-attributes.adoc"
+    sh "echo :revnumber: \$(date '+%Y-%m-%d') >> ./docs/topics/templates/document-attributes.adoc"
     sh "echo :SegmentTrackerToken: \$LAUNCHPAD_TRACKER_SEGMENT_TOKEN >> ./docs/topics/templates/document-attributes.adoc"
     sh "./scripts/buildGuides.sh"
     sh "mkdir -p ci/openshiftio-appdev-docs/src/main/resources/webroot"
