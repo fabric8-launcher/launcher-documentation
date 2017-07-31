@@ -13,7 +13,7 @@ fi
 
 # Using name-rev is not good because it only gives you one tag, and not
 # necessary the latest version
-today_tag="$(date --rfc-3339=date)"
+today_tag="$(date '+%Y-%m-%d')"
 latest_today_tag="$(git tag | grep "$today_tag" | sort | tail -1)"
 suffix="$(echo $latest_today_tag | awk -F '_' '{print $2}')"
 
