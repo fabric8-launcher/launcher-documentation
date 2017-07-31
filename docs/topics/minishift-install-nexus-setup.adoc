@@ -1,3 +1,5 @@
+:nexus-project-name: NEXUS_PROJECT_NAME
+
 = Using a Nexus Repository Server With the {launcher} Application on your {OpenShiftLocal}
 
 While developing your cloud-native applications with Java and Maven you may be required to build them repeatedly.
@@ -66,7 +68,7 @@ docker pull sonatype/nexus
 +
 [source,bash,subs="attributes+"]
 --
-oc new-project NEXUS_PROJECT_NAME
+oc new-project {nexus-project-name}
 --
 +
 . Deploy the Nexus container image.
@@ -99,9 +101,10 @@ oc volumes dc/nexus --add --name 'nexus-volume-1' --type 'pvc' --mount-path '/so
 oc get routes
 --
 +
+[source,bash,subs="attributes+"]
 ----
 NAME      HOST/PORT                              PATH      SERVICES   PORT       TERMINATION
-nexus     nexus-{NEXUS_PROJECT_NAME}.192.168.42.106.nip.io             nexus      8080:8080
+nexus     nexus-{nexus-project-name}.192.168.42.106.nip.io             nexus      8080:8080
 ----
 +
 [NOTE]
@@ -113,16 +116,16 @@ Nexus comes pre-configured for the Maven Central Repository, but you may need ot
 +
 [source,bash,subs="attributes+"]
 --
-oc project BOOSTER_PROJECT_NAME
+oc project {project-name}
 --
 +
 . Assign the `admin` role to your Jenkins instance and the `edit` permissions to your OpenShift account.
-You might want to skip this step if you have already assigned these permissions to your account.
+Skip this step if you have already assigned these permissions.
 +
 [source,bash,subs="attributes+"]
 --
-oc policy add-role-to-user edit system:serviceaccount:BOOSTER_PROJECT_NAME:default
-oc policy add-role-to-user admin system:serviceaccount:BOOSTER_PROJECT_NAME:jenkins
+oc policy add-role-to-user edit system:serviceaccount:{project-name}:default
+oc policy add-role-to-user admin system:serviceaccount:{project-name}:jenkins
 --
 +
 . Obtain the Jenkins server URL and use it to access the Jenkins instance from your browser.
@@ -132,18 +135,19 @@ oc policy add-role-to-user admin system:serviceaccount:BOOSTER_PROJECT_NAME:jenk
 oc get routes jenkins
 --
 +
-----
+[source,bash,subs="attributes+"]
+--
 NAME      HOST/PORT                                         PATH      SERVICES   PORT      TERMINATION
-jenkins   jenkins-{app-name}.192.168.42.106.nip.io             jenkins    <all>     edge/Redirect
-----
+jenkins   jenkins-{app-name}-{project-name}.192.168.42.106.nip.io             jenkins    <all>     edge/Redirect
+--
 +
-. Navigate to `+++jenkins-{app-name}.192.168.42.106.nip.io/configure+++`, and log in using your OpenShift credentials to access the Jenkins configuration page.
+. Navigate to `jenkins-{app-name}-{project-name}.192.168.42.106.nip.io/configure`, and log in using your OpenShift credentials to access the Jenkins configuration page.
 +
 . In the section titled _Kubernetes Pod Template_,  click on  on _Add Evironmental Variable_ and choose the _Global Environmental Variable_ option from the drop-down menu.
 +
 . Define a new environment variable with the following properties:
 * Name: `MAVEN_MIRROR_URL`
-* Value: `nexus-{NEXUS_PROJECT_NAME}.192.168.42.106.nip.io/nexus/content/groups/public/`
+* Value: `nexus-{nexus-project-name}.192.168.42.106.nip.io/nexus/content/groups/public/`
 +
 [NOTE]
 --
