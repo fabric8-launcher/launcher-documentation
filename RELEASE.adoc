@@ -15,16 +15,17 @@ Usually, this will mean going from `vX` to `vX+1` e.g. `v3` to `v4`.
 To get this update merged, follow the _Contributing_ process outlined in the link:https://github.com/openshiftio/appdev-documentation/blob/master/README.adoc[README] file of the repo. This update can happen anytime after the catalog has been updated, including after the release train has been completed. 
 --
 
-* Tag the commit you are releasing. Execute the `tagRelease.sh` script in the `$REPO_HOME/scripts` directory on the `production` branch:
+* Tag the release:
+. Execute the `tagRelease.sh` script in the `$REPO_HOME/scripts` directory on the `master` branch:
 +
 --
 [source,bash]
 ----
-$ git checkout production
+$ git checkout master
 $ ./tagRelease.sh
 ----
 
-The script automatically tags the commit with the current date in the `YYYY-MM-DD` format. If you are re-releasing the same day, a suffix `_2`, `_3`, etc. is appended. If you want to tag with a different date, do so manually:
+The script automatically tags the commit with the current date in the `YYYY-MM-DD` format. If you are re-releasing the same day, a suffix `_2`, `_3`, etc. is appended. If you want to tag with a different date or manually, execute the following command:
 
 [source,bash]
 ----
@@ -32,7 +33,7 @@ $ git tag 2017-04-21
 ----
 --
 
-* Push the tags:
+. Push the tags:
 +
 --
 [source,bash]
@@ -40,6 +41,14 @@ $ git tag 2017-04-21
 $ git push --tags $REMOTE
 ----
 
-Replace `$REMOTE` with the name of the upstream remote
+Replace `$REMOTE` with the name of the upstream remote.
 --
 
+* Update the current milestone in GitHub:
+. Rename the _Current Development_ milestone to the current date in the _YYYY-MM-DD_ format and close the milestone.
+. Create a new milestone called _Current Development._
+. Move all issues from the recently closed milestone to _Current Development:_
+.. Open the recently closed milestone from the link:https://github.com/openshiftio/appdev-documentation/milestones[list of milestones].
+.. Ensure you are only seeing open issues by clicking _Open._
+.. Select all issues.
+.. In the top right corner of the table, click _Milestone_ -> _Current Development_ to assign the selected issues to the current milestone.
