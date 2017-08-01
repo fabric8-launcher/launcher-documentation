@@ -1,1 +1,1 @@
-NOTE: You can also use a form provided by the booster to perform these same interactions. The form is located at the root of the project `http://{app-name}-{project-name}.1ab5.starter-us-east-1.openshiftapps.com`.
+NOTE: You can also use a form provided by the booster to perform these same interactions. The form is located at the root of the project `http://{app-name}-{project-name}.{oso-route-hostname}`.

@@ -67,10 +67,10 @@ You `app1` pod should have a status of `Running` once its fully deployed and sta
 ----
 $ oc get routes
 NAME                 HOST/PORT                                                     PATH      SERVICES        PORT      TERMINATION
-{app-name}         {app-name}-{project-name}.1ab5.starter-us-east-1.openshiftapps.com      {app-name}      8080
+{app-name}         {app-name}-{project-name}.{oso-route-hostname}      {app-name}      8080
 ----
 +
-A pod's route information gives you the base URL which you use to access it. In the example above, you would use `http://{app-name}-{project-name}.1ab5.starter-us-east-1.openshiftapps.com` as the base URL to access the application.
+A pod's route information gives you the base URL which you use to access it. In the example above, you would use `http://{app-name}-{project-name}.{oso-route-hostname}` as the base URL to access the application.
 
 
 include::booster-deploy-openshift-local.adoc[leveloffset=+1]
