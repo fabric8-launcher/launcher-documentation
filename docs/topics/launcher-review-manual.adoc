@@ -1,6 +1,3 @@
-:icons: font
-:runtime: ${runtime}
-
 ifeval::["{runtime}" == "Spring Boot"]
 :guideURL: http://appdev.openshift.io/docs/spring-boot-runtime.html
 :guideName: Spring Boot Tomcat Runtime Guide
