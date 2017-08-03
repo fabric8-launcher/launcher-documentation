@@ -6,7 +6,7 @@ To run this booster on your local host:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ git clone git@github.com:${loggedUser}/${targetRepository}
+$ ${gitCMD}
 
 $ cd ${targetRepository}
 
@@ -31,7 +31,7 @@ $ curl http://localhost:8080/api/greeting?name=Sarah
 To update your booster:
 
 . Stop your booster.
-. Make your change (e.g. edit link:https://github.com/${loggedUser}/${targetRepository}/edit/master/${fileLocation}[`${fileLocation}`]).
+. Make your change (e.g. edit `${fileLocation}`).
 . Restart your booster.
 . Confirm your change appears.
 
