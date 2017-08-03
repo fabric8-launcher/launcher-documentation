@@ -11,7 +11,7 @@ The installation steps for {Minishift} are available link:https://docs.openshift
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ minishift version
-minishift v1.3.1
+minishift v1.3.1+f4900b07
 ----
 
 . Determine the command to add the correct version of the `oc` binary to your path and run the command.
