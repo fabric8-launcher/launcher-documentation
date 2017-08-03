@@ -85,14 +85,23 @@ import static org.jboss.as.controller.descriptions.ModelDescriptionConstants.RUN
 @ApplicationScoped
 public class RuntimeDeployer implements Deployer {
 
+
     //private static Logger LOG = Logger.getLogger("org.wildfly.swarm.deployer");
 
     private static final String ALL_DEPENDENCIES_ADDED_MARKER = DependenciesContainer.ALL_DEPENDENCIES_MARKER + ".added";
+
+    void implicitDeploymentsComplete() {
+        this.implicitDeploymentsComplete = true;
+    }
 
     @Override
     public void deploy() throws DeploymentException {
         Archive<?> deployment = createDefaultDeployment();
         if (deployment == null) {
+            String deploymentType = determineDeploymentType();
+            if ("war".equals(deploymentType)) {
+                throw DeployerMessages.MESSAGES.unableToCreateDefaultDeploymentWar();
+            }
             throw DeployerMessages.MESSAGES.unableToCreateDefaultDeployment();
         } else {
             deploy(deployment);
@@ -217,12 +226,13 @@ public class RuntimeDeployer implements Deployer {
                 }
             }
 
-            this.deploymentContext.activate(deployment, asName);
+            this.deploymentContext.activate(deployment, asName, !this.implicitDeploymentsComplete);
 
             // 2. give fractions a chance to handle the deployment
             for (DeploymentProcessor processor : this.deploymentProcessors) {
                 processor.process();
             }
+
 
             this.deploymentContext.deactivate();
 
@@ -331,4 +341,6 @@ public class RuntimeDeployer implements Deployer {
     private Instance<DeploymentProcessor> deploymentProcessors;
 
     private List<String> rarDeploymentNames = new ArrayList<>();
+
+    private boolean implicitDeploymentsComplete = false;
 }
