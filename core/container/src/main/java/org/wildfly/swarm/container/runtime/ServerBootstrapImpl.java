@@ -142,7 +142,10 @@ public class ServerBootstrapImpl implements ServerBootstrap {
                         weld.addBeanClass(each);
                     }
 
-                    weld.property("org.jboss.weld.se.shutdownHook", false);
+                    // Do not register Weld internal shutdown hook
+                    // Note that using Weld.property() is only supported in Weld 2.3.4+, see also WELD-2135
+                    System.setProperty(Weld.SHUTDOWN_HOOK_SYSTEM_PROPERTY, "false");
+
                     WeldContainer weldContainer = null;
                     RuntimeServer server = null;
                     try (AutoCloseable weldRelated = Performance.time("Weld-related")) {
