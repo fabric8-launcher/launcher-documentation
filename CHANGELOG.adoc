@@ -1,0 +1,52 @@
+= Change Log
+
+== link:https://github.com/openshiftio/appdev-documentation/milestone/1?closed=1[Current Development]
+// list closed issues with changes planned for upcoming release
+// use tag words ADDED/REMOVED/UPDATED
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/419[#419]: Added ZIP file download instuctions in Booster `README.adoc` files.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/415[#415]: Updated Minishift version to `1.3.1` in the Nexus configuration guide.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/409[#409]: Removed manual host name specification step from Minishift installation instructions.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/374[#374]: Added repleceable variables for OpenShift and Minishift application route host names.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/403[#403]: Updated application route examples in the Nexus configuration section to properly display the replaceable variable values.
+
+// Link here to release
+// Link from releases to changleog
+==  https://github.com/openshiftio/appdev-documentation/releases/tag/2017-07-31[2017-07-31 Release]
+// formatting example:
+// link:<issue#>: <description_for_humans>
+// https://github.com/openshiftio/appdev-documentation/issues/{issue#}
+// messages must be edited to be meaningful
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/383[#383]:  Updated wording in the launch.openshift.io YAML template link. Added  a callout asking the user to clear all Keycloak realm information.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/386[#386]:  Added a _Coming Soon_ note to the NodeJS runtime guide.
+
+* Issue  link:https://github.com/openshiftio/appdev-documentation/issues/385[#385]: Updated Node.JS runtime guide to fix typos.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/386[#370]: Updated the introductory paragraph in the Getting Started guide to include information regarding latest changes introduced with this release.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/304[#304]: Added HTTP request examples using `curl` to the booster interaction section of the Secured Boosters.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/378[#378] : Updated the `scripts/previewDocsServer.sh` script to use Docker commands with a `--privileged` flag to avoid errors when executing the script caused by SELinux on Fedora.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/379[#379]: Updated `README.adoc` file templates to substitute variable values from properties files instead of `attributes.adoc` files.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/330[#330]: Updated Secured Booster output examples to not list names of non-existent endpoints.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/362[#362]: Added a link from the Next Steps section of the launch.openshift.io UI to the `README.adoc` files for boosters.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/361[#361]: Added _Step 5_ to the _Next Steps_ section with a note explaining   that a  new CI/CD build is triggered by pushing the changes into the cloned application repository.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/360[#360]: Updated links in the launch.openshift.io interface to make them open in a new tab by default.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/359[#359]: Added conditional inclusion syntax to the launch.openshift.io to only display page links relevant to the current runtime.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/303[#303]: Added links to additional resources in the WildFly Swarm Runtime Guide
+
+* Issue
+link:https://github.com/openshiftio/appdev-documentation/issues/207[#207]: Added a note about including the appropriate version of the `oc` CLI tool in the `PATH` variable as a prerequisite for Minishift installation.
