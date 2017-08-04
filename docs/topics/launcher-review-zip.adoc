@@ -3,8 +3,8 @@
 Extract your booster:
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ unzip {ZIP_CREATE}.zip
-$ cd {ZIP_CREATE}
+$ unzip {artifactId}.zip
+$ cd {artifactId}
 ----
 
 More details on running and interacting with your booster are available in `README.adoc`.
