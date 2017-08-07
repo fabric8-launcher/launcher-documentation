@@ -1,0 +1,95 @@
+kind: Template
+apiVersion: v1
+metadata:
+  name: appdev-documentation
+  annotations:
+    openshift.io/display-name: "Appdev - Documentation"
+    description: This application contains the launch.openshift.io documentation
+    tags: instant-app,launchpad, documentation
+    iconClass: icon-shadowman
+    template.openshift.io/long-description: This application contains the Appdev documentation
+    template.openshift.io/provider-display-name: Red Hat, Inc.
+    template.openshift.io/documentation-url: https://github.com/openshiftio
+    template.openshift.io/support-url: https://access.redhat.com
+labels:
+  template: appdev-documentation
+parameters:
+- name: IMAGE
+  value: openshiftio/appdev-documentation
+  required: true
+- name: IMAGE_TAG
+  value: latest
+  required: true
+objects:
+- kind: DeploymentConfig
+  apiVersion: v1
+  metadata:
+    name: appdev-documentation
+  spec:
+    replicas: 1
+    selector:
+      service: appdev-documentation
+    strategy:
+      resources: {}
+      rollingParams:
+        intervalSeconds: 1
+        maxSurge: 25%
+        maxUnavailable: 25%
+        timeoutSeconds: 600
+        updatePeriodSeconds: 1
+      type: Rolling
+    template:
+      metadata:
+        labels:
+          service: appdev-documentation
+      spec:
+        containers:
+        - image: ${IMAGE}:${IMAGE_TAG}
+          imagePullPolicy: Always
+          name: appdev-documentation
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 15
+            timeoutSeconds: 1
+            failureThreshold: 3
+            periodSeconds: 10
+            successThreshold: 1
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 15
+            timeoutSeconds: 1
+            failureThreshold: 3
+            periodSeconds: 10
+            successThreshold: 1
+        restartPolicy: Always
+        dnsPolicy: ClusterFirst
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+    test: false
+    triggers:
+    - type: ConfigChange
+- kind: Service
+  apiVersion: v1
+  metadata:
+    labels:
+      service: appdev-documentation
+    name: appdev-documentation
+  spec:
+    ports:
+    - name: "8080"
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      service: appdev-documentation
+    sessionAffinity: None
+    type: ClusterIP
