@@ -28,17 +28,17 @@ ifdef::http-api-wf-swarm[]
 endif::http-api-wf-swarm[]
 
 ifndef::http-api-spring-boot-tomcat[]
-* link:{link-http-api-level-0-spring-boot-tomcat-booster}[{mission-http-api-spring-boot-tomcat-guide-name}]
+* link:{link-mission-http-api-spring-boot-tomcat}[{mission-http-api-spring-boot-tomcat-guide-name}]
 endif::http-api-spring-boot-tomcat[]
 
 ifndef::http-api-vertx[]
-* link:{link-http-api-level-0-vertx-booster}[{mission-http-api-vertx-guide-name}]
+* link:{link-mission-http-api-vertx}[{mission-http-api-vertx-guide-name}]
 endif::http-api-vertx[]
 
 ifndef::http-api-wf-swarm[]
-* link:{link-http-api-level-0-wf-swarm-booster}[{mission-http-api-wf-swarm-guide-name}]
+* link:{link-mission-http-api-wf-swarm}[{mission-http-api-wf-swarm-guide-name}]
 endif::http-api-wf-swarm[]
 
 ifndef::http-api-nodejs[]
-  * link:{link-http-api-level-0-nodejs-booster}[{mission-http-api-nodejs-guide-name}]
+  * link:{link-mission-http-api-nodejs}[{mission-http-api-nodejs-guide-name}]
 endif::http-api-nodejs[]
