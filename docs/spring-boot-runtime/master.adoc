@@ -4,10 +4,16 @@ include::topics/templates/document-attributes.adoc[]
 
 
 = {spring-boot-runtime-guide-name}
+:runtime: {SpringBoot}
 
 This guide covers concepts as well as practical details needed by developers to use the {SpringBoot} runtime.
 
 include::topics/sb-tomcat-runtime-overview.adoc[leveloffset=+1]
+
+
+{SpringBoot} has a version of its runtime that is tested and verified to run on OpenShift and is provided as part of a Red Hat subscription.
+
+include::topics/runtime-info-community-version.adoc[leveloffset=+1]
 
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
