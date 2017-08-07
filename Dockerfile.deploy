@@ -1,0 +1,11 @@
+FROM registry.centos.org/kbsingh/openshift-nginx:latest
+MAINTAINER Vasek Pavlin <vasek@redhat.com>
+
+ENV LANG=en_US.utf8
+
+USER root
+ADD nginx.conf /etc/nginx/nginx.conf
+
+RUN rm /usr/share/nginx/html/*
+
+COPY html /usr/share/nginx/html/docs

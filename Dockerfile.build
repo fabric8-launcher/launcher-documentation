@@ -1,0 +1,13 @@
+FROM centos:7
+
+MAINTAINER Zach Rhoads (https://github.com/rhoads-zach)
+
+USER root
+
+# Install asciidoctor
+RUN yum install -y rubygems && \
+    gem install asciidoctor && \
+    yum clean all
+
+COPY scripts/ scripts/
+COPY docs/ docs/
