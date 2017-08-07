@@ -88,18 +88,21 @@
 :link-mission-crud-spring-boot-tomcat: {link-spring-boot-runtime-guide}#mission-crud-spring-boot-tomcat
 :link-mission-health-check-spring-boot-tomcat: {link-spring-boot-runtime-guide}#mission-health-check-spring-boot-tomcat
 :link-mission-secured-spring-boot: {link-spring-boot-runtime-guide}#mission-secured-spring-boot
+:link-mission-circuit-breaker-spring-boot-tomcat: {link-spring-boot-runtime-guide}#mission-circuit-breaker-spring-boot-tomcat
 
 :link-mission-http-api-vertx: {link-vertx-runtime-guide}#mission-http-api-vertx
 :link-mission-configmap-vertx: {link-vertx-runtime-guide}#mission-configmap-vertx
 :link-mission-crud-vertx: {link-vertx-runtime-guide}#mission-crud-vertx
 :link-mission-health-check-vertx: {link-vertx-runtime-guide}#mission-health-check-vertx
 :link-mission-secured-vertx: {link-vertx-runtime-guide}#mission-secured-vertx
+:link-mission-circuit-breaker-vertx: {link-vertx-runtime-guide}#mission-circuit-breaker-vertx
 
 :link-mission-http-api-wf-swarm: {link-wf-swarm-runtime-guide}#mission-http-api-wf-swarm
 :link-mission-configmap-wf-swarm: {link-wf-swarm-runtime-guide}#mission-configmap-wf-swarm
 :link-mission-crud-wf-swarm: {link-wf-swarm-runtime-guide}#mission-crud-wf-swarm
 :link-mission-health-check-wf-swarm: {link-wf-swarm-runtime-guide}#mission-health-check-wf-swarm
 :link-mission-secured-wf-swarm: {link-wf-swarm-runtime-guide}#mission-secured-wf-swarm
+:link-mission-circuit-breaker-wf-swarm: {link-wf-swarm-runtime-guide}#mission-circuit-breaker-wf-swarm
 
 :link-mission-http-api-nodejs: {link-nodejs-runtime-guide}#mission-http-api-nodejs
 
