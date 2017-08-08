@@ -23,7 +23,7 @@ Available application endpoint names: [secured-vertx-http] <1>
 In this case, it is `secured-vertx-http`.
 
 .Obtain the Access Token Manually
-Obtain the access token in JSON format and use the `jq` CLI tool to extract the token value. You can store the value inside an environmental variable, such as `MY_TOKEN`:
+Obtain the access token in JSON format and use https://stedolan.github.io/jq/[the `jq` CLI tool] to extract the token value. You can store the value inside an environmental variable, such as `MY_TOKEN`:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
