@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 GENERATOR_DOCKER_HUB_USERNAME=openshiftioadmin
-REGISTRY_URI="registry.devshift.net"
+REGISTRY_URI="push.registry.devshift.net"
 REGISTRY_NS="openshiftio"
 REGISTRY_IMAGE="appdev-documentation"
 REGISTRY_URL=${REGISTRY_URI}/${REGISTRY_NS}/${REGISTRY_IMAGE}
