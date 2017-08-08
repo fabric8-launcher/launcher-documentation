@@ -44,6 +44,12 @@ objects:
           service: appdev-documentation
       spec:
         containers:
+        - env:
+          - name: LAUNCHPAD_TRACKER_SEGMENT_TOKEN
+            valueFrom:
+              configMapKeyRef:
+                name: appdev-documentation
+                key: tracker.segment.token
         - image: ${IMAGE}:${IMAGE_TAG}
           imagePullPolicy: Always
           name: appdev-documentation
