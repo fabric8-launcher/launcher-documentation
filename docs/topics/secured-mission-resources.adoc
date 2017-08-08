@@ -1,0 +1,22 @@
+[[secured_resources]]
+= Secured SSO Resources
+
+Follow the links below for additional information on the principles behind the OAuth2 specification and on securing your applications using {RHSSO} and Keycloak:
+
+* link:https://aaronparecki.com/oauth-2-simplified/[Aaron Parecki: OAuth2 Simplified]
+
+* link:https://access.redhat.com/documentation/en/red-hat-single-sign-on?version=7.1/[{RHSSO} 7.1 Documentation]
+
+* link:http://www.keycloak.org/archive/documentation-3.2.html[Keycloak 3.2 Documentation]
+
+ifndef::http-api-spring-boot-tomcat[]
+* link:{link-mission-secured-spring-boot}[{mission-secured-spring-boot-guide-name}]
+endif::http-api-spring-boot-tomcat[]
+
+ifndef::http-api-vertx[]
+* link:{link-mission-secured-vertx}[{mission-secured-vertx-guide-name}]
+endif::http-api-vertx[]
+
+ifndef::http-api-wf-swarm[]
+* link:{link-mission-secured-wf-swarm}[{mission-secured-wf-swarm-guide-name}]
+endif::http-api-wf-swarm[]

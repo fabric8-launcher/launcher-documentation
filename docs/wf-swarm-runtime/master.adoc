@@ -123,8 +123,7 @@ include::topics/secured-mission-deploy-booster.adoc[leveloffset=+3]
 
 include::topics/secured-mission-common-interaction.adoc[leveloffset=+3]
 
-
-
+include::topics/secured-mission-resources.adoc[leveloffset=+3]
 
 //== Creating an Application from Scratch
 //todo
