@@ -1,5 +1,5 @@
 [[circuit_breaker_resources]]
-== Circuit Breaker Resources
+= Circuit Breaker Resources
 
 Follow the links below for more background information on the design principles behind the Circuit Breaker pattern
 
