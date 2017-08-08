@@ -44,7 +44,7 @@ objects:
           service: appdev-documentation
       spec:
         containers:
-	- env:
+        - env:
           - name: LAUNCHPAD_TRACKER_SEGMENT_TOKEN
             valueFrom:
               configMapKeyRef:
