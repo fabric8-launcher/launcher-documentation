@@ -16,3 +16,8 @@ This will:
 ** The pipeline will then build and deploy your booster's code to {OpenShiftOnline}.  
 
 At this point, you should take a look at your booster's `README.adoc` file for more details on building, deploying, and interacting with your booster from your local host. You can also xref:cd-oso[use the CI/CD process to deploy your booster to {OpenShiftOnline}].
+
+[discrete]
+== Create a Booster to Build and Run Locally
+
+In addition to the _Use {OpenShiftOnline} to build and deploy_ option, you can also choose _Build and Run Locally_ when creating your booster. This creates a ZIP of your booster that you can download to build and run locally. This option provides the same booster, but does not create a GitHub repository or any build pipelines in {OpenShiftOnline}. The ZIP version of your booster also provides a `README.adoc` file with details on building, deploying, and interacting with your booster from your local host.
