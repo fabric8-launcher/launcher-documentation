@@ -11,7 +11,75 @@ include::topics/templates/document-attributes.adoc[]
 @import url(https://overpass-30e2.kxcdn.com/overpass.css);.app{padding-top:20px;-ms-flex:1;flex:1;font-family:overpass;font-size:11pt}.site{display:-ms-flexbox;display:flex;min-height:100vh;-ms-flex-direction:column;flex-direction:column}.btn{font-size:11pt}.form-control{font-size:10pt}
 img.header-logo{width:70%}.navbar{color:#ddd;font-size:16px;border-top:0}.nav-item-icon{white-space:nowrap}.navbar-pf   .navbar-header{min-height:75px;margin-left:10px;margin-right:10px;border:0}.nav.navbar-nav.navbar-right{margin-top:10px}.navbar-brand{padding:15px 20px;margin:0}@media (max-width:768px){.navbar-fixed-top{position:fixed;top:auto}.navbar-collapse{max-height:none}body{margin:0}}
 footer{background-color:#010101;font-size:12px;height:60px;padding:15px 0;width:100%}footer   .conditions   a:first-child{margin-left:70px}footer   .logo   a{background:url(/docs/images/redhat.svg) no-repeat;height:34px;width:94px;margin:0;top:auto;background-size:94px 30px;display:inline-block}footer   .summit{position:absolute;right:20px;bottom:0}footer   a{color:#858585;top:7px;position:relative;margin-left:15px}footer   a.legal{border-right:1px solid #858585;padding-right:15px}@media (max-width:1024px){footer   .conditions{font-size:12px}footer   .conditions   a:first-child{margin-left:35px}footer   .social{display:none}}@media (max-width:768px){footer   .conditions{display:none}footer   .summit{position:absolute;right:20px;bottom:0}footer   a.legal:nth-child(2n){margin-left:70px}.footer-content   a:first-child{position:absolute;right:20px}}
-#intro{margin-top:-20px;background:url(/docs/images/Background_img._1300x450.png);min-height:450px;background-size:cover;background-position:0;font-family:overpass,sans-serif}#intro   h1{color:#fff;font-size:46pt;font-weight:700}#intro   h2{color:#c00;font-weight:700}#intro   .row{margin-top:5px}#intro   .btn{background-image:none;background-color:#c00;border-color:#c00;color:#fff;padding:9px 40px;margin-top:40px;margin-bottom:30px;line-height:1.44;font-size:18px}#runtimes{background-color:#f5f5f5;font-family:overpass,sans-serif}#runtimes   h1{color:#c00;font-weight:700}#runtimes   .card-pf{background-color:#d1d1d1;height:245px}#runtimes   .card-pf   .card-pf-title{color:#000;font-size:18pt;font-family:Overpass,sans-serif;text-align:center}#runtimes   .card-pf   .card-pf-icon-circle{background-color:#fff;border-color:#fff}.boot, .icon, .swarm, .vertx{background-size:100% 100%;background-repeat:no-repeat;background-position:50%;margin:auto;width:80px;height:80px}.boot{background-image:url(/docs/images/project-select-icons/spring-boot-logo.png)}.swarm{background-image:url(/docs/images/project-select-icons/wildfly-swarm.png)}.vertx{background-image:url(/docs/images/project-select-icons/vertx.svg)}
+#intro{margin-top:-20px;background:url(/docs/images/Background_img._1300x450.png);min-height:450px;background-size:cover;background-position:0;font-family:overpass,sans-serif}#intro   h1{color:#fff;font-size:46pt;font-weight:700}#intro   h2{color:#c00;font-weight:700}#intro   .row{margin-top:5px}#intro   .btn{background-image:none;background-color:#c00;border-color:#c00;color:#fff;padding:9px 40px;margin-top:40px;margin-bottom:30px;line-height:1.44;font-size:18px}#runtimes{background-color:#f5f5f5;font-family:overpass,sans-serif}#runtimes   h1{color:#c00;font-weight:700}#runtimes   .card-pf{background-color:#d1d1d1;height:245px}#runtimes   .card-pf   .card-pf-title{color:#000;font-size:18pt;font-family:Overpass,sans-serif;text-align:center}#runtimes   .card-pf   .card-pf-icon-circle{background-color:#fff;border-color:#fff}.boot, .icon, .swarm, .vertx{background-size:100% 100%;background-repeat:no-repeat;background-position:50%;margin:auto;width:80px;height:80px}
+
+.boot{
+  background-image:url(/docs/images/project-select-icons/spring-boot-logo.png);
+  background-size: 65%;
+}
+.swarm{
+  background-image:url(/docs/images/project-select-icons/wildfly-swarm.png);
+  background-size: 65%;
+}
+.vertx{
+  background-image:url(/docs/images/project-select-icons/vertx.svg);
+  background-size: 80%;
+}
+.node{
+  background-image:url(/docs/images/project-select-icons/nodejs-logo.png);
+  background-size: 85%;
+}
+
+.ribbon {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  position: absolute;
+}
+.ribbon::before,
+.ribbon::after {
+  position: absolute;
+  z-index: 0;
+  content: '';
+  display: block;
+  border: 5px solid #8E0000;
+}
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 220px;
+  padding: 9px 0;
+  background-color: #c00;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  color: #fff;
+  font: 700 11px/1 'Overpass', sans-serif;
+  text-shadow: 0 1px 1px rgba(0,0,0,.2);
+  text-align: center;
+}
+
+/* top right*/
+.ribbon-top-right {
+  top: -10px;
+  right: -10px;
+}
+.ribbon-top-right::before,
+.ribbon-top-right::after {
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+.ribbon-top-right::before {
+  top: 0;
+  left: 0;
+}
+.ribbon-top-right::after {
+  bottom: 0;
+  right: 0;
+}
+.ribbon-top-right span {
+  left: -45px;
+  top: 30px;
+  transform: rotate(45deg);
+}
 
 #content {
   max-width: none !important;
@@ -97,8 +165,9 @@ footer{background-color:#010101;font-size:12px;height:60px;padding:15px 0;width:
         <a href="/docs/nodejs-runtime.html" target="_blank">
           <div class="card-pf card-pf-view card-pf-view-select card-pf-view-single-select">
             <div class="card-pf-body">
+              <div class="ribbon ribbon-top-right"><span>tech preview</span></div>
               <div class="card-pf-top-element">
-                <div class="fa icon card-pf-icon-circle"></div>
+                <div class="fa icon node card-pf-icon-circle"></div>
               </div>
             </div>
             <h2 class="card-pf-title">
