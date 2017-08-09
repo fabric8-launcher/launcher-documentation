@@ -8,7 +8,7 @@ include::booster-deploy-openshift-online.adoc[leveloffset=+1]
 
 include::oc-client-deploy-booster-download-note.adoc[leveloffset=+3]
 
-. Get your authentication token for using the `oc` CLI client with your {OpenShiftOnline} account. You can find this in the _Command Line Tools_ section your {OpenShiftOnline} Web console. 
+. Get your authentication token for using the `oc` CLI client with your {OpenShiftOnline} account. You can find this in the _Command Line Tools_ section your {OpenShiftOnline} Web console.
 
 . Authenticate your `oc` CLI client with your {OpenShiftOnline} account by using your authentication token.
 +
@@ -26,14 +26,27 @@ $ oc new-project {project-name}
 
 . Navigate to the root directory of your booster.
 
-. Use maven to start the deployment to your {OpenShiftOnline}.
+ifndef::http-api-nodejs[]
+. Use maven to start the deployment to {OpenShiftOnline}.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ mvn clean fabric8:deploy -Popenshift -DskipTests
+$ mvn clean fabric8:deploy -Popenshift
 ----
 +
-This command uses the Fabric8 Maven Plugin to launch the S2I process on your {OpenShiftOnline} and to start the pod.
+This command uses the Fabric8 Maven Plugin to launch the S2I process on {OpenShiftOnline} and to start the pod.
+endif::http-api-nodejs[]
+
+ifdef::http-api-nodejs[]
+. Use npm to start the deployment to {OpenShiftOnline}.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ npm run openshift
+----
++
+This command uses the Nodeshift npm module to launch the S2I process on {OpenShiftOnline} and to start the pod.
+endif::http-api-nodejs[]
 
 
 . Check the status of your booster and ensure your pod is running.
