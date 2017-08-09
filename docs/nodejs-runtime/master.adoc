@@ -32,6 +32,19 @@ include::topics/rest-level-0-mission-basic-interaction-nodejs.adoc[leveloffset=+
 
 include::topics/rest-level-0-mission-resources.adoc[leveloffset=+3]
 
+[[mission-health-check-nodejs]]
+=== {mission-health-check-nodejs-guide-name}
+:health-check-nodejs:
+
+include::topics/health-check-mission-intro.adoc[leveloffset=+3]
+
+include::topics/health-check-mission-deploy-booster.adoc[leveloffset=+3]
+
+include::topics/health-check-mission-basic-interaction-nodejs.adoc[leveloffset=+3]
+
+include::topics/health-check-mission-resources.adoc[leveloffset=+3]
+
+
 //== Creating an Application from Scratch
 //todo
 //Building blocks

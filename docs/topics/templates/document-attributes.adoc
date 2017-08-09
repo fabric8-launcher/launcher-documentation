@@ -41,6 +41,7 @@
 :mission-health-check-spring-boot-tomcat-guide-name: Health Check Mission - {SpringBoot} Booster
 :mission-health-check-vertx-guide-name: Health Check Mission - {VertX} Booster
 :mission-health-check-wf-swarm-guide-name: Health Check Mission - {WildFlySwarm} Booster
+:mission-health-check-nodejs-guide-name: Health Check Mission - {NodeJS} Booster
 :mission-circuit-breaker-spring-boot-tomcat-guide-name: Circuit Breaker Mission - {SpringBoot} Booster
 :mission-circuit-breaker-vertx-guide-name: Circuit Breaker Mission - {VertX} Booster
 :mission-circuit-breaker-wf-swarm-guide-name: Circuit Breaker Mission - {WildFlySwarm} Booster
@@ -105,7 +106,7 @@
 :link-mission-circuit-breaker-wf-swarm: {link-wf-swarm-runtime-guide}#mission-circuit-breaker-wf-swarm
 
 :link-mission-http-api-nodejs: {link-nodejs-runtime-guide}#mission-http-api-nodejs
-
+:link-mission-health-check-nodejs: {link-nodejs-runtime-guide}#mission-health-check-nodejs
 
 :link-oso-auth: OPENSHIFT_URL
 :link-osl-auth: LOCAL_OPENSHIFT_URL
