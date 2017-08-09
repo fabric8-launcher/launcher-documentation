@@ -11,7 +11,7 @@ You can install the {launcher} application to your {OpenShiftLocal} using link:{
 To use the automated script: 
 
 . link:{link-launcher-install-script}[Download] the script.
-. Run the script.
+. Run the script. There are several options:
 ** Run the script with username and password.
 +
 [source,bash,options="nowrap",subs="attributes+"]
