@@ -36,7 +36,7 @@ minishift start
 +
 [WARNING]
 --
-The procedure described below works with {Minishift} version `1.3.1`.
+The procedure described below works with {Minishift} version `1.5.0`.
 It has not been tested for use with CDK.
 You must use `oc` version `3.6.0` or later.
 --

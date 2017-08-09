@@ -9,18 +9,18 @@ NOTE: Starting your {OpenShiftLocal} may trigger a download of large virtual mac
 ----
 $ minishift start --memory=4096
 Starting local OpenShift cluster using 'kvm' hypervisor...
-Downloading ISO 'https://github.com/minishift/minishift-b2d-iso/releases/download/v1.0.2/minishift-b2d.iso'
 ...
-   OpenShift server started.
-   The server is accessible via web console at:
-       https://192.168.42.152:8443
+OpenShift server started.
+   
+The server is accessible via web console at:
+    https://192.168.42.152:8443
 
-   You are logged in as:
-       User:     developer
-       Password: developer
+You are logged in as:
+    User:     developer
+    Password: <any value>
 
-   To login as administrator:
-       oc login -u system:admin
+To login as administrator:
+    oc login -u system:admin
 ----
 +
 [NOTE]
