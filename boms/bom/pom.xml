@@ -58,7 +58,40 @@
   </build>
 
    <profiles>
-      <!-- This profile is used to generate and transform/fix licenses.xml file based on the BOM dependencies -->
+     <profile>
+       <!-- This profile should only be activated to download licenses from remote URLs
+            instead of copying the license files from the src/main/resources/content/docs/licences
+            directory -->
+       <id>download-licenses</id>
+       <activation>
+         <property>
+           <name>download-licenses</name>
+         </property>
+       </activation>
+       <build>
+         <plugins>
+           <plugin>
+             <groupId>org.codehaus.mojo</groupId>
+             <artifactId>license-maven-plugin</artifactId>
+             <inherited>false</inherited>
+             <executions>
+               <execution>
+                 <goals>
+                   <goal>download-licenses</goal>
+                 </goals>
+                 <phase>prepare-package</phase>
+                 <configuration>
+                   <licensesOutputDirectory>${project.build.directory}/classes/licenses</licensesOutputDirectory>
+                   <licensesConfigFile>src/main/resources/licenses/licenses.xml</licensesConfigFile>
+                 </configuration>
+               </execution>
+             </executions>
+           </plugin>
+         </plugins>
+       </build>
+     </profile>
+
+     <!-- This profile is used to generate and transform/fix licenses.xml file based on the BOM dependencies -->
       <profile>
          <id>licenses</id>
          <activation>

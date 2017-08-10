@@ -13,7 +13,7 @@
             </repository>
             <repository>
                <id>jboss</id>
-               <url>https://repository.jboss.org/nexus/content/groups/public</url>
+               <url>http://indy.cloud.pnc.engineering.redhat.com/api/group/builds-untested+shared-imports+public/</url>
             </repository>
          </repositories>
          <pluginRepositories>
@@ -23,7 +23,7 @@
             </pluginRepository>
             <pluginRepository>
                <id>jboss</id>
-               <url>https://repository.jboss.org/nexus/content/groups/public</url>
+               <url>http://indy.cloud.pnc.engineering.redhat.com/api/group/builds-untested+shared-imports+public/</url>
             </pluginRepository>
          </pluginRepositories>
       </profile>
