@@ -5,7 +5,6 @@ REGISTRY_URI="push.registry.devshift.net"
 REGISTRY_NS="openshiftio"
 REGISTRY_IMAGE="appdev-documentation"
 REGISTRY_URL=${REGISTRY_URI}/${REGISTRY_NS}/${REGISTRY_IMAGE}
-DOCKER_HUB_URL="openshiftio/appdev-documentation"
 BUILDER_IMAGE="appdev-documentation-builder"
 BUILDER_CONT="appdev-documentation-builder-container"
 DEPLOY_IMAGE="appdev-documentation-deploy"
@@ -68,10 +67,4 @@ if [ -z $CICO_LOCAL ]; then
     TAG=$(echo $GIT_COMMIT | cut -c1-${TAG_LENGTH})
     tag_push "${REGISTRY_URL}:${TAG}" ${DEVSHIFT_USERNAME} ${DEVSHIFT_PASSWORD} ${REGISTRY_URI}
     tag_push "${REGISTRY_URL}:latest" ${DEVSHIFT_USERNAME} ${DEVSHIFT_PASSWORD} ${REGISTRY_URI}
-
-
-    if [ -n "${GENERATOR_DOCKER_HUB_PASSWORD}" ]; then
-        tag_push "${DOCKER_HUB_URL}:${TAG}" ${GENERATOR_DOCKER_HUB_USERNAME} ${GENERATOR_DOCKER_HUB_PASSWORD}
-        tag_push "${DOCKER_HUB_URL}:latest" ${GENERATOR_DOCKER_HUB_USERNAME} ${GENERATOR_DOCKER_HUB_PASSWORD}
-    fi
 fi
