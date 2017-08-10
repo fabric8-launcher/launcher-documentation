@@ -47,12 +47,12 @@ objects:
         - image: ${IMAGE}:${IMAGE_TAG}
           imagePullPolicy: Always
           name: appdev-documentation
-          - env:
-            - name: LAUNCHPAD_TRACKER_SEGMENT_TOKEN
-              valueFrom:
-                configMapKeyRef:
-                  name: appdev-documentation
-                  key: tracker.segment.token
+          env:
+          - name: LAUNCHPAD_TRACKER_SEGMENT_TOKEN
+            valueFrom:
+              configMapKeyRef:
+                name: appdev-documentation
+                key: tracker.segment.token
           ports:
           - containerPort: 8080
             protocol: TCP
