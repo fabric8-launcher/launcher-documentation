@@ -29,8 +29,8 @@ Use the following labels to describe what the content of the issue is.
 | Label | Description
 
 | `Type \| Bug` | A part of the documentation is factually wrong or outdated, and needs fixing.
-| `Type \| Enhancement` | Documentation can be improved or its scope can be enlarged.
 | `Type \| Discussion` | The issue is likely to cause a lot of questions or a discussion.
+| `Type \| Enhancement` | Documentation can be improved or its scope can be enlarged.
 |===
 
 == Issue Relations
@@ -42,8 +42,8 @@ The following labels describe the relation between issues and pull requests:
 |===
 | Label | Description
 
-| `Issue \| Has PR` | A pull request resolving the issue exists and is linked.
 | `Issue \| Follow-up` | The issue is a follow-up to a pull request filed by a non-writer.
+| `Issue \| Has PR` | A pull request resolving the issue exists and is linked.
 |===
 
 == Pull Request Type
@@ -70,9 +70,9 @@ Use the following labels to describe what runtimes, mission, or components an is
 |===
 | Label | Description
 
-| `Runtime \| WildFly Swarm` | The issue or pull request relates to the WildFly Swarm runtime.
 | `Runtime \| Spring Boot` | The issue or pull request relates to the Spring Boot runtime.
 | `Runtime \| Vert.x` | The issue or pull request relates to the Eclipse Vert.x runtime.
+| `Runtime \| WildFly Swarm` | The issue or pull request relates to the WildFly Swarm runtime.
 |===
 
 .Mission Labels
@@ -80,11 +80,11 @@ Use the following labels to describe what runtimes, mission, or components an is
 |===
 | Label | Description
 
+| `Mission \| CRUD` | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-Relational-Database-Backend[Relational Database Backend] Mission.
+| `Mission \| ConfigMap` | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-ConfigMap[ConfigMap] Mission.
+| `Mission \| Health Check` | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-Health-Check[Health Check] Mission.
 | `Mission \| REST API` | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-HTTP-API[REST API Level 0] Mission.
 | `Mission \| SSO` | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-Secured-HTTP-API[Secured] Mission.
-| `Mission \| ConfigMap` | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-ConfigMap[ConfigMap] Mission.
-| `Mission \| CRUD` | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-Relational-Database-Backend[Relational Database Backend] Mission.
-| `Mission \| Health Check` | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-Health-Check[Health Check] Mission.
 |===
 
 .Component Labels
