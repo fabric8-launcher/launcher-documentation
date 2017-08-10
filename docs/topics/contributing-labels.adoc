@@ -14,9 +14,9 @@ Use the following labels to indicate what stage of its life cycle an issue or pu
 |===
 | Label | Description
 
-| In Progress | The assignee is actively working on the issue or is waiting for input from someone. The draft of the issue is not ready.
-| SME Review | An SME is providing a review of the draft. This review comes before the peer review.
-| Peer Review | A peer (a writer) is providing a review of the draft. This review comes after the SME review.
+| `Status \| In Progress` | The assignee is actively working on the issue or is waiting for input from someone. The draft of the issue is not ready.
+| `Status \| SME Review` | An SME is providing a review of the draft. This review comes before the peer review.
+| `Status \| Peer Review` | A peer (a writer) is providing a review of the draft. This review comes after the SME review.
 |===
 
 == Issue Type
@@ -28,9 +28,9 @@ Use the following labels to describe what the content of the issue is.
 |===
 | Label | Description
 
-| Bug | A part of the documentation is factually wrong or outdated, and needs fixing.
-| Enhancement | Documentation can be improved or its scope can be enlarged.
-| Discussion | The issue is likely to cause a lot of questions or a discussion.
+| `Type \| Bug` | A part of the documentation is factually wrong or outdated, and needs fixing.
+| `Type \| Enhancement` | Documentation can be improved or its scope can be enlarged.
+| `Type \| Discussion` | The issue is likely to cause a lot of questions or a discussion.
 |===
 
 == Issue Relations
@@ -42,8 +42,8 @@ The following labels describe the relation between issues and pull requests:
 |===
 | Label | Description
 
-| Has PR | A pull request resolving the issue exists and is linked.
-| Follow-up | The issue is a follow-up to a pull request filed by a non-writer.
+| `Issue \| Has PR` | A pull request resolving the issue exists and is linked.
+| `Issue \| Follow-up` | The issue is a follow-up to a pull request filed by a non-writer.
 |===
 
 == Pull Request Type
@@ -55,8 +55,8 @@ Use the following labels to describe what the content of the issue is.
 |===
 | Label | Description
 
-| Internal | The pull request was submitted by a writer, and should not be accepted until thoroughly proofread and edited.
-| Public | The pull request was submitted by a non-writer contributor. It may be accepted if it meets basic quality criteria, but the person merging the pull request must file a follow-up issue where they describe the necessary changes.
+| `Contributor \| Internal` | The pull request was submitted by a writer, and should not be accepted until thoroughly proofread and edited.
+| `Contributor \| Public` | The pull request was submitted by a non-writer contributor. It may be accepted if it meets basic quality criteria, but the person merging the pull request must file a follow-up issue where they describe the necessary changes.
 
 WARNING: The contribution must be reviewed before merging to ensure the changes are factually correct.
 |===
@@ -70,9 +70,9 @@ Use the following labels to describe what runtimes, mission, or components an is
 |===
 | Label | Description
 
-| WildFly Swarm | The issue or pull request relates to the WildFly Swarm runtime.
-| Spring Boot | The issue or pull request relates to the Spring Boot runtime.
-| Vert.x | The issue or pull request relates to the Eclipse Vert.x runtime.
+| `Runtime \| WildFly Swarm` | The issue or pull request relates to the WildFly Swarm runtime.
+| `Runtime \| Spring Boot` | The issue or pull request relates to the Spring Boot runtime.
+| `Runtime \| Vert.x` | The issue or pull request relates to the Eclipse Vert.x runtime.
 |===
 
 .Mission Labels
@@ -80,11 +80,11 @@ Use the following labels to describe what runtimes, mission, or components an is
 |===
 | Label | Description
 
-| REST API | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-HTTP-API[REST API Level 0] Mission.
-| SSO | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-Secured-HTTP-API[Secured] Mission.
-| ConfigMap | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-ConfigMap[ConfigMap] Mission.
-| CRUD | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-Relational-Database-Backend[Relational Database Backend] Mission.
-| Health Check | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-Health-Check[Health Check] Mission.
+| `Mission \| REST API` | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-HTTP-API[REST API Level 0] Mission.
+| `Mission \| SSO` | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-Secured-HTTP-API[Secured] Mission.
+| `Mission \| ConfigMap` | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-ConfigMap[ConfigMap] Mission.
+| `Mission \| CRUD` | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-Relational-Database-Backend[Relational Database Backend] Mission.
+| `Mission \| Health Check` | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-Health-Check[Health Check] Mission.
 |===
 
 .Component Labels
@@ -92,7 +92,7 @@ Use the following labels to describe what runtimes, mission, or components an is
 |===
 | Label | Description
 
-| Frontend | The issue or pull request relates to the frontend HTMLs etc.
-| Infrastructure | The issue or pull request relates to publishing, building, CI, etc.
+| `Component \| Frontend` | The issue or pull request relates to the frontend HTMLs etc.
+| `Component \| Infrastructure` | The issue or pull request relates to publishing, building, CI, etc.
 |===
 
