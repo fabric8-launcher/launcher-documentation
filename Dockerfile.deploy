@@ -1,11 +1,17 @@
+#Heavily inspired by https://github.com/fabric8io/fabric8-planner/blob/master/Dockerfile.deploy
+
 FROM registry.centos.org/kbsingh/openshift-nginx:latest
 MAINTAINER Vasek Pavlin <vasek@redhat.com>
 
 ENV LANG=en_US.utf8
+ENTRYPOINT /usr/bin/entrypoint.sh
 
 USER root
 ADD nginx.conf /etc/nginx/nginx.conf
 
-RUN rm /usr/share/nginx/html/*
+RUN rm -rf /usr/share/nginx/html
+
+COPY scripts/entrypoint.sh /usr/bin/entrypoint.sh
+RUN chmod +x /usr/bin/entrypoint.sh
 
 COPY html /usr/share/nginx/html/docs
