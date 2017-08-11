@@ -51,7 +51,6 @@ rm -rf ${TARGET_DIR}/
 
 #BUILD
 echo :revnumber: $(git describe --abbrev=0 --tags) >> ./docs/topics/templates/document-attributes.adoc
-echo :SegmentTrackerToken: $LAUNCHPAD_TRACKER_SEGMENT_TOKEN >> ./docs/topics/templates/document-attributes.adoc
 docker build -t ${BUILDER_IMAGE} -f Dockerfile.build .
 
 mkdir ${TARGET_DIR}/

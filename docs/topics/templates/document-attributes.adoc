@@ -132,4 +132,4 @@
 :proficiency-foundational: Foundational
 :proficiency-advanced: Advanced
 :proficiency-expert: Expert
-
+:SegmentTrackerToken: ${LAUNCHPAD_TRACKER_SEGMENT_TOKEN}
