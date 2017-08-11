@@ -42,7 +42,7 @@ Since a {OpenShiftLocal} is for development purposes, it uses HTTPS for the web 
 
 image::minishift_sslwarning.png[SSL warning]
 
-At this time, Safari on macOS does not work with a {OpenShiftLocal}. This a known issue. Details are tracked at link:https://github.com/openshiftio/appdev-planning/issues/16[known issue]. Other browsers, such as Chrome, on macOS do work with a {OpenShiftLocal}.
+At this time, Safari on macOS does not work with a {OpenShiftLocal}. This a link:https://github.com/openshiftio/appdev-planning/issues/16[known issue]. Other browsers, such as Chrome, on macOS do work with a {OpenShiftLocal}.
 ====
 
 . Delete the preconfigured project.
