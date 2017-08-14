@@ -49,9 +49,15 @@ NOTE: On RHEL, CentOS, or Fedora, ensure to also add `gpg2` as the signing progr
 --
 [source,bash]
 ----
-git config commit.gpgsign true
+$ git config commit.gpgsign true
 ----
 
 For more information, see link:https://help.github.com/articles/signing-commits-using-gpg/[Signing commits using GPG].
 --
+. On RHEL, CentOS, or Fedora, set the commit signing program to `gpg2`:
++
+[source,bash,options="nowrap"]
+----
+$ git config --global gpg.program gpg2
+----
 
