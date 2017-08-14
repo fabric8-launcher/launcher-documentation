@@ -2,7 +2,7 @@
 = Deploy RH SSO to your {OpenShiftLocal} Manually
 
 :sso-app-name: secure-sso
-:sso-auth-url: https://{sso-app-name}-MY_PROJECT_NAME.192.168.42.158.nip.io/auth
+:sso-auth-url: https://{sso-app-name}-MY_PROJECT_NAME.{osl-route-hostname}/auth
 
 == Download the Secured Booster ZIP File from your {launcher} Application
 

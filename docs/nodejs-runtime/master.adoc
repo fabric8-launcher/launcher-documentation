@@ -4,12 +4,17 @@ include::topics/templates/document-attributes.adoc[]
 :toclevels: 2
 
 = {nodejs-runtime-guide-name}
+:runtime: {NodeJS}
+
 
 IMPORTANT: This runtime is coming soon and is not currently available.
 
 This guide covers concepts as well as practical details needed by developers to use the {NodeJS} runtime.
 
 include::topics/nodejs-runtime-overview.adoc[leveloffset=+1]
+
+include::topics/runtime-info-community-version.adoc[leveloffset=+1]
+
 
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
@@ -27,6 +32,19 @@ include::topics/rest-level-0-mission-basic-interaction-nodejs.adoc[leveloffset=+
 
 include::topics/rest-level-0-mission-resources.adoc[leveloffset=+3]
 
+[[mission-health-check-nodejs]]
+=== {mission-health-check-nodejs-guide-name}
+:health-check-nodejs:
+
+include::topics/health-check-mission-intro.adoc[leveloffset=+3]
+
+include::topics/health-check-mission-deploy-booster.adoc[leveloffset=+3]
+
+include::topics/health-check-mission-basic-interaction-nodejs.adoc[leveloffset=+3]
+
+include::topics/health-check-mission-resources.adoc[leveloffset=+3]
+
+
 //== Creating an Application from Scratch
 //todo
 //Building blocks
@@ -42,3 +60,6 @@ include::topics/http-api-nodejs-package-json.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/nodejs-dev-guide-additional-resources.adoc[leveloffset=+1]
+
+[appendix]
+include::topics/appendix-proficiency-levels.adoc[leveloffset=+1]

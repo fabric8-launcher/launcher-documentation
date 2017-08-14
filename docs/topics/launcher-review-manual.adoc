@@ -1,6 +1,3 @@
-:icons: font
-:runtime: ${runtime}
-
 ifeval::["{runtime}" == "Spring Boot"]
 :guideURL: http://appdev.openshift.io/docs/spring-boot-runtime.html
 :guideName: Spring Boot Tomcat Runtime Guide
@@ -14,6 +11,11 @@ endif::[]
 ifeval::["{runtime}" == "WildFly Swarm"]
 :guideURL: http://appdev.openshift.io/docs/wf-swarm-runtime.html
 :guideName: WildFly Swarm Runtime Guide
+endif::[]
+
+ifeval::["{runtime}" == "Node.js"]
+:guideURL: http://appdev.openshift.io/docs/nodejs-runtime.html
+:guideName: Node.js Runtime Guide
 endif::[]
 
 

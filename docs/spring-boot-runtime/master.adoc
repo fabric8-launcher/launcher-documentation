@@ -4,10 +4,16 @@ include::topics/templates/document-attributes.adoc[]
 
 
 = {spring-boot-runtime-guide-name}
+:runtime: {SpringBoot}
 
 This guide covers concepts as well as practical details needed by developers to use the {SpringBoot} runtime.
 
 include::topics/sb-tomcat-runtime-overview.adoc[leveloffset=+1]
+
+{SpringBoot} has a version of its runtime that is tested and verified to run on OpenShift. Some components, like the Embedded Tomcat Container and Java container image, when used with {SpringBoot} are provided as part of a Red Hat subscription.
+
+
+include::topics/runtime-info-community-version.adoc[leveloffset=+1]
 
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
@@ -124,6 +130,7 @@ include::topics/secured-mission-deploy-booster.adoc[leveloffset=+3]
 
 include::topics/secured-mission-common-interaction.adoc[leveloffset=+3]
 
+include::topics/secured-mission-resources.adoc[leveloffset=+3]
 
 //== Creating an Application from Scratch
 //todo
@@ -140,3 +147,6 @@ include::topics/http-api-spring-boot-pom.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/sb-tomcat-dev-guide-additional-resources.adoc[leveloffset=+1]
+
+[appendix]
+include::topics/appendix-proficiency-levels.adoc[leveloffset=+1]

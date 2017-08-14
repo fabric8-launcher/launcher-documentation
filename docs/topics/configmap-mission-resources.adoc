@@ -19,16 +19,13 @@ ifdef::configmap-wf-swarm[]
 endif::configmap-wf-swarm[]
 
 ifndef::configmap-spring-boot-tomcat[]
-* link:{link-configmap-spring-boot-tomcat-booster}[ConfigMap - {SpringBoot} Booster]
+* link:{link-mission-configmap-spring-boot-tomcat}[ConfigMap - {SpringBoot} Booster]
 endif::configmap-spring-boot-tomcat[]
 
 ifndef::configmap-vertx[]
-* link:{link-configmap-vertx-booster}[ConfigMap - {VertX} Booster]
+* link:{link-mission-configmap-vertx}[ConfigMap - {VertX} Booster]
 endif::configmap-vertx[]
 
 ifndef::configmap-wf-swarm[]
-* link:{link-configmap-wf-swarm-booster}[ConfigMap - {WildFlySwarm} Booster]
+* link:{link-mission-configmap-wf-swarm}[ConfigMap - {WildFlySwarm} Booster]
 endif::configmap-wf-swarm[]
-
-
-

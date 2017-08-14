@@ -1,107 +1,22 @@
-# appdev.openshift.io Documentation
+= appdev.openshift.io Documentation
 
-This repository holds the documentation for appdev.openshift.io.
+This repository holds the documentation for link:https://appdev.openshift.io[appdev.openshift.io]. The source language is AsciiDoc.
 
-Generated docs are built and deployed on every push to the `production` branch of the authoritative repository (https://github.com/openshiftio/appdev-documentation[upstream/production]) and are available at http://appdev.openshift.io/[http://appdev.openshift.io].  To test changes before pushing to the `production` branch, put all forward development in `upstream/master` and see its current state reflected in the staging environment at http://appdev-stage.openshift.io/[http://appdev-stage.openshift.io].  The `upstream/production` branch should typically be updated only via merges from `upstream/master` when it's determined the docs are ready to go live.
+== Building and Health
 
-## Directory Structure
+image::https://ci.centos.org/buildStatus/icon?job=devtools-appdev-documentation-generator-build-master[]
 
-* `docs/` - This folder contains all the appdev.openshift.io guides and related content.
-** `topics/` - This folder contains `adoc` files representing shared content between guides.
-*** `images/` - This folder contains all images used in the guides.
-*** `styles/` - This folder contains all stylesheets used in the guides.
-*** `templates/` - This folder contains template data, such as common attributes, used in the guides.
-** `GUIDE_NAME/` - There is a folder for each guide.
-*** `master.adoc` - This is the primary file for the guide. Common files or _topics_ are included from the `topics/` folder.
-*** `buildGuide.sh` - This is a script to build this individual guide.
-*** `topics/` - This is a symlink to `../topics/`, which makes building each guide a lot easier.
-* `scripts/` - This folder contains scripts needed for building guides in the repository.
+The documentation is built on link:https://ci.centos.org/job/devtools-appdev-documentation-generator-build-master/[ci.centos.org]. The pull requests build functionality is coming soon.
 
-## Building the Guides
+== Contributing
 
-. Ensure you have link:http://asciidoctor.org[AsciiDoctor] installed and configured.
-. Run the `scripts/buildGuides.sh` script to build all guides.
-. All guides will be generated as single HTML files in `html/`.
+For information about contributing to this repository, its contents and processes, see the link:https://appdev.openshift.io/docs/contrib-guide.html#_documentation[Documentation] chapter of the __Contribution Guide.__
 
-## Contributing
+For general information about missions and boosters, see the link:https://appdev.openshift.io/docs/getting-started.html[Getting Started Guide]. For information about their development, see the link:https://github.com/openshiftio/appdev-documentation/wiki[Wiki].
 
-To start contributing:
+== Publishing
 
-. Fork the link:https://github.com/openshiftio/appdev-documentation[upstream repository] into your user namespace
+You can find the list of issues addressed in each release in the link:https://github.com/openshiftio/appdev-documentation/blob/master/CHANGELOG.adoc[CHANGELOG.adoc] file.
 
-. Clone your fork.
-+
-[source,options="nowrap"]
-----
-$ git clone git@github.com:USERNAME/appdev-documentation.git
-----
-
-. Add the main project as a remote.
-+
-[source,options="nowrap"]
-----
-$ cd appdev-documentation
-$ git remote add upstream git@github.com:openshiftio/appdev-documentation.git
-$ git fetch upstream
-----
-
-. Create a branch for your contribution based on `upstream/master`.
-+
-[source,options="nowrap"]
-----
-$ git checkout -b my-awesome-idea upstream/master
-----
-
-. Make your changes.
-
-. Commit your work and push it to your fork.
-+
-[source,options="nowrap"]
-----
-$ git add docs/topics/my-awesome-idea.adoc
-$ git commit -m "Added my awesome idea."
-$ git push origin HEAD
-----
-
-. File a pull request to `upstream/master`.
-
-### Add a New Guide
-
-. Create a new folder for the guide under `docs/` e.g. `docs/my-new-guide`.
-
-. Under that folder:
-** Create a `master.adoc` file.
-
-** Create a symlink called `topics` to `../topics`.
-+
-[source,options="nowrap"]
-----
-ln -s ../topics topics
-----
-
-** Copy the `buildGuide.sh` script from another guide's folder and modify line 3. This defines the output name of the html file. This should match the folder name.
-
-. Add the default content to master.adoc.
-+
-[source,options="nowrap"]
-----
-include::topics/templates/document-attributes.adoc[]
-
-:my-new-guide:
-
-= {my-new-guide-guide-name}
-----
-
-. Update `docs/topics/templates/document-attributes.adoc` by adding the guide name attribute.
-+
-[source,options="nowrap"]
-----
-:my-new-guide-guide-name: My Awesome New guide
-----
-
-. Run the `scripts/buildGuides.sh` script to ensure the new guide builds with the others.
-
-. Open the generated html file to ensure everything looks correct.
-
-You have now created the scaffolding for a new guide. When you are ready for some initial review and feedback, file a pull request to `upstream/master`.
+Basic information about publishing a release is described in the link:https://github.com/openshiftio/appdev-documentation/blob/master/RELEASE.adoc[RELEASE.adoc] file.
 

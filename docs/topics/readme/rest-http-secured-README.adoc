@@ -15,7 +15,7 @@ To deploy your booster to a running single-node OpenShift cluster:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ git clone git@github.com:${loggedUser}/${targetRepository}
+$ ${gitCMD}
 
 $ cd ${targetRepository}/sso
 
@@ -52,7 +52,7 @@ Available application endpoint names: [${secured-app-name}]
 
 $ oc get route ${secured-app-name} -o jsonpath={$.spec.host}
 
-${secured-app-name}-MY_PROJECT_NAME.192.168.42.158.nip.io
+${secured-app-name}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME
 ----
 
 

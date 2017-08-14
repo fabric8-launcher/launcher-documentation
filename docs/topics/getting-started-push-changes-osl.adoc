@@ -56,7 +56,7 @@ In the above example, `wfswarm-rest-http-1-123ab` is the main pod.
 ----
 $ oc get route wfswarm-rest-http
 NAME                HOST/PORT                                              PATH      SERVICES            PORT      TERMINATION   WILDCARD
-wfswarm-rest-http   wfswarm-rest-http-my-wfs-booster.192.168.64.2.nip.io             wfswarm-rest-http   8080                    None
+wfswarm-rest-http   wfswarm-rest-http-my-wfs-booster.{osl-route-hostname}             wfswarm-rest-http   8080                    None
 ----
 
 . Interact with your booster.
@@ -65,9 +65,9 @@ Use `curl` to execute a `GET` request against the booster.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ curl wfswarm-rest-http-my-wfs-booster.192.168.64.2.nip.io/api/greeting
+$ curl wfswarm-rest-http-my-wfs-booster.{osl-route-hostname}/api/greeting
 {"content":"Hi there, World!"}
-$ curl wfswarm-rest-http-my-wfs-booster.192.168.64.2.nip.io/api/greeting?name=Sarah
+$ curl wfswarm-rest-http-my-wfs-booster.{osl-route-hostname}/api/greeting?name=Sarah
 {"content":"Hi there, Sarah!"}
 ----
 

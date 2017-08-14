@@ -1,7 +1,20 @@
 [[circuit_breaker_resources]]
-== Circuit Breaker Resources
+= Circuit Breaker Resources
 
-Follow the links below for more background information on the design principles behind the Circuit Breaker pattern  
+Follow the links below for more background information on the design principles behind the Circuit Breaker pattern
 
 * link:http://microservices.io/patterns/reliability/circuit-breaker.html[microservices.io: Microservice Patterns: Circuit Breaker]
+
 * link:https://martinfowler.com/bliki/CircuitBreaker.html[Martin Fowler: CircuitBreaker]
+
+ifndef::http-api-spring-boot-tomcat[]
+* link:{link-mission-circuit-breaker-spring-boot-tomcat}[{mission-circuit-breaker-spring-boot-tomcat-guide-name}]
+endif::http-api-spring-boot-tomcat[]
+
+ifndef::http-api-vertx[]
+* link:{link-mission-circuit-breaker-vertx}[{mission-circuit-breaker-vertx-guide-name}]
+endif::http-api-vertx[]
+
+ifndef::http-api-wf-swarm[]
+* link:{link-mission-circuit-breaker-wf-swarm}[{mission-circuit-breaker-wf-swarm-guide-name}]
+endif::http-api-wf-swarm[]

@@ -27,7 +27,7 @@
 
 :app-name: MY_APP_NAME
 :project-name: MY_PROJECT_NAME
-
+:revnumber: {localdate}
 
 :name-mission-http-api: REST API Level 0
 
@@ -41,6 +41,7 @@
 :mission-health-check-spring-boot-tomcat-guide-name: Health Check Mission - {SpringBoot} Booster
 :mission-health-check-vertx-guide-name: Health Check Mission - {VertX} Booster
 :mission-health-check-wf-swarm-guide-name: Health Check Mission - {WildFlySwarm} Booster
+:mission-health-check-nodejs-guide-name: Health Check Mission - {NodeJS} Booster
 :mission-circuit-breaker-spring-boot-tomcat-guide-name: Circuit Breaker Mission - {SpringBoot} Booster
 :mission-circuit-breaker-vertx-guide-name: Circuit Breaker Mission - {VertX} Booster
 :mission-circuit-breaker-wf-swarm-guide-name: Circuit Breaker Mission - {WildFlySwarm} Booster
@@ -62,7 +63,7 @@
 :wf-swarm-runtime-guide-name: {WildFlySwarm} Runtime Guide
 :nodejs-runtime-guide-name: {NodeJS} Runtime Guide
 
-:MinishiftVersion: 1.1.0
+:MinishiftVersion: 1.3.1
 :CDKVersion: 3.0.0
 
 :link-http-api-level-0-spring-boot-tomcat-booster: https://github.com/snowdrop/rest_springboot-tomcat
@@ -88,21 +89,24 @@
 :link-mission-crud-spring-boot-tomcat: {link-spring-boot-runtime-guide}#mission-crud-spring-boot-tomcat
 :link-mission-health-check-spring-boot-tomcat: {link-spring-boot-runtime-guide}#mission-health-check-spring-boot-tomcat
 :link-mission-secured-spring-boot: {link-spring-boot-runtime-guide}#mission-secured-spring-boot
+:link-mission-circuit-breaker-spring-boot-tomcat: {link-spring-boot-runtime-guide}#mission-circuit-breaker-spring-boot-tomcat
 
 :link-mission-http-api-vertx: {link-vertx-runtime-guide}#mission-http-api-vertx
 :link-mission-configmap-vertx: {link-vertx-runtime-guide}#mission-configmap-vertx
 :link-mission-crud-vertx: {link-vertx-runtime-guide}#mission-crud-vertx
 :link-mission-health-check-vertx: {link-vertx-runtime-guide}#mission-health-check-vertx
 :link-mission-secured-vertx: {link-vertx-runtime-guide}#mission-secured-vertx
+:link-mission-circuit-breaker-vertx: {link-vertx-runtime-guide}#mission-circuit-breaker-vertx
 
 :link-mission-http-api-wf-swarm: {link-wf-swarm-runtime-guide}#mission-http-api-wf-swarm
 :link-mission-configmap-wf-swarm: {link-wf-swarm-runtime-guide}#mission-configmap-wf-swarm
 :link-mission-crud-wf-swarm: {link-wf-swarm-runtime-guide}#mission-crud-wf-swarm
 :link-mission-health-check-wf-swarm: {link-wf-swarm-runtime-guide}#mission-health-check-wf-swarm
 :link-mission-secured-wf-swarm: {link-wf-swarm-runtime-guide}#mission-secured-wf-swarm
+:link-mission-circuit-breaker-wf-swarm: {link-wf-swarm-runtime-guide}#mission-circuit-breaker-wf-swarm
 
 :link-mission-http-api-nodejs: {link-nodejs-runtime-guide}#mission-http-api-nodejs
-
+:link-mission-health-check-nodejs: {link-nodejs-runtime-guide}#mission-health-check-nodejs
 
 :link-oso-auth: OPENSHIFT_URL
 :link-osl-auth: LOCAL_OPENSHIFT_URL
@@ -111,5 +115,21 @@
 :link-launcher-yaml: /latest-launcher-template
 :link-launcher-oso: https://launch.openshift.io/wizard/
 
+// Minishift route URL e.g: 192.168.42.152.nip.io
+:osl-route-hostname: LOCAL_OPENSHIFT_HOSTNAME
 
-:link-launcher-install-script: https://raw.githubusercontent.com/openshiftio/appdev-documentation/production/scripts/deploy_launchpad_mission.sh
+// Minishift access URL e.g: 192.168.42.152.:8443
+:osl-login-url: LOCAL_OPENSHIFT_URL:PORT
+
+// OSO hostname e.g: 1ab5.starter-us-east-1.openshiftapps.com
+:oso-route-hostname: OPENSHIFT_ONLINE_HOSTNAME
+
+:link-launcher-install-script: https://raw.githubusercontent.com/openshiftio/appdev-documentation/master/scripts/deploy_launchpad_mission.sh
+
+
+// Mission Knowledge Proficiency
+// Usage expects all of these to be capitalized
+:proficiency-foundational: Foundational
+:proficiency-advanced: Advanced
+:proficiency-expert: Expert
+:SegmentTrackerToken: ${LAUNCHPAD_TRACKER_SEGMENT_TOKEN}

@@ -25,14 +25,13 @@ image::minishift_processtemplate.png[Process Template]
 . Fill out the following fields.
 ** _Your GitHub username_.
 ** _Your GitHub Mission Control access token_ is your personal access token for GitHub.
-** The _Target OpenShift Console URL_ is the OpenShift Console URL from your {OpenShiftLocal}. This should be the same base URL you are currently using to complete the form, for example `https://192.168.42.152:8443`.
+** The _Target OpenShift Console URL_ is the OpenShift Console URL from your {OpenShiftLocal}. This should be the same base URL you are currently using to complete the form, for example `+++https://192.168.42.152:8443+++`.
 ** OpenShift username and password from your {OpenShiftLocal}, for example `developer` for the username and password.
 ** _KeyCloak URL_ and _KeyCloak Realm_ **MUST** be cleared out.
 +
 WARNING: You must clear these fields out for the {launcher} application on your {OpenShiftLocal} to be configured correctly.
 
 ** _Catalog Git Repository_ and _Catalog Git Reference_ should be generally left as-is, unless you are developing against a specific fork you would like to use.
-** _{launcher} Frontend Host_ must be entered. Usually this takes the form of `launchpad-frontend-$PROJECTNAME.$HOSTNAMEORIP.nip.io`, replacing `$PROJECTNAME` with the name of your project and `$HOSTNAMEORIP` with the IP address of your OpenShift Console URL. This example uses `my-launcher` and `+++192.168.42.152+++` to make `launchpad-frontend-my-launcher.192.168.42.152.nip.io`.
 
 . Before proceeding to the next steps, confirm all the fields are correct. Also confirm that _KeyCloak URL_ and _KeyCloak Realm_ **have been cleared out**.
 

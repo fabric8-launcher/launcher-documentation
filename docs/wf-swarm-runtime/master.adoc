@@ -4,10 +4,15 @@ include::topics/templates/document-attributes.adoc[]
 :toclevels: 2
 
 = {wf-swarm-runtime-guide-name}
+:runtime: {WildFlySwarm}
 
 This guide covers concepts as well as practical details needed by developers to use the {WildFlySwarm} runtime.
 
 include::topics/wf-swarm-runtime-overview.adoc[leveloffset=+1]
+
+include::topics/runtime-info-product-version.adoc[leveloffset=+1]
+include::topics/runtime-info-community-version.adoc[leveloffset=+1]
+
 
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
@@ -123,8 +128,7 @@ include::topics/secured-mission-deploy-booster.adoc[leveloffset=+3]
 
 include::topics/secured-mission-common-interaction.adoc[leveloffset=+3]
 
-
-
+include::topics/secured-mission-resources.adoc[leveloffset=+3]
 
 //== Creating an Application from Scratch
 //todo
@@ -141,3 +145,6 @@ include::topics/http-api-wf-swarm-pom.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/wf-swarm-dev-guide-additional-resources.adoc[leveloffset=+1]
+
+[appendix]
+include::topics/appendix-proficiency-levels.adoc[leveloffset=+1]
