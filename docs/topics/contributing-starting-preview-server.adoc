@@ -29,9 +29,9 @@ This process may take a few minutes.
 +
 [source,options="nowrap"]
 ----
-$ sudo docker run -p 8080:8080 -it appdev-documentation-deploy:latest
+$ sudo docker run -p 80:8080 -it appdev-documentation-deploy:latest
 ----
-. Navigate to `localhost:8080` in your browser.
+. Navigate to `http://localhost` in your browser.
 . When you are done, stop the Docker container with the server:
 .. Go back to the terminal where the container is running.
 .. Press `Ctrl + C`.
