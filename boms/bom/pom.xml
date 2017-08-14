@@ -112,7 +112,7 @@
                            <template>${project.parent.build.directory}/generated-project-template.xml</template>
                            <downloadSources>true</downloadSources>
                            <downloadPoms>true</downloadPoms>
-                           <removeCommunity>false</removeCommunity>
+                           <removeCommunity>true</removeCommunity>
                            <!-- Use custom settings to point to the local maven repo cache -->
                            <userSettings>${project.parent.build.directory}/custom-settings.xml</userSettings>
                            <outputDirectory>${project.build.directory}</outputDirectory>

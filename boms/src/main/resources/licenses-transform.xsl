@@ -170,13 +170,7 @@
           <xsl:with-param name="url" select="$cddl_url"/>
         </xsl:call-template>
       </xsl:when>
-      <xsl:when test="contains(url/text(), 'glassfish.java.net/public/CDDL+GPL_1_1')">
-        <xsl:call-template name="license">
-          <xsl:with-param name="name" select="$cddl_name"/>
-          <xsl:with-param name="url" select="$cddl_url"/>
-        </xsl:call-template>
-      </xsl:when>
-      <xsl:when test="contains(url/text(), 'glassfish.dev.java.net/nonav/public/CDDL+GPL')">
+      <xsl:when test="contains(url/text(), 'glassfish.java.net/public/CDDL+GPL') or contains(url/text(), 'glassfish.dev.java.net/nonav/public/CDDL+GPL') or contains(url/text(), 'glassfish.dev.java.net/public/CDDL+GPL')">
         <xsl:call-template name="license">
           <xsl:with-param name="name" select="$cddl_name"/>
           <xsl:with-param name="url" select="$cddl_url"/>
