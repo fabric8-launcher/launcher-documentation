@@ -28,6 +28,10 @@ function tag_push() {
 # Exit on error
 set -e
 
+# Run tests
+./scripts/validateGuides.sh
+
+
 if [ -z $CICO_LOCAL ]; then
     [ -f jenkins-env ] && cat jenkins-env | grep -e PASS -e GIT -e DEVSHIFT > inherit-env
     [ -f inherit-env ] && . inherit-env

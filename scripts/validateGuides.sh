@@ -1,12 +1,13 @@
-#!/bin/bash
+#!/usr/bin/bash
 
-
+# Builds all books into DocBook 5 XML and validates them using XMLlint.
 failed_builds=""
 failed_validations=""
 exit_status=0
 
+echo Running tests...
 for dir in $(dirname docs/*/master.adoc); do
-    echo -e "\nBuilding $dir"
+    echo -e "Processing $dir"
     pushd $dir >/dev/null
 
     # Check if this book is ignored in the CI builds
@@ -49,6 +50,12 @@ if test -n "$failed_validations"; then
     for validation in $failed_validations; do
         echo " * $validation"
     done
+fi
+
+if (($exit_status)); then
+    echo -e "\nTesting failed."
+else
+    echo -e "\nTesting passed."
 fi
 
 exit $exit_status
