@@ -124,7 +124,7 @@
 // OSO hostname e.g: 1ab5.starter-us-east-1.openshiftapps.com
 :oso-route-hostname: OPENSHIFT_ONLINE_HOSTNAME
 
-:link-launcher-install-script: https://raw.githubusercontent.com/openshiftio/appdev-documentation/production/scripts/deploy_launchpad_mission.sh
+:link-launcher-install-script: https://raw.githubusercontent.com/openshiftio/appdev-documentation/master/scripts/deploy_launchpad_mission.sh
 
 
 // Mission Knowledge Proficiency
