@@ -29,6 +29,8 @@ include::topics/contributing-branches.adoc[leveloffset=+3]
 
 include::topics/contributing-making-changes.adoc[leveloffset=+3]
 
+include::topics/contributing-adding-new-guide.adoc[leveloffset=+3]
+
 include::topics/contributing-building-locally.adoc[leveloffset=+3]
 
 include::topics/contributing-starting-preview-server.adoc[leveloffset=+3]
