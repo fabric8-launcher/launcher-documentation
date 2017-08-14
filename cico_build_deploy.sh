@@ -8,7 +8,6 @@ REGISTRY_URL=${REGISTRY_URI}/${REGISTRY_NS}/${REGISTRY_IMAGE}
 BUILDER_IMAGE="appdev-documentation-builder"
 BUILDER_CONT="appdev-documentation-builder-container"
 DEPLOY_IMAGE="appdev-documentation-deploy"
-TAG_LENGTH=7
 
 TARGET_DIR="html"
 
@@ -63,7 +62,7 @@ docker build -t ${DEPLOY_IMAGE} -f Dockerfile.deploy .
 
 #PUSH
 if [ -z $CICO_LOCAL ]; then
-    TAG=$(echo $GIT_COMMIT | cut -c1-${TAG_LENGTH})
+    TAG=$(echo $GIT_COMMIT | cut -c1-${DEVSHIFT_TAG_LEN})
     tag_push "${REGISTRY_URL}:${TAG}" ${DEVSHIFT_USERNAME} ${DEVSHIFT_PASSWORD} ${REGISTRY_URI}
     tag_push "${REGISTRY_URL}:latest" ${DEVSHIFT_USERNAME} ${DEVSHIFT_PASSWORD} ${REGISTRY_URI}
 fi
