@@ -1,14 +1,21 @@
 
-= Branches
+= Branches and Tags
 
-The following branches are used in the _appdev-documentation_ repository:
+The following branches and tags are used in the _appdev-documentation_ repository:
 
-.Branch Names and Their Contents
+.Branch Names and Contents
 [options="header",cols="1,3"]
 |===
 | Branch | Content
 
 | master | The latest version of the documentation in development.
-| production | The production version of the documentation published on link:https://appdev.openshift.io/docs[].
 |===
 
+.Tag Format and Contents
+[options="header",cols="2,3"]
+|===
+| Branch | Content
+
+| Date in the `YYYY-MM-DD` format | The documentation as released on the particular date.
+| Date in the `YYYY-MM-DD_$NUMBER` format | A subsequent release of the documentation on that date.
+|===
