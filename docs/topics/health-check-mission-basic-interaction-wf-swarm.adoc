@@ -8,7 +8,7 @@ In the following we demonstrate the basic interactions on the command line that 
 +
 [source,bash,options="nowrap",subs="attributes"]
 ----
-$ curl http://{app-name}-{project-name}.{oso-route-hostname}/api/greeting
+$ curl http://{app-name}-{project-name}.{osl-route-hostname}/api/greeting
 {"content":"Hello, World!"}
 ----
 
@@ -16,11 +16,11 @@ $ curl http://{app-name}-{project-name}.{oso-route-hostname}/api/greeting
 +
 [source,bash,option="nowrap",subs="attributes+"]
 ----
-$ curl http://{app-name}-{project-name}.{oso-route-hostname}/api/killme
+$ curl http://{app-name}-{project-name}.{osl-route-hostname}/api/killme
 
 (followed by)
 
-$ curl http://{app-name}-{project-name}.{oso-route-hostname}/api/greeting
+$ curl http://{app-name}-{project-name}.{osl-route-hostname}/api/greeting
 
 <html>
   <head><title>Error</title></head>
@@ -43,7 +43,7 @@ NAME                           READY     STATUS    RESTARTS   AGE
 +
 [source,bash,option="nowrap",subs="attributes"]
 --
-$ http://{app-name}-{project-name}.{oso-route-hostname}
+$ http://{app-name}-{project-name}.{osl-route-hostname}
 --
 
 include::health-check-mission-web-console-log-output.adoc[leveloffset=+1]
