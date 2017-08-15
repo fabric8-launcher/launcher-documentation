@@ -28,6 +28,13 @@ function tag_push() {
 # Exit on error
 set -e
 
+# Install Asciidoctor if missing - needed for CI
+if ! asciidoctor --version &>/dev/null; then
+    echo Asciidoctor is missing, installing...
+    yum --version &>/dev/null && yum -y install rubygems
+    gem install asciidoctor
+fi
+
 # Run tests
 ./scripts/validateGuides.sh
 
