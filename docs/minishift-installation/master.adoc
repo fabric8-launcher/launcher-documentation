@@ -1,6 +1,8 @@
 include::topics/templates/document-attributes.adoc[]
 
 :install-launcher-osl:
+//var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
+:docs-topic:
 
 = {minishift-installation-guide-name}
 

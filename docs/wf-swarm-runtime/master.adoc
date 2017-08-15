@@ -5,6 +5,8 @@ include::topics/templates/document-attributes.adoc[]
 
 = {wf-swarm-runtime-guide-name}
 :runtime: {WildFlySwarm}
+//var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
+:docs-topic:
 
 This guide covers concepts as well as practical details needed by developers to use the {WildFlySwarm} runtime.
 

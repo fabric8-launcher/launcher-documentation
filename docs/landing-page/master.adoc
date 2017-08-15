@@ -3,6 +3,8 @@ include::topics/templates/document-attributes.adoc[]
 :landing-page:
 :toc!:
 :title: launch.openshift.io
+//var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
+:docs-topic:
 
 ++++
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.23.3/css/patternfly.min.css">
