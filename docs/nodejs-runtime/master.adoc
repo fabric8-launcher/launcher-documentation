@@ -5,6 +5,8 @@ include::topics/templates/document-attributes.adoc[]
 
 = {nodejs-runtime-guide-name}
 :runtime: {NodeJS}
+//var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
+:docs-topic:
 
 
 IMPORTANT: This runtime is coming soon and is not currently available.

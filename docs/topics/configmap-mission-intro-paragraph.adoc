@@ -1,3 +1,7 @@
-Mission proficiency level: xref:proficiency_foundational[*{proficiency-foundational}*].
+Mission proficiency level: 
+//special case since topic is used by front end.
+ifdef::docs-topic[xref:proficiency_foundational[*{proficiency-foundational}*].]
+ifndef::docs-topic[link:https://appdev.openshift.io/docs/wf-swarm-runtime.html#proficiency_levels[*{proficiency-foundational}*].]
+
 
 The ConfigMap Mission provides a basic example of using ConfigMap to take advantage of external configuration sources.
