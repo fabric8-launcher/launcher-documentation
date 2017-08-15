@@ -1,23 +1,23 @@
 [[configmap_build_and_deploy_booster]]
 = Build and Deploy Your Booster
 
-include::booster-deploy-openshift-online.adoc[leveloffset=+1]
+include::booster-deploy-openshift-local.adoc[leveloffset=+1]
 
 
 === Deploy Using the `oc` CLI Client
 
 include::oc-client-deploy-booster-download-note.adoc[leveloffset=+3]
 
-. Get your authentication token for using the `oc` CLI client with your {OpenShiftOnline} account. You can find this in the _Command Line Tools_ section your {OpenShiftOnline} Web console. 
+. Get your authentication token for using the `oc` CLI client with your {OpenShiftLocal} account. You can find this in the _Command Line Tools_ section your {OpenShiftLocal} Web console. 
 
-. Authenticate your `oc` CLI client with your {OpenShiftOnline} account by using your authentication token.
+. Authenticate your `oc` CLI client with your {OpenShiftLocal} account by using your authentication token.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc login {link-oso-auth} --token=MYTOKEN
 ----
 
-. Create a new project in your {OpenShiftOnline}.
+. Create a new project in your {OpenShiftLocal}.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -36,7 +36,7 @@ endif::configmap-vertx,configmap-spring-boot-tomcat[]
 . Navigate to the root directory of your booster.
 
 ifdef::configmap-vertx[]
-. Deploy your ConfigMap configuration to your {OpenShiftOnline} using `app-config.yml`.
+. Deploy your ConfigMap configuration to your {OpenShiftLocal} using `app-config.yml`.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -58,7 +58,7 @@ data:
 ----
 endif::configmap-vertx[]
 ifdef::configmap-wf-swarm[]
-. Deploy your ConfigMap configuration to your {OpenShiftOnline} using `app-config.yml` in the root of the booster.
+. Deploy your ConfigMap configuration to your {OpenShiftLocal} using `app-config.yml` in the root of the booster.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -80,7 +80,7 @@ data:
 ----
 endif::configmap-wf-swarm[]
 ifdef::configmap-spring-boot-tomcat[]
-. Deploy your ConfigMap configuration to your {OpenShiftOnline} using `src/main/etc/application.properties`.
+. Deploy your ConfigMap configuration to your {OpenShiftLocal} using `src/main/etc/application.properties`.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -101,7 +101,7 @@ data:
 ----
 endif::configmap-spring-boot-tomcat[]
 
-. Use Maven to start the deployment to your {OpenShiftOnline}.
+. Use Maven to start the deployment to your {OpenShiftLocal}.
 +
 ifdef::configmap-vertx,configmap-spring-boot-tomcat[]
 [source,bash,options="nowrap",subs="attributes+"]
@@ -116,7 +116,7 @@ $ mvn clean fabric8:deploy -Popenshift -DskipTests
 ----
 endif::configmap-wf-swarm[]
 +
-This command uses the Fabric8 Maven Plugin to launch the S2I process on your {OpenShiftOnline} and to start the pod.
+This command uses the Fabric8 Maven Plugin to launch the S2I process on your {OpenShiftLocal} and to start the pod.
 
 
 . Check the status of your booster and ensure your pod is running.
@@ -141,9 +141,7 @@ endif::configmap-vertx[]
 ----
 $ oc get routes
 NAME         HOST/PORT                                     PATH      SERVICES             PORT      TERMINATION
-{app-name}   {app-name}-{project-name}.{oso-route-hostname}              {app-name}           8080
+{app-name}   {app-name}-{project-name}.{osl-route-hostname}              {app-name}           8080
 ----
 +
-A pod's route information gives you the base URL which you use to access it. In the example above, you would use `http://{app-name}-{project-name}.{oso-route-hostname}` as the base URL to access the application.
-
-include::booster-deploy-openshift-local.adoc[leveloffset=+1]
+A pod's route information gives you the base URL which you use to access it. In the example above, you would use `http://{app-name}-{project-name}.{osl-route-hostname}` as the base URL to access the application.

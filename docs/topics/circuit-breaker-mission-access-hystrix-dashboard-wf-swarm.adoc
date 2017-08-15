@@ -7,14 +7,14 @@ NOTE: You must have the Circuit Breaker booster application deployed before proc
 //  Openshift first. Do we reference Minishift to? Add a note or a section?
 // Replace with proper OSO URLs
 // WFS specific steps?
-. Log in to your {OpenShiftOnline} cluster.
+. Log in to your {OpenShiftLocal} cluster.
 +
 [source,bash,subs="attributes+",options="nowrap"]
 --
 $ oc login {link-oso-auth} --token=MYTOKEN
 --
 +
-. To access the Web console, use your browser to navigate to your {OpenShiftOnline} URL.
+. To access the Web console, use your browser to navigate to your {OpenShiftLocal} URL.
 +
 . Navigate to the project that contains your Circuit Breaker application.
 +

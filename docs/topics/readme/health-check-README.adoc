@@ -74,6 +74,5 @@ ${app-name}-1-26iy7   1/1       Running   5          18m
 
 When `READY` changes to `0/1`, if you re-execute a `curl` command to `api/greeting` or attempt to access the application's URL, it will be unavailable. When `READY` changes back to `1/1`, `curl` commands and the application URL will be available again.
 
-
 == CI/CD Deployment
-As part of the process of creating this booster, launch.openshift.io set up a project with a CI/CD deployment of this booster. You can see the status of this deployment in the link:https://manage.openshift.com[OpenShift Online Web console]. You can also learn more about this booster and rest of the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].
+As part of the process of creating this booster, launch.openshift.io set up a project with a CI/CD deployment of this booster. You can see the status of this deployment in your Single-node OpenShift Cluster Web Console. You can also learn more about this booster and rest of the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].

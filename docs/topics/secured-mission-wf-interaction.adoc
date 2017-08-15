@@ -37,7 +37,7 @@ MY_TOKEN=$(curl -s -k -X POST https://secure-sso-{project-name}.{osl-route-hostn
 ----
 $ java -jar target/sso-client.jar --app wfswarm-rest-http-secured
 Successful oc get routes: Yes
-Using auth server URL: https://secure-sso-sso.{oso-route-hostname}
+Using auth server URL: https://secure-sso-sso.{osl-route-hostname}
 Available application endpoint names: [secured-vertx-rest, wfswarm-rest-http-secured, secured-springboot-rest]
 
 Requesting greeting...
@@ -83,7 +83,7 @@ curl -kv http://wfswarm-rest-http-secured-{project-name}.{osl-route-hostname}/gr
 ----
 $ java -jar target/sso-client.jar --app wfswarm-rest-http-secured --password bad
 Successful oc get routes: Yes
-Using auth server URL: https://secure-sso-sso.{oso-route-hostname}
+Using auth server URL: https://secure-sso-sso.{osl-route-hostname}
 Available application endpoint names: [secured-vertx-rest, wfswarm-rest-http-secured, secured-springboot-rest]
 Exception in thread "main" java.lang.RuntimeException: Failed to request token
 	at client.authz.AuthzClient.obtainAccessToken(AuthzClient.java:67)
@@ -103,7 +103,7 @@ Caused by: javax.ws.rs.NotAuthorizedException: HTTP 401 Unauthorized
 ----
 $ java -jar target/sso-client.jar --app wfswarm-rest-http-secured --user admin --password admin
 Successful oc get routes: Yes
-Using auth server URL: https://secure-sso-sso.{oso-route-hostname}
+Using auth server URL: https://secure-sso-sso.{osl-route-hostname}
 Available application endpoint names: [secured-vertx-rest, wfswarm-rest-http-secured, secured-springboot-rest]
 Exception in thread "main" javax.ws.rs.ForbiddenException: HTTP 403 Forbidden
 	at org.jboss.resteasy.client.jaxrs.internal.ClientInvocation.handleErrorStatus(ClientInvocation.java:216)
