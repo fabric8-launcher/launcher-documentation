@@ -13,7 +13,20 @@ When making contributions, follow the standard link:https://guides.github.com/in
 
 .Contributor Workflow
 . Create a topic branch in your personal fork of the _appdev-documentation_ repository. If you want to resolve a particular issue with your changes, name the branch `issue-$ID`, where `$ID` is the numerical ID of the issue.
-. Commit and push your changes to the topic branch. Verify your changes are rendered correctly by previewing the build locally. For more information, see xref:_building_locally[].
+. Commit and push your changes to the topic branch. Verify your changes:
+** Preview the build locally. For more information, see xref:_building_locally[].
+** Validate the books. Execute the following script:
++
+--
+[source,bash,options="nowrap"]
+----
+$ ./scripts/validateGuides.sh
+----
+
+If there are errors in validation, open the `master.xml` file in the directory of the book that failed to validate. The validation output should tell you where the issue is. Modify the `master.adoc` or another included `*.adoc` file accordingly.
+
+If you are unsure, ask someone from the team for help.
+--
 . Create a pull request against the branch you based your contribution off. Ensure you also:
 +
 --
