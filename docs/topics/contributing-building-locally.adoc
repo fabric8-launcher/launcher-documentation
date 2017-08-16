@@ -47,11 +47,11 @@ Replace `$REPO_HOME` with the real path to the repository, and `firefox` with th
 
 .Building All Guides
 . In a console application, navigate to the `$REPO_HOME/scripts` directory.
-. Build all books by executing the `buildGuides.sh` script:
+. Build all books by executing the `build_guides.sh` script:
 +
 [source,bash]
 ----
-$ ./buildGuides.sh
+$ ./build_guides.sh
 ----
 
 . View the resulting documents in the `$REPO_HOME/html` directory:

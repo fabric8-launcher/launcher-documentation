@@ -37,7 +37,7 @@ GUIDE_HTML_NAME=my-new-guide
 ----
 :my-new-guide-guide-name: My New Guide
 ----
-. Ensure the new guide builds correctly by executing the `scripts/buildGuides.sh` script.
+. Ensure the new guide builds correctly by executing the `scripts/build_guides.sh` script.
 . Open the generated HTML file to ensure everything is rendered correctly:
 +
 --

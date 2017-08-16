@@ -54,7 +54,7 @@ docker build -t ${BUILDER_IMAGE} -f Dockerfile.build .
 mkdir ${TARGET_DIR}/
 docker run --detach=true --name ${BUILDER_CONT} -t -v $(pwd)/${TARGET_DIR}:/${TARGET_DIR}:Z ${BUILDER_IMAGE} /bin/tail -f /dev/null #FIXME
 
-docker exec ${BUILDER_CONT} sh scripts/buildGuides.sh
+docker exec ${BUILDER_CONT} sh scripts/build_guides.sh
 
 #BUILD DEPLOY IMAGE
 docker build -t ${DEPLOY_IMAGE} -f Dockerfile.deploy .
