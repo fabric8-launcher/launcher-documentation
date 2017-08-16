@@ -3,21 +3,7 @@
 
 . Navigate to link:{link-launcher-oso}[{launcher}] using your browser.
 . Select _Prepare for Takeoff_.
-. Choose _Use {OpenShiftOnline} to build and deploy_.
-+
-IMPORTANT: When using _Use {OpenShiftOnline} to build and deploy_, ensure you have followed the link to grant {launcher} access to your GitHub and {OpenShiftOnline} accounts. When you are on the `sso.openshift.io` page, you will need to click _Add_ for *BOTH* _GitHub_ and _OpenShift v3_ 
-
+. Choose _Build and Run Locally_.
 . Follow the instructions to create a booster of your choice.
 
-This will:
-
-** Create a new GitHub repository associated with your account containing the booster's code.
-** Create a pipeline to continuously deliver your booster's code.
-** The pipeline will then build and deploy your booster's code to {OpenShiftOnline}.  
-
-At this point, you should take a look at your booster's `README.adoc` file for more details on building, deploying, and interacting with your booster from your local host. You can also xref:cd-oso[use the CI/CD process to deploy your booster to {OpenShiftOnline}].
-
-[discrete]
-== Create a Booster to Build and Run Locally
-
-In addition to the _Use {OpenShiftOnline} to build and deploy_ option, you can also choose _Build and Run Locally_ when creating your booster. This creates a ZIP of your booster that you can download to build and run locally. This option provides the same booster, but does not create a GitHub repository or any build pipelines in {OpenShiftOnline}. The ZIP version of your booster also provides a `README.adoc` file with details on building, deploying, and interacting with your booster from your local host.
+This creates a ZIP of your booster that you can download to build and run locally. It also provides a `README.adoc` file with details on building, deploying, and interacting with your booster from your local host.

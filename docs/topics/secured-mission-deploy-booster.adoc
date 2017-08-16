@@ -2,11 +2,6 @@
 
 = Build and Deploy Your Booster
 
-== Deploy RH SSO and Booster to your {OpenShiftOnline}
-
-NOTE: There is not enough quota available to run this booster in {OpenShiftOnline}.
-
-
 include::mission-secured-deploy-rhsso-zip.adoc[leveloffset=+1]
 
 include::mission-secured-deploy-rhsso-cd.adoc[leveloffset=+1]

@@ -1,10 +1,10 @@
 When you create cloud-native applications and services, you need a hosted or local development environment that matches the target cloud environment. This enables you to encounter and resolve deployment and environment issues in your applications and services in your local environment before deploying them to your target cloud environment. 
 
 [.lead]
-{OpenShiftOnline} provides a hosted solution for such an environment. A {OpenShiftLocal} provides an out-of-the-box solution for setting up such an environment on your local machine without the need for extensive setup and configuration. 
+A {OpenShiftLocal} provides an out-of-the-box solution for setting up such an environment on your local machine without the need for extensive setup and configuration. 
 
 [.lead]
-The {launcher} application gives you a hassle-free way of creating functional example applications called Missions as well as easy way to build and deploy those Missions a cloud environment. The Missions are designed to showcase various fundamental pieces of building cloud-native applications and services, such as:
+The {launcher} application gives you a hassle-free way of creating functional example applications called Missions as well as easy way to build and deploy those Missions to a cloud environment. The Missions are designed to showcase various fundamental pieces of building cloud-native applications and services, such as:
 
 [.lead]
 * Creating HTTP APIs
@@ -14,4 +14,4 @@ The {launcher} application gives you a hassle-free way of creating functional ex
 * Securing your applications with {RHSSO} to provide authentication and authorization functionality
 
 [.lead]
-Each mission is comprised of different Boosters that show how to implement the same mission in different runtimes and any booster can be updated or extended for your own use case. The {launcher} application also handles creating an SCM repository in GitHub as well as configuring CI/CD between that repository and the OpenShift platform. This guide takes you through the developer's journey of deploying a Booster application in several ways.
+Each mission is comprised of different Boosters that show how to implement the same mission in different runtimes and any booster can be updated or extended for your own use case. This guide takes you through the developer's journey of deploying a Booster application in several ways.
