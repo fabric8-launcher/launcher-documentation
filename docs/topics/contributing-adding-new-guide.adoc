@@ -15,7 +15,7 @@ To add a new guide to the existing documentation set, perform the following step
 ----
 $ ln -s ../topics topics
 ----
-** Copy the `buildGuide.sh` script from another guide's folder. Modify the script so that the `GUIDE_HTML_NAME` variable is set to the directory name of the new book, for example:
+** Copy the `build_guide.sh` script from another guide's folder. Modify the script so that the `GUIDE_HTML_NAME` variable is set to the directory name of the new book, for example:
 +
 [source,options="nowrap"]
 ----

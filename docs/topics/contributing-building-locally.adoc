@@ -25,11 +25,11 @@ $ cd $REPO_HOME/docs/contribution-guide/
 Replace `$REPO_HOME` with the real path to the repository.
 --
 
-. Execute the `buildGuide.sh` script:
+. Execute the `build_guide.sh` script:
 +
 [source,bash]
 ----
-$ ./buildGuide.sh
+$ ./build_guide.sh
 ----
 
 . View the resulting document in the `$REPO_HOME/html` directory.
