@@ -20,7 +20,7 @@ When making contributions, follow the standard link:https://guides.github.com/in
 --
 [source,bash,options="nowrap"]
 ----
-$ ./scripts/validateGuides.sh
+$ ./scripts/validate_guides.sh
 ----
 
 If there are errors in validation, open the `master.xml` file in the directory of the book that failed to validate. The validation output should tell you where the issue is. Modify the `master.adoc` or another included `*.adoc` file accordingly.
