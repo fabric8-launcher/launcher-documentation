@@ -1,3 +1,3 @@
-Mission proficiency level: *{proficiency-foundational}*. For more information, see xref:proficiency_levels[].
+Mission proficiency level: xref:proficiency_foundational[*{proficiency-foundational}*].
 
 The _Circuit Breaker_ Mission demonstrates a generic pattern for reporting the failure of a service and then limiting access to the failed service until it becomes available to handle requests. This helps prevent cascading failure in other services that depend on the failed services for functionality.
