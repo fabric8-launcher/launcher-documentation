@@ -19,12 +19,12 @@ Usually, update version `vX` to `vX+1`, for example `v3` to `v4`.
 --
 
 . Tag the release:
-. Execute the `tagRelease.sh` script in the `$REPO_HOME/scripts` directory:
+. Execute the `tag_release.sh` script in the `$REPO_HOME/scripts` directory:
 +
 --
 [source,bash]
 ----
-$ ./tagRelease.sh
+$ ./tag_release.sh
 ----
 
 The script automatically tags the commit with the current date in the `YYYY-MM-DD` format. If you are re-releasing the same day, a suffix `_2`, `_3`, etc. is appended. If you want to tag with a different date or manually, execute the following command:

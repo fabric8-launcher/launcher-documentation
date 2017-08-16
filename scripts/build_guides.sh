@@ -22,7 +22,7 @@ do
   fi
   cd $DOCS_SRC/${subdir##*/}
   GUIDE_NAME=${PWD##*/}
-  ./buildGuide.sh
+  ./build_guide.sh
   if [ "$?" = "1" ]; then
     BUILD_ERROR="ERROR: Build of $GUIDE_NAME failed. See the log above for details."
     BUILD_MESSAGE="$BUILD_MESSAGE\n$BUILD_ERROR"

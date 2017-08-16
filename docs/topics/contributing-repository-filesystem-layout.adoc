@@ -19,11 +19,11 @@ NOTE: The triple-dot indicates there are more files or directories in the partic
 │   │   ├── ...
 │   ├── $GUIDE_NAME/ <7>
 │   │   ├── master.adoc/ <8>
-│   │   ├── buildGuide.sh/ <9>
+│   │   ├── build_guide.sh/ <9>
 │   │   └── topics/ -> ../topics <10>
 │   ├── ...
 ├── scripts/ <11>
-│   ├── buildGuide.sh <12>
+│   ├── build_guide.sh <12>
 │   ├── ...
 └── README.adoc
 ----

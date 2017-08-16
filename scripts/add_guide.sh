@@ -15,12 +15,12 @@ cd docs/$GUIDE_NAME/
 
 #Add template files to get things started
 cp ../topics/templates/master.adoc .
-cp ../topics/templates/buildGuide.sh .
+cp ../topics/templates/build_guide.sh .
 ln -s ../topics topics
 
 #Update buildscript to build the guide we just created
-echo -e "GUIDE_HTML_NAME="$GUIDE_NAME".html\n$(cat buildGuide.sh)" > buildGuide.sh
-chmod +x buildGuide.sh
+echo -e "GUIDE_HTML_NAME="$GUIDE_NAME".html\n$(cat build_guide.sh)" > build_guide.sh
+chmod +x build_guide.sh
 
 #go back to where user was
 cd $HOME

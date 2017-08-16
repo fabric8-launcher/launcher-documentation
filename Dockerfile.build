@@ -12,5 +12,5 @@ RUN yum install -y rubygems libxml2 && \
 COPY scripts/ scripts/
 COPY docs/ docs/
 
-RUN scripts/validateGuides.sh
+RUN scripts/validate_guides.sh
 

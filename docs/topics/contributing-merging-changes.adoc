@@ -64,7 +64,7 @@ $ git rebase upstream/master
 If you have multiple commits on your feature branch, squash them into a single commit before merging.
 --
 
-. Test if all the books build correctly with your changes by executing the `$REPO_HOME/scripts/buildGuides.sh` script. If the output contains no errors, the guides build correctly.
+. Test if all the books build correctly with your changes by executing the `$REPO_HOME/scripts/build_guides.sh` script. If the output contains no errors, the guides build correctly.
 
 . Checkout your local `master` branch:
 +
@@ -87,7 +87,7 @@ $ git rebase upstream/master
 $ git merge pr-to-merge
 ----
 
-. Execute `$REPO_HOME/scripts/buildGuides.sh` to test whether the guides build correctly with the changes introduced by your merge.
+. Execute `$REPO_HOME/scripts/build_guides.sh` to test whether the guides build correctly with the changes introduced by your merge.
 
 . Push the latest changes into `upstream`:
 +
