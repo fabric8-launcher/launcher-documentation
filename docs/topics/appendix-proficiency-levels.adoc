@@ -5,16 +5,19 @@
 Each mission available on {launcher} teaches you about certain topics, but requires certain minimum knowledge, which varies by mission. For clarity, the minimum requirements and concepts are organized in several proficiency levels. In addition to the levels described in this chapter, there can be additional requirements with each mission, specific to its aim or the technologies it uses.
 
 [discrete]
+[[proficiency_foundational]]
 == {proficiency-foundational}
 
 The missions rated at {proficiency-foundational} proficiency generally require no prior knowledge of the subject matter; they provide general awareness and demonstration of key elements, concepts, and terminology. There are no special requirements except those directly mentioned in the description of the mission.
 
 [discrete]
+[[proficiency_advanced]]
 == {proficiency-advanced}
 
 When using {proficiency-advanced} missions, the assumption is that you are familiar with the common concepts and terminology of the subject area of the mission in addition to Kubernetes and OpenShift. You must also be able to perform basic tasks on your own, for example configure services and applications, or administer networks. If a service is needed by the mission, but configuring it is not in the scope of the mission, the assumption is that you have the knowledge to to properly configure it, and only the resulting state of the service is described in the documentation.
 
 [discrete]
+[[proficiency_expert]]
 == {proficiency-expert}
 
 {proficiency-expert} missions require the highest level of knowledge of the subject matter. You are expected to perform many tasks based on feature-based documentation and manuals, and the documentation is aimed at most complex scenarios.
