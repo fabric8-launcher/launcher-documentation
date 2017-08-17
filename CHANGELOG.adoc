@@ -1,12 +1,76 @@
 = Change Log
 
-== link:https://github.com/openshiftio/appdev-documentation/milestone/1?closed=1[Current Development]
+== link:https://github.com/openshiftio/appdev-documentation/issues?q=is%3Aclosed+milestone%3A%22Current+Development%22[Current Development]
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/506[#506]: Updated mission description topics used by the Launcher front end.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/495[#495]: Updated link targets in launcher review screen.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/493[#493]: Added NodeJS runtime guide link to the GSG _Next Steps_ section.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/492[#492]: Added explicit anchor labels to the proficiency levels section in the runtime guide Booster introduction paragraphs.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/490[#490]: Updated `Dockerfile.build` to include the XML validation process.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/477[#477]: Updated internal documentation with new deployment process and links.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/445[#445]: Added `compile` option to `mvn` command example in the local build procedure steps in the Booster README file.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/440[#440]: Updated script names to a unified format.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/439[#439]: Removed unused files from the documentation repository.
+
+== link:https://github.com/openshiftio/appdev-documentation/releases/tag/2017-08-14[2017-08-14 Release]
 // list closed issues with changes planned for upcoming release
 // use tag words ADDED/REMOVED/UPDATED
 
-* Issue link:https://github.com/openshiftio/appdev-documentation/issues/419[#419]: Added ZIP file download instuctions in Booster `README.adoc` files.
+* [No Issue #] link:https://github.com/openshiftio/appdev-documentation/pull/485[PR #485] Updated default docs server port on localhost from `8080` to `80`.
 
-* Issue link:https://github.com/openshiftio/appdev-documentation/issues/415[#415]: Updated Minishift version to `1.3.1` in the Nexus configuration guide.
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/486[#486]: Updated `cico_build_deploy.sh` to prevent automatic XML validation failure issue upon build.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/428[#428]: Updated infrastructure, moved documentation hosting to the DevTools OSD cluster.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/297[#297]: Added Testing to doc builds using Travis CI. (NOTE: Travis-CI has been replaced by CentOS CI before this release.)
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/471[#471]: Updated `cico_build_deploy.sh` to integrate XML validation into the build process.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/455[#455]: Added new GitHub labels.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/470[#470]: Updated revision number to display date of release instead of commit hash.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/460[#460]: Updated link texts in the Minishift Installation guide to remove uninformative descriptions.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/454[#454]: Updated filesystem table in Contrib Guide to make it display properly.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/457[#457]: Updated Links texts in Step 3 of the Single Node OpenShift Cluster setup procedure to be more descriptive.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/#64[#64]: Added information about expected user proficiency level for each Mission.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/458[#458]: Updated URLs to fix dead links in `/topics/dev-guide-mission-intro.adoc`
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/448[#448]: Added documentation for using `cico_build_deploy.sh`.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/441[#441]: Added Workflow description for Local deployment using downloaded Booster ZIP file to the Getting Started Guide.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/306[#306]: Added legacy URL redirects after runtime guide refactoring.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/424[#424]: Updated screenshots in launcher and minishift examples in Minishift installation guide.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/427[#427]: Added NodeJS runtime guide links to other runtime guides.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/430[#430]: Added a Resources Section to the Secured Booster guides.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/394[#394]: Added issue tracking using GitHub Milestones.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/435[#435]: Updated heading level of the resources section in the Circuit Breaker Mission guide to be consistent with other guides.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/425[#425]: Updated links in resources sections of Booster guides to point to Booster guides in other runtimes.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/408[#408]: Updated Configmap Mission Guides to use an `oc` command to deploying the ConfigMap
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/419[#419]: Added ZIP file download instructions in Booster `README.adoc` files.
+
+* Issue link:https://github.com/openshiftio/appdev-documentation/issues/415[#415]: Updated Minishift version to `1.3.1` in the Nexus configuration guide and the Minishift Installation guide.
 
 * Issue link:https://github.com/openshiftio/appdev-documentation/issues/409[#409]: Removed manual host name specification step from Minishift installation instructions.
 
@@ -16,7 +80,7 @@
 
 // Link here to release
 // Link from releases to changleog
-==  https://github.com/openshiftio/appdev-documentation/releases/tag/2017-07-31[2017-07-31 Release]
+==  link:https://github.com/openshiftio/appdev-documentation/releases/tag/2017-07-31[2017-07-31 Release]
 // formatting example:
 // link:<issue#>: <description_for_humans>
 // https://github.com/openshiftio/appdev-documentation/issues/{issue#}
