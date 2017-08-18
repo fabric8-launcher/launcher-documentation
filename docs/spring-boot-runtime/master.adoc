@@ -12,7 +12,8 @@ This guide covers concepts as well as practical details needed by developers to 
 
 include::topics/sb-tomcat-runtime-overview.adoc[leveloffset=+1]
 
-{SpringBoot} has a version of its runtime that is tested and verified to run on OpenShift. Some components, like the Embedded Tomcat Container and Java container image, when used with {SpringBoot} are provided as part of a Red Hat subscription.
+{SpringBoot} has a version of its runtime that is tested and verified to run on OpenShift. Some components, for example, the Embedded Tomcat Container and the Java container image, are provided as part of a Red Hat subscription when used with {SpringBoot}.
+
 
 
 include::topics/runtime-info-community-version.adoc[leveloffset=+1]
