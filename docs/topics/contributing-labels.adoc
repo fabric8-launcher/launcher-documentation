@@ -17,6 +17,7 @@ Use the following labels to indicate what stage of its life cycle an issue or pu
 | `Status \| In Progress` | The assignee is actively working on the issue or is waiting for input from someone. The draft of the issue is not ready.
 | `Status \| SME Review` | An SME is providing a review of the draft. This review comes before the peer review.
 | `Status \| Peer Review` | A peer (a writer) is providing a review of the draft. This review comes after the SME review.
+| `Status \| Blocked` | The issue can not proceed because it is dependent on another issue being fixed first.
 | `Status \| Waiting for SME` | The issue or pull request is waiting for SME to start review.
 | `Status \| Waiting for Peer` | The issue or pull request is waiting for a peer to start review.
 |===
