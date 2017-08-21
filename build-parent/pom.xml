@@ -24,7 +24,7 @@
   <properties>
     <version.wildfly.swarm.fraction.plugin>58</version.wildfly.swarm.fraction.plugin>
 
-    <version.org.snakeyaml>1.17</version.org.snakeyaml>
+    <version.org.snakeyaml>1.15</version.org.snakeyaml>
 
     <version.wildfly.config-api>1.1.0.Final</version.wildfly.config-api>
 
