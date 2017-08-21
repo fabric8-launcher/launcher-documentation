@@ -1,0 +1,45 @@
+#!/bin/sh
+
+LAUNCHPAD_INDEX="https://raw.githubusercontent.com/openshiftio/launchpad-frontend/master/src/assets/adoc.index"
+DOC_REPO_PREFIX="https://raw.githubusercontent.com/openshiftio/appdev-documentation/master/"
+
+if git rev-parse --verify HEAD >/dev/null 2>&1
+then
+	against=HEAD
+else
+	# Initial commit: diff against an empty tree object
+	against=7f6bfba0c5c1ccafe2b7382dc3f625fa6bd09aca
+fi
+
+# Failing gracefully if some of the used binaries is not installed
+for binary in curl sed grep; do
+    if ! $binary --version &>/dev/null; then
+        echo -e "Trying to run pre-commit hook; '${binary}' is missing. Please install it.\nProceeding with commit anyway..." >&2
+        exit 0
+    fi
+done
+
+# Failing gracefully if the launchpad file can not be reached
+if ! index_contents="$(curl -f $LAUNCHPAD_INDEX 2>/dev/null)"; then
+    echo -e "Trying to run pre-commit hook; Could not reach index file to test. You are\nprobably offline. Proceeding with commit anyway..." >&2
+    exit 0
+fi
+
+# Check for deleted files
+index_files=$(printf \\"$index_contents\\" \
+    | sed -e 's|^.*"\([^"]*\)".*$|\1|' -e "s|$DOC_REPO_PREFIX||" -e '/^\W*$/d' )
+deleted_launchpad_files=""
+for file in $(git diff --cached --name-only --diff-filter=D $against); do
+    if printf "${index_files}" | grep -q "${file}"; then
+        deleted_launchpad_files="${deleted_launchpad_files}\n  $file"
+    fi
+done
+
+# Fail if any critical files were deleted
+if ! test -z "$deleted_launchpad_files"; then
+    echo "You have deleted the following file(s) that are required by the Launchpad app:"
+    printf "$deleted_launchpad_files"
+    echo -e "\n\nThese files are required and must not be deleted. If you want to commit anyway,\nrun the 'git commit' command with the '--no-verify' option."
+    exit 1
+fi
+
