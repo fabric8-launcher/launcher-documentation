@@ -1,5 +1,6 @@
 html
 **/*.DS_Store
+**/master.xml
 .idea
 **/*.iml
 **/*.idea
