@@ -1,7 +1,7 @@
 
 = Branches and Tags
 
-The following branches and tags are used in the _appdev-documentation_ repository:
+The following branches and tags are used in the _{repo-docs-name}_ repository:
 
 .Branch Names and Contents
 [options="header",cols="1,3"]

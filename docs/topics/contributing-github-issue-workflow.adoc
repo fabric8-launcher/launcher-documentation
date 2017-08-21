@@ -1,7 +1,7 @@
 
 = GitHub Issue Workflow
 
-Each issue in the _appdev-documentation_ repository goes through the following life cycle. In each stage, the descriptions list the actions the following people must take:
+Each issue in the _{repo-docs-name}_ repository goes through the following life cycle. In each stage, the descriptions list the actions the following people must take:
 
 .GitHub Issue Life Cycle
 . The issue is filed.
@@ -41,4 +41,3 @@ Team Member with Merge Access:: Merge the pull request. If further changes need 
 
 Assignee:: Close the issue if it has not been closed automatically. Remove the _Peer Review_ label.
 --
-

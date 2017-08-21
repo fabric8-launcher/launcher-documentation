@@ -133,3 +133,12 @@
 :proficiency-advanced: Advanced
 :proficiency-expert: Expert
 :SegmentTrackerToken: ${LAUNCHPAD_TRACKER_SEGMENT_TOKEN}
+
+// Issue #489
+// externalize `github.com/appdev-documentation` repo references
+// changes NOT applicable to CHANGELOG and booster-specific README files. 
+:repo-docs-name: appdev-documentation
+:link-repo-docs: https://github.com/openshiftio/appdev-documentation/
+
+:docs-name: appdev.openshift.io
+:link-docs: https://appdev.openshift.io

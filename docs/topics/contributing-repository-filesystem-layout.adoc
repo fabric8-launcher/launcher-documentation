@@ -30,7 +30,7 @@ NOTE: The triple-dot indicates there are more files or directories in the partic
 ├── CHANGELOG.adoc <15>
 └── README.adoc
 ----
-<1> The directory with the sources of all the _appdev.openshift.io_ guides, the _launchpad.openshift.io_ page, and the contributor guide.
+<1> The directory with the sources of all the _{docs-name}_ guides, the _launchpad.openshift.io_ page, and the contributor guide.
 <2> The directory with the actual sources in AsciiDoc files. This directory is shared among all guides.
 <3> The directory with all the images used in the sources.
 <4> The directory with all the stylesheets used in the sources.
@@ -45,4 +45,3 @@ NOTE: The triple-dot indicates there are more files or directories in the partic
 <13> The script for validating all guides at once.
 <14> The script to start local server and to publish to production. For more information, see xref:_starting_preview_server[].
 <15> The file with changes made in each release.
-
