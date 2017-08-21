@@ -42,10 +42,10 @@ ifdef::http-api-nodejs[]
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ npm run openshift
+$ npm install && npm run openshift
 ----
 +
-This command uses the Nodeshift npm module to launch the S2I process on {OpenShiftLocal} and to start the pod.
+These commands use the Nodeshift `npm` module to install {NodeJS} and launch the S2I process on {OpenShiftLocal} and start the pod.
 endif::http-api-nodejs[]
 
 
