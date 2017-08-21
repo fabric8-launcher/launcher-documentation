@@ -70,7 +70,7 @@
                       <xsl:with-param name="filename" select="concat($prefix,translate($postfix,$uppercase,$lowercase))" />
                     </xsl:call-template>
                   </xsl:variable>
-                  <a href="licenses/{$filename}"><xsl:value-of select="$filename"/></a><br/>
+                  <a href="{$filename}"><xsl:value-of select="$filename"/></a><br/>
                 </xsl:for-each>
               </td>
             </tr>

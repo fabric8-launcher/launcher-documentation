@@ -10,7 +10,7 @@
    <packaging>pom</packaging>
 
    <properties>
-      <license.directory>\${project.build.directory}</license.directory>
+      <license.directory>\${project.build.directory}/licenses</license.directory>
    </properties>
 
    <dependencies>
@@ -107,7 +107,7 @@
                   </goals>
                   <phase>prepare-package</phase>
                   <configuration>
-                     <licensesOutputDirectory>${license.directory}/licenses</licensesOutputDirectory>
+                     <licensesOutputDirectory>${license.directory}</licensesOutputDirectory>
                      <licensesConfigFile>${license.directory}/licenses.xml</licensesConfigFile>
                      <includeTransitiveDependencies>false</includeTransitiveDependencies>
                   </configuration>

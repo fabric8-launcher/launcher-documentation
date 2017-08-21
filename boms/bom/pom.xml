@@ -61,9 +61,6 @@
       <!-- Activate this profile generate and transform/fix licenses.xml file based on the BOM dependencies -->
       <profile>
          <id>licenses</id>
-         <activation>
-            <activeByDefault>false</activeByDefault>
-         </activation>
          <build>
             <plugins>
                <plugin>
@@ -83,7 +80,6 @@
                            <removeCommunity>true</removeCommunity>
                            <!-- Use custom settings to point to the local maven repo cache -->
                            <userSettings>${project.parent.build.directory}/custom-settings.xml</userSettings>
-                           <outputDirectory>${project.build.directory}</outputDirectory>
                            <excludes>
                               <exclude>org/codehaus/plexus/plexus/1.0.4/.*</exclude>
                            </excludes>
@@ -91,6 +87,27 @@
                      </execution>
                   </executions>
                </plugin>
+              <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                  <descriptors>
+                    <descriptor>${project.basedir}/assembly.xml</descriptor>
+                  </descriptors>
+                </configuration>
+                <executions>
+                  <execution>
+                    <id>assemble</id>
+                    <phase>package</phase>
+                    <goals>
+                      <goal>single</goal>
+                    </goals>
+                    <configuration>
+                      <tarLongFileMode>gnu</tarLongFileMode>
+                    </configuration>
+                  </execution>
+                </executions>
+              </plugin>
             </plugins>
          </build>
       </profile>
