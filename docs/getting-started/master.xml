@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc maxdepth="3"?>
+<?asciidoc-numbered?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>Getting Started Guide</title>
+<date>2017-08-17</date>
+</info>
+<simpara>When you create cloud-native applications and services, you need a hosted or local development environment that matches the target cloud environment. This enables you to encounter and resolve deployment and environment issues in your applications and services in your local environment before deploying them to your target cloud environment.</simpara>
+<simpara role="lead">A Single-node OpenShift Cluster provides an out-of-the-box solution for setting up such an environment on your local machine without the need for extensive setup and configuration.</simpara>
+<simpara role="lead">The launch.openshift.io application gives you a hassle-free way of creating functional example applications called Missions as well as easy way to build and deploy those Missions to a cloud environment. The Missions are designed to showcase various fundamental pieces of building cloud-native applications and services, such as:</simpara>
+<itemizedlist role="lead">
+<listitem>
+<simpara>Creating HTTP APIs</simpara>
+</listitem>
+<listitem>
+<simpara>Integrating your application with a relational database to provide persistent data storage</simpara>
+</listitem>
+<listitem>
+<simpara>Implementing the health check and circuit-breaker patterns to ensure that your services can withstand a traffic overload and network issues</simpara>
+</listitem>
+<listitem>
+<simpara>Externalizing the configuration of your applications to make them more secure and easier to scale</simpara>
+</listitem>
+<listitem>
+<simpara>Securing your applications with Red Hat SSO to provide authentication and authorization functionality</simpara>
+</listitem>
+</itemizedlist>
+<simpara role="lead">Each mission is comprised of different Boosters that show how to implement the same mission in different runtimes and any booster can be updated or extended for your own use case. This guide takes you through the developer&#8217;s journey of deploying a Booster application in several ways.</simpara>
+<section xml:id="oso-create-booster">
+<title>Create a Booster</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to <link xlink:href="https://launch.openshift.io/wizard/">launch.openshift.io</link> using your browser.</simpara>
+</listitem>
+<listitem>
+<simpara>Select <emphasis>Prepare for Takeoff</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Choose <emphasis>Build and Run Locally</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Follow the instructions to create a booster of your choice.</simpara>
+</listitem>
+</orderedlist>
+<simpara>This creates a ZIP of your booster that you can download to build and run locally. It also provides a <literal>README.adoc</literal> file with details on building, deploying, and interacting with your booster from your local host.</simpara>
+</section>
+<section xml:id="_continuous_delivery_using_single_node_openshift_cluster">
+<title>Continuous Delivery using Single-node OpenShift Cluster</title>
+<simpara>In addition to building on your local machine and pushing to a local or public cloud, you also have the ability to set up continuous delivery for a booster. Specifically, you can use the launch.openshift.io application to clone a new booster repository to your GitHub account and have it deployed to your Single-node OpenShift Cluster.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara><link xlink:href="/docs/minishift-installation.html#create-launcher-app">Install the launch.openshift.io</link> application to your Single-node OpenShift Cluster.</simpara>
+</listitem>
+<listitem>
+<simpara>Navigate to the launch.openshift.io application on your Single-node OpenShift Cluster using your browser.</simpara>
+<note>
+<simpara>Use the following command to open the Web Console of your Single-node OpenShift Cluster in your browser in order to navigate to your launch.openshift.io application:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ minishift console</programlisting>
+</note>
+</listitem>
+<listitem>
+<simpara>Select <emphasis>Prepare for Takeoff</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select <emphasis>Use OpenShift Online to build and deploy</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Follow the instructions to create a booster of your choice.</simpara>
+<simpara>Doing this, you:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Create a new GitHub repository in your account containing the code of your booster.</simpara>
+</listitem>
+<listitem>
+<simpara>Create a pipeline to continuously deliver the code of your booster.</simpara>
+</listitem>
+<listitem>
+<simpara>The pipeline then builds and deploys the code of your booster to your Single-node OpenShift Cluster.</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>Click the <emphasis>See it here!</emphasis> link under <emphasis>Creating your project on the OpenShift cloud</emphasis> to go to the page of your booster&#8217;s in the OpenShift Web console.</simpara>
+</listitem>
+</orderedlist>
+<simpara>To view the status of your project:</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Click <emphasis>View Log</emphasis> in the pipeline at the top.</simpara>
+<note>
+<simpara>It can take a few minutes for the link to appear.</simpara>
+</note>
+</listitem>
+<listitem>
+<simpara>Click <emphasis>Login with OpenShift</emphasis> at the login prompt for Jenkins.</simpara>
+</listitem>
+<listitem>
+<simpara>Log in with your Single-node OpenShift Cluster credentials, for example <literal>developer</literal> for the username and password.</simpara>
+</listitem>
+<listitem>
+<simpara>Ensure all the boxes are checked and click <emphasis>Allow selected permissions</emphasis>.</simpara>
+<simpara>Doing this grants the OpenShift Web console the correct permissions and directs you to the Jenkins pod that is deploying your application.</simpara>
+</listitem>
+</orderedlist>
+<simpara>When your deployment is complete, interact with your booster using the URL at the top of the page. For more details about interacting with your booster, see the <literal>README.adoc</literal> file in the booster repository.</simpara>
+<important>
+<simpara>Your booster application is not the same as your Jenkins pod, and it will only appear after the Jenkins pod deploys it. This can take a few minutes.</simpara>
+</important>
+<simpara>At this point, you have created a new booster repository in your GitHub account and deployed it to Single-node OpenShift Cluster. To push changes to this booster in Single-node OpenShift Cluster, you can push a new commit to the GitHub repository and start a build pipeline.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Clone your project from GitHub:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ git clone git@github.com:USERNAME/PROJECT-NAME.git</programlisting>
+</listitem>
+<listitem>
+<simpara>Open your project in your desired IDE or editor, such as <link linkend="use_devstudio">JBDS</link>.</simpara>
+</listitem>
+<listitem>
+<simpara>Make an update to the project.</simpara>
+</listitem>
+<listitem>
+<simpara>Save your changes.</simpara>
+</listitem>
+<listitem>
+<simpara>Commit and push your changes back to GitHub:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ git add .
+$ git commit -m "Made an update"
+$ git push</programlisting>
+</listitem>
+<listitem>
+<simpara>Navigate back to the Single-node OpenShift Cluster Web console and ensure the project of your mission is selected.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis>Builds</emphasis> &#8594; <emphasis>Pipelines</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis>Start Pipeline</emphasis> to start a new build with your updates.</simpara>
+<simpara>A new build appears in the <emphasis>Recent Runs</emphasis> list with the status of the <literal>Build</literal> and <literal>Deploy</literal> stages. Optionally, click <emphasis>View Log</emphasis> in your build to see the logs in Jenkins.</simpara>
+</listitem>
+<listitem>
+<simpara>Confirm your changes were applied when your deployment is complete.</simpara>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="_next_steps">
+<title>Next Steps</title>
+<simpara>Take a look the different runtime guides to learn more about runtimes as well as their boosters:</simpara>
+<itemizedlist>
+<listitem>
+<simpara><link xlink:href="/docs/spring-boot-runtime.html">Spring Boot Tomcat Runtime Guide</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/vertx-runtime.html">Eclipse Vert.x Runtime Guide</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/wf-swarm-runtime.html">WildFly Swarm Runtime Guide</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/nodejs-runtime.html">Node.js Runtime Guide</link></simpara>
+</listitem>
+</itemizedlist>
+</section>
+<appendix xml:id="use_devstudio">
+<title>Using Red Hat JBoss Developer Studio with a Booster Project</title>
+<simpara>You can download Red Hat JBoss Developer Studio from the <link xlink:href="https://developers.redhat.com/products/devstudio/download/">Red Hat Developer Portal</link>.</simpara>
+<simpara>To import the booster project:</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Ensure Developer Studio is running.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis>File</emphasis> &#8594; <emphasis>Import</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Choose <emphasis>Maven</emphasis> &#8594; <emphasis>Existing Maven Projects</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis>Browse</emphasis>, navigate to the root of your booster project, and click <emphasis>Open</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Ensure the <literal>pom.xml</literal> file is selected and click <emphasis>Finish</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+<simpara>Once the import is complete, you can begin editing your project. You can use the <literal>git</literal> CLI to commit and push any changes made in Developer Studio, but you can also do this directly in Developer Studio.</simpara>
+<simpara>To commit and push changes to your GitHub repository:</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Ensure you have saved all files with changes that you intend to commit.</simpara>
+</listitem>
+<listitem>
+<simpara>Right click on the root of the project <emphasis>Project Explorer</emphasis> or <emphasis>Package Explorer</emphasis> view.</simpara>
+</listitem>
+<listitem>
+<simpara>Choose <emphasis>Team</emphasis> &#8594; <emphasis>Commit&#8230;&#8203;</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Drag all the changes you want to commit from the <emphasis>Unstaged Changes</emphasis> section to the <emphasis>Staged Changes</emphasis> section.</simpara>
+</listitem>
+<listitem>
+<simpara>Enter your commit message and click <emphasis>Commit and Push</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis>OK</emphasis> in the <emphasis>Push Results</emphasis> window when prompted.</simpara>
+</listitem>
+</orderedlist>
+<simpara>Your changes are now available in your GitHub repository.</simpara>
+</appendix>
+</article>

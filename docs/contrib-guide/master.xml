@@ -1,0 +1,997 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc maxdepth="3"?>
+<?asciidoc-numbered?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>Contribution Guide</title>
+<date>2017-08-17</date>
+</info>
+<section xml:id="_launch_openshift_io_development">
+<title>launch.openshift.io Development</title>
+<simpara><emphasis>TBD</emphasis></simpara>
+</section>
+<section xml:id="_file_a_code_issue">
+<title>File a Code Issue</title>
+<simpara><emphasis>TBD</emphasis></simpara>
+</section>
+<section xml:id="_documentation">
+<title>Documentation</title>
+<section xml:id="_before_you_start">
+<title>Before You Start</title>
+<simpara>To contribute to the AppDev documentation, you need to configure the following tools and accounts:</simpara>
+<section xml:id="_tools">
+<title>Tools</title>
+<simpara>You must install the following tools on your system:</simpara>
+<variablelist>
+<varlistentry>
+<term>Asciidoctor</term>
+<listitem>
+<simpara>A quick and light tool for local builds that allows you to check factual correctness or flow of information.</simpara>
+<simpara>To install Asciidoctor on Fedora, CentOS, or RHEL, run the following command (in Fedora, replace <literal>yum</literal> with <literal>dnf</literal>):</simpara>
+<programlisting language="bash" linenumbering="unnumbered"># yum install asciidoctor</programlisting>
+<simpara>On Windows, Mac OS X, and other Linux distributions, follow the instructions in the <link xlink:href="http://asciidoctor.org/#installation">official Asciidoctor documentation</link>.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Meld (optional)</term>
+<listitem>
+<simpara>A graphical tool for comparing files. This tool is useful for comparing Git revisions and resolving merge conflicts.</simpara>
+<simpara>To install Meld on Fedora, CentOS, or RHEL, run the following command (in Fedora, replace <literal>yum</literal> with <literal>dnf</literal>):</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+<programlisting language="bash" linenumbering="unnumbered"># yum install meld</programlisting>
+</section>
+<section xml:id="_accounts">
+<title>Accounts</title>
+<simpara>To contribute, you must have a <link xlink:href="https://github.com/join">GitHub account</link> with GPG configured. To configure GPG:</simpara>
+<warning>
+<simpara>On RHEL, CentOS, or Fedora, use the <literal>gpg2</literal> binary everywhere instead of <literal>gpg</literal>.</simpara>
+</warning>
+<orderedlist numeration="arabic">
+<title>Configuring GPG</title>
+<listitem>
+<simpara><link xlink:href="https://help.github.com/articles/generating-a-new-gpg-key/">Generate a new GPG key</link>.</simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://help.github.com/articles/adding-a-new-gpg-key-to-your-github-account">Add the GPG key to your GitHub account</link>.</simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://help.github.com/articles/telling-git-about-your-gpg-key/">Configure GPG with git</link> on your machine.</simpara>
+<note>
+<simpara>On RHEL, CentOS, or Fedora, ensure to also add <literal>gpg2</literal> as the signing program according to the linked instructions.</simpara>
+</note>
+</listitem>
+<listitem>
+<simpara>In the <emphasis>appdev-documentation</emphasis> repository, set automatic signing with your GPG key:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ git config commit.gpgsign true</programlisting>
+<simpara>For more information, see <link xlink:href="https://help.github.com/articles/signing-commits-using-gpg/">Signing commits using GPG</link>.</simpara>
+</listitem>
+<listitem>
+<simpara>On RHEL, CentOS, or Fedora, set the commit signing program to <literal>gpg2</literal>:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ git config --global gpg.program gpg2</programlisting>
+</listitem>
+</orderedlist>
+</section>
+</section>
+<section xml:id="_repository">
+<title>Repository</title>
+<section xml:id="_repository_location">
+<title>Repository Location</title>
+<simpara>The repository for the mission and booster documentation, the Launchpad front page, and this contributor guide is hosted on GitHub in the <link xlink:href="https://github.com/openshiftio/appdev-documentation">openshiftio/appdev-documentation</link> repository.</simpara>
+<simpara>The runtime documentation repositories are hosted on the following locations:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>WildFly Swarm: <link xlink:href="https://github.com/wildfly-swarm/wildfly-swarm-reference-guide">wildfly-swarm/wildfly-swarm-reference-guide</link> (reference guide) and <link xlink:href="https://github.com/wildfly-swarm/wildfly-swarm-users-guide">wildfly-swarm/wildfly-swarm-users-guide</link> (user&#8217;s guide)</simpara>
+</listitem>
+<listitem>
+<simpara>Spring Boot: <link xlink:href="https://github.com/spring-projects/spring-boot">spring-projects/spring-boot</link> in the <literal>spring-boot-docs</literal> subdirectory.</simpara>
+</listitem>
+<listitem>
+<simpara>Eclipse Vert.x: <link xlink:href="https://github.com/eclipse/vert.x">eclipse/vert.x</link> in the <literal>src/main/asciidoc</literal> subdirectory.</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section xml:id="_repository_filesystem_layout">
+<title>Repository Filesystem Layout</title>
+<simpara>The following diagram describes the filesystem layout of the <emphasis>appdev-documentation</emphasis> repository:</simpara>
+<note>
+<simpara>The triple-dot indicates there are more files or directories in the particular directory.</simpara>
+</note>
+<formalpara>
+<title>Filesystem Layout</title>
+<para>
+<screen>.
+├── docs/ <co xml:id="CO1-1"/>
+│   ├── topics/ <co xml:id="CO1-2"/>
+│   │   ├── images/ <co xml:id="CO1-3"/>
+│   │   ├── styles/ <co xml:id="CO1-4"/>
+│   │   ├── templates/ <co xml:id="CO1-5"/>
+│   │   │   ├── document-attributes.adoc <co xml:id="CO1-6"/>
+│   │   │   ├── ...
+│   │   ├── configmap-mission-design-tradeoffs.adoc
+│   │   ├── ...
+│   ├── $GUIDE_NAME/ <co xml:id="CO1-7"/>
+│   │   ├── master.adoc/ <co xml:id="CO1-8"/>
+│   │   ├── build_guide.sh/ <co xml:id="CO1-9"/>
+│   │   └── topics/ -&gt; ../topics <co xml:id="CO1-10"/>
+│   ├── ...
+├── scripts/ <co xml:id="CO1-11"/>
+│   ├── build_guide.sh <co xml:id="CO1-12"/>
+│   ├── ...
+└── README.adoc</screen>
+</para>
+</formalpara>
+<calloutlist>
+<callout arearefs="CO1-1">
+<para>The directory with the sources of all the <emphasis>appdev.openshift.io</emphasis> guides, the <emphasis>launchpad.openshift.io</emphasis> page, and the contributor guide.</para>
+</callout>
+<callout arearefs="CO1-2">
+<para>The directory with the actual sources in AsciiDoc files. This directory is shared among all guides.</para>
+</callout>
+<callout arearefs="CO1-3">
+<para>The directory with all the images used in the sources.</para>
+</callout>
+<callout arearefs="CO1-4">
+<para>The directory with all the stylesheets used in the sources.</para>
+</callout>
+<callout arearefs="CO1-5">
+<para>The directory with all the templates used in the sources.</para>
+</callout>
+<callout arearefs="CO1-6">
+<para>The file where all the common document attributes are defined.</para>
+</callout>
+<callout arearefs="CO1-7">
+<para>The directory with the sources of a guide. Each guide has exactly one directorylike this.</para>
+</callout>
+<callout arearefs="CO1-8">
+<para>The main AsciiDoc file of the guide. The files from the <literal>topics</literal> directory are included from this file.</para>
+</callout>
+<callout arearefs="CO1-9">
+<para>The script for building the particular guide.</para>
+</callout>
+<callout arearefs="CO1-10">
+<para>A symbolic link to the shared <literal>$REPO_HOME/docs/topics/</literal> directory.</para>
+</callout>
+<callout arearefs="CO1-11">
+<para>The directory with scripts used for manipulating files in the directory, building, and more.</para>
+</callout>
+<callout arearefs="CO1-12">
+<para>The script for building all guides at once.</para>
+</callout>
+</calloutlist>
+</section>
+<section xml:id="_branches_and_tags">
+<title>Branches and Tags</title>
+<simpara>The following branches and tags are used in the <emphasis>appdev-documentation</emphasis> repository:</simpara>
+<table frame="all" rowsep="1" colsep="1">
+<title>Branch Names and Contents</title>
+<tgroup cols="2">
+<colspec colname="col_1" colwidth="25*"/>
+<colspec colname="col_2" colwidth="75*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Branch</entry>
+<entry align="left" valign="top">Content</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara>master</simpara></entry>
+<entry align="left" valign="top"><simpara>The latest version of the documentation in development.</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<table frame="all" rowsep="1" colsep="1">
+<title>Tag Format and Contents</title>
+<tgroup cols="2">
+<colspec colname="col_1" colwidth="40*"/>
+<colspec colname="col_2" colwidth="60*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Branch</entry>
+<entry align="left" valign="top">Content</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara>Date in the <literal>YYYY-MM-DD</literal> format</simpara></entry>
+<entry align="left" valign="top"><simpara>The documentation as released on the particular date.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Date in the <literal>YYYY-MM-DD_$NUMBER</literal> format</simpara></entry>
+<entry align="left" valign="top"><simpara>A subsequent release of the documentation on that date.</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+</section>
+<section xml:id="_contributing">
+<title>Contributing</title>
+<section xml:id="_making_changes">
+<title>Making Changes</title>
+<simpara>When making contributions, follow the standard <link xlink:href="https://guides.github.com/introduction/flow/">GitHub flow</link>. Below, you will find more details about the steps that are required in the <emphasis>appdev-documentation</emphasis> repository.</simpara>
+<bridgehead xml:id="_prerequisites" renderas="sect4">Prerequisites</bridgehead>
+<itemizedlist>
+<listitem>
+<simpara>A GitHub account with GPG. For more information, see <xref linkend="_accounts"/>.</simpara>
+</listitem>
+</itemizedlist>
+<bridgehead xml:id="_procedure" renderas="sect4">Procedure</bridgehead>
+<orderedlist numeration="arabic">
+<title>Contributor Workflow</title>
+<listitem>
+<simpara>Create a topic branch in your personal fork of the <emphasis>appdev-documentation</emphasis> repository. If you want to resolve a particular issue with your changes, name the branch <literal>issue-$ID</literal>, where <literal>$ID</literal> is the numerical ID of the issue.</simpara>
+</listitem>
+<listitem>
+<simpara>Commit and push your changes to the topic branch. Verify your changes:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Preview the build locally. For more information, see <xref linkend="_building_locally"/>.</simpara>
+</listitem>
+<listitem>
+<simpara>Validate the books. Execute the following script:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ ./scripts/validate_guides.sh</programlisting>
+<simpara>If there are errors in validation, open the <literal>master.xml</literal> file in the directory of the book that failed to validate. The validation output should tell you where the issue is. Modify the <literal>master.adoc</literal> or another included <literal>*.adoc</literal> file accordingly.</simpara>
+<simpara>If you are unsure, ask someone from the team for help.</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>Create a pull request against the branch you based your contribution off. Ensure you also:</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>Label the pull request appropriately. For more information about labels, see <xref linkend="_using_github_labels"/>.</simpara>
+</listitem>
+<listitem>
+<simpara>Reference the issue that your pull request resolves in the description, using the formulation <literal>resolves $ID</literal>, where <literal>$ID</literal> is the numerical ID of the issue. Doing this automatically closes the issue when the pull request is accepted.</simpara>
+</listitem>
+</orderedlist>
+<simpara>A team member (a reviewer) will review your changes for factual and stylistic correctness. If the changes are acceptable, the reviewer merges them and closes the pull request. The reviewer may ask you to make further modifications if necessary, or file a pull request against your branch with their suggested modifications.</simpara>
+<note>
+<simpara>Do not worry that your pull request was closed, the changes are merged manually as opposed to the GitHub web UI.</simpara>
+</note>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="_adding_new_guide">
+<title>Adding New Guide</title>
+<simpara>To add a new guide to the existing documentation set, perform the following steps:</simpara>
+<bridgehead xml:id="_procedure_2" renderas="sect4">Procedure</bridgehead>
+<orderedlist numeration="arabic">
+<title>Adding New Guide</title>
+<listitem>
+<simpara>Create a new directory for the guide under <literal>docs/</literal>, for example <literal>docs/my-new-guide</literal>.</simpara>
+</listitem>
+<listitem>
+<simpara>Create basic infrastructure in the directory of the new guide:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Create a <literal>master.adoc</literal> file.</simpara>
+</listitem>
+<listitem>
+<simpara>Create a symbolic link called <literal>topics</literal> that points to <literal>../topics</literal>:</simpara>
+<screen>$ ln -s ../topics topics</screen>
+</listitem>
+<listitem>
+<simpara>Copy the <literal>build_guide.sh</literal> script from another guide&#8217;s folder. Modify the script so that the <literal>GUIDE_HTML_NAME</literal> variable is set to the directory name of the new book, for example:</simpara>
+<screen>GUIDE_HTML_NAME=my-new-guide</screen>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>Add the default content to the <literal>master.adoc</literal> file:</simpara>
+<programlisting language="asciidoc" linenumbering="unnumbered">include::topics/templates/document-attributes.adoc[]
+
+:my-new-guide:
+
+= {my-new-guide-guide-name}</programlisting>
+</listitem>
+<listitem>
+<simpara>Add the new guide name to the <literal>docs/topics/templates/document-attributes.adoc</literal> file:</simpara>
+<programlisting language="asciidoc" linenumbering="unnumbered">:my-new-guide-guide-name: My New Guide</programlisting>
+</listitem>
+<listitem>
+<simpara>Ensure the new guide builds correctly by executing the <literal>scripts/build_guides.sh</literal> script.</simpara>
+</listitem>
+<listitem>
+<simpara>Open the generated HTML file to ensure everything is rendered correctly:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ firefox html/my-new-guide.html</programlisting>
+<simpara>In the command above, replace <literal>firefox</literal> with the browser of your choice.</simpara>
+</listitem>
+<listitem>
+<simpara>Write the content of the guide. When you are ready for some initial review and feedback, file a pull request to the <literal>master</literal> branch in the <link xlink:href="https://github.com/openshiftio/appdev-documentation/">appdev-documentation</link> repository.</simpara>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="_building_locally">
+<title>Building Locally</title>
+<simpara>When you are making a contribution, you should preview your changes before you commit or push them. This section describes the most typical procedure of doing so.</simpara>
+<bridgehead xml:id="_prerequisites_2" renderas="sect4">Prerequisites</bridgehead>
+<itemizedlist>
+<listitem>
+<simpara>Asciidoctor</simpara>
+</listitem>
+</itemizedlist>
+<bridgehead xml:id="_procedure_3" renderas="sect4">Procedure</bridgehead>
+<orderedlist numeration="arabic">
+<title>Building a Single Guide</title>
+<listitem>
+<simpara>In a console application, navigate to the directory of the book you want to build.</simpara>
+<simpara>Example:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ cd $REPO_HOME/docs/contribution-guide/</programlisting>
+<simpara>Replace <literal>$REPO_HOME</literal> with the real path to the repository.</simpara>
+</listitem>
+<listitem>
+<simpara>Execute the <literal>build_guide.sh</literal> script:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ ./build_guide.sh</programlisting>
+</listitem>
+<listitem>
+<simpara>View the resulting document in the <literal>$REPO_HOME/html</literal> directory.</simpara>
+<simpara>Example:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ firefox $REPO_HOME/html/contribution-guide.html</programlisting>
+<simpara>Replace <literal>$REPO_HOME</literal> with the real path to the repository, and <literal>firefox</literal> with the name of your preferred browser.</simpara>
+</listitem>
+</orderedlist>
+<orderedlist numeration="arabic">
+<title>Building All Guides</title>
+<listitem>
+<simpara>In a console application, navigate to the <literal>$REPO_HOME/scripts</literal> directory.</simpara>
+</listitem>
+<listitem>
+<simpara>Build all books by executing the <literal>build_guides.sh</literal> script:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ ./build_guides.sh</programlisting>
+</listitem>
+<listitem>
+<simpara>View the resulting documents in the <literal>$REPO_HOME/html</literal> directory:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ firefox $REPO_HOME/html/*.html</programlisting>
+<simpara>Replace <literal>$REPO_HOME</literal> with the real path to the repository.</simpara>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="_starting_preview_server">
+<title>Starting Preview Server</title>
+<simpara>You can preview the documentation site locally. To do that, perform the following steps:</simpara>
+<bridgehead xml:id="_prerequisites_3" renderas="sect4">Prerequisites</bridgehead>
+<itemizedlist>
+<listitem>
+<simpara>Docker installed.</simpara>
+</listitem>
+<listitem>
+<simpara>Docker daemon running.</simpara>
+</listitem>
+</itemizedlist>
+<bridgehead xml:id="_procedure_4" renderas="sect4">Procedure</bridgehead>
+<orderedlist numeration="arabic">
+<title>Running Preview Server Locally</title>
+<listitem>
+<simpara>As root, run the <literal>$REPO_HOME/cico_build_deploy.sh</literal> script from the repository&#8217;s base directory while setting the <literal>CICO_LOCAL</literal> environment variable to <literal>true</literal>:</simpara>
+<screen>$ sudo CICO_LOCAL=true ./cico_build_deploy.sh</screen>
+<note>
+<simpara>You must use <literal>sudo</literal> to run this script because it operates Docker. Being a member of the <literal>docker</literal> group instead is not a good security practice&#8212;&#8203;see the Related Information section for more information.</simpara>
+</note>
+<simpara>This process may take a few minutes.</simpara>
+</listitem>
+<listitem>
+<simpara>Run the Docker container with the server:</simpara>
+<screen>$ sudo docker run -p 80:8080 -it appdev-documentation-deploy:latest</screen>
+</listitem>
+<listitem>
+<simpara>Navigate to <literal><link xlink:href="http://localhost">http://localhost</link></literal> in your browser.</simpara>
+</listitem>
+<listitem>
+<simpara>When you are done, stop the Docker container with the server:</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>Go back to the terminal where the container is running.</simpara>
+</listitem>
+<listitem>
+<simpara>Press <literal>Ctrl + C</literal>.</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+</orderedlist>
+<bridgehead xml:id="_related_information" renderas="sect4">Related Information</bridgehead>
+<itemizedlist>
+<listitem>
+<simpara>Official <link xlink:href="https://www.docker.com/get-docker">Docker installation documentation</link>.</simpara>
+</listitem>
+<listitem>
+<simpara>Docker group security:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Project Atomic: <link xlink:href="https://www.projectatomic.io/blog/2015/08/why-we-dont-let-non-root-users-run-docker-in-centos-fedora-or-rhel/">Why we don&#8217;t let non-root users run Docker in CentOS, Fedora, or RHEL</link>.</simpara>
+</listitem>
+<listitem>
+<simpara>On Docker Security: <link xlink:href="https://www.andreas-jung.com/contents/on-docker-security-docker-group-considered-harmful">Docker group considered harmful</link>.</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+<section xml:id="_administration">
+<title>Administration</title>
+<section xml:id="_merging_contributions">
+<title>Merging Contributions</title>
+<simpara>When the changes in a pull request have been approved, you can merge them into <literal>upstream/master</literal>.</simpara>
+<important>
+<simpara>Do not merge your own pull requests unless absolutely necessary. You are accountable for any errors, merge conflicts, or bugs resulting from incorrect merging. Let another contributor with the appropriate repository access privileges do it.</simpara>
+</important>
+<bridgehead xml:id="_prerequisites_4" renderas="sect4">Prerequisites</bridgehead>
+<itemizedlist>
+<listitem>
+<simpara>GitHub account with merge access to the <emphasis>appdev-documentation</emphasis> repository and GPG configured.</simpara>
+</listitem>
+</itemizedlist>
+<bridgehead xml:id="_procedure_5" renderas="sect4">Procedure</bridgehead>
+<orderedlist numeration="arabic">
+<title>Merging a Pull Request</title>
+<listitem>
+<simpara>Ensure that you have the contributor&#8217;s fork of the <emphasis>appdev-documentation</emphasis> repository in your list of remotes:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ git remote -v</programlisting>
+</listitem>
+<listitem>
+<simpara>To add a remote fork for to you Git directory:</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>Navigate to the contributor&#8217;s fork on <link xlink:href="https://github.com/">GitHub</link>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click the <emphasis>Clone or Download</emphasis> button.</simpara>
+</listitem>
+<listitem>
+<simpara>Select <emphasis>Use SSH</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Copy the repository URL beginning with <literal>git@github.com:</literal>.</simpara>
+</listitem>
+<listitem>
+<simpara>Execute the following command, replacing <literal>username</literal> with the user name of the contributor:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ git remote add username git@github.com:username/appdev-documentation.git</programlisting>
+</listitem>
+<listitem>
+<simpara>Use <literal>git remote -v</literal> to verify that the fork is now listed among your remotes.</simpara>
+</listitem>
+<listitem>
+<simpara>Execute <literal>git remote update</literal> to fetch the latest state of the remotes to your working directory.</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>Create a new branch and set it to track the remote branch that introduces the changes in the pull request:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ git checkout -b pr-to-merge username/featurebranch</programlisting>
+<simpara>You should see the following message:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">Branch pr-to-merge set up to track remote branch &lt;topic_branch&gt; from &lt;username&gt; by rebasing.
+Switched to a new branch 'pr-to-merge'</programlisting>
+</listitem>
+<listitem>
+<simpara>Fetch the latest state of <literal>upstream</literal> and rebase your topic branch:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ git fetch upstream
+$ git rebase upstream/master</programlisting>
+<simpara>If you have multiple commits on your feature branch, squash them into a single commit before merging.</simpara>
+</listitem>
+<listitem>
+<simpara>Test if all the books build correctly with your changes by executing the <literal>$REPO_HOME/scripts/build_guides.sh</literal> script. If the output contains no errors, the guides build correctly.</simpara>
+</listitem>
+<listitem>
+<simpara>Checkout your local <literal>master</literal> branch:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ git checkout master</programlisting>
+</listitem>
+<listitem>
+<simpara>Rebase your local <literal>master</literal> branch against <literal>upstream/master</literal>:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ git rebase upstream/master</programlisting>
+</listitem>
+<listitem>
+<simpara>Merge your topic branch into <literal>master</literal>:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ git merge pr-to-merge</programlisting>
+</listitem>
+<listitem>
+<simpara>Execute <literal>$REPO_HOME/scripts/build_guides.sh</literal> to test whether the guides build correctly with the changes introduced by your merge.</simpara>
+</listitem>
+<listitem>
+<simpara>Push the latest changes into <literal>upstream</literal>:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ git push upstream master</programlisting>
+<simpara>The changes are now merged into <literal>upstream/master</literal>.</simpara>
+</listitem>
+<listitem>
+<simpara>Close the pull request for the changes you just merged:</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>Obtain the commit hash of the last commit on <literal>master</literal>:</simpara>
+<screen>$ git log -1 HEAD</screen>
+</listitem>
+<listitem>
+<simpara>Navigate to the pull request on GitHub.</simpara>
+</listitem>
+<listitem>
+<simpara>Paste the commit following line into a new comment, replacing &lt;commit-hash&gt; with the SHA-1 of your commit:</simpara>
+<screen>merged: &lt;commit-hash&gt;</screen>
+</listitem>
+<listitem>
+<simpara>Click <emphasis>Close and comment</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="releasing_new_version">
+<title>Releasing New Version</title>
+<simpara>This section contains all information you need to release a new version of the documentation set to production. This update can happen anytime after the catalog has been updated, including after the release train has been completed.</simpara>
+<bridgehead xml:id="_procedure_6" renderas="sect4">Procedure</bridgehead>
+<orderedlist numeration="arabic">
+<title>Releasing New Version to Production</title>
+<listitem>
+<simpara>Ensure the catalog has been updated. Contact the development team for this information.</simpara>
+</listitem>
+<listitem>
+<simpara>Update the following lines with the latest version:</simpara>
+<itemizedlist>
+<listitem>
+<simpara><link xlink:href="https://github.com/openshiftio/appdev-documentation/blob/master/scripts/deploy_launchpad_mission.sh#L16">Catalog Version in Build Script</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://github.com/openshiftio/appdev-documentation/blob/master/docs/topics/minishift-install-create-launchpad-app-script.adoc#L33">Update Install Instructions when using the <literal>-v</literal> option</link></simpara>
+</listitem>
+</itemizedlist>
+<simpara>Usually, update version <literal>vX</literal> to <literal>vX+1</literal>, for example <literal>v3</literal> to <literal>v4</literal>.</simpara>
+</listitem>
+<listitem>
+<simpara>Tag the release:</simpara>
+</listitem>
+<listitem>
+<simpara>Execute the <literal>tag_release.sh</literal> script in the <literal>$REPO_HOME/scripts</literal> directory:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ ./tag_release.sh</programlisting>
+<simpara>The script automatically tags the commit with the current date in the <literal>YYYY-MM-DD</literal> format. If you are re-releasing the same day, a suffix <literal>_2</literal>, <literal>_3</literal>, etc. is appended. If you want to tag with a different date or manually, execute the following command:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ git tag 2017-04-21</programlisting>
+</listitem>
+<listitem>
+<simpara>Push the changes and tags:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ git push --follow-tags $REMOTE</programlisting>
+<simpara>Replace <literal>$REMOTE</literal> with the name of the upstream remote.</simpara>
+</listitem>
+<listitem>
+<simpara>Update the current milestone in GitHub:</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>Rename the <emphasis>Current Development</emphasis> milestone to the current date in the <emphasis>YYYY-MM-DD</emphasis> format.</simpara>
+</listitem>
+<listitem>
+<simpara>Create a new milestone called <emphasis>Current Development.</emphasis></simpara>
+</listitem>
+<listitem>
+<simpara>Move all open issues from the old milestone to <emphasis>Current Development:</emphasis></simpara>
+<orderedlist numeration="lowerroman">
+<listitem>
+<simpara>Open the recently closed milestone from the <link xlink:href="https://github.com/openshiftio/appdev-documentation/milestones">list of milestones</link>.</simpara>
+</listitem>
+<listitem>
+<simpara>Ensure you are only seeing open issues by clicking <emphasis>Open.</emphasis></simpara>
+</listitem>
+<listitem>
+<simpara>Select all issues.</simpara>
+</listitem>
+<listitem>
+<simpara>In the top right corner of the table, click <emphasis>Milestone</emphasis> &#8594; <emphasis>Current Development</emphasis> to assign the selected issues to the current milestone.</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>Close the old milestone.</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>Request publication:</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>File a pull request in the <link xlink:href="https://github.com/openshiftio/saas-launchpad/blob/master/launchpad-services/appdev-documentation.yaml#L2">openshiftio/saas-launchpad</link> repository, where you change the <literal>hash</literal> value to the hash of the commit you want to publish from the <link xlink:href="https://github.com/openshiftio/appdev-documentation">appdev-documentation</link> repository. Usually, this will be the latest commit in the <literal>master</literal> branch.</simpara>
+</listitem>
+<listitem>
+<simpara>Wait for the pull request to be accepted. When that happens, verify that the <link xlink:href="https://appdev.prod-preview.openshift.io/">stage build</link> succeeded.</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+</orderedlist>
+</section>
+</section>
+<section xml:id="_issues">
+<title>Issues</title>
+<section xml:id="_github_issue_workflow">
+<title>GitHub Issue Workflow</title>
+<simpara>Each issue in the <emphasis>appdev-documentation</emphasis> repository goes through the following life cycle. In each stage, the descriptions list the actions the following people must take:</simpara>
+<orderedlist numeration="arabic">
+<title>GitHub Issue Life Cycle</title>
+<listitem>
+<simpara>The issue is filed.</simpara>
+<variablelist>
+<varlistentry>
+<term>Reporter</term>
+<listitem>
+<simpara>Describe the problem briefly, but in sufficient detail.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Team Member</term>
+<listitem>
+<simpara>Ensure the issue has correct labels. For more information, see <xref linkend="_using_github_labels"/>.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+<listitem>
+<simpara>A team member or a contributor assigns the issue.</simpara>
+<variablelist>
+<varlistentry>
+<term>Assignee</term>
+<listitem>
+<simpara>Label the issue <emphasis>In Progress</emphasis>, add it to the <emphasis>Current Development</emphasis> milestone, address the issue. For more information, see <xref linkend="_making_changes"/>.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+<listitem>
+<simpara>The assignee files a pull request that addresses the issue.</simpara>
+<variablelist>
+<varlistentry>
+<term>Assignee</term>
+<listitem>
+<simpara>Change the issue label from <emphasis>In Progress</emphasis> to <emphasis>SME Review</emphasis>, ask an SME (a subject matter expert) to review the pull request.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>SME</term>
+<listitem>
+<simpara>Provide feedback either in the pull request comments or by filing another pull request in the assignee&#8217;s repository.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+<listitem>
+<simpara>All comments from the SME are addressed.</simpara>
+<variablelist>
+<varlistentry>
+<term>Assignee</term>
+<listitem>
+<simpara>Change the issue label from <emphasis>SME Review</emphasis> to <emphasis>Peer Review</emphasis>. Ask a writer to perform a peer review.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Writer (Peer)</term>
+<listitem>
+<simpara>Provide feedback either in the pull request comments or by filing another pull request in the assignee&#8217;s repository.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+<listitem>
+<simpara>If all comments from the peer have been addressed:</simpara>
+<variablelist>
+<varlistentry>
+<term>Team Member with Merge Access</term>
+<listitem>
+<simpara>Merge the pull request. If further changes need to be made, file a follow-up issue.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Assignee</term>
+<listitem>
+<simpara>Close the issue if it has not been closed automatically. Remove the <emphasis>Peer Review</emphasis> label.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="_using_github_labels">
+<title>Using GitHub Labels</title>
+<simpara>In the <link xlink:href="https://github.com/openshiftio/appdev-documentation">openshiftio/appdev-documentation</link> repository, labels are an important way of communicating the status of issues and pull requests. Please use them accordingly to help maintain efficient work environment.</simpara>
+<simpara>There are several groups of labels based on their meaning:</simpara>
+<section xml:id="_issue_status">
+<title>Issue Status</title>
+<simpara>Use the following labels to indicate what stage of its life cycle an issue or pull request is in.</simpara>
+<table frame="all" rowsep="1" colsep="1">
+<title>Issue Statuses</title>
+<tgroup cols="2">
+<colspec colname="col_1" colwidth="25*"/>
+<colspec colname="col_2" colwidth="75*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Label</entry>
+<entry align="left" valign="top">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><literal>Status | In Progress</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The assignee is actively working on the issue or is waiting for input from someone. The draft of the issue is not ready.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Status | SME Review</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>An SME is providing a review of the draft. This review comes before the peer review.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Status | Peer Review</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>A peer (a writer) is providing a review of the draft. This review comes after the SME review.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Status | Waiting for SME</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue or pull request is waiting for SME to start review.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Status | Waiting for Peer</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue or pull request is waiting for a peer to start review.</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section xml:id="_issue_type">
+<title>Issue Type</title>
+<simpara>Use the following labels to describe what the content of the issue is.</simpara>
+<table frame="all" rowsep="1" colsep="1">
+<title>Issue Types</title>
+<tgroup cols="2">
+<colspec colname="col_1" colwidth="25*"/>
+<colspec colname="col_2" colwidth="75*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Label</entry>
+<entry align="left" valign="top">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><literal>Type | Bug</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>A part of the documentation is factually wrong or outdated, and needs fixing.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Type | Discussion</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue is likely to cause a lot of questions or a discussion.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Type | Enhancement</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>Documentation can be improved or its scope can be enlarged.</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section xml:id="_issue_priority">
+<title>Issue Priority</title>
+<simpara>In addition to the default priority, which is denoted by the lack of a priority label, use the following labels to assign priority to issues:</simpara>
+<table frame="all" rowsep="1" colsep="1">
+<title>Issue Priority</title>
+<tgroup cols="2">
+<colspec colname="col_1" colwidth="25*"/>
+<colspec colname="col_2" colwidth="75*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Label</entry>
+<entry align="left" valign="top">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><literal>Priority | Blocker</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue has the highest priority, and development can not continue unless the issue is fixed.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Priority | High</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue has high priority.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Priority | Low</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue has low priority.</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section xml:id="_issue_relations">
+<title>Issue Relations</title>
+<simpara>The following labels describe the relation between issues and pull requests:</simpara>
+<table frame="all" rowsep="1" colsep="1">
+<title>Issue and Pull Request Relations</title>
+<tgroup cols="2">
+<colspec colname="col_1" colwidth="25*"/>
+<colspec colname="col_2" colwidth="75*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Label</entry>
+<entry align="left" valign="top">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><literal>Issue | Follow-up</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue is a follow-up to a pull request filed by a non-writer.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Issue | Has PR</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>A pull request resolving the issue exists and is linked.</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section xml:id="_expected_effort">
+<title>Expected Effort</title>
+<simpara>In addition to the default expected effort, which is denoted by the lack of an effort label, use the following labels to describe what level of effort you expect an issue or pull request needs to be resolved:</simpara>
+<table frame="all" rowsep="1" colsep="1">
+<title>Expected Effort to Fix</title>
+<tgroup cols="2">
+<colspec colname="col_1" colwidth="25*"/>
+<colspec colname="col_2" colwidth="75*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Label</entry>
+<entry align="left" valign="top">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><literal>Effort | High</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue is very large or complex. A lot of time or knowledge is required.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Effort | Low</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue is simple and does not require much time to be fixed. Suitable for newcomers or for a writer with little time between other issues.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Effort | Easyfix</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue is trivial, and will take less than a few minutes to be fixed.</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section xml:id="_pull_request_type">
+<title>Pull Request Type</title>
+<simpara>Use the following labels to describe how the pull request should be dealth with:</simpara>
+<table frame="all" rowsep="1" colsep="1">
+<title>Pull Request Types</title>
+<tgroup cols="2">
+<colspec colname="col_1" colwidth="25*"/>
+<colspec colname="col_2" colwidth="75*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Label</entry>
+<entry align="left" valign="top">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><literal>Contributor | Internal</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The pull request was submitted by a writer, and should not be accepted until thoroughly proofread and edited.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Contributor | Public</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The pull request was submitted by a non-writer contributor. It may be accepted if it meets basic quality criteria, but the person merging the pull request must file a follow-up issue where they describe the necessary changes.</simpara>
+<warning>
+<simpara>The contribution must be reviewed before merging to ensure the changes are factually correct.</simpara>
+</warning></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section xml:id="_runtime_mission_and_component_labels">
+<title>Runtime, Mission, and Component Labels</title>
+<simpara>Use the following labels to describe what runtimes, mission, or components an issue or pull request concerns. To indicate that an issue is related to a certain booster, combine a runtime and a mission label.</simpara>
+<table frame="all" rowsep="1" colsep="1">
+<title>Runtime Labels</title>
+<tgroup cols="2">
+<colspec colname="col_1" colwidth="25*"/>
+<colspec colname="col_2" colwidth="75*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Label</entry>
+<entry align="left" valign="top">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><literal>Runtime | Node.js</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue or pull request relates to the Node.js runtime.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Runtime | Spring Boot</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue or pull request relates to the Spring Boot runtime.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Runtime | Vert.x</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue or pull request relates to the Eclipse Vert.x runtime.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Runtime | WildFly Swarm</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue or pull request relates to the WildFly Swarm runtime.</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<table frame="all" rowsep="1" colsep="1">
+<title>Mission Labels</title>
+<tgroup cols="2">
+<colspec colname="col_1" colwidth="25*"/>
+<colspec colname="col_2" colwidth="75*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Label</entry>
+<entry align="left" valign="top">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><literal>Mission | Circuit Breaker</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue or pull request relates to the <link xlink:href="https://github.com/openshiftio/appdev-documentation/wiki/Mission:-Circuit-Breaker">Circuit Breaker</link> Mission.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Mission | CRUD</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue or pull request relates to the <link xlink:href="https://github.com/openshiftio/appdev-documentation/wiki/Mission:-Relational-Database-Backend">Relational Database Backend</link> Mission.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Mission | ConfigMap</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue or pull request relates to the <link xlink:href="https://github.com/openshiftio/appdev-documentation/wiki/Mission:-ConfigMap">ConfigMap</link> Mission.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Mission | Health Check</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue or pull request relates to the <link xlink:href="https://github.com/openshiftio/appdev-documentation/wiki/Mission:-Health-Check">Health Check</link> Mission.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Mission | REST API</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue or pull request relates to the <link xlink:href="https://github.com/openshiftio/appdev-documentation/wiki/Mission:-HTTP-API">REST API Level 0</link> Mission.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Mission | SSO</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue or pull request relates to the <link xlink:href="https://github.com/openshiftio/appdev-documentation/wiki/Mission:-Secured-HTTP-API">Secured</link> Mission.</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<table frame="all" rowsep="1" colsep="1">
+<title>Component Labels</title>
+<tgroup cols="2">
+<colspec colname="col_1" colwidth="25*"/>
+<colspec colname="col_2" colwidth="75*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Label</entry>
+<entry align="left" valign="top">Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><literal>Component | Contrib Guide</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue or pull request relates to the Contribution Guide.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Component | Getting Started Guide</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue or pull request relates to the Getting Started Guide.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Component | Minishift Guide</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue or pull request relates to the Minishift Installation Guide.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Component | Frontend</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue or pull request relates to the frontend HTMLs etc.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><literal>Component | Infrastructure</literal></simpara></entry>
+<entry align="left" valign="top"><simpara>The issue or pull request relates to publishing, building, CI, etc.</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+</section>
+</section>
+</section>
+<appendix xml:id="_upstream_runtime_project_development_resources">
+<title>Upstream Runtime Project Development Resources</title>
+<simpara><emphasis>TBD</emphasis></simpara>
+</appendix>
+</article>

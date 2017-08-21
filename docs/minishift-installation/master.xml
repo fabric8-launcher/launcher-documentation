@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc maxdepth="3"?>
+<?asciidoc-numbered?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>Install and Configure the launch.openshift.io Application on a Single-node OpenShift Cluster</title>
+<date>2017-08-17</date>
+</info>
+<simpara>This guide walks you through the process of installing the launch.openshift.io application to run on a local cloud as provisioned by a Single-node OpenShift Cluster. This includes <link xlink:href="https://www.openshift.org/minishift/">Minishift</link>, an all-in-one VM that includes a community version of OpenShift Origin, or <link xlink:href="https://developers.redhat.com/products/cdk/overview/">Red Hat Container Development Kit</link>, a VM that includes OpenShift Container Platform.</simpara>
+<section xml:id="install-local-cloud">
+<title>Prerequisite: Install a Single-node OpenShift Cluster</title>
+<simpara>In order to use the launch.openshift.io application on a local cloud, you must have a Single-node OpenShift Cluster installed and configured. You can use either Minishift <literal>1.3.1</literal> or Red Hat Container Development Kit <literal>3.0.0</literal>.</simpara>
+<section xml:id="_install_minishift">
+<title>Install Minishift</title>
+<simpara>The installation steps for Minishift are available <link xlink:href="https://docs.openshift.org/latest/minishift/getting-started/installing.html">in the OpenShift documentation</link> and vary by platform.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Verify you have Minishift installed and configured.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ minishift version
+minishift v1.3.1+f4900b07</programlisting>
+</listitem>
+<listitem>
+<simpara>Determine the command to add the correct version of the <literal>oc</literal> binary to your path and run the command.</simpara>
+<warning>
+<simpara>The below command may return <literal>Cannot find OpenShift client binary.</literal> if you have never started Minishift. To resolve this issue, you need to allow Minishift to start up at least once (<literal>minishift start</literal>). Once Minishift has completed it&#8217;s initial startup, you need to stop it (<literal>minishift stop</literal>) before proceeding.</simpara>
+</warning>
+<formalpara>
+<title>Example Result of <literal>oc-env</literal></title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">$ minishift oc-env
+export PATH="/Users/john/.minishift/cache/oc/v1.5.1:$PATH"
+# Run this command to configure your shell:
+# eval $(minishift oc-env)
+
+$ eval $(minishift oc-env)</programlisting>
+</para>
+</formalpara>
+<warning>
+<simpara>You must have the <literal>oc</literal> binary installed and it <emphasis role="strong">MUST</emphasis> match the version of Minishift you are using.</simpara>
+</warning>
+</listitem>
+<listitem>
+<simpara>Verify the <literal>oc</literal> CLI tools is on your path.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc version
+oc v1.5.1+7b451fc
+kubernetes v1.5.2+43a9be4
+features: Basic-Auth GSSAPI Kerberos SPNEGO</programlisting>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="_install_red_hat_container_development_kit">
+<title>Install Red Hat Container Development Kit</title>
+<simpara>The installation steps for Red Hat Container Development Kit are available <link xlink:href="https://access.redhat.com/documentation/en-us/red_hat_container_development_kit/3.0/html-single/installation_guide/">in Red Hat Container Development Kit Installation Guide</link> and vary by platform.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Verify you have Red Hat Container Development Kit and the <literal>oc</literal> CLI tools installed and configured.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ minishift version
+Minishift version: 1.0.0+4f8cb6d
+CDK Version: 3.0.0</programlisting>
+</listitem>
+<listitem>
+<simpara>Verify the <literal>oc</literal> CLI tools is on your path.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc version
+oc v3.5.5.8
+kubernetes v1.5.2+43a9be4
+features: Basic-Auth</programlisting>
+<warning>
+<simpara>You must use the <literal>oc</literal> binary installed with Red Hat Container Development Kit.</simpara>
+</warning>
+</listitem>
+</orderedlist>
+</section>
+</section>
+<section xml:id="start-local-cloud">
+<title>Start and Configure your Single-node OpenShift Cluster for the launch.openshift.io Application</title>
+<note>
+<simpara>Starting your Single-node OpenShift Cluster may trigger a download of large virtual machines or Linux container images. This may take a while. Subsequent startups should be shorter as long as the virtual machines and Linux container images remained cached.</simpara>
+</note>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Start your Single-node OpenShift Cluster.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ minishift start --memory=4096
+Starting local OpenShift cluster using 'kvm' hypervisor...
+Downloading ISO 'https://github.com/minishift/minishift-b2d-iso/releases/download/v1.0.2/minishift-b2d.iso'
+...
+   OpenShift server started.
+   The server is accessible via web console at:
+       https://192.168.42.152:8443
+
+   You are logged in as:
+       User:     developer
+       Password: developer
+
+   To login as administrator:
+       oc login -u system:admin</programlisting>
+<note>
+<simpara>Your Single-node OpenShift Cluster, by default, will select a virtual machine driver. Depending upon your system setup, you may need manually specify an alternative virtual machine driver using the <literal>--vm-driver</literal> flag, for example <literal>--vm-driver=virtualbox</literal> would use VirtualBox. Virtual machine software, such as <link xlink:href="https://www.virtualbox.org/">VirtualBox 5.x</link>, is installed separately. On macOS, the <literal>xhyve</literal> driver may be unreliable and the <literal>VirtualBox</literal> is a reliable alternative. If your system works without specifying the virtual machine driver, we recommend you use the default configuration.</simpara>
+<simpara>Depending on your operating system, virtual machine driver, and the number of boosters you run, you may need to increase the amount memory you give you to your Single-node OpenShift Cluster.</simpara>
+</note>
+<simpara>You now have OpenShift running in a single-node cluster on your local machine. The log information provided by your Single-node OpenShift Cluster provides the address you need to use to access the web console as well as the credentials to log in. In the above example, the console is located at <literal>https://192.168.42.152:8443</literal>, the username is <literal>developer</literal> and the password is <literal>developer</literal>.</simpara>
+</listitem>
+<listitem>
+<simpara>Open the web console using a web browser and authenticate.</simpara>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="images/minishift_login.png"/>
+</imageobject>
+<textobject><phrase>Login</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<important>
+<simpara>Since a Single-node OpenShift Cluster is for development purposes, it uses HTTPS for the web console and only provides a self-signed certificate. You may need to allow your browser to bypass SSL security policies as it tries to protect you from using <literal>HTTPS</literal> without a certificate signed by a certificate authority. The below screenshot shows the warning message in the Chrome browser.</simpara>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="images/minishift_sslwarning.png"/>
+</imageobject>
+<textobject><phrase>SSL warning</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<simpara>At this time, Safari on macOS does not work with a Single-node OpenShift Cluster. This a <link xlink:href="https://github.com/openshiftio/appdev-planning/issues/16">known issue</link>. Other browsers, such as Chrome, on macOS do work with a Single-node OpenShift Cluster.</simpara>
+</important>
+</listitem>
+<listitem>
+<simpara>Delete the preconfigured project.</simpara>
+<simpara>The default installation provides a single project preconfigured, which you can delete. Click the trashcan icon and complete the confirmation to delete it.</simpara>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="images/minishift_consolehome.png"/>
+</imageobject>
+<textobject><phrase>OpenShift Console Home</phrase></textobject>
+</mediaobject>
+</informalfigure>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="_create_a_github_personal_access_token">
+<title>Create a GitHub Personal Access Token</title>
+<important>
+<simpara>You must have a <link xlink:href="http://github.com">GitHub</link> account to set up a personal access token. If you do not have one, you must <link xlink:href="http://github.com/join">create a GitHub account</link> before continuing.</simpara>
+</important>
+<simpara>The launch.openshift.io application adds generated starter applications called <emphasis>Boosters</emphasis> to your GitHub namespace. This requires the launch.openshift.io application to have access to your GitHub account, which is granted using a GitHub personal access token.</simpara>
+<simpara>To create a GitHub personal access token:</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Using a web browser, navigate to <literal><link xlink:href="https://github.com/settings/tokens">https://github.com/settings/tokens</link></literal>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select <emphasis>Generate new token</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Add a token description, for example <literal>launch.openshift.io on Minishift</literal>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select the following parent scopes and all their children:</simpara>
+<itemizedlist>
+<listitem>
+<simpara><literal>repo</literal></simpara>
+</listitem>
+<listitem>
+<simpara><literal>admin:repo_hook</literal></simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>Click  <emphasis>Generate token</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Save the hex code of the personal access token. You need this to complete the installation of the launch.openshift.io application on your Single-node OpenShift Cluster.</simpara>
+<important>
+<simpara>This hex code only appears once and cannot be recreated. If you lose this hex code you will need to create a new personal access token.</simpara>
+</important>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="create-launcher-app">
+<title>Create the launch.openshift.io Application</title>
+<section xml:id="create-launcher-app-script">
+<title>Using an Automated Script</title>
+<simpara>You can install the launch.openshift.io application to your Single-node OpenShift Cluster using <link xlink:href="https://raw.githubusercontent.com/openshiftio/appdev-documentation/master/scripts/deploy_launchpad_mission.sh">an automated script</link>. The script will:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Create a project in your Single-node OpenShift Cluster.</simpara>
+</listitem>
+<listitem>
+<simpara>Deploy the launch.openshift.io application to that project using the <link xlink:href="/latest-launcher-template">latest template</link>.</simpara>
+</listitem>
+<listitem>
+<simpara>Configure the launch.openshift.io application with your GitHub username and personal access token.</simpara>
+</listitem>
+<listitem>
+<simpara>Update the Jenkins <emphasis>serviceaccount</emphasis> to use the <literal>admin</literal> role.</simpara>
+</listitem>
+</itemizedlist>
+<simpara>To use the automated script:</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara><link xlink:href="https://raw.githubusercontent.com/openshiftio/appdev-documentation/master/scripts/deploy_launchpad_mission.sh">Download</link> the script.</simpara>
+</listitem>
+<listitem>
+<simpara>Run the script. There are several options:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Run the script with username and password.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ ./deploy_launchpad_mission.sh -p PROJECT_NAME -i developer:developer -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN</programlisting>
+</listitem>
+<listitem>
+<simpara>Run the script with your Single-node OpenShift Cluster access token.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ ./deploy_launchpad_mission.sh -p PROJECT_NAME -i OPENSHIFT_TOKEN -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN</programlisting>
+</listitem>
+<listitem>
+<simpara>Run the script and specify the version of the launch.openshift.io application template to use.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ ./deploy_launchpad_mission.sh -p PROJECT_NAME -i developer:developer -g myGithubUser:myGithubToken -v v8</programlisting>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>Once the script completes, return to your Single-node OpenShift Cluster web console and click on your launch.openshift.io application project.</simpara>
+<simpara>This is your project&#8217;s overview page and you can see its current status.</simpara>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="images/minishift_launchpad_booting.png"/>
+</imageobject>
+<textobject><phrase>launch.openshift.io application booting</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<simpara>The grey circles reference that the docker images for these services are being pulled down from the network. This is a one time step that may take some time. Eventually the circles will turn a light blue to note that they are starting, then a deeper blue to indicate when they are running.</simpara>
+<simpara>When all services are running, you are ready to use the launch.openshift.io application.</simpara>
+</listitem>
+<listitem>
+<simpara>Click the link at the top of all services, which should end in <literal>nip.io</literal>.</simpara>
+<simpara>A new browser tab will open with the launch.openshift.io application.</simpara>
+</listitem>
+</orderedlist>
+<simpara>You are now running on your local cloud the same service we will be hosting over at <literal>launch.openshift.io</literal>. See the <link xlink:href="/docs/getting-started.html#boosters">Getting Started Guide</link> for more details on using the launch.openshift.io application to launch mission booster applications.</simpara>
+</section>
+<section xml:id="_manually">
+<title>Manually</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Click <emphasis>New Project</emphasis> to create a new OpenShift project to house the launch.openshift.io application.</simpara>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="images/minishift_newproject.png"/>
+</imageobject>
+<textobject><phrase>New Project Button</phrase></textobject>
+</mediaobject>
+</informalfigure>
+</listitem>
+<listitem>
+<simpara>Name the project and optionally provide a description. This example uses <literal>my-launcher</literal> for the project&#8217;s name.</simpara>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="images/minishift_projectconfig.png"/>
+</imageobject>
+<textobject><phrase>New Project Config</phrase></textobject>
+</mediaobject>
+</informalfigure>
+</listitem>
+<listitem>
+<simpara>Click <emphasis>Create</emphasis> to complete the project creation.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis>Import YAML/JSON</emphasis> to add services to your new project from a template.</simpara>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="images/minishift_yamljson.png"/>
+</imageobject>
+<textobject><phrase>Import YAML/JSON</phrase></textobject>
+</mediaobject>
+</informalfigure>
+</listitem>
+<listitem>
+<simpara>Copy the contents of <link xlink:href="/latest-launcher-template">the current launch.openshift.io template from the GitHub repository</link> and paste it into the text box provided.</simpara>
+<note>
+<simpara>We are working on removing this step entirely, but for now it is required. The full details and a current status are available <link xlink:href="https://github.com/openshiftio/launchpad-templates/issues/2">on GitHub</link>.</simpara>
+</note>
+</listitem>
+<listitem>
+<simpara>Click <emphasis>Create</emphasis>, ensure that only the <emphasis>Process the template</emphasis> option is selected, and click <emphasis>Continue</emphasis>.</simpara>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="images/minishift_processtemplate.png"/>
+</imageobject>
+<textobject><phrase>Process Template</phrase></textobject>
+</mediaobject>
+</informalfigure>
+</listitem>
+<listitem>
+<simpara>Fill out the following fields.</simpara>
+<itemizedlist>
+<listitem>
+<simpara><emphasis>Your GitHub username</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara><emphasis>Your GitHub Mission Control access token</emphasis> is your personal access token for GitHub.</simpara>
+</listitem>
+<listitem>
+<simpara>The <emphasis>Target OpenShift Console URL</emphasis> is the OpenShift Console URL from your Single-node OpenShift Cluster. This should be the same base URL you are currently using to complete the form, for example <literal>https://192.168.42.152:8443</literal>.</simpara>
+</listitem>
+<listitem>
+<simpara>OpenShift username and password from your Single-node OpenShift Cluster, for example <literal>developer</literal> for the username and password.</simpara>
+</listitem>
+<listitem>
+<simpara><emphasis>KeyCloak URL</emphasis> and <emphasis>KeyCloak Realm</emphasis> <emphasis role="strong">MUST</emphasis> be cleared out.</simpara>
+<warning>
+<simpara>You must clear these fields out for the launch.openshift.io application on your Single-node OpenShift Cluster to be configured correctly.</simpara>
+</warning>
+</listitem>
+<listitem>
+<simpara><emphasis>Catalog Git Repository</emphasis> and <emphasis>Catalog Git Reference</emphasis> should be generally left as-is, unless you are developing against a specific fork you would like to use.</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>Before proceeding to the next steps, confirm all the fields are correct. Also confirm that <emphasis>KeyCloak URL</emphasis> and <emphasis>KeyCloak Realm</emphasis> <emphasis role="strong">have been cleared out</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <literal>Create</literal> to complete the setup. You will see a screen confirming that the application has been created. Click <emphasis>Continue to overview</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>On the overview page, wait and confirm that the three services for the launch.openshift.io application are starting up.</simpara>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="images/minishift_launchpad_booting.png"/>
+</imageobject>
+<textobject><phrase>launch.openshift.io booting</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<simpara>The grey circles reference that the docker images for these services are being pulled down from the network. This is a one time step that may take some time. Eventually the circles will turn a light blue to note that they are starting, then a deeper blue to indicate when they are running.</simpara>
+</listitem>
+<listitem>
+<simpara>When all services are running, you are ready to use the launch.openshift.io application.  Click the link at the top of all services, which should end in <literal>nip.io</literal>, and a new browser tab will open with the launch.openshift.io application.</simpara>
+</listitem>
+</orderedlist>
+<simpara>You are now running on your local cloud the same service we will be hosting over at <literal>launch.openshift.io</literal>.</simpara>
+</section>
+</section>
+<section xml:id="_next_steps">
+<title>Next Steps</title>
+<itemizedlist>
+<listitem>
+<simpara>Start using your launch.openshift.io application to launch booster applications.</simpara>
+</listitem>
+<listitem>
+<simpara>Take a look at the <link xlink:href="/docs/getting-started.html">Getting Started Guide</link> for a walk-through of running a booster.</simpara>
+</listitem>
+<listitem>
+<simpara>Read the runtime guides for an overview of the runtimes and their boosters.</simpara>
+<itemizedlist>
+<listitem>
+<simpara><link xlink:href="/docs/spring-boot-runtime.html">Spring Boot Tomcat Runtime Guide</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/vertx-runtime.html">Eclipse Vert.x Runtime Guide</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/wf-swarm-runtime.html">WildFly Swarm Runtime Guide</link></simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+</section>
+<appendix xml:id="_using_a_nexus_repository_server_with_the_launch_openshift_io_application_on_your_single_node_openshift_cluster">
+<title>Using a Nexus Repository Server With the launch.openshift.io Application on your Single-node OpenShift Cluster</title>
+<simpara>While developing your cloud-native applications with Java and Maven you may be required to build them repeatedly.
+You can deploy a Nexus Repository server alongside the launch.openshift.io application on your Single-node OpenShift Cluster and use it to fetch artifacts from the Maven Central Repository and cache them locally.
+This helps you speed up your builds and rolling updates and alleviates network load during build time.</simpara>
+<section xml:id="_prerequisites_for_deploying_nexus_on_single_node_openshift_cluster">
+<title>Prerequisites for Deploying Nexus on Single-node OpenShift Cluster.</title>
+<itemizedlist>
+<listitem>
+<simpara>Set up your Single-node OpenShift Cluster. For detailed steps on how to do this, follow the instructions in <link xlink:href="/docs/minishift-installation.html">Install and Configure the launch.openshift.io Application on a Single-node OpenShift Cluster</link>.</simpara>
+</listitem>
+</itemizedlist>
+<itemizedlist>
+<listitem>
+<simpara>Configure your Single-node OpenShift Cluster to use at least 4096 MiB of RAM and use the required <literal>oc</literal> CLI tool version.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">minishift delete # Delete the previous instance of Single-node OpenShift Cluster
+minishift config set memory 4096
+minishift config set openshift-version v3.6.0
+minishift start</programlisting>
+<warning>
+<simpara>The procedure described below works with Minishift version <literal>1.3.1</literal>.
+It has not been tested for use with CDK.
+You must use <literal>oc</literal> version <literal>3.6.0</literal> or later.</simpara>
+</warning>
+</listitem>
+<listitem>
+<simpara>Deploy the launch.openshift.io application to your Single-node OpenShift Cluster.</simpara>
+</listitem>
+<listitem>
+<simpara>Deploy a Booster application to your Single-node OpenShift Cluster.</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section xml:id="_configuring_your_single_node_openshift_cluster_to_use_nexus">
+<title>Configuring your Single-node OpenShift Cluster to Use Nexus.</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Log in to your Single-node OpenShift Cluster instance.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">oc login https://LOCAL_OPENSHIFT_URL:PORT -u developer -p developer</programlisting>
+</listitem>
+<listitem>
+<simpara>You can reuse the Docker daemon instance used by Single-node OpenShift Cluster to download the latest versions of the Nexus Docker container image.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">eval $(minishift docker-env)
+docker pull openshift/jenkins-2-centos7
+docker pull openshiftio/launchpad-jenkins-slave
+docker pull sonatype/nexus</programlisting>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="_setting_up_the_nexus_application">
+<title>Setting up the Nexus Application</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Create a new project to contain the Nexus server. You can also use the <emphasis>New Project</emphasis> button on the Web console to do this.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">oc new-project NEXUS_PROJECT_NAME</programlisting>
+</listitem>
+<listitem>
+<simpara>Deploy the Nexus container image.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">oc new-app sonatype/nexus</programlisting>
+</listitem>
+<listitem>
+<simpara>Expose the service route URL of the Nexus server.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">oc expose svc/nexus</programlisting>
+</listitem>
+<listitem>
+<simpara>Attach a 1 GiB persistent storage volume to the Nexus application.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">oc volumes dc/nexus --add --name 'nexus-volume-1' --type 'pvc' --mount-path '/sonatype-work/' --claim-name 'nexus-pv' --claim-size '1Gi' --overwrite</programlisting>
+</listitem>
+<listitem>
+<simpara>Find the external address of the Nexus instance:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">oc get routes</programlisting>
+<programlisting language="bash" linenumbering="unnumbered">NAME      HOST/PORT                              PATH      SERVICES   PORT       TERMINATION
+nexus     nexus-NEXUS_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME             nexus      8080:8080</programlisting>
+<note>
+<simpara>Nexus comes pre-configured for the Maven Central Repository, but you may need other repositories for your application. To access images provided by Red Hat, add the <literal>jboss-ga</literal> Maven repository to your Nexus instance.</simpara>
+</note>
+</listitem>
+<listitem>
+<simpara>Navigate to the project containing your Booster application.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">oc project MY_PROJECT_NAME</programlisting>
+</listitem>
+<listitem>
+<simpara>Assign the <literal>admin</literal> role to your Jenkins application and the <literal>edit</literal> permissions to your OpenShift account.
+Skip this step if you have already assigned these permissions.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">oc policy add-role-to-user edit system:serviceaccount:MY_PROJECT_NAME:default
+oc policy add-role-to-user admin system:serviceaccount:MY_PROJECT_NAME:jenkins</programlisting>
+</listitem>
+<listitem>
+<simpara>Obtain the Jenkins server URL and use it to access the Jenkins instance from your browser.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">oc get routes jenkins</programlisting>
+<programlisting language="bash" linenumbering="unnumbered">NAME      HOST/PORT                                         PATH      SERVICES   PORT      TERMINATION
+jenkins   jenkins-MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME             jenkins    &lt;all&gt;     edge/Redirect</programlisting>
+</listitem>
+<listitem>
+<simpara>Navigate to <literal>jenkins-MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/configure</literal>, and log in using your OpenShift credentials to access the Jenkins configuration page.</simpara>
+</listitem>
+<listitem>
+<simpara>Go to the section titled <emphasis>Kubernetes Pod Template</emphasis>,  click on <emphasis>Add Evironmental Variable</emphasis>, and select <emphasis>Global Environmental Variable</emphasis> option from the drop-down menu.</simpara>
+</listitem>
+<listitem>
+<simpara>Define a new environment variable:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Name: <literal>MAVEN_MIRROR_URL</literal></simpara>
+</listitem>
+<listitem>
+<simpara>Value: <literal>nexus-NEXUS_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/nexus/content/groups/public/</literal></simpara>
+<note>
+<simpara>The actual value of the <literal>MAVEN_MIRROR_URL</literal> environmental variable corresponds to the service route of the pod running the Nexus server instance on your Single-node OpenShift Cluster.</simpara>
+<simpara>To obtain this route, navigate to the project that contains your Nexus instance and execute the command <literal>oc get routes nexus</literal>.</simpara>
+</note>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>Click <emphasis>Apply</emphasis> to confirm the configuration changes.</simpara>
+</listitem>
+<listitem>
+<simpara>Redeploy the Jenkins server instance with the latest configuration changes.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">oc rollout latest dc/jenkins</programlisting>
+<warning>
+<simpara>KNOWN ISSUE: Redeploying your instance of Jenkins server causes other ongoing builds to hang.</simpara>
+</warning>
+</listitem>
+<listitem>
+<simpara>Navigate to the project that contains your Booster and use the Web console to go to <emphasis>Builds</emphasis> &gt; <emphasis>Pipelines</emphasis> and click <emphasis>Start Pipeline</emphasis> to rebuild your Booster application.</simpara>
+</listitem>
+</orderedlist>
+</section>
+</appendix>
+</article>

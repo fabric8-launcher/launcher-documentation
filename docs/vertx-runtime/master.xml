@@ -1,0 +1,2177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc maxdepth="2"?>
+<?asciidoc-numbered?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>Eclipse Vert.x Runtime Guide</title>
+<date>2017-08-17</date>
+</info>
+<simpara>This guide covers concepts as well as practical details needed by developers to use the Eclipse Vert.x runtime.</simpara>
+<section xml:id="_runtime_details">
+<title>Runtime Details</title>
+<simpara>Eclipse Vert.x is a toolkit for writing reactive, non-blocking, asynchronous applications that run on the JVM. Eclipse Vert.x provides an unopinionated and flexible way to write polyglot applications that are fast and lightweight. Eclipse Vert.x is also designed to be truly cloud-native by efficiently allowing many processes to switch between one or very few threads. This allows Eclipse Vert.x applications and services to more effectively use their CPU quotas in cloud environments and avoids the unnecessary overhead caused when creating new threads. Check out <link linkend="vertx-additional-resources">Additional Resources</link> for further reading on Eclipse Vert.x.</simpara>
+<simpara>Using the Eclipse Vert.x runtime in OpenShift makes it simpler and easier to build reactive systems with Eclipse Vert.x. The Eclipse Vert.x runtime enables you to run Eclipse Vert.x applications and services in OpenShift while providing all the advantages and conveniences of the OpenShift platform such as rolling updates, continuous delivery pipelines, service discovery, and canary deployments. OpenShift also makes it easier for your applications to implement common microservice patterns such as ConfigMap, HealthCheck, Circuit Breaker, and Failover.</simpara>
+<simpara>Eclipse Vert.x has a product version of its runtime that runs on OpenShift and is provided as part of a Red Hat subscription.</simpara>
+<simpara>Eclipse Vert.x has a community version of its runtime that runs on OpenShift and is provided outside of a Red Hat subscription.</simpara>
+</section>
+<section xml:id="missions-intro">
+<title>Missions</title>
+<simpara>Missions are working applications that showcase different fundamental pieces of building cloud native applications and services, such as creating HTTP APIs, interoperating with a database, or implementing the health check pattern. A booster is the implementation of a mission in a specific runtime. Boosters are preconfigured, functioning applications based on a mission that demonstrate a fundamental aspect of modern application development running in an environment similar to production. Missions and boosters can be used as a proof of technology demonstration, a teaching tool, or even a sandbox for understanding how to develop applications. They can also be updated or extended for your own use case.</simpara>
+<note>
+<simpara>Each mission has different boosters that show how to implement the same mission in different runtimes. For example, the REST API Level 0 mission has a <link xlink:href="/docs/nodejs-runtime.html#mission-http-api-nodejs">Node.js booster</link>, a <link xlink:href="/docs/spring-boot-runtime.html#mission-http-api-spring-boot-tomcat">Spring Boot Tomcat booster</link>, a <link xlink:href="/docs/vertx-runtime.html#mission-http-api-vertx">Eclipse Vert.x booster</link>, and a <link xlink:href="/docs/wf-swarm-runtime.html#mission-http-api-wf-swarm">WildFly Swarm booster</link>.</simpara>
+</note>
+<section xml:id="mission-http-api-vertx">
+<title>REST API Level 0 Mission - Eclipse Vert.x Booster</title>
+<simpara>Mission proficiency level:
+<link linkend="proficiency_foundational"><emphasis role="strong">Foundational</emphasis></link>.</simpara>
+<simpara>The REST API Level 0 Mission provides a basic example of mapping business operations to a remote procedure call endpoint over HTTP using a REST framework. This corresponds to <link xlink:href="https://martinfowler.com/articles/richardsonMaturityModel.html#level0">Level 0 in the Richardson Maturity Model</link>. Creating an HTTP endpoint using REST and its underlying principals to define your API enables you to quickly prototype and design your API in a flexible manner.
+More background information on REST is available in <xref linkend="about_rest"/>.</simpara>
+<simpara>This is an introduction to the mechanics of opening a service that is called remotely. Specifically, this booster is an application that allows a user to:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Execute an HTTP <literal>GET</literal> request on the <literal>api/greeting</literal> endpoint.</simpara>
+</listitem>
+<listitem>
+<simpara>Receive a response in JSON format with a payload consisting of the <literal>Hello, World!</literal> String.</simpara>
+</listitem>
+<listitem>
+<simpara>Execute an HTTP <literal>GET</literal> request on the <literal>api/greeting</literal> endpoint while passing in a String argument. This uses the <literal>name</literal> request parameter in the query string.</simpara>
+</listitem>
+<listitem>
+<simpara>Receive a response in JSON format with a payload of <literal>Hello, $name!</literal> with <literal>$name</literal> replaced by the value of the <literal>name</literal> parameter passed into the request.</simpara>
+</listitem>
+</itemizedlist>
+<table frame="all" rowsep="1" colsep="1">
+<title>Design Tradeoffs</title>
+<?dbhtml table-width="100%"?>
+<?dbfo table-width="100%"?>
+<?dblatex table-width="100%"?>
+<tgroup cols="2">
+<colspec colname="col_1" colwidth="213*"/>
+<colspec colname="col_2" colwidth="213*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Pros</entry>
+<entry align="left" valign="top">Cons</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><itemizedlist>
+<listitem>
+<simpara>Fast prototyping</simpara>
+</listitem>
+<listitem>
+<simpara>Flexible API Design</simpara>
+</listitem>
+<listitem>
+<simpara>HTTP endpoints allow clients to be language agnostic</simpara>
+</listitem>
+</itemizedlist></entry>
+<entry align="left" valign="top"><itemizedlist>
+<listitem>
+<simpara>As an application or service matures, the REST API Level 0 approach may not scale well to properly support a clean API design or use cases involving database interactions. Any operations involving shared, mutable state must be integrated with an appropriate backing datastore. All requests handled by an API designed in this manner will be scoped only to the container servicing the request. Therefore there is no guarantee that subsequent requests will be served by the same container.</simpara>
+</listitem>
+</itemizedlist></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<section xml:id="rest_build_and_deploy_booster">
+<title>Build and Deploy Your Booster</title>
+<section xml:id="_deploy_your_booster_to_a_single_node_openshift_cluster">
+<title>Deploy your Booster to a Single-node OpenShift Cluster</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Before you can use a Single-node OpenShift Cluster, you need to have it installed, configured, and running. You can find more details in <link xlink:href="https://github.com/minishift/minishift#installation">Install and Configure a Single-node OpenShift Cluster</link>.</simpara>
+</listitem>
+<listitem>
+<simpara>Once you have a Single-node OpenShift Cluster running, check the console output for the URL you can use to access it.</simpara>
+<formalpara>
+<title>Example Console Output from a Single-node OpenShift Cluster Startup</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">...
+-- Removing temporary directory ... OK
+-- Server Information ...
+   OpenShift server started.
+   The server is accessible via web console at:
+       https://192.168.42.152:8443
+
+   You are logged in as:
+       User:     developer
+       Password: developer
+
+   To login as administrator:
+       oc login -u system:admin</programlisting>
+</para>
+</formalpara>
+</listitem>
+</orderedlist>
+<section xml:id="_deploy_using_launch_openshift_io">
+<title>Deploy Using launch.openshift.io</title>
+<simpara>Once you have the launch.openshift.io application <link xlink:href="/docs/minishift-installation.html">installed and configured</link>,
+navigate to it in your Single-node OpenShift Cluster and use it to create and launch your booster.</simpara>
+</section>
+<section xml:id="_deploy_using_the_literal_oc_literal_cli_client">
+<title>Deploy Using the <literal>oc</literal> CLI Client</title>
+<important>
+<simpara>You must still create a booster using launch.openshift.io before you can deploy it using the <literal>oc</literal> CLI client.</simpara>
+<simpara>If you choose <emphasis>I will build and run locally</emphasis>, unzip the ZIP file you downloaded. If you chose <emphasis>Use OpenShift Online to build and deploy</emphasis> you need to clone the GitHub repository created by launch.openshift.io.</simpara>
+</important>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Get your authentication token for using the <literal>oc</literal> CLI client with Single-node OpenShift Cluster. You can find this in the <emphasis>Command Line Tools</emphasis> section your Single-node OpenShift Cluster Web console.</simpara>
+</listitem>
+<listitem>
+<simpara>Authenticate your <literal>oc</literal> CLI client with Single-node OpenShift Cluster by using your authentication token.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc login OPENSHIFT_URL --token=MYTOKEN</programlisting>
+</listitem>
+<listitem>
+<simpara>Create a new project in Single-node OpenShift Cluster.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc new-project MY_PROJECT_NAME</programlisting>
+</listitem>
+<listitem>
+<simpara>Navigate to the root directory of your booster.</simpara>
+</listitem>
+<listitem>
+<simpara>Use maven to start the deployment to Single-node OpenShift Cluster.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ mvn clean fabric8:deploy -Popenshift</programlisting>
+<simpara>This command uses the Fabric8 Maven Plugin to launch the S2I process on Single-node OpenShift Cluster and to start the pod.</simpara>
+</listitem>
+<listitem>
+<simpara>Check the status of your booster and ensure your pod is running.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc get pods -w
+NAME                             READY     STATUS      RESTARTS   AGE
+MY_APP_NAME-1-aaaaa               1/1       Running     0          58s
+MY_APP_NAME-s2i-1-build           0/1       Completed   0          2m</programlisting>
+<simpara>You <literal>app1</literal> pod should have a status of <literal>Running</literal> once its fully deployed and started.</simpara>
+</listitem>
+<listitem>
+<simpara>Once your booster is deployed and started, determine its route.</simpara>
+<formalpara>
+<title>Example Route Information</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">$ oc get routes
+NAME                 HOST/PORT                                                     PATH      SERVICES        PORT      TERMINATION
+MY_APP_NAME         MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME      MY_APP_NAME      8080</programlisting>
+</para>
+</formalpara>
+<simpara>A pod&#8217;s route information gives you the base URL which you use to access it. In the example above, you would use <literal><link xlink:href="http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME">http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME</link></literal> as the base URL to access the application.</simpara>
+</listitem>
+</orderedlist>
+</section>
+</section>
+</section>
+<section xml:id="interact">
+<title>Interact with the Unmodified Eclipse Vert.x Booster</title>
+<simpara>The booster provides a default HTTP endpoint that accepts GET requests.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Use <literal>curl</literal> to execute a <literal>GET</literal> request against the booster. You can also use a browser to do this.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ curl http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/greeting
+{
+  "content" : "Hello, World!"
+}</programlisting>
+</listitem>
+<listitem>
+<simpara>Use <literal>curl</literal> to execute a <literal>GET</literal> request with the <literal>name</literal> URL parameter against the booster. You can also use a browser to do this.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ curl http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/greeting?name=Sarah
+{
+  "content" : "Hello, Sarah!"
+}</programlisting>
+</listitem>
+</orderedlist>
+<note>
+<simpara>You can also use a form provided by the booster to perform these same interactions. The form is located at the root of the project <literal><link xlink:href="http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME">http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME</link></literal>.</simpara>
+</note>
+</section>
+<section xml:id="about_rest">
+<title>REST Resources</title>
+<simpara>More background and related information on REST can be found here:</simpara>
+<itemizedlist>
+<listitem>
+<simpara><link xlink:href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">Architectural Styles and
+the Design of Network-based Software Architectures - Representational State Transfer (REST)</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://martinfowler.com/articles/richardsonMaturityModel.html">Richardson Maturity Model</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://www.jcp.org/en/jsr/detail?id=311">JSR 311: JAX-RS: The JavaTM API for RESTful Web Services</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="http://vertx.io/blog/some-rest-with-vert-x/">Some Rest with Eclipse Vert.x</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/spring-boot-runtime.html#mission-http-api-spring-boot-tomcat">REST API Level 0 Mission - Spring Boot Tomcat Booster</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/wf-swarm-runtime.html#mission-http-api-wf-swarm">REST API Level 0 Mission - WildFly Swarm Booster</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/nodejs-runtime.html#mission-http-api-nodejs">REST API Level 0 Mission - Node.js Booster</link></simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+<section xml:id="mission-configmap-vertx">
+<title>ConfigMap Mission - Eclipse Vert.x Booster</title>
+<simpara>Mission proficiency level:
+<link linkend="proficiency_foundational"><emphasis role="strong">Foundational</emphasis></link>.</simpara>
+<simpara>The ConfigMap Mission provides a basic example of using ConfigMap to take advantage of external configuration sources.
+This mission shows you how to:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Setup and configuration of ConfigMap.</simpara>
+</listitem>
+<listitem>
+<simpara>Use the configuration provided by ConfigMap within an application.</simpara>
+</listitem>
+<listitem>
+<simpara>Deploy changes to ConfigMap to applications that are already running.</simpara>
+</listitem>
+</itemizedlist>
+<section xml:id="_about_configmap">
+<title>About ConfigMap</title>
+<simpara><emphasis>ConfigMap</emphasis> is an object used by OpenShift to inject configuration data as simple key and value pairs into one or more Linux containers while keeping the those containers agnostic of Openshift. You can create a ConfigMap object in a variety of different ways, including using a YAML file, and inject it into the Linux container. You can find more information about ConfigMap in the <link xlink:href="https://docs.openshift.org/latest/dev_guide/configmaps.html">OpenShift documentation</link>.</simpara>
+</section>
+<section xml:id="_why_is_configmap_important">
+<title>Why is ConfigMap Important?</title>
+<simpara>It is important for an application&#8217;s configuration to be externalized and separate from it&#8217;s code. This allows for the application&#8217;s configuration to change as it moves through different environments while leaving the code unchanged. This also keeps sensitive or internal information out of your codebase and version control. Many languages and application servers provide environment variables to support externalizing an application&#8217;s configuration. Microservices and Linux containers increase the complexity of this by adding pods, or groups of containers representing a deployment, and polyglot environments. ConfigMap enables application configuration to be externalized and used in individual Linux containers and pods in a language agnostic way. ConfigMap also allows sets of configuration data to be easily grouped and scaled, which enables you to configure an arbitrarily large number of environments beyond the basic <emphasis>Dev</emphasis>, <emphasis>Stage</emphasis>, and <emphasis>Production</emphasis>.</simpara>
+<table frame="all" rowsep="1" colsep="1">
+<title>Design Tradeoffs</title>
+<?dbhtml table-width="100%"?>
+<?dbfo table-width="100%"?>
+<?dblatex table-width="100%"?>
+<tgroup cols="2">
+<colspec colname="col_1" colwidth="213*"/>
+<colspec colname="col_2" colwidth="213*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Pros</entry>
+<entry align="left" valign="top">Cons</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><itemizedlist>
+<listitem>
+<simpara>Configuration is separate from deployments</simpara>
+</listitem>
+<listitem>
+<simpara>Can be updated independently</simpara>
+</listitem>
+<listitem>
+<simpara>Can be shared across services</simpara>
+</listitem>
+</itemizedlist></entry>
+<entry align="left" valign="top"><itemizedlist>
+<listitem>
+<simpara>Configuration is separate from deployments</simpara>
+</listitem>
+<listitem>
+<simpara>Has to be maintained separately</simpara>
+</listitem>
+<listitem>
+<simpara>Requires coordination beyond the scope of a service</simpara>
+</listitem>
+</itemizedlist></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section xml:id="configmap_build_and_deploy_booster">
+<title>Build and Deploy Your Booster</title>
+<section xml:id="_deploy_your_booster_to_a_single_node_openshift_cluster_2">
+<title>Deploy your Booster to a Single-node OpenShift Cluster</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Before you can use a Single-node OpenShift Cluster, you need to have it installed, configured, and running. You can find more details in <link xlink:href="https://github.com/minishift/minishift#installation">Install and Configure a Single-node OpenShift Cluster</link>.</simpara>
+</listitem>
+<listitem>
+<simpara>Once you have a Single-node OpenShift Cluster running, check the console output for the URL you can use to access it.</simpara>
+<formalpara>
+<title>Example Console Output from a Single-node OpenShift Cluster Startup</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">...
+-- Removing temporary directory ... OK
+-- Server Information ...
+   OpenShift server started.
+   The server is accessible via web console at:
+       https://192.168.42.152:8443
+
+   You are logged in as:
+       User:     developer
+       Password: developer
+
+   To login as administrator:
+       oc login -u system:admin</programlisting>
+</para>
+</formalpara>
+</listitem>
+</orderedlist>
+<section xml:id="_deploy_using_launch_openshift_io_2">
+<title>Deploy Using launch.openshift.io</title>
+<simpara>Once you have the launch.openshift.io application <link xlink:href="/docs/minishift-installation.html">installed and configured</link>,
+navigate to it in your Single-node OpenShift Cluster and use it to create and launch your booster.</simpara>
+</section>
+<section xml:id="_deploy_using_the_literal_oc_literal_cli_client_2">
+<title>Deploy Using the <literal>oc</literal> CLI Client</title>
+<important>
+<simpara>You must still create a booster using launch.openshift.io before you can deploy it using the <literal>oc</literal> CLI client.</simpara>
+<simpara>If you choose <emphasis>I will build and run locally</emphasis>, unzip the ZIP file you downloaded. If you chose <emphasis>Use OpenShift Online to build and deploy</emphasis> you need to clone the GitHub repository created by launch.openshift.io.</simpara>
+</important>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Get your authentication token for using the <literal>oc</literal> CLI client with your Single-node OpenShift Cluster account. You can find this in the <emphasis>Command Line Tools</emphasis> section your Single-node OpenShift Cluster Web console.</simpara>
+</listitem>
+<listitem>
+<simpara>Authenticate your <literal>oc</literal> CLI client with your Single-node OpenShift Cluster account by using your authentication token.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc login OPENSHIFT_URL --token=MYTOKEN</programlisting>
+</listitem>
+<listitem>
+<simpara>Create a new project in your Single-node OpenShift Cluster.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc new-project MY_PROJECT_NAME</programlisting>
+</listitem>
+<listitem>
+<simpara>Add a policy for the project.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc policy add-role-to-user view -n $(oc project -q) -z default</programlisting>
+</listitem>
+<listitem>
+<simpara>Navigate to the root directory of your booster.</simpara>
+</listitem>
+<listitem>
+<simpara>Deploy your ConfigMap configuration to your Single-node OpenShift Cluster using <literal>app-config.yml</literal>.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc create configmap app-config --from-file=app-config.yml</programlisting>
+</listitem>
+<listitem>
+<simpara>Verify your ConfigMap configuration has been deployed.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc get configmap app-config -o yaml
+
+apiVersion: v1
+data:
+  app-config.yml: |-
+      message : "Hello, %s from a ConfigMap !"
+      level : INFO
+...</programlisting>
+</listitem>
+<listitem>
+<simpara>Use Maven to start the deployment to your Single-node OpenShift Cluster.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ mvn clean fabric8:deploy -Popenshift</programlisting>
+<simpara>This command uses the Fabric8 Maven Plugin to launch the S2I process on your Single-node OpenShift Cluster and to start the pod.</simpara>
+</listitem>
+<listitem>
+<simpara>Check the status of your booster and ensure your pod is running.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc get pods -w
+NAME                                       READY     STATUS      RESTARTS   AGE
+MY_APP_NAME-1-aaaaa               1/1       Running     0          58s
+MY_APP_NAME-s2i-1-build           0/1       Completed   0          2m</programlisting>
+<simpara>Your <literal>MY_APP_NAME-1-aaaaa</literal> pod should have a status of <literal>Running</literal> once its fully deployed and started.
+You should also wait for your pod to be <emphasis>ready</emphasis> before proceeding, which is shown in the <literal>READY</literal> column. For example, <literal>MY_APP_NAME-1-aaaaa</literal> is <emphasis>ready</emphasis> when the <literal>READY</literal> column is <literal>1/1</literal>.</simpara>
+</listitem>
+<listitem>
+<simpara>Once your booster is deployed and started, determine its route.</simpara>
+<formalpara>
+<title>Example Route Information</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">$ oc get routes
+NAME         HOST/PORT                                     PATH      SERVICES             PORT      TERMINATION
+MY_APP_NAME   MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME              MY_APP_NAME           8080</programlisting>
+</para>
+</formalpara>
+<simpara>A pod&#8217;s route information gives you the base URL which you use to access it. In the example above, you would use <literal><link xlink:href="http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME">http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME</link></literal> as the base URL to access the application.</simpara>
+</listitem>
+</orderedlist>
+</section>
+</section>
+</section>
+<section xml:id="_interact_with_the_unmodified_eclipse_vert_x_booster">
+<title>Interact with the Unmodified Eclipse Vert.x Booster</title>
+<simpara>The booster provides a default HTTP endpoint that accepts GET requests.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Use <literal>curl</literal> to execute a <literal>GET</literal> request against the booster. You can also use a browser to do this.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ curl http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/greeting
+{"content":"Hello, World from a ConfigMap !"}</programlisting>
+</listitem>
+<listitem>
+<simpara>Update the deployed ConfigMap configuration.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc edit configmap app-config</programlisting>
+<simpara>Change the value for the <literal>message</literal> key to <literal>Bonjour, %s from a ConfigMap !</literal> and save the file.</simpara>
+</listitem>
+<listitem>
+<simpara>Update of the config map should be read by the application within an acceptable time (a few seconds) without requiring a restart of the application.</simpara>
+</listitem>
+<listitem>
+<simpara>Use <literal>curl</literal> to execute a <literal>GET</literal> request against the booster with the updated ConfigMap configuration. You can also use a browser to do this.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ curl http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/greeting
+{"content":"Bonjour, World from a ConfigMap !"}</programlisting>
+<simpara>You should see your updated greeting.</simpara>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="_running_integration_tests">
+<title>Running Integration Tests</title>
+<simpara>This booster contains a set of integration tests.
+To run them, you must be connected to an OpenShift instance and select the project that will be used for testing.</simpara>
+<simpara>To run the integration tests, execute the following command:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ mvn clean verify -Popenshift,openshift-it</programlisting>
+<warning>
+<simpara>Be sure that view access rights for service account are added before executing tests.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc policy add-role-to-user view -n $(oc project -q) -z default</programlisting>
+</warning>
+</section>
+<section xml:id="about_configmap">
+<title>ConfigMap Resources</title>
+<simpara>More background and related information on ConfigMap can be found here:</simpara>
+<itemizedlist>
+<listitem>
+<simpara><link xlink:href="https://docs.openshift.org/latest/dev_guide/configmaps.html">OpenShift ConfigMap Documentation</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://blog.openshift.com/configuring-your-application-part-1/">Blog Post about ConfigMap in OpenShift</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="http://vertx.io/docs/vertx-config/js/">External Configuration with Eclipse Vert.x</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/spring-boot-runtime.html#mission-configmap-spring-boot-tomcat">ConfigMap - Spring Boot Tomcat Booster</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/wf-swarm-runtime.html#mission-configmap-wf-swarm">ConfigMap - WildFly Swarm Booster</link></simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+<section xml:id="mission-crud-vertx">
+<title>Relational Database Backend Mission - Eclipse Vert.x Booster</title>
+<simpara>Mission proficiency level:
+<xref linkend="proficiency_foundational"/>.</simpara>
+<simpara>The Relational Database Backend Booster expands on the REST API Level 0 Booster to provide a basic example of performing <emphasis>create</emphasis>, <emphasis>read</emphasis>, <emphasis>update</emphasis> and <emphasis>delete</emphasis> (<emphasis>CRUD</emphasis>) operations on a PostgreSQL database using a simple HTTP API. <emphasis>CRUD</emphasis> operations are the four basic functions of persistent storage, widely used when developing HTTP API dealing with a database.</simpara>
+<simpara>The Booster also demonstrates the ability of the HTTP application to locate and connect to a database in OpenShift. Each runtime determines in an opinionated manner to implement the connectivity solution that is best suited in the given case. The runtime can choose between using <emphasis>JDBC</emphasis>, <emphasis>JPA</emphasis>, or access <emphasis>ORM</emphasis> APIs directly.</simpara>
+<simpara>The Booster application exposes an HTTP API, which provides endpoints that allow you to manipulate data by performing  <emphasis>CRUD</emphasis> operations over HTTP. The <emphasis>CRUD</emphasis> operations are mapped to HTTP <literal>Verbs</literal>. The API uses JSON formatting to receive requests and return responses to the user. The user can also use an UI provided by the booster to use the application. Specifically, this Booster provides an application that allows you to:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Navigate to the application web interface in your browser. This exposes a simple website allowing you to perform <emphasis>CRUD</emphasis> operations on the data in the <literal>my_data</literal> database.</simpara>
+</listitem>
+<listitem>
+<simpara>Execute an HTTP <literal>GET</literal> request on the <literal>api/fruits</literal> endpoint.</simpara>
+</listitem>
+<listitem>
+<simpara>Receive a response formatted as a JSON array containing the list of all fruits in the database.</simpara>
+</listitem>
+<listitem>
+<simpara>Execute and HTTP <literal>GET</literal> request on the <literal>api/fruits/*</literal> endpoint while passing in a valid item ID as an argument.</simpara>
+</listitem>
+<listitem>
+<simpara>Receive a response in JSON format containing the name of the fruit with the given ID. If no item matches the specified ID, the call results in an HTTP error 404.</simpara>
+</listitem>
+<listitem>
+<simpara>Execute an HTTP <literal>POST</literal> request on the <literal>api/fruits/*</literal> endpoint, passing in a valid ID as an argument, to create a new entry in the database.</simpara>
+</listitem>
+<listitem>
+<simpara>Execute an HTTP <literal>PUT</literal> request on the <literal>api/fruits/*</literal> endpoint passing in a valid ID and a name as an argument. This updates the name of the item with the given ID to match the name specified in your request.</simpara>
+</listitem>
+<listitem>
+<simpara>Execute an HTTP <literal>DELETE</literal> request on the <literal>api/fruits/*</literal> endpoint, passing in a valid ID as an argument. This removes the item with the specified ID from the database and returns an HTTP code <literal>204</literal> (No Content) as a response. If you pass in an invalid ID, the call results in an HTTP error <literal>404</literal>.</simpara>
+</listitem>
+</itemizedlist>
+<simpara>This Booster also contains a set of automated <link linkend="crud-integration-testing">integration test</link> that can be used to verify that the application is fully integrated with the database.</simpara>
+<simpara>This Booster does not showcase a fully matured RESTful model (level 3), but it does use compatible HTTP verbs and status, following the recommended HTTP API practices.</simpara>
+<table frame="all" rowsep="1" colsep="1">
+<title>Design Tradeoffs</title>
+<?dbhtml table-width="100%"?>
+<?dbfo table-width="100%"?>
+<?dblatex table-width="100%"?>
+<tgroup cols="2">
+<colspec colname="col_1" colwidth="213*"/>
+<colspec colname="col_2" colwidth="213*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Pros</entry>
+<entry align="left" valign="top">Cons</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><itemizedlist>
+<listitem>
+<simpara>Each runtime decides how the database interactions are implemented. One can use JDBC while others can use JPA or access ORM APIs directly. Each runtime decides what would be the best way.</simpara>
+</listitem>
+<listitem>
+<simpara>Each runtime decides how the schema is going to be created.</simpara>
+</listitem>
+</itemizedlist></entry>
+<entry align="left" valign="top"><itemizedlist>
+<listitem>
+<simpara>The example PostgreSQL database provided with the Relational Database Backend Missions is not backed up with persistent storage. Changes to the database are lost if you stop or redeploy the database application.</simpara>
+</listitem>
+</itemizedlist></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<section xml:id="crud-build_and_deploy_booster">
+<title>Build and Deploy Your Booster</title>
+<section xml:id="_deploy_your_booster_to_a_single_node_openshift_cluster_3">
+<title>Deploy your Booster to a Single-node OpenShift Cluster</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Before you can use a Single-node OpenShift Cluster, you need to have it installed, configured, and running. You can find more details in <link xlink:href="https://github.com/minishift/minishift#installation">Install and Configure a Single-node OpenShift Cluster</link>.</simpara>
+</listitem>
+<listitem>
+<simpara>Once you have a Single-node OpenShift Cluster running, check the console output for the URL you can use to access it.</simpara>
+<formalpara>
+<title>Example Console Output from a Single-node OpenShift Cluster Startup</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">...
+-- Removing temporary directory ... OK
+-- Server Information ...
+   OpenShift server started.
+   The server is accessible via web console at:
+       https://192.168.42.152:8443
+
+   You are logged in as:
+       User:     developer
+       Password: developer
+
+   To login as administrator:
+       oc login -u system:admin</programlisting>
+</para>
+</formalpara>
+</listitem>
+</orderedlist>
+<section xml:id="_deploy_using_launch_openshift_io_3">
+<title>Deploy Using launch.openshift.io</title>
+<simpara>Once you have the launch.openshift.io application <link xlink:href="/docs/minishift-installation.html">installed and configured</link>,
+navigate to it in your Single-node OpenShift Cluster and use it to create and launch your booster.</simpara>
+</section>
+<section xml:id="crud-deploy-booster-osl-cli">
+<title>Deploy Using the <literal>oc</literal> CLI Client</title>
+<important>
+<simpara>You must still create a booster using launch.openshift.io before you can deploy it using the <literal>oc</literal> CLI client.</simpara>
+<simpara>If you choose <emphasis>I will build and run locally</emphasis>, unzip the ZIP file you downloaded. If you chose <emphasis>Use OpenShift Online to build and deploy</emphasis> you need to clone the GitHub repository created by launch.openshift.io.</simpara>
+</important>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Get your authentication token for using the <literal>oc</literal> CLI client with your Single-node OpenShift Cluster account. You can find this in the <emphasis>Command Line Tools</emphasis> section your Single-node OpenShift Cluster Web console.</simpara>
+</listitem>
+<listitem>
+<simpara>Authenticate your <literal>oc</literal> CLI client with your Single-node OpenShift Cluster account by using your authentication token.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc login OPENSHIFT_URL --token=MYTOKEN</programlisting>
+</listitem>
+<listitem>
+<simpara>Create a new project in your Single-node OpenShift Cluster.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc new-project MY_PROJECT_NAME</programlisting>
+</listitem>
+<listitem>
+<simpara>Navigate to the root directory of your booster.</simpara>
+</listitem>
+<listitem>
+<simpara>Deploy the PostgreSQL database to your Single-node OpenShift Cluster.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc new-app -e POSTGRESQL_USER=luke -ePOSTGRESQL_PASSWORD=secret -ePOSTGRESQL_DATABASE=my_data openshift/postgresql-92-centos7 --name=my-database</programlisting>
+</listitem>
+<listitem>
+<simpara>Check the status of your database and ensure the pod is running.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc get pods -w
+my-database-1-7c7m0   1/1       Running   0         45s
+my-database-1-deploy   0/1       Completed   0         53s</programlisting>
+<simpara>Your <literal>my-database</literal> pod should have a status of <literal>Running</literal> and should be indicated as ready once it is fully deployed and started.</simpara>
+</listitem>
+<listitem>
+<simpara>Use maven to start the deployment to your Single-node OpenShift Cluster.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ mvn clean fabric8:deploy -Popenshift</programlisting>
+<simpara>This command uses the Fabric8 Maven Plugin to launch the S2I process on your Single-node OpenShift Cluster and to start the pod.</simpara>
+</listitem>
+<listitem>
+<simpara>Check the status of your booster and ensure your pod is running.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc get pods -w
+NAME                             READY     STATUS      RESTARTS   AGE
+MY_APP_NAME-1-aaaaa       1/1       Running     0          58s
+MY_APP_NAME-s2i-1-build   0/1       Completed   0          2m</programlisting>
+<simpara>Your <literal>MY_APP_NAME</literal> pod should have a status of <literal>Running</literal> and should be indicated as ready once it is fully deployed and started.</simpara>
+</listitem>
+<listitem>
+<simpara>Once your booster is deployed and started, determine its route.</simpara>
+<formalpara>
+<title>Example Route Information</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">$ oc get routes
+NAME                 HOST/PORT                                     PATH      SERVICES             PORT      TERMINATION
+MY_APP_NAME   MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME      MY_APP_NAME   8080</programlisting>
+</para>
+</formalpara>
+<simpara>A pod&#8217;s route information gives you the base URL which you use to access it. In the example above, you would use <literal><link xlink:href="http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME">http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME</link></literal> as the base URL to access the application.</simpara>
+</listitem>
+</orderedlist>
+</section>
+</section>
+</section>
+<section xml:id="common-crud-database-interaction">
+<title>Interacting with the Application API</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Once the application is running, you can access it using the <emphasis>application URL</emphasis>. To obtain the URL, execute the following command:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">oc get route MY_APP_NAME -o jsonpath={$.spec.host}</programlisting>
+<programlisting language="bash" linenumbering="unnumbered">MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME</programlisting>
+</listitem>
+<listitem>
+<simpara>To access the web interface of the database application, navigate to the <emphasis>application URL</emphasis> in your browser:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME</programlisting>
+<simpara>Alternatively, you can make requests directly on the <literal>api/fruits/*</literal> endpoint using <literal>curl</literal>:</simpara>
+<formalpara>
+<title>List all entries in the database:</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">curl http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/fruits</programlisting>
+</para>
+</formalpara>
+<screen>[ {
+  "id" : 1,
+  "name" : "Apple",
+}, {
+  "id" : 2,
+  "name" : "Orange",
+}, {
+  "id" : 3,
+  "name" : "Pear",
+} ]</screen>
+<formalpara>
+<title>Retrieve an entry with a specific ID</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">curl http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/fruits/3</programlisting>
+</para>
+</formalpara>
+<screen>{
+  "id" : 3,
+  "name" : "Pear",
+}</screen>
+<formalpara>
+<title>Create a new entry:</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">curl -H "Content-Type: application/json" -X POST -d '{"name":"apple"}'  http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/fruits</programlisting>
+</para>
+</formalpara>
+<screen>{
+  "id" : 4,
+  "name" : "apple",
+}</screen>
+<formalpara>
+<title>Update an Entry</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">curl -H "Content-Type: application/json" -X PUT -d '{"name":"pineapple"}'  http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/fruits/1</programlisting>
+</para>
+</formalpara>
+<screen>{
+  "id" : 1,
+  "name" : "pineapple",
+}</screen>
+<formalpara>
+<title>Delete an Entry:</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">curl -X DELETE http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/fruits/1</programlisting>
+</para>
+</formalpara>
+</listitem>
+</orderedlist>
+<simpara>If you receive an HTTP Error code <literal>503</literal> as a response after executing these commands, it means that the application is not ready yet.</simpara>
+</section>
+<section xml:id="crud-integration-testing">
+<title>Running Integration Tests</title>
+<simpara>This booster contains a set of integration tests.
+To run them, you must be connected to an OpenShift instance and select the project that contains your CRUD application and database.</simpara>
+<simpara>To run the integration tests, execute the following command:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">mvn clean verify -Popenshift -Popenshift-it</programlisting>
+</section>
+<section xml:id="about-crud">
+<title>Relational Database Resources</title>
+<simpara>More background and related information on running relational databases in OpenShift, CRUD, HTTP API and REST can be found here:</simpara>
+<itemizedlist>
+<listitem>
+<simpara><link xlink:href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html">HTTP Verbs</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://www.ics.uci.edu/~fielding/pubs/dissertation/fielding_dissertation.pdf">Architectural Styles and
+the Design of Network-based Software Architectures - Representational State Transfer (REST)</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://speakerdeck.com/glaforge/the-never-ending-rest-api-design-debate">The never ending REST API design debase</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven">REST APIs must be Hypertext driven</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://martinfowler.com/articles/richardsonMaturityModel.html">Richardson Maturity Model</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://www.jcp.org/en/jsr/detail?id=311">JSR 311: JAX-RS: The JavaTM API for RESTful Web Services</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="http://vertx.io/blog/some-rest-with-vert-x/">Some Rest with Eclipse Vert.x</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="http://vertx.io/blog/using-the-asynchronous-sql-client/">Using the Eclipse Vert.x asynchronous SQL client</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/spring-boot-runtime.html#mission-crud-spring-boot-tomcat">Relational Database Backend Mission - Spring Boot Tomcat Booster</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/wf-swarm-runtime.html#mission-crud-wf-swarm">Relational Database Backend Mission - WildFly Swarm Booster</link></simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+<section xml:id="mission-health-check-vertx">
+<title>Health Check Mission - Eclipse Vert.x Booster</title>
+<simpara>Mission proficiency level:
+<link linkend="proficiency_foundational"><emphasis role="strong">Foundational</emphasis></link>.</simpara>
+<simpara>When you deploy an application, its important to know if it is available and if it can start handling incoming requests. Implementing the <emphasis>health check</emphasis> pattern allows you to monitor the health of an application, which includes if an application is available and whether it is able to service requests.</simpara>
+<simpara>In order to understand the health check pattern, you need first understand the following concepts:</simpara>
+<variablelist>
+<varlistentry>
+<term>Liveness</term>
+<listitem>
+<simpara>Liveness defines whether an application is running or not. Sometimes a running application moves into an unresponsive or stopped state and needs to be restarted. Checking for liveness helps determine whether or not an application needs to be restarted.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Readiness</term>
+<listitem>
+<simpara>Readiness defines whether a running application can service requests. Sometimes a running application moves into an error or broken state where it can no longer service requests. Checking readiness helps determine whether or not requests should continue to be routed to that application.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Fail-over</term>
+<listitem>
+<simpara>Fail-over enables failures in servicing requests to be handled gracefully. If an application fails to service a request, that request and future requests can then <emphasis>fail-over</emphasis> or be routed to another application, which is usually a redundant copy of that same application.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Resilience and Stability</term>
+<listitem>
+<simpara>Resilience and Stability enable failures in servicing requests to be handled gracefully. If an application fails to service a request due to connection loss, in a resilient system that request can be retried after the connection is re-established.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Probe</term>
+<listitem>
+<simpara>A probe is a Kuberbetes action that periodically performs diagnostics on a running container.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+<simpara>The purpose of this use case is to demonstrate the health check pattern through the use of probing. Probing is used to report the liveness and readiness or an application. In this use case, you configure an application which exposes an HTTP <literal>health</literal> endpoint to issue HTTP requests. If the container is alive, according to the liveness probe on the <literal>health</literal> HTTP endpoint, the management platform receives <literal>200</literal> as return code and no further action is required. If the <literal>health</literal> HTTP endpoint does not return a response, for example if the JVM is no longer running or a thread is blocked, then the application is not considered alive according to the liveness probe. In that case, the platform kills the pod corresponding to that application and recreates a new pod to restart the application.</simpara>
+<simpara>This use case also allows you to demonstrate and use a readiness probe. In cases where the application is running but is unable to handle requests, such as when the application returns a HTTP <literal>503</literal> response code during restart, this application is not considered ready according to the readiness probe. If the application is not considered ready by the readiness probe, requests are not routed to that application until it is considered ready according to the readiness probe.</simpara>
+<section xml:id="health_check_build_and_deploy_booster">
+<title>Build and Deploy Your Booster</title>
+<section xml:id="_deploy_your_booster_to_a_single_node_openshift_cluster_4">
+<title>Deploy your Booster to a Single-node OpenShift Cluster</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Before you can use a Single-node OpenShift Cluster, you need to have it installed, configured, and running. You can find more details in <link xlink:href="https://github.com/minishift/minishift#installation">Install and Configure a Single-node OpenShift Cluster</link>.</simpara>
+</listitem>
+<listitem>
+<simpara>Once you have a Single-node OpenShift Cluster running, check the console output for the URL you can use to access it.</simpara>
+<formalpara>
+<title>Example Console Output from a Single-node OpenShift Cluster Startup</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">...
+-- Removing temporary directory ... OK
+-- Server Information ...
+   OpenShift server started.
+   The server is accessible via web console at:
+       https://192.168.42.152:8443
+
+   You are logged in as:
+       User:     developer
+       Password: developer
+
+   To login as administrator:
+       oc login -u system:admin</programlisting>
+</para>
+</formalpara>
+</listitem>
+</orderedlist>
+<section xml:id="_deploy_using_launch_openshift_io_4">
+<title>Deploy Using launch.openshift.io</title>
+<simpara>Once you have the launch.openshift.io application <link xlink:href="/docs/minishift-installation.html">installed and configured</link>,
+navigate to it in your Single-node OpenShift Cluster and use it to create and launch your booster.</simpara>
+</section>
+<section xml:id="health_check_deploy-booster-osl-cli">
+<title>Deploy Using the <literal>oc</literal> CLI Client</title>
+<important>
+<simpara>You must still create a booster using launch.openshift.io before you can deploy it using the <literal>oc</literal> CLI client.</simpara>
+<simpara>If you choose <emphasis>I will build and run locally</emphasis>, unzip the ZIP file you downloaded. If you chose <emphasis>Use OpenShift Online to build and deploy</emphasis> you need to clone the GitHub repository created by launch.openshift.io.</simpara>
+</important>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Get your authentication token for using the <literal>oc</literal> CLI client with Single-node OpenShift Cluster. You can find this in the <emphasis>Command Line Tools</emphasis> section your Single-node OpenShift Cluster Web console.</simpara>
+</listitem>
+<listitem>
+<simpara>Authenticate your <literal>oc</literal> CLI client with Single-node OpenShift Cluster by using your authentication token.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc login OPENSHIFT_URL --token=MYTOKEN</programlisting>
+</listitem>
+<listitem>
+<simpara>Create a new project in your Single-node OpenShift Cluster.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc new-project MY_PROJECT_NAME</programlisting>
+</listitem>
+<listitem>
+<simpara>Navigate to the root directory of your booster.</simpara>
+</listitem>
+<listitem>
+<simpara>Use maven to start the deployment to Single-node OpenShift Cluster.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ mvn clean fabric8:deploy -Popenshift</programlisting>
+<simpara>This command uses the Fabric8 Maven Plugin to launch the S2I process on Single-node OpenShift Cluster and to start the pod.</simpara>
+</listitem>
+<listitem>
+<simpara>Check the status of your booster and ensure your pod is running.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc get pods -w
+NAME                             READY     STATUS      RESTARTS   AGE
+MY_APP_NAME-1-qqa2d   1/1       Running   0           14s
+MY_APP_NAME-1-deploy  0/1       Completed 0           22s</programlisting>
+<simpara>Your <literal>health-check</literal> pod should have a status of <literal>Running</literal> once it&#8217;s fully deployed and started. You should also wait for your pod to be ready before proceeding, which is shown in the <literal>READY</literal> column. For example, <literal>PROJECT_NAME-1-aaaaa</literal> is ready when the <literal>READY</literal> column is <literal>1/1</literal>.</simpara>
+</listitem>
+<listitem>
+<simpara>Once your booster is deployed and started, determine its route.</simpara>
+<formalpara>
+<title>Example Route Information</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">$ oc get routes
+NAME                   HOST/PORT                                            PATH      SERVICES               PORT      TERMINATION   WILDCARD
+MY_APP_NAME   MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME           MY_APP_NAME   8080                    None</programlisting>
+</para>
+</formalpara>
+<simpara>A pod&#8217;s route information gives you the base URL which you use to access it. In the example above, you would use <literal><link xlink:href="http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME">http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME</link></literal> as the base URL to access the applications.</simpara>
+</listitem>
+</orderedlist>
+</section>
+</section>
+</section>
+<section xml:id="_interact_with_the_unmodified_eclipse_vert_x_booster_2">
+<title>Interact with the Unmodified Eclipse Vert.x Booster</title>
+<simpara>Once you have the Eclipse Vert.x booster deployed, you will have a service called <literal>MY_APP_NAME</literal> running that exposes the following REST endpoints:</simpara>
+<variablelist>
+<varlistentry>
+<term>/api/greeting</term>
+<listitem>
+<simpara>This endpoint returns a JSON containing greeting of <literal>name</literal> parameter (or World as default value).</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>/api/killme</term>
+<listitem>
+<simpara>This endpoint forces the service to become unresponsive which is meant to simulate a failure in the service.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+<simpara>The following steps demonstrate how to verify the service availability and simulate a failure. This failure of an available service causes the OpenShift self-healing capabilities to be trigger on the service.</simpara>
+<note>
+<simpara>The below steps use the command line to interact with the service. Alternatively, you can use the web interface to perform the same steps (See #4).</simpara>
+</note>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Use <literal>curl</literal> to execute a <literal>GET</literal> request against the <literal>MY_APP_NAME</literal> service. You can also use a browser to do this.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ curl http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/greeting
+{"content":"Hello, World!"}</programlisting>
+</listitem>
+<listitem>
+<simpara>Invoke the <literal>/api/killme</literal> endpoint and verify the availability of the <literal>/api/greeting</literal> endpoint shortly after that.</simpara>
+<simpara>Invoking the <literal>/api/killme</literal> endpoint simulates an internal service failure and triggers the OpenShift self-healing capabilities. When invoking <literal>/api/greeting</literal> after simulating the failure, the service should return a HTTP status <literal>503</literal>.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ curl http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/killme
+Stopping HTTP server, Bye bye world !
+
+(followed by)
+
+$ curl http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/greeting
+Not online</programlisting>
+</listitem>
+<listitem>
+<simpara>Use <literal>oc get pods -w</literal> to continuously watch the self-healing capabilities in action.</simpara>
+<simpara>While invoking the service failure, you can watch the self-healing capabilities in action on OpenShift console, or with the <literal>oc</literal> client tools. You should see the number pods in a <literal>READY</literal> state move to zero (<literal>0/1</literal>) and after a short period (less than one minute) move back up to one (<literal>1/1</literal>). In addition the <literal>RESTARTS</literal> count increases every time you you invoke the service failure.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc get pods -w
+NAME                           READY     STATUS    RESTARTS   AGE
+MY_APP_NAME-1-26iy7   0/1       Running   5          18m
+MY_APP_NAME-1-26iy7   1/1       Running   5         19m</programlisting>
+</listitem>
+<listitem>
+<simpara>Optional: Use the web interface to invoke the service.</simpara>
+<simpara>Alternatively to the interaction using the terminal window, you can use the web interface provided by the service to invoke the different methods and watch the service move through the life cycle phases.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME</programlisting>
+</listitem>
+</orderedlist>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Optional: Use the web console to view the log output generated by the application at each stage of the self-healing process.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to your project.</simpara>
+</listitem>
+<listitem>
+<simpara>On the sidebar, click on <emphasis>Monitoring</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>In the upper right-hand corner of the screen, click on <emphasis>Events</emphasis> to display the log messages.</simpara>
+</listitem>
+<listitem>
+<simpara>Optional: Click <emphasis>View Details</emphasis> to display a detailed view of the Event log.</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+</orderedlist>
+<simpara>The health check application generates the following messages:</simpara>
+<informaltable frame="all" rowsep="1" colsep="1">
+<tgroup cols="2">
+<colspec colname="col_1" colwidth="50*"/>
+<colspec colname="col_2" colwidth="50*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Message</entry>
+<entry align="left" valign="top">Status</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><emphasis>Unhealthy</emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara>Readiness probe failed. This message is expected and indicates that the simulated failure of the <literal>/api/greeting</literal> endpoint has been detected and the self-healing process starts.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis>Killing</emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara>The unavailable Docker container running the service is being killed before being re-created.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis>Pulling</emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara>Downloading the latest version of docker image to re-create the container.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis>Pulled</emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara>Docker image downloaded successfully.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis>Created</emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara>Docker container has been successfully created</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis>Started</emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara>Docker container is ready to handle requests</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</section>
+<section xml:id="_running_integration_tests_2">
+<title>Running Integration Tests</title>
+<simpara>This booster contains a set of integration tests.
+To run them, you must be connected to an OpenShift instance and select the project that will be used for testing.</simpara>
+<simpara>To run the integration tests, execute the following command:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ mvn clean verify -Popenshift,openshift-it</programlisting>
+</section>
+<section xml:id="about_health_check">
+<title>Health Check Resources</title>
+<simpara>More background and related information on health checking can be found here:</simpara>
+<itemizedlist>
+<listitem>
+<simpara><link xlink:href="https://docs.openshift.com/container-platform/latest/dev_guide/application_health.html">Overview of Application Health in Openshift</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://kubernetes.io/docs/user-guide/walkthrough/k8s201/#health-checking">Health Checking in Kubernetes</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/">Kubernetes Liveness and Readiness Probes</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://kubernetes.io/docs/api-reference/v1/definitions/#_v1_probe">Kubernetes Probes</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/spring-boot-runtime.html#mission-health-check-spring-boot-tomcat">Health Check - Spring Boot Tomcat Booster</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/wf-swarm-runtime.html#mission-health-check-wf-swarm">Health Check - WildFly Swarm Booster</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/nodejs-runtime.html#mission-health-check-nodejs">Health Check - Node.js Booster</link></simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+<section xml:id="mission-circuit-breaker-vertx">
+<title>Circuit Breaker Mission - Eclipse Vert.x Booster</title>
+<simpara>Mission proficiency level:
+<link linkend="proficiency_foundational"><emphasis role="strong">Foundational</emphasis></link>.</simpara>
+<simpara>The <emphasis>Circuit Breaker</emphasis> Mission demonstrates a generic pattern for reporting the failure of a service and then limiting access to the failed service until it becomes available to handle requests. This helps prevent cascading failure in other services that depend on the failed services for functionality.</simpara>
+<simpara>This mission shows you how to implement a Circuit Breaker and Fallback pattern in your services.</simpara>
+<section xml:id="_about_circuit_breaker">
+<title>About Circuit Breaker</title>
+<simpara>The Circuit Breaker is a pattern intended to mitigate the impact of network failure and high latency on service architectures where services synchronously invoke other services. In such cases, if one of the services becomes unavailable due to network failure or incurs unusually high latency values due to overwhelming traffic, other services attempting to call its endpoint may end up exhausting critical resources in an attempt to reach it, rendering themselves unusable. This condition is also known as cascading failure and can render the entire microservice architecture unusable.</simpara>
+<simpara>Essentially, the Circuit Breaker acts as a proxy between a protected function and a remote function, which monitors for failures. Once the failures reach a certain threshold, the circuit breaker trips, and all further calls to the circuit breaker return with an error or a predefined fallback response, without the protected call being made at all. The Circuit Breaker usually also contain an error reporting mechanism that notifies you when the Circuit Breaker trips.</simpara>
+</section>
+<section xml:id="_why_is_circuit_breaker_important">
+<title>Why is Circuit Breaker Important</title>
+<simpara>In an architecture where multiple services depend on each other for functionality, a failure in one service can rapidly propagate to its dependent services, causing the entire architecture to collapse. Implementing a Circuit Breaker pattern helps prevent this.
+With the Circuit Breaker pattern implemented, a service client invokes a remote service endpoint via a proxy at regular intervals. If the calls to the remote service endpoint fail repeatedly and consistently, the Circuit Breaker trips, making all calls to the service fail immediately over a set timeout period and returns a predefined fallback response. When the timeout period expires, a limited number of test calls are allowed to pass through to the remote service to determine whether it has healed, or remains unavailable. If these test calls fail, the Circuit Breaker keeps the service unavailable and keeps returning the fallback responses to incoming calls. If the test calls succeed, the Circuit Breaker closes, fully enabling traffic to reach the remote service again.</simpara>
+<table frame="all" rowsep="1" colsep="1">
+<title>Design Tradeoffs</title>
+<?dbhtml table-width="100%"?>
+<?dbfo table-width="100%"?>
+<?dblatex table-width="100%"?>
+<tgroup cols="2">
+<colspec colname="col_1" colwidth="213*"/>
+<colspec colname="col_2" colwidth="213*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Pros</entry>
+<entry align="left" valign="top">Cons</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><itemizedlist>
+<listitem>
+<simpara>Enables a service to handle the failure of other services it invokes.</simpara>
+</listitem>
+</itemizedlist></entry>
+<entry align="left" valign="top"><itemizedlist>
+<listitem>
+<simpara>Optimizing the timeout values can be challenging</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Larger-than-necessary timeout values may generate excessive latency.</simpara>
+</listitem>
+<listitem>
+<simpara>Smaller-than-necessary timeout values may introduce false positives.</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section xml:id="build_and_deploy_booster">
+<title>Build and Deploy Your Booster</title>
+<section xml:id="_deploy_your_booster_to_a_single_node_openshift_cluster_5">
+<title>Deploy your Booster to a Single-node OpenShift Cluster</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Before you can use a Single-node OpenShift Cluster, you need to have it installed, configured, and running. You can find more details in <link xlink:href="https://github.com/minishift/minishift#installation">Install and Configure a Single-node OpenShift Cluster</link>.</simpara>
+</listitem>
+<listitem>
+<simpara>Once you have a Single-node OpenShift Cluster running, check the console output for the URL you can use to access it.</simpara>
+<formalpara>
+<title>Example Console Output from a Single-node OpenShift Cluster Startup</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">...
+-- Removing temporary directory ... OK
+-- Server Information ...
+   OpenShift server started.
+   The server is accessible via web console at:
+       https://192.168.42.152:8443
+
+   You are logged in as:
+       User:     developer
+       Password: developer
+
+   To login as administrator:
+       oc login -u system:admin</programlisting>
+</para>
+</formalpara>
+</listitem>
+</orderedlist>
+<section xml:id="_deploy_using_launch_openshift_io_5">
+<title>Deploy Using launch.openshift.io</title>
+<simpara>Once you have the launch.openshift.io application <link xlink:href="/docs/minishift-installation.html">installed and configured</link>,
+navigate to it in your Single-node OpenShift Cluster and use it to create and launch your booster.</simpara>
+</section>
+<section xml:id="deploy-booster-osl-cli">
+<title>Deploy Using the <literal>oc</literal> CLI Client</title>
+<important>
+<simpara>You must still create a booster using launch.openshift.io before you can deploy it using the <literal>oc</literal> CLI client.</simpara>
+<simpara>If you choose <emphasis>I will build and run locally</emphasis>, unzip the ZIP file you downloaded. If you chose <emphasis>Use OpenShift Online to build and deploy</emphasis> you need to clone the GitHub repository created by launch.openshift.io.</simpara>
+</important>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Get your authentication token for using the <literal>oc</literal> CLI client with your Single-node OpenShift Cluster account. You can find this in the <emphasis>Command Line Tools</emphasis> section your Single-node OpenShift Cluster Web console.</simpara>
+</listitem>
+<listitem>
+<simpara>Authenticate your <literal>oc</literal> CLI client with your Single-node OpenShift Cluster account by using your authentication token.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc login OPENSHIFT_URL --token=MYTOKEN</programlisting>
+</listitem>
+<listitem>
+<simpara>Create a new project in your Single-node OpenShift Cluster.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc new-project MY_PROJECT_NAME</programlisting>
+</listitem>
+<listitem>
+<simpara>Navigate to the root directory of your booster.</simpara>
+</listitem>
+<listitem>
+<simpara>Use Maven to start the deployment to your Single-node OpenShift Cluster.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ mvn clean fabric8:deploy -Popenshift -DskipTests</programlisting>
+<simpara>This command uses the Fabric8 Maven Plugin to launch the S2I process on your Single-node OpenShift Cluster and to start the pod.</simpara>
+</listitem>
+<listitem>
+<simpara>Check the status of your booster and ensure your pod is running.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc get pods -w
+NAME                            READY     STATUS      RESTARTS  AGE
+MY_APP_NAME-greeting-1-p2x5m     1/1       Running   0           17s
+MY_APP_NAME-greeting-1-deploy    0/1       Completed 0           22s
+MY_APP_NAME-name-1-7mffj         1/1       Running   0           14s
+MY_APP_NAME-name-1-deploy        0/1       Completed 0           28s</programlisting>
+<simpara>Both the <literal>MY_APP_NAME-greeting</literal> and <literal>MY_APP_NAME-name</literal> pods should have a status of <literal>Running</literal> once they are fully deployed and started. You should also wait for your pods to be ready before proceeding, which is shown in the <literal>READY</literal> column. For example, <literal>PROJECT_NAME-1-aaaaa</literal> is ready when the <literal>READY</literal> column is <literal>1/1</literal>.</simpara>
+</listitem>
+<listitem>
+<simpara>Once your booster is deployed and started, determine its route.</simpara>
+<formalpara>
+<title>Example Route Information</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">$ oc get routes
+NAME                     HOST/PORT                                                        PATH      SERVICES              PORT      TERMINATION   WILDCARD
+MY_APP_NAME-greeting   MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME            MY_APP_NAME-greeting   8080                    None
+MY_APP_NAME-name       MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME            MY_APP_NAME-name       8080                    None</programlisting>
+</para>
+</formalpara>
+<simpara>A pod&#8217;s route information gives you the base URL which you use to access it. In the example above, you would use <literal><link xlink:href="http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME">http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME</link></literal> as the base URL to access the applications.</simpara>
+</listitem>
+</orderedlist>
+</section>
+</section>
+</section>
+<section xml:id="_interact_with_the_unmodified_eclipse_vert_x_booster_3">
+<title>Interact with the Unmodified Eclipse Vert.x Booster</title>
+<simpara>Once you have the Eclipse Vert.x booster deployed, you have the following services running:</simpara>
+<variablelist>
+<varlistentry>
+<term><literal>MY_APP_NAME-name</literal></term>
+<listitem>
+<simpara>Exposes the following endpoints:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>the <literal>/api/name</literal> endpoint, which returns a name when this service is working, and an error when this service is set up to demonstrate failure.</simpara>
+</listitem>
+<listitem>
+<simpara>the <literal>/api/state</literal> endpoint, which controls the behavior of the <literal>/api/name</literal> endpoint and determines whether the service works correctly or demonstrates failure.</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term><literal>MY_APP_NAME-greeting</literal></term>
+<listitem>
+<simpara>Exposes the following endpoints:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>the <literal>/api/greeting</literal> endpoint that you can call to get a personalized greeting response.</simpara>
+<simpara>When you call the <literal>/api/greeting</literal> endpoint, it issues a call against the <literal>/api/name</literal> endpoint of the <literal>MY_APP_NAME-name</literal> service as part of processing your request.
+The call made against the <literal>/api/name</literal> endpoint is protected by the Circuit Breaker.</simpara>
+<simpara>If the remote endpoint is available, it responds with an HTTP code <literal>200</literal> and you receive the following greeting:</simpara>
+<screen>{"content":"Hello, World!"}</screen>
+<simpara>If the remote endpoint is unavailable, it responds with an HTTP code <literal>500</literal> and you receive a predefined fallback response:</simpara>
+<screen>{"content":"Hello, Fallback!"}</screen>
+</listitem>
+<listitem>
+<simpara>the <literal>/api/cb-state</literal> endpoint, which returns the state of the Circuit Breaker. The state can be <emphasis>open</emphasis> or <emphasis>closed</emphasis>.</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</varlistentry>
+</variablelist>
+<simpara>The following steps demonstrate how to verify the service availability, simulate a failure and receive a fallback response.</simpara>
+<note>
+<simpara>The following steps use the command line to interact with the service. Alternatively, you can use the web interface to perform the same steps.</simpara>
+</note>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Use <literal>curl</literal> to execute a <literal>GET</literal> request against the <literal>MY_APP_NAME-greeting</literal> service. You can also use the <literal>Invoke</literal> button in the web interface to do this.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ curl http://MY_APP_NAME-greeting-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/greeting
+{"content":"Hello, World!"}</programlisting>
+</listitem>
+<listitem>
+<simpara>To simulate the failure of the <literal>MY_APP_NAME-name</literal> service you can:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>use the <literal>Toggle</literal> button in the web interface.</simpara>
+</listitem>
+<listitem>
+<simpara>scale the number of replicas of the pod running the <literal>MY_APP_NAME-name</literal> service down to 0.</simpara>
+</listitem>
+<listitem>
+<simpara>execute an HTTP <literal>PUT</literal> request against the <literal>/api/state</literal> endpoint of the <literal>MY_APP_NAME-name</literal> service to set its state to <literal>fail</literal>.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ curl -X PUT -H "Content-Type: application/json" -d '{"state": "fail"}' http://MY_APP_NAME-name-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/state</programlisting>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>The Circuit Breaker state indicator in the web interface changes from <literal>CLOSED</literal> to <literal>OPEN</literal> and the Circuit Breaker issues the fallback response when you invoke the <literal>/api/greeting</literal> endpoint.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ curl http://MY_APP_NAME-greeting-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/greeting
+{"content":"Hello, Fallback!"}</programlisting>
+</listitem>
+<listitem>
+<simpara>Restore the name <literal>MY_APP_NAME-name</literal> service to availability.
+To do this you can:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>use the <literal>Toggle</literal> button in the web interface.</simpara>
+</listitem>
+<listitem>
+<simpara>scale the number of replicas of the pod running the <literal>MY_APP_NAME-name</literal> service back up to 1.</simpara>
+</listitem>
+<listitem>
+<simpara>execute an HTTP <literal>PUT</literal> request against the <literal>/api/state</literal> endpoint of the <literal>MY_APP_NAME-name</literal> service to set its state back to <literal>ok</literal>.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ curl -X PUT -H "Content-Type: application/json" -d '{"state": "ok"}' http://MY_APP_NAME-name-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/state</programlisting>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>Invoke the <literal>/api/greeting</literal> endpoint again.
+If the <literal>MY_APP_NAME-name</literal> service is available, you should receive the <literal>Hello World!</literal> greeting as the response:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ curl http://MY_APP_NAME-greeting-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/greeting
+{"content":"Hello, World!"}</programlisting>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="_running_integration_tests_3">
+<title>Running Integration Tests</title>
+<simpara>This booster contains a set of integration tests.
+To run them, you must be connected to an OpenShift instance and select the project that will be used for testing.</simpara>
+<simpara>To run the integration tests, execute the following command:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ mvn clean verify -Popenshift,openshift-it</programlisting>
+</section>
+<section xml:id="_using_hystrix_dashboard_to_monitor_the_circuit_breaker">
+<title>Using Hystrix Dashboard to Monitor the Circuit Breaker</title>
+<simpara>Hystrix Dashboard lets you easily monitor the health of your services in real time by aggregating Hystrix metrics data from an event stream and displaying them on one screen. For more detail, see the Hystrix Dashboard <link xlink:href="https://github.com/Netflix/Hystrix/wiki/Dashboard">wiki page</link>.</simpara>
+<note>
+<simpara>You must have the Circuit Breaker booster application deployed before proceeding with the steps below.</simpara>
+</note>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Log in to your Single-node OpenShift Cluster cluster.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc login OPENSHIFT_URL --token=MYTOKEN</programlisting>
+</listitem>
+<listitem>
+<simpara>To access the Web console, use your browser to navigate to your Single-node OpenShift Cluster URL.</simpara>
+</listitem>
+<listitem>
+<simpara>Navigate to the project that contains your Circuit Breaker application.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc project MY_PROJECT_NAME</programlisting>
+</listitem>
+<listitem>
+<simpara>Import the <link xlink:href="https://raw.githubusercontent.com/snowdrop/openshift-templates/master/hystrix-dashboard/hystrix-dashboard.yml">YAML template</link> for the Hystrix Dashboard application. You can do this by clicking <emphasis>Add to Project</emphasis>, then selecting the <emphasis>Import YAML / JSON</emphasis> tab, and copying the contents of the YAML file into the text box. Alternatively, you can execute the following command.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">oc create -f https://raw.githubusercontent.com/snowdrop/openshift-templates/master/hystrix-dashboard/hystrix-dashboard.yml</programlisting>
+</listitem>
+<listitem>
+<simpara>Click the <emphasis>Create</emphasis> button to create the Hystrix Dashboard application based on the template. Alternatively, you can execute the following command.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">oc new-app --template=hystrix-dashboard</programlisting>
+</listitem>
+<listitem>
+<simpara>Wait for the pod containing Hystrix Dashboard to deploy.</simpara>
+</listitem>
+<listitem>
+<simpara>Obtain the route of your Hystrix Dashboard application.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">oc get route hystrix-dashboard
+NAME                HOST/PORT                                                    PATH      SERVICES            PORT      TERMINATION   WILDCARD
+hystrix-dashboard   hystrix-dashboard-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME                 hystrix-dashboard   &lt;all&gt;                   None</programlisting>
+</listitem>
+<listitem>
+<simpara>To access the Dashboard, open the Dashboard application route URL in your browser. Alternatively, you can navigate to the <emphasis>Overview</emphasis> screen in the Web console and click the route URL in the header above the pod containing your Hystrix Dashboard application.</simpara>
+</listitem>
+<listitem>
+<simpara>To use the Dashboard to monitor the <literal>MY_APP_NAME-greeting</literal> service, replace the default event stream address with the following address and click the <emphasis>Monitor Stream</emphasis> button.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">http://MY_APP_NAME-greeting/hystrix.stream</programlisting>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="circuit_breaker_resources">
+<title>Circuit Breaker Resources</title>
+<simpara>Follow the links below for more background information on the design principles behind the Circuit Breaker pattern</simpara>
+<itemizedlist>
+<listitem>
+<simpara><link xlink:href="http://microservices.io/patterns/reliability/circuit-breaker.html">microservices.io: Microservice Patterns: Circuit Breaker</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://martinfowler.com/bliki/CircuitBreaker.html">Martin Fowler: CircuitBreaker</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/spring-boot-runtime.html#mission-circuit-breaker-spring-boot-tomcat">Circuit Breaker Mission - Spring Boot Tomcat Booster</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/wf-swarm-runtime.html#mission-circuit-breaker-wf-swarm">Circuit Breaker Mission - WildFly Swarm Booster</link></simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+<section xml:id="mission-secured-vertx">
+<title>Secured Mission - Eclipse Vert.x Booster</title>
+<simpara>Mission proficiency level:
+<link linkend="proficiency_foundational"><emphasis role="strong">Foundational</emphasis></link>.</simpara>
+<simpara>The Secured Booster expands on the REST API Level 0 Booster by securing a REST endpoint using <link xlink:href="https://access.redhat.com/products/red-hat-single-sign-on">Red Hat SSO</link>. Red Hat SSO implements the OAuth 2.0 specification and uses it to issue access tokens to provide clients with various access rights to secured resources. Securing an application with SSO enables you to add security to your applications while centralizing the security configuration.</simpara>
+<section xml:id="_configure_your_single_node_openshift_cluster">
+<title>Configure Your Single-node OpenShift Cluster</title>
+<simpara>You can use your Single-node OpenShift Cluster to run your secured booster, but you need to update it from the default configuration.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Before you can use your Single-node OpenShift Cluster, you need to have it installed, configured, and running. You can find details on installing a Single-node OpenShift Cluster for your platform in <link xlink:href="https://github.com/minishift/minishift#installation">Install and Configure a Single-node OpenShift Cluster</link>.</simpara>
+<note>
+<simpara>You only need to do this once for any of the secured booster missions. They can share the same RH SSO/Single-node OpenShift Cluster setup.</simpara>
+</note>
+</listitem>
+<listitem>
+<simpara>Delete the current Single-node OpenShift Cluster configuration and restart it with a new ISO.</simpara>
+<important>
+<simpara>You must use a different boot iso image than the default in order for RH SSO to startup. If you have already run the <literal>minishift</literal> command with a different memory setting and iso-url value, you need to stop it and completely delete the <literal>~/.minishift</literal> directory before running the following startup sequence.</simpara>
+</important>
+<programlisting language="bash" linenumbering="unnumbered">$ minishift delete
+$ rm -r ~/.minishift
+$ minishift start --memory=6144 --iso-url=https://github.com/minishift/minishift-centos-iso/releases/download/v1.0.0/minishift-centos7.iso</programlisting>
+</listitem>
+<listitem>
+<simpara>Install launch.openshift.io on Single-node OpenShift Cluster using the <link xlink:href="/docs/minishift-installation.html#create-launcher-app-script">instructions in the Install and Configure a Single-node OpenShift Cluster guide</link> making sure to specify <literal>master</literal> for the catalog version.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ ./deploy_launchpad_mission.sh -p PROJECT_NAME -i developer:developer -g myGithubUser:myGithubToken -v master</programlisting>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="_project_structure">
+<title>Project Structure</title>
+<simpara>The project is split into two Apache Maven modules:</simpara>
+<variablelist>
+<varlistentry>
+<term>app</term>
+<listitem>
+<simpara>The <literal>app</literal> module exposes the REST Service using Eclipse Vert.x.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>sso</term>
+<listitem>
+<simpara>The <literal>sso</literal> module is a submodule link to the <link xlink:href="https://github.com/obsidian-toaster-quickstarts/redhat-sso">redhat-sso</link> project that contains the OpenShift objects required to deploy the Red Hat SSO Server 7.1 as well as a Java command line client driver to test access to the secured endpoint.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</section>
+<section xml:id="_red_hat_sso_realm_model">
+<title>Red Hat SSO Realm Model</title>
+<simpara>The <literal>master</literal> realm is used to secure this booster. It is defined using the <literal>src/main/resources/master.json</literal> JSON description. There are four pre-configured application client definitions that provide a model for command line clients and the three secured REST endpoints. There are also two pre-configured users in the Red Hat SSO <literal>master</literal> realm that can be used to validate various authentication and authorization outcomes:  <literal>admin</literal> and <literal>alice</literal>.</simpara>
+<section xml:id="_red_hat_sso_users">
+<title>Red Hat SSO Users</title>
+<simpara>The realm model for the secured boosters includes two users:</simpara>
+<variablelist>
+<varlistentry>
+<term>admin</term>
+<listitem>
+<simpara>The <literal>admin</literal> user has a password of <literal>admin</literal> and is the realm administrator. This user has full access to the Red Hat SSO administration console, but none of the role mappings that are required to access the secured endpoints. You can use this user to illustrate the behavior of an authenticated, but unauthorized user.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>alice</term>
+<listitem>
+<simpara>The <literal>alice</literal> user has a password of <literal>password</literal> and is the canonical application. This user will demonstrate successful authenticated and authorized access to the secured endpoints. A representation of the role mappings is provided in this decoded JWT bearer token</simpara>
+<programlisting language="json" linenumbering="unnumbered">{
+  "jti": "5a785440-8cb4-4500-a9fc-0c3aec1e62d5",
+  "exp": 1489698336,
+  "nbf": 0,
+  "iat": 1489698276,
+  "iss": "https://secure-sso-sso.{osl-route-hostname}/auth/realms/master", <co xml:id="CO1-1"/>
+  "aud": "demoapp",
+  "sub": "c0175ccb-0892-4b31-829f-dda873815fe8",
+  "typ": "Bearer",
+  "azp": "demoapp",
+  "session_state": "7d296305-0c71-4dda-80d9-5b5ea4a584c1",
+  "client_session": "31cd83c8-6315-4daf-9aa7-e50e80611c2d",
+  "allowed-origins": [],
+  "realm_access": {
+    "roles": [ <co xml:id="CO1-2"/>
+      "vertx-admin"
+    ]
+  },
+  "resource_access": { <co xml:id="CO1-3"/>
+    "secured-swarm-endpoint": {
+      "roles": [
+        "swarm-admin" <co xml:id="CO1-4"/>
+      ]
+    },
+    "secured-vertx-endpoint": {
+      "roles": [
+        "vertx-admin" <co xml:id="CO1-5"/>
+      ]
+    },
+    "secured-springboot-endpoint": {
+      "roles": [
+        "springboot-admin" <co xml:id="CO1-6"/>
+      ]
+    },
+    "account": {
+      "roles": [
+        "manage-account",
+        "view-profile"
+      ]
+    }
+  },
+  "name": "Alice InChains",
+  "preferred_username": "alice", <co xml:id="CO1-7"/>
+  "given_name": "Alice",
+  "family_name": "InChains",
+  "email": "alice@keycloak.org"
+}</programlisting>
+<calloutlist>
+<callout arearefs="CO1-1">
+<para>The iss(user) field corresponds to the Red Hat SSO realm instance URL that issues the token. This must be configured in the secured endpoint deployments in order for the token to be verified.</para>
+</callout>
+<callout arearefs="CO1-2">
+<para>The <literal>roles</literal> object provides the roles that have been granted to the user at the global realm level. In this case
+<literal>alice</literal> has been granted the <literal>vertx-admin</literal> role. We will see that the Eclipse Vert.x secured endpoint will look to the
+realm level for authorized roles.</para>
+</callout>
+<callout arearefs="CO1-3">
+<para>The <literal>resource_access</literal> object contains resource specific role grants. Under this object you will find an object
+for each of the secured endpoints.</para>
+</callout>
+<callout arearefs="CO1-4">
+<para>The <literal>resource_access.secured-swarm-endpoint.roles</literal> object contains the roles granted to <literal>alice</literal> for the <literal>secured-swarm-endpoint</literal> resource.</para>
+</callout>
+<callout arearefs="CO1-5">
+<para>The <literal>resource_access.secured-vertx-endpoint.roles</literal> object contains the roles granted to <literal>alice</literal> for the <literal>secured-vertx-endpoint</literal> resource.</para>
+</callout>
+<callout arearefs="CO1-6">
+<para>The <literal>resource_access.secured-springboot-endpoint.roles</literal> object contains the roles granted to <literal>alice</literal> for the <literal>secured-springboot-endpoint</literal> resource.</para>
+</callout>
+<callout arearefs="CO1-7">
+<para>The <literal>preferred_username</literal> field provides the username that was used to generate the access token.</para>
+</callout>
+</calloutlist>
+</listitem>
+</varlistentry>
+</variablelist>
+</section>
+<section xml:id="_the_application_clients">
+<title>The Application Clients</title>
+<simpara>The OAuth 2.0 specification allows you to define a role for application clients that access secured resources on behalf of resource owners. The <literal>master</literal> realm has four application clients defined:</simpara>
+<variablelist>
+<varlistentry>
+<term>demoapp</term>
+<listitem>
+<simpara>This is a <literal>confidential</literal> type client with a client secret that is used to obtain an access token that contains grants for the <literal>alice</literal> user which enable <literal>alice</literal> to access the WildFly Swarm, Eclipse Vert.x and Spring Boot Tomcat based REST Booster deployments.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>secured-swarm-endpoint</term>
+<listitem>
+<simpara>The <literal>secured-swarm-endpoint</literal> is a bearer-only type of client that requires a <literal>swarm-admin</literal> role for accessing the associated resources that represents the secured WildFly Swarm Booster.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>secured-vertx-endpoint</term>
+<listitem>
+<simpara>The <literal>secured-vertx-endpoint</literal> is a bearer-only type of client that requires a <literal>vertx-admin</literal> role for accessing the associated resources that represents the secured Eclipse Vert.x Booster.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>secured-springboot-endpoint</term>
+<listitem>
+<simpara>The <literal>secured-springboot-endpoint</literal> is a bearer-only type of client that requires a <literal>springboot-admin</literal> role for accessing the associated resources that represents the secured Spring Boot Tomcat Booster.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</section>
+<section xml:id="_security_constraints">
+<title>Security Constraints</title>
+<simpara>The Secured Booster establishes a security context that is managed by Red Hat SSO using adaptor code that verifies a signed JSON web token, like the one shown for the <literal>alice</literal> user, using configuration information that allows the adaptor code to verify the token.</simpara>
+<simpara>The configuration information includes things like the realm name, the realm public key, the Red Hat SSO server auth URL, and resource target.</simpara>
+</section>
+<section xml:id="_sso_adapter">
+<title>SSO Adapter</title>
+<simpara>The adapter configuration is defined in the following file.</simpara>
+<formalpara>
+<title>src/main/fabric8/template.yml</title>
+<para>
+<programlisting language="yaml" linenumbering="unnumbered">- description: The URL for the SSO server (e.g. https://secure-sso-myproject.example.com/auth).  This
+    is the URL through which the user will be redirected when a login or token is
+    required by the application.
+  name: SSO_AUTH_SERVER_URL
+  value: ${SSO_AUTH_SERVER_URL}
+  required: true
+- description: The RH-SSO realm to be used.
+  name: REALM
+  value: master
+  required: true
+- description: Realm's public key.
+  name: REALM_PUBLIC_KEY
+  value: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoETnPmN55xBJjRzN/cs30OzJ9olkteLVNRjzdTxFOyRtS2ovDfzdhhO9XzUcTMbIsCOAZtSt8K+6yvBXypOSYvI75EUdypmkcK1KoptqY5KEBQ1KwhWuP7IWQ0fshUwD6jI1QWDfGxfM/h34FvEn/0tJ71xN2P8TI2YanwuDZgosdobx/PAvlGREBGuk4BgmexTOkAdnFxIUQcCkiEZ2C41uCrxiS4CEe5OX91aK9HKZV4ZJX6vnqMHmdDnsMdO+UFtxOBYZio+a1jP4W3d7J5fGeiOaXjQCOpivKnP2yU2DPdWmDMyVb67l8DRA+jh0OJFKZ5H2fNgE3II59vdsRwIDAQAB
+  required: true
+- description: RH-SSO client id.
+  name: CLIENT_ID
+  value: demoapp
+  required: true</programlisting>
+</para>
+</formalpara>
+<note>
+<simpara>You will determine the value for ${SSO_AUTH_SERVER_URL} in the <xref linkend="SSO_AUTH_SERVER_URL"/> step of <xref linkend="mission-secured-deploy-rhsso-zip"/>.</simpara>
+</note>
+</section>
+</section>
+<section xml:id="_build_and_deploy_your_booster">
+<title>Build and Deploy Your Booster</title>
+<section xml:id="mission-secured-deploy-rhsso-zip">
+<title>Deploy RH SSO to your Single-node OpenShift Cluster Manually</title>
+<section xml:id="_download_the_secured_booster_zip_file_from_your_launch_openshift_io_application">
+<title>Download the Secured Booster ZIP File from your launch.openshift.io Application</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to your launch.openshift.io application running on your Single-node OpenShift Cluster and click <emphasis>Prepare for Takeoff</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Choose <emphasis>I will build and run locally</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select <literal>Secured</literal> and click <emphasis>Next</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select your runtime and click <emphasis>Next</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>You may update any project information before clicking <emphasis>Next</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click <emphasis>Download as ZIP File</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Unzip your ZIP file.</simpara>
+</listitem>
+</orderedlist>
+</section>
+<section xml:id="_deploy_the_sso_server">
+<title>Deploy the SSO server.</title>
+<simpara>Run the following commands from your booster&#8217;s project directory:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ cd sso
+$ mvn fabric8:deploy</programlisting>
+</section>
+<section xml:id="SSO_AUTH_SERVER_URL">
+<title>Determine the SSO_AUTH_SERVER_URL Value</title>
+<simpara>For the Secured REST booster, you need to configure the Red Hat SSO authorization endpoint. The booster project generates
+<literal>target/sso-client.jar</literal> when you built the Red Hat SSO server. You can run <literal>target/sso-client.jar</literal> from the command line to determine the <literal>SSO_AUTH_SERVER_URL</literal>.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ java -jar target/sso-client.jar --displaySSOURL
+Successful oc get routes: Yes
+Using auth server URL: https://secure-sso-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/auth
+Available application endpoint names: []</programlisting>
+<simpara>The line starting with <literal>Using auth server URL:</literal> is the line that provides the <literal>SSO_AUTH_SERVER_URL</literal>. In this case it is <literal><link xlink:href="https://secure-sso-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/auth">https://secure-sso-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/auth</link></literal>. You will need this value later.</simpara>
+</section>
+<section xml:id="_deploy_booster_to_your_single_node_openshift_cluster">
+<title>Deploy Booster to your Single-node OpenShift Cluster</title>
+<simpara>Package and deploy your Eclipse Vert.x Booster:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ cd ../app
+$ mvn fabric8:deploy -DSSO_AUTH_SERVER_URL=&lt;SSO_AUTH_SERVER_URL from above...&gt; -Popenshift -DskipTests=true
+$ cd ..</programlisting>
+<important>
+<simpara>Make sure you pass in the SSO_AUTH_SERVER_URL you obtained during the <xref linkend="SSO_AUTH_SERVER_URL"/> step.</simpara>
+</important>
+<simpara>This process will generate the uber JAR file as well as the OpenShift resources and deploy them to the current project on your Single-node OpenShift Cluster server.</simpara>
+</section>
+</section>
+<section xml:id="mission-secured-deploy-rhsso-cd">
+<title>Deploy RH SSO to your Single-node OpenShift Cluster using your launch.openshift.io Application</title>
+<section xml:id="_deploy_the_secured_booster_using_your_launch_openshift_io_application">
+<title>Deploy the Secured Booster using your launch.openshift.io Application</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to your launch.openshift.io application running on your Single-node OpenShift Cluster and click <emphasis>Prepare for Takeoff</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Choose <emphasis>Use OpenShift Online to build and deploy</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select <literal>Secured</literal> and click <emphasis>Next</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select your runtime and click <emphasis>Next</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>You may update any project information before clicking <emphasis>Next</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>Click the <emphasis>Launch on OpenShift</emphasis> button.</simpara>
+<simpara>This will:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Create a new GitHub repository associated with your account containing the mission&#8217;s code.</simpara>
+</listitem>
+<listitem>
+<simpara>Create a pipeline to continuously deliver your mission&#8217;s code.</simpara>
+</listitem>
+<listitem>
+<simpara>The pipeline will then build and deploy your mission&#8217;s code to your Single-node OpenShift Cluster.</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>Click on the <emphasis>See it here!</emphasis> link under <emphasis>Creating your project on the OpenShift cloud</emphasis> to go to your booster&#8217;s page in the OpenShift Web console.</simpara>
+</listitem>
+</orderedlist>
+<simpara>To view the status of your project:</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>In the pipeline at the top, click <emphasis>View Log</emphasis>.</simpara>
+<note>
+<simpara>It may take a few minutes for the link to appear.</simpara>
+</note>
+</listitem>
+<listitem>
+<simpara>This will prompt you with a log in for Jenkins. Click <emphasis>Login with OpenShift</emphasis></simpara>
+</listitem>
+<listitem>
+<simpara>Use your Single-node OpenShift Cluster credentials, for example <literal>developer</literal> for both the username and password.</simpara>
+</listitem>
+<listitem>
+<simpara>Ensure all the boxes are checked and click <emphasis>Allow selected permissions</emphasis>.</simpara>
+</listitem>
+</orderedlist>
+<simpara>You will be redirected to the startup logs in the <literal>jenkins</literal> pod. You have also given your Single-node OpenShift Cluster access to the <literal>jenkins</literal> pod and its logging information. Once you see the build start in the Jenkins logs, if you return to the <emphasis>Overview</emphasis> page for your project in your Single-node OpenShift Cluster, you can see that the pipelines now show the build status.</simpara>
+</section>
+<section xml:id="_build_your_secured_booster_s_client">
+<title>Build your Secured Booster&#8217;s Client</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Clone your project from GitHub.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ git clone git@github.com:USERNAME/PROJECT-NAME.git</programlisting>
+</listitem>
+<listitem>
+<simpara>Build your booster&#8217;s project.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ cd PROJECT-NAME/sso
+$ mvn install
+$ cd ..</programlisting>
+</listitem>
+<listitem>
+<simpara>Login with <literal>oc</literal> to your Single-node OpenShift Cluster.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc login
+$ oc project PROJECT-NAME</programlisting>
+</listitem>
+</orderedlist>
+</section>
+</section>
+</section>
+<section xml:id="_interact_with_the_secured_booster">
+<title>Interact with the Secured Booster</title>
+<simpara>The Secured booster provides a default HTTP endpoint that accepts <literal>GET</literal> requests if the caller is authenticated and authorized. The <literal>sso</literal> directory of the booster contains a Java client you can use to interact with the Secured booster. The client first authenticates against the Red Hat SSO server and then performs a <literal>GET</literal> request against the Secured booster using the access token returned by the authentication step.</simpara>
+<simpara>The Java client is packaged as an executable JAR. It is located at <literal>target/sso-client.jar</literal> and takes arguments from the CLI. You can use the <literal>--help</literal> argument to see a full list of available arguments.</simpara>
+<simpara>When using the Java client to interact with the booster, you must specify the Secured booster endpoint name using the <literal>--app</literal> argument. You can get a list of the endpoints using the <literal>oc get routes</literal> command. The following table shows sample output from the <literal>oc get routes</literal> where you can obtain the Secured booster endpoint name.</simpara>
+<table frame="all" rowsep="1" colsep="1">
+<title>Sample <literal>oc get routes</literal> output</title>
+<tgroup cols="6">
+<colspec colname="col_1" colwidth="20*"/>
+<colspec colname="col_2" colwidth="40*"/>
+<colspec colname="col_3" colwidth="6*"/>
+<colspec colname="col_4" colwidth="13*"/>
+<colspec colname="col_5" colwidth="6*"/>
+<colspec colname="col_6" colwidth="13*"/>
+<thead>
+<row>
+<entry align="left" valign="top">NAME</entry>
+<entry align="left" valign="top">HOST/PORT</entry>
+<entry align="left" valign="top">PATH</entry>
+<entry align="left" valign="top">SERVICES</entry>
+<entry align="left" valign="top">PORT</entry>
+<entry align="left" valign="top">TERMINATION</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara>secure-sso</simpara></entry>
+<entry align="left" valign="top"><simpara>secure-sso-myproject.LOCAL_OPENSHIFT_HOSTNAME</simpara></entry>
+<entry align="left" valign="top"></entry>
+<entry align="left" valign="top"><simpara>secure-sso</simpara></entry>
+<entry align="left" valign="top"><simpara>&lt;all&gt;</simpara></entry>
+<entry align="left" valign="top"><simpara>passthrough</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>secured-vertx-http</simpara></entry>
+<entry align="left" valign="top"><simpara>secured-vertx-http-myproject.LOCAL_OPENSHIFT_HOSTNAME</simpara></entry>
+<entry align="left" valign="top"></entry>
+<entry align="left" valign="top"><simpara>secured-vertx-http</simpara></entry>
+<entry align="left" valign="top"><simpara>&lt;all&gt;</simpara></entry>
+<entry align="left" valign="top"></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>sso</simpara></entry>
+<entry align="left" valign="top"><simpara>sso-myproject.LOCAL_OPENSHIFT_HOSTNAME</simpara></entry>
+<entry align="left" valign="top"></entry>
+<entry align="left" valign="top"><simpara>sso</simpara></entry>
+<entry align="left" valign="top"><simpara>&lt;all&gt;</simpara></entry>
+<entry align="left" valign="top"></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<simpara>Alternatively, obtain the Secured booster endpoint name using the Java client:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ cd sso
+$ java -jar target/sso-client.jar --displaySSOURL
+Successful oc get routes: Yes
+Using auth server URL: https://secure-sso-myproject.LOCAL_OPENSHIFT_HOSTNAME/auth
+Available application endpoint names: [secured-vertx-http] <co xml:id="CO2-1"/></programlisting>
+<calloutlist>
+<callout arearefs="CO2-1">
+<para>The line beginning with <literal>Available application endpoint names:</literal> shows the non-SSO related application names.
+In this case, it is <literal>secured-vertx-http</literal>.</para>
+</callout>
+</calloutlist>
+<formalpara>
+<title>Obtain the Access Token Manually</title>
+<para>Obtain the access token in JSON format and use <link xlink:href="https://stedolan.github.io/jq/">the <literal>jq</literal> CLI tool</link> to extract the token value. You can store the value inside an environmental variable, such as <literal>MY_TOKEN</literal>:</para>
+</formalpara>
+<programlisting language="bash" linenumbering="unnumbered">MY_TOKEN=$(curl -s -k -X POST https://secure-sso-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/auth/realms/master/protocol/openid-connect/token -d client_id=demoapp -d client_secret=1daa57a2-b60e-468b-a3ac-25bd2dc2eadc -d grant_type=password -d username=alice -d password=password | jq -r .access_token)</programlisting>
+<section xml:id="_example_client_output">
+<title>Example Client Output</title>
+<formalpara>
+<title>Authentication with Default User</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">$ java -jar target/sso-client.jar --app secured-vertx-http
+Successful oc get routes: Yes
+Using auth server URL: https://secure-sso-myproject.LOCAL_OPENSHIFT_HOSTNAME/auth
+Available application endpoint names: [secured-vertx-http]
+
+Requesting greeting...
+{
+  "id" : 1,
+  "content" : "Hello, World!"
+}</programlisting>
+</para>
+</formalpara>
+<simpara>Alternatively, make a request against the <literal>/greeting</literal> endpoint using your token for authentication:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">curl -k -v http://secured-vertx-http-MY_PROJECT_NAME-latest.LOCAL_OPENSHIFT_HOSTNAME/greeting -H "Authorization:Bearer $MY_TOKEN"</programlisting>
+<formalpara>
+<title>Authentication with Default User Using <literal>--from</literal> Parameter</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">$ java -jar target/sso-client.jar --app secured-vertx-http --from Scott
+Successful oc get routes: Yes
+Using auth server URL: https://secure-sso-myproject.LOCAL_OPENSHIFT_HOSTNAME/auth
+Available application endpoint names: [secured-vertx-http]
+
+Requesting greeting...
+{
+  "id" : 2,
+  "content" : "Hello, Scott!"
+}</programlisting>
+</para>
+</formalpara>
+<simpara>Alternatively, make a request against the <literal>/greeting</literal> endpoint passing a custom name as a parameter:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">curl -kv http://secured-vertx-http-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/greeting?name=Scott -H "Authorization:Bearer $MY_TOKEN"</programlisting>
+<formalpara>
+<title>Authentication with Default User Using Invalid Password</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">$ java -jar target/sso-client.jar --app secured-vertx-http --password bad
+Successful oc get routes: Yes
+Using auth server URL: https://secure-sso-myproject.LOCAL_OPENSHIFT_HOSTNAME/auth
+Available application endpoint names: [secured-vertx-http]
+Exception in thread "main" java.lang.RuntimeException: Failed to request token
+	at client.authz.AuthzClient.obtainAccessToken(AuthzClient.java:70)
+	at client.GreetingAuthzClient.init(GreetingAuthzClient.java:124)
+	at client.GreetingAuthzClient.main(GreetingAuthzClient.java:77)
+Caused by: javax.ws.rs.NotAuthorizedException: HTTP 401 Unauthorized
+	at org.jboss.resteasy.client.jaxrs.internal.ClientInvocation.handleErrorStatus(ClientInvocation.java:214)
+	at org.jboss.resteasy.client.jaxrs.internal.ClientInvocation.extractResult(ClientInvocation.java:189)
+	at org.jboss.resteasy.client.jaxrs.internal.ClientInvocation.invoke(ClientInvocation.java:492)
+	at org.jboss.resteasy.client.jaxrs.internal.ClientInvocationBuilder.post(ClientInvocationBuilder.java:199)
+	at client.authz.AuthzClient.obtainAccessToken(AuthzClient.java:66)
+	... 2 more</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>Authentication with admin User</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">$ java -jar target/sso-client.jar --app secured-vertx-http --user admin --password admin
+Successful oc get routes: Yes
+Using auth server URL: https://secure-sso-myproject.LOCAL_OPENSHIFT_HOSTNAME/auth
+Available application endpoint names: [secured-vertx-http]
+
+Requesting greeting...
+Exception in thread "main" javax.ws.rs.ForbiddenException: HTTP 403 Forbidden
+	at org.jboss.resteasy.client.jaxrs.internal.ClientInvocation.handleErrorStatus(ClientInvocation.java:216)
+	at org.jboss.resteasy.client.jaxrs.internal.ClientInvocation.extractResult(ClientInvocation.java:189)
+	at org.jboss.resteasy.client.jaxrs.internal.proxy.extractors.BodyEntityExtractor.extractEntity(BodyEntityExtractor.java:60)
+	at org.jboss.resteasy.client.jaxrs.internal.proxy.ClientInvoker.invoke(ClientInvoker.java:107)
+	at org.jboss.resteasy.client.jaxrs.internal.proxy.ClientProxy.invoke(ClientProxy.java:76)
+	at com.sun.proxy.$Proxy21.greeting(Unknown Source)
+	at client.GreetingAuthzClient.getGreeting(GreetingAuthzClient.java:171)
+	at client.GreetingAuthzClient.main(GreetingAuthzClient.java:79)</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>Authentication with admin User using <literal>debug 2</literal></title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">$ java -jar target/sso-client.jar --app secured-vertx-http --user admin --password admin --debug 2
+Successful oc get routes: Yes
+Using auth server URL: https://secure-sso-myproject.LOCAL_OPENSHIFT_HOSTNAME/auth
+Available application endpoint names: [secured-vertx-http]
+Sending POST to: https://secure-sso-myproject.LOCAL_OPENSHIFT_HOSTNAME/auth/realms/master/protocol/openid-connect/token
+Headers:
+  Accept: application/json
+  Content-Type: application/x-www-form-urlencoded
+Body: grant_type=password&amp;username=admin&amp;password=admin&amp;client_id=demoapp&amp;client_secret=1daa57a2-b60e-468b-a3ac-25bd2dc2eadc
+-----------
+
+Token: eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJlNjRhNDg5NC1iMTgxLTQ2NDYtYWIxNC02ZDQxNWE0NzM3NDkiLCJleHAiOjE0OTI2MzMxODQsIm5iZiI6MCwiaWF0IjoxNDkyNjMzMTI0LCJpc3MiOiJodHRwczovL3NlY3VyZS1zc28tbXlwcm9qZWN0LjE5Mi4xNjguOTkuMTAwLm5pcC5pby9hdXRoL3JlYWxtcy9tYXN0ZXIiLCJhdWQiOiJkZW1vYXBwIiwic3ViIjoiMjYyNjc3ZmEtMTAyYi00ZDYwLTlhNjEtYjFjYTJhZmQ2NjNhIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGVtb2FwcCIsInNlc3Npb25fc3RhdGUiOiIxNjA0NGEyYS0wYTQ2LTQ1MDMtYTg3OC0wNThhNzE0ZjExM2YiLCJjbGllbnRfc2Vzc2lvbiI6ImU0MTQ3OTM1LWY3N2UtNDU2OC04YzJmLTc5MzNlM2I4NGM0NSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJjcmVhdGUtcmVhbG0iLCJhZG1pbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7Im1hc3Rlci1yZWFsbSI6eyJyb2xlcyI6WyJtYW5hZ2UtZXZlbnRzIiwidmlldy1pZGVudGl0eS1wcm92aWRlcnMiLCJ2aWV3LXJlYWxtIiwibWFuYWdlLXJlYWxtIiwibWFuYWdlLWlkZW50aXR5LXByb3ZpZGVycyIsImltcGVyc29uYXRpb24iLCJ2aWV3LWV2ZW50cyIsImNyZWF0ZS1jbGllbnQiLCJtYW5hZ2UtdXNlcnMiLCJ2aWV3LXVzZXJzIiwidmlldy1jbGllbnRzIiwibWFuYWdlLWNsaWVudHMiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJ2aWV3LXByb2ZpbGUiXX19LCJuYW1lIjoiIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW4ifQ.eE-DxBfuhBg8ob17GlywIxh33owCUfbJGipXhV4R1Z14eE0yVXIe62lAHRrqygE5MFIGZ11UyKf4SwVl6YJHzDtVVbUMZQL4KFZ_ZUbUW7k16e0THlKtrBqvbJerTmeNocGOqh0vqNbi3PFVcmhihxPAO8iDxNI03t5J3_hkebIxVU4ka9XVrICXyrJmCDNjwmIeodoPTebIF7hZMAZub0W-Hyho65jWqlMcSxUg10FPe7wKkT0oP40DMN8yytKUIJTbd1EPm-qj354I2ztVing4ElecbdddjOAgL6a2fybZrDm0mtkcU5fV17gTwQubKB4hnXntSxO4pKNMy-tVpw
+
+Requesting greeting...
+Sending GET to: http://secured-vertx-http-myproject.LOCAL_OPENSHIFT_HOSTNAME/greeting?name=World
+Headers:
+  Accept: application/json
+  Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiJlNjRhNDg5NC1iMTgxLTQ2NDYtYWIxNC02ZDQxNWE0NzM3NDkiLCJleHAiOjE0OTI2MzMxODQsIm5iZiI6MCwiaWF0IjoxNDkyNjMzMTI0LCJpc3MiOiJodHRwczovL3NlY3VyZS1zc28tbXlwcm9qZWN0LjE5Mi4xNjguOTkuMTAwLm5pcC5pby9hdXRoL3JlYWxtcy9tYXN0ZXIiLCJhdWQiOiJkZW1vYXBwIiwic3ViIjoiMjYyNjc3ZmEtMTAyYi00ZDYwLTlhNjEtYjFjYTJhZmQ2NjNhIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGVtb2FwcCIsInNlc3Npb25fc3RhdGUiOiIxNjA0NGEyYS0wYTQ2LTQ1MDMtYTg3OC0wNThhNzE0ZjExM2YiLCJjbGllbnRfc2Vzc2lvbiI6ImU0MTQ3OTM1LWY3N2UtNDU2OC04YzJmLTc5MzNlM2I4NGM0NSIsImFsbG93ZWQtb3JpZ2lucyI6W10sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJjcmVhdGUtcmVhbG0iLCJhZG1pbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7Im1hc3Rlci1yZWFsbSI6eyJyb2xlcyI6WyJtYW5hZ2UtZXZlbnRzIiwidmlldy1pZGVudGl0eS1wcm92aWRlcnMiLCJ2aWV3LXJlYWxtIiwibWFuYWdlLXJlYWxtIiwibWFuYWdlLWlkZW50aXR5LXByb3ZpZGVycyIsImltcGVyc29uYXRpb24iLCJ2aWV3LWV2ZW50cyIsImNyZWF0ZS1jbGllbnQiLCJtYW5hZ2UtdXNlcnMiLCJ2aWV3LXVzZXJzIiwidmlldy1jbGllbnRzIiwibWFuYWdlLWNsaWVudHMiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJ2aWV3LXByb2ZpbGUiXX19LCJuYW1lIjoiIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiYWRtaW4ifQ.eE-DxBfuhBg8ob17GlywIxh33owCUfbJGipXhV4R1Z14eE0yVXIe62lAHRrqygE5MFIGZ11UyKf4SwVl6YJHzDtVVbUMZQL4KFZ_ZUbUW7k16e0THlKtrBqvbJerTmeNocGOqh0vqNbi3PFVcmhihxPAO8iDxNI03t5J3_hkebIxVU4ka9XVrICXyrJmCDNjwmIeodoPTebIF7hZMAZub0W-Hyho65jWqlMcSxUg10FPe7wKkT0oP40DMN8yytKUIJTbd1EPm-qj354I2ztVing4ElecbdddjOAgL6a2fybZrDm0mtkcU5fV17gTwQubKB4hnXntSxO4pKNMy-tVpw
+Exception in thread "main" javax.ws.rs.ForbiddenException: HTTP 403 Forbidden
+	at org.jboss.resteasy.client.jaxrs.internal.ClientInvocation.handleErrorStatus(ClientInvocation.java:216)
+	at org.jboss.resteasy.client.jaxrs.internal.ClientInvocation.extractResult(ClientInvocation.java:189)
+	at org.jboss.resteasy.client.jaxrs.internal.proxy.extractors.BodyEntityExtractor.extractEntity(BodyEntityExtractor.java:60)
+	at org.jboss.resteasy.client.jaxrs.internal.proxy.ClientInvoker.invoke(ClientInvoker.java:107)
+	at org.jboss.resteasy.client.jaxrs.internal.proxy.ClientProxy.invoke(ClientProxy.java:76)
+	at com.sun.proxy.$Proxy21.greeting(Unknown Source)
+	at client.GreetingAuthzClient.getGreeting(GreetingAuthzClient.java:171)
+	at client.GreetingAuthzClient.main(GreetingAuthzClient.java:79)</programlisting>
+</para>
+</formalpara>
+</section>
+<section xml:id="_decoding_jwt">
+<title>Decoding JWT</title>
+<simpara>When using debug value greater than 0, for example <literal>--debug 2</literal>, you will notice the output returns a <literal>token</literal>:</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ java -jar target/sso-client.jar ... --debug 2
+Successful oc get routes: Yes
+...
+Token: eyJhbGciOiJSUzI1NiJ9.ey.....</programlisting>
+<simpara>This is a <link xlink:href="https://jwt.io">JSON Web Token</link>, and you can decode it using the <link xlink:href="https://jwt.io/#debugger-io">JWT Debugger</link>:</simpara>
+<simpara><inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/jwt-debugger.png"/>
+</imageobject>
+<textobject><phrase>JWT Debugger Screen</phrase></textobject>
+</inlinemediaobject></simpara>
+<simpara>To use the debugger:</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Go to <link xlink:href="https://jwt.io/#debugger-io">JWT Debugger</link>.</simpara>
+</listitem>
+<listitem>
+<simpara>Select <literal>RS256</literal> from the <emphasis>Algorithm</emphasis> drop down menu.</simpara>
+<note>
+<simpara>Make sure the web form has actually updated to display the RSASHA256(&#8230;&#8203;) information in the Signature section. If it does not, try switching back to HS256 and then back to RS256.</simpara>
+</note>
+</listitem>
+<listitem>
+<simpara>Paste the following content in the top text box in the <emphasis>VERIFY SIGNATURE</emphasis> section.</simpara>
+<programlisting language="base64" linenumbering="unnumbered">-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoETnPmN55xBJjRzN/cs30OzJ9olkteLVNRjzdTxFOyRtS2ovDfzdhhO9XzUcTMbIsCOAZtSt8K+6yvBXypOSYvI75EUdypmkcK1KoptqY5KEBQ1KwhWuP7IWQ0fshUwD6jI1QWDfGxfM/h34FvEn/0tJ71xN2P8TI2YanwuDZgosdobx/PAvlGREBGuk4BgmexTOkAdnFxIUQcCkiEZ2C41uCrxiS4CEe5OX91aK9HKZV4ZJX6vnqMHmdDnsMdO+UFtxOBYZio+a1jP4W3d7J5fGeiOaXjQCOpivKnP2yU2DPdWmDMyVb67l8DRA+jh0OJFKZ5H2fNgE3II59vdsRwIDAQAB
+-----END PUBLIC KEY-----</programlisting>
+<note>
+<simpara>This is the master realm public key from the Secured booster&#8217;s Red Hat SSO server deployment.</simpara>
+</note>
+</listitem>
+<listitem>
+<simpara>Paste the <literal>token</literal> output from the client output in the <emphasis>Encoded</emphasis> box.</simpara>
+</listitem>
+<listitem>
+<simpara>You will see <literal>Signature Verified</literal> on the debugger page.</simpara>
+</listitem>
+</orderedlist>
+</section>
+</section>
+<section xml:id="secured_resources">
+<title>Secured SSO Resources</title>
+<simpara>Follow the links below for additional information on the principles behind the OAuth2 specification and on securing your applications using Red Hat SSO and Keycloak:</simpara>
+<itemizedlist>
+<listitem>
+<simpara><link xlink:href="https://aaronparecki.com/oauth-2-simplified/">Aaron Parecki: OAuth2 Simplified</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://access.redhat.com/documentation/en/red-hat-single-sign-on?version=7.1/">Red Hat SSO 7.1 Documentation</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="http://www.keycloak.org/archive/documentation-3.2.html">Keycloak 3.2 Documentation</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/spring-boot-runtime.html#mission-secured-spring-boot">Secured Mission - Spring Boot Tomcat Booster</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/wf-swarm-runtime.html#mission-secured-wf-swarm">Secured Mission - WildFly Swarm Booster</link></simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+</section>
+<appendix xml:id="_the_source_to_image_s2i_build_process">
+<title>The Source-to-Image (S2I) Build Process</title>
+<simpara><link xlink:href="https://docs.openshift.com/container-platform/3.4/architecture/core_concepts/builds_and_image_streams.html#source-build">Source-to-Image</link> (S2I) is a build tool that allows you to generate reproducible Docker-formatted container images from application sources hosted in an online SCM repository. With S2I builds you can easily deliver the latest version of your application into production while achieving shorter build times, decreased resource and network usage, improved security and a number of <link xlink:href="https://docs.openshift.com/container-platform/3.4/architecture/core_concepts/builds_and_image_streams.html#source-build">advantages</link>.</simpara>
+<simpara>You need to provide three key elements as the input to the S2I process:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>application sources (hosted in an online SCM repository, such as a Git Hub repo)</simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://docs.openshift.com/container-platform/3.4/creating_images/s2i.html#s2i-scripts">S2I scripts</link></simpara>
+</listitem>
+<listitem>
+<simpara>the Builder image, which serves as the foundation for the assembled image and provides the ecosystem within which your application is running</simpara>
+</listitem>
+</itemizedlist>
+<simpara>The process combines these inputs by injecting your application source and dependencies into the Builder image according to instructions specified in the S2I script and generates a Docker-formatted container image that runs the assembled application. For more detail, check the <link xlink:href="https://docs.openshift.com/container-platform/3.4/creating_images/s2i.html">S2I build requirements</link> and <link xlink:href="https://docs.openshift.com/enterprise/3.0/dev_guide/builds.html#source-to-image-strategy-options">build options</link> sections of the <link xlink:href="https://docs.openshift.com/container-platform/3.4/welcome/index.html">OpenShift Container Platform documentation</link>.</simpara>
+</appendix>
+<appendix xml:id="breakdown_pom">
+<title>Breakdown of POM Components</title>
+<formalpara>
+<title><link xlink:href="https://github.com/openshiftio-vertx-boosters/vertx-http-booster/blob/master/pom.xml">vertx-http-booster/pom.xml</link></title>
+<para>
+<programlisting language="xml" linenumbering="unnumbered">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  &lt;parent&gt; <co xml:id="CO3-1"/>
+    &lt;groupId&gt;io.openshift&lt;/groupId&gt;
+    &lt;artifactId&gt;booster-parent&lt;/artifactId&gt;
+    &lt;version&gt;4&lt;/version&gt;
+  &lt;/parent&gt;
+  &lt;groupId&gt;io.openshift.booster&lt;/groupId&gt;
+  &lt;artifactId&gt;http-vertx&lt;/artifactId&gt;
+  &lt;version&gt;7-SNAPSHOT&lt;/version&gt;
+  &lt;packaging&gt;jar&lt;/packaging&gt;
+
+  &lt;name&gt;Vert.x - HTTP&lt;/name&gt;
+  &lt;description&gt;Exposes an HTTP API using Vert.x&lt;/description&gt;
+
+  &lt;properties&gt; <co xml:id="CO3-2"/>
+    &lt;vertx.version&gt;3.4.1&lt;/vertx.version&gt;
+    &lt;vertx-maven-plugin.version&gt;1.0.8&lt;/vertx-maven-plugin.version&gt;
+    &lt;vertx.verticle&gt;io.openshift.booster.HttpApplication&lt;/vertx.verticle&gt;
+  &lt;/properties&gt;
+
+  &lt;dependencyManagement&gt;
+    &lt;dependencies&gt;
+      &lt;dependency&gt;
+        &lt;groupId&gt;io.vertx&lt;/groupId&gt;
+        &lt;artifactId&gt;vertx-dependencies&lt;/artifactId&gt; <co xml:id="CO3-3"/>
+        &lt;version&gt;${vertx.version}&lt;/version&gt;
+        &lt;type&gt;pom&lt;/type&gt;
+        &lt;scope&gt;import&lt;/scope&gt;
+      &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+  &lt;/dependencyManagement&gt;
+
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;io.vertx&lt;/groupId&gt;
+      &lt;artifactId&gt;vertx-core&lt;/artifactId&gt; <co xml:id="CO3-4"/>
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;io.vertx&lt;/groupId&gt;
+      &lt;artifactId&gt;vertx-web&lt;/artifactId&gt; <co xml:id="CO3-5"/>
+    &lt;/dependency&gt;
+
+    &lt;!-- Testing --&gt;
+    &lt;dependency&gt; <co xml:id="CO3-6"/>
+      &lt;groupId&gt;io.vertx&lt;/groupId&gt;
+      &lt;artifactId&gt;vertx-web-client&lt;/artifactId&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;io.vertx&lt;/groupId&gt;
+      &lt;artifactId&gt;vertx-unit&lt;/artifactId&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;junit&lt;/groupId&gt;
+      &lt;artifactId&gt;junit&lt;/artifactId&gt;
+      &lt;version&gt;4.12&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.assertj&lt;/groupId&gt;
+      &lt;artifactId&gt;assertj-core&lt;/artifactId&gt;
+      &lt;version&gt;3.6.2&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;com.jayway.restassured&lt;/groupId&gt;
+      &lt;artifactId&gt;rest-assured&lt;/artifactId&gt;
+      &lt;version&gt;2.9.0&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;com.jayway.awaitility&lt;/groupId&gt;
+      &lt;artifactId&gt;awaitility&lt;/artifactId&gt;
+      &lt;version&gt;1.7.0&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+
+
+  &lt;build&gt;
+    &lt;plugins&gt;
+      &lt;plugin&gt;
+        &lt;groupId&gt;io.fabric8&lt;/groupId&gt;
+        &lt;artifactId&gt;vertx-maven-plugin&lt;/artifactId&gt; <co xml:id="CO3-7"/>
+        &lt;version&gt;${vertx-maven-plugin.version}&lt;/version&gt;
+        &lt;executions&gt;
+          &lt;execution&gt;
+            &lt;id&gt;vmp&lt;/id&gt;
+            &lt;goals&gt;
+              &lt;goal&gt;initialize&lt;/goal&gt;
+              &lt;goal&gt;package&lt;/goal&gt;
+            &lt;/goals&gt;
+          &lt;/execution&gt;
+        &lt;/executions&gt;
+        &lt;configuration&gt;
+          &lt;redeploy&gt;true&lt;/redeploy&gt;
+        &lt;/configuration&gt;
+      &lt;/plugin&gt;
+    &lt;/plugins&gt;
+
+    &lt;pluginManagement&gt;
+      &lt;plugins&gt;
+        &lt;plugin&gt;
+          &lt;groupId&gt;org.eclipse.m2e&lt;/groupId&gt;
+          &lt;artifactId&gt;lifecycle-mapping&lt;/artifactId&gt; <co xml:id="CO3-8"/>
+          &lt;version&gt;1.0.0&lt;/version&gt;
+          &lt;configuration&gt;
+            &lt;lifecycleMappingMetadata&gt;
+              &lt;pluginExecutions&gt;
+                &lt;pluginExecution&gt;
+                  &lt;pluginExecutionFilter&gt;
+                    &lt;groupId&gt;io.fabric8&lt;/groupId&gt;
+                    &lt;artifactId&gt;vertx-maven-plugin&lt;/artifactId&gt;
+                    &lt;versionRange&gt;[1.0.6,)&lt;/versionRange&gt;
+                    &lt;goals&gt;
+                      &lt;goal&gt;initialize&lt;/goal&gt;
+                    &lt;/goals&gt;
+                  &lt;/pluginExecutionFilter&gt;
+                  &lt;action&gt;
+                    &lt;ignore/&gt;
+                  &lt;/action&gt;
+                &lt;/pluginExecution&gt;
+              &lt;/pluginExecutions&gt;
+            &lt;/lifecycleMappingMetadata&gt;
+          &lt;/configuration&gt;
+        &lt;/plugin&gt;
+      &lt;/plugins&gt;
+    &lt;/pluginManagement&gt;
+  &lt;/build&gt;
+
+  &lt;profiles&gt;
+    &lt;profile&gt;
+      &lt;id&gt;openshift&lt;/id&gt; <co xml:id="CO3-9"/>
+      &lt;build&gt;
+        &lt;plugins&gt;
+          &lt;plugin&gt;
+            &lt;groupId&gt;io.fabric8&lt;/groupId&gt;
+            &lt;artifactId&gt;fabric8-maven-plugin&lt;/artifactId&gt;
+            &lt;version&gt;3.2.28&lt;/version&gt;
+            &lt;executions&gt;
+              &lt;execution&gt;
+                &lt;id&gt;fmp&lt;/id&gt;
+                &lt;goals&gt;
+                  &lt;goal&gt;resource&lt;/goal&gt;
+                  &lt;goal&gt;build&lt;/goal&gt;
+                &lt;/goals&gt;
+              &lt;/execution&gt;
+            &lt;/executions&gt;
+            &lt;configuration&gt;
+              &lt;enricher&gt;
+                &lt;includes&gt;
+                  &lt;include&gt;vertx-health-check&lt;/include&gt;
+                &lt;/includes&gt;
+                &lt;config&gt;
+                  &lt;vertx-health-check&gt;
+                    &lt;path&gt;/&lt;/path&gt;
+                  &lt;/vertx-health-check&gt;
+                &lt;/config&gt;
+              &lt;/enricher&gt;
+            &lt;/configuration&gt;
+          &lt;/plugin&gt;
+        &lt;/plugins&gt;
+      &lt;/build&gt;
+    &lt;/profile&gt;
+
+    &lt;profile&gt;
+      &lt;id&gt;openshift-it&lt;/id&gt; <co xml:id="CO3-10"/>
+      &lt;build&gt;
+        &lt;plugins&gt;
+          &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-failsafe-plugin&lt;/artifactId&gt;
+            &lt;executions&gt;
+              &lt;execution&gt;
+                &lt;goals&gt;
+                  &lt;goal&gt;integration-test&lt;/goal&gt;
+                  &lt;goal&gt;verify&lt;/goal&gt;
+                &lt;/goals&gt;
+              &lt;/execution&gt;
+            &lt;/executions&gt;
+          &lt;/plugin&gt;
+        &lt;/plugins&gt;
+      &lt;/build&gt;
+    &lt;/profile&gt;
+  &lt;/profiles&gt;
+&lt;/project&gt;</programlisting>
+</para>
+</formalpara>
+<calloutlist>
+<callout arearefs="CO3-1">
+<para><link xlink:href="https://github.com/openshiftio/booster-parent/blob/master/pom.xml">Parent POM</link> which contains the necessary dependencies and the required versions for the booster projects.</para>
+</callout>
+<callout arearefs="CO3-2">
+<para>Properties for setting the Eclipse Vert.x and Eclipse Vert.x Maven plugin version to use as well as the name of the Eclipse Vert.x verticle.</para>
+</callout>
+<callout arearefs="CO3-3">
+<para><link xlink:href="https://github.com/vert-x3/vertx-dependencies/blob/master/pom.xml">BOM</link> for building Eclipse Vert.x applications with Maven.</para>
+</callout>
+<callout arearefs="CO3-4">
+<para><link xlink:href="https://github.com/eclipse/vert.x/blob/master/pom.xml">POM</link> containing core functionality of Eclipse Vert.x. More details on the core components of Eclipse Vert.x are avialble in the <link xlink:href="http://vertx.io/docs/vertx-core/java/">Eclipse Vert.x documentation</link>.</para>
+</callout>
+<callout arearefs="CO3-5">
+<para><link xlink:href="https://github.com/vert-x3/vertx-web/blob/master/pom.xml">POM</link> containing the components for building web applications with Eclipse Vert.x.</para>
+</callout>
+<callout arearefs="CO3-6">
+<para>Various dependencies needed for testing the application. This includes several Eclipse Vert.x components such as <link xlink:href="http://vertx.io/docs/vertx-web-client/java/">vertx-web-client</link> and <link xlink:href="http://vertx.io/docs/vertx-unit/java/">vertx-unit</link> as well as other projects such as  <link xlink:href="https://joel-costigliola.github.io/assertj/">assertj</link> for assertions, <link xlink:href="https://github.com/rest-assured/rest-assured">rest-assured</link> for testing REST services, and <link xlink:href="https://github.com/awaitility/awaitility">awaitility</link> for doing asynchronous operations.</para>
+</callout>
+<callout arearefs="CO3-7">
+<para><link xlink:href="https://vmp.fabric8.io">Eclipse Vert.x Fabric8 Maven Plugin</link> used for packaging and deploying Eclipse Vert.x applications</para>
+</callout>
+<callout arearefs="CO3-8">
+<para><link xlink:href="https://wiki.eclipse.org/M2E_compatible_maven_plugins">Lifecycle metadata</link> that works with the Eclipse Vert.x Fabric8 Maven Plugin for building and deploying the application.</para>
+</callout>
+<callout arearefs="CO3-9">
+<para>The profile for building and deploying the booster to OpenShift. It uses the <link xlink:href="http://fabric8.io/gitbook/mavenPlugin.html">Fabric8 Maven Plugin (FMP)</link> to build and deploy the application with the S2I Build Process.</para>
+</callout>
+<callout arearefs="CO3-10">
+<para>The profile for running integration tests when the application is deployed on OpenShift. For example, a test can require a database pod or a ConfigMap value.</para>
+</callout>
+</calloutlist>
+</appendix>
+<appendix xml:id="vertx-additional-resources">
+<title>Additional Resources</title>
+<itemizedlist>
+<listitem>
+<simpara><link xlink:href="http://vertx.io">Eclipse Vert.x project</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="http://middlewareblog.redhat.com/2017/05/04/vert-x-for-reactive-programming-in-red-hat-openshift-application-runtimes/">Eclipse Vert.x for Reactive Programming in Red Hat OpenShift Application Runtimes</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://developers.redhat.com/promotions/building-reactive-microservices-in-java/">Building Reactive Microservices in Java</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://developers.redhat.com/promotions/vertx-cheatsheet/">Eclipse Vert.x Cheat Sheet for Developers</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="http://escoffier.me/vertx-hol/#_vert_x">Eclipse Vert.x - From zero to (micro)-hero</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://github.com/cescoffier/rhsummit17-reactive-programming-with-vertx/blob/master/reactive-programming-with-vertx.pdf">Red Hat Summit 2017 Talk - Reactive Programming with Eclipse Vert.x</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://www.redhat.com/en/about/videos/reactive-systems-eclipse-vertx-and-red-hat-openshift">Red Hat Summit 2017 Breakout Session - Reactive Systems with Eclipse Vert.x and Red Hat OpenShift</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://developers.redhat.com/blog/2017/06/21/live-coding-reactive-systems-weclipse-vert-x-and-openshift/">Live Coding Reactive Systems with Eclipse Vert.x and OpenShift</link></simpara>
+</listitem>
+</itemizedlist>
+</appendix>
+<appendix xml:id="proficiency_levels">
+<title>Proficiency Levels</title>
+<simpara>Each mission available on launch.openshift.io teaches you about certain topics, but requires certain minimum knowledge, which varies by mission. For clarity, the minimum requirements and concepts are organized in several proficiency levels. In addition to the levels described in this chapter, there can be additional requirements with each mission, specific to its aim or the technologies it uses.</simpara>
+<bridgehead xml:id="proficiency_foundational" renderas="sect2">Foundational</bridgehead>
+<simpara>The missions rated at Foundational proficiency generally require no prior knowledge of the subject matter; they provide general awareness and demonstration of key elements, concepts, and terminology. There are no special requirements except those directly mentioned in the description of the mission.</simpara>
+<bridgehead xml:id="proficiency_advanced" renderas="sect2">Advanced</bridgehead>
+<simpara>When using Advanced missions, the assumption is that you are familiar with the common concepts and terminology of the subject area of the mission in addition to Kubernetes and OpenShift. You must also be able to perform basic tasks on your own, for example configure services and applications, or administer networks. If a service is needed by the mission, but configuring it is not in the scope of the mission, the assumption is that you have the knowledge to to properly configure it, and only the resulting state of the service is described in the documentation.</simpara>
+<bridgehead xml:id="proficiency_expert" renderas="sect2">Expert</bridgehead>
+<simpara>Expert missions require the highest level of knowledge of the subject matter. You are expected to perform many tasks based on feature-based documentation and manuals, and the documentation is aimed at most complex scenarios.</simpara>
+</appendix>
+</article>

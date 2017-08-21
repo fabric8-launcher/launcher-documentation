@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc maxdepth="2"?>
+<?asciidoc-numbered?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>Node.js Runtime Guide</title>
+<date>2017-08-17</date>
+</info>
+<important>
+<simpara>This runtime is coming soon and is not currently available.</simpara>
+</important>
+<simpara>This guide covers concepts as well as practical details needed by developers to use the Node.js runtime.</simpara>
+<section xml:id="_runtime_details">
+<title>Runtime Details</title>
+<simpara>Node.js is a JavaScript runtime built on <link xlink:href="https://developers.google.com/v8/">Chrome&#8217;s V8 JavaScript engine</link>. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, <link xlink:href="https://www.npmjs.com/">npm</link>, is the largest ecosystem of open source libraries in the world.</simpara>
+<simpara>The Node.js runtime enables you to run Node.js applications and services in OpenShift while providing all the advantages and conveniences of the OpenShift platform such as rolling updates, continuous delivery pipelines, service discovery, and canary deployments. OpenShift also makes it easier for your applications to implement common microservice patterns such as ConfigMap, HealthCheck, Circuit Breaker, and Failover.</simpara>
+<simpara>Node.js has a community version of its runtime that runs on OpenShift and is provided outside of a Red Hat subscription.</simpara>
+</section>
+<section xml:id="missions-intro">
+<title>Missions</title>
+<simpara>Missions are working applications that showcase different fundamental pieces of building cloud native applications and services, such as creating HTTP APIs, interoperating with a database, or implementing the health check pattern. A booster is the implementation of a mission in a specific runtime. Boosters are preconfigured, functioning applications based on a mission that demonstrate a fundamental aspect of modern application development running in an environment similar to production. Missions and boosters can be used as a proof of technology demonstration, a teaching tool, or even a sandbox for understanding how to develop applications. They can also be updated or extended for your own use case.</simpara>
+<note>
+<simpara>Each mission has different boosters that show how to implement the same mission in different runtimes. For example, the REST API Level 0 mission has a <link xlink:href="/docs/nodejs-runtime.html#mission-http-api-nodejs">Node.js booster</link>, a <link xlink:href="/docs/spring-boot-runtime.html#mission-http-api-spring-boot-tomcat">Spring Boot Tomcat booster</link>, a <link xlink:href="/docs/vertx-runtime.html#mission-http-api-vertx">Eclipse Vert.x booster</link>, and a <link xlink:href="/docs/wf-swarm-runtime.html#mission-http-api-wf-swarm">WildFly Swarm booster</link>.</simpara>
+</note>
+<section xml:id="mission-http-api-nodejs">
+<title>REST API Level 0 Mission - Node.js Booster</title>
+<simpara>Mission proficiency level:
+<link linkend="proficiency_foundational"><emphasis role="strong">Foundational</emphasis></link>.</simpara>
+<simpara>The REST API Level 0 Mission provides a basic example of mapping business operations to a remote procedure call endpoint over HTTP using a REST framework. This corresponds to <link xlink:href="https://martinfowler.com/articles/richardsonMaturityModel.html#level0">Level 0 in the Richardson Maturity Model</link>. Creating an HTTP endpoint using REST and its underlying principals to define your API enables you to quickly prototype and design your API in a flexible manner.
+More background information on REST is available in <xref linkend="about_rest"/>.</simpara>
+<simpara>This is an introduction to the mechanics of opening a service that is called remotely. Specifically, this booster is an application that allows a user to:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Execute an HTTP <literal>GET</literal> request on the <literal>api/greeting</literal> endpoint.</simpara>
+</listitem>
+<listitem>
+<simpara>Receive a response in JSON format with a payload consisting of the <literal>Hello, World!</literal> String.</simpara>
+</listitem>
+<listitem>
+<simpara>Execute an HTTP <literal>GET</literal> request on the <literal>api/greeting</literal> endpoint while passing in a String argument. This uses the <literal>name</literal> request parameter in the query string.</simpara>
+</listitem>
+<listitem>
+<simpara>Receive a response in JSON format with a payload of <literal>Hello, $name!</literal> with <literal>$name</literal> replaced by the value of the <literal>name</literal> parameter passed into the request.</simpara>
+</listitem>
+</itemizedlist>
+<table frame="all" rowsep="1" colsep="1">
+<title>Design Tradeoffs</title>
+<?dbhtml table-width="100%"?>
+<?dbfo table-width="100%"?>
+<?dblatex table-width="100%"?>
+<tgroup cols="2">
+<colspec colname="col_1" colwidth="213*"/>
+<colspec colname="col_2" colwidth="213*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Pros</entry>
+<entry align="left" valign="top">Cons</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><itemizedlist>
+<listitem>
+<simpara>Fast prototyping</simpara>
+</listitem>
+<listitem>
+<simpara>Flexible API Design</simpara>
+</listitem>
+<listitem>
+<simpara>HTTP endpoints allow clients to be language agnostic</simpara>
+</listitem>
+</itemizedlist></entry>
+<entry align="left" valign="top"><itemizedlist>
+<listitem>
+<simpara>As an application or service matures, the REST API Level 0 approach may not scale well to properly support a clean API design or use cases involving database interactions. Any operations involving shared, mutable state must be integrated with an appropriate backing datastore. All requests handled by an API designed in this manner will be scoped only to the container servicing the request. Therefore there is no guarantee that subsequent requests will be served by the same container.</simpara>
+</listitem>
+</itemizedlist></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<section xml:id="rest_build_and_deploy_booster">
+<title>Build and Deploy Your Booster</title>
+<section xml:id="_deploy_your_booster_to_a_single_node_openshift_cluster">
+<title>Deploy your Booster to a Single-node OpenShift Cluster</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Before you can use a Single-node OpenShift Cluster, you need to have it installed, configured, and running. You can find more details in <link xlink:href="https://github.com/minishift/minishift#installation">Install and Configure a Single-node OpenShift Cluster</link>.</simpara>
+</listitem>
+<listitem>
+<simpara>Once you have a Single-node OpenShift Cluster running, check the console output for the URL you can use to access it.</simpara>
+<formalpara>
+<title>Example Console Output from a Single-node OpenShift Cluster Startup</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">...
+-- Removing temporary directory ... OK
+-- Server Information ...
+   OpenShift server started.
+   The server is accessible via web console at:
+       https://192.168.42.152:8443
+
+   You are logged in as:
+       User:     developer
+       Password: developer
+
+   To login as administrator:
+       oc login -u system:admin</programlisting>
+</para>
+</formalpara>
+</listitem>
+</orderedlist>
+<section xml:id="_deploy_using_launch_openshift_io">
+<title>Deploy Using launch.openshift.io</title>
+<simpara>Once you have the launch.openshift.io application <link xlink:href="/docs/minishift-installation.html">installed and configured</link>,
+navigate to it in your Single-node OpenShift Cluster and use it to create and launch your booster.</simpara>
+</section>
+<section xml:id="_deploy_using_the_literal_oc_literal_cli_client">
+<title>Deploy Using the <literal>oc</literal> CLI Client</title>
+<important>
+<simpara>You must still create a booster using launch.openshift.io before you can deploy it using the <literal>oc</literal> CLI client.</simpara>
+<simpara>If you choose <emphasis>I will build and run locally</emphasis>, unzip the ZIP file you downloaded. If you chose <emphasis>Use OpenShift Online to build and deploy</emphasis> you need to clone the GitHub repository created by launch.openshift.io.</simpara>
+</important>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Get your authentication token for using the <literal>oc</literal> CLI client with Single-node OpenShift Cluster. You can find this in the <emphasis>Command Line Tools</emphasis> section your Single-node OpenShift Cluster Web console.</simpara>
+</listitem>
+<listitem>
+<simpara>Authenticate your <literal>oc</literal> CLI client with Single-node OpenShift Cluster by using your authentication token.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc login OPENSHIFT_URL --token=MYTOKEN</programlisting>
+</listitem>
+<listitem>
+<simpara>Create a new project in Single-node OpenShift Cluster.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc new-project MY_PROJECT_NAME</programlisting>
+</listitem>
+<listitem>
+<simpara>Navigate to the root directory of your booster.</simpara>
+</listitem>
+<listitem>
+<simpara>Use <literal>npm</literal> to start the deployment to Single-node OpenShift Cluster.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ npm install &amp;&amp; npm run openshift</programlisting>
+<simpara>These commands use the Nodeshift <literal>npm</literal> module to install Node.js and launch the S2I process on Single-node OpenShift Cluster and start the pod.</simpara>
+</listitem>
+<listitem>
+<simpara>Check the status of your booster and ensure your pod is running.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc get pods -w
+NAME                             READY     STATUS      RESTARTS   AGE
+MY_APP_NAME-1-aaaaa               1/1       Running     0          58s
+MY_APP_NAME-s2i-1-build           0/1       Completed   0          2m</programlisting>
+<simpara>You <literal>app1</literal> pod should have a status of <literal>Running</literal> once its fully deployed and started.</simpara>
+</listitem>
+<listitem>
+<simpara>Once your booster is deployed and started, determine its route.</simpara>
+<formalpara>
+<title>Example Route Information</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">$ oc get routes
+NAME                 HOST/PORT                                                     PATH      SERVICES        PORT      TERMINATION
+MY_APP_NAME         MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME      MY_APP_NAME      8080</programlisting>
+</para>
+</formalpara>
+<simpara>A pod&#8217;s route information gives you the base URL which you use to access it. In the example above, you would use <literal><link xlink:href="http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME">http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME</link></literal> as the base URL to access the application.</simpara>
+</listitem>
+</orderedlist>
+</section>
+</section>
+</section>
+<section xml:id="_interact_with_the_unmodified_node_js_booster">
+<title>Interact with the Unmodified Node.js Booster</title>
+<simpara>The booster provides a default HTTP endpoint that accepts GET requests.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Use <literal>curl</literal> to execute a <literal>GET</literal> request against the booster. You can also use a browser to do this.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ curl http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/greeting
+{"content":"Hello, World!"}</programlisting>
+</listitem>
+<listitem>
+<simpara>Use <literal>curl</literal> to execute a <literal>GET</literal> request with the <literal>name</literal> URL parameter against the booster. You can also use a browser to do this.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ curl http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/greeting?name=Sarah
+{"content":"Hello, Sarah!"}</programlisting>
+</listitem>
+</orderedlist>
+<note>
+<simpara>You can also use a form provided by the booster to perform these same interactions. The form is located at the root of the project <literal><link xlink:href="http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME">http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME</link></literal>.</simpara>
+</note>
+</section>
+<section xml:id="about_rest">
+<title>REST Resources</title>
+<simpara>More background and related information on REST can be found here:</simpara>
+<itemizedlist>
+<listitem>
+<simpara><link xlink:href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">Architectural Styles and
+the Design of Network-based Software Architectures - Representational State Transfer (REST)</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://martinfowler.com/articles/richardsonMaturityModel.html">Richardson Maturity Model</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://expressjs.com/">Express Web Framework</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/spring-boot-runtime.html#mission-http-api-spring-boot-tomcat">REST API Level 0 Mission - Spring Boot Tomcat Booster</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/vertx-runtime.html#mission-http-api-vertx">REST API Level 0 Mission - Eclipse Vert.x Booster</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/wf-swarm-runtime.html#mission-http-api-wf-swarm">REST API Level 0 Mission - WildFly Swarm Booster</link></simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+<section xml:id="mission-health-check-nodejs">
+<title>Health Check Mission - Node.js Booster</title>
+<simpara>Mission proficiency level:
+<link linkend="proficiency_foundational"><emphasis role="strong">Foundational</emphasis></link>.</simpara>
+<simpara>When you deploy an application, its important to know if it is available and if it can start handling incoming requests. Implementing the <emphasis>health check</emphasis> pattern allows you to monitor the health of an application, which includes if an application is available and whether it is able to service requests.</simpara>
+<simpara>In order to understand the health check pattern, you need first understand the following concepts:</simpara>
+<variablelist>
+<varlistentry>
+<term>Liveness</term>
+<listitem>
+<simpara>Liveness defines whether an application is running or not. Sometimes a running application moves into an unresponsive or stopped state and needs to be restarted. Checking for liveness helps determine whether or not an application needs to be restarted.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Readiness</term>
+<listitem>
+<simpara>Readiness defines whether a running application can service requests. Sometimes a running application moves into an error or broken state where it can no longer service requests. Checking readiness helps determine whether or not requests should continue to be routed to that application.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Fail-over</term>
+<listitem>
+<simpara>Fail-over enables failures in servicing requests to be handled gracefully. If an application fails to service a request, that request and future requests can then <emphasis>fail-over</emphasis> or be routed to another application, which is usually a redundant copy of that same application.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Resilience and Stability</term>
+<listitem>
+<simpara>Resilience and Stability enable failures in servicing requests to be handled gracefully. If an application fails to service a request due to connection loss, in a resilient system that request can be retried after the connection is re-established.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Probe</term>
+<listitem>
+<simpara>A probe is a Kuberbetes action that periodically performs diagnostics on a running container.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+<simpara>The purpose of this use case is to demonstrate the health check pattern through the use of probing. Probing is used to report the liveness and readiness or an application. In this use case, you configure an application which exposes an HTTP <literal>health</literal> endpoint to issue HTTP requests. If the container is alive, according to the liveness probe on the <literal>health</literal> HTTP endpoint, the management platform receives <literal>200</literal> as return code and no further action is required. If the <literal>health</literal> HTTP endpoint does not return a response, for example if the JVM is no longer running or a thread is blocked, then the application is not considered alive according to the liveness probe. In that case, the platform kills the pod corresponding to that application and recreates a new pod to restart the application.</simpara>
+<simpara>This use case also allows you to demonstrate and use a readiness probe. In cases where the application is running but is unable to handle requests, such as when the application returns a HTTP <literal>503</literal> response code during restart, this application is not considered ready according to the readiness probe. If the application is not considered ready by the readiness probe, requests are not routed to that application until it is considered ready according to the readiness probe.</simpara>
+<section xml:id="health_check_build_and_deploy_booster">
+<title>Build and Deploy Your Booster</title>
+<section xml:id="_deploy_your_booster_to_a_single_node_openshift_cluster_2">
+<title>Deploy your Booster to a Single-node OpenShift Cluster</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Before you can use a Single-node OpenShift Cluster, you need to have it installed, configured, and running. You can find more details in <link xlink:href="https://github.com/minishift/minishift#installation">Install and Configure a Single-node OpenShift Cluster</link>.</simpara>
+</listitem>
+<listitem>
+<simpara>Once you have a Single-node OpenShift Cluster running, check the console output for the URL you can use to access it.</simpara>
+<formalpara>
+<title>Example Console Output from a Single-node OpenShift Cluster Startup</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">...
+-- Removing temporary directory ... OK
+-- Server Information ...
+   OpenShift server started.
+   The server is accessible via web console at:
+       https://192.168.42.152:8443
+
+   You are logged in as:
+       User:     developer
+       Password: developer
+
+   To login as administrator:
+       oc login -u system:admin</programlisting>
+</para>
+</formalpara>
+</listitem>
+</orderedlist>
+<section xml:id="_deploy_using_launch_openshift_io_2">
+<title>Deploy Using launch.openshift.io</title>
+<simpara>Once you have the launch.openshift.io application <link xlink:href="/docs/minishift-installation.html">installed and configured</link>,
+navigate to it in your Single-node OpenShift Cluster and use it to create and launch your booster.</simpara>
+</section>
+<section xml:id="health_check_deploy-booster-osl-cli">
+<title>Deploy Using the <literal>oc</literal> CLI Client</title>
+<important>
+<simpara>You must still create a booster using launch.openshift.io before you can deploy it using the <literal>oc</literal> CLI client.</simpara>
+<simpara>If you choose <emphasis>I will build and run locally</emphasis>, unzip the ZIP file you downloaded. If you chose <emphasis>Use OpenShift Online to build and deploy</emphasis> you need to clone the GitHub repository created by launch.openshift.io.</simpara>
+</important>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Get your authentication token for using the <literal>oc</literal> CLI client with Single-node OpenShift Cluster. You can find this in the <emphasis>Command Line Tools</emphasis> section your Single-node OpenShift Cluster Web console.</simpara>
+</listitem>
+<listitem>
+<simpara>Authenticate your <literal>oc</literal> CLI client with Single-node OpenShift Cluster by using your authentication token.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc login OPENSHIFT_URL --token=MYTOKEN</programlisting>
+</listitem>
+<listitem>
+<simpara>Create a new project in your Single-node OpenShift Cluster.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc new-project MY_PROJECT_NAME</programlisting>
+</listitem>
+<listitem>
+<simpara>Navigate to the root directory of your booster.</simpara>
+</listitem>
+<listitem>
+<simpara>Use npm to start the deployment to Single-node OpenShift Cluster.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ npm install &amp;&amp; npm run openshift</programlisting>
+<simpara>These commands use the Nodeshift <literal>npm</literal> module to install Node.js and launch the S2I process on Single-node OpenShift Cluster and start the pod.</simpara>
+</listitem>
+<listitem>
+<simpara>Check the status of your booster and ensure your pod is running.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc get pods -w
+NAME                             READY     STATUS      RESTARTS   AGE
+MY_APP_NAME-1-qqa2d   1/1       Running   0           14s
+MY_APP_NAME-1-deploy  0/1       Completed 0           22s</programlisting>
+<simpara>Your <literal>health-check</literal> pod should have a status of <literal>Running</literal> once it&#8217;s fully deployed and started. You should also wait for your pod to be ready before proceeding, which is shown in the <literal>READY</literal> column. For example, <literal>PROJECT_NAME-1-aaaaa</literal> is ready when the <literal>READY</literal> column is <literal>1/1</literal>.</simpara>
+</listitem>
+<listitem>
+<simpara>Once your booster is deployed and started, determine its route.</simpara>
+<formalpara>
+<title>Example Route Information</title>
+<para>
+<programlisting language="bash" linenumbering="unnumbered">$ oc get routes
+NAME                   HOST/PORT                                            PATH      SERVICES               PORT      TERMINATION   WILDCARD
+MY_APP_NAME   MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME           MY_APP_NAME   8080                    None</programlisting>
+</para>
+</formalpara>
+<simpara>A pod&#8217;s route information gives you the base URL which you use to access it. In the example above, you would use <literal><link xlink:href="http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME">http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME</link></literal> as the base URL to access the applications.</simpara>
+</listitem>
+</orderedlist>
+</section>
+</section>
+</section>
+<section xml:id="_interact_with_the_unmodified_node_js_booster_2">
+<title>Interact with the Unmodified Node.js Booster</title>
+<simpara>Once you have the Node.js booster deployed, you will have a service called <literal>MY_APP_NAME</literal> running that exposes the following REST endpoints:</simpara>
+<variablelist>
+<varlistentry>
+<term>/api/greeting</term>
+<listitem>
+<simpara>This endpoint returns a JSON containing greeting of <literal>name</literal> parameter (or World as default value).</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>/api/killme</term>
+<listitem>
+<simpara>This endpoint forces the service to become unresponsive which is meant to simulate a failure in the service.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+<simpara>The following steps demonstrate how to verify the service availability and simulate a failure. This failure of an available service causes the OpenShift self-healing capabilities to be trigger on the service.</simpara>
+<note>
+<simpara>The below steps use the command line to interact with the service. Alternatively, you can use the web interface to perform the same steps (See #4).</simpara>
+</note>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Use <literal>curl</literal> to execute a <literal>GET</literal> request against the <literal>MY_APP_NAME</literal> service. You can also use a browser to do this.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ curl http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/greeting
+{"content":"Hello, World!"}</programlisting>
+</listitem>
+<listitem>
+<simpara>Invoke the <literal>/api/killme</literal> endpoint and verify the availability of the <literal>/api/greeting</literal> endpoint shortly after that.</simpara>
+<simpara>Invoking the <literal>/api/killme</literal> endpoint simulates an internal service failure and triggers the OpenShift self-healing capabilities. When invoking <literal>/api/greeting</literal> after simulating the failure, the service should return a HTTP status <literal>503</literal>.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ curl http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/killme
+Stopping HTTP server, Bye bye world !
+
+(followed by)
+
+$ curl http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/greeting
+Not online</programlisting>
+</listitem>
+<listitem>
+<simpara>Use <literal>oc get pods -w</literal> to continuously watch the self-healing capabilities in action.</simpara>
+<simpara>While invoking the service failure, you can watch the self-healing capabilities in action on OpenShift console, or with the <literal>oc</literal> client tools. You should see the number pods in a <literal>READY</literal> state move to zero (<literal>0/1</literal>) and after a short period (less than one minute) move back up to one (<literal>1/1</literal>). In addition the <literal>RESTARTS</literal> count increases every time you you invoke the service failure.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">$ oc get pods -w
+NAME                           READY     STATUS    RESTARTS   AGE
+MY_APP_NAME-1-26iy7   0/1       Running   5          18m
+MY_APP_NAME-1-26iy7   1/1       Running   5         19m</programlisting>
+</listitem>
+<listitem>
+<simpara>Optional: Use the web interface to invoke the service.</simpara>
+<simpara>Alternatively to the interaction using the terminal window, you can use the web interface provided by the service to invoke the different methods and watch the service move through the life cycle phases.</simpara>
+<programlisting language="bash" linenumbering="unnumbered">http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME</programlisting>
+</listitem>
+</orderedlist>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Optional: Use the web console to view the log output generated by the application at each stage of the self-healing process.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Navigate to your project.</simpara>
+</listitem>
+<listitem>
+<simpara>On the sidebar, click on <emphasis>Monitoring</emphasis>.</simpara>
+</listitem>
+<listitem>
+<simpara>In the upper right-hand corner of the screen, click on <emphasis>Events</emphasis> to display the log messages.</simpara>
+</listitem>
+<listitem>
+<simpara>Optional: Click <emphasis>View Details</emphasis> to display a detailed view of the Event log.</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+</orderedlist>
+<simpara>The health check application generates the following messages:</simpara>
+<informaltable frame="all" rowsep="1" colsep="1">
+<tgroup cols="2">
+<colspec colname="col_1" colwidth="50*"/>
+<colspec colname="col_2" colwidth="50*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Message</entry>
+<entry align="left" valign="top">Status</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><emphasis>Unhealthy</emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara>Readiness probe failed. This message is expected and indicates that the simulated failure of the <literal>/api/greeting</literal> endpoint has been detected and the self-healing process starts.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis>Killing</emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara>The unavailable Docker container running the service is being killed before being re-created.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis>Pulling</emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara>Downloading the latest version of docker image to re-create the container.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis>Pulled</emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara>Docker image downloaded successfully.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis>Created</emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara>Docker container has been successfully created</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis>Started</emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara>Docker container is ready to handle requests</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</section>
+<section xml:id="about_health_check">
+<title>Health Check Resources</title>
+<simpara>More background and related information on health checking can be found here:</simpara>
+<itemizedlist>
+<listitem>
+<simpara><link xlink:href="https://docs.openshift.com/container-platform/latest/dev_guide/application_health.html">Overview of Application Health in Openshift</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://kubernetes.io/docs/user-guide/walkthrough/k8s201/#health-checking">Health Checking in Kubernetes</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/">Kubernetes Liveness and Readiness Probes</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://kubernetes.io/docs/api-reference/v1/definitions/#_v1_probe">Kubernetes Probes</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/spring-boot-runtime.html#mission-health-check-spring-boot-tomcat">Health Check - Spring Boot Tomcat Booster</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/vertx-runtime.html#mission-health-check-vertx">Health Check - Eclipse Vert.x Booster</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="/docs/wf-swarm-runtime.html#mission-health-check-wf-swarm">Health Check - WildFly Swarm Booster</link></simpara>
+</listitem>
+</itemizedlist>
+</section>
+</section>
+</section>
+<appendix xml:id="_the_source_to_image_s2i_build_process">
+<title>The Source-to-Image (S2I) Build Process</title>
+<simpara><link xlink:href="https://docs.openshift.com/container-platform/3.4/architecture/core_concepts/builds_and_image_streams.html#source-build">Source-to-Image</link> (S2I) is a build tool that allows you to generate reproducible Docker-formatted container images from application sources hosted in an online SCM repository. With S2I builds you can easily deliver the latest version of your application into production while achieving shorter build times, decreased resource and network usage, improved security and a number of <link xlink:href="https://docs.openshift.com/container-platform/3.4/architecture/core_concepts/builds_and_image_streams.html#source-build">advantages</link>.</simpara>
+<simpara>You need to provide three key elements as the input to the S2I process:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>application sources (hosted in an online SCM repository, such as a Git Hub repo)</simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://docs.openshift.com/container-platform/3.4/creating_images/s2i.html#s2i-scripts">S2I scripts</link></simpara>
+</listitem>
+<listitem>
+<simpara>the Builder image, which serves as the foundation for the assembled image and provides the ecosystem within which your application is running</simpara>
+</listitem>
+</itemizedlist>
+<simpara>The process combines these inputs by injecting your application source and dependencies into the Builder image according to instructions specified in the S2I script and generates a Docker-formatted container image that runs the assembled application. For more detail, check the <link xlink:href="https://docs.openshift.com/container-platform/3.4/creating_images/s2i.html">S2I build requirements</link> and <link xlink:href="https://docs.openshift.com/enterprise/3.0/dev_guide/builds.html#source-to-image-strategy-options">build options</link> sections of the <link xlink:href="https://docs.openshift.com/container-platform/3.4/welcome/index.html">OpenShift Container Platform documentation</link>.</simpara>
+</appendix>
+<appendix xml:id="breakdown_pom">
+<title>Breakdown of Package.json Properties</title>
+<formalpara>
+<title><link xlink:href="https://github.com/bucharest-gold/nodejs-rest-http/blob/master/package.json">nodejs-rest-http/package.json</link></title>
+<para>
+<programlisting language="json" linenumbering="unnumbered">{
+  "name": "nodejs-rest-http",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "PORT=8080 node ./bin/www", <co xml:id="CO1-1"/>
+    "openshift": "nodeshift --osc.strictSSL=false", <co xml:id="CO1-2"/>
+    "test": "tape test/*-test.js" <co xml:id="CO1-3"/>
+  },
+  "files": [ <co xml:id="CO1-4"/>
+    "package.json",
+    "app.js",
+    "public",
+    "bin"
+  ],
+  "dependencies": { <co xml:id="CO1-5"/>
+    "body-parser": "~1.17.1",
+    "debug": "~2.6.3",
+    "express": "^4.15.3"
+  },
+  "devDependencies": { <co xml:id="CO1-6"/>
+    "nodeshift": "^0.3.0",
+    "supertest": "^3.0.0",
+    "tape": "^4.6.3"
+  }
+}</programlisting>
+</para>
+</formalpara>
+<calloutlist>
+<callout arearefs="CO1-1">
+<para>A <literal>npm</literal> script for starting this application.  Run with <literal>npm start</literal>.</para>
+</callout>
+<callout arearefs="CO1-2">
+<para>A <literal>npm</literal> script for deploying this application to Single-node OpenShift Cluster.  Run with <literal>npm run openshift</literal>.  The <literal>osc.strictSSL</literal> option allows us to deploy to Single-node OpenShift Cluster instances with self-sign certificates.</para>
+</callout>
+<callout arearefs="CO1-3">
+<para>A <literal>npm</literal> script for running unit tests.  Run with <literal>npm run test</literal>.</para>
+</callout>
+<callout arearefs="CO1-4">
+<para>Specifies the files to be included in the binary that is uploaded to Single-node OpenShift Cluster.</para>
+</callout>
+<callout arearefs="CO1-5">
+<para>A list of dependencies to be installed from the <literal>npm</literal> registry.</para>
+</callout>
+<callout arearefs="CO1-6">
+<para>A list of development dependencies to be installed from the <literal>npm</literal> registry.  These are used for testing and deployment to Single-node OpenShift Cluster.</para>
+</callout>
+</calloutlist>
+</appendix>
+<appendix xml:id="nodejs-additional-resources">
+<title>Additional Resources</title>
+<itemizedlist>
+<listitem>
+<simpara><link xlink:href="https://nodejs.org/">Node.js Home Page</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xlink:href="https://www.npmjs.com/">npm Home Page</link></simpara>
+</listitem>
+</itemizedlist>
+</appendix>
+<appendix xml:id="proficiency_levels">
+<title>Proficiency Levels</title>
+<simpara>Each mission available on launch.openshift.io teaches you about certain topics, but requires certain minimum knowledge, which varies by mission. For clarity, the minimum requirements and concepts are organized in several proficiency levels. In addition to the levels described in this chapter, there can be additional requirements with each mission, specific to its aim or the technologies it uses.</simpara>
+<bridgehead xml:id="proficiency_foundational" renderas="sect2">Foundational</bridgehead>
+<simpara>The missions rated at Foundational proficiency generally require no prior knowledge of the subject matter; they provide general awareness and demonstration of key elements, concepts, and terminology. There are no special requirements except those directly mentioned in the description of the mission.</simpara>
+<bridgehead xml:id="proficiency_advanced" renderas="sect2">Advanced</bridgehead>
+<simpara>When using Advanced missions, the assumption is that you are familiar with the common concepts and terminology of the subject area of the mission in addition to Kubernetes and OpenShift. You must also be able to perform basic tasks on your own, for example configure services and applications, or administer networks. If a service is needed by the mission, but configuring it is not in the scope of the mission, the assumption is that you have the knowledge to to properly configure it, and only the resulting state of the service is described in the documentation.</simpara>
+<bridgehead xml:id="proficiency_expert" renderas="sect2">Expert</bridgehead>
+<simpara>Expert missions require the highest level of knowledge of the subject matter. You are expected to perform many tasks based on feature-based documentation and manuals, and the documentation is aimed at most complex scenarios.</simpara>
+</appendix>
+</article>
