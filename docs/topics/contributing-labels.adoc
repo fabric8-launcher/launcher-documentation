@@ -1,7 +1,7 @@
 
 = Using GitHub Labels
 
-In the link:https://github.com/openshiftio/appdev-documentation[openshiftio/appdev-documentation] repository, labels are an important way of communicating the status of issues and pull requests. Please use them accordingly to help maintain efficient work environment.
+In the link:{link-repo-docs}[{repo-docs-name}] repository, labels are an important way of communicating the status of issues and pull requests. Please use them accordingly to help maintain efficient work environment.
 
 There are several groups of labels based on their meaning:
 
@@ -112,12 +112,12 @@ Use the following labels to describe what runtimes, mission, or components an is
 |===
 | Label | Description
 
-| `Mission \| Circuit Breaker` | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-Circuit-Breaker[Circuit Breaker] Mission.
-| `Mission \| CRUD` | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-Relational-Database-Backend[Relational Database Backend] Mission.
-| `Mission \| ConfigMap` | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-ConfigMap[ConfigMap] Mission.
-| `Mission \| Health Check` | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-Health-Check[Health Check] Mission.
-| `Mission \| REST API` | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-HTTP-API[REST API Level 0] Mission.
-| `Mission \| SSO` | The issue or pull request relates to the link:https://github.com/openshiftio/appdev-documentation/wiki/Mission:-Secured-HTTP-API[Secured] Mission.
+| `Mission \| Circuit Breaker` | The issue or pull request relates to the link:{link-repo-docs}wiki/Mission:-Circuit-Breaker[Circuit Breaker] Mission.
+| `Mission \| CRUD` | The issue or pull request relates to the link:{link-repo-docs}wiki/Mission:-Relational-Database-Backend[Relational Database Backend] Mission.
+| `Mission \| ConfigMap` | The issue or pull request relates to the link:{link-repo-docs}wiki/Mission:-ConfigMap[ConfigMap] Mission.
+| `Mission \| Health Check` | The issue or pull request relates to the link:{link-repo-docs}wiki/Mission:-Health-Check[Health Check] Mission.
+| `Mission \| REST API` | The issue or pull request relates to the link:{link-repo-docs}wiki/Mission:-HTTP-API[REST API Level 0] Mission.
+| `Mission \| SSO` | The issue or pull request relates to the link:{link-repo-docs}wiki/Mission:-Secured-HTTP-API[Secured] Mission.
 |===
 
 .Component Labels
@@ -131,4 +131,3 @@ Use the following labels to describe what runtimes, mission, or components an is
 | `Component \| Frontend` | The issue or pull request relates to the frontend HTMLs etc.
 | `Component \| Infrastructure` | The issue or pull request relates to publishing, building, CI, etc.
 |===
-

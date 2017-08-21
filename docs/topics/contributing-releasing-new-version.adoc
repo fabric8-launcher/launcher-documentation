@@ -12,8 +12,8 @@ This section contains all information you need to release a new version of the d
 . Update the following lines with the latest version:
 +
 --
-* link:https://github.com/openshiftio/appdev-documentation/blob/master/scripts/deploy_launchpad_mission.sh#L16[Catalog Version in Build Script]
-* link:https://github.com/openshiftio/appdev-documentation/blob/master/docs/topics/minishift-install-create-launchpad-app-script.adoc#L33[Update Install Instructions when using the `-v` option]
+* link:{link-repo-docs}blob/master/scripts/deploy_launchpad_mission.sh#L16[Catalog Version in Build Script]
+* link:{link-repo-docs}blob/master/docs/topics/minishift-install-create-launchpad-app-script.adoc#L33[Update Install Instructions when using the `-v` option]
 
 Usually, update version `vX` to `vX+1`, for example `v3` to `v4`.
 --
@@ -49,7 +49,7 @@ Replace `$REMOTE` with the name of the upstream remote.
 .. Rename the _Current Development_ milestone to the current date in the _YYYY-MM-DD_ format.
 .. Create a new milestone called _Current Development._
 .. Move all open issues from the old milestone to _Current Development:_
-... Open the recently closed milestone from the link:https://github.com/openshiftio/appdev-documentation/milestones[list of milestones].
+... Open the recently closed milestone from the link:{link-repo-docs}milestones[list of milestones].
 ... Ensure you are only seeing open issues by clicking _Open._
 ... Select all issues.
 ... In the top right corner of the table, click _Milestone_ -> _Current Development_ to assign the selected issues to the current milestone.
