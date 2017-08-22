@@ -17,6 +17,7 @@ docs/topics/readme/** @rhoads-zach
 docs/topics/templates/** @rhoads-zach
 docs/topics/getting-started* @rhoads-zach
 docs/topics/crud-mission* @inoxx03
+docs/topics/circuit-breaker-mission* @inoxx03  
 docs/topics/contributing* @tradej
 
 CHANGELOG.adoc @inoxx03
