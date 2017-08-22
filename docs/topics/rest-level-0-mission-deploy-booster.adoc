@@ -45,7 +45,7 @@ ifdef::http-api-nodejs[]
 $ npm install && npm run openshift
 ----
 +
-These commands use the Nodeshift `npm` module to install {NodeJS} and launch the S2I process on {OpenShiftLocal} and start the pod.
+These commands install any missing package dependencies, then using the Nodeshift package, launch the S2I process on {OpenShiftLocal} to start the pod.
 endif::http-api-nodejs[]
 
 . Check the status of your booster and ensure your pod is running.
