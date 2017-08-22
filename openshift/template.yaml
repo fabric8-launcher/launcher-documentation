@@ -4,7 +4,7 @@ metadata:
   name: appdev-documentation
   annotations:
     openshift.io/display-name: "Appdev - Documentation"
-    description: This application contains the launch.openshift.io documentation
+    description: This application contains the https://developers.redhat.com/launch documentation
     tags: instant-app,launchpad, documentation
     iconClass: icon-shadowman
     template.openshift.io/long-description: This application contains the Appdev documentation

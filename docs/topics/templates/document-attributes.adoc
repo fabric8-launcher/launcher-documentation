@@ -22,7 +22,7 @@
 :SpringBoot: Spring Boot Tomcat
 :VertX: Eclipse Vert.x
 :NodeJS: Node.js
-:launcher: launch.openshift.io
+:launcher: developers.redhat.com/launch
 :RHSSO: Red Hat SSO
 
 :app-name: MY_APP_NAME
@@ -120,7 +120,7 @@
 
 :link-rhsso: https://github.com/obsidian-toaster-quickstarts/redhat-sso
 :link-launcher-yaml: /latest-launcher-template
-:link-launcher-oso: https://launch.openshift.io/wizard/
+:link-launcher-oso: https://developers.redhat.com/launch
 
 // Minishift route URL e.g: 192.168.42.152.nip.io
 :osl-route-hostname: LOCAL_OPENSHIFT_HOSTNAME

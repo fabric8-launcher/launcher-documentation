@@ -56,4 +56,4 @@ When all services are running, you are ready to use the {launcher} application.
 +
 A new browser tab will open with the {launcher} application.
 
-You are now running on your local cloud the same service we will be hosting over at `launch.openshift.io`. See the link:{link-getting-started-guide}#_continuous_delivery_using_single_node_openshift_cluster[{getting-started-guide-name}] for more details on using the {launcher} application to launch mission booster applications.
+You are now running on your local cloud the same service we will be hosting over at `{link-launcher-oso}`. See the link:{link-getting-started-guide}#_continuous_delivery_using_single_node_openshift_cluster[{getting-started-guide-name}] for more details on using the {launcher} application to launch mission booster applications.
