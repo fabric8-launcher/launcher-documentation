@@ -53,6 +53,8 @@ include::topics/configmap-mission-resources.adoc[leveloffset=+3]
 :crud-wf-swarm-mission:
 //{crud-wf-swarm-rest-booster-guide-name}
 
+include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
+
 include::topics/crud-mission-intro.adoc[leveloffset=+3]
 
 // design tradeoffs
@@ -87,6 +89,8 @@ include::topics/health-check-mission-resources.adoc[leveloffset=+3]
 === {mission-circuit-breaker-wf-swarm-guide-name}
 :circuit-breaker-wf-swarm:
 
+include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
+
 // circuit breaker intro
 include::topics/circuit-breaker-mission-intro.adoc[leveloffset=+3]
 
@@ -115,6 +119,8 @@ include::topics/circuit-breaker-mission-resources.adoc[leveloffset=+3]
 :runtime-name: {WildFlySwarm}
 // This is used by the secured-mission-common-interaction.adoc to include the runtime specific information
 :runtime-tag: wf
+
+include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
 include::topics/secured-mission-intro-paragraph.adoc[leveloffset=+3]
 

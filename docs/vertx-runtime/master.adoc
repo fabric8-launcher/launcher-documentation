@@ -54,6 +54,8 @@ include::topics/configmap-mission-resources.adoc[leveloffset=+3]
 :crud-vertx-mission:
 :vertx-runtime-name: {VertX}
 
+include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
+
 include::topics/crud-mission-intro.adoc[leveloffset=+3]
 
 include::topics/crud-mission-design-tradeoffs.adoc[leveloffset=+3]
@@ -86,6 +88,8 @@ include::topics/health-check-mission-resources.adoc[leveloffset=+3]
 === {mission-circuit-breaker-vertx-guide-name}
 :circuit-breaker-vertx:
 
+include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
+
 // circuit breaker intro
 include::topics/circuit-breaker-mission-intro.adoc[leveloffset=+3]
 //TODO
@@ -117,6 +121,8 @@ include::topics/circuit-breaker-mission-resources.adoc[leveloffset=+3]
 :runtime-name: {VertX}
 // This is used by the secured-mission-common-interaction.adoc to include the runtime specific information
 :runtime-tag: vx
+
+include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
 include::topics/secured-mission-intro-paragraph.adoc[leveloffset=+3]
 

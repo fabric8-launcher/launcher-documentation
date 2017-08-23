@@ -57,6 +57,8 @@ include::topics/configmap-mission-resources.adoc[leveloffset=+3]
 //redefine this for spring boot
 :crud-spring-boot-tomcat-mission:
 
+include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
+
 include::topics/crud-mission-intro.adoc[leveloffset=+3]
 
 // design tradeoffs
@@ -92,6 +94,8 @@ include::topics/health-check-mission-resources.adoc[leveloffset=+3]
 === {mission-circuit-breaker-spring-boot-tomcat-guide-name}
 :circuit-breaker-spring-boot-tomcat:
 
+include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
+
 // circuit breaker intro
 include::topics/circuit-breaker-mission-intro.adoc[leveloffset=+3]
 
@@ -117,6 +121,8 @@ include::topics/circuit-breaker-mission-resources.adoc[leveloffset=+3]
 :runtime-name: {SpringBoot}
 // This is used by the secured-mission-common-interaction.adoc to include the runtime specific information
 :runtime-tag: sb
+
+include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
 include::topics/secured-mission-intro-paragraph.adoc[leveloffset=+3]
 

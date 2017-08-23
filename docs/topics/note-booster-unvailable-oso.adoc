@@ -1,0 +1,1 @@
+IMPORTANT: This booster is not currently available on {OpenShiftOnline} but you can still run it using a {OpenShiftLocal}.
