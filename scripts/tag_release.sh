@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Not tagging if HEAD is already tagged
 if git name-rev --tags --name-only --no-undefined HEAD &>/dev/null; then
