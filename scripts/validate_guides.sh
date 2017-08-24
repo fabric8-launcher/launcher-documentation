@@ -1,9 +1,16 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # Builds all books into DocBook 5 XML and validates them using XMLlint.
 failed_builds=""
 failed_validations=""
 exit_status=0
+
+for binary in asciidoctor xmllint; do
+    if ! $binary --version &>/dev/null; then
+        echo The "$binary" binary is required for validation, please install it.
+        exit 1
+    fi
+done
 
 echo Running tests...
 for book in docs/*/master.adoc; do
@@ -54,9 +61,9 @@ if test -n "$failed_validations"; then
 fi
 
 if (($exit_status)); then
-    echo -e "\nTesting failed."
+    echo -e "\nTesting failed.\n"
 else
-    echo -e "\nTesting passed."
+    echo -e "\nTesting passed.\n"
 fi
 
 exit $exit_status
