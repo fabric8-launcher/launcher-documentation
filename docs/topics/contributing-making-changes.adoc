@@ -7,6 +7,7 @@ When making contributions, follow the standard link:https://guides.github.com/in
 == Prerequisites
 
 * A GitHub account with GPG. For more information, see xref:_accounts[].
+* The {repo-docs-name} repository cloned and xref:_setting_up_git_hooks[Git hooks set up].
 
 [discrete]
 == Procedure
