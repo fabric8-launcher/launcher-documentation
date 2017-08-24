@@ -1,0 +1,31 @@
+= ${mission} - ${runtime} Booster
+
+== Interact with your Booster in Stage
+From your workspace, click _Stage - 1.0.1_ under _Applications_. This will open the stage version of your booster that you can interact with. For more details on interacting with this booster, see the link:${guideURL}[${runtime} Runtime Guide].
+
+
+== Promote your Booster to Run
+* From your workspace, click _${targetRepository}_ under _Pipelines_
+* Click _Input Required_ under _Approve_
+* Click _Promote_.
+* Click the blue link next to _Rollout to Run_.
+* Return to your workspace and click _Run - 1.0.1_ under _Applications_ to interact with the _Run_ version of this booster.
+
+== Edit your Booster and Promote the Changes
+* Click _Create_ at the top of the page.
+* Click _Create Workspace_.
+* Click _Open_.
++
+NOTE: This will create a popup window so you may have to enable popups in your browser.
+
+* Make a change to your booster (e.g. edit `${fileLocation}`).
+* Click _Git_ -> _Add to Index_ to stage your change.
+* Click _Git_ -> _Commit_ to commit your change.
+* Click _Git_ -> _Remotes_ -> _Push_ to push your changes back to GitHub.
+* Return to your workspace and observe a new pipeline has started. Once complete click on _Stage - 1.0.2_ under _Applications_ and observe your changes.
+* Click on _Run - 1.0.1_ under _Applications_ and observe that your changes *DO NOT* appear.
+* Follow the same steps above to promote your booster to _Run_.
+* Click on _Run - 1.0.2_ under _Applications_ and observe that your changes appear.
+
+
+You can learn more about this booster and rest of the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].
