@@ -98,6 +98,7 @@ Caused by: javax.ws.rs.NotAuthorizedException: HTTP 401 Unauthorized
 	... 2 more
 ----
 
+////
 .Authentication with admin User
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -115,6 +116,8 @@ Exception in thread "main" javax.ws.rs.ForbiddenException: HTTP 403 Forbidden
 	at client.GreetingAuthzClient.getGreeting(GreetingAuthzClient.java:139)
 	at client.GreetingAuthzClient.main(GreetingAuthzClient.java:62)
 ----
+
+
 
 .Authentication with admin User using `debug 2`
 [source,bash,options="nowrap",subs="attributes+"]
@@ -147,3 +150,4 @@ Exception in thread "main" javax.ws.rs.ForbiddenException: HTTP 403 Forbidden
 	at client.GreetingAuthzClient.getGreeting(GreetingAuthzClient.java:171)
 	at client.GreetingAuthzClient.main(GreetingAuthzClient.java:79)
 ----
+////
