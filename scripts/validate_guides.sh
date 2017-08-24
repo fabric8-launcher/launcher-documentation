@@ -6,7 +6,8 @@ failed_validations=""
 exit_status=0
 
 echo Running tests...
-for dir in $(dirname docs/*/master.adoc); do
+for book in docs/*/master.adoc; do
+    dir="$(dirname $book)"
     echo -e "Processing $dir"
     pushd $dir >/dev/null
 
