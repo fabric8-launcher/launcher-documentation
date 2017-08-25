@@ -12,4 +12,5 @@ Guardfile
 .settings
 *.orig
 *.swp
-
+.github_token
+**/CHANGELOG.temp
