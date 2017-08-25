@@ -1281,13 +1281,6 @@
         </pluginManagement>
       </build>
     </profile>
-
-    <profile>
-      <id>javadocs</id>
-      <modules>
-        <module>public-javadoc</module>
-      </modules>
-    </profile>
   </profiles>
 </project>
 <!--
