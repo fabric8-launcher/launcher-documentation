@@ -3,6 +3,8 @@
 == Interact with your Booster in Stage
 From your workspace, click _Stage - 1.0.1_ under _Applications_. This will open the stage version of your booster that you can interact with. For more details on interacting with this booster, see the link:${guideURL}[${runtime} Runtime Guide].
 
+NOTE: Deploying your booster to Stage may take a few minutes to complete.
+
 
 == Promote your Booster to Run
 * From your workspace, click _${targetRepository}_ under _Pipelines_
@@ -11,7 +13,7 @@ From your workspace, click _Stage - 1.0.1_ under _Applications_. This will open 
 * Click the blue link next to _Rollout to Run_.
 * Return to your workspace and click _Run - 1.0.1_ under _Applications_ to interact with the _Run_ version of this booster.
 
-== Edit your Booster and Promote the Changes
+== Edit your Booster
 * Click _Create_ at the top of the page.
 * Click _Create Workspace_.
 * Click _Open_.
@@ -19,9 +21,11 @@ From your workspace, click _Stage - 1.0.1_ under _Applications_. This will open 
 NOTE: This will create a popup window so you may have to enable popups in your browser.
 
 * Make a change to your booster (e.g. edit `${fileLocation}`).
+* Click the _Run_ button (the triangle in the top next to the _Debug_ button) and choose _Run_ to build and deploy your booster in a temporary Che environment. Use the _Preview_ URL at the top of the log window. Observe that your changes appear.
+
+== Promote the Changes
 * Click _Git_ -> _Add to Index_ to stage your change.
-* Click _Git_ -> _Commit_ to commit your change.
-* Click _Git_ -> _Remotes_ -> _Push_ to push your changes back to GitHub.
+* Click _Git_ -> _Commit_ to commit your change. Ensure _Push to Origin_ is checked before clicking _Commit_.
 * Return to your workspace and observe a new pipeline has started. Once complete click on _Stage - 1.0.2_ under _Applications_ and observe your changes.
 * Click on _Run - 1.0.1_ under _Applications_ and observe that your changes *DO NOT* appear.
 * Follow the same steps above to promote your booster to _Run_.
