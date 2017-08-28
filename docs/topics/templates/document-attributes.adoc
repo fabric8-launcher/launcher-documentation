@@ -51,6 +51,7 @@
 :mission-crud-spring-boot-tomcat-guide-name: Relational Database Backend Mission - {SpringBoot} Booster
 :mission-crud-vertx-guide-name: Relational Database Backend Mission - {VertX} Booster
 :mission-crud-wf-swarm-guide-name: Relational Database Backend Mission - {WildFlySwarm} Booster
+:mission-crud-nodejs-guide-name: Relational Database Backend Mission - {NodeJS} Booster
 
 
 :openshift-local-guide-name: Install and Configure a {OpenShiftLocal}
@@ -107,6 +108,7 @@
 
 :link-mission-http-api-nodejs: {link-nodejs-runtime-guide}#mission-http-api-nodejs
 :link-mission-health-check-nodejs: {link-nodejs-runtime-guide}#mission-health-check-nodejs
+:link-mission-crud-nodejs: {link-nodejs-runtime-guide}#mission-crud-nodejs
 
 :link-oso-auth: OPENSHIFT_URL
 :link-osl-auth: LOCAL_OPENSHIFT_URL
@@ -136,7 +138,7 @@
 
 // Issue #489
 // externalize `github.com/appdev-documentation` repo references
-// changes NOT applicable to CHANGELOG and booster-specific README files. 
+// changes NOT applicable to CHANGELOG and booster-specific README files.
 :repo-docs-name: appdev-documentation
 :link-repo-docs: https://github.com/openshiftio/appdev-documentation/
 

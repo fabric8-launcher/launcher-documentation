@@ -44,7 +44,8 @@ my-database-1-deploy   0/1       Completed   0         53s
 +
 Your `my-database` pod should have a status of `Running` and should be indicated as ready once it is fully deployed and started.
 
-. Use maven to start the deployment to your {OpenShiftLocal}.
+ifndef::http-api-nodejs[]
+. Use maven to start the deployment to {OpenShiftLocal}.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -52,6 +53,18 @@ $ mvn clean fabric8:deploy -Popenshift
 ----
 +
 This command uses the Fabric8 Maven Plugin to launch the S2I process on your {OpenShiftLocal} and to start the pod.
+endif::http-api-nodejs[]
+
+ifdef::http-api-nodejs[]
+. Use `npm` to start the deployment to {OpenShiftLocal}.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ npm install && npm run openshift
+----
++
+These commands use the Nodeshift `npm` module to install your dependencies and launch the S2I process on your {OpenShiftLocal} and start the pod.
+endif::http-api-nodejs[]
 
 
 . Check the status of your booster and ensure your pod is running.
