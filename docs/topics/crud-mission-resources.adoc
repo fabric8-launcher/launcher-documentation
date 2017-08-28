@@ -9,7 +9,14 @@ the Design of Network-based Software Architectures - Representational State Tran
 * link:https://speakerdeck.com/glaforge/the-never-ending-rest-api-design-debate[The never ending REST API design debase]
 * link:http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven[REST APIs must be Hypertext driven]
 * link:https://martinfowler.com/articles/richardsonMaturityModel.html[Richardson Maturity Model]
-* link:https://www.jcp.org/en/jsr/detail?id=311[JSR 311: JAX-RS: The JavaTM API for RESTful Web Services]
+
+ifndef::http-api-nodejs[]
+  * link:https://www.jcp.org/en/jsr/detail?id=311[JSR 311: JAX-RS: The JavaTM API for RESTful Web Services]
+endif::http-api-nodejs[]
+
+ifdef::http-api-nodejs[]
+  * link:https://expressjs.com/[Express Web Framework]
+endif::http-api-nodejs[]
 
 ifdef::http-api-spring-boot-tomcat[]
 * link:https://spring.io/guides/gs/rest-service/[Building a RESTful Service with Spring]
@@ -35,3 +42,7 @@ endif::http-api-vertx[]
 ifndef::http-api-wf-swarm[]
 * link:{link-mission-crud-wf-swarm}[{mission-crud-wf-swarm-guide-name}]
 endif::http-api-wf-swarm[]
+
+ifndef::http-api-nodejs[]
+  * link:{link-mission-crud-nodejs}[{mission-crud-nodejs-guide-name}]
+endif::http-api-nodejs[]
