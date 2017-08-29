@@ -162,12 +162,12 @@ footer{background-color:#010101;font-size:12px;height:60px;padding:15px 0;width:
           </div>
         </a>
       </div>
-      
+
       <div class="col-md-4">
         <a href="/docs/nodejs-runtime.html" target="_blank">
           <div class="card-pf card-pf-view card-pf-view-select card-pf-view-single-select">
             <div class="card-pf-body">
-              <div class="ribbon ribbon-top-right"><span>tech preview</span></div>
+              <div class="ribbon ribbon-top-right"><span>Technology Preview</span></div>
               <div class="card-pf-top-element">
                 <div class="fa icon node card-pf-icon-circle"></div>
               </div>
