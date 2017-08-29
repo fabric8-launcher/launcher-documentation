@@ -144,3 +144,7 @@
 
 :docs-name: appdev.openshift.io
 :link-docs: https://appdev.openshift.io
+
+// stage environment URLs for Docs and Launcher
+:link-docs-stage: https://appdev.prod-preview.openshift.io/
+:link-launcher-stage: https://launch.prod-preview.openshift.io/
