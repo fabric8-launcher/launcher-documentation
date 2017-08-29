@@ -9,6 +9,8 @@ include::topics/templates/document-attributes.adoc[]
 
 _TBD_
 
+You can preview the latest state of {launcher} by navigating to the link:{launcher-stage}[stage build] of {launcher}.
+
 == File a Code Issue
 
 _TBD_
