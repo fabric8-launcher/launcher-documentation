@@ -15,7 +15,7 @@ Resilience and Stability::
 Resilience and Stability enable failures in servicing requests to be handled gracefully. If an application fails to service a request due to connection loss, in a resilient system that request can be retried after the connection is re-established.
 
 Probe::
-A probe is a Kuberbetes action that periodically performs diagnostics on a running container.
+A probe is a Kubernetes action that periodically performs diagnostics on a running container.
 
 
 The purpose of this use case is to demonstrate the health check pattern through the use of probing. Probing is used to report the liveness and readiness or an application. In this use case, you configure an application which exposes an HTTP `health` endpoint to issue HTTP requests. If the container is alive, according to the liveness probe on the `health` HTTP endpoint, the management platform receives `200` as return code and no further action is required. If the `health` HTTP endpoint does not return a response, for example if the JVM is no longer running or a thread is blocked, then the application is not considered alive according to the liveness probe. In that case, the platform kills the pod corresponding to that application and recreates a new pod to restart the application.
