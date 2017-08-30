@@ -73,3 +73,7 @@ NAME                   HOST/PORT                                            PATH
 ----
 +
 A pod's route information gives you the base URL which you use to access it. In the example above, you would use `http://{app-name}-{project-name}.{osl-route-hostname}` as the base URL to access the applications.
+
+
+
+include::booster-deploy-openshift-online.adoc[leveloffset=+1]

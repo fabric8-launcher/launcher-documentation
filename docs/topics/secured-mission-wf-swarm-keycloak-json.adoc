@@ -17,4 +17,4 @@ The adapter configuration is defined in the following file.
 }
 ----
 
-NOTE: You will determine the value for ${sso.auth.server.url} in the <<SSO_AUTH_SERVER_URL>> step of <<mission-secured-deploy-rhsso-zip>>.
+NOTE: You will determine the value for ${sso.auth.server.url} in the xref:SSO_AUTH_SERVER_URL[Determine the SSO_AUTH_SERVER_URL value] step of <<mission-secured-deploy-rhsso-zip>>.
