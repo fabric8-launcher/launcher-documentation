@@ -2,6 +2,38 @@
 
 = Build and Deploy Your Booster
 
-include::mission-secured-deploy-rhsso-zip.adoc[leveloffset=+1]
+== Deploy your Booster to a {OpenShiftLocal}
 
-include::mission-secured-deploy-rhsso-cd.adoc[leveloffset=+1]
+=== Deploy the Secured Booster using your {launcher} Application
+
+. Navigate to your {launcher} application running on your {OpenShiftLocal} and use it to create and launch your booster.
+
+. Clone your project from GitHub.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git clone git@github.com:USERNAME/PROJECT-NAME.git
+----
+
+. Build your booster's project.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ cd PROJECT-NAME/sso
+$ mvn install
+$ cd ..
+----
+
+. Login with `oc` to your {OpenShiftLocal}.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc login 
+$ oc project PROJECT-NAME
+----
+
+
+include::mission-secured-deploy-rhsso-zip.adoc[leveloffset=+2]
+
+
+include::booster-deploy-openshift-online.adoc[leveloffset=+1]
