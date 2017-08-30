@@ -9,7 +9,7 @@ The Booster application exposes an HTTP API, which provides endpoints that allow
 * Receive a response formatted as a JSON array containing the list of all fruits in the database.
 * Execute and HTTP `GET` request on the `api/fruits/*` endpoint while passing in a valid item ID as an argument.
 * Receive a response in JSON format containing the name of the fruit with the given ID. If no item matches the specified ID, the call results in an HTTP error 404.
-* Execute an HTTP `POST` request on the `api/fruits/*` endpoint, passing in a valid ID as an argument, to create a new entry in the database.
+* Execute an HTTP `POST` request on the `api/fruits` endpoint passing in a valid `name` value to create a new entry in the database.
 * Execute an HTTP `PUT` request on the `api/fruits/*` endpoint passing in a valid ID and a name as an argument. This updates the name of the item with the given ID to match the name specified in your request.
 * Execute an HTTP `DELETE` request on the `api/fruits/*` endpoint, passing in a valid ID as an argument. This removes the item with the specified ID from the database and returns an HTTP code `204` (No Content) as a response. If you pass in an invalid ID, the call results in an HTTP error `404`.
 
