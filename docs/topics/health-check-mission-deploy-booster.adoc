@@ -55,11 +55,11 @@ endif::http-api-nodejs[]
 ----
 $ oc get pods -w
 NAME                             READY     STATUS      RESTARTS   AGE
-{app-name}-1-qqa2d   1/1       Running   0           14s
+{app-name}-1-aaaaa   1/1       Running   0           14s
 {app-name}-1-deploy  0/1       Completed 0           22s
 ----
 +
-Your `health-check` pod should have a status of `Running` once it's fully deployed and started. You should also wait for your pod to be ready before proceeding, which is shown in the `READY` column. For example, `PROJECT_NAME-1-aaaaa` is ready when the `READY` column is `1/1`.
+Your `{app-name}-1-aaaaa` pod should have a status of `Running` once it's fully deployed and started. You should also wait for your pod to be ready before proceeding, which is shown in the `READY` column. For example, `PROJECT_NAME-1-aaaaa` is ready when the `READY` column is `1/1`.
 
 
 . Once your booster is deployed and started, determine its route.

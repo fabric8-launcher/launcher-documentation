@@ -41,13 +41,13 @@ This command uses the Fabric8 Maven Plugin to launch the S2I process on your {Op
 ----
 $ oc get pods -w
 NAME                            READY     STATUS      RESTARTS  AGE
-{app-name}-greeting-1-p2x5m     1/1       Running   0           17s
+{app-name}-greeting-1-aaaaa     1/1       Running   0           17s
 {app-name}-greeting-1-deploy    0/1       Completed 0           22s
-{app-name}-name-1-7mffj         1/1       Running   0           14s
+{app-name}-name-1-aaaaa         1/1       Running   0           14s
 {app-name}-name-1-deploy        0/1       Completed 0           28s
 ----
 +
-Both the `{app-name}-greeting` and `{app-name}-name` pods should have a status of `Running` once they are fully deployed and started. You should also wait for your pods to be ready before proceeding, which is shown in the `READY` column. For example, `PROJECT_NAME-1-aaaaa` is ready when the `READY` column is `1/1`.
+Both the `{app-name}-greeting-1-aaaaa` and `{app-name}-name-1-aaaaa` pods should have a status of `Running` once they are fully deployed and started. You should also wait for your pods to be ready before proceeding, which is shown in the `READY` column. For example, `PROJECT_NAME-1-aaaaa` is ready when the `READY` column is `1/1`.
 // :app-name: springboot-cb
 
 . Once your booster is deployed and started, determine its route.
