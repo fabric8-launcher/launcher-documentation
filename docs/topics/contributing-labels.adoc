@@ -130,4 +130,5 @@ Use the following labels to describe what runtimes, mission, or components an is
 | `Component \| Minishift Guide` | The issue or pull request relates to the Minishift Installation Guide.
 | `Component \| Frontend` | The issue or pull request relates to the frontend HTMLs etc.
 | `Component \| Infrastructure` | The issue or pull request relates to publishing, building, CI, etc.
+| `Component \| Release Notes` | The issue or pull request relates to information to be included in the Release Notes.
 |===
