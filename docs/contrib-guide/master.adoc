@@ -7,7 +7,9 @@ include::topics/templates/document-attributes.adoc[]
 
 == {launcher} Development
 
-_TBD_
+This chapter contains information about developing your own runtimes or boosters, contributing changes to existing ones, and improving {launcher}.
+
+include::topics/assembly-updating-booster-catalog-for-local-minishift-testing.adoc[leveloffset=+2]
 
 You can preview the latest state of {launcher} by navigating to the link:{launcher-stage}[stage build] of {launcher}.
 
@@ -16,6 +18,8 @@ You can preview the latest state of {launcher} by navigating to the link:{launch
 _TBD_
 
 == Documentation
+
+This chapter contains information about contributing and releasing the {docs-name} documentation.
 
 include::topics/contributing-before-you-start.adoc[leveloffset=+2]
 
