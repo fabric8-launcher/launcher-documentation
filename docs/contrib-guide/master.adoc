@@ -41,6 +41,8 @@ include::topics/contributing-starting-preview-server.adoc[leveloffset=+3]
 
 === Administration
 
+include::topics/contributing-reviewing-changes.adoc[leveloffset=+3]
+
 include::topics/contributing-merging-changes.adoc[leveloffset=+3]
 
 include::topics/contributing-releasing-new-version.adoc[leveloffset=+3]
