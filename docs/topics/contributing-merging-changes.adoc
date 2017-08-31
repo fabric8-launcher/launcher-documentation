@@ -1,20 +1,20 @@
 
 = Merging Contributions
 
-When the changes in a pull request have been approved, you can merge them into `upstream/master`.
+When you or someone else has xref:reviewing_changes[reviewed the changes] in a pull request, you can merge them into `upstream/master`.
 
 IMPORTANT: Do not merge your own pull requests unless absolutely necessary. You are accountable for any errors, merge conflicts, or bugs resulting from incorrect merging. Let another contributor with the appropriate repository access privileges do it.
 
 [discrete]
 == Prerequisites
 
-* GitHub account with merge access to the _appdev-documentation_ repository and GPG configured.
+* GitHub account with merge access to the _{repo-docs-name}_ repository and GPG configured.
 
 [discrete]
 == Procedure
 
 .Merging a Pull Request
-. Ensure that you have the contributor's fork of the _appdev-documentation_ repository in your list of remotes:
+. Ensure that you have the contributor's fork of the _{repo-docs-name}_ repository in your list of remotes:
 +
 [source,bash,options="nowrap"]
 ----
