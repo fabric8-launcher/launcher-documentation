@@ -8,7 +8,7 @@ This mission shows you how to:
 
 = About ConfigMap
 
-_ConfigMap_ is an object used by OpenShift to inject configuration data as simple key and value pairs into one or more Linux containers while keeping the those containers agnostic of Openshift. You can create a ConfigMap object in a variety of different ways, including using a YAML file, and inject it into the Linux container. You can find more information about ConfigMap in the link:https://docs.openshift.org/latest/dev_guide/configmaps.html[OpenShift documentation].
+_ConfigMap_ is an object used by OpenShift to inject configuration data as simple key and value pairs into one or more Linux containers while keeping the containers agnostic of OpenShift. You can create a ConfigMap object in a variety of different ways, including using a YAML file, and inject it into the Linux container. You can find more information about ConfigMap in the link:https://docs.openshift.org/latest/dev_guide/configmaps.html[OpenShift documentation].
 
 = Why is ConfigMap Important?
 
