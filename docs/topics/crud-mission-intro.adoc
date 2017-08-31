@@ -1,13 +1,13 @@
 include::crud-mission-intro-paragraph.adoc[]
 
-The Booster also demonstrates the ability of the HTTP application to locate and connect to a database in OpenShift. Each runtime determines in an opinionated manner to implement the connectivity solution that is best suited in the given case. The runtime can choose between using _JDBC_, _JPA_, or access _ORM_ APIs directly.
+The Booster also demonstrates the ability of the HTTP application to locate and connect to a database in OpenShift. Each runtime determines in an opinionated manner how to implement the connectivity solution that is best suited in the given case. The runtime can choose between using _JDBC_, _JPA_, or access _ORM_ APIs directly.
 
 The Booster application exposes an HTTP API, which provides endpoints that allow you to manipulate data by performing  _CRUD_ operations over HTTP. The _CRUD_ operations are mapped to HTTP `Verbs`. The API uses JSON formatting to receive requests and return responses to the user. The user can also use an UI provided by the booster to use the application. Specifically, this Booster provides an application that allows you to:
 
 * Navigate to the application web interface in your browser. This exposes a simple website allowing you to perform _CRUD_ operations on the data in the `my_data` database.
 * Execute an HTTP `GET` request on the `api/fruits` endpoint.
 * Receive a response formatted as a JSON array containing the list of all fruits in the database.
-* Execute and HTTP `GET` request on the `api/fruits/*` endpoint while passing in a valid item ID as an argument.
+* Execute an HTTP `GET` request on the `api/fruits/*` endpoint while passing in a valid item ID as an argument.
 * Receive a response in JSON format containing the name of the fruit with the given ID. If no item matches the specified ID, the call results in an HTTP error 404.
 * Execute an HTTP `POST` request on the `api/fruits` endpoint passing in a valid `name` value to create a new entry in the database.
 * Execute an HTTP `PUT` request on the `api/fruits/*` endpoint passing in a valid ID and a name as an argument. This updates the name of the item with the given ID to match the name specified in your request.
