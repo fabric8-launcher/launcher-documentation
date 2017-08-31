@@ -25,7 +25,7 @@ $ oc new-project {project-name}
 ----
 
 ifdef::configmap-vertx,configmap-spring-boot-tomcat[]
-. Add a policy for the project.
+. Be sure that view access rights for the service account are added before deploying your booster.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
