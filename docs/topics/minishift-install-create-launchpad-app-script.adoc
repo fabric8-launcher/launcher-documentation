@@ -6,11 +6,16 @@ You can install the {launcher} application to your {OpenShiftLocal} using link:{
 * Create a project in your {OpenShiftLocal}.
 * Deploy the {launcher} application to that project using the link:{link-launcher-yaml}[latest template].
 * Configure the {launcher} application with your GitHub username and personal access token.
-* Update the Jenkins _serviceaccount_ to use the `admin` role.
 
-To use the automated script: 
+To use the automated script:
 
 . link:{link-launcher-install-script}[Download] the script.
+. Add execute permission for the script.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ chmod +x deploy_launchpad_mission.sh
+----
 . Run the script. There are several options:
 ** Run the script with username and password.
 +
@@ -30,21 +35,21 @@ $ ./deploy_launchpad_mission.sh -p PROJECT_NAME -i OPENSHIFT_TOKEN -g GITHUB_USE
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ ./deploy_launchpad_mission.sh -p PROJECT_NAME -i developer:developer -g myGithubUser:myGithubToken -v v9
+$ ./deploy_launchpad_mission.sh -p PROJECT_NAME -i developer:developer -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN -v v9
 ----
 
-. Once the script completes, return to your {OpenShiftLocal} web console and click on your {launcher} application project. 
+. Once the script completes, return to your {OpenShiftLocal} web console and click on your {launcher} application project.
 +
 This is your project's overview page and you can see its current status.
 +
 image::minishift_launchpad_booting.png[{launcher} application booting]
 +
-The grey circles reference that the docker images for these services are being pulled down from the network. This is a one time step that may take some time. Eventually the circles will turn a light blue to note that they are starting, then a deeper blue to indicate when they are running. 
+The grey circles reference that the docker images for these services are being pulled down from the network. This is a one time step that may take some time. Eventually the circles will turn a light blue to note that they are starting, then a deeper blue to indicate when they are running.
 +
-When all services are running, you are ready to use the {launcher} application.  
+When all services are running, you are ready to use the {launcher} application.
 
 . Click the link at the top of all services, which should end in `nip.io`.
 +
 A new browser tab will open with the {launcher} application.
 
-You are now running on your local cloud the same service we will be hosting over at `launch.openshift.io`. See the link:{link-getting-started-guide}#boosters[{getting-started-guide-name}] for more details on using the {launcher} application to launch mission booster applications.
+You are now running on your local cloud the same service we will be hosting over at `launch.openshift.io`. See the link:{link-getting-started-guide}#_continuous_delivery_using_single_node_openshift_cluster[{getting-started-guide-name}] for more details on using the {launcher} application to launch mission booster applications.
