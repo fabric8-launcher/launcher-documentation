@@ -16,7 +16,7 @@ minishift v1.3.1+f4900b07
 
 . Determine the command to add the correct version of the `oc` binary to your path and run the command.
 +
-WARNING: The below command may return `Cannot find OpenShift client binary.` if you have never started {Minishift}. To resolve this issue, you need to allow {Minishift} to start up at least once (`minishift start`). Once {Minishift} has completed it's initial startup, you need to stop it (`minishift stop`) before proceeding.
+WARNING: The below command may return `Cannot find OpenShift client binary.` if you have never started {Minishift}. To resolve this issue, you need to allow {Minishift} to start up at least once (`minishift start`). Once {Minishift} has completed its initial startup, you need to stop it (`minishift stop`) before proceeding.
 +
 .Example Result of `oc-env`
 [source,bash,options="nowrap",subs="attributes+"]
@@ -57,6 +57,23 @@ Minishift version: 1.0.0+4f8cb6d
 CDK Version: 3.0.0
 ----
 
+. Determine the command to add the correct version of the `oc` binary to your path and run the command.
++
+WARNING: The below command may return `Cannot find OpenShift client binary.` if you have never started {Minishift}. To resolve this issue, you need to allow {Minishift} to start up at least once (`minishift start`). Once {Minishift} has completed its initial startup, you need to stop it (`minishift stop`) before proceeding.
++
+.Example Result of `oc-env`
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ minishift oc-env
+export PATH="/Users/john/.minishift/cache/oc/v3.5.5.8:$PATH"
+# Run this command to configure your shell:
+# eval $(minishift oc-env)
+
+$ eval $(minishift oc-env)
+----
++
+WARNING: You must use the `oc` binary installed with {CDK}.
+
 . Verify the `oc` CLI tools is on your path.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -66,5 +83,3 @@ oc v3.5.5.8
 kubernetes v1.5.2+43a9be4
 features: Basic-Auth
 ----
-+
-WARNING: You must use the `oc` binary installed with {CDK}.
