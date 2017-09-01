@@ -1,7 +1,8 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 LAUNCHPAD_INDEX="https://raw.githubusercontent.com/openshiftio/launchpad-frontend/master/src/assets/adoc.index"
 DOC_REPO_PREFIX="https://raw.githubusercontent.com/openshiftio/appdev-documentation/master/"
+SCRIPT_SRC="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P )"
 
 if git rev-parse --verify HEAD >/dev/null 2>&1
 then
@@ -42,4 +43,7 @@ if ! test -z "$deleted_launchpad_files"; then
     echo -e "\n\nThese files are required and must not be deleted. If you want to commit anyway,\nrun the 'git commit' command with the '--no-verify' option."
     exit 1
 fi
+
+# Validate books
+${SCRIPT_SRC}/../scripts/validate_guides.sh 2>&1 | (sed -e 's/^/[POLICY] /')
 

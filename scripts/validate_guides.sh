@@ -12,7 +12,8 @@ for binary in asciidoctor xmllint; do
     fi
 done
 
-echo Running tests...
+echo "= Validating books... ="
+
 for book in docs/*/master.adoc; do
     dir="$(dirname $book)"
     echo -e "Processing $dir"

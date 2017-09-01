@@ -16,7 +16,7 @@ When making contributions, follow the standard link:https://guides.github.com/in
 . Create a topic branch in your personal fork of the _appdev-documentation_ repository. If you want to resolve a particular issue with your changes, name the branch `issue-$ID`, where `$ID` is the numerical ID of the issue.
 . Commit and push your changes to the topic branch. Verify your changes:
 ** Preview the build locally. For more information, see xref:_building_locally[].
-** Validate the books. Execute the following script:
+** Optionally validate the books. This step is done automatically by a commit hook at commit time, but you can validate the books manually at any time. Execute the following script:
 +
 --
 [source,bash,options="nowrap"]
