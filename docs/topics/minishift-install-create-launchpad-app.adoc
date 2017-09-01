@@ -37,7 +37,7 @@ WARNING: You must clear these fields out for the {launcher} application on your 
 
 . Click `Create` to complete the setup. You will see a screen confirming that the application has been created. Click _Continue to overview_.
 
-. On the overview page, wait and confirm that the three services for the {launcher} application are starting up.
+. On the overview page, wait and confirm that the four services for the {launcher} application are starting up.
 +
 image::minishift_launchpad_booting.png[{launcher} booting]
 +
