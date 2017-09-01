@@ -2,6 +2,8 @@
 
 IMPORTANT: While you can run and interact with this booster on our local host, you cannot take advantage of using the health check functionality with this booster without using OpenShift. For more details on using this booster with a single-node OpenShift cluster, CI/CD deployments, as well as the rest of the runtime, see the link:${guideURL}[${runtime} Runtime Guide].
 
+${cicdSection}
+
 == Run this Booster Locally
 To run this booster on your local host:
 
@@ -74,5 +76,5 @@ ${app-name}-1-26iy7   1/1       Running   5          18m
 
 When `READY` changes to `0/1`, if you re-execute a `curl` command to `api/greeting` or attempt to access the application's URL, it will be unavailable. When `READY` changes back to `1/1`, `curl` commands and the application URL will be available again.
 
-== CI/CD Deployment
-As part of the process of creating this booster, launch.openshift.io set up a project with a CI/CD deployment of this booster. You can see the status of this deployment in your Single-node OpenShift Cluster Web Console. You can also learn more about this booster and rest of the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].
+== More Information
+You can learn more about this booster and rest of the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].
