@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-LAUNCHPAD_INDEX="https://raw.githubusercontent.com/openshiftio/launchpad-frontend/master/src/assets/adoc.index"
-DOC_REPO_PREFIX="https://raw.githubusercontent.com/openshiftio/appdev-documentation/master/"
+# This script runs pre-commit tests and fails when any of those fail with the
+# respective script's return value. For this reason, return values for this
+# script are not well-defined and will likely change over time.
+
 SCRIPT_SRC="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P )"
 
 if git rev-parse --verify HEAD >/dev/null 2>&1
@@ -12,36 +14,25 @@ else
 	against=7f6bfba0c5c1ccafe2b7382dc3f625fa6bd09aca
 fi
 
-# Failing gracefully if some of the used binaries is not installed
-for binary in curl sed grep; do
-    if ! $binary --version &>/dev/null; then
-        echo -e "Trying to run pre-commit hook; '${binary}' is missing. Please install it.\nProceeding with commit anyway..." >&2
-        exit 0
-    fi
-done
+# Redirect all output to STDERR because we don't want to break someone's workflow with
+# unexpected error messages in STDOUT
+exec 1>&2
 
-# Failing gracefully if the launchpad file can not be reached
-if ! index_contents="$(curl -f $LAUNCHPAD_INDEX 2>/dev/null)"; then
-    echo -e "Trying to run pre-commit hook; Could not reach index file to test. You are\nprobably offline. Proceeding with commit anyway..." >&2
-    exit 0
-fi
+# Fail on non-zero retval
+set -e
 
-# Check for deleted files
-index_files=$(printf \\"$index_contents\\" \
-    | sed -e 's|^.*"\([^"]*\)".*$|\1|' -e "s|$DOC_REPO_PREFIX||" -e '/^\W*$/d' )
-deleted_launchpad_files=""
-for file in $(git diff --cached --name-only --diff-filter=D $against); do
-    if printf "${index_files}" | grep -q "${file}"; then
-        deleted_launchpad_files="${deleted_launchpad_files}\n  $file"
-    fi
-done
+echo "[POLICY] === Executing Commit Hook ==="
 
-# Fail if any critical files were deleted
-if ! test -z "$deleted_launchpad_files"; then
-    echo "You have deleted the following file(s) that are required by the Launchpad app:"
-    printf "$deleted_launchpad_files"
-    echo -e "\n\nThese files are required and must not be deleted. If you want to commit anyway,\nrun the 'git commit' command with the '--no-verify' option."
+# Check launchpad files
+GIT_AVAILABLE=1 ${SCRIPT_SRC}/../scripts/check_launchpad.sh 2>&1 | (sed -e 's/^/[POLICY] /')
+# 2 is returned if binaries are missing or the index is unreachable.
+# We don't want to block the commit on that. Using PIPESTATUS because otherwise
+# we'd check for the retval of sed instead of check_launchpad.sh
+success=${PIPESTATUS[0]}
+if [ $success -ne 0 -a $success -ne 2 ]; then
     exit 1
+elif [ $success -eq 2 ]; then
+    echo "[POLICY] Verification aborted. Continuing..."
 fi
 
 # Validate books

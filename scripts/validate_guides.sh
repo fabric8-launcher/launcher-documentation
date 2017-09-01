@@ -12,7 +12,7 @@ for binary in asciidoctor xmllint; do
     fi
 done
 
-echo "= Validating books... ="
+echo "=== Validating Guides ==="
 
 for book in docs/*/master.adoc; do
     dir="$(dirname $book)"
