@@ -8,9 +8,6 @@ include::topics/templates/document-attributes.adoc[]
 //var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
 :docs-topic:
 
-
-IMPORTANT: This runtime is coming soon and is not currently available.
-
 This guide covers concepts as well as practical details needed by developers to use the {NodeJS} runtime.
 
 include::topics/nodejs-runtime-overview.adoc[leveloffset=+1]
