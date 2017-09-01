@@ -40,7 +40,7 @@ $ git commit -m "Made an update"
 $ git push
 ----
 
-. Navigate to the Openshift Web Console and confirm a new deployment has started.
+. Navigate to the OpenShift Web Console and confirm a new deployment has started.
 . Confirm your changes were applied when the deployment is complete.
 
 Continuous delivery with your booster is now configured. It automatically pushes changes in your booster to your {OpenShiftOnline} account.
