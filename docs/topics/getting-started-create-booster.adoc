@@ -2,8 +2,13 @@
 = Create a Booster
 
 . Navigate to link:{link-launcher-oso}[{launcher}] using your browser.
-. Select _Prepare for Takeoff_.
-. Choose _Build and Run Locally_.
+. Select _Launch your Project_.
++
+IMPORTANT: This steps requires you to login using Red Hat Developers account.
+
+. Choose your deployment type.
 . Follow the instructions to create a booster of your choice.
 
-This creates a ZIP of your booster that you can download to build and run locally. It also provides a `README.adoc` file with details on building, deploying, and interacting with your booster from your local host.
+The _Use Continuous Delivery_ option creates a new GitHub repository of your booster and launches it to {OpenShiftOnline} while _Build and Run Locally_ creates a ZIP of your booster that you can download to build and run locally.
+
+Both options also provide a `README.adoc` file with details on building, deploying, and interacting with your booster from your local host.
