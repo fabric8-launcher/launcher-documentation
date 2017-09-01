@@ -4,7 +4,7 @@ Hystrix Dashboard lets you easily monitor the health of your services in real ti
 
 NOTE: You must have the Circuit Breaker booster application deployed before proceeding with the steps below.
 
-//  Openshift first. Do we reference Minishift to? Add a note or a section?
+//  OpenShift first. Do we reference Minishift to? Add a note or a section?
 // Replace with proper OSO URLs
 // vert.x specific steps?
 . Log in to your {OpenShiftLocal} cluster.

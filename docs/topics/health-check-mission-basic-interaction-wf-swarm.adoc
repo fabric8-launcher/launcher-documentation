@@ -2,7 +2,7 @@
 
 Once you have the {WildFlySwarm} booster deployed, you will have a service called  `{app-name}` running that exposes a two REST endpoints: `/api/greeting` which returns a name as a String and `/api/killme`, which forces the service to become unresponsive as means to simulate a failure.
 
-In the following we demonstrate the basic interactions on the command line that can be used verify the service availability and simulate a failure that causes the Openshift self-healing capabilities to be trigger on the service. Alternatively you can use the service web interface to perform these steps (See #4).
+In the following we demonstrate the basic interactions on the command line that can be used verify the service availability and simulate a failure that causes the OpenShift self-healing capabilities to be trigger on the service. Alternatively you can use the service web interface to perform these steps (See #4).
 
 . Use `curl` to execute a `GET` request against the `{app-name}` service. You can also use a browser to do this.
 +
@@ -28,7 +28,7 @@ $ curl http://{app-name}-{project-name}.{osl-route-hostname}/api/greeting
 </html>
 ----
 
-. While performing these operations you can use the Openshift console, or the `oc` client tools to watch the self-healing capabilities in action. Use `oc get pods -w` to continuously watch the service state from another terminal window. You should see that number pods in a `READY` state moves to zero (`0/1`) and after a while (~30 sec to 1 min) back up to one (`1/1`). In addition the `RESTARTS` count increases every time you kill the service:
+. While performing these operations you can use the OpenShift console, or the `oc` client tools to watch the self-healing capabilities in action. Use `oc get pods -w` to continuously watch the service state from another terminal window. You should see that number pods in a `READY` state moves to zero (`0/1`) and after a while (~30 sec to 1 min) back up to one (`1/1`). In addition the `RESTARTS` count increases every time you kill the service:
 +
 [source,bash,options="nowrap",subs="attributes"]
 ----
