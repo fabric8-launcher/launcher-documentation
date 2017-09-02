@@ -8,5 +8,5 @@ To run the integration tests, execute the following command:
 
 [source,bash,option="nowrap"]
 --
-mvn clean verify -Popenshift -Popenshift-it
+mvn clean verify -Popenshift,openshift-it
 --
