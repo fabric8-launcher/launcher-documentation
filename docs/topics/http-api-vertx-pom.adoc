@@ -202,7 +202,7 @@
 <4> link:https://github.com/eclipse/vert.x/blob/master/pom.xml[POM] containing core functionality of {VertX}. More details on the core components of {VertX} are avialble in the link:http://vertx.io/docs/vertx-core/java/[{VertX} documentation].
 <5> link:https://github.com/vert-x3/vertx-web/blob/master/pom.xml[POM] containing the components for building web applications with {VertX}.
 <6> Various dependencies needed for testing the application. This includes several {VertX} components such as link:http://vertx.io/docs/vertx-web-client/java/[vertx-web-client] and link:http://vertx.io/docs/vertx-unit/java/[vertx-unit] as well as other projects such as  link:https://joel-costigliola.github.io/assertj/[assertj] for assertions, link:https://github.com/rest-assured/rest-assured[rest-assured] for testing REST services, and link:https://github.com/awaitility/awaitility[awaitility] for doing asynchronous operations.
-<7> link:https://vmp.fabric8.io[{VertX} Fabric8 Maven Plugin] used for packaging and deploying {VertX} applications
-<8> link:https://wiki.eclipse.org/M2E_compatible_maven_plugins[Lifecycle metadata] that works with the {VertX} Fabric8 Maven Plugin for building and deploying the application.
+<7> link:https://vmp.fabric8.io[Fabric8 Vert.x Maven Plugin] used for packaging and deploying {VertX} applications
+<8> link:https://wiki.eclipse.org/M2E_compatible_maven_plugins[Lifecycle metadata] that works with the Fabric8 Vert.x Maven Plugin for building and deploying the application.
 <9> The profile for building and deploying the booster to OpenShift. It uses the link:http://fabric8.io/gitbook/mavenPlugin.html[Fabric8 Maven Plugin (FMP)] to build and deploy the application with the S2I Build Process.
 <10> The profile for running integration tests when the application is deployed on OpenShift. For example, a test can require a database pod or a ConfigMap value.
