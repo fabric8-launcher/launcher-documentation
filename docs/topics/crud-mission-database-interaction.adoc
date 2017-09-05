@@ -5,12 +5,13 @@
 +
 [source,bash,options="nowrap",subs="attributes+"]
 --
-oc get route {app-name} -o jsonpath={$.spec.host}
+oc get route {app-name}
 --
 +
 [source,bash,option="nowrap",subs="attributes+"]
 ----
-{app-name}-{project-name}.{osl-route-hostname}
+NAME                 HOST/PORT                                         PATH      SERVICES             PORT      TERMINATION
+{app-name}           {app-name}-{project-name}.{osl-route-hostname}              {app-name}           8080
 ----
 
 . To access the web interface of the database application, navigate to the _application URL_ in your browser:
