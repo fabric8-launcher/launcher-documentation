@@ -23,6 +23,8 @@ include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
 include::topics/rest-level-0-mission-intro.adoc[leveloffset=+3]
 
+include::topics/note-preview-booster-source.adoc[leveloffset=+3]
+
 include::topics/rest-level-0-mission-design-tradeoffs.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-deploy-booster.adoc[leveloffset=+3]
@@ -39,6 +41,8 @@ include::topics/rest-level-0-mission-resources.adoc[leveloffset=+3]
 
 include::topics/crud-mission-intro.adoc[leveloffset=+3]
 
+include::topics/note-preview-booster-source.adoc[leveloffset=+3]
+
 include::topics/crud-mission-design-tradeoffs.adoc[leveloffset=+3]
 
 include::topics/crud-mission-deploy-booster.adoc[leveloffset=+3]
@@ -53,6 +57,8 @@ include::topics/crud-mission-resources.adoc[leveloffset=+3]
 :health-check-nodejs:
 
 include::topics/health-check-mission-intro.adoc[leveloffset=+3]
+
+include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 include::topics/health-check-mission-deploy-booster.adoc[leveloffset=+3]
 
