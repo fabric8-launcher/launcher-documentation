@@ -1,0 +1,1 @@
+NOTE: To view the source code and README file of this Booster, link:{link-getting-started-guide}#oso-create-booster[download and extract the Booster ZIP file].
