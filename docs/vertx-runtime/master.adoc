@@ -24,6 +24,8 @@ include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
 include::topics/rest-level-0-mission-intro.adoc[leveloffset=+3]
 
+include::topics/note-preview-booster-source.adoc[leveloffset=+3]
+
 include::topics/rest-level-0-mission-design-tradeoffs.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-deploy-booster.adoc[leveloffset=+3]
@@ -38,6 +40,8 @@ include::topics/rest-level-0-mission-resources.adoc[leveloffset=+3]
 :configmap-vertx:
 
 include::topics/configmap-mission-intro.adoc[leveloffset=+3]
+
+include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 include::topics/configmap-mission-design-tradeoffs.adoc[leveloffset=+3]
 
@@ -57,6 +61,8 @@ include::topics/configmap-mission-resources.adoc[leveloffset=+3]
 include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
 include::topics/crud-mission-intro.adoc[leveloffset=+3]
+
+include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 include::topics/crud-mission-design-tradeoffs.adoc[leveloffset=+3]
 
@@ -78,6 +84,8 @@ include::topics/crud-mission-resources.adoc[leveloffset=+3]
 
 include::topics/health-check-mission-intro.adoc[leveloffset=+3]
 
+include::topics/note-preview-booster-source.adoc[leveloffset=+3]
+
 include::topics/health-check-mission-deploy-booster.adoc[leveloffset=+3]
 
 include::topics/health-check-mission-basic-interaction-vertx.adoc[leveloffset=+3]
@@ -93,6 +101,8 @@ include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 // circuit breaker intro
 include::topics/circuit-breaker-mission-intro.adoc[leveloffset=+3]
 //TODO
+
+include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 // CB design tradeoffs
 include::topics/circuit-breaker-mission-design-tradeoffs.adoc[leveloffset=+3]
@@ -125,6 +135,8 @@ include::topics/circuit-breaker-mission-resources.adoc[leveloffset=+3]
 include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
 include::topics/secured-mission-intro-paragraph.adoc[leveloffset=+3]
+
+include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 include::topics/secured-booster-minishift.adoc[leveloffset=+3]
 

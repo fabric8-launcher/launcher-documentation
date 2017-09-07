@@ -27,6 +27,8 @@ include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
 include::topics/rest-level-0-mission-intro.adoc[leveloffset=+3]
 
+include::topics/note-preview-booster-source.adoc[leveloffset=+3]
+
 include::topics/rest-level-0-mission-design-tradeoffs.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-deploy-booster.adoc[leveloffset=+3]
@@ -41,6 +43,8 @@ include::topics/rest-level-0-mission-resources.adoc[leveloffset=+3]
 :configmap-spring-boot-tomcat:
 
 include::topics/configmap-mission-intro.adoc[leveloffset=+3]
+
+include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 include::topics/configmap-mission-design-tradeoffs.adoc[leveloffset=+3]
 
@@ -60,6 +64,8 @@ include::topics/configmap-mission-resources.adoc[leveloffset=+3]
 include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
 include::topics/crud-mission-intro.adoc[leveloffset=+3]
+
+include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 // design tradeoffs
 include::topics/crud-mission-design-tradeoffs.adoc[leveloffset=+3]
@@ -84,6 +90,8 @@ include::topics/crud-mission-resources.adoc[leveloffset=+3]
 
 include::topics/health-check-mission-intro.adoc[leveloffset=+3]
 
+include::topics/note-preview-booster-source.adoc[leveloffset=+3]
+
 include::topics/health-check-mission-deploy-booster.adoc[leveloffset=+3]
 
 include::topics/health-check-mission-basic-interaction-spring-boot-tomcat.adoc[leveloffset=+3]
@@ -98,6 +106,8 @@ include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
 // circuit breaker intro
 include::topics/circuit-breaker-mission-intro.adoc[leveloffset=+3]
+
+include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 // CB design tradeoffs
 include::topics/circuit-breaker-mission-design-tradeoffs.adoc[leveloffset=+3]
@@ -126,14 +136,14 @@ include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
 include::topics/secured-mission-intro-paragraph.adoc[leveloffset=+3]
 
+include::topics/note-preview-booster-source.adoc[leveloffset=+3]
+
 include::topics/secured-booster-minishift.adoc[leveloffset=+3]
 
 include::topics/secured-mission-intro.adoc[leveloffset=+3]
 
 //this needs to be a level lower due to secured-mission-intro.adoc
 include::topics/secured-mission-springboot-adapter.adoc[leveloffset=+4]
-
-
 
 include::topics/secured-mission-deploy-booster.adoc[leveloffset=+3]
 
