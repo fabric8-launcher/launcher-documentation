@@ -45,6 +45,7 @@
 :mission-circuit-breaker-spring-boot-tomcat-guide-name: Circuit Breaker Mission - {SpringBoot} Booster
 :mission-circuit-breaker-vertx-guide-name: Circuit Breaker Mission - {VertX} Booster
 :mission-circuit-breaker-wf-swarm-guide-name: Circuit Breaker Mission - {WildFlySwarm} Booster
+:mission-circuit-breaker-nodejs-guide-name: Circuit Breaker Mission - {NodeJS} Booster
 :mission-secured-spring-boot-guide-name: Secured Mission - {SpringBoot} Booster
 :mission-secured-vertx-guide-name: Secured Mission - {VertX} Booster
 :mission-secured-wf-swarm-guide-name: Secured Mission - {WildFlySwarm} Booster
@@ -109,6 +110,7 @@
 :link-mission-http-api-nodejs: {link-nodejs-runtime-guide}#mission-http-api-nodejs
 :link-mission-health-check-nodejs: {link-nodejs-runtime-guide}#mission-health-check-nodejs
 :link-mission-crud-nodejs: {link-nodejs-runtime-guide}#mission-crud-nodejs
+:link-mission-circuit-breaker-nodejs: {link-nodejs-runtime-guide}#mission-circuit-breaker-nodejs
 
 :link-oso-auth: OPENSHIFT_URL
 :link-osl-auth: LOCAL_OPENSHIFT_URL
