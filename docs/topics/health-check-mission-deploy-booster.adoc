@@ -45,7 +45,7 @@ ifdef::http-api-nodejs[]
 $ npm install && npm run openshift
 ----
 +
-These commands install any missing package dependencies, then using the Nodeshift package, launch the S2I process on {OpenShiftLocal} to start the pod.
+These commands install any missing package dependencies, then using the xref:about-nodeshift[Nodeshift] package, launch the S2I process on {OpenShiftLocal} to start the pod.
 endif::http-api-nodejs[]
 
 
