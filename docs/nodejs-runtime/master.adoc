@@ -66,6 +66,32 @@ include::topics/health-check-mission-basic-interaction-nodejs.adoc[leveloffset=+
 
 include::topics/health-check-mission-resources.adoc[leveloffset=+3]
 
+[[mission-circuit-breaker-nodejs]]
+=== {mission-circuit-breaker-nodejs-guide-name}
+:circuit-breaker-nodejs:
+
+include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
+
+// circuit breaker intro
+include::topics/circuit-breaker-mission-intro.adoc[leveloffset=+3]
+
+// CB design tradeoffs
+include::topics/circuit-breaker-mission-design-tradeoffs.adoc[leveloffset=+3]
+
+// deploy CB boster
+include::topics/circuit-breaker-mission-deploy-booster.adoc[leveloffset=+3]
+
+// CB basic interaction
+include::topics/circuit-breaker-mission-basic-interaction-nodejs.adoc[leveloffset=+3]
+//TODO
+
+// Hystrix Dashboard
+// TODO:
+// include::topics/circuit-breaker-mission-access-hystrix-dashboard-wf-swarm.adoc[leveloffset=+3]
+
+// CB resources
+include::topics/circuit-breaker-mission-resources.adoc[leveloffset=+3]
+
 
 //== Creating an Application from Scratch
 //todo

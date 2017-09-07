@@ -24,6 +24,7 @@ $ oc login {link-oso-auth} --token=MYTOKEN
 $ oc new-project {project-name}
 ----
 
+ifndef::circuit-breaker-nodejs[]
 . Navigate to the root directory of your booster.
 
 . Use Maven to start the deployment to your {OpenShiftLocal}.
@@ -34,6 +35,21 @@ $ mvn clean fabric8:deploy -Popenshift
 ----
 +
 This command uses the Fabric8 Maven Plugin to launch the S2I process on your {OpenShiftLocal} and to start the pod.
+endif::circuit-breaker-nodejs[]
+
+ifdef::circuit-breaker-nodejs[]
+. Clone a fork of the booster at `git@github.com:bucharest-gold/nodejs-circuit-breaker.git`, and use the provided `start-openshift.sh` script to start the deployment to {OpenShiftLocal}.
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git clone git@github.com:my-boosters/nodejs-circuit-breaker.git
+$ cd nodejs-circuit-breaker
+$ ./start-openshift.sh
+----
+
+These commands use the Nodeshift `npm` module to install your dependencies, launch the S2I build process on your
+{OpenShiftLocal} and start the services.
+endif::circuit-breaker-nodejs[]
 
 . Check the status of your booster and ensure your pod is running.
 +
@@ -63,5 +79,6 @@ NAME                     HOST/PORT                                              
 +
 A pod's route information gives you the base URL which you use to access it. In the example above, you would use `http://{app-name}-{project-name}.{osl-route-hostname}` as the base URL to access the applications.
 
-
+ifndef::circuit-breaker-nodejs[]
 include::booster-deploy-openshift-online.adoc[leveloffset=+1]
+endif::circuit-breaker-nodejs[]
