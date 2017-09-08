@@ -35,7 +35,7 @@ $ ./deploy_launchpad_mission.sh -p PROJECT_NAME -i OPENSHIFT_TOKEN -g GITHUB_USE
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ ./deploy_launchpad_mission.sh -p PROJECT_NAME -i developer:developer -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN -v v9
+$ ./deploy_launchpad_mission.sh -p PROJECT_NAME -i developer:developer -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN -v v10
 ----
 
 . Once the script completes, return to your {OpenShiftLocal} web console and click on your {launcher} application project.
