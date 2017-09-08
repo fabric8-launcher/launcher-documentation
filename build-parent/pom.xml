@@ -22,7 +22,7 @@
   <description>Build Parent to bring in required dependencies</description>
 
   <properties>
-    <version.wildfly.swarm.fraction.plugin>59</version.wildfly.swarm.fraction.plugin>
+    <version.wildfly.swarm.fraction.plugin>60</version.wildfly.swarm.fraction.plugin>
 
     <version.org.snakeyaml>1.15</version.org.snakeyaml>
 
@@ -35,7 +35,7 @@
     <version.cassandra.config-api>1.2.0</version.cassandra.config-api>
     <version.neo4j.config-api>1.2.0</version.neo4j.config-api>
     <version.orientdb.config-api>1.2.0</version.orientdb.config-api>
-    <version.wildfly.nosql.feature-pack>1.0.0.Alpha3</version.wildfly.nosql.feature-pack>
+    <version.wildfly.nosql.feature-pack>1.0.0.Alpha4</version.wildfly.nosql.feature-pack>
 
     <version.wildfly>7.0.6.GA-redhat-2</version.wildfly>
     <version.org.wildfly.core>2.1.15.Final-redhat-1</version.org.wildfly.core>

@@ -1,5 +1,5 @@
 /**
- * Copyright 2015-2016 Red Hat, Inc, and individual contributors.
+ * Copyright 2015-2017 Red Hat, Inc, and individual contributors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,10 @@
  */
 package org.wildfly.swarm.topology.openshift.runtime;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 import com.openshift.restclient.IClient;
@@ -41,6 +45,18 @@ public class NamespaceService implements Service<String> {
         this.client = this.clientInjector.getValue();
 
         this.namespace = System.getenv("KUBERNETES_NAMESPACE");
+
+        if (this.namespace == null) {
+            Path namespaceFile = Paths.get("/var/run/secrets/kubernetes.io/serviceaccount/namespace");
+            if (Files.exists(namespaceFile)) {
+                try {
+                    this.namespace = new String(Files.readAllBytes(namespaceFile));
+                } catch (IOException ignored) {
+                    // shouldn't happen, this file is on tmpfs
+                    // but if it happened anyway, we'll try the following options
+                }
+            }
+        }
 
         if (this.namespace == null) {
             this.namespace = System.getenv("OPENSHIFT_BUILD_NAMESPACE");

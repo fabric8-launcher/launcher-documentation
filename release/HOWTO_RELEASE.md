@@ -7,6 +7,12 @@
 
 * Update next development version in `/boms/bom-certified/pom.xml` as it doesn't happen in the above command (Maybe add something to CI job to do this?).
 
+* Update next development version in:
+	* testsuite/testsuite-cassandra/pom.xml
+	* testsuite/testsuite-mongodb/pom.xml
+	* testsuite/testsuite-neo4j/pom.xml
+	*  testsuite/testsuite-orientdb/pom.xml
+
 * Wait for release to be available in Maven Central before continuing with examples releases
 
 # JIRA Releasing
@@ -111,6 +117,17 @@
 
         git push origin master
 
+
+# Update the Reference Guide
+
+In the reference-guide repository (https://github.com/wildfly-swarm/wildfly-swarm-reference-guide)
+run the following:
+
+    rm fractions/*
+    node update.js
+
+And commit the results if any changes have occurred.  It's okay if git tells
+you that nothing has changed.
 
 # Tag the documentation
 

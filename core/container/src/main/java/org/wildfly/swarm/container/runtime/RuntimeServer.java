@@ -1,5 +1,5 @@
 /**
- * Copyright 2015-2016 Red Hat, Inc, and individual contributors.
+ * Copyright 2015-2017 Red Hat, Inc, and individual contributors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,6 +54,7 @@ import org.wildfly.swarm.container.internal.Deployer;
 import org.wildfly.swarm.container.internal.Server;
 import org.wildfly.swarm.container.runtime.deployments.DefaultDeploymentCreator;
 import org.wildfly.swarm.container.runtime.marshal.DMRMarshaller;
+import org.wildfly.swarm.container.runtime.usage.UsageCreator;
 import org.wildfly.swarm.container.runtime.wildfly.ContentRepositoryServiceActivator;
 import org.wildfly.swarm.container.runtime.wildfly.SwarmContentRepository;
 import org.wildfly.swarm.container.runtime.wildfly.UUIDFactory;
@@ -106,6 +107,9 @@ public class RuntimeServer implements Server {
 
     @Inject
     private ConfigurableManager configurableManager;
+
+    @Inject
+    private UsageCreator usageCreator;
 
     public RuntimeServer() {
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
@@ -177,7 +181,6 @@ public class RuntimeServer implements Server {
         try (AutoCloseable handle = Performance.time("configurable-manager rescan")) {
             this.configurableManager.rescan();
             this.configurableManager.log();
-            this.configurableManager.close();
         }
 
         try (AutoCloseable handle = Performance.time("marshall DMR")) {
@@ -278,6 +281,16 @@ public class RuntimeServer implements Server {
     @Override
     public Deployer deployer() {
         return this.deployer.get();
+    }
+
+    @Override
+    public void displayUsage() throws Exception {
+        String message = this.usageCreator.getUsageMessage();
+        if (message != null) {
+            SwarmMessages.MESSAGES.usage(message);
+        }
+
+        this.configurableManager.close();
     }
 
     private SelfContainedContainer container;

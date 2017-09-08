@@ -1,5 +1,5 @@
 /**
- * Copyright 2015-2016 Red Hat, Inc, and individual contributors.
+ * Copyright 2015-2017 Red Hat, Inc, and individual contributors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,6 +82,10 @@ public abstract class DriverInfo {
         // no-op, but overridable
     }
 
+    protected void addModuleDependencies(ModuleSpec.Builder builder) {
+        // no-op, but overridable
+    }
+
     protected abstract void configureDefaultDS(DataSource datasource);
 
     public boolean detect(DatasourcesFraction fraction) {
@@ -124,6 +128,7 @@ public abstract class DriverInfo {
                 builder.addDependency(DependencySpec.createModuleDependencySpec(ModuleIdentifier.create("javax.api")));
                 builder.addDependency(DependencySpec.createModuleDependencySpec(ModuleIdentifier.create("javax.transactions.api"), false, true));
                 builder.addDependency(DependencySpec.createLocalDependencySpec());
+                addModuleDependencies(builder);
 
                 return builder.create();
             });
