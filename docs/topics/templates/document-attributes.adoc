@@ -78,7 +78,7 @@
 :link-configmap-wf-swarm-booster: https://github.com/wildfly-swarm-openshiftio-boosters/configmap
 
 :link-openshift-local-guide: /docs/minishift-installation.html
-:link-launcher-openshift-local-install-guide:  https://appdev.openshift.io/docs/minishift-installation.html
+:link-launcher-openshift-local-install-guide: /docs/minishift-installation.html
 :link-getting-started-guide: /docs/getting-started.html
 :link-spring-boot-runtime-guide: /docs/spring-boot-runtime.html
 :link-vertx-runtime-guide: /docs/vertx-runtime.html
