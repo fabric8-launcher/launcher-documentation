@@ -1,3 +1,3 @@
 :linkattrs:
 
-Done!  Pipelines run your build and deployment in stages; for more information, see the link:http://appdev.openshift.io/docs/getting-started.html#_continuous_delivery_using_single_node_openshift_cluster[CI section of the docs, window="_blank"].
+Done! {OpenShiftOnline} is now configured to build and deploy your code on each push to your repository’s master branch. For more information on this build process see the link:http://appdev.openshift.io/docs/getting-started.html#build-and-deploy-process[Build and Deploy to OpenShift Build Process^] section of the Getting Started guide.
