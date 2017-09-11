@@ -1,10 +1,8 @@
-To launch using continuous delivery, click the _Use OpenShift Online to build and deploy_ button. This will:
+To launch using {OpenShiftOnline}, click the _Use {OpenShiftOnline}_ button. This will:
 
 * Create, in your GitHub namespace, a repository containing your new project's code
-* Create a pipeline to continuously deliver the code on each push to your repository’s master branch
-* Execute the pipeline, which will build and deploy the codebase on OpenShift Online.  This may take a few minutes.
+* Configure {OpenShiftOnline} to build and deploy your code on each push to your repository’s master branch.
 
-// new {launcher} URL will be "developers.redhat.com/launch"
 [IMPORTANT]
 --
 Before proceeding, ensure you have granted *{launcher}* access to your GitHub and OpenShift accounts.

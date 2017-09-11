@@ -9,6 +9,6 @@ IMPORTANT: This steps requires you to login using Red Hat Developers account.
 . Choose your deployment type.
 . Follow the instructions to create a booster of your choice.
 
-The _Use Continuous Delivery_ option creates a new GitHub repository of your booster and launches it to {OpenShiftOnline} while _Build and Run Locally_ creates a ZIP of your booster that you can download to build and run locally.
+The _Deploy in OpenShift Online_ option creates a new GitHub repository containing your booster and launches it to {OpenShiftOnline} while _Build and Run Locally_ creates a ZIP containing your booster that you can download to build and run locally.
 
 Both options also provide a `README.adoc` file with details on building, deploying, and interacting with your booster from your local host.
