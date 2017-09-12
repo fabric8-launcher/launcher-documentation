@@ -2,6 +2,7 @@
 
 IMPORTANT: This booster requires that you use link:https://access.redhat.com/products/red-hat-single-sign-on[Red Hat SSO] to issue access tokens for interacting with this booster and runs best when deployed on OpenShift. For more details on using this booster with a single-node OpenShift cluster, CI/CD deployments, as well as the rest of the runtime, see the link:${guideURL}[${runtime} Runtime Guide].
 
+${prerequisite}
 
 == Run this Booster on a Single-node OpenShift Cluster
 If you have a single-node OpenShift cluster, such as Minishift or the Red Hat Container Development Kit, link:http://appdev.openshift.io/docs/minishift-installation.html[installed and running], you can also deploy your booster there. A single-node OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.

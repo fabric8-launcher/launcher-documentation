@@ -2,6 +2,8 @@
 
 IMPORTANT: This runs best when deployed to OpenShift in order to use the circuit breaker functionality. For more details on using this booster with a single-node OpenShift cluster, CI/CD deployments, as well as the rest of the runtime, see the link:${guideURL}[${runtime} Runtime Guide].
 
+${prerequisite}
+
 ${cicdSection}
 
 == Run this Booster on a Single-node OpenShift Cluster
