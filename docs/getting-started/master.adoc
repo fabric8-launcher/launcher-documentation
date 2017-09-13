@@ -20,3 +20,7 @@ include::topics/getting-started-use-devstudio.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/build-and-deploy-process.adoc[leveloffset=+1]
+
+
+[appendix]
+include::topics/appendix-configure-launcher-sso-realm.adoc[leveloffset=+1]
