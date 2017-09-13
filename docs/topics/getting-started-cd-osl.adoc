@@ -14,35 +14,22 @@ Use the following command to open the Web Console of your {OpenShiftLocal} in yo
 $ minishift console
 ----
 ====
-. Select _Prepare for Takeoff_.
-. Select _Use {OpenShiftOnline} to build and deploy_.
+. Select _Launch Your Project_.
+. Select _Use {OpenShiftOnline}_.
 . Follow the instructions to create a booster of your choice.
 +
 Doing this, you:
 +
 ** Create a new GitHub repository in your account containing the code of your booster.
-** Create a pipeline to continuously deliver the code of your booster.
-** The pipeline then builds and deploys the code of your booster to your {OpenShiftLocal}.
+** Configure {OpenShiftLocal} to build and deploy your code on each push to your repository’s master branch.
 
 . Click the _See it here!_ link under _Creating your project on the OpenShift cloud_ to go to the page of your booster's in the OpenShift Web console.
 
-To view the status of your project:
+To navigate to the {OpenShiftLocal} Web console and view the status of your build, click _Take a look at your build_. You can expand your deployment and view the details as it deploys. Your deployment is complete when you see _Build #1 is complete_ under _Builds_ and you see `1 pod` in the blue circle.
 
-. Click _View Log_ in the pipeline at the top.
-+
-NOTE: It can take a few minutes for the link to appear.
+When your deployment is complete, interact with your booster using the URL at the top of the page. For more details about interacting with your booster, see the `README.adoc` file in the booster's repository.
 
-. Click _Login with OpenShift_ at the login prompt for Jenkins.
-. Log in with your {OpenShiftLocal} credentials, for example `developer` for the username and password.
-. Ensure all the boxes are checked and click _Allow selected permissions_.
-+
-Doing this grants the OpenShift Web console the correct permissions and directs you to the Jenkins pod that is deploying your application.
-
-When your deployment is complete, interact with your booster using the URL at the top of the page. For more details about interacting with your booster, see the `README.adoc` file in the booster repository.
-
-IMPORTANT: Your booster application is not the same as your Jenkins pod, and it will only appear after the Jenkins pod deploys it. This can take a few minutes.
-
-At this point, you have created a new booster repository in your GitHub account and deployed it to {OpenShiftLocal}. To push changes to this booster in {OpenShiftLocal}, you can push a new commit to the GitHub repository and start a build pipeline.
+At this point, you have created a new booster repository in your GitHub account and deployed it to {OpenShiftLocal}. To push changes to this booster in {OpenShiftLocal}, you can push a new commit to the GitHub repository and start a new build.
 
 
 . Clone your project from GitHub:
@@ -65,10 +52,11 @@ $ git push
 ----
 
 . Navigate back to the {OpenShiftLocal} Web console and ensure the project of your mission is selected.
-. Click _Builds_ -> _Pipelines_.
-. Click _Start Pipeline_ to start a new build with your updates.
+. Click on the three dots on the right side of your application's deployment and choose _Start Build_.
 +
-A new build appears in the _Recent Runs_ list with the status of the `Build` and `Deploy` stages. Optionally, click _View Log_ in your build to see the logs in Jenkins.
+A new build begins running. You can see more details about your build under the _Builds_ section. Your deployment is complete when you see _Build #2 is complete_ under _Builds_ and a `#2` next to the application's name under _Deployment_.
++
+NOTE: This number will increase for each additional build and deployment.
 
-. Confirm your changes were applied when your deployment is complete.
+. Confirm your changes when your deployment is complete.
 
