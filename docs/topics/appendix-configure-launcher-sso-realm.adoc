@@ -1,5 +1,15 @@
 [[launcher-sso-settings]]
 = Configure Your {launcher} {RHSSO} Federated Identity Settings
-In order to use {launcher}, you have to grant it access to your GitHub and OpenShift accounts. This is a one-time process that can be done in the {launcher} https://sso.openshift.io/auth/realms/rh-developers-launch/account/identity[{RHSSO} federated identity settings^].
 
-In the {RHSSO} federated identity settings click _Add_ next to _GitHub_ and the {OpenShiftOnline} cluster you use. You can check which {OpenShiftOnline} cluster you belong to using link:https://manage.openshift.com[https://manage.openshift.com^].
+In order to use {launcher}, you must grant it access to your GitHub and OpenShift accounts. This is a one-time action.
+
+[discrete]
+== Procedure
+
+.Configuring Federated Identity Settings
+. Navigate to https://sso.openshift.io/auth/realms/rh-developers-launch/account/identity[{RHSSO} federated identity settings^].
+. Click the _Add_ button next to the _GitHub_ field and authorize {launcher} to access your GitHub account.
+. Click the _Add_ button next to the {OpenShiftOnline} cluster you use.
++
+NOTE: Check which {OpenShiftOnline} cluster you belong to on link:https://manage.openshift.com[https://manage.openshift.com^].
+
