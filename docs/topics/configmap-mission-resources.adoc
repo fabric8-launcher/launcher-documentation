@@ -29,3 +29,7 @@ endif::configmap-vertx[]
 ifndef::configmap-wf-swarm[]
 * link:{link-mission-configmap-wf-swarm}[ConfigMap - {WildFlySwarm} Booster]
 endif::configmap-wf-swarm[]
+
+ifndef::configmap-nodejs[]
+* link:{link-mission-configmap-nodejs}[ConfigMap - {NodeJS} Booster]
+endif::configmap-nodejs[]

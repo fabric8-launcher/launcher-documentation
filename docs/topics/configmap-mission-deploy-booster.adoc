@@ -17,18 +17,18 @@ include::booster-deploy-get-cli-token.adoc[levelloffset=+3]
 $ oc new-project {project-name}
 ----
 
-ifdef::configmap-vertx,configmap-spring-boot-tomcat[]
+ifdef::configmap-vertx,configmap-spring-boot-tomcat,configmap-nodejs[]
 . Assign view access rights to the service account before deploying your booster, so that the booster can access the OpeShift API in order to read the contents of the ConfigMap.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc policy add-role-to-user view -n $(oc project -q) -z default
 ----
-endif::configmap-vertx,configmap-spring-boot-tomcat[]
+endif::configmap-vertx,configmap-spring-boot-tomcat,configmap-nodejs[]
 
 . Navigate to the root directory of your booster.
 
-ifdef::configmap-vertx[]
+ifdef::configmap-vertx,configmap-nodejs[]
 . Deploy your ConfigMap configuration to your {OpenShiftLocal} using `app-config.yml`.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -49,7 +49,7 @@ data:
       level : INFO
 ...
 ----
-endif::configmap-vertx[]
+endif::configmap-vertx,configmap-nodejs[]
 ifdef::configmap-wf-swarm[]
 . Deploy your ConfigMap configuration to your {OpenShiftLocal} using `app-config.yml` in the root of the booster.
 +
@@ -93,7 +93,7 @@ data:
 ...
 ----
 endif::configmap-spring-boot-tomcat[]
-
+ifndef::configmap-nodejs[]
 . Use Maven to start the deployment to your {OpenShiftLocal}.
 +
 ifdef::configmap-vertx,configmap-spring-boot-tomcat[]
@@ -110,6 +110,18 @@ $ mvn clean fabric8:deploy -Popenshift -DskipTests
 endif::configmap-wf-swarm[]
 +
 This command uses the Fabric8 Maven Plugin to launch the S2I process on your {OpenShiftLocal} and to start the pod.
+endif::configmap-nodejs[]
+
+ifdef::configmap-nodejs[]
+. Use `npm` to start the deployment to {OpenShiftLocal}.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ npm install && npm run openshift
+----
++
+These commands install any missing package dependencies, then using the xref:about-nodeshift[Nodeshift] package, launch the S2I process on {OpenShiftLocal} to start the pod.
+endif::configmap-nodejs[]
 
 
 . Check the status of your booster and ensure your pod is running.
