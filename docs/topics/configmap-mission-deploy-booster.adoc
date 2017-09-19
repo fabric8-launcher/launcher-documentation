@@ -18,7 +18,7 @@ $ oc new-project {project-name}
 ----
 
 ifdef::configmap-vertx,configmap-spring-boot-tomcat,configmap-nodejs[]
-. Assign view access rights to the service account before deploying your booster, so that the booster can access the OpeShift API in order to read the contents of the ConfigMap.
+. Assign view access rights to the service account before deploying your booster, so that the booster can access the OpenShift API in order to read the contents of the ConfigMap.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
