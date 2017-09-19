@@ -1,5 +1,22 @@
-= Manually
+// This is a parameterized module. Parameters used:
+//
+//   parameter-custom-catalog: A custom catalog is used instead of the default one
+//
+// Rationale: This module is useful both when setting up minishift as is and when testing a local
+// booster catalog.
 
+ifndef::parameter-custom-catalog[= Creating {launcher} Application Manually]
+ifdef::parameter-custom-catalog[= Creating {launcher} Application]
+
+Create a local customized instance of the {launcher} application, which allows you to test the functionality or make modifications to the application using a web interface.
+
+[discrete]
+== Procedure
+
+.Creating {launcher} Application
+. Open your local OpenShift web console and log in.
++
+NOTE: The IP address and credentials to log in are in the terminal window where you executed `minishift start`.
 . Click _New Project_ to create a new OpenShift project to house the {launcher} application.
 +
 image::minishift_newproject.png[New Project Button]
@@ -31,7 +48,8 @@ image::minishift_processtemplate.png[Process Template]
 +
 WARNING: You must clear these fields out for the {launcher} application on your {OpenShiftLocal} to be configured correctly.
 
-** _Catalog Git Repository_ and _Catalog Git Reference_ should be generally left as-is, unless you are developing against a specific fork you would like to use.
+ifndef::parameter-custom-catalog[** Do not modify _Catalog Git Repository_ and _Catalog Git Reference_ unless you are developing against a specific catalog repository.]
+ifdef::parameter-custom-catalog[** Set _Catalog Git Repository_ to the repository with the catalog that you are testing. Set _Catalog Git Reference_ to the branch in that repository you are testing.]
 
 . Before proceeding to the next steps, confirm all the fields are correct. Also confirm that _KeyCloak URL_ and _KeyCloak Realm_ **have been cleared out**.
 
@@ -43,6 +61,6 @@ image::minishift_launchpad_booting.png[{launcher} booting]
 +
 The grey circles reference that the docker images for these services are being pulled down from the network. This is a one time step that may take some time. Eventually the circles will turn a light blue to note that they are starting, then a deeper blue to indicate when they are running.
 
-. When all services are running, you are ready to use the {launcher} application.  Click the link at the top of all services, which should end in `nip.io`, and a new browser tab will open with the {launcher} application.
+. When all services are running, you are ready to use the {launcher} application. Click the link at the top of all services--which typically ends in the `nip.io` suffix--to open the {launcher} application in a new browser tab.
 
 You are now running on your local cloud the same service we will be hosting over at `launch.openshift.io`.
