@@ -1,0 +1,29 @@
+
+[[glossary]]
+= Glossary
+
+== Product and Project Names
+
+{launcher}:: The web application you launch boosters with.
+
+{OpenShiftLocal}:: An OpenShift cluster running on your machine using Minishift.
+
+== Terms Specific to {launcher}
+
+[glossary_booster]
+Booster:: An language-specific implementation of a particular xref:glossary_mission[mission] on a particular xref:glossary_runtime[runtime]. Boosters are listed in a xref:glossary_booster_catalog[booster catalog].
++
+For example, a booster is a web service with a REST API implemented using the {WildFlySwarm} runtime.
+
+[[glossary_booster_catalog]]
+Booster Catalog:: A Git repository that contains information about boosters.
+
+[[glossary_mission]]
+Mission:: An application specification, for example _a web service with a REST API._
++
+Missions generally do not specify which language or platform they should run on; the description only contains the intended functionality.
+
+[[glossary_runtime]]
+Runtime:: A platform that executes xref:glossary_booster[boosters].
+For example, {WildFlySwarm} or {VertX}.
+

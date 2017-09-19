@@ -169,3 +169,7 @@ include::topics/sb-tomcat-dev-guide-additional-resources.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/appendix-proficiency-levels.adoc[leveloffset=+1]
+
+[appendix]
+include::topics/appendix-glossary.adoc[leveloffset=+1]
+

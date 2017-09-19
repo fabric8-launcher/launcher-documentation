@@ -68,3 +68,7 @@ include::topics/contributing-labels.adoc[leveloffset=+3]
 == Upstream Runtime Project Development Resources
 
 _TBD_
+
+[appendix]
+include::topics/appendix-glossary.adoc[leveloffset=+1]
+
