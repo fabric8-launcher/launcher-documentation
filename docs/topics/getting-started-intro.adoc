@@ -1,3 +1,4 @@
+[.lead]
 When you create cloud-native applications and services, you need a hosted or local development environment that matches the target cloud environment. This enables you to encounter and resolve deployment and environment issues in your applications and services in your local environment before deploying them to your target cloud environment. 
 
 [.lead]
