@@ -1,6 +1,6 @@
 = Interact with the Unmodified {NodeJS} Booster
 
-The booster provides a default HTTP endpoint that accepts GET requests.
+The booster provides a default HTTP endpoint that accepts `GET` requests.
 
 . Use `curl` to execute a `GET` request against the booster. You can also use a browser to do this.
 +
@@ -19,7 +19,7 @@ $ oc edit configmap app-config
 Change the value for the `message` key to `Bonjour, %s from a ConfigMap !` and save the file.
 
 
-. Update of the config map should be read by the application within an acceptable time (a few seconds) without requiring a restart of the application.
+. Update of the ConfigMap should be read by the application within an acceptable time (a few seconds) without requiring a restart of the application.
 . Use `curl` to execute a `GET` request against the booster with the updated ConfigMap configuration. You can also use a browser to do this.
 +
 [source,bash,options="nowrap",subs="attributes+"]
