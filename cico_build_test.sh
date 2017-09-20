@@ -8,8 +8,8 @@ TARGET_DIR="html"
 # Exit on error
 set -e
 
-[ -f jenkins-env ] && cat jenkins-env | grep -e PASS -e GIT -e DEVSHIFT > inherit-env
-[ -f inherit-env ] && . inherit-env
+#[ -f jenkins-env ] && cat jenkins-env | grep -e PASS -e GIT_COMMIT -e DEVSHIFT > inherit-env
+#[ -f inherit-env ] && . inherit-env
 
 # We need to disable selinux for now, XXX
 /usr/sbin/setenforce 0
