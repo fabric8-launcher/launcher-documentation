@@ -1,10 +1,15 @@
 #!/usr/bin/env bash
 
 # Builds all books into DocBook 5 XML and validates them using XMLlint.
+
+SCRIPT_SRC="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P )"
+XML_SCHEMA="$SCRIPT_SRC/xml-schema/docbook.xsd"
+
 failed_builds=""
 failed_validations=""
 exit_status=0
 
+# Check for binaries
 for binary in asciidoctor xmllint; do
     if ! $binary --version &>/dev/null; then
         echo The "$binary" binary is required for validation, please install it.
@@ -12,11 +17,11 @@ for binary in asciidoctor xmllint; do
     fi
 done
 
+# Validate Books
 echo "=== Validating Guides ==="
-
-for book in docs/*/master.adoc; do
+for book in $SCRIPT_SRC/../docs/*/master.adoc; do
     dir="$(dirname $book)"
-    echo -e "Processing $dir"
+    echo -e "Processing $(basename $dir)"
     pushd $dir >/dev/null
 
     # Check if this book is ignored in the CI builds
@@ -34,7 +39,7 @@ for book in docs/*/master.adoc; do
     fi
 
     # Validate the DocBook XML
-    if ! xmllint --schema http://docbook.org/xml/5.0/xsd/docbook.xsd master.xml 1>/dev/null; then
+    if ! xmllint --schema $XML_SCHEMA master.xml 1>/dev/null; then
         echo "Failed to validate $dir."
         failed_validations="$failed_validations $dir"
     fi
@@ -61,6 +66,7 @@ if test -n "$failed_validations"; then
     done
 fi
 
+# Output result
 if (($exit_status)); then
     echo -e "\nTesting failed.\n"
 else
