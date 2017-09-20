@@ -1,19 +1,19 @@
 = ${mission} - ${runtime} Booster
 
-== Interact with your Booster in Stage
+== Interact with the Booster in Stage
 From your workspace, click _Stage - 1.0.1_ under _Applications_. This will open the stage version of your booster that you can interact with. For more details on interacting with this booster, see the link:${guideURL}[${runtime} Runtime Guide].
 
 NOTE: Deploying your booster to Stage may take a few minutes to complete.
 
 
-== Promote your Booster to Run
+== Promote the Booster to Run
 * From your workspace, click _${targetRepository}_ under _Pipelines_
 * Click _Input Required_ under _Approve_
 * Click _Promote_.
 * Click the blue link next to _Rollout to Run_.
 * Return to your workspace and click _Run - 1.0.1_ under _Applications_ to interact with the _Run_ version of this booster.
 
-== Edit your Booster
+== Edit the Booster
 * Click _Create_ at the top of the page.
 * Click _Create Workspace_.
 * Click _Open_.

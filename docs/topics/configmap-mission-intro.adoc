@@ -10,6 +10,6 @@ This mission shows you how to:
 
 _ConfigMap_ is an object used by OpenShift to inject configuration data as simple key and value pairs into one or more Linux containers while keeping the containers agnostic of OpenShift. You can create a ConfigMap object in a variety of different ways, including using a YAML file, and inject it into the Linux container. You can find more information about ConfigMap in the link:https://docs.openshift.org/latest/dev_guide/configmaps.html[OpenShift documentation].
 
-= Why is ConfigMap Important?
+= Why ConfigMap is Important
 
 It is important for an application's configuration to be externalized and separate from it's code. This allows for the application's configuration to change as it moves through different environments while leaving the code unchanged. This also keeps sensitive or internal information out of your codebase and version control. Many languages and application servers provide environment variables to support externalizing an application's configuration. Microservices and Linux containers increase the complexity of this by adding pods, or groups of containers representing a deployment, and polyglot environments. ConfigMap enables application configuration to be externalized and used in individual Linux containers and pods in a language agnostic way. ConfigMap also allows sets of configuration data to be easily grouped and scaled, which enables you to configure an arbitrarily large number of environments beyond the basic _Dev_, _Stage_, and _Production_.

@@ -1,10 +1,10 @@
 
 
-= Build and Deploy Your Booster
+= Build and Deploy the Booster
 
-== Deploy your Booster to a {OpenShiftLocal}
+== Deploy the Booster to a {OpenShiftLocal}
 
-=== Deploy the Secured Booster using your {launcher} Application
+=== Deploy the Secured Booster using the {launcher} Application
 
 . Navigate to your {launcher} application running on your {OpenShiftLocal} and use it to create and launch your booster.
 

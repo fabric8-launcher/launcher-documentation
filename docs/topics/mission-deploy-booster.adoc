@@ -1,6 +1,6 @@
 
 [[crud_build_and_deploy_booster]]
-= Prerequisite: Deploy Your Booster and Determine its Route
+= Prerequisite: Deploy the Booster and Determine Its Route
 
 Before proceeding, follow the instructions in the `README.md` to deploy your booster and determine its URL.
 

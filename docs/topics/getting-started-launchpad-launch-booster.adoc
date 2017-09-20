@@ -1,5 +1,5 @@
 [[launcher-launch-booster]]
-= Launch Your Booster
+= Launch the Booster
 
 To launch your booster from the launch screen, you have the following options.
 

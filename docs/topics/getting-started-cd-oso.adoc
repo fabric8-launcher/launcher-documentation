@@ -1,5 +1,5 @@
 [[cd-oso]]
-= Continuous Delivery using {OpenShiftOnline}
+= Continuous Delivery Using {OpenShiftOnline}
 
 After using {launcher} to launch your booster, click the _See it here!_ link under _Creating your project on the OpenShift cloud_ to go to your booster's page in the OpenShift Web console.
 

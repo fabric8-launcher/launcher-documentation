@@ -1,5 +1,5 @@
 [[start-local-cloud]]
-= Start and Configure your {OpenShiftLocal} for the {launcher} Application
+= Start and Configure the {OpenShiftLocal} for the {launcher} Application
 
 NOTE: Starting your {OpenShiftLocal} may trigger a download of large virtual machines or Linux container images. This may take a while. Subsequent startups should be shorter as long as the virtual machines and Linux container images remained cached.
 

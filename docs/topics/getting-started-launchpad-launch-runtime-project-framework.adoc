@@ -1,5 +1,5 @@
 [[launcher-launch-runtime-project-framework]]
-= Launch Your Runtime Project Framework Project
+= Launch Your Runtime Project Framework
 
 To launch your runtime project framework from the launch screen, you have the following options.
 

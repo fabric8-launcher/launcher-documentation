@@ -1,4 +1,4 @@
-= Deploy your Booster to a {OpenShiftLocal}
+= Deploy the Booster to a {OpenShiftLocal}
 
 . Before you can use a {OpenShiftLocal}, you need to have it installed, configured, and running. You can find more details in link:{link-openshift-local-guide}#install-local-cloud[{openshift-local-guide-name}].
 
