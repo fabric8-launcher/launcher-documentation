@@ -9,6 +9,8 @@ TARGET_DIR="html"
 set -e
 
 [ -f jenkins-env ] && cat jenkins-env | grep -e PASS -e GIT -e DEVSHIFT > inherit-env
+
+cat inherit-env
 [ -f inherit-env ] && . inherit-env
 
 # We need to disable selinux for now, XXX
