@@ -11,7 +11,7 @@ $ minishift start --memory=4096
 Starting local OpenShift cluster using 'kvm' hypervisor...
 ...
 OpenShift server started.
-   
+
 The server is accessible via web console at:
     https://192.168.42.152:8443
 
@@ -47,6 +47,6 @@ At this time, Safari on macOS does not work with a {OpenShiftLocal}. This a link
 
 . Delete the preconfigured project.
 +
-The default installation provides a single project preconfigured, which you can delete. Click the trashcan icon and complete the confirmation to delete it.
+The default installation provides a single pre-configured project, which you can delete. Click the three-dot menu icon next to the project name, select _Delete Project_ from the drop-down menu, and complete the confirmation to delete it.
 +
 image::minishift_consolehome.png[OpenShift Console Home]
