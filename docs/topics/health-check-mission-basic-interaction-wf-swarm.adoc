@@ -1,4 +1,4 @@
-= Interact with the Unmodified {WildFlySwarm} Booster
+= Interacting with the Unmodified {WildFlySwarm} Booster
 
 Once you have the {WildFlySwarm} booster deployed, you will have a service called  `{app-name}` running that exposes a two REST endpoints: `/api/greeting` which returns a name as a String and `/api/killme`, which forces the service to become unresponsive as means to simulate a failure.
 

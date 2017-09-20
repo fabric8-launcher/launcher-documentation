@@ -1,5 +1,5 @@
 [[build-and-deploy-process]]
-= Build and Deploy to OpenShift Build Process
+= Building and Deploying to OpenShift Build Process
 
 When using {launcher}, you have the option to create and deploy a booster to OpenShift using the _Build and Deploy to OpenShift_ build process, which is based on link:{link-wf-swarm-runtime-guide}#s2i-build-process[the Source-to-Image (S2I) build process]. _Build and Deploy to OpenShift_ configures your booster's code to be built by OpenShift and deployed to OpenShift on each push to the master branch of your booster's GitHub repository. The benefit of this process is that it handles all the configuration, building, and deployment steps needed to get your booster's code running in OpenShift. It also allows you to quickly deploy code updates to help you rapidly iterate and see your changes in OpenShift. 
 

@@ -1,4 +1,4 @@
-= Install the {launcher} Application on a {OpenShiftLocal}
+= Installing the {launcher} Application on a {OpenShiftLocal}
 
 The {launcher} application is where everything starts. It helps you create projects called _boosters_ intended to jumpstart your development with a fully-working application. Each booster fulfills a _mission_, which defines the primary objective of your new project.  As an example, a mission might define how to open an HTTP endpoint or interact with a relational database.  Over time we will continue to grow the available missions, showing you how to accomplish tasks common to real enterprise development. Since {launcher} sets you up with a continuous delivery pipeline, you can evolve the example to fit your needs.
 

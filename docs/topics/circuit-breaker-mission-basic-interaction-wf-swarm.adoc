@@ -1,4 +1,4 @@
-= Interact with the Unmodified {WildFlySwarm} Booster
+= Interacting with the Unmodified {WildFlySwarm} Booster
 
 Once you have the {WildFlySwarm} booster deployed, you have the following services running:
 

@@ -1,7 +1,7 @@
 [[mission-secured-deploy-rhsso-cd]]
-= Deploy RH SSO to your {OpenShiftLocal} using your {launcher} Application
+= Deploying RH SSO to {OpenShiftLocal} using the {launcher} Application
 
-== Deploy the Secured Booster using your {launcher} Application
+== Deploying the Secured Booster using the {launcher} Application
 
 . Navigate to your {launcher} application running on your {OpenShiftLocal} and click _Prepare for Takeoff_.
 . Choose _Use OpenShift Online to build and deploy_.
@@ -31,7 +31,7 @@ NOTE: It may take a few minutes for the link to appear.
 You will be redirected to the startup logs in the `jenkins` pod. You have also given your {OpenShiftLocal} access to the `jenkins` pod and its logging information. Once you see the build start in the Jenkins logs, if you return to the _Overview_ page for your project in your {OpenShiftLocal}, you can see that the pipelines now show the build status.
 
 
-== Build your Secured Booster's Client
+== Building a client for the Secured Booster
 
 . Clone your project from GitHub.
 +

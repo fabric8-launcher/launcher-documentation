@@ -1,5 +1,5 @@
 [[launcher-create-runtime-project-framework]]
-= Use {launcher} to Create a Runtime Project Framework Project
+= Using {launcher} to Create a Runtime Project Framework Project
 
 After you have the {launcher} application running on your {OpenShiftLocal}, you can use it to create a runtime project framework project.
 

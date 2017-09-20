@@ -1,9 +1,9 @@
 [[launcher-launch-runtime-project-framework]]
-= Launch Your Runtime Project Framework Project
+= Launching Your Runtime Project Framework
 
 To launch your runtime project framework from the launch screen, you have the following options.
 
-== Launch Using Continuous Deployment
+== Launching Using Continuous Deployment
 
 To launch using continuous deployment, click the _Open in OpenShift_ button. This will:
 
@@ -13,4 +13,4 @@ To launch using continuous deployment, click the _Open in OpenShift_ button. Thi
  
 You can find a full list of runtime project frameworks in xref:available-runtime-project-frameworks[].
 
-== Launch Manually
+== Launching Manually

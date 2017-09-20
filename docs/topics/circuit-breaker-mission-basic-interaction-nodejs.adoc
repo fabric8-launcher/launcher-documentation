@@ -1,4 +1,4 @@
-= Interact with the Unmodified {NodeJS} Booster
+= Interacting with the Unmodified {NodeJS} Booster
 
 Once you have the {NodeJS} booster deployed, you have the following services running:
 

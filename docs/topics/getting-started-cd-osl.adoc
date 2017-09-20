@@ -1,4 +1,4 @@
-= Build and Deploy Using {OpenShiftLocal}
+= Building and Deploying Using {OpenShiftLocal}
 
 In addition to building on your local machine and pushing to a local or public cloud, you also have the ability to set up continuous delivery for a booster. Specifically, you can use the {launcher} application to clone a new booster repository to your GitHub account and have it deployed to your {OpenShiftLocal}.
 

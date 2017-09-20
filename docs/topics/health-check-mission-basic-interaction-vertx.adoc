@@ -1,4 +1,4 @@
-= Interact with the Unmodified {VertX} Booster
+= Interacting with the Unmodified {VertX} Booster
 
 Once you have the {VertX} booster deployed, you will have a service called `{app-name}` running that exposes the following REST endpoints:
 

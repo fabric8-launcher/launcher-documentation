@@ -1,5 +1,5 @@
 [[mission-secured-deploy-rhsso-zip]]
-= Deploy Using the `oc` CLI Client
+= Deploying Using the `oc` CLI Client
 
 :sso-app-name: secure-sso
 :sso-auth-url: https://{sso-app-name}-MY_PROJECT_NAME.{osl-route-hostname}/auth

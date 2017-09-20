@@ -1,5 +1,5 @@
 [[update-cd]]
-= Update Using Continuous Delivery
+= Updating Using Continuous Delivery
 
 This approach allows you to deploy updates directly from the GitHub repository created by the {launcher}.
 

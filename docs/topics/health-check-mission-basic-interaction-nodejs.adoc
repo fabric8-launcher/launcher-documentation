@@ -1,4 +1,4 @@
-= Interact with the Unmodified {NodeJS} Booster
+= Interacting with the Unmodified {NodeJS} Booster
 
 Once you have the {NodeJS} booster deployed, you will have a service called `{app-name}` running that exposes the following REST endpoints:
 

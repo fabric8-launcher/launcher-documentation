@@ -3,7 +3,7 @@
 
 In order to use the {launcher} application on a local cloud, you must have a {OpenShiftLocal} installed and configured. You can use either {Minishift} `{MinishiftVersion}` or {CDK} `{CDKVersion}`.
 
-== Install {Minishift}
+== Installing {Minishift}
 The installation steps for {Minishift} are available link:https://docs.openshift.org/latest/minishift/getting-started/installing.html[in the OpenShift documentation] and vary by platform.
 
 . Verify you have {Minishift} installed and configured.
@@ -43,7 +43,7 @@ features: Basic-Auth GSSAPI Kerberos SPNEGO
 ----
 
 
-== Install {CDK}
+== Installing {CDK}
 
 The installation steps for {CDK} are available link:https://access.redhat.com/documentation/en-us/red_hat_container_development_kit/3.0/html-single/installation_guide/[in {CDK} Installation Guide] and vary by platform.
 

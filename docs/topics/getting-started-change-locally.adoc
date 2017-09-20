@@ -1,4 +1,4 @@
-= Make Changes Locally
+= Making Changes Locally
 
 . Stop your booster.
 . Open your project in your desired IDE or editor, such as xref:use_devstudio[Developer Studio].

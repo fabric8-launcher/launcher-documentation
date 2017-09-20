@@ -1,4 +1,4 @@
-= Run Locally 
+= Running Locally 
 
 . Navigate to link:{link-launcher-oso}[{launcher}] using your browser.
 . Select _Prepare for Takeoff_.

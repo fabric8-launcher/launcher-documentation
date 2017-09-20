@@ -4,7 +4,7 @@ ${prerequisite}
 
 ${cicdSection}
 
-== Run this Booster Locally
+== Runing the Booster Locally
 
 To run this booster on your local host:
 
@@ -17,7 +17,7 @@ $ cd ${targetRepository}
 $ ${localRunCMD}
 ----
 
-== Interact with this Booster Locally
+== Interacting with the Booster Locally
 
 To interact with your booster while it's running locally, use the form at `http://localhost:8080` or the `curl` command:
 
@@ -31,7 +31,7 @@ $ curl http://localhost:8080/api/greeting?name=Sarah
 ----
 
 
-== Update this Booster
+== Updating the Booster
 To update your booster:
 
 . Stop your booster.
@@ -43,7 +43,7 @@ NOTE: To stop your running booster in a Linux or macOS terminal, use `CTRL+C`. I
 . Confirm your change appears.
 
 
-== Run this Booster on a Single-node OpenShift Cluster
+== Running the Booster on a Single-node OpenShift Cluster
 If you have a single-node OpenShift cluster, such as Minishift or the Red Hat Container Development Kit, link:http://appdev.openshift.io/docs/minishift-installation.html[installed and running], you can also deploy your booster there. A single-node OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
 
 To deploy your booster to a running single-node OpenShift cluster:

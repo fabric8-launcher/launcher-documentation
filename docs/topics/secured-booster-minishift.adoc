@@ -1,4 +1,4 @@
-= Configure Your {OpenShiftLocal}
+= Configuring Your {OpenShiftLocal}
 
 You can use your {OpenShiftLocal} to run your secured booster, but you need to update it from the default configuration.
 
