@@ -1,4 +1,4 @@
-= Interact with the Unmodified {VertX} Booster
+= Interacting with the Unmodified {VertX} Booster
 
 The booster provides a default HTTP endpoint that accepts GET requests.
 

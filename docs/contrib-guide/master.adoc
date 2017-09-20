@@ -13,7 +13,7 @@ include::topics/assembly-updating-booster-catalog-for-local-minishift-testing.ad
 
 You can preview the latest state of {launcher} by navigating to the link:{launcher-stage}[stage build] of {launcher}.
 
-== File a Code Issue
+== Filing a Code Issue
 
 _TBD_
 

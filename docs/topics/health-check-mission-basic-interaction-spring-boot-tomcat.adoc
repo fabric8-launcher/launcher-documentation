@@ -1,4 +1,4 @@
-= Interact with the Unmodified {SpringBoot} Booster
+= Interacting with the Unmodified {SpringBoot} Booster
 
 Once you have the {SpringBoot} booster deployed, you will have a service called `{app-name}` running that exposes the following REST endpoints:
 

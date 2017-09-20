@@ -1,5 +1,5 @@
 [[oso-create-booster]]
-= Create a Booster
+= Creating a Booster
 
 . Navigate to link:{link-launcher-oso}[{launcher}] using your browser.
 . Select _Launch your Project_.

@@ -1,4 +1,4 @@
-= Clone the {VertX} Secured Booster
+= Cloning the {VertX} Secured Booster
 
 You need to clone the secured booster, which includes a submodule for the {RHSSO} portion of the booster.
 

@@ -1,4 +1,4 @@
-= Interact with the Unmodified {NodeJS} Booster
+= Interacting with the Unmodified {NodeJS} Booster
 
 The booster provides a default HTTP endpoint that accepts `GET` requests.
 

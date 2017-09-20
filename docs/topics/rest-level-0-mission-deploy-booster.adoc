@@ -1,10 +1,10 @@
 [[rest_build_and_deploy_booster]]
-= Build and Deploy the Booster
+= Building and Deploying the Booster
 
 include::booster-deploy-openshift-local.adoc[leveloffset=+1]
 
 // this is intentionally a level 3
-=== Deploy Using the `oc` CLI Client
+=== Deploying Using the `oc` CLI Client
 
 include::oc-client-deploy-booster-download-note.adoc[leveloffset=+3]
 

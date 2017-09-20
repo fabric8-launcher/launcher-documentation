@@ -1,5 +1,5 @@
 [[launcher-sso-settings]]
-= Configure {launcher} {RHSSO} Federated Identity Settings
+= Configuring {launcher} {RHSSO} Federated Identity Settings
 
 In order to use {launcher}, you must grant it access to your GitHub and OpenShift accounts. This is a one-time action.
 

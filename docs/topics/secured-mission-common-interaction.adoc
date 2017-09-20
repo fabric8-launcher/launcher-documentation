@@ -1,4 +1,4 @@
-= Interact with the Secured Booster
+= Interacting with the Secured Booster
 
 The Secured booster provides a default HTTP endpoint that accepts `GET` requests if the caller is authenticated and authorized. The `sso` directory of the booster contains a Java client you can use to interact with the Secured booster. The client first authenticates against the {RHSSO} server and then performs a `GET` request against the Secured booster using the access token returned by the authentication step.
 

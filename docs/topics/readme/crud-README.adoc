@@ -6,7 +6,7 @@ ${prerequisite}
 
 ${cicdSection}
 
-== Run the Booster on a Single-node OpenShift Cluster
+== Running the Booster on a Single-node OpenShift Cluster
 If you have a single-node OpenShift cluster, such as Minishift or the Red Hat Container Development Kit, link:http://appdev.openshift.io/docs/minishift-installation.html[installed and running], you can also deploy your booster there. A single-node OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
 
 To deploy your booster to a running single-node OpenShift cluster:
@@ -23,7 +23,7 @@ $ oc new-app -e POSTGRESQL_USER=luke -ePOSTGRESQL_PASSWORD=secret -ePOSTGRESQL_D
 $ ${OSORunCMD}
 ----
 
-== Interact with the Booster on a Single-node OpenShift Cluster
+== Interacting with the Booster on a Single-node OpenShift Cluster
 
 To interact with your booster while it's running on a Single-node OpenShift Cluster, you first need to obtain it's URL:
 

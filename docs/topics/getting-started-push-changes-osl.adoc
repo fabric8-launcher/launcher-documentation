@@ -1,4 +1,4 @@
-= Push Changes to a {OpenShiftLocal}
+= Pushing Changes to a {OpenShiftLocal}
 
 Local development is a fine initial approach, but one of the big opportunities microservices presents is developing for the cloud _first_. This means pushing changes to the cloud and testing them as they are being developed. This can reduce problems that arise from "Well, it worked on my machine". 
 

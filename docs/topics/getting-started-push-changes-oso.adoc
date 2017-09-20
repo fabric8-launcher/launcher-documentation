@@ -1,4 +1,4 @@
-= Push Changes to {OpenShiftOnline}
+= Pushing Changes to {OpenShiftOnline}
 
 You can also use the same process for pushing changes to a {OpenShiftLocal} with {OpenShiftOnline}.
 

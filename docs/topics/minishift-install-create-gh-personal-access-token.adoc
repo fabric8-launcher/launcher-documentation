@@ -1,4 +1,4 @@
-= Create a GitHub Personal Access Token
+= Creating a GitHub Personal Access Token
 
 IMPORTANT: You must have a link:http://github.com[GitHub] account to set up a personal access token. If you do not have one, you must link:http://github.com/join[create a GitHub account] before continuing.
 
