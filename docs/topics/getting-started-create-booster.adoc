@@ -1,5 +1,14 @@
 [[oso-create-booster]]
-= Creating a Booster
+= Using {OpenShiftOnline} to Create a Booster
+{OpenShiftOnline} is a robust target cloud environment for your applications and services. The xref:launcher-details[{launcher} application] provides a fast and easy way to create, build, and deploy a Mission booster directly to {OpenShiftOnline}.
+
+[sidebar]
+.Before You Start...
+--
+* link:https://www.openshift.com[Have an {OpenShiftOnline} account]
+* link:https://developers.redhat.com[Have a Red Hat Developers account]
+* link:https://github.com[Have a GitHub account]
+--
 
 . Navigate to link:{link-launcher-oso}[{launcher}] using your browser.
 . Select _Launch your Project_.

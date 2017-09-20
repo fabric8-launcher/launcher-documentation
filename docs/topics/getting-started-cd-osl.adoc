@@ -1,8 +1,15 @@
-= Building and Deploying Using {OpenShiftLocal}
+= Using a {OpenShiftLocal} to Create a Booster
+In addition to using {OpenShiftOnline} to create a booster, you can also use {OpenShiftLocal}. A {OpenShiftLocal} provides an out-of-the-box solution for setting up such an environment on your local machine without the need for extensive setup and configuration. Specifically, you can use the xref:launcher-details[{launcher} application] to clone a new booster repository to your GitHub account and have it deployed to your {OpenShiftLocal} using the xref:build-and-deploy-process[Build and Deploy process].
 
-In addition to building on your local machine and pushing to a local or public cloud, you also have the ability to set up continuous delivery for a booster. Specifically, you can use the {launcher} application to clone a new booster repository to your GitHub account and have it deployed to your {OpenShiftLocal}.
+[sidebar]
+.Before You Start...
+--
+* link:https://developers.redhat.com[Have a Red Hat Developers account]
+* link:https://github.com[Have a GitHub account]
+* link:{link-openshift-local-guide}[Have a {OpenShiftLocal} installed]
+* link:{link-launcher-openshift-local-install-guide}#create-launcher-app[Have the {launcher} application installed to your {OpenShiftLocal}].
+--
 
-. link:{link-launcher-openshift-local-install-guide}#create-launcher-app[Install the {launcher}] application to your {OpenShiftLocal}.
 . Navigate to the {launcher} application on your {OpenShiftLocal} using your browser.
 +
 [NOTE]
@@ -21,7 +28,7 @@ $ minishift console
 Doing this, you:
 +
 ** Create a new GitHub repository in your account containing the code of your booster.
-** Configure {OpenShiftLocal} to build and deploy your code on each push to your repository’s master branch.
+** Configure your {OpenShiftLocal} to build and deploy your code from your repository’s master branch.
 
 . Click the _See it here!_ link under _Creating your project on the OpenShift cloud_ to go to the page of your booster's in the OpenShift Web console.
 
@@ -29,8 +36,8 @@ To navigate to the {OpenShiftLocal} Web console and view the status of your buil
 
 When your deployment is complete, interact with your booster using the URL at the top of the page. For more details about interacting with your booster, see the `README.adoc` file in the booster's repository.
 
-At this point, you have created a new booster repository in your GitHub account and deployed it to {OpenShiftLocal}. To push changes to this booster in {OpenShiftLocal}, you can push a new commit to the GitHub repository and start a new build.
-
+== Updating Your Booster and Deploying the Changes
+At this point, you have created a new booster repository in your GitHub account and deployed it to your {OpenShiftLocal}. To push changes to this booster in your {OpenShiftLocal}, you can push a new commit to the GitHub repository and start a new build.
 
 . Clone your project from GitHub:
 +
