@@ -2,10 +2,11 @@
 When you create cloud-native applications and services, you need a hosted or local development environment that matches the target cloud environment. This enables you to encounter and resolve deployment and environment issues in your applications and services in your local environment before deploying them to your target cloud environment. 
 
 [.lead]
-A {OpenShiftLocal} provides an out-of-the-box solution for setting up such an environment on your local machine without the need for extensive setup and configuration. 
+[[launcher-details]]
+The {launcher} application gives you a hassle-free way of creating functional example applications called Missions as well as easy way to build and deploy those Missions to a cloud environment. The {launcher} application is available link:{link-launcher-oso}[directly on {OpenShiftOnline}]. You also have the option to link:{link-launcher-openshift-local-install-guide}#create-launcher-app[install and run it on your {OpenShiftLocal}].
 
 [.lead]
-The {launcher} application gives you a hassle-free way of creating functional example applications called Missions as well as easy way to build and deploy those Missions to a cloud environment. The Missions are designed to showcase various fundamental pieces of building cloud-native applications and services, such as:
+The Missions are designed to showcase various fundamental pieces of building cloud-native applications and services, such as:
 
 [.lead]
 * Creating HTTP APIs
