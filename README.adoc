@@ -6,7 +6,7 @@ This repository holds the documentation for link:https://appdev.openshift.io[app
 
 link:https://ci.centos.org/job/devtools-appdev-documentation-generator-build-master/[image:https://ci.centos.org/buildStatus/icon?job=devtools-appdev-documentation-generator-build-master[]]
 
-The documentation is built on link:https://ci.centos.org/job/devtools-appdev-documentation-generator-build-master/[ci.centos.org]. The pull requests build functionality is coming soon.
+The documentation is built on link:https://ci.centos.org/job/devtools-appdev-documentation-generator-build-master/[ci.centos.org]. Both the `master` branch and individual pull requests are subject to testing.
 
 == Contributing
 
@@ -18,5 +18,5 @@ For general information about missions and boosters, see the link:https://appdev
 
 You can find the list of issues addressed in each release in the link:https://github.com/openshiftio/appdev-documentation/blob/master/CHANGELOG.adoc[CHANGELOG.adoc] file.
 
-Basic information about publishing a release is described in the link:https://appdev.openshift.io/docs/contrib-guide.html#releasing-new-version[Releasing New Version] chapter of the __Contribution Guide.__
+Basic information about publishing a release is described in the link:https://appdev.openshift.io/docs/contrib-guide.html#releasing_new_version[Releasing New Version] chapter of the __Contribution Guide.__
 
