@@ -17,8 +17,10 @@ echo "=== Verifying Launchpad Files ==="
 # Failing gracefully if some of the used binaries is not installed
 for binary in curl sed grep; do
     if ! $binary --version &>/dev/null; then
+      if ! which $binary &>/dev/null; then #macOS workaround
         echo -e "The '${binary}' binary is missing. Please install it."
         exit 2
+      fi
     fi
 done
 
