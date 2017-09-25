@@ -5,6 +5,7 @@
 // Rationale: This module is useful both when setting up minishift as is and when testing a local
 // booster catalog.
 
+[[launcher-manual-install]]
 ifndef::parameter-custom-catalog[= Creating {launcher} Application Manually]
 ifdef::parameter-custom-catalog[= Creating {launcher} Application]
 

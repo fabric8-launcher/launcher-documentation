@@ -7,6 +7,8 @@ You can install the {launcher} application to your {OpenShiftLocal} using link:{
 * Deploy the {launcher} application to that project using the link:{link-launcher-yaml}[latest template].
 * Configure the {launcher} application with your GitHub username and personal access token.
 
+IMPORTANT: If you are running your {OpenShiftLocal} on Windows, you must use the xref:launcher-manual-install[manual method] for installing the {launcher} application.
+
 [discrete]
 == Procedure
 
