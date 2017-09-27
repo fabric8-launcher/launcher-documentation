@@ -10,7 +10,7 @@
 
 == Terms Specific to {launcher}
 
-[glossary_booster]
+[[glossary_booster]]
 Booster:: An language-specific implementation of a particular xref:glossary_mission[mission] on a particular xref:glossary_runtime[runtime]. Boosters are listed in a xref:glossary_booster_catalog[booster catalog].
 +
 For example, a booster is a web service with a REST API implemented using the {WildFlySwarm} runtime.
