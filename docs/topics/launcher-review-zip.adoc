@@ -1,4 +1,4 @@
-.Next Steps: Run your Booster.
+.Next Steps: Run your booster.
 
 Extract your booster:
 [source,bash,options="nowrap",subs="attributes+"]

@@ -1,4 +1,4 @@
-.Next Steps: Update your Booster using Continuous Delivery
+.Next Steps: Update your booster using Continuous Delivery
 Your booster is automatically configured to build and deploy with new commits.
 
 . Clone your project from GitHub.

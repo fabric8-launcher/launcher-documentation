@@ -48,7 +48,7 @@ Available application endpoint names: []
 +
 The line starting with `Using auth server URL:` is the line that provides the `SSO_AUTH_SERVER_URL`. In this case it is `{sso-auth-url}`. You will need this value later.
 
-. Package and deploy your {runtime-name} Booster to your {OpenShiftLocal}
+. Package and deploy your {runtime-name} booster to your {OpenShiftLocal}
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----

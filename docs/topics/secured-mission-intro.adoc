@@ -86,19 +86,19 @@ for each of the secured endpoints.
 The OAuth 2.0 specification allows you to define a role for application clients that access secured resources on behalf of resource owners. The `master` realm has four application clients defined:
 
 demoapp::
-This is a `confidential` type client with a client secret that is used to obtain an access token that contains grants for the `alice` user which enable `alice` to access the {WildFlySwarm}, {VertX} and {SpringBoot} based REST Booster deployments.
+This is a `confidential` type client with a client secret that is used to obtain an access token that contains grants for the `alice` user which enable `alice` to access the {WildFlySwarm}, {VertX} and {SpringBoot} based REST booster deployments.
 
 secured-swarm-endpoint::
-The `secured-swarm-endpoint` is a bearer-only type of client that requires a `swarm-admin` role for accessing the associated resources that represents the secured {WildFlySwarm} Booster.
+The `secured-swarm-endpoint` is a bearer-only type of client that requires a `swarm-admin` role for accessing the associated resources that represents the secured {WildFlySwarm} booster.
 
 secured-vertx-endpoint::
-The `secured-vertx-endpoint` is a bearer-only type of client that requires a `vertx-admin` role for accessing the associated resources that represents the secured {VertX} Booster.
+The `secured-vertx-endpoint` is a bearer-only type of client that requires a `vertx-admin` role for accessing the associated resources that represents the secured {VertX} booster.
 
 secured-springboot-endpoint::
-The `secured-springboot-endpoint` is a bearer-only type of client that requires a `springboot-admin` role for accessing the associated resources that represents the secured {SpringBoot} Booster.
+The `secured-springboot-endpoint` is a bearer-only type of client that requires a `springboot-admin` role for accessing the associated resources that represents the secured {SpringBoot} booster.
 
 == Security Constraints
 
-The Secured Booster establishes a security context that is managed by {RHSSO} using adaptor code that verifies a signed JSON web token, like the one shown for the `alice` user, using configuration information that allows the adaptor code to verify the token.
+The Secured booster establishes a security context that is managed by {RHSSO} using adaptor code that verifies a signed JSON web token, like the one shown for the `alice` user, using configuration information that allows the adaptor code to verify the token.
 
 The configuration information includes things like the realm name, the realm public key, the {RHSSO} server auth URL, and resource target.

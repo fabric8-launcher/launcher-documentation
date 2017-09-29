@@ -16,4 +16,4 @@ The Missions are designed to showcase various fundamental pieces of building clo
 * Securing your applications with {RHSSO} to provide authentication and authorization functionality
 
 [.lead]
-Each mission is comprised of different Boosters that show how to implement the same mission in different runtimes and any booster can be updated or extended for your own use case. This guide takes you through the developer's journey of deploying a Booster application in several ways.
+Each mission is comprised of different boosters that show how to implement the same mission in different runtimes and any booster can be updated or extended for your own use case. This guide takes you through the developer's journey of deploying a booster application in several ways.
