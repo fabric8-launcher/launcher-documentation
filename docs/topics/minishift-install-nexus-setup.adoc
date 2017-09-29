@@ -114,7 +114,7 @@ nexus     nexus-{nexus-project-name}.{osl-route-hostname}             nexus     
 Nexus comes pre-configured for the Maven Central Repository, but you may need other repositories for your application. To access images provided by Red Hat, add the `jboss-ga` Maven repository to your Nexus instance.
 --
 +
-.  Navigate to the project containing your Booster application.
+.  Navigate to the project containing your booster application.
 +
 [source,bash,subs="attributes+"]
 --
@@ -172,4 +172,4 @@ oc rollout latest dc/jenkins
 KNOWN ISSUE: Redeploying your instance of Jenkins server causes other ongoing builds to hang.
 --
 +
-.  Navigate to the project that contains your Booster and use the Web console to go to _Builds_ > _Pipelines_ and click _Start Pipeline_ to rebuild your Booster application.
+.  Navigate to the project that contains your booster and use the Web console to go to _Builds_ > _Pipelines_ and click _Start Pipeline_ to rebuild your booster application.

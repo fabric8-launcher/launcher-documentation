@@ -2,7 +2,7 @@
 
 IMPORTANT: You must have a link:http://github.com[GitHub] account to set up a personal access token. If you do not have one, you must link:http://github.com/join[create a GitHub account] before continuing.
 
-The {launcher} application adds generated starter applications called _Boosters_ to your GitHub namespace. This requires the {launcher} application to have access to your GitHub account, which is granted using a GitHub personal access token.
+The {launcher} application adds generated starter applications called _boosters_ to your GitHub namespace. This requires the {launcher} application to have access to your GitHub account, which is granted using a GitHub personal access token.
 
 To create a GitHub personal access token:
 
