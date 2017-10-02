@@ -1,5 +1,118 @@
 = Change Log
 
+== link:https://github.com/openshiftio/appdev-documentation/releases/tag/2017-09-29[2017-09-29 Release]
+
+* https://github.com/openshiftio/appdev-documentation/issues/671[Issue
+671] - ZIP download links in booster descriptions point to Using
+OpenShift Online to Create a Booster
+* https://github.com/openshiftio/appdev-documentation/issues/667[Issue
+667] - Add note about windows option for install script
+* https://github.com/openshiftio/appdev-documentation/issues/658[Issue
+658] - Update GSG paragraph around minishift
+* https://github.com/openshiftio/appdev-documentation/issues/655[Issue
+655] - Improve validating performance on slow connections
+* https://github.com/openshiftio/appdev-documentation/issues/648[Issue
+648] - Fix link title in crud mission intro
+* https://github.com/openshiftio/appdev-documentation/issues/647[Issue
+647] - Check capitalisation of headings for consistency
+* https://github.com/openshiftio/appdev-documentation/issues/645[Issue
+645] - take editing pass at node.js configmap content
+* https://github.com/openshiftio/appdev-documentation/issues/644[Issue
+644] - Update "continuous delivery" title in GSG to "build and deploy"
+* https://github.com/openshiftio/appdev-documentation/issues/638[Issue
+638] - Document keycloak configuration process
+* https://github.com/openshiftio/appdev-documentation/issues/637[Issue
+637] - Refactor instructions and mentions of pipelines
+* https://github.com/openshiftio/appdev-documentation/issues/634[Issue
+634] - Update READMEs with local runtime pre-requisites
+* https://github.com/openshiftio/appdev-documentation/issues/633[Issue
+633] - Add new section on S2I build for launcher
+* https://github.com/openshiftio/appdev-documentation/issues/632[Issue
+632] - Consider names of paths in booster creation
+* https://github.com/openshiftio/appdev-documentation/issues/586[Issue
+586] - Add launcher frontend test to PR testing
+* https://github.com/openshiftio/appdev-documentation/issues/566[Issue
+566] - add a note to release notes that current Fabric8 Maven plugin
+doesn't work with OpenShift 3.6
+* https://github.com/openshiftio/appdev-documentation/issues/559[Issue
+559] - Delete is not a trashcan icon in minishift minishift v1.5.0
+* https://github.com/openshiftio/appdev-documentation/issues/552[Issue
+552] - Enable server-side checking for launchpad files
+* https://github.com/openshiftio/appdev-documentation/issues/543[Issue
+543] - Figure out a way to display $ separately for command blocks
+* https://github.com/openshiftio/appdev-documentation/issues/525[Issue
+525] - Update launcher urls
+* https://github.com/openshiftio/appdev-documentation/issues/449[Issue
+449] - Update Minishift install guide to match the latest Minishift
+version released
+* https://github.com/openshiftio/appdev-documentation/issues/413[Issue
+413] - Publish Contribution Guide
+* https://github.com/openshiftio/appdev-documentation/issues/389[Issue
+389] - Document process for updating catalog for local minishift testing
+* https://github.com/openshiftio/appdev-documentation/issues/325[Issue
+325] - Add a Required infrastructure Component Versions Section to the
+Release Notes.
+* https://github.com/openshiftio/appdev-documentation/issues/309[Issue
+309] - Create a Glossary
+* https://github.com/openshiftio/appdev-documentation/issues/283[Issue
+283] - Describe Build and Deploy process in more detail
+
+== link:https://github.com/openshiftio/appdev-documentation/releases/tag/2017-09-08[2017-09-08 Release]
+
+* https://github.com/openshiftio/appdev-documentation/issues/623[Issue
+623] - Create appendix in nodejs guide explaining nodeshift plugin
+* https://github.com/openshiftio/appdev-documentation/issues/620[Issue
+620] - Update landing page look/feel
+* https://github.com/openshiftio/appdev-documentation/issues/602[Issue
+602] - Update Node.js callout at start of guide
+* https://github.com/openshiftio/appdev-documentation/issues/601[Issue
+601] - Minishift Guide / Appendix A: Using Nexus: couple of issues
+* https://github.com/openshiftio/appdev-documentation/issues/600[Issue
+600] - Minishift Guide / 5. Next Steps: maybe also link to Node.js
+guide?
+* https://github.com/openshiftio/appdev-documentation/issues/599[Issue
+599] - Minishift Guide / 4.2. Manually: one small issue
+* https://github.com/openshiftio/appdev-documentation/issues/597[Issue
+597] - Fix Install and Configure a Single-node OpenShift Cluster URL
+* https://github.com/openshiftio/appdev-documentation/issues/590[Issue
+590] - CRUD integration tests remove application
+* https://github.com/openshiftio/appdev-documentation/issues/589[Issue
+589] - 2 ways to get application URL
+* https://github.com/openshiftio/appdev-documentation/issues/579[Issue
+579] - Openshift -> OpenShift
+* https://github.com/openshiftio/appdev-documentation/issues/574[Issue
+574] - re-add oso flow to runtime guides
+* https://github.com/openshiftio/appdev-documentation/issues/565[Issue
+565] - Is it OK to say that booster needs to be created with
+launch.openshift.io when it's not on OSIO?
+* https://github.com/openshiftio/appdev-documentation/issues/564[Issue
+564] - Different pod names when explaining how to deploy a booster
+* https://github.com/openshiftio/appdev-documentation/issues/563[Issue
+563] - POST requests are not executed on /api/fruits/* endpoint
+* https://github.com/openshiftio/appdev-documentation/issues/562[Issue
+562] - Spring Boot ConfigMap booster doc should explain what policy is
+being added
+* https://github.com/openshiftio/appdev-documentation/issues/561[Issue
+561] - Spring Boot circuit breaker doc shouldn't recommend skipping
+tests
+* https://github.com/openshiftio/appdev-documentation/issues/557[Issue
+557] - fix nodejs crud mission wording
+* https://github.com/openshiftio/appdev-documentation/issues/554[Issue
+554] - Include staging URLs in the Contrib Guide
+* https://github.com/openshiftio/appdev-documentation/issues/553[Issue
+553] - Validate books in the pre-commit hook
+* https://github.com/openshiftio/appdev-documentation/issues/549[Issue
+549] - Add OSIO README properties for NodeJS for CRUD mission
+* https://github.com/openshiftio/appdev-documentation/issues/545[Issue
+545] - Add "push to origin" check box option to OSIO README git flow
+* https://github.com/openshiftio/appdev-documentation/issues/544[Issue
+544] - Add RUN command "local flow" for OSIO READMES
+* https://github.com/openshiftio/appdev-documentation/issues/542[Issue
+542] - Force links to open in a new window for Front End topics
+* https://github.com/openshiftio/appdev-documentation/issues/504[Issue
+504] - Enable testing for pull requests
+
+
 == link:https://github.com/openshiftio/appdev-documentation/releases/tag/2017-09-08[2017-09-08 Release]
 
 * https://github.com/openshiftio/appdev-documentation/issues/623[Issue
