@@ -131,7 +131,7 @@
 // OSO hostname e.g: 1ab5.starter-us-east-1.openshiftapps.com
 :oso-route-hostname: OPENSHIFT_ONLINE_HOSTNAME
 
-:link-launcher-install-script: https://raw.githubusercontent.com/openshiftio/appdev-documentation/master/scripts/deploy_launchpad_mission.sh
+:link-launcher-install-script: https://raw.githubusercontent.com/fabric8-launch/appdev-documentation/master/scripts/deploy_launchpad_mission.sh
 
 
 // Mission Knowledge Proficiency
@@ -145,7 +145,7 @@
 // externalize `github.com/appdev-documentation` repo references
 // changes NOT applicable to CHANGELOG and booster-specific README files.
 :repo-docs-name: appdev-documentation
-:link-repo-docs: https://github.com/openshiftio/appdev-documentation/
+:link-repo-docs: https://github.com/fabric8-launch/appdev-documentation/
 
 :docs-name: appdev.openshift.io
 :link-docs: https://appdev.openshift.io
