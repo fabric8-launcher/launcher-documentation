@@ -1,0 +1,36 @@
+[[update-booster]]
+= Updating Your Booster and Deploying the Changes
+To make changes to a booster running in {OpenShiftOnline} or your {OpenShiftLocal}, push a new commit to the GitHub repository with the booster and start a new build.
+
+.Prerequisites
+--
+* A booster deployed to xref:oso-create-booster[{OpenShiftOnline}] or xref:osl-create-booster[{OpenShiftLocal}] using the _Deploy in OpenShift Online_ option.
+--
+
+.Procedure
+. Clone your project from GitHub:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git clone git@github.com:USERNAME/PROJECT-NAME.git
+----
+
+. Open your project in a text editor or an IDE, such as xref:use_devstudio[JBDS].
+. Make an update to the project.
+. Save the changes.
+. Commit and push the changes back to GitHub:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git add .
+$ git commit -m "Made an update"
+$ git push
+----
+
+. Navigate back to the {OpenShiftOnline} or {OpenShiftLocal} Web console and ensure the project of your booster is selected.
+.. If the booster is deployed to {OpenShiftOnline}, a new build will automatically start.
+.. If the booster is deployed to your {OpenShiftLocal}, click on the three dots on the right side of the deployment of the application, and choose _Start Build_.
+
+. After the deployment is complete, confirm the changes.
++
+The deployment is complete when you see _Build #2 is complete_ under _Builds_ and `#2` next to the name of the application under _Deployment_. This number will increase for each additional build and deployment.

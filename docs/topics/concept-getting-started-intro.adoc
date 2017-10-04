@@ -1,0 +1,53 @@
+
+= Introduction to {ProductName}
+This section provides a brief overview of the foundational concepts behind {ProductName}.
+
+.Modern Application Development
+Modern application development involves building and deploying to a cloud environment such as OpenShift. This requires:
+
+* familiarity with the target cloud environment
+* an application architecture designed to run in that cloud environment
+* design patterns that enable you to manage your services
+* developer tools that simplify the development and release cycle
+
+The goal of {ProductName} is to provide opinionated architectures, design patterns, tools, and best practices in ready-to-go examples that run in OpenShift in order to enable modern application development.
+
+
+.OpenShift
+link:https://www.openshift.com[Red Hat OpenShift] is a container application platform that brings link:https://www.redhat.com/en/topics/containers/what-is-docker[docker] and link:https://www.redhat.com/en/topics/containers/what-is-kubernetes[Kubernetes] to the enterprise. link:{link-launcher-oso}[{OpenShiftOnline}] is a public cloud hosted and supported by Red Hat. A {OpenShiftLocal} is a cloud environment that runs on your localhost such as the link:https://developers.redhat.com/products/cdk/overview/[{CDK}] or link:https://www.openshift.org/minishift/[{Minishift}].
+
+
+[[launcher-details]]
+.The {launcher} Application
+As a part of {ProductName}, the {launcher} application provides a hassle-free way of creating functional example applications called missions, as well as an easy way to build and deploy those missions to OpenShift. The {launcher} application is available on link:{link-launcher-oso}[{OpenShiftOnline}]. You also have the option to link:{link-launcher-openshift-local-install-guide}#create-launcher-app[install and run it on your {OpenShiftLocal}].
+
+
+.Missions and Boosters
+A mission implements a link:http://microservices.io/patterns/microservices.html[microservice pattern] such as:
+
+* Health Check
+* HTTP endpoint
+* link:https://docs.openshift.com/online/dev_guide/configmaps.html[Externalized Configuration]
+* Circuit Breaker
+
+Missions use these patterns to show how to create the fundamental building blocks of cloud-native applications and services, such as:
+
+* Creating HTTP APIs
+* Integrating your application with a relational database to provide persistent data storage
+* Implementing the health check and circuit-breaker patterns to ensure that your services can withstand a traffic overload and network issues
+* Externalizing the configuration of your applications to make them more secure and easier to scale
+* Securing your applications with {RHSSO} to provide authentication and authorization functionality
+
+Each mission has an implementation in one or more runtimes. Each specific implementation is known as a booster. The actual project that contains the source code is also called a booster. Any booster can be updated or extended for your own use case.
+
+[[build-and-deploy-process]]
+.Process for Building and Deploying to OpenShift
+
+When using {launcher}, you have the option to create and deploy a booster to OpenShift using the _Build and Deploy to OpenShift_ build process, which is based on link:{link-wf-swarm-runtime-guide}#s2i-build-process[the Source-to-Image (S2I) build process]. _Build and Deploy to OpenShift_ configures OpenShift to pull the code of your booster from a GitHub repository, build it, and deploy it to OpenShift.
+
+The benefit of this process is that it handles all the configuration, building, and deployment steps needed to get the code of your booster running in OpenShift. It also allows you to quickly deploy code updates to help you rapidly iterate and see your changes in OpenShift.
+
+OpenShift allows different link:https://docs.openshift.com/online/dev_guide/builds/index.html[build strategies] including Source-to-Image and Jenkins Pipeline. The {ProductName} boosters use the link:https://docs.openshift.com/online/architecture/core_concepts/builds_and_image_streams.html#source-build[Source-to-Image strategy] for simplicity of use and implementation. Other build strategies, such as the Jenkins Pipeline, have additional complexities such as more servers for doing builds.
+
+Boosters created using the _Build and Deploy to OpenShift_ build process can also be run locally as well as built locally and manually deployed to OpenShift. For more information on these options, see the `README.adoc` file of the booster.
+
