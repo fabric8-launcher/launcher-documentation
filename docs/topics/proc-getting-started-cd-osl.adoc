@@ -1,0 +1,42 @@
+[[osl-create-booster]]
+= Creating and Deploying a Booster Using your {OpenShiftLocal}
+You can quickly create, build, and deploy a booster to {OpenShiftLocal} using the {launcher} application. The {launcher} application creates a new repository in your GitHub account containing the booster's code and deploys it to your {OpenShiftLocal}. It can also create a ZIP of the booster for you to download and run on your localhost.
+
+
+[sidebar]
+.Prerequisites
+--
+* link:https://developers.redhat.com[Have a Red Hat Developers account]
+* link:https://github.com[Have a GitHub account]
+* link:{link-launcher-openshift-local-install-guide}[Have a {OpenShiftLocal} installed]
+* link:{link-launcher-openshift-local-install-guide}#create-launcher-app[Have the {launcher} application installed to your {OpenShiftLocal}].
+--
+
+.Procedure
+. Navigate to the {launcher} application on your {OpenShiftLocal} using your browser.
+** Optionally, use the following command to open the Web Console of your {OpenShiftLocal} in your browser in order to navigate to your {launcher} application:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ minishift console
+----
+
+. Select _Launch Your Project_.
+. Select _Use {OpenShiftOnline}_.
+** Use the _Deploy in OpenShift Online_ option to create a new GitHub repository containing your booster. It will also be launched to {OpenShiftLocal}.
+** Use the _Build and Run Locally_ to create a ZIP download containing your booster. This will *not* create a GitHub repository or deploy your booster to {OpenShiftLocal}.
+
+. Follow the instructions to create a booster of your choice.
+. Click the _Take a look at your build_ to navigate to your booster in the {OpenShiftLocal} Web console to see your booster's deployment status.
+** You can expand your deployment and view the details as it deploys. Your deployment is complete when you see _Build #1 is complete_ under _Builds_ and you see `1 pod` in the blue circle.
+
+. When your deployment is complete, click on the URL at the top of the page to start interacting with your booster. 
+** Open the `README.adoc` file in your booster's project for more details about interacting with your booster.
+
+.Related Information
+Take a look the different runtime guides to learn more about runtimes as well as their boosters:
+
+* link:{link-spring-boot-runtime-guide}[{spring-boot-runtime-guide-name}]
+* link:{link-vertx-runtime-guide}[{vertx-runtime-guide-name}]
+* link:{link-wf-swarm-runtime-guide}[{wf-swarm-runtime-guide-name}]
+* link:{link-nodejs-runtime-guide}[{nodejs-runtime-guide-name}]

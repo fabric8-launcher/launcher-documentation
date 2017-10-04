@@ -1,8 +1,0 @@
-= Next Steps
-
-Take a look the different runtime guides to learn more about runtimes as well as their boosters:
-
-* link:{link-spring-boot-runtime-guide}[{spring-boot-runtime-guide-name}]
-* link:{link-vertx-runtime-guide}[{vertx-runtime-guide-name}]
-* link:{link-wf-swarm-runtime-guide}[{wf-swarm-runtime-guide-name}]
-* link:{link-nodejs-runtime-guide}[{nodejs-runtime-guide-name}]

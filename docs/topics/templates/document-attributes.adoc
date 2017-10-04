@@ -14,6 +14,9 @@
 //:stylesheet: asciidoc-default.css
 :stylesheet: foundation.css
 
+:ProductName: The Red Hat Developer Experience
+:ProductShortName: The Red Hat Developer Experience
+
 :OpenShiftOnline: OpenShift Online
 :OpenShiftLocal: Single-node OpenShift Cluster
 :Minishift: Minishift
@@ -58,7 +61,7 @@
 
 :openshift-local-guide-name: Install and Configure a {OpenShiftLocal}
 :minishift-installation-guide-name: Install and Configure the {launcher} Application on a {OpenShiftLocal}
-:getting-started-guide-name: Getting Started Guide
+:getting-started-guide-name: Getting Started with {ProductName}
 :landing-page-name: Welcome
 :contrib-guide-name: Contribution Guide
 :spring-boot-runtime-guide-name: {SpringBoot} Runtime Guide
