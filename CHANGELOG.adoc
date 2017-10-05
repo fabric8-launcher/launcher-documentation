@@ -1,224 +1,224 @@
 = Change Log
 
-== link:https://github.com/openshiftio/appdev-documentation/releases/tag/2017-09-29[2017-09-29 Release]
+== link:https://github.com/fabric8-launch/appdev-documentation/releases/tag/2017-09-29[2017-09-29 Release]
 
-* https://github.com/openshiftio/appdev-documentation/issues/671[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/671[Issue
 671] - ZIP download links in booster descriptions point to Using
 OpenShift Online to Create a Booster
-* https://github.com/openshiftio/appdev-documentation/issues/667[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/667[Issue
 667] - Add note about windows option for install script
-* https://github.com/openshiftio/appdev-documentation/issues/658[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/658[Issue
 658] - Update GSG paragraph around minishift
-* https://github.com/openshiftio/appdev-documentation/issues/655[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/655[Issue
 655] - Improve validating performance on slow connections
-* https://github.com/openshiftio/appdev-documentation/issues/648[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/648[Issue
 648] - Fix link title in crud mission intro
-* https://github.com/openshiftio/appdev-documentation/issues/647[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/647[Issue
 647] - Check capitalisation of headings for consistency
-* https://github.com/openshiftio/appdev-documentation/issues/645[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/645[Issue
 645] - take editing pass at node.js configmap content
-* https://github.com/openshiftio/appdev-documentation/issues/644[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/644[Issue
 644] - Update "continuous delivery" title in GSG to "build and deploy"
-* https://github.com/openshiftio/appdev-documentation/issues/638[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/638[Issue
 638] - Document keycloak configuration process
-* https://github.com/openshiftio/appdev-documentation/issues/637[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/637[Issue
 637] - Refactor instructions and mentions of pipelines
-* https://github.com/openshiftio/appdev-documentation/issues/634[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/634[Issue
 634] - Update READMEs with local runtime pre-requisites
-* https://github.com/openshiftio/appdev-documentation/issues/633[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/633[Issue
 633] - Add new section on S2I build for launcher
-* https://github.com/openshiftio/appdev-documentation/issues/632[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/632[Issue
 632] - Consider names of paths in booster creation
-* https://github.com/openshiftio/appdev-documentation/issues/586[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/586[Issue
 586] - Add launcher frontend test to PR testing
-* https://github.com/openshiftio/appdev-documentation/issues/566[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/566[Issue
 566] - add a note to release notes that current Fabric8 Maven plugin
 doesn't work with OpenShift 3.6
-* https://github.com/openshiftio/appdev-documentation/issues/559[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/559[Issue
 559] - Delete is not a trashcan icon in minishift minishift v1.5.0
-* https://github.com/openshiftio/appdev-documentation/issues/552[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/552[Issue
 552] - Enable server-side checking for launchpad files
-* https://github.com/openshiftio/appdev-documentation/issues/543[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/543[Issue
 543] - Figure out a way to display $ separately for command blocks
-* https://github.com/openshiftio/appdev-documentation/issues/525[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/525[Issue
 525] - Update launcher urls
-* https://github.com/openshiftio/appdev-documentation/issues/449[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/449[Issue
 449] - Update Minishift install guide to match the latest Minishift
 version released
-* https://github.com/openshiftio/appdev-documentation/issues/413[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/413[Issue
 413] - Publish Contribution Guide
-* https://github.com/openshiftio/appdev-documentation/issues/389[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/389[Issue
 389] - Document process for updating catalog for local minishift testing
-* https://github.com/openshiftio/appdev-documentation/issues/325[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/325[Issue
 325] - Add a Required infrastructure Component Versions Section to the
 Release Notes.
-* https://github.com/openshiftio/appdev-documentation/issues/309[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/309[Issue
 309] - Create a Glossary
-* https://github.com/openshiftio/appdev-documentation/issues/283[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/283[Issue
 283] - Describe Build and Deploy process in more detail
 
-== link:https://github.com/openshiftio/appdev-documentation/releases/tag/2017-09-08[2017-09-08 Release]
+== link:https://github.com/fabric8-launch/appdev-documentation/releases/tag/2017-09-08[2017-09-08 Release]
 
-* https://github.com/openshiftio/appdev-documentation/issues/623[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/623[Issue
 623] - Create appendix in nodejs guide explaining nodeshift plugin
-* https://github.com/openshiftio/appdev-documentation/issues/620[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/620[Issue
 620] - Update landing page look/feel
-* https://github.com/openshiftio/appdev-documentation/issues/602[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/602[Issue
 602] - Update Node.js callout at start of guide
-* https://github.com/openshiftio/appdev-documentation/issues/601[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/601[Issue
 601] - Minishift Guide / Appendix A: Using Nexus: couple of issues
-* https://github.com/openshiftio/appdev-documentation/issues/600[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/600[Issue
 600] - Minishift Guide / 5. Next Steps: maybe also link to Node.js
 guide?
-* https://github.com/openshiftio/appdev-documentation/issues/599[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/599[Issue
 599] - Minishift Guide / 4.2. Manually: one small issue
-* https://github.com/openshiftio/appdev-documentation/issues/597[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/597[Issue
 597] - Fix Install and Configure a Single-node OpenShift Cluster URL
-* https://github.com/openshiftio/appdev-documentation/issues/590[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/590[Issue
 590] - CRUD integration tests remove application
-* https://github.com/openshiftio/appdev-documentation/issues/589[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/589[Issue
 589] - 2 ways to get application URL
-* https://github.com/openshiftio/appdev-documentation/issues/579[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/579[Issue
 579] - Openshift -> OpenShift
-* https://github.com/openshiftio/appdev-documentation/issues/574[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/574[Issue
 574] - re-add oso flow to runtime guides
-* https://github.com/openshiftio/appdev-documentation/issues/565[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/565[Issue
 565] - Is it OK to say that booster needs to be created with
 launch.openshift.io when it's not on OSIO?
-* https://github.com/openshiftio/appdev-documentation/issues/564[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/564[Issue
 564] - Different pod names when explaining how to deploy a booster
-* https://github.com/openshiftio/appdev-documentation/issues/563[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/563[Issue
 563] - POST requests are not executed on /api/fruits/* endpoint
-* https://github.com/openshiftio/appdev-documentation/issues/562[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/562[Issue
 562] - Spring Boot ConfigMap booster doc should explain what policy is
 being added
-* https://github.com/openshiftio/appdev-documentation/issues/561[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/561[Issue
 561] - Spring Boot circuit breaker doc shouldn't recommend skipping
 tests
-* https://github.com/openshiftio/appdev-documentation/issues/557[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/557[Issue
 557] - fix nodejs crud mission wording
-* https://github.com/openshiftio/appdev-documentation/issues/554[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/554[Issue
 554] - Include staging URLs in the Contrib Guide
-* https://github.com/openshiftio/appdev-documentation/issues/553[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/553[Issue
 553] - Validate books in the pre-commit hook
-* https://github.com/openshiftio/appdev-documentation/issues/549[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/549[Issue
 549] - Add OSIO README properties for NodeJS for CRUD mission
-* https://github.com/openshiftio/appdev-documentation/issues/545[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/545[Issue
 545] - Add "push to origin" check box option to OSIO README git flow
-* https://github.com/openshiftio/appdev-documentation/issues/544[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/544[Issue
 544] - Add RUN command "local flow" for OSIO READMES
-* https://github.com/openshiftio/appdev-documentation/issues/542[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/542[Issue
 542] - Force links to open in a new window for Front End topics
-* https://github.com/openshiftio/appdev-documentation/issues/504[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/504[Issue
 504] - Enable testing for pull requests
 
-== link:https://github.com/openshiftio/appdev-documentation/releases/tag/2017-08-28[2017-08-28 Release]
+== link:https://github.com/fabric8-launch/appdev-documentation/releases/tag/2017-08-28[2017-08-28 Release]
 
-* https://github.com/openshiftio/appdev-documentation/issues/535[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/535[Issue
 535] - Removed authenticated but not authorized interaction examples from the Secured Mission.
-* https://github.com/openshiftio/appdev-documentation/issues/529[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/529[Issue
 529] - Updated the `validate_guides.sh` to make the script work on MacOS.
-* https://github.com/openshiftio/appdev-documentation/issues/527[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/527[Issue
 527] - Added a note about some Boosters not being accessible using the launcher.
-* https://github.com/openshiftio/appdev-documentation/issues/524[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/524[Issue
 524] - Update Booster README files with information on interacting with Boosters using OpenShift.io.
-* https://github.com/openshiftio/appdev-documentation/issues/522[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/522[Issue
 522] - Updated description for `npm install` CLI examples in the Nodejs runtime guide.
-* https://github.com/openshiftio/appdev-documentation/issues/518[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/518[Issue
 518] - Removed production branch from the Contribution guide.
-* https://github.com/openshiftio/appdev-documentation/issues/511[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/511[Issue
 511] - Updated the expected proficiency level for the Secured mission to
 Advanced
-* https://github.com/openshiftio/appdev-documentation/issues/506[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/506[Issue
 506] - Updated mission description topics used by the Launcher front end.
-* https://github.com/openshiftio/appdev-documentation/issues/505[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/505[Issue
 505] - Added a pre-commit Git hook to prevent breaking launchpad-frontend, updated contribution guide with relevant information.
-* https://github.com/openshiftio/appdev-documentation/issues/496[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/496[Issue
 496] - Updated and re-published the Contribution Guide with post-release updates.
-* https://github.com/openshiftio/appdev-documentation/issues/495[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/495[Issue
 495] - Updated link targets in the launcher review screen.
-* https://github.com/openshiftio/appdev-documentation/issues/494[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/494[Issue
 494] - Added `npm install` CLI examples to NodeJS Booster README files.
-* https://github.com/openshiftio/appdev-documentation/issues/493[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/493[Issue
 493] - Added NodeJS runtime guide link to the GSG _Next Steps_ section.
-* https://github.com/openshiftio/appdev-documentation/issues/492[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/492[Issue
 492] - Added explicit anchor labels to the proficiency levels section in the runtime guide Booster introduction paragraphs.
-* https://github.com/openshiftio/appdev-documentation/issues/491[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/491[Issue
 491] - Update Milestones and CHANGELOG.adoc to include issues from 2017-08-14 release.
-* https://github.com/openshiftio/appdev-documentation/issues/490[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/490[Issue
 490] - Updated `Dockerfile.build` to include the XML validation process.
-* https://github.com/openshiftio/appdev-documentation/issues/489[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/489[Issue
 489] - Updated links to the `appdev-documentation` repository and `appdev.openshift.io`
 to use attributes instead of hardcoded URL's.
-* https://github.com/openshiftio/appdev-documentation/issues/477[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/477[Issue
 477] - Updated internal documentation with new deployment process and links.
-* https://github.com/openshiftio/appdev-documentation/issues/463[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/463[Issue
 463] - Updated callout about supported Spring components Spring Boot runtime guide to reduce ambiguity.
-* https://github.com/openshiftio/appdev-documentation/issues/456[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/456[Issue
 456] - Added the `generate_changelog.sh` script to automatically generate change log entries from resolved issues in milestones.
-* https://github.com/openshiftio/appdev-documentation/issues/445[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/445[Issue
 445] - Added `compile` option to `mvn` command example in the local build procedure steps in the Booster README file.
-* https://github.com/openshiftio/appdev-documentation/issues/440[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/440[Issue
 440] - Updated script names to a unified format.
-* https://github.com/openshiftio/appdev-documentation/issues/439[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/439[Issue
 439] - Removed unused files from the documentation repository.
-* https://github.com/openshiftio/appdev-documentation/issues/337[Issue
+* https://github.com/fabric8-launch/appdev-documentation/issues/337[Issue
 337] - Added the `CODEOWNERS` file listing code owners for individual documentation components
-* https://github.com/openshiftio/appdev-documentation/pull/514[Pull Request 514] - Updated the default port for accessing the docs server container on localhost to `80`.
-* https://github.com/openshiftio/appdev-documentation/issues/511[Issue 511]: Updated expected proficiency level for the Secured Mission to
+* https://github.com/fabric8-launch/appdev-documentation/pull/514[Pull Request 514] - Updated the default port for accessing the docs server container on localhost to `80`.
+* https://github.com/fabric8-launch/appdev-documentation/issues/511[Issue 511]: Updated expected proficiency level for the Secured Mission to
 Advanced + add callout to intro
 
-== link:https://github.com/openshiftio/appdev-documentation/releases/tag/2017-08-14[2017-08-14 Release]
+== link:https://github.com/fabric8-launch/appdev-documentation/releases/tag/2017-08-14[2017-08-14 Release]
 // list closed issues with changes planned for upcoming release
 // use tag words ADDED/REMOVED/UPDATED
 
-* link:https://github.com/openshiftio/appdev-documentation/issues/64[Issue 64] - Added information about expected user proficiency level for each Mission.
-* link:https://github.com/openshiftio/appdev-documentation/issues/297[Issue 297] - Added Testing to doc builds using Travis CI. (NOTE: Travis-CI has been replaced by CentOS CI before this release.)
-* link:https://github.com/openshiftio/appdev-documentation/issues/306[Issue 306] - Added legacy URL redirects after runtime guide refactoring.
-* link:https://github.com/openshiftio/appdev-documentation/issues/374[Issue 374] - Added repleceable variables for OpenShift and Minishift application route host names.
-* link:https://github.com/openshiftio/appdev-documentation/issues/394[Issue 394] - Added issue tracking using GitHub Milestones.
-* link:https://github.com/openshiftio/appdev-documentation/issues/403[Issue 403] - Updated application route examples in the Nexus configuration section to properly display the replaceable variable values.
-* link:https://github.com/openshiftio/appdev-documentation/issues/408[Issue 408] - Updated Configmap Mission Guides to use an `oc` command to deploying the ConfigMap
-* link:https://github.com/openshiftio/appdev-documentation/issues/409[Issue 409] - Removed manual host name specification step from Minishift installation instructions.
-* link:https://github.com/openshiftio/appdev-documentation/issues/415[Issue 415] - Updated Minishift version to `1.3.1` in the Nexus configuration guide and the Minishift Installation guide.
-* link:https://github.com/openshiftio/appdev-documentation/issues/419[Issue 419] - Added ZIP file download instructions in Booster `README.adoc` files.
-* link:https://github.com/openshiftio/appdev-documentation/issues/424[Issue 424] - Updated screenshots in launcher and minishift examples in Minishift installation guide.
-* link:https://github.com/openshiftio/appdev-documentation/issues/425[Issue 425] - Updated links in resources sections of Booster guides to point to Booster guides in other runtimes.
-* link:https://github.com/openshiftio/appdev-documentation/issues/427[Issue 427] - Added NodeJS runtime guide links to other runtime guides.
-* link:https://github.com/openshiftio/appdev-documentation/issues/428[Issue 428] - Updated infrastructure, moved documentation hosting to the DevTools OSD cluster.
-* link:https://github.com/openshiftio/appdev-documentation/issues/430[Issue 430] - Added a Resources Section to the Secured Booster guides.
-* link:https://github.com/openshiftio/appdev-documentation/issues/435[Issue 435] - Updated heading level of the resources section in the Circuit Breaker Mission guide to be consistent with other guides.
-* link:https://github.com/openshiftio/appdev-documentation/issues/441[Issue 441] - Added Workflow description for Local deployment using downloaded Booster ZIP file to the Getting Started Guide.
-* link:https://github.com/openshiftio/appdev-documentation/issues/448[Issue 448] - Added documentation for using `cico_build_deploy.sh`.
-* link:https://github.com/openshiftio/appdev-documentation/issues/454[Issue 454] - Updated filesystem table in Contrib Guide to make it display properly.
-* link:https://github.com/openshiftio/appdev-documentation/issues/455[Issue 455] - Added new GitHub labels.
-* link:https://github.com/openshiftio/appdev-documentation/issues/457[Issue 457] - Updated Links texts in Step 3 of the Single Node OpenShift Cluster setup procedure to be more descriptive.
-* link:https://github.com/openshiftio/appdev-documentation/issues/458[Issue 458] - Updated URLs to fix dead links in `/topics/dev-guide-mission-intro.adoc`
-* link:https://github.com/openshiftio/appdev-documentation/issues/460[Issue 460] - Updated link texts in the Minishift Installation guide to remove uninformative descriptions.
-* link:https://github.com/openshiftio/appdev-documentation/issues/470[Issue 470] - Updated revision number to display date of release instead of commit hash.
-* link:https://github.com/openshiftio/appdev-documentation/issues/471[Issue 471] - Updated `cico_build_deploy.sh` to integrate XML validation into the build process.
-* link:https://github.com/openshiftio/appdev-documentation/issues/486[Issue 486] - Updated `cico_build_deploy.sh` to prevent automatic XML validation failure issue upon build.
-* link:https://github.com/openshiftio/appdev-documentation/pull/485[Pull Request 485] - Updated default docs server port on localhost from `8080` to `80`.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/64[Issue 64] - Added information about expected user proficiency level for each Mission.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/297[Issue 297] - Added Testing to doc builds using Travis CI. (NOTE: Travis-CI has been replaced by CentOS CI before this release.)
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/306[Issue 306] - Added legacy URL redirects after runtime guide refactoring.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/374[Issue 374] - Added repleceable variables for OpenShift and Minishift application route host names.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/394[Issue 394] - Added issue tracking using GitHub Milestones.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/403[Issue 403] - Updated application route examples in the Nexus configuration section to properly display the replaceable variable values.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/408[Issue 408] - Updated Configmap Mission Guides to use an `oc` command to deploying the ConfigMap
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/409[Issue 409] - Removed manual host name specification step from Minishift installation instructions.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/415[Issue 415] - Updated Minishift version to `1.3.1` in the Nexus configuration guide and the Minishift Installation guide.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/419[Issue 419] - Added ZIP file download instructions in Booster `README.adoc` files.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/424[Issue 424] - Updated screenshots in launcher and minishift examples in Minishift installation guide.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/425[Issue 425] - Updated links in resources sections of Booster guides to point to Booster guides in other runtimes.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/427[Issue 427] - Added NodeJS runtime guide links to other runtime guides.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/428[Issue 428] - Updated infrastructure, moved documentation hosting to the DevTools OSD cluster.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/430[Issue 430] - Added a Resources Section to the Secured Booster guides.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/435[Issue 435] - Updated heading level of the resources section in the Circuit Breaker Mission guide to be consistent with other guides.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/441[Issue 441] - Added Workflow description for Local deployment using downloaded Booster ZIP file to the Getting Started Guide.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/448[Issue 448] - Added documentation for using `cico_build_deploy.sh`.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/454[Issue 454] - Updated filesystem table in Contrib Guide to make it display properly.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/455[Issue 455] - Added new GitHub labels.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/457[Issue 457] - Updated Links texts in Step 3 of the Single Node OpenShift Cluster setup procedure to be more descriptive.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/458[Issue 458] - Updated URLs to fix dead links in `/topics/dev-guide-mission-intro.adoc`
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/460[Issue 460] - Updated link texts in the Minishift Installation guide to remove uninformative descriptions.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/470[Issue 470] - Updated revision number to display date of release instead of commit hash.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/471[Issue 471] - Updated `cico_build_deploy.sh` to integrate XML validation into the build process.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/486[Issue 486] - Updated `cico_build_deploy.sh` to prevent automatic XML validation failure issue upon build.
+* link:https://github.com/fabric8-launch/appdev-documentation/pull/485[Pull Request 485] - Updated default docs server port on localhost from `8080` to `80`.
 
 // Link here to release
 // Link from releases to changleog
-==  link:https://github.com/openshiftio/appdev-documentation/releases/tag/2017-07-31[2017-07-31 Release]
+==  link:https://github.com/fabric8-launch/appdev-documentation/releases/tag/2017-07-31[2017-07-31 Release]
 // formatting example:
 // link:<issue#>: <description_for_humans>
-// https://github.com/openshiftio/appdev-documentation/issues/{issue#}
+// https://github.com/fabric8-launch/appdev-documentation/issues/{issue#}
 // messages must be edited to be meaningful
 
-* link:https://github.com/openshiftio/appdev-documentation/issues/207[Issue 207] - Added a note about including the appropriate version of the `oc` CLI tool in the `PATH` variable as a prerequisite for Minishift installation.
-* link:https://github.com/openshiftio/appdev-documentation/issues/303[Issue 303] - Added links to additional resources in the WildFly Swarm Runtime Guide
-* link:https://github.com/openshiftio/appdev-documentation/issues/304[Issue 304] - Added HTTP request examples using `curl` to the booster interaction section of the Secured Boosters.
-* link:https://github.com/openshiftio/appdev-documentation/issues/330[Issue 330] - Updated Secured Booster output examples to not list names of non-existent endpoints.
-* link:https://github.com/openshiftio/appdev-documentation/issues/359[Issue 359] - Added conditional inclusion syntax to the launch.openshift.io to only display page links relevant to the current runtime.
-* link:https://github.com/openshiftio/appdev-documentation/issues/360[Issue 360] - Updated links in the launch.openshift.io interface to make them open in a new tab by default.
-* link:https://github.com/openshiftio/appdev-documentation/issues/361[Issue 361] - Added _Step 5_ to the _Next Steps_ section with a note explaining   that a  new CI/CD build is triggered by pushing the changes into the cloned application repository.
-* link:https://github.com/openshiftio/appdev-documentation/issues/362[Issue 362] - Added a link from the Next Steps section of the launch.openshift.io UI to the `README.adoc` files for boosters.
-* link:https://github.com/openshiftio/appdev-documentation/issues/370[Issue 370] - Updated the introductory paragraph in the Getting Started guide to include information regarding latest changes introduced with this release.
-* link:https://github.com/openshiftio/appdev-documentation/issues/378[Issue 378] - Updated the `scripts/previewDocsServer.sh` script to use Docker commands with a `--privileged` flag to avoid errors when executing the script caused by SELinux on Fedora.
-* link:https://github.com/openshiftio/appdev-documentation/issues/379[Issue 379] - Updated `README.adoc` file templates to substitute variable values from properties files instead of `attributes.adoc` files.
-* link:https://github.com/openshiftio/appdev-documentation/issues/383[Issue 383] - Updated wording in the launch.openshift.io YAML template link. Added  a callout asking the user to clear all Keycloak realm information.
-* link:https://github.com/openshiftio/appdev-documentation/issues/385[Issue 385] - Updated Node.JS runtime guide to fix typos.
-* link:https://github.com/openshiftio/appdev-documentation/issues/386[Issue 386] - Added a _Coming Soon_ note to the NodeJS runtime guide.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/207[Issue 207] - Added a note about including the appropriate version of the `oc` CLI tool in the `PATH` variable as a prerequisite for Minishift installation.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/303[Issue 303] - Added links to additional resources in the WildFly Swarm Runtime Guide
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/304[Issue 304] - Added HTTP request examples using `curl` to the booster interaction section of the Secured Boosters.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/330[Issue 330] - Updated Secured Booster output examples to not list names of non-existent endpoints.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/359[Issue 359] - Added conditional inclusion syntax to the launch.openshift.io to only display page links relevant to the current runtime.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/360[Issue 360] - Updated links in the launch.openshift.io interface to make them open in a new tab by default.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/361[Issue 361] - Added _Step 5_ to the _Next Steps_ section with a note explaining   that a  new CI/CD build is triggered by pushing the changes into the cloned application repository.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/362[Issue 362] - Added a link from the Next Steps section of the launch.openshift.io UI to the `README.adoc` files for boosters.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/370[Issue 370] - Updated the introductory paragraph in the Getting Started guide to include information regarding latest changes introduced with this release.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/378[Issue 378] - Updated the `scripts/previewDocsServer.sh` script to use Docker commands with a `--privileged` flag to avoid errors when executing the script caused by SELinux on Fedora.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/379[Issue 379] - Updated `README.adoc` file templates to substitute variable values from properties files instead of `attributes.adoc` files.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/383[Issue 383] - Updated wording in the launch.openshift.io YAML template link. Added  a callout asking the user to clear all Keycloak realm information.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/385[Issue 385] - Updated Node.JS runtime guide to fix typos.
+* link:https://github.com/fabric8-launch/appdev-documentation/issues/386[Issue 386] - Added a _Coming Soon_ note to the NodeJS runtime guide.
