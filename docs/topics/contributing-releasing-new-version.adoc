@@ -62,7 +62,7 @@ For example, with the _2017-04-21_ release:
 
 [source,asciidoc,options="nowrap"]
 ----
-== link:https://github.com/openshiftio/appdev-documentation/releases/tag/2017-04-21[2017-04-21 Release]
+== link:{link-repo-docs}/releases/tag/2017-04-21[2017-04-21 Release]
 ----
 --
 
