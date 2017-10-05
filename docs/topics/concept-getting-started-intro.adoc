@@ -14,7 +14,7 @@ The goal of {ProductName} is to provide opinionated architectures, design patter
 
 
 .OpenShift
-link:https://www.openshift.com[Red Hat OpenShift] is a container application platform that brings link:https://www.redhat.com/en/topics/containers/what-is-docker[docker] and link:https://www.redhat.com/en/topics/containers/what-is-kubernetes[Kubernetes] to the enterprise. link:{link-launcher-oso}[{OpenShiftOnline}] is a public cloud hosted and supported by Red Hat. A {OpenShiftLocal} is a cloud environment that runs on your localhost such as the link:https://developers.redhat.com/products/cdk/overview/[{CDK}] or link:https://www.openshift.org/minishift/[{Minishift}].
+link:https://www.openshift.com[Red Hat OpenShift] is a container application platform that brings link:https://www.redhat.com/en/topics/containers/what-is-docker[Docker] and link:https://www.redhat.com/en/topics/containers/what-is-kubernetes[Kubernetes] to the enterprise. link:{link-launcher-oso}[{OpenShiftOnline}] is a public cloud hosted and supported by Red Hat. A {OpenShiftLocal}, such as the link:https://developers.redhat.com/products/cdk/overview/[{CDK}] or link:https://www.openshift.org/minishift/[{Minishift}], is a cloud environment that runs on your localhost.
 
 
 [[launcher-details]]
