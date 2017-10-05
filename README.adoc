@@ -12,11 +12,11 @@ The documentation is built on link:https://ci.centos.org/job/devtools-appdev-doc
 
 For information about contributing to this repository, its contents and processes, see the link:https://appdev.openshift.io/docs/contrib-guide.html#_documentation[Documentation] chapter of the __Contribution Guide.__
 
-For general information about missions and boosters, see the link:https://appdev.openshift.io/docs/getting-started.html[Getting Started Guide]. For information about their development, see the link:https://github.com/openshiftio/appdev-documentation/wiki[Wiki].
+For general information about missions and boosters, see the link:https://appdev.openshift.io/docs/getting-started.html[Getting Started Guide]. For information about their development, see the link:https://github.com/fabric8-launch/appdev-documentation/wiki[Wiki].
 
 == Publishing
 
-You can find the list of issues addressed in each release in the link:https://github.com/openshiftio/appdev-documentation/blob/master/CHANGELOG.adoc[CHANGELOG.adoc] file.
+You can find the list of issues addressed in each release in the link:https://github.com/fabric8-launch/appdev-documentation/blob/master/CHANGELOG.adoc[CHANGELOG.adoc] file.
 
 Basic information about publishing a release is described in the link:https://appdev.openshift.io/docs/contrib-guide.html#releasing_new_version[Releasing New Version] chapter of the __Contribution Guide.__
 
