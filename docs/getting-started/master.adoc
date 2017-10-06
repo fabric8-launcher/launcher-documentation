@@ -7,25 +7,21 @@ include::topics/templates/document-attributes.adoc[]
 :sectnums!:
 = {getting-started-guide-name}
 
-include::topics/getting-started-intro.adoc[leveloffset=+1]
-
-include::topics/getting-started-create-booster.adoc[leveloffset=+1]
-
-include::topics/getting-started-cd-osl.adoc[leveloffset=+1]
-
-include::topics/getting-started-next-steps.adoc[leveloffset=+1]
+[.lead]
+This guide takes you through modern application development with {ProductName}. It shows you how to create and deploy example cloud-native applications called boosters to OpenShift using the {launcher} application. These example applications can serve as the foundation for your actual cloud-native microservices since they can be updated and redeployed using the same deployment process detailed in this guide. 
 
 
-[appendix]
-include::topics/getting-started-use-devstudio.adoc[leveloffset=+1]
+include::topics/concept-getting-started-intro.adoc[leveloffset=+1]
 
-[appendix]
-include::topics/build-and-deploy-process.adoc[leveloffset=+1]
+include::topics/proc-configure-launcher-sso-realm.adoc[leveloffset=+1]
 
+include::topics/proc-getting-started-create-booster.adoc[leveloffset=+1]
 
-[appendix]
-include::topics/appendix-configure-launcher-sso-realm.adoc[leveloffset=+1]
+include::topics/proc-getting-started-cd-osl.adoc[leveloffset=+1]
+
+include::topics/proc-getting-started-update-booster.adoc[leveloffset=+1]
+
+include::topics/proc-getting-started-use-devstudio.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/appendix-glossary.adoc[leveloffset=+1]
-

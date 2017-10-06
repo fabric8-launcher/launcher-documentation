@@ -1,0 +1,19 @@
+[[launcher-sso-settings]]
+= Configuring {launcher} {RHSSO} Federated Identity Settings
+The {launcher} application running in {OpenShiftOnline} requires access to a user's GitHub and OpenShift accounts in order to create and deploy boosters. This access is managed through the link:https://sso.openshift.io/auth/realms/rh-developers-launch/account/identity[{RHSSO} federated identity settings^]. Before you can use The {launcher} application in {OpenShiftOnline}, you must configure this access.
+
+IMPORTANT: You only have to perform this procedure once.
+
+.Prerequisites
+--
+* link:https://www.openshift.com[Have an {OpenShiftOnline} account]
+* Check which {OpenShiftOnline} cluster you belong to using link:https://manage.openshift.com[https://manage.openshift.com^].
+* link:https://developers.redhat.com[Have a Red Hat Developers account]
+* link:https://developers.redhat.com[Login to your Red Hat Developers account]
+* link:https://github.com[Have a GitHub account]
+--
+
+.Procedure
+. Navigate to link:https://sso.openshift.io/auth/realms/rh-developers-launch/account/identity[{RHSSO} federated identity settings^].
+. Click the _Add_ button next to the _GitHub_ field and authorize {launcher} to access your GitHub account.
+. Click the _Add_ button next to the {OpenShiftOnline} cluster you use.

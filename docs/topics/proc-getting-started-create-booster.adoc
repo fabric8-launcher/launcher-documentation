@@ -1,0 +1,29 @@
+[[oso-create-booster]]
+= Creating and Deploying a Booster Using {OpenShiftOnline}
+You can quickly create, build, and deploy a booster to {OpenShiftOnline} using the {launcher} application. The {launcher} application creates a new repository in your GitHub account containing the source code of the booster, and deploys it to your {OpenShiftOnline} account. It can also create a ZIP of the booster for you to download and run on your localhost.
+
+.Prerequisites
+--
+* An link:https://www.openshift.com[{OpenShiftOnline}] account
+* A link:https://developers.redhat.com[Red Hat Developers] account. Log in to your account.
+* A link:https://github.com[GitHub] account
+--
+
+.Procedure
+. Navigate to link:{link-launcher-oso}[{launcher}] using your browser.
+. Select _Launch your Project_.
++
+Click _Log in or register_ and complete the authentication steps if asked to.
+. Choose the type of the deployment:
+** Use the _Deploy in OpenShift Online_ option to create a new GitHub repository containing your booster. It will also be launched to {OpenShiftOnline}.
+** Use the _Build and Run Locally_ to create a ZIP download containing your booster. This will *not* create a GitHub repository or deploy your booster to {OpenShiftOnline}.
+. Follow the instructions to create a booster of your choice.
+. Open the `README.adoc` file in the booster project and follow the instructions for building, deploying, and interacting with your booster.
+
+.Related Information
+Take a look the different runtime guides to learn more about runtimes as well as their boosters:
+
+* link:{link-spring-boot-runtime-guide}[{spring-boot-runtime-guide-name}]
+* link:{link-vertx-runtime-guide}[{vertx-runtime-guide-name}]
+* link:{link-wf-swarm-runtime-guide}[{wf-swarm-runtime-guide-name}]
+* link:{link-nodejs-runtime-guide}[{nodejs-runtime-guide-name}]
