@@ -15,9 +15,7 @@ include::topics/minishift-install-start-configure-minishift.adoc[leveloffset=+1]
 include::topics/minishift-install-create-gh-personal-access-token.adoc[leveloffset=+1]
 
 [[create-launcher-app]]
-== Creating {launcher} Application
-
-This chapter describes multiple ways of creating the {launcher} application.
+== Create the {launcher} Application
 
 include::topics/minishift-install-create-launchpad-app-script.adoc[leveloffset=+2]
 
@@ -28,6 +26,10 @@ include::topics/minishift-install-next-steps.adoc[leveloffset=+1]
 // temporary location for Nexus install
 [appendix]
 include::topics/minishift-install-nexus-setup.adoc[leveloffset=+1]
+
+[appendix]
+//m2 persistent repo configuration
+include::topics/minishift-persist-maven-repository-settings.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/appendix-glossary.adoc[leveloffset=+1]
