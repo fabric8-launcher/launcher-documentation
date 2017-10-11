@@ -19,11 +19,11 @@ link:https://www.openshift.com[Red Hat OpenShift] is a container application pla
 
 [[launcher-details]]
 .The {launcher} Application
-As a part of {ProductName}, the {launcher} application provides a hassle-free way of creating functional example applications called Missions as well as an easy way to build and deploy those Missions to OpenShift. The {launcher} application is available link:{link-launcher-oso}[directly on {OpenShiftOnline}]. You also have the option to link:{link-launcher-openshift-local-install-guide}#create-launcher-app[install and run it on your {OpenShiftLocal}].
+The {launcher} application provides a hassle-free way of creating functional example applications called missions as well as an easy way to build and deploy those missions to OpenShift. The {launcher} application is available link:{link-launcher-oso}[directly on {OpenShiftOnline}]. You also have the option to link:{link-launcher-openshift-local-install-guide}#create-launcher-app[install and run it on your {OpenShiftLocal}].
 
 
 .Missions and Boosters
-A Mission implements a link:http://microservices.io/patterns/microservices.html[Microservice pattern] such as:
+A mission implements a link:http://microservices.io/patterns/microservices.html[Microservice pattern] such as:
 
 * Health Check
 * REST or HTTP endpoint
@@ -38,7 +38,7 @@ Missions use these patterns to show how to create the fundamental building block
 * Externalizing the configuration of your applications to make them more secure and easier to scale
 //* Securing your applications with {RHSSO} to provide authentication and authorization functionality
 
-Each Mission has an implementation in one or more runtimes. Each specific implementation is known as a booster as is the actual project that contains your code. Any booster can be updated or extended for your own use case.
+Each mission has an implementation in one or more runtimes. Each specific implementation is known as a booster as is the actual project that contains your code. Any booster can be updated or extended for your own use case.
 
 [[build-and-deploy-process]]
 .Process for Building and Deploying to OpenShift

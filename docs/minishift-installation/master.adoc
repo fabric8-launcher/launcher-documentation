@@ -8,6 +8,16 @@ include::topics/templates/document-attributes.adoc[]
 
 This guide walks you through the process of installing the {launcher} application to run on a local cloud as provisioned by a {OpenShiftLocal}. This includes link:https://www.openshift.org/minishift/[{Minishift}], an all-in-one VM that includes a community version of OpenShift Origin, or link:https://developers.redhat.com/products/cdk/overview/[{CDK}], a VM that includes OpenShift Container Platform.
 
+.The {launcher} Application
+The {launcher} application runs on OpenShift and provides a hassle-free way of creating functional example applications called missions. Using the {launcher} application walks you through:
+
+* Choosing the mission you want to generate
+* Choosing the runtime you want to use
+* Choosing how you want to build and execute the mission
+
+The {launcher} application uses your choices to generate a custom project, called a booster, and either launches it directly to the same OpenShift instance, or provides a downloadable ZIP version of the project.
+
+
 include::topics/minishift-install-prereq.adoc[leveloffset=+1]
 
 include::topics/minishift-install-start-configure-minishift.adoc[leveloffset=+1]

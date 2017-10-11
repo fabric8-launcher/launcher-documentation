@@ -25,7 +25,7 @@
 :SpringBoot: Spring Boot Tomcat
 :VertX: Eclipse Vert.x
 :NodeJS: Node.js
-:launcher: developers.redhat.com/launch
+:launcher: Fabric8 Launcher
 :RHSSO: Red Hat SSO
 
 :app-name: MY_APP_NAME
@@ -60,7 +60,7 @@
 
 
 :openshift-local-guide-name: Install and Configure a {OpenShiftLocal}
-:minishift-installation-guide-name: Install and Configure the {launcher} Application on a {OpenShiftLocal}
+:minishift-installation-guide-name: Install and Configure the {launcher} Application
 :getting-started-guide-name: Getting Started with {ProductName}
 :landing-page-name: Welcome
 :contrib-guide-name: Contribution Guide
