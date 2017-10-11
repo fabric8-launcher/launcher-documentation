@@ -14,10 +14,11 @@
 * link:{link-mission-configmap-spring-boot-tomcat}[{mission-configmap-spring-boot-tomcat-guide-name}]
 * link:{link-mission-configmap-vertx}[{mission-configmap-vertx-guide-name}]
 * link:{link-mission-configmap-wf-swarm}[{mission-configmap-wf-swarm-guide-name}]
+
+////
 * link:{link-mission-secured-spring-boot}[{mission-secured-spring-boot-guide-name}]
 * link:{link-mission-secured-vertx}[{mission-secured-vertx-guide-name}]
 * link:{link-mission-secured-wf-swarm}[{mission-secured-wf-swarm-guide-name}]
-////
 
 *
 link:{link-mission-circuit-breaker-spring-boot-tomcat}[{mission-circuit-breaker-spring-boot-tomcat-guide-name}]
