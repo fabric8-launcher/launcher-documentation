@@ -1,0 +1,16 @@
+
+[#writing-new-content]
+= Writing Style
+
+Follow the rules of technical writing as described in the following guides; your pull requests will be evaluated against the requirements described in them.
+If you do not have access to some of them, use the guides that are available to you:
+
+IBM Style Guide:: A general guide to writing technical documentation. Available only in print or in commercial digital copies.
+
+link:http://stylepedia.net[Red Hat Stylepedia]:: A freely-available guide partially overlapping with the IBM Style Guide. Contains information about writing Red Hat–specific concepts.
+
+link:https://redhat-documentation.github.io/asciidoc-markup-conventions/[Red Hat AsciiDoc Conventions Samples Guide]:: A freely-available guide about writing particular elements in the AsciiDoc source code, for example GUI buttons, external links, or command blocks. It is important you follow these rules for consistency with other parts of the documentation.
+
+link:https://mojo.redhat.com/groups/minimalism-quality-initiative[Minimalism in Red Hat Documentation]:: A Red Hat internal document about applying minimalism to documentation.
+
+

@@ -43,6 +43,14 @@ include::topics/contributing-building-locally.adoc[leveloffset=+3]
 
 include::topics/contributing-starting-preview-server.adoc[leveloffset=+3]
 
+=== Requirements
+
+This chapter contains the requirements your contributions must meet in order to be accepted.
+
+include::topics/contributing-writing-new-content.adoc[leveloffset=+3]
+
+include::topics/contributing-writing-the-modular-way.adoc[leveloffset=+3]
+
 === Administration
 
 include::topics/contributing-reviewing-changes.adoc[leveloffset=+3]
@@ -50,8 +58,6 @@ include::topics/contributing-reviewing-changes.adoc[leveloffset=+3]
 include::topics/contributing-merging-changes.adoc[leveloffset=+3]
 
 include::topics/contributing-releasing-new-version.adoc[leveloffset=+3]
-
-// TODO: Requirements
 
 === Issues
 
