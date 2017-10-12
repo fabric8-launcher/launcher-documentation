@@ -1,6 +1,6 @@
-
-
 = Building and Deploying the Booster
+
+include::booster-deploy-openshift-online.adoc[leveloffset=+1]
 
 == Deploying the Booster to a {OpenShiftLocal}
 
@@ -35,5 +35,5 @@ $ oc project PROJECT-NAME
 
 include::mission-secured-deploy-rhsso-zip.adoc[leveloffset=+2]
 
+include::booster-deploy-ocp.adoc[leveloffset=+1]
 
-include::booster-deploy-openshift-online.adoc[leveloffset=+1]

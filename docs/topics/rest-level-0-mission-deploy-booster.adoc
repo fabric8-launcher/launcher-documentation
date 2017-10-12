@@ -1,6 +1,8 @@
 [[rest_build_and_deploy_booster]]
 = Building and Deploying the Booster
 
+include::booster-deploy-openshift-online.adoc[leveloffset=+1]
+
 include::booster-deploy-openshift-local.adoc[leveloffset=+1]
 
 // this is intentionally a level 3
@@ -63,8 +65,6 @@ NAME                 HOST/PORT                                                  
 {app-name}         {app-name}-{project-name}.{osl-route-hostname}      {app-name}      8080
 ----
 +
-A pod's route information gives you the base URL which you use to access it. In the example above, you would use `http://{app-name}-{project-name}.{osl-route-hostname}` as the base URL to access the application.
+The route information of a pod gives you the base URL which you use to access it. In the example above, you would use `http://{app-name}-{project-name}.{osl-route-hostname}` as the base URL to access the application.
 
-
-
-include::booster-deploy-openshift-online.adoc[leveloffset=+1]
+include::booster-deploy-ocp.adoc[leveloffset=+1]

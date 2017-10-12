@@ -1,6 +1,11 @@
 [[build_and_deploy_booster]]
 = Building and Deploying the Booster
 
+ifndef::circuit-breaker-nodejs[]
+include::booster-deploy-openshift-online.adoc[leveloffset=+1]
+endif::circuit-breaker-nodejs[]		
+
+
 include::booster-deploy-openshift-local.adoc[leveloffset=+1]
 
 [[deploy-booster-osl-cli]]
@@ -70,8 +75,6 @@ NAME                     HOST/PORT                                              
 {app-name}-name       {app-name}-{project-name}.{osl-route-hostname}            {app-name}-name       8080                    None
 ----
 +
-A pod's route information gives you the base URL which you use to access it. In the example above, you would use `http://{app-name}-{project-name}.{osl-route-hostname}` as the base URL to access the applications.
+The route information of a pod gives you the base URL which you use to access it. In the example above, you would use `http://{app-name}-{project-name}.{osl-route-hostname}` as the base URL to access the applications.
 
-ifndef::circuit-breaker-nodejs[]
-include::booster-deploy-openshift-online.adoc[leveloffset=+1]
-endif::circuit-breaker-nodejs[]		
+include::booster-deploy-ocp.adoc[leveloffset=+1]

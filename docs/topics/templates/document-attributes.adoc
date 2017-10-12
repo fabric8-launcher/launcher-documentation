@@ -21,6 +21,7 @@
 :OpenShiftLocal: Single-node OpenShift Cluster
 :Minishift: Minishift
 :CDK: Red Hat Container Development Kit
+:OpenShiftContainerPlatform: OpenShift Container Platform
 :WildFlySwarm: WildFly Swarm
 :SpringBoot: Spring Boot Tomcat
 :VertX: Eclipse Vert.x

@@ -19,6 +19,8 @@ include::topics/proc-getting-started-create-booster.adoc[leveloffset=+1]
 
 include::topics/proc-getting-started-cd-osl.adoc[leveloffset=+1]
 
+include::topics/proc-ocp-deploy-booster.adoc[leveloffset=+1]
+
 include::topics/proc-getting-started-update-booster.adoc[leveloffset=+1]
 
 include::topics/proc-getting-started-use-devstudio.adoc[leveloffset=+1]
