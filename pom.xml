@@ -1296,7 +1296,7 @@
         </property>
       </activation>
       <modules>
-        <module>docs/howto</module>
+        <module>docs</module>
       </modules>
     </profile>
 
