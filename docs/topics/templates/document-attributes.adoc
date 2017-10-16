@@ -70,8 +70,8 @@
 :wf-swarm-runtime-guide-name: {WildFlySwarm} Runtime Guide
 :nodejs-runtime-guide-name: {NodeJS} Runtime Guide
 
-:MinishiftVersion: 1.5.0
-:CDKVersion: 3.0.0
+:MinishiftVersion: 1.7.0
+:CDKVersion: 3.1.1
 
 :link-http-api-level-0-spring-boot-tomcat-booster: https://github.com/snowdrop/rest_springboot-tomcat
 :link-http-api-level-0-vertx-booster: https://github.com/openshiftio-vertx-boosters/vertx-http-booster
