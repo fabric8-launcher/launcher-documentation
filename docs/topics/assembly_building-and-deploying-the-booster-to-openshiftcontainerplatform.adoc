@@ -1,0 +1,14 @@
+
+[#building-and-deploying-the-rest-api-booster-to-openshiftcontainerplatform]
+= Building and Deploying the {name-mission-http-api} Booster to {OpenShiftContainerPlatform}
+
+The process of building an deploying boosters to {OpenshiftContainerPlatform} is identical to {OpenShiftOnline} except for a few differences.
+
+.Prerequisites
+
+* The booster created on either xref:building-and-deploying-the-rest-api-booster-to-openshiftlocal[{OpenShiftLocal}] or xref:building-and-deploying-the-rest-api-booster-to-openshiftlocal[{OpenShiftOnline}].
+
+.Procedure
+
+* Follow the instructions in xref:building-and-deploying-the-rest-api-booster-to-openshiftonline[], only use the URL and user credentials from the {OpenShiftContainerPlatform} Web Console.
+
