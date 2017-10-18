@@ -1,18 +1,20 @@
-[[rest_build_and_deploy_booster]]
-= Building and Deploying the Booster
 
-include::booster-deploy-openshift-online.adoc[leveloffset=+1]
+[#deploying-the-rest-api-booster-using-the-oc-cli-client_{context}]
+= Deploying the {name-mission-http-api} Booster using the `oc` CLI Client
 
-include::booster-deploy-openshift-local.adoc[leveloffset=+1]
+.Prerequisites
 
-// this is intentionally a level 3
-=== Deploying Using the `oc` CLI Client
+* The booster application created using the {launcher} application.
+For more information, see xref:deploying-the-booster-using-launcher_{context}[].
 
-include::oc-client-deploy-booster-download-note.adoc[leveloffset=+3]
+ifdef::parameter-openshiftlocal[]
+* Your {launcher} URL.
+endif::[]
+* The `oc` client authenticated. For more information, see xref:authenticating-the-oc-cli-client-to-access-launcher_{context}[].
 
-include::booster-deploy-get-cli-token.adoc[levelloffset=+3]
+.Procedure
 
-. Create a new project in {OpenShiftLocal}.
+. Create a new project.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -22,7 +24,7 @@ $ oc new-project {project-name}
 . Navigate to the root directory of your booster.
 
 ifndef::http-api-nodejs[]
-. Use maven to start the deployment to {OpenShiftLocal}.
+. Use Maven to start the deployment to {OpenShiftLocal}.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -66,5 +68,3 @@ NAME                 HOST/PORT                                                  
 ----
 +
 The route information of a pod gives you the base URL which you use to access it. In the example above, you would use `http://{app-name}-{project-name}.{osl-route-hostname}` as the base URL to access the application.
-
-include::booster-deploy-ocp.adoc[leveloffset=+1]

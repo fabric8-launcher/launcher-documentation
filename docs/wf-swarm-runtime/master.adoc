@@ -21,6 +21,7 @@ include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 [[mission-http-api-wf-swarm]]
 === {mission-http-api-wf-swarm-guide-name}
 :http-api-wf-swarm:
+:context: rest-api
 
 include::topics/rest-level-0-mission-intro.adoc[leveloffset=+3]
 
@@ -28,7 +29,11 @@ include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-design-tradeoffs.adoc[leveloffset=+3]
 
-include::topics/rest-level-0-mission-deploy-booster.adoc[leveloffset=+3]
+include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
+
+include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
+
+include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-basic-interaction-wf-swarm.adoc[leveloffset=+3]
 
