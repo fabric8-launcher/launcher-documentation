@@ -18,6 +18,8 @@ This section contains all information you need to release a new version of the d
 Usually, update version `vX` to `vX+1`, for example `v3` to `v4`.
 --
 
+. Synchronize the {WildFlySwarm} sources. For more information, see xref:syncing-with-wildfly-swarm-docs[].
+
 . Update the current milestone in GitHub:
 .. Rename the _Current Development_ milestone to the current date in the _YYYY-MM-DD_ format.
 .. Create a new milestone called _Current Development._

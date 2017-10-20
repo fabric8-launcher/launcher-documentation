@@ -57,6 +57,8 @@ include::topics/contributing-reviewing-changes.adoc[leveloffset=+3]
 
 include::topics/contributing-merging-changes.adoc[leveloffset=+3]
 
+include::topics/contributing-syncing-with-wildfly-swarm-docs.adoc[leveloffset=+3]
+
 include::topics/contributing-releasing-new-version.adoc[leveloffset=+3]
 
 === Issues
