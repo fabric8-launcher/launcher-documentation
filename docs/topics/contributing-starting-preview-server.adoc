@@ -1,7 +1,7 @@
 
 = Starting Preview Server
 
-You can preview the documentation site locally. To do that, perform the following steps:
+You can preview the documentation site locally by building and deploying the Docker containers with the documentation site on your machine.
 
 [discrete]
 == Prerequisites
@@ -13,27 +13,19 @@ You can preview the documentation site locally. To do that, perform the followin
 == Procedure
 
 .Running Preview Server Locally
-. As root, run the `$REPO_HOME/cico_build_deploy.sh` script from the repository's base directory while setting the `CICO_LOCAL` environment variable to `true`:
+. Execute the `scripts/preview_server.sh` script.
+If you execute it as a regular user, you will be asked for administrator privileges because they are required for operating the `docker` binary.
 +
---
-[source,options="nowrap"]
+[source,bash,options="nowrap",subs="attributes+"]
 ----
-$ sudo CICO_LOCAL=true ./cico_build_deploy.sh
+$ scripts/preview_server.sh
 ----
-
-NOTE: You must use `sudo` to run this script because it operates Docker. Being a member of the `docker` group instead is not a good security practice--see the Related Information section for more information.
-
-This process may take a few minutes.
---
-. Run the Docker container with the server:
 +
-[source,options="nowrap"]
-----
-$ sudo docker run -p 80:8080 -it appdev-documentation-deploy:latest
-----
+NOTE: We do not recommend adding the regular user to the `docker` group. For more information, see the Related Information section below.
+
 . Navigate to `http://localhost` in your browser.
 . When you are done, stop the Docker container with the server:
-.. Go back to the terminal where the container is running.
+.. Go back to the terminal where the script is running.
 .. Press `Ctrl + C`.
 
 [discrete]
