@@ -5,19 +5,18 @@
 // Rationale: This module is useful both when setting up minishift as is and when testing a local
 // booster catalog.
 
-[[launcher-manual-install]]
+[#creating-launcher-application-manually]
 ifndef::parameter-custom-catalog[= Creating {launcher} Application Manually]
 ifdef::parameter-custom-catalog[= Creating {launcher} Application]
 
 Create a local customized instance of the {launcher} application, which allows you to test the functionality or make modifications to the application using a web interface.
 
-[discrete]
-== Procedure
+.Prerequisites
+* xref:start-local-cloud[{OpenShiftLocal} running].
+* A xref:creating-a-github-personal-access-token[GitHub personal access token].
 
-.Creating {launcher} Application
-. Open your local OpenShift web console and log in.
-+
-NOTE: The IP address and credentials to log in are in the terminal window where you executed `minishift start`.
+.Procedure
+. Open the {OpenShiftLocal} Web console and log in.
 . Click _New Project_ to create a new OpenShift project to house the {launcher} application.
 +
 image::minishift_newproject.png[New Project Button]
@@ -56,12 +55,17 @@ ifdef::parameter-custom-catalog[** Set _Catalog Git Repository_ to the repositor
 
 . Click `Create` to complete the setup. You will see a screen confirming that the application has been created. Click _Continue to overview_.
 
-. On the overview page, wait and confirm that the four services for the {launcher} application are starting up.
+. On the overview page, wait and confirm that the four pods for the {launcher} application have completed starting up.
 +
 image::minishift_launchpad_booting.png[{launcher} booting]
-+
-The grey circles reference that the docker images for these services are being pulled down from the network. This is a one time step that may take some time. Eventually the circles will turn a light blue to note that they are starting, then a deeper blue to indicate when they are running.
 
-. When all services are running, you are ready to use the {launcher} application. Click the link at the top of all services--which typically ends in the `nip.io` suffix--to open the {launcher} application in a new browser tab.
+. When all pods are running, click the link at the top of all pods, which typically ends in `nip.io`. A new browser tab opens with the {launcher} application. This is the same service as `{link-launcher-oso}` but running in a {OpenShiftLocal}.
 
-You are now running on your local cloud the same service we will be hosting over at `{launcher}`.
+.Additional Resources
+* Start using your {launcher} application to launch booster applications.
+* See the link:{link-getting-started-guide}[{getting-started-guide-name}] for a walk-through of running a booster application.
+* Read the runtime guides for an overview of the runtimes and their boosters:
+** link:{link-spring-boot-runtime-guide}[{spring-boot-runtime-guide-name}]
+** link:{link-vertx-runtime-guide}[{vertx-runtime-guide-name}]
+** link:{link-wf-swarm-runtime-guide}[{wf-swarm-runtime-guide-name}]
+** link:{link-nodejs-runtime-guide}[{nodejs-runtime-guide-name}]
