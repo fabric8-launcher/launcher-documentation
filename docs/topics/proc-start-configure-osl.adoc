@@ -1,0 +1,62 @@
+[[start-local-cloud]]
+= Starting and Configuring the {OpenShiftLocal} for the {launcher} Application
+
+This chapter covers starting the {OpenShiftLocal} and configuring it to run the {launcher} Application.
+
+
+NOTE: Starting your {OpenShiftLocal} may trigger a download of large virtual machines or Linux container images. This may take a while. Subsequent startups should be shorter as long as the virtual machines and Linux container images remained cached.
+
+[IMPORTANT]
+====
+Since a {OpenShiftLocal} is for development purposes, it uses HTTPS for the web console and only provides a self-signed certificate. You may need to allow your browser to bypass SSL security policies as it tries to protect you from using `HTTPS` without a certificate signed by a certificate authority. The below screenshot shows the warning message in the Chrome browser.
+
+image::minishift_sslwarning.png[SSL warning]
+
+At this time, Safari on macOS does not work with a {OpenShiftLocal}. This a link:https://github.com/openshiftio/appdev-planning/issues/16[known issue]. Other browsers, such as Chrome, on macOS do work with a {OpenShiftLocal}.
+====
+
+[sidebar]
+.Prerequisites
+--
+* xref:install-local-cloud[{OpenShiftLocal} installed].
+--
+
+. Start the {OpenShiftLocal} with the default virtual machine driver.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ minishift start --memory=4096
+...
+OpenShift server started.
+
+The server is accessible via web console at:
+    https://192.168.42.152:8443
+----
+** Alternatively, you may specify a virtual machine driver other than the default using the `--vm-driver` flag.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ minishift start --memory=4096 --vm-driver=virtualbox
+----
++
+Depending upon your system setup, you may need manually specify an alternative virtual machine driver. Virtual machine software, such as link:https://www.virtualbox.org/[VirtualBox], is installed separately.
++
+NOTE: On macOS `xhyve` is the default virtual machine driver and it may be unreliable. If you experience issues, the `VirtualBox` is a reliable alternative.
++
+NOTE: Depending on your operating system, virtual machine driver, and the number of boosters you run, you may need to increase the amount memory you give you to your {OpenShiftLocal}.
+
+. Open the {OpenShiftLocal} Web console.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ minishift console
+----
+** Alternatively, you may use the URL provided in the log information.
+
+. Log in using `developer` for the username and any value for the password.
+
+. Optionally, you may delete the preconfigured project.
+.. Next to the project name, click the three-dot menu icon.
+.. Select _Delete Project_.
++
+image::minishift_consolehome.png[OpenShift Console Home]

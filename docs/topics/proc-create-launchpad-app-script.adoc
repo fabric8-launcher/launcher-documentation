@@ -1,0 +1,66 @@
+[[create-launcher-app-script]]
+= Creating {launcher} Application Using Automated Script
+
+You can install the {launcher} application to your {OpenShiftLocal} using link:{link-launcher-install-script}[an automated script]. This chapter takes you through using this method to install the {launcher} application.
+
+The script will:
+
+* Create a project in your {OpenShiftLocal}.
+* Deploy the {launcher} application to that project using the link:{link-launcher-yaml}[latest template].
+* Configure the {launcher} application with your GitHub username and personal access token.
+
+IMPORTANT: If you are running your {OpenShiftLocal} on Windows, you must use the xref:launcher-manual-install[manual method] for installing the {launcher} application.
+
+
+[sidebar]
+.Prerequisites
+--
+* xref:start-local-cloud[{OpenShiftLocal} running].
+* xref:create-gh-personal-access-token[A GitHub personal access token].
+--
+
+.Procedure
+. link:{link-launcher-install-script}[Download] the script.
+. Add execute permission for the script.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ chmod +x deploy_launchpad_mission.sh
+----
+. Run the script. There are several options:
+** Run the script with a username and password.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ ./deploy_launchpad_mission.sh -p PROJECT_NAME -i developer:developer -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN
+----
+
+** Run the script with a {OpenShiftLocal} access token.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ ./deploy_launchpad_mission.sh -p PROJECT_NAME -i OPENSHIFT_TOKEN -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN
+----
+
+** Run the script and specify the version of the {launcher} application template to use.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ ./deploy_launchpad_mission.sh -p PROJECT_NAME -i developer:developer -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN -v v11
+----
+
+. Once the script completes, return to the {OpenShiftLocal} Web console and click on the {launcher} application project to see the deployment status.
++
+image::minishift_launchpad_booting.png[{launcher} application booting]
++
+
+. When all pods are running, click the link at the top of all pods, which should end in `nip.io`. A new browser tab will open with the {launcher} application. This is the same service as `{link-launcher-oso}` but running in a {OpenShiftLocal}.
+
+.Additional Resources
+* Start using your {launcher} application to launch booster applications.
+* Take a look at the link:{link-getting-started-guide}[{getting-started-guide-name}] for a walk-through of running a booster.
+* Read the runtime guides for an overview of the runtimes and their boosters.
+** link:{link-spring-boot-runtime-guide}[{spring-boot-runtime-guide-name}]
+** link:{link-vertx-runtime-guide}[{vertx-runtime-guide-name}]
+** link:{link-wf-swarm-runtime-guide}[{wf-swarm-runtime-guide-name}]
+** link:{link-nodejs-runtime-guide}[{nodejs-runtime-guide-name}]
