@@ -1294,17 +1294,17 @@
       </build>
     </profile>
 
-    <profile>
-      <id>docs</id>
-      <activation>
-        <property>
-          <name>!swarm.docs.skip</name>
-        </property>
-      </activation>
-      <modules>
-        <module>docs</module>
-      </modules>
-    </profile>
+    <!--<profile>-->
+      <!--<id>docs</id>-->
+      <!--<activation>-->
+        <!--<property>-->
+          <!--<name>!swarm.docs.skip</name>-->
+        <!--</property>-->
+      <!--</activation>-->
+      <!--<modules>-->
+        <!--<module>docs</module>-->
+      <!--</modules>-->
+    <!--</profile>-->
 
     <profile>
       <id>release</id>
