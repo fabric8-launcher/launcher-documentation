@@ -14,8 +14,8 @@
 //:stylesheet: asciidoc-default.css
 :stylesheet: foundation.css
 
-:ProductName: The Red Hat Developer Experience
-:ProductShortName: The Red Hat Developer Experience
+:ProductName: Red Hat Runtimes Experience
+:ProductShortName: Red Hat Runtimes Experience
 
 :OpenShiftOnline: OpenShift Online
 :OpenShiftLocal: Single-node OpenShift Cluster
