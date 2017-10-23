@@ -1,5 +1,9 @@
 include::topics/templates/document-attributes.adoc[]
 
+// Used for specifying this is product docs in the modules sourced from the
+// WildFly Swarm repository (anything stored in docs/wildfly-swarm).
+:product:
+
 //override for a cleaner TOC
 :toclevels: 2
 
@@ -14,6 +18,25 @@ include::topics/wf-swarm-runtime-overview.adoc[leveloffset=+1]
 
 include::topics/runtime-info-product-version.adoc[leveloffset=+1]
 include::topics/runtime-info-community-version.adoc[leveloffset=+1]
+
+== Configuring {WildFlySwarm}
+
+This sections contains information about configuring the {WildFlySwarm} runtime.
+
+include::topics/wildfly-swarm/docs/reference/maven-plugin.adoc[leveloffset=+2]
+include::topics/wildfly-swarm/docs/concepts/fractions.adoc[leveloffset=+2]
+include::topics/wildfly-swarm/docs/howto/autodetect-fractions/index.adoc[leveloffset=+2]
+include::topics/wildfly-swarm/docs/howto/explicit-fractions/index.adoc[leveloffset=+2]
+
+include::topics/wildfly-swarm/docs/howto/use-a-bom/index.adoc[leveloffset=+2]
+
+== Packaging your application
+
+This sections contains information about packaging your {WildFlySwarm}&ndash;based application for deployment and execution.
+
+include::topics/wildfly-swarm/docs/concepts/packaging-types.adoc[leveloffset=+2]
+include::topics/wildfly-swarm/docs/howto/create-an-uberjar/index.adoc[leveloffset=+2]
+include::topics/wildfly-swarm/docs/howto/create-a-hollow-jar/index.adoc[leveloffset=+2]
 
 
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
@@ -167,6 +190,11 @@ include::topics/appendix-s2i-build-process.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/http-api-wf-swarm-pom.adoc[leveloffset=+1]
+
+[appendix]
+== {WildFlySwarm} Fractions Reference
+ifdef::product[include::topics/wildfly-swarm/docs/reference/index-product.adoc[leveloffset=+2]]
+ifndef::product[include::topics/wildfly-swarm/docs/reference/index-community.adoc[leveloffset=+2]]
 
 [appendix]
 include::topics/wf-swarm-dev-guide-additional-resources.adoc[leveloffset=+1]
