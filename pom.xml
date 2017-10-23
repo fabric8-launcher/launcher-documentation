@@ -31,7 +31,7 @@
   <properties>
     <version.wildfly.swarm.checkstyle>3</version.wildfly.swarm.checkstyle>
 
-    <version.certified-community>2017.9.4</version.certified-community>
+    <version.certified-community>2017.10.1</version.certified-community>
     <version.wildfly.swarm>${project.version}</version.wildfly.swarm>
 
     <version.org.arquillian>1.1.12.Final</version.org.arquillian>
@@ -65,6 +65,8 @@
     <version.checkstyle>7.4</version.checkstyle>
 
     <maven.min.version>3.2.1</maven.min.version>
+
+    <m2repo.include.pattern>**/*</m2repo.include.pattern>
 
     <!-- Surefire args -->
     <surefire.jpda.args></surefire.jpda.args>
@@ -910,6 +912,12 @@
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
+        <artifactId>web</artifactId>
+        <version>7.0.0</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.wildfly.swarm</groupId>
         <artifactId>webservices</artifactId>
         <version>7.0.0</version>
       </dependency>
@@ -989,6 +997,7 @@
     <module>fractions/javaee/remoting</module>
     <module>fractions/javaee/transactions</module>
     <module>fractions/javaee/undertow</module>
+    <module>fractions/javaee/web</module>
 
     <module>fractions/wildfly/hibernate-validator</module>
     <module>fractions/wildfly/io</module>
@@ -1018,6 +1027,7 @@
       </activation>
       <properties>
         <version.wildfly.swarm>${version.certified-community}</version.wildfly.swarm>
+        <m2repo.include.pattern>**/*redhat-*/**/*</m2repo.include.pattern>
       </properties>
       <modules>
         <module>boms</module>
@@ -1282,6 +1292,30 @@
           </plugins>
         </pluginManagement>
       </build>
+    </profile>
+
+    <!--<profile>-->
+      <!--<id>docs</id>-->
+      <!--<activation>-->
+        <!--<property>-->
+          <!--<name>!swarm.docs.skip</name>-->
+        <!--</property>-->
+      <!--</activation>-->
+      <!--<modules>-->
+        <!--<module>docs</module>-->
+      <!--</modules>-->
+    <!--</profile>-->
+
+    <profile>
+      <id>release</id>
+      <activation>
+        <property>
+          <name>!swarm.release.maven.bug.always.be.active</name>
+        </property>
+      </activation>
+      <modules>
+        <module>release</module>
+      </modules>
     </profile>
   </profiles>
 </project>
