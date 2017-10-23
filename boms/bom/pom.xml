@@ -100,11 +100,6 @@
               <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <configuration>
-                  <descriptors>
-                    <descriptor>${project.basedir}/assembly.xml</descriptor>
-                  </descriptors>
-                </configuration>
                 <executions>
                   <execution>
                     <id>assemble</id>
@@ -113,6 +108,7 @@
                       <goal>single</goal>
                     </goals>
                     <configuration>
+                      <descriptor>${project.basedir}/assembly.xml</descriptor>
                       <tarLongFileMode>gnu</tarLongFileMode>
                     </configuration>
                   </execution>
