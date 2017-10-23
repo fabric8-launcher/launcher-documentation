@@ -2,16 +2,38 @@
 = Introduction to {ProductName}
 This section provides a brief overview of the foundational concepts behind {ProductName}.
 
-.Modern Application Development
-Modern application development involves building and deploying to a cloud environment such as OpenShift. This requires:
+.{ProductName}
+{ProductName} is:
 
-* familiarity with the target cloud environment
-* an application architecture designed to run in that cloud environment
-* design patterns that enable you to manage your services
-* developer tools that simplify the development and release cycle
+* a collection of runtimes, such as {WildFlySwarm} and {SpringBoot}, designed to run in OpenShift
+* a prescriptive approach to cloud-native development
 
-The goal of {ProductName} is to provide opinionated architectures, design patterns, tools, and best practices in ready-to-go examples that run in OpenShift in order to enable modern application development.
+The goal of {ProductName} is to provide opinionated architectures, design patterns, tools, and best practices in ready-to-go examples that run in OpenShift in order to enable cloud-native development.
 
+.Cloud-native Development
+Cloud-native development is an approach to developing, deploying, and running applications that fully embrace the advantages of cloud computing. Cloud-native development has four key tenants:
+
+DevOps::
+The processes and practices used to do cloud-native development are implemented in software, not just defined.
+
+Containers::
+Containers are used as deployment targets for your cloud-native applications.
+
+Service-based Architecture::
+Cloud-native applications use a modular and loosely-coupled architecture such as microservices.
+
+Automation::
+Cloud-native applications are always deployed through automated processes such as pipelines.
+
+Usually, a cloud platform offers capabilities based on these tenants to help enable cloud-native development. This includes:
+
+* Application Runtimes
+* Containers as a Service
+* Containers as infrastructure supporting cloud-native applications and their lifecycles
+* Middleware as a Service
+
+.Cloud-native Applications
+Cloud-native applications are the result of adhering to cloud-native development.
 
 .OpenShift
 link:https://www.openshift.com[Red Hat OpenShift] is a container application platform that brings link:https://www.redhat.com/en/topics/containers/what-is-docker[docker] and link:https://www.redhat.com/en/topics/containers/what-is-kubernetes[Kubernetes] to the enterprise. link:{link-launcher-oso}[{OpenShiftOnline}] is a public cloud hosted and supported by Red Hat. A {OpenShiftLocal} is a local cloud that you can install and run on your localhost such as the link:https://developers.redhat.com/products/cdk/overview/[{CDK}] or link:https://www.openshift.org/minishift/[{Minishift}].
