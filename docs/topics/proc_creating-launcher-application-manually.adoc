@@ -5,18 +5,15 @@
 // Rationale: This module is useful both when setting up minishift as is and when testing a local
 // booster catalog.
 
-[[launcher-manual-install]]
+[#creating-launcher-application-manually]
 ifndef::parameter-custom-catalog[= Creating {launcher} Application Manually]
 ifdef::parameter-custom-catalog[= Creating {launcher} Application]
 
 Create a local customized instance of the {launcher} application, which allows you to test the functionality or make modifications to the application using a web interface.
 
-[sidebar]
 .Prerequisites
---
 * xref:start-local-cloud[{OpenShiftLocal} running].
-* xref:create-gh-personal-access-token[A GitHub personal access token].
---
+* A xref:creating-a-github-personal-access-token[GitHub personal access token].
 
 .Procedure
 . Open the {OpenShiftLocal} Web console and log in.
@@ -62,12 +59,12 @@ ifdef::parameter-custom-catalog[** Set _Catalog Git Repository_ to the repositor
 +
 image::minishift_launchpad_booting.png[{launcher} booting]
 
-. When all pods are running, click the link at the top of all pods, which should end in `nip.io`. A new browser tab will open with the {launcher} application. This is the same service as `{link-launcher-oso}` but running in a {OpenShiftLocal}.
+. When all pods are running, click the link at the top of all pods, which typically ends in `nip.io`. A new browser tab opens with the {launcher} application. This is the same service as `{link-launcher-oso}` but running in a {OpenShiftLocal}.
 
 .Additional Resources
 * Start using your {launcher} application to launch booster applications.
-* Take a look at the link:{link-getting-started-guide}[{getting-started-guide-name}] for a walk-through of running a booster.
-* Read the runtime guides for an overview of the runtimes and their boosters.
+* See the link:{link-getting-started-guide}[{getting-started-guide-name}] for a walk-through of running a booster application.
+* Read the runtime guides for an overview of the runtimes and their boosters:
 ** link:{link-spring-boot-runtime-guide}[{spring-boot-runtime-guide-name}]
 ** link:{link-vertx-runtime-guide}[{vertx-runtime-guide-name}]
 ** link:{link-wf-swarm-runtime-guide}[{wf-swarm-runtime-guide-name}]

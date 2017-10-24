@@ -1,0 +1,22 @@
+[#creating-a-github-personal-access-token]
+= Creating a GitHub Personal Access Token
+
+To install the {launcher} application on a {OpenShiftLocal}, you must provide the {launcher} application with a GitHub personal access token. This enables the {launcher} application to create booster applications and save them as Git repositories in your GitHub namespace.
+
+.Prerequisites
+--
+* A link:http://github.com[GitHub account].
+--
+
+.Procedure
+. Using a web browser, navigate to `https://github.com/settings/tokens`.
+. Select _Generate new token._
+. Add a token description, for example `{launcher} on a {OpenShiftLocal}`.
+. Select the check boxes of the following parent scopes and all their children:
+** `repo`
+** `admin:repo_hook`
+. Click  _Generate token_.
+. Save the hex code of the personal access token. You need this to complete the installation of the {launcher} application on your {OpenShiftLocal}.
++
+IMPORTANT: This hex code only appears once and cannot be retrieved after you leave the page. If you lose the code, you will need to create a new personal access token to install the {launcher} application on a {OpenShiftLocal} again.
+
