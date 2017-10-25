@@ -20,7 +20,7 @@ You can quickly create, build, and deploy a booster to {OpenShiftOnline} using t
 ** Use the _Build and Run Locally_ to create a ZIP download containing your booster. This will *not* create a GitHub repository or deploy your booster to {OpenShiftOnline}.
 . Follow the instructions to create a booster of your choice.
 . Open the `README.adoc` file in your booster's project and follow the instructions for building, deploying, and interacting with your booster.
-. When you are done interacting with and xref:update-booster[updating] your booster, it is recommended to delete your project. For instructions, see the link:https://docs.openshift.com/online/dev_guide/projects.html#delete-a-project[Deleting a Project^] chapter of the {OpenShiftOnline} documentation. You can redeploy the booster later using the instructions in the relevant xref:oso-create-booster-related-info[runtime guide].
+. When you are done interacting with and xref:update-booster[updating] your booster, it is recommended to delete your project because the resources allocated to your account are limited. For instructions, see the link:https://docs.openshift.com/online/dev_guide/projects.html#delete-a-project[Deleting a Project^] chapter of the {OpenShiftOnline} documentation. You can redeploy the booster later using the instructions in the relevant xref:oso-create-booster-related-info[runtime guide].
 +
 You have link:https://docs.openshift.com/online/dev_guide/compute_resources.html#dev-quotas[quotas^] for your {OpenShiftOnline} account. If you exceed your account quota, you will not be able to launch new boosters using the {launcher} application. The quota for your account varies depending on your subscription.
 
