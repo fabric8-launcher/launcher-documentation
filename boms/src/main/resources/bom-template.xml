@@ -50,7 +50,6 @@
     <version.shrinkwrap>${version.org.jboss.shrinkwrap}</version.shrinkwrap>
     <version.shrinkwrap-descriptors>${version.org.jboss.shrinkwrap.descriptors}</version.shrinkwrap-descriptors>
     <version.wildfly-swarm>${project.version}</version.wildfly-swarm>
-    <version.wildfly>${version.wildfly-fixed}</version.wildfly>
   </properties>
 
   <dependencyManagement>
@@ -77,7 +76,7 @@
       <dependency>
         <groupId>org.jboss.bom</groupId>
         <artifactId>eap-runtime-artifacts</artifactId>
-        <version>${version.wildfly}</version>
+        <version>7.0.8.GA</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
