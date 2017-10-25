@@ -1,0 +1,13 @@
+= Camel Component :: Activemq
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-activemq</artifactId>
+</dependency>
+----
+
+

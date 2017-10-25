@@ -1,0 +1,13 @@
+= Camel Component :: Mybatis
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-mybatis</artifactId>
+</dependency>
+----
+
+

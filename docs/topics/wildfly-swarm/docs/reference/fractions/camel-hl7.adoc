@@ -1,0 +1,13 @@
+= Camel Component :: Hl7
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-hl7</artifactId>
+</dependency>
+----
+
+

@@ -1,0 +1,13 @@
+= Camel Component :: Quartz2
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-quartz2</artifactId>
+</dependency>
+----
+
+

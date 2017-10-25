@@ -1,0 +1,13 @@
+= Camel Component :: Ahc-ws
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-ahc-ws</artifactId>
+</dependency>
+----
+
+

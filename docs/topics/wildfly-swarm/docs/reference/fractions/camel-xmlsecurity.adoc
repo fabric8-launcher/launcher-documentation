@@ -1,0 +1,13 @@
+= Camel Component :: Xmlsecurity
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-xmlsecurity</artifactId>
+</dependency>
+----
+
+

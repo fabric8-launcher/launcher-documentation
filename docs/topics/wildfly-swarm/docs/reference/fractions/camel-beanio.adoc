@@ -1,0 +1,13 @@
+= Camel Component :: Beanio
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-beanio</artifactId>
+</dependency>
+----
+
+

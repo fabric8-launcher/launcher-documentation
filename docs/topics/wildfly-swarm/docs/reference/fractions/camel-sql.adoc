@@ -1,0 +1,13 @@
+= Camel Component :: Sql
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-sql</artifactId>
+</dependency>
+----
+
+

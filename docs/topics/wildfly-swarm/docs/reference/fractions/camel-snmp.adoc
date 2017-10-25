@@ -1,0 +1,13 @@
+= Camel Component :: Snmp
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-snmp</artifactId>
+</dependency>
+----
+
+

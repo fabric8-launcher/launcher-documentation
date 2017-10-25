@@ -1,0 +1,13 @@
+= Camel Component :: Jgroups
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-jgroups</artifactId>
+</dependency>
+----
+
+

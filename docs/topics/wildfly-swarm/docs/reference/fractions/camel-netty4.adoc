@@ -1,0 +1,13 @@
+= Camel Component :: Netty4
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-netty4</artifactId>
+</dependency>
+----
+
+

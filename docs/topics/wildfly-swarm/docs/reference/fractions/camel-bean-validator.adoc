@@ -1,0 +1,13 @@
+= Camel Component :: Bean-validator
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-bean-validator</artifactId>
+</dependency>
+----
+
+

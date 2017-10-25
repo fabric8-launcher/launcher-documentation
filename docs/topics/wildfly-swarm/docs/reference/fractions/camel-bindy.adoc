@@ -1,0 +1,13 @@
+= Camel Component :: Bindy
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-bindy</artifactId>
+</dependency>
+----
+
+

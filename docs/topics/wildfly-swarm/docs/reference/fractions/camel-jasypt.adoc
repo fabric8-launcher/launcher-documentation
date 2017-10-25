@@ -1,0 +1,13 @@
+= Camel Component :: Jasypt
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-jasypt</artifactId>
+</dependency>
+----
+
+

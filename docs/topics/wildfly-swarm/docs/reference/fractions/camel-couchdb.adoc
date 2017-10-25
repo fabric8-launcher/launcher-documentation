@@ -1,0 +1,13 @@
+= Camel Component :: Couchdb
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-couchdb</artifactId>
+</dependency>
+----
+
+

@@ -1,0 +1,13 @@
+= Camel Component :: Jsch
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-jsch</artifactId>
+</dependency>
+----
+
+

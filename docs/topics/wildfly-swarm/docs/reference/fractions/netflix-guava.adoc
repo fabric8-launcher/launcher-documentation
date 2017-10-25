@@ -1,0 +1,13 @@
+= Guava
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>netflix-guava</artifactId>
+</dependency>
+----
+
+

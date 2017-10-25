@@ -1,0 +1,57 @@
+= Keycloak Server
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>keycloak-server</artifactId>
+</dependency>
+----
+
+.Configuration
+
+swarm.keycloakserver.master-realm-name:: 
+The name of the master admin realm.
+
+swarm.keycloakserver.providers:: 
+Paths to search for Keycloak provider jars.
+
+swarm.keycloakserver.scheduled-task-interval:: 
+The interval (in seconds) to run scheduled tasks.
+
+swarm.keycloakserver.spis._KEY_.default-provider:: 
+The default provider for the spi.
+
+swarm.keycloakserver.spis._KEY_.providers._KEY_.enabled:: 
+Enable or disable the provider.
+
+swarm.keycloakserver.spis._KEY_.providers._KEY_.properties:: 
+The properties for the provider.
+
+swarm.keycloakserver.themes._KEY_.attribute-default:: 
+The default theme to use if no theme is specified for a realm.
+
+swarm.keycloakserver.themes._KEY_.cachetemplates:: 
+If true, theme templates are cached.
+
+swarm.keycloakserver.themes._KEY_.cachethemes:: 
+If true, themes are cached.
+
+swarm.keycloakserver.themes._KEY_.dir:: 
+Directory where themes can be located.
+
+swarm.keycloakserver.themes._KEY_.modules:: 
+List of modules containing themes.
+
+swarm.keycloakserver.themes._KEY_.staticmaxage:: 
+Maximum time the browser should cache theme resources. A value of -1 will disable caching.
+
+swarm.keycloakserver.themes._KEY_.welcometheme:: 
+The welcome theme.
+
+swarm.keycloakserver.web-context:: 
+Web context where Keycloak server is bound. Default value is 'auth'.
+
+

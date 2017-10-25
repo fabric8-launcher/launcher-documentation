@@ -1,0 +1,13 @@
+= Hibernate Search
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>hibernate-search</artifactId>
+</dependency>
+----
+
+

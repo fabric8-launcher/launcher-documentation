@@ -1,0 +1,42 @@
+= MongoDB
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>mongodb</artifactId>
+</dependency>
+----
+
+.Configuration
+
+swarm.mongodb.mongos._KEY_.auth-type:: 
+MongoDB authorization type
+
+swarm.mongodb.mongos._KEY_.database:: 
+MongoDB database name
+
+swarm.mongodb.mongos._KEY_.hosts._KEY_.outbound-socket-binding-ref:: 
+MongoDB target hostname/port number
+
+swarm.mongodb.mongos._KEY_.id:: 
+Unique profile identification
+
+swarm.mongodb.mongos._KEY_.jndi-name:: 
+JNDI address
+
+swarm.mongodb.mongos._KEY_.module:: 
+Module name
+
+swarm.mongodb.mongos._KEY_.properties._KEY_.property:: 
+Custom MongoDB property
+
+swarm.mongodb.mongos._KEY_.security-domain:: 
+Security domain name
+
+swarm.mongodb.mongos._KEY_.ssl:: 
+use SSL for connecting to MongoDB
+
+
