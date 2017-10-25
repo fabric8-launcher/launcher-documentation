@@ -1,0 +1,13 @@
+= Camel Component :: Flatpack
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-flatpack</artifactId>
+</dependency>
+----
+
+

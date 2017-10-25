@@ -1,0 +1,13 @@
+= Camel Component :: Crypto
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-crypto</artifactId>
+</dependency>
+----
+
+

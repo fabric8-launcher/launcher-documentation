@@ -1,0 +1,13 @@
+= Camel Component :: Hystrix
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-hystrix</artifactId>
+</dependency>
+----
+
+

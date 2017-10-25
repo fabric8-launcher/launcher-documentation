@@ -1,0 +1,13 @@
+= Camel Component :: Braintree
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-braintree</artifactId>
+</dependency>
+----
+
+

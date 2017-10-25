@@ -1,0 +1,13 @@
+= Camel Component :: Cdi
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-cdi</artifactId>
+</dependency>
+----
+
+

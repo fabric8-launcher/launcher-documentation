@@ -1,0 +1,13 @@
+= Camel Component :: Base64
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-base64</artifactId>
+</dependency>
+----
+
+

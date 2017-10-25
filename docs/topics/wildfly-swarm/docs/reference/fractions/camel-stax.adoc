@@ -1,0 +1,13 @@
+= Camel Component :: Stax
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-stax</artifactId>
+</dependency>
+----
+
+

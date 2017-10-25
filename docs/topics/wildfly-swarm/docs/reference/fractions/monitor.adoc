@@ -1,0 +1,18 @@
+= Monitor
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>monitor</artifactId>
+</dependency>
+----
+
+.Configuration
+
+swarm.monitor.security-realm:: 
+(not yet documented)
+
+

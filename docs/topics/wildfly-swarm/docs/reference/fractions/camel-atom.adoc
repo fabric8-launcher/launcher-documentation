@@ -1,0 +1,13 @@
+= Camel Component :: Atom
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-atom</artifactId>
+</dependency>
+----
+
+

@@ -1,0 +1,13 @@
+= JPA Spatial Extensions
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>jpa-spatial</artifactId>
+</dependency>
+----
+
+

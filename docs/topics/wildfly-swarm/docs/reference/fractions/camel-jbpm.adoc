@@ -1,0 +1,13 @@
+= Camel Component :: Jbpm
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-jbpm</artifactId>
+</dependency>
+----
+
+

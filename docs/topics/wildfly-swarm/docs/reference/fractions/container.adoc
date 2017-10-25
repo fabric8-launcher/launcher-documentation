@@ -1,0 +1,13 @@
+= Container
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>container</artifactId>
+</dependency>
+----
+
+

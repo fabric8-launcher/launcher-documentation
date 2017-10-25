@@ -1,0 +1,13 @@
+= Camel Component :: Elsql
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-elsql</artifactId>
+</dependency>
+----
+
+

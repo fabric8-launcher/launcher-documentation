@@ -1,0 +1,13 @@
+= JavaFX
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>javafx</artifactId>
+</dependency>
+----
+
+

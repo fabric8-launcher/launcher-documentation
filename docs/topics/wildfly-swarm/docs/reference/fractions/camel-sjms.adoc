@@ -1,0 +1,13 @@
+= Camel Component :: Sjms
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-sjms</artifactId>
+</dependency>
+----
+
+

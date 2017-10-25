@@ -1,0 +1,13 @@
+= Camel Component :: Context
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-context</artifactId>
+</dependency>
+----
+
+

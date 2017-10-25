@@ -1,0 +1,13 @@
+= Camel Component :: Mina2
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-mina2</artifactId>
+</dependency>
+----
+
+

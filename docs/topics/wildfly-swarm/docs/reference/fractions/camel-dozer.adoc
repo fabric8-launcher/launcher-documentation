@@ -1,0 +1,13 @@
+= Camel Component :: Dozer
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-dozer</artifactId>
+</dependency>
+----
+
+

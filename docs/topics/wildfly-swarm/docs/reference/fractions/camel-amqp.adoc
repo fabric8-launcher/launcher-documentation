@@ -1,0 +1,13 @@
+= Camel Component :: Amqp
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>camel-amqp</artifactId>
+</dependency>
+----
+
+
