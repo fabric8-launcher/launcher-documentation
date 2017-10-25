@@ -38,6 +38,8 @@
     <version.wildfly.nosql.feature-pack>1.0.0.Alpha4</version.wildfly.nosql.feature-pack>
 
     <version.wildfly>7.0.8.GA-redhat-1</version.wildfly>
+    <!-- Used by eap-runtime-artifacts in BOM that does not have -redhat* suffix -->
+    <version.wildfly-fixed>7.0.8.GA</version.wildfly-fixed>
     <version.jboss-logmanager-ext>1.0.0.Alpha3</version.jboss-logmanager-ext>
     <!-- Weld SE version must be aligned with the version used in WildFly -->
     <version.weld-se>2.3.3.Final-redhat-1</version.weld-se>
