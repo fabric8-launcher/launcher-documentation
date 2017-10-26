@@ -1,46 +1,34 @@
-= SSO Adapter
+= SSO Adapter Configuration
 
-The adapter configuration is defined in the following files.
+The SSO adapter is the _client side_, or client to the SSO server, component that enforces security on the web resources. In this specific case, it is the greeting service.
 
-.app/src/main/resources/application.properties
-[source,properties]
+Both the SSO adapter and endpoint security are configured in `application.properties`. 
+
+.Example application.properties file
+
+[source,bash,options="nowrap",subs="attributes+"]
 ----
-keycloak.realm=${realm}
-keycloak.realm-key=${realm.public.key}
-keycloak.auth-server-url=${sso.auth.server.url}
-keycloak.ssl-required=external
-keycloak.resource=${client.id}
-keycloak.credentials.secret=${secret}
-keycloak.use-resource-role-mappings=true
-keycloak.bearer-only=true
-
-keycloak.securityConstraints[0].securityCollections[0].name=admin stuff
-keycloak.securityConstraints[0].securityCollections[0].authRoles[0]=springboot-admin
-keycloak.securityConstraints[0].securityCollections[0].patterns[0]=/greeting
-----
-
-.app/src/main/fabric8/template.yml
-[source,yaml]
-----
-...
-- description: The URL for the SSO server (e.g. https://secure-sso-myproject.example.com/auth).  This
-    is the URL through which the user will be redirected when a login or token is
-    required by the application.
-  name: SSO_AUTH_SERVER_URL
-  value: ${SSO_AUTH_SERVER_URL}
-  required: true
-- description: The RH-SSO realm to be used.
-  name: REALM
-  value: master
-  required: true
-- description: Realm's public key.
-  name: REALM_PUBLIC_KEY
-  value: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoETnPmN55xBJjRzN/cs30OzJ9olkteLVNRjzdTxFOyRtS2ovDfzdhhO9XzUcTMbIsCOAZtSt8K+6yvBXypOSYvI75EUdypmkcK1KoptqY5KEBQ1KwhWuP7IWQ0fshUwD6jI1QWDfGxfM/h34FvEn/0tJ71xN2P8TI2YanwuDZgosdobx/PAvlGREBGuk4BgmexTOkAdnFxIUQcCkiEZ2C41uCrxiS4CEe5OX91aK9HKZV4ZJX6vnqMHmdDnsMdO+UFtxOBYZio+a1jP4W3d7J5fGeiOaXjQCOpivKnP2yU2DPdWmDMyVb67l8DRA+jh0OJFKZ5H2fNgE3II59vdsRwIDAQAB
-  required: true
-- description: RH-SSO client id.
-  name: CLIENT_ID
-  value: demoapp
-  required: true
+$ # Adapter configuration
+keycloak.realm=master <1>
+keycloak.realm-key=... <2>
+keycloak.auth-server-url=${sso.auth.server.url} <3>
+keycloak.resource=secured-booster-endpoint <4>
+keycloak.credentials.secret=1daa57a2-b60e-468b-a3ac-25bd2dc2eadc <5>
+keycloak.use-resource-role-mappings=true <6>
+keycloak.bearer-only=true <7>
+# Endpoint security configuration
+keycloak.securityConstraints[0].securityCollections[0].name=admin stuff <8>
+keycloak.securityConstraints[0].securityCollections[0].authRoles[0]=booster-admin <9>
+keycloak.securityConstraints[0].securityCollections[0].patterns[0]=/api/greeting <10>
 ----
 
-NOTE: You will determine the value for ${SSO_AUTH_SERVER_URL} in the xref:SSO_AUTH_SERVER_URL[Determine the SSO_AUTH_SERVER_URL value] step of <<mission-secured-deploy-rhsso-zip>>.
+<1> The security realm to be used.
+<2> PEM format of the realm public key. You can obtain this from the administration console.
+<3> The address of the {RHSSO} server (Interpolation at build time).
+<4> The actual keycloak _client_ configuration.
+<5> Secret to access authentication server.
+<6> Check the token for application level role mappings for the user.
+<7> If enabled the adapter will not attempt to authenticate users, but only verify bearer tokens.
+<8> A simple name for the security constraint.
+<9> A roles needed to access a secured endpoint.
+<10> A secured endpoints path pattern.

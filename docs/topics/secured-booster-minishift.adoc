@@ -1,14 +1,11 @@
 = Configuring Your {OpenShiftLocal}
-
 You can use your {OpenShiftLocal} to run your secured booster, but you need to update it from the default configuration.
-
 
 . Before you can use your {OpenShiftLocal}, you need to have it installed, configured, and running. You can find details on installing a {OpenShiftLocal} for your platform in link:{link-launcher-openshift-local-install-guide}#installing-a-openshiftlocal[{openshift-local-guide-name}].
 +
 NOTE: You only need to do this once for any of the secured booster missions. They can share the same RH SSO/{OpenShiftLocal} setup.
 
-
-. Delete the current {OpenShiftLocal} configuration and restart it with a new ISO.
+. The SSO booster currently only works with the CentOS base image. To start a {OpenShiftLocal} with that image, you need to delete the current {OpenShiftLocal} configuration and restart it with a new ISO.
 +
 IMPORTANT: You must use a different boot iso image than the default in order for RH SSO to startup. If you have already run the `minishift` command with a different memory setting and iso-url value, you need to stop it and completely delete the `~/.minishift` directory before running the following startup sequence.
 +
@@ -17,11 +14,4 @@ IMPORTANT: You must use a different boot iso image than the default in order for
 $ minishift delete
 $ rm -r ~/.minishift
 $ minishift start --memory=6144 --iso-url=centos
-----
-
-. Install {launcher} on {OpenShiftLocal} using the link:{link-launcher-openshift-local-install-guide}#creating-launcher-application-using-automated-script[instructions in the {openshift-local-guide-name} guide] making sure to specify `master` for the catalog version.
-+
-[source,bash,options="nowrap",subs="attributes+"]
-----
-$ ./deploy_launchpad_mission.sh -p PROJECT_NAME -i developer:developer -g myGithubUser:myGithubToken -v master
 ----
