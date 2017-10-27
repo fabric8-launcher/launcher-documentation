@@ -122,7 +122,7 @@ The secured endpoint also contains a web interface to interact with it. Access i
 When using the web interface, you will go through the following steps to see how security is enforced, how authentication happens, and how the token is requested and attached to an authenticated invocation.
 
 . Open the web interface and click on _Invoke_. This sends an unauthenticated request to the Greeting service. 
-. The services responds with an `HTTP 401 Unauthenticated` status code.
+. The services responds with an `HTTP 401 Unauthorized` status code.
 . Click _Login_ to authenticate yourself against {RHSSO}. This redirects you to the SSO server and requests your credentials. 
 . Log in as xref:sso-users[the _Alice_ user].
 . Once authenticated you are redirected to the web interface, which includes a bearer token shown in the command line output at the bottom of the page.
@@ -132,4 +132,4 @@ When using the web interface, you will go through the following steps to see how
 . Click on _Invoke_. Confirm this sends an unauthenticated request to the Greeting service. 
 . Click _Login_ and log in as xref:sso-users[the _admin_ user].
 . Click on _Invoke_. 
-. Confirm the service responds with an `HTTP 403 Unauthorized` status code since the _admin_ user is not authorized to access the Greeting service.
+. Confirm the service responds with an `HTTP 403 Forbidden` status code since the _admin_ user is not authorized to access the Greeting service.
