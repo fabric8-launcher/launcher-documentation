@@ -17,12 +17,20 @@ $ git clone git@github.com:USERNAME/PROJECT-NAME.git
 
 . Build your booster's project.
 +
+ifndef::secured-nodejs-mission[]
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ cd PROJECT-NAME/sso
+$ cd PROJECT-NAME
 $ mvn install
-$ cd ..
 ----
+endif::secured-nodejs-mission[]
+ifdef::secured-nodejs-mission[]
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ cd PROJECT-NAME
+$ npm install
+----
+endif::secured-nodejs-mission[]
 
 . Login with `oc` to your {OpenShiftLocal}.
 +

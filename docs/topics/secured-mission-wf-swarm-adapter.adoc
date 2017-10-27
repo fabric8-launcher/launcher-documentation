@@ -33,7 +33,7 @@ In {WildFlySwarm}, the security configuration breaks down into two notable asset
 <2> The role needed to access the endpoint.
 <3> Using keycloak as the security provider.
 
-.Enacting Security using `keycloak.json`
+.Enacting Security in Keycloak Adapter using `keycloak.json`
 [source,json,options="nowrap",subs="attributes+"]
 ----
 {
@@ -54,4 +54,4 @@ In {WildFlySwarm}, the security configuration breaks down into two notable asset
 <4> The address of the {RHSSO} server (Interpolation at build time).
 <5> If enabled the adapter will not attempt to authenticate users, but only verify bearer tokens.
 
-The `web.xml` enables keycloak and enforces protection of the web resource. The `keycloak.json` configures the security adapter to interact with {RHSSO}.
+The `web.xml` enables keycloak and enforces protection of the Greeting service web resource endpoint. The `keycloak.json` configures the security adapter to interact with {RHSSO}.
