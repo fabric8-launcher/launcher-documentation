@@ -5,7 +5,7 @@ Once you have the {VertX} booster deployed, you will have a service called `{app
 /api/greeting::
 This endpoint returns a JSON containing greeting of `name` parameter (or World as default value).
 
-/api/killme::
+/api/stop::
 This endpoint forces the service to become unresponsive which is meant to simulate a failure in the service.
 
 The following steps demonstrate how to verify the service availability and simulate a failure. This failure of an available service causes the OpenShift self-healing capabilities to be trigger on the service.
@@ -20,13 +20,13 @@ $ curl http://{app-name}-{project-name}.{osl-route-hostname}/api/greeting
 {"content":"Hello, World!"}
 ----
 
-. Invoke the `/api/killme` endpoint and verify the availability of the `/api/greeting` endpoint shortly after that.
+. Invoke the `/api/stop` endpoint and verify the availability of the `/api/greeting` endpoint shortly after that.
 +
-Invoking the `/api/killme` endpoint simulates an internal service failure and triggers the OpenShift self-healing capabilities. When invoking `/api/greeting` after simulating the failure, the service should return a HTTP status `503`.
+Invoking the `/api/stop` endpoint simulates an internal service failure and triggers the OpenShift self-healing capabilities. When invoking `/api/greeting` after simulating the failure, the service should return a HTTP status `503`.
 +
 [source,bash,option="nowrap",subs="attributes+"]
 ----
-$ curl http://{app-name}-{project-name}.{osl-route-hostname}/api/killme
+$ curl http://{app-name}-{project-name}.{osl-route-hostname}/api/stop
 Stopping HTTP server, Bye bye world !
 
 (followed by)
