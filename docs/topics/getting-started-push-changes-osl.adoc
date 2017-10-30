@@ -2,7 +2,7 @@
 
 Local development is a fine initial approach, but one of the big opportunities microservices presents is developing for the cloud _first_. This means pushing changes to the cloud and testing them as they are being developed. This can reduce problems that arise from "Well, it worked on my machine". 
 
-. link:{link-launcher-openshift-local-install-guide}#installing-a-openshiftlocal[Install] and link:{link-launcher-openshift-local-install-guide}#start-local-cloud[start] a {OpenShiftLocal} using the instructions in the _{minishift-installation-guide-name} guide_.
+. link:{link-launcher-openshift-local-install-guide}#installing-a-openshiftlocal[Install] and link:{link-launcher-openshift-local-install-guide}#starting-and-configuring-the-openshiftlocal-for-the-launcher-application[start] a {OpenShiftLocal} using the instructions in the _{minishift-installation-guide-name} guide_.
 . Login to your {OpenShiftLocal}.
 +
 [source,bash,options="nowrap",subs="attributes+"]

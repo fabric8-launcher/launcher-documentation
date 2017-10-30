@@ -12,7 +12,7 @@ IMPORTANT: If you are running your {OpenShiftLocal} on Windows, you must use the
 
 .Prerequisites
 
-* xref:start-local-cloud[{OpenShiftLocal} running].
+* xref:starting-and-configuring-the-openshiftlocal-for-the-launcher-application[{OpenShiftLocal} running].
 * A xref:creating-a-github-personal-access-token[GitHub personal access token].
 
 .Procedure
