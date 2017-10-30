@@ -14,8 +14,9 @@
 //:stylesheet: asciidoc-default.css
 :stylesheet: foundation.css
 
-:ProductName: Red Hat Runtimes Experience
-:ProductShortName: Red Hat Runtimes Experience
+:launcher: Fabric8 Launch
+:ProductName: {launcher} Experience with Runtimes
+:ProductShortName: {ProductName}
 
 :OpenShiftOnline: OpenShift Online
 :OpenShiftLocal: Single-node OpenShift Cluster
@@ -26,7 +27,6 @@
 :SpringBoot: Spring Boot Tomcat
 :VertX: Eclipse Vert.x
 :NodeJS: Node.js
-:launcher: Fabric8 Launcher
 :RHSSO: Red Hat SSO
 
 :app-name: MY_APP_NAME
