@@ -1,6 +1,6 @@
 = Interacting with the Unmodified {WildFlySwarm} Booster
 
-Once you have the {WildFlySwarm} booster deployed, you will have a service called  `{app-name}` running that exposes a two REST endpoints: `/api/greeting` which returns a name as a String and `/api/killme`, which forces the service to become unresponsive as means to simulate a failure.
+Once you have the {WildFlySwarm} booster deployed, you will have a service called  `{app-name}` running that exposes a two REST endpoints: `/api/greeting` which returns a name as a String and `/api/stop`, which forces the service to become unresponsive as means to simulate a failure.
 
 In the following we demonstrate the basic interactions on the command line that can be used verify the service availability and simulate a failure that causes the OpenShift self-healing capabilities to be trigger on the service. Alternatively you can use the service web interface to perform these steps (See #4).
 
@@ -12,11 +12,11 @@ $ curl http://{app-name}-{project-name}.{osl-route-hostname}/api/greeting
 {"content":"Hello, World!"}
 ----
 
-. To simulate a service internal failure and to trigger the OpenShift selfhealing capabilities, invoke the `/api/killme` endpoint and verify the availability of the `/api/greeting` endpoint shortly after that. It should return a HTTP status 503:
+. To simulate a service internal failure and to trigger the OpenShift selfhealing capabilities, invoke the `/api/stop` endpoint and verify the availability of the `/api/greeting` endpoint shortly after that. It should return a HTTP status 503:
 +
 [source,bash,option="nowrap",subs="attributes+"]
 ----
-$ curl http://{app-name}-{project-name}.{osl-route-hostname}/api/killme
+$ curl http://{app-name}-{project-name}.{osl-route-hostname}/api/stop
 
 (followed by)
 

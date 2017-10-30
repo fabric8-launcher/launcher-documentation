@@ -69,7 +69,7 @@ $ curl http://${app-name}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/greeting
 $ curl http://${app-name}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/greeting?name=Sarah
 {"content":"Hello Sarah!"}
 
-$ curl http://${app-name}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/killme
+$ curl http://${app-name}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/stop
 
 $ oc get pods -w
 NAME                           READY     STATUS    RESTARTS   AGE
