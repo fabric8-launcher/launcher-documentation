@@ -1,1 +1,1 @@
-IMPORTANT: {runtime} has a community version of its runtime that runs on OpenShift and is provided outside of a Red Hat subscription.
+IMPORTANT: {runtime} is a Technology Preview and is provided outside of a Red Hat subscription.
