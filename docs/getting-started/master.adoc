@@ -8,7 +8,7 @@ include::topics/templates/document-attributes.adoc[]
 = {getting-started-guide-name}
 
 [.lead]
-This guide takes you through modern application development with {ProductName}. It shows you how to create and deploy example cloud-native applications called Boosters to OpenShift using the {launcher} application. These example applications can serve as the foundation for your actual cloud-native microservices since they can be updated and redeployed using the same deployment process detailed in this guide.
+This guide takes you through cloud-native development with {ProductName}. It shows you how to create and deploy example cloud-native applications called Boosters to OpenShift using the {launcher} application. These example applications can serve as the foundation for your actual cloud-native microservices since they can be updated and redeployed using the same deployment process detailed in this guide.
 
 
 include::topics/con_introduction-to-productname.adoc[leveloffset=+1]
