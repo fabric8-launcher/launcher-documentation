@@ -1,3 +1,8 @@
+// This is a parameterized module. Parameters used:
+//
+//   parameter-deployment: A string containing the deployment to use, possibly in the form of a link
+//
+// Rationale: This procedure is identical in all deployments
 
 [#deploying-the-secured-booster-using-the-oc-cli-client_{context}]
 = Deploying the {name-mission-secured} booster using the `oc` CLI client
@@ -28,8 +33,8 @@ $ oc new-project {project-name}
 $ oc create -f service.sso.yaml
 ----
 
-ifndef::http-api-nodejs[]
-. Use Maven to start the deployment to {OpenShiftLocal}.
+ifndef::secured-nodejs-mission[]
+. Use Maven to start the deployment to {parameter-deployment}.
 +
 --
 [source,bash,options="nowrap",subs="attributes+"]
@@ -38,12 +43,12 @@ $ mvn clean fabric8:deploy -Popenshift -DskipTests \
       -DSSO_AUTH_SERVER_URL=$(oc get route secure-sso -o jsonpath='{"https://"}{.spec.host}{"/auth\n"}')
 ----
 
-This command uses the Fabric8 Maven Plugin to launch the S2I process on {OpenShiftLocal} and to start the pod.
+This command uses the Fabric8 Maven Plugin to launch the S2I process on {parameter-deployment} and to start the pod.
 --
-endif::http-api-nodejs[]
+endif::secured-nodejs-mission[]
 
-ifdef::http-api-nodejs[]
-. Use `npm` to start the deployment to {OpenShiftLocal}.
+ifdef::secured-nodejs-mission[]
+. Use `npm` to start the deployment to {parameter-deployment}.
 +
 --
 [source,bash,options="nowrap",subs="attributes+"]
@@ -52,21 +57,9 @@ $ npm install && npm run openshift -- \
       -d SSO_AUTH_SERVER_URL=$(oc get route secure-sso -o jsonpath='{"https://"}{.spec.host}{"/auth\n"}')
 ----
 
-These commands install any missing package dependencies, then using the xref:about-nodeshift[Nodeshift] package, launch the S2I process on {OpenShiftLocal} to start the pod.
+These commands install any missing package dependencies, then using the xref:about-nodeshift[Nodeshift] package, launch the S2I process on {parameter-deployment} to start the pod.
 --
-endif::http-api-nodejs[]
+endif::secured-nodejs-mission[]
 
-. Check the status of your booster and ensure your pod is running.
-+
-[source,bash,options="nowrap",subs="attributes+"]
-----
-$ oc get pods -w
-NAME                             READY     STATUS      RESTARTS   AGE
-{app-name}-1-aaaaa               1/1       Running     0          58s
-{app-name}-s2i-1-build           0/1       Completed   0          2m
-----
-+
-You `{app-name}-1-aaaaa` pod should have a status of `Running` once its fully deployed and started.
-
-This process generates the uberjar file as well as the OpenShift resources and deploys them to the current project on your {OpenShiftLocal} server.
+This process generates the uberjar file as well as the OpenShift resources and deploys them to the current project on your {parameter-deployment} server.
 
