@@ -32,5 +32,5 @@ Once your booster is deployed and started, you can check its route information f
 ----
 $ oc get routes
 NAME                 HOST/PORT                                         PATH      SERVICES             PORT      TERMINATION
-{app-name}           {app-name}-{project-name}.{osl-route-hostname}        {app-name}                     8080
+{app-name}           {app-name}-{project-name}.{os-route-hostname}        {app-name}                     8080
 ----

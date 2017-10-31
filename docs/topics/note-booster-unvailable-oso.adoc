@@ -1,1 +1,1 @@
-IMPORTANT: This booster is not currently available on {OpenShiftOnline} Starter. You can still run it using a {OpenShiftLocal}. You can also use a manual workflow to deploy this booster to {OpenShiftOnline} Pro and {OCP}.
+IMPORTANT: This booster is not currently available on {OpenShiftOnline} Starter. You can still run it using a {OpenShiftLocal}. You can also use a manual workflow to deploy this booster to {OpenShiftOnline} Pro and {OpenShiftContainerPlatform}.

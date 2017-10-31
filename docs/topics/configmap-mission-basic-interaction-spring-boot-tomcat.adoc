@@ -6,7 +6,7 @@ The booster provides a default HTTP endpoint that accepts GET requests.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ curl http://{app-name}-{project-name}.{osl-route-hostname}/api/greeting
+$ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting
 {"content":"Hello World from a ConfigMap!"}
 ----
 
@@ -42,7 +42,7 @@ You `{app-name}-1-aaaaa` pod should have a status of `Running` once it's fully d
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ curl http://{app-name}-{project-name}.{osl-route-hostname}/api/greeting
+$ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting
 {"content":"Bonjour!"}
 ----
 +

@@ -1,6 +1,11 @@
+// This is a parameterized module. Parameters used: 
+// 
+//  context: context of usage, e.g. "osl", "oso", "ocp", "rest-api", etc. This can also be a composite, e.g. "rest-api-oso"
+//
+// Rationale: This procedure is identical in all deployments.
 
-[#deploying-the-rest-api-booster-using-the-oc-cli-client_{context}]
-= Deploying the {name-mission-http-api} Booster using the `oc` CLI Client
+[#deploying-the-health-check-booster-using-the-oc-cli-client_{context}]
+= Deploying the {name-mission-health-check} Booster using the `oc` CLI Client
 
 .Prerequisites
 
@@ -24,25 +29,25 @@ $ oc new-project {project-name}
 . Navigate to the root directory of your booster.
 
 ifndef::http-api-nodejs[]
-. Use Maven to start the deployment to {OpenShiftLocal}.
+. Use Maven to start the deployment to OpenShift.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ mvn clean fabric8:deploy -Popenshift
 ----
 +
-This command uses the Fabric8 Maven Plugin to launch the S2I process on {OpenShiftLocal} and to start the pod.
+This command uses the Fabric8 Maven Plugin to launch the S2I process on OpenShift and to start the pod.
 endif::http-api-nodejs[]
 
 ifdef::http-api-nodejs[]
-. Use `npm` to start the deployment to {OpenShiftLocal}.
+. Use `npm` to start the deployment to OpenShift.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ npm install && npm run openshift
 ----
 +
-These commands install any missing package dependencies, then using the xref:about-nodeshift[Nodeshift] package, launch the S2I process on {OpenShiftLocal} to start the pod.
+These commands install any missing package dependencies, then using the xref:about-nodeshift[Nodeshift] package, launch the S2I process on OpenShift to start the pod.
 endif::http-api-nodejs[]
 
 . Check the status of your booster and ensure your pod is running.
@@ -55,7 +60,7 @@ NAME                             READY     STATUS      RESTARTS   AGE
 {app-name}-s2i-1-build           0/1       Completed   0          2m
 ----
 +
-You `{app-name}-1-aaaaa` pod should have a status of `Running` once its fully deployed and started.
+You `{app-name}-1-aaaaa` pod should have a status of `Running` once its fully deployed and started. You should also wait for your pod to be ready before proceeding, which is shown in the `READY` column. For example, `PROJECT_NAME-1-aaaaa` is ready when the `READY` column is `1/1`.
 
 . Once your booster is deployed and started, determine its route.
 +
@@ -64,7 +69,7 @@ You `{app-name}-1-aaaaa` pod should have a status of `Running` once its fully de
 ----
 $ oc get routes
 NAME                 HOST/PORT                                                     PATH      SERVICES        PORT      TERMINATION
-{app-name}         {app-name}-{project-name}.{osl-route-hostname}      {app-name}      8080
+{app-name}         {app-name}-{project-name}.{os-route-hostname}      {app-name}      8080
 ----
 +
-The route information of a pod gives you the base URL which you use to access it. In the example above, you would use `http://{app-name}-{project-name}.{osl-route-hostname}` as the base URL to access the application.
+The route information of a pod gives you the base URL which you use to access it. In the example above, you would use `http://{app-name}-{project-name}.{os-route-hostname}` as the base URL to access the application.

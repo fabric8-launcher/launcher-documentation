@@ -2,6 +2,7 @@
 //
 //   parameter-openshiftlocal: A local OpenShift installation is used, so a URL is required for proceeding.
 //   parameter-deployment: A string containing the deployment to use, possibly in the form of a link
+//   context: context of usage, e.g. "osl", "oso", "ocp", "rest-api", etc. This can also be a composite, e.g. "rest-api-oso"
 //
 // Rationale: This procedure is identical in all deployments
 

@@ -9,7 +9,7 @@ secured-vertx-http,secured-vertx-http-myproject.{osl-route-hostname},,secured-ve
 sso,sso-myproject.{osl-route-hostname},,sso,<all>,
 |===
 
-Alternatively, obtain the Secured booster endpoint name using the Java client:
+Alternatively, obtain the {name-mission-secured} booster endpoint name using the Java client:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----

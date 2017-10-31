@@ -8,7 +8,7 @@
 [#getting-the-secured-booster-api-endpoint]
 = Getting the {name-mission-secured} Booster API Endpoint
 
-When using a client to interact with the booster, you must specify the Secured booster endpoint, which is the _Greeting_ service.
+When using a client to interact with the booster, you must specify the {name-mission-secured} booster endpoint, which is the _Greeting_ service.
 
 .Prerequisites
 

@@ -34,32 +34,36 @@
 :revnumber: {localdate}
 
 :name-mission-http-api: REST API Level 0
+:name-mission-configmap: ConfigMap
+:name-mission-health-check: Health Check
+:name-mission-circuit-breaker: Circuit Breaker
+:name-mission-crud: Relational Database Backend
 :name-mission-secured: Secured
 
 :mission-http-api-spring-boot-tomcat-guide-name: {name-mission-http-api} Mission - {SpringBoot} Booster
 :mission-http-api-vertx-guide-name: {name-mission-http-api} Mission - {VertX} Booster
 :mission-http-api-wf-swarm-guide-name: {name-mission-http-api} Mission - {WildFlySwarm} Booster
 :mission-http-api-nodejs-guide-name: {name-mission-http-api} Mission - {NodeJS} Booster
-:mission-configmap-spring-boot-tomcat-guide-name: ConfigMap Mission - {SpringBoot} Booster
-:mission-configmap-vertx-guide-name: ConfigMap Mission - {VertX} Booster
-:mission-configmap-nodejs-guide-name: ConfigMap Mission - {NodeJS} Booster
-:mission-configmap-wf-swarm-guide-name: ConfigMap Mission - {WildFlySwarm} Booster
-:mission-health-check-spring-boot-tomcat-guide-name: Health Check Mission - {SpringBoot} Booster
-:mission-health-check-vertx-guide-name: Health Check Mission - {VertX} Booster
-:mission-health-check-wf-swarm-guide-name: Health Check Mission - {WildFlySwarm} Booster
-:mission-health-check-nodejs-guide-name: Health Check Mission - {NodeJS} Booster
-:mission-circuit-breaker-spring-boot-tomcat-guide-name: Circuit Breaker Mission - {SpringBoot} Booster
-:mission-circuit-breaker-vertx-guide-name: Circuit Breaker Mission - {VertX} Booster
-:mission-circuit-breaker-wf-swarm-guide-name: Circuit Breaker Mission - {WildFlySwarm} Booster
-:mission-circuit-breaker-nodejs-guide-name: Circuit Breaker Mission - {NodeJS} Booster
-:mission-secured-spring-boot-guide-name: Secured Mission - {SpringBoot} Booster
-:mission-secured-vertx-guide-name: Secured Mission - {VertX} Booster
-:mission-secured-wf-swarm-guide-name: Secured Mission - {WildFlySwarm} Booster
-:mission-secured-nodejs-guide-name: Secured Mission - {NodeJS} Booster
-:mission-crud-spring-boot-tomcat-guide-name: Relational Database Backend Mission - {SpringBoot} Booster
-:mission-crud-vertx-guide-name: Relational Database Backend Mission - {VertX} Booster
-:mission-crud-wf-swarm-guide-name: Relational Database Backend Mission - {WildFlySwarm} Booster
-:mission-crud-nodejs-guide-name: Relational Database Backend Mission - {NodeJS} Booster
+:mission-configmap-spring-boot-tomcat-guide-name: {name-mission-configmap} Mission - {SpringBoot} Booster
+:mission-configmap-vertx-guide-name: {name-mission-configmap} Mission - {VertX} Booster
+:mission-configmap-nodejs-guide-name: {name-mission-configmap} Mission - {NodeJS} Booster
+:mission-configmap-wf-swarm-guide-name: {name-mission-configmap} Mission - {WildFlySwarm} Booster
+:mission-health-check-spring-boot-tomcat-guide-name: {name-mission-health-check} Mission - {SpringBoot} Booster
+:mission-health-check-vertx-guide-name: {name-mission-health-check} Mission - {VertX} Booster
+:mission-health-check-wf-swarm-guide-name: {name-mission-health-check} Mission - {WildFlySwarm} Booster
+:mission-health-check-nodejs-guide-name: {name-mission-health-check} Mission - {NodeJS} Booster
+:mission-circuit-breaker-spring-boot-tomcat-guide-name: {name-mission-circuit-breaker} Mission - {SpringBoot} Booster
+:mission-circuit-breaker-vertx-guide-name: {name-mission-circuit-breaker} Mission - {VertX} Booster
+:mission-circuit-breaker-wf-swarm-guide-name: {name-mission-circuit-breaker} Mission - {WildFlySwarm} Booster
+:mission-circuit-breaker-nodejs-guide-name: {name-mission-circuit-breaker} Mission - {NodeJS} Booster
+:mission-secured-spring-boot-guide-name: {name-mission-secured} Mission - {SpringBoot} Booster
+:mission-secured-vertx-guide-name: {name-mission-secured} Mission - {VertX} Booster
+:mission-secured-wf-swarm-guide-name: {name-mission-secured} Mission - {WildFlySwarm} Booster
+:mission-secured-nodejs-guide-name: {name-mission-secured} Mission - {NodeJS} Booster
+:mission-crud-spring-boot-tomcat-guide-name: {name-mission-crud} Mission - {SpringBoot} Booster
+:mission-crud-vertx-guide-name: {name-mission-crud} Mission - {VertX} Booster
+:mission-crud-wf-swarm-guide-name: {name-mission-crud} Mission - {WildFlySwarm} Booster
+:mission-crud-nodejs-guide-name: {name-mission-crud} Mission - {NodeJS} Booster
 
 
 :openshift-local-guide-name: Install and Configure a {OpenShiftLocal}
@@ -136,6 +140,8 @@
 
 // OSO hostname e.g: 1ab5.starter-us-east-1.openshiftapps.com
 :oso-route-hostname: OPENSHIFT_ONLINE_HOSTNAME
+
+:os-route-hostname: OPENSHIFT_HOSTNAME
 
 :link-launcher-install-script: https://raw.githubusercontent.com/fabric8-launch/appdev-documentation/master/scripts/deploy_launchpad_mission.sh
 

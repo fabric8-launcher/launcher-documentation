@@ -18,9 +18,9 @@ include::topics/sb-tomcat-runtime-overview.adoc[leveloffset=+1]
 
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
+
 [[mission-http-api-spring-boot-tomcat]]
 === {mission-http-api-spring-boot-tomcat-guide-name}
-
 :http-api-spring-boot-tomcat:
 :context: rest-api
 
@@ -30,13 +30,16 @@ include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-design-tradeoffs.adoc[leveloffset=+3]
 
-:context: rest-api-osl
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
+:parameter-mission: rest-api
+:parameter-mission-name: {name-mission-http-api}
 
-:context: rest-api-oso
+:context: {parameter-mission}-oso
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
 
-:context: rest-api-ocp
+:context: {parameter-mission}-osl
+include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
+
+:context: {parameter-mission}-ocp
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 
@@ -55,7 +58,17 @@ include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 include::topics/configmap-mission-design-tradeoffs.adoc[leveloffset=+3]
 
-include::topics/configmap-mission-deploy-booster.adoc[leveloffset=+3]
+:parameter-mission: configmap
+:parameter-mission-name: {name-mission-configmap}
+
+:context: {parameter-mission}-oso
+include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
+
+:context: {parameter-mission}-osl
+include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
+
+:context: {parameter-mission}-ocp
+include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 include::topics/configmap-mission-basic-interaction-spring-boot-tomcat.adoc[leveloffset=+3]
 
@@ -77,9 +90,17 @@ include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 // design tradeoffs
 include::topics/crud-mission-design-tradeoffs.adoc[leveloffset=+3]
 
+:parameter-mission: crud
+:parameter-mission-name: {name-mission-crud}
 
-// deployment
-include::topics/crud-mission-deploy-booster.adoc[leveloffset=+3]
+:context: {parameter-mission}-oso
+include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
+
+:context: {parameter-mission}-osl
+include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
+
+:context: {parameter-mission}-ocp
+include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 //Interacting with the database
 include::topics/crud-mission-database-interaction.adoc[leveloffset=+3]
@@ -99,7 +120,18 @@ include::topics/health-check-mission-intro.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
-include::topics/health-check-mission-deploy-booster.adoc[leveloffset=+3]
+:parameter-mission: health-check
+:parameter-mission-name: {name-mission-health-check}
+
+:context: {parameter-mission}-oso
+include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
+
+:context: {parameter-mission}-osl
+include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
+
+:context: {parameter-mission}-ocp
+include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+
 
 include::topics/health-check-mission-basic-interaction-spring-boot-tomcat.adoc[leveloffset=+3]
 
@@ -119,8 +151,18 @@ include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 // CB design tradeoffs
 include::topics/circuit-breaker-mission-design-tradeoffs.adoc[leveloffset=+3]
 
-// deploy CB booster
-include::topics/circuit-breaker-mission-deploy-booster.adoc[leveloffset=+3]
+:parameter-mission: circuit-breaker
+:parameter-mission-name: {name-mission-circuit-breaker}
+
+:context: {parameter-mission}-oso
+include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
+
+:context: {parameter-mission}-osl
+include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
+
+:context: {parameter-mission}-ocp
+include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+
 
 // CB basic interaction
 include::topics/circuit-breaker-mission-basic-interaction-spring-boot-tomcat.adoc[leveloffset=+3]
@@ -151,10 +193,13 @@ include::topics/secured-mission-intro.adoc[leveloffset=+3]
 //this needs to be a level lower due to secured-mission-intro.adoc
 include::topics/secured-mission-springboot-adapter.adoc[leveloffset=+4]
 
-:context: secured-osl
+:parameter-mission: secured
+:parameter-mission-name: {name-mission-secured}
+
+:context: {parameter-mission}-osl
 include::topics/assembly_building-and-deploying-the-secured-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
-:context: secured-ocp
+:context: {parameter-mission}-ocp
 include::topics/assembly_building-and-deploying-the-secured-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 :parameter-runtime: sb

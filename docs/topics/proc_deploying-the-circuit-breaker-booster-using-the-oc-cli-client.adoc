@@ -1,0 +1,83 @@
+// This is a parameterized module. Parameters used: 
+// 
+//  context: context of usage, e.g. "osl", "oso", "ocp", "rest-api", etc. This can also be a composite, e.g. "rest-api-oso"
+//
+// Rationale: This procedure is identical in all deployments.
+
+[#deploying-the-circuit-breaker-booster-using-the-oc-cli-client_{context}]
+= Deploying the {name-mission-circuit-breaker} Booster using the `oc` CLI Client
+
+.Prerequisites
+
+* The booster application created using the {launcher} application.
+For more information, see xref:deploying-the-booster-using-launcher_{context}[].
+
+ifdef::parameter-openshiftlocal[]
+* Your {launcher} URL.
+endif::[]
+* The `oc` client authenticated. For more information, see xref:authenticating-the-oc-cli-client_{context}[].
+
+.Procedure
+
+. Create a new project.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc new-project {project-name}
+----
+
+ifndef::circuit-breaker-nodejs[]
+. Navigate to the root directory of your booster.
+
+. Use Maven to start the deployment to OpenShift.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn clean fabric8:deploy -Popenshift
+----
++
+This command uses the Fabric8 Maven Plugin to launch the S2I process on OpenShift and to start the pod.
+endif::circuit-breaker-nodejs[]
+
+ifdef::circuit-breaker-nodejs[]
+. Clone a fork of the booster at `git@github.com:bucharest-gold/nodejs-circuit-breaker.git`, and use the provided `start-openshift.sh` script to start the deployment to OpenShift.
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git clone git@github.com:my-boosters/nodejs-circuit-breaker.git
+$ cd nodejs-circuit-breaker
+$ ./start-openshift.sh
+----
+
+These commands use the xref:about-nodeshift[Nodeshift] `npm` module to install your dependencies, launch the S2I build process on your
+OpenShift and start the services.
+endif::circuit-breaker-nodejs[]
+
+
+
+. Check the status of your booster and ensure your pod is running.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get pods -w
+NAME                             READY     STATUS      RESTARTS   AGE
+{app-name}-greeting-1-aaaaa     1/1       Running   0           17s
+{app-name}-greeting-1-deploy    0/1       Completed 0           22s
+{app-name}-name-1-aaaaa         1/1       Running   0           14s
+{app-name}-name-1-deploy        0/1       Completed 0           28s
+----
++
+Both the `{app-name}-greeting-1-aaaaa` and `{app-name}-name-1-aaaaa` pods should have a status of `Running` once they are fully deployed and started. You should also wait for your pods to be ready before proceeding, which is shown in the `READY` column. For example, `PROJECT_NAME-1-aaaaa` is ready when the `READY` column is `1/1`.
+
+. Once your booster is deployed and started, determine its route.
++
+.Example Route Information
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get routes
+NAME                 HOST/PORT                                                     PATH      SERVICES        PORT      TERMINATION
+{app-name}-greeting   {app-name}-{project-name}.{os-route-hostname}            {app-name}-greeting   8080                    None
+{app-name}-name       {app-name}-{project-name}.{os-route-hostname}            {app-name}-name       8080                    None
+----
++
+The route information of a pod gives you the base URL which you use to access it. In the example above, you would use `http://{app-name}-{project-name}.{os-route-hostname}` as the base URL to access the application.

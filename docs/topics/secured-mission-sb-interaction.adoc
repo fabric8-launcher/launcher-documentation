@@ -9,7 +9,7 @@ secured-springboot-rest,secured-springboot-rest-myproject.{osl-route-hostname},,
 sso,sso-myproject.{osl-route-hostname},,sso,<all>,
 |===
 
-Alternatively, obtain the Secured booster endpoint name using the Java client:
+Alternatively, obtain the {name-mission-secured} booster endpoint name using the Java client:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----

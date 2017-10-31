@@ -1,14 +1,20 @@
+// This is a parameterized module. Parameters used: 
+// 
+//  parameter-mission: id of the mission. This is used in anchors file imports.
+//  parameter-mission-name: human-readable name of the mission. This is used in readable text
+//
+// Rationale: This procedure is identical in all deployments.
 
-[#building-and-deploying-the-rest-api-booster-to-openshiftcontainerplatform]
-= Building and Deploying the {name-mission-http-api} Booster to {OpenShiftContainerPlatform}
+[#building-and-deploying-the-{parameter-mission}-booster-to-openshiftcontainerplatform]
+= Building and Deploying the {parameter-mission-name} Booster to {OpenShiftContainerPlatform}
 
 The process of building an deploying boosters to {OpenshiftContainerPlatform} is identical to {OpenShiftOnline} except for a few differences.
 
 .Prerequisites
 
-* The booster created on either xref:building-and-deploying-the-rest-api-booster-to-openshiftlocal[{OpenShiftLocal}] or xref:building-and-deploying-the-rest-api-booster-to-openshiftlocal[{OpenShiftOnline}].
+* The booster created on either xref:building-and-deploying-the-{parameter-mission}-booster-to-openshiftlocal[{OpenShiftLocal}] or xref:building-and-deploying-the-{parameter-mission}-booster-to-openshiftonline[{OpenShiftOnline}].
 
 .Procedure
 
-* Follow the instructions in xref:building-and-deploying-the-rest-api-booster-to-openshiftonline[], only use the URL and user credentials from the {OpenShiftContainerPlatform} Web Console.
+* Follow the instructions in xref:building-and-deploying-the-{parameter-mission}-booster-to-openshiftonline[], only use the URL and user credentials from the {OpenShiftContainerPlatform} Web Console.
 

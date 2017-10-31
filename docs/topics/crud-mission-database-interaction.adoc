@@ -11,14 +11,14 @@ oc get route {app-name}
 [source,bash,option="nowrap",subs="attributes+"]
 ----
 NAME                 HOST/PORT                                         PATH      SERVICES             PORT      TERMINATION
-{app-name}           {app-name}-{project-name}.{osl-route-hostname}              {app-name}           8080
+{app-name}           {app-name}-{project-name}.{os-route-hostname}              {app-name}           8080
 ----
 
 . To access the web interface of the database application, navigate to the _application URL_ in your browser:
 +
 [source,bash,subs="attributes+"]
 --
-http://{app-name}-{project-name}.{osl-route-hostname}
+http://{app-name}-{project-name}.{os-route-hostname}
 --
 +
 Alternatively, you can make requests directly on the `api/fruits/*` endpoint using `curl`:
@@ -26,7 +26,7 @@ Alternatively, you can make requests directly on the `api/fruits/*` endpoint usi
 .List all entries in the database:
 [source,bash,subs="attributes+"]
 --
-curl http://{app-name}-{project-name}.{osl-route-hostname}/api/fruits
+curl http://{app-name}-{project-name}.{os-route-hostname}/api/fruits
 --
 +
 ----
@@ -45,7 +45,7 @@ curl http://{app-name}-{project-name}.{osl-route-hostname}/api/fruits
 .Retrieve an entry with a specific ID
 [source,bash,options="nowrap",subs="attributes+"]
 --
-curl http://{app-name}-{project-name}.{osl-route-hostname}/api/fruits/3
+curl http://{app-name}-{project-name}.{os-route-hostname}/api/fruits/3
 --
 +
 ----
@@ -59,7 +59,7 @@ curl http://{app-name}-{project-name}.{osl-route-hostname}/api/fruits/3
 .Create a new entry:
 [source,bash,options="nowrap",subs="attributes+"]
 --
-curl -H "Content-Type: application/json" -X POST -d '{"name":"apple"}'  http://{app-name}-{project-name}.{osl-route-hostname}/api/fruits
+curl -H "Content-Type: application/json" -X POST -d '{"name":"apple"}'  http://{app-name}-{project-name}.{os-route-hostname}/api/fruits
 --
 +
 ----
@@ -72,7 +72,7 @@ curl -H "Content-Type: application/json" -X POST -d '{"name":"apple"}'  http://{
 .Update an Entry
 [source,bash,options="nowrap",subs="attributes+"]
 --
-curl -H "Content-Type: application/json" -X PUT -d '{"name":"pineapple"}'  http://{app-name}-{project-name}.{osl-route-hostname}/api/fruits/1
+curl -H "Content-Type: application/json" -X PUT -d '{"name":"pineapple"}'  http://{app-name}-{project-name}.{os-route-hostname}/api/fruits/1
 --
 +
 ----
@@ -85,7 +85,7 @@ curl -H "Content-Type: application/json" -X PUT -d '{"name":"pineapple"}'  http:
 .Delete an Entry:
 [source,bash,options="nowrap",subs="attributes+"]
 --
-curl -X DELETE http://{app-name}-{project-name}.{osl-route-hostname}/api/fruits/1
+curl -X DELETE http://{app-name}-{project-name}.{os-route-hostname}/api/fruits/1
 --
 
 If you receive an HTTP Error code `503` as a response after executing these commands, it means that the application is not ready yet.

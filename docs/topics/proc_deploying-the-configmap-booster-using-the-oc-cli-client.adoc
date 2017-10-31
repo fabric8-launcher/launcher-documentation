@@ -1,18 +1,26 @@
-[[configmap_build_and_deploy_booster]]
-= Building and Deploying the Booster
+// This is a parameterized module. Parameters used: 
+// 
+//  context: context of usage, e.g. "osl", "oso", "ocp", "rest-api", etc. This can also be a composite, e.g. "rest-api-oso"
+//
+// Rationale: This procedure is identical in all deployments.
 
-include::booster-deploy-openshift-online.adoc[leveloffset=+1]
 
-include::booster-deploy-openshift-local.adoc[leveloffset=+1]
+[#deploying-the-configmap-booster-using-the-oc-cli-client_{context}]
+= Deploying the {name-mission-configmap} Booster using the `oc` CLI Client
 
+.Prerequisites
 
-=== Deploying Using the `oc` CLI Client
+* The booster application created using the {launcher} application.
+For more information, see xref:deploying-the-booster-using-launcher_{context}[].
 
-include::oc-client-deploy-booster-download-note.adoc[leveloffset=+3]
+ifdef::parameter-openshiftlocal[]
+* Your {launcher} URL.
+endif::[]
+* The `oc` client authenticated. For more information, see xref:authenticating-the-oc-cli-client_{context}[].
 
-include::booster-deploy-get-cli-token.adoc[levelloffset=+3]
+.Procedure
 
-. Create a new project in your {OpenShiftLocal}.
+. Create a new project.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -31,7 +39,7 @@ endif::configmap-vertx,configmap-spring-boot-tomcat,configmap-nodejs[]
 . Navigate to the root directory of your booster.
 
 ifdef::configmap-vertx,configmap-nodejs[]
-. Deploy your ConfigMap configuration to your {OpenShiftLocal} using `app-config.yml`.
+. Deploy your ConfigMap configuration to OpenShift using `app-config.yml`.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -53,7 +61,7 @@ data:
 ----
 endif::configmap-vertx,configmap-nodejs[]
 ifdef::configmap-wf-swarm[]
-. Deploy your ConfigMap configuration to your {OpenShiftLocal} using `app-config.yml` in the root of the booster.
+. Deploy your ConfigMap configuration to OpenShift using `app-config.yml` in the root of the booster.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -75,7 +83,7 @@ data:
 ----
 endif::configmap-wf-swarm[]
 ifdef::configmap-spring-boot-tomcat[]
-. Deploy your ConfigMap configuration to your {OpenShiftLocal} using `src/main/etc/application.properties`.
+. Deploy your ConfigMap configuration to OpenShift using `src/main/etc/application.properties`.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -95,8 +103,9 @@ data:
 ...
 ----
 endif::configmap-spring-boot-tomcat[]
+
 ifndef::configmap-nodejs[]
-. Use Maven to start the deployment to your {OpenShiftLocal}.
+. Use Maven to start the deployment to OpenShift.
 +
 ifdef::configmap-vertx,configmap-spring-boot-tomcat[]
 [source,bash,options="nowrap",subs="attributes+"]
@@ -111,20 +120,19 @@ $ mvn clean fabric8:deploy -Popenshift -DskipTests
 ----
 endif::configmap-wf-swarm[]
 +
-This command uses the Fabric8 Maven Plugin to launch the S2I process on your {OpenShiftLocal} and to start the pod.
+This command uses the Fabric8 Maven Plugin to launch the S2I process on OpenShift and to start the pod.
 endif::configmap-nodejs[]
 
 ifdef::configmap-nodejs[]
-. Use `npm` to start the deployment to {OpenShiftLocal}.
+. Use `npm` to start the deployment to OpenShift.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ npm install && npm run openshift
 ----
 +
-These commands install any missing package dependencies, then using the xref:about-nodeshift[Nodeshift] package, launch the S2I process on {OpenShiftLocal} to start the pod.
+These commands install any missing package dependencies, then using the xref:about-nodeshift[Nodeshift] package, launch the S2I process on OpenShift to start the pod.
 endif::configmap-nodejs[]
-
 
 . Check the status of your booster and ensure your pod is running.
 +
@@ -141,16 +149,15 @@ ifdef::configmap-vertx[]
 You should also wait for your pod to be _ready_ before proceeding, which is shown in the `READY` column. For example, `{app-name}-1-aaaaa` is _ready_ when the `READY` column is `1/1`.
 endif::configmap-vertx[]
 
+
 . Once your booster is deployed and started, determine its route.
 +
 .Example Route Information
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc get routes
-NAME         HOST/PORT                                     PATH      SERVICES             PORT      TERMINATION
-{app-name}   {app-name}-{project-name}.{osl-route-hostname}              {app-name}           8080
+NAME                 HOST/PORT                                                     PATH      SERVICES        PORT      TERMINATION
+{app-name}         {app-name}-{project-name}.{os-route-hostname}      {app-name}      8080
 ----
 +
-A pod's route information gives you the base URL which you use to access it. In the example above, you would use `http://{app-name}-{project-name}.{osl-route-hostname}` as the base URL to access the application.
-
-include::booster-deploy-ocp.adoc[leveloffset=+1]
+The route information of a pod gives you the base URL which you use to access it. In the example above, you would use `http://{app-name}-{project-name}.{os-route-hostname}` as the base URL to access the application.

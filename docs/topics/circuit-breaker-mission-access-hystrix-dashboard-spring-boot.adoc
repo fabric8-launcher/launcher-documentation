@@ -2,7 +2,7 @@
 
 Hystrix Dashboard lets you easily monitor the health of your services in real time by aggregating Hystrix metrics data from an event stream and displaying them on one screen. For more detail, see the Hystrix Dashboard link:https://github.com/Netflix/Hystrix/wiki/Dashboard[wiki page].
 
-NOTE: You must have the Circuit Breaker booster application deployed before proceeding with the steps below.
+NOTE: You must have the {name-mission-circuit-breaker} booster application deployed before proceeding with the steps below.
 
 //  OpenShift first. Do we reference Minishift to? Add a note or a section?
 // Replace with proper OSO URLs

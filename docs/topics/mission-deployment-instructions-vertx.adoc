@@ -1,6 +1,6 @@
-= Deploying the Relational Database Backend Booster Application and Obtaining the Application URL
+= Deploying the {name-mission-crud} Booster Application and Obtaining the Application URL
 
-You can build and deploy the {VertX} Relational Database Backend booster application to OpenShift from source using a Jenkins Conitnuous Integration server instance running in your OpenShift project.
+You can build and deploy the {VertX} {name-mission-crud} booster application to OpenShift from source using a Jenkins Conitnuous Integration server instance running in your OpenShift project.
 
 . To define the build pipeline for the Relational Database Backend application, deploy the Jenkins CI server instance to your project by executing the following command:
 +

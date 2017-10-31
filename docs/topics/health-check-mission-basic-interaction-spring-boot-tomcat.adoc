@@ -16,7 +16,7 @@ NOTE: The below steps use the command line to interact with the service. Alterna
 +
 [source,bash,options="nowrap",subs="attributes"]
 ----
-$ curl http://{app-name}-{project-name}.{osl-route-hostname}/api/greeting
+$ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting
 {"content":"Hello, World!"}
 ----
 
@@ -26,11 +26,11 @@ Invoking the /api/stop endpoint simulates an internal service failure and trigge
 +
 [source,bash,option="nowrap",subs="attributes+"]
 ----
-$ curl http://{app-name}-{project-name}.{osl-route-hostname}/api/stop
+$ curl http://{app-name}-{project-name}.{os-route-hostname}/api/stop
 
 (followed by)
 
-$ curl http://{app-name}-{project-name}.{osl-route-hostname}/api/greeting
+$ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting
 
 <html>
   <head><title>Error</title></head>
@@ -57,7 +57,7 @@ Alternatively to the interaction using the terminal window, you can use the web 
 +
 [source,bash,option="nowrap",subs="attributes"]
 --
-$ http://{app-name}-{project-name}.{osl-route-hostname}
+$ http://{app-name}-{project-name}.{os-route-hostname}
 --
 
 include::health-check-mission-web-console-log-output.adoc[leveloffset=+1]
