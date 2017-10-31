@@ -32,10 +32,13 @@ include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-design-tradeoffs.adoc[leveloffset=+3]
 
+:context: rest-api-osl
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
+:context: rest-api-oso
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
 
+:context: rest-api-ocp
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 
@@ -135,8 +138,7 @@ include::topics/circuit-breaker-mission-resources.adoc[leveloffset=+3]
 === {mission-secured-spring-boot-guide-name}
 :secured-spring-boot-mission:
 :runtime-name: {SpringBoot}
-// This is used by the secured-mission-common-interaction.adoc to include the runtime specific information
-:runtime-tag: sb
+:context: secured
 
 include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
@@ -151,9 +153,15 @@ include::topics/secured-mission-intro.adoc[leveloffset=+3]
 //this needs to be a level lower due to secured-mission-intro.adoc
 include::topics/secured-mission-springboot-adapter.adoc[leveloffset=+4]
 
-include::topics/secured-mission-deploy-booster.adoc[leveloffset=+3]
+:context: secured-osl
+include::topics/assembly_building-and-deploying-the-secured-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
-include::topics/secured-mission-common-interaction.adoc[leveloffset=+3]
+:context: secured-ocp
+include::topics/assembly_building-and-deploying-the-secured-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+
+:parameter-runtime: sb
+include::topics/assembly_interacting-with-the-secured-booster.adoc[leveloffset=+3]
+:parameter-runtime!:
 
 // integration tests in a separate topic
 include::topics/proc_running-the-secured-booster-integration-tests.adoc[leveloffset=+3]

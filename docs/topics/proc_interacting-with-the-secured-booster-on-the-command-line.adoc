@@ -1,0 +1,106 @@
+
+[#interacting-with-the-secured-booster-on-the-command-line]
+= Interacting with the {name-mission-secured} Booster on the Command Line
+
+Request a token by sending a HTTP POST request to the {RHSSO} server.
+In the following example, the the link:[jq CLI tool] is used to extract the token value from the JSON response.
+
+.Prerequisites
+
+* The secured endpoint URL. For more information, see xref:getting-the-secured-booster-api-endpoint[].
+* The `jq` command-line tool (optional). To download the tool and for more information, see https://stedolan.github.io/jq/.
+
+.Procedure
+. Request an access token:
++
+--
+The attributes are usually shared with each service and kept secret, but for demonstration purposes, they are displayed here:
+
+.{name-mission-secured} booster credentials
+====
+[source,bash,options="nowrap",subs="attributes+"]
+----
+REALM=master
+USER=alice
+PASSWORD=password
+CLIENT_ID=demoapp
+SECRET=1daa57a2-b60e-468b-a3ac-25bd2dc2eadc
+----
+====
+
+** Using the credentials, use the `curl` command to request a token:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl -sk -X POST https://<SSO_AUTH_SERVER_URL>/auth/realms/$REALM/protocol/openid-connect/token \
+  -d grant_type=password \
+  -d username=$USER \
+  -d password=$PASSWORD \
+  -d client_id=$CLIENT_ID \
+  -d client_secret=$SECRET
+----
++
+NOTE: The `-sk` option tells curl to ignore failures resulting from self-signed certificates. Do not use this option in a production environment.
+
+** Extract the access token information, for example using the `jq` tool:
++
+[source,bash,subs="attributes+"]
+----
+$ curl ... | jq '.access_token'
+
+"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJRek1nbXhZMUhrQnpxTnR0SnkwMm5jNTNtMGNiWDQxV1hNSTU1MFo4MGVBIn0.eyJqdGkiOiI0NDA3YTliNC04YWRhLTRlMTctODQ2ZS03YjI5MjMyN2RmYTIiLCJleHAiOjE1MDc3OTM3ODcsIm5iZiI6MCwiaWF0IjoxNTA3NzkzNzI3LCJpc3MiOiJodHRwczovL3NlY3VyZS1zc28tc3NvLWRlbW8uYXBwcy5jYWZlLWJhYmUub3JnL2F1dGgvcmVhbG1zL21hc3RlciIsImF1ZCI6ImRlbW9hcHAiLCJzdWIiOiJjMDE3NWNjYi0wODkyLTRiMzEtODI5Zi1kZGE4NzM4MTVmZTgiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJkZW1vYXBwIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiMDFjOTkzNGQtNmZmOS00NWYzLWJkNWUtMTU4NDI5ZDZjNDczIiwiYWNyIjoiMSIsImNsaWVudF9zZXNzaW9uIjoiMzM3Yzk0MTYtYTdlZS00ZWUzLThjZWQtODhlODI0MGJjNTAyIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImJvb3N0ZXItYWRtaW4iXX0sInJlc291cmNlX2FjY2VzcyI6eyJzZWN1cmVkLWJvb3N0ZXItZW5kcG9pbnQiOnsicm9sZXMiOlsiYm9vc3Rlci1hZG1pbiJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsInZpZXctcHJvZmlsZSJdfX0sIm5hbWUiOiJBbGljZSBJbkNoYWlucyIsInByZWZlcnJlZF91c2VybmFtZSI6ImFsaWNlIiwiZ2l2ZW5fbmFtZSI6IkFsaWNlIiwiZmFtaWx5X25hbWUiOiJJbkNoYWlucyIsImVtYWlsIjoiYWxpY2VAa2V5Y2xvYWsub3JnIn0.mjmZe37enHpigJv0BGuIitOj-kfMLPNwYzNd3n0Ax4Nga7KpnfytGyuPSvR4KAG8rzkfBNN9klPYdy7pJEeYlfmnFUkM4EDrZYgn4qZAznP1Wzy1RfVRdUFi0-GqFTMPb37o5HRldZZ09QljX_j3GHnoMGXRtYW9RZN4eKkYkcz9hRwgfJoTy2CuwFqeJwZYUyXifrfA-JoTr0UmSUed-0NMksGrtJjjPggUGS-qOn6OgKcmN2vaVAQlxW32y53JqUXctfLQ6DhJzIMYTmOflIPy0sgG1mG7sovQhw1xTg0vTjdx8zQ-EJcexkj7IivRevRZsslKgqRFWs67jQAFQA"
+----
+--
+
+. Invoke the {name-mission-secured} service. Attach the access (bearer) token to the HTTP headers:
++
+--
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl -v -H "Authorization: Bearer <TOKEN>" http://<SERVICE_HOST>/api/greeting
+
+{
+    "content": "Hello, World!",
+    "id": 2
+}
+----
+
+.A sample `GET` Request Headers with an Access (Bearer) Token
+====
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ > GET /api/greeting HTTP/1.1
+> Host: <SERVICE_HOST>
+> User-Agent: curl/7.51.0
+> Accept: */*
+> Authorization: Bearer <TOKEN>
+----
+====
+--
+
+. Verify the signature of the access token.
++
+--
+The access token is a link:https://jwt.io[JSON Web Token], so you can decode it using the link:https://jwt.io/#debugger-io[JWT Debugger]:
+
+.. In a web browser, navigate to the link:https://jwt.io/#debugger-io[JWT Debugger] website.
+.. Select `RS256` from the _Algorithm_ drop down menu.
++
+NOTE: Make sure the web form has been updated after you made the selection, so it displays the correct RSASHA256(...) information in the Signature section. If it has not, try switching to HS256 and then back to RS256.
+
+.. Paste the following content in the topmost text box into the _VERIFY SIGNATURE_ section:
++
+[source,base64,subs="attributes+"]
+----
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoETnPmN55xBJjRzN/cs30OzJ9olkteLVNRjzdTxFOyRtS2ovDfzdhhO9XzUcTMbIsCOAZtSt8K+6yvBXypOSYvI75EUdypmkcK1KoptqY5KEBQ1KwhWuP7IWQ0fshUwD6jI1QWDfGxfM/h34FvEn/0tJ71xN2P8TI2YanwuDZgosdobx/PAvlGREBGuk4BgmexTOkAdnFxIUQcCkiEZ2C41uCrxiS4CEe5OX91aK9HKZV4ZJX6vnqMHmdDnsMdO+UFtxOBYZio+a1jP4W3d7J5fGeiOaXjQCOpivKnP2yU2DPdWmDMyVb67l8DRA+jh0OJFKZ5H2fNgE3II59vdsRwIDAQAB
+-----END PUBLIC KEY-----
+----
++
+NOTE: This is the master realm public key from the {RHSSO} server deployment of the {name-mission-secured} booster.
+
+.. Paste the `token` output from the client output into the _Encoded_ box.
++
+The _Signature Verified_ sign appears on the debugger page.
+--
+
