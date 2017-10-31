@@ -9,7 +9,7 @@ In addition to the {OpenShiftLocal}, you can build and deploy the booster on {Op
 * The booster created using xref:building-and-deploying-the-secured-booster-to-openshiftlocal[{OpenShiftLocal}].
 
 :parameter-deployment: {OpenShiftContainerPlatform}
-include::proc_authenticating-the-oc-cli-client-to-access-launcher.adoc[leveloffset=+1]
+include::proc_authenticating-the-oc-cli-client.adoc[leveloffset=+1]
 :parameter-deployment!:
 
 :parameter-ocp:

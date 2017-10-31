@@ -8,7 +8,7 @@ include::proc_creating-the-secured-booster-using-launcher.adoc[leveloffset=+1]
 
 :parameter-deployment: {OpenShiftLocal}
 :parameter-openshiftlocal:
-include::proc_authenticating-the-oc-cli-client-to-access-launcher.adoc[leveloffset=+1]
+include::proc_authenticating-the-oc-cli-client.adoc[leveloffset=+1]
 :parameter-openshiftlocal!:
 :parameter-deployment!:
 

@@ -51,7 +51,7 @@ image::sso-invoke-alice.png[]
 .. Click the _Invoke_ button.
 +
 Confirm that this sends an unauthenticated request to the Greeting service.
-.. Click th _Login_ button and log in as xref:sso-users[the _admin_ user].
+.. Click the _Login_ button and log in as xref:sso-users[the _admin_ user].
 +
 .Authenticated {name-mission-secured} Booster Web Interface (as admin)
 image::sso-admin.png[]
