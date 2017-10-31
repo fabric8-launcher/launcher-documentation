@@ -28,23 +28,15 @@ $ oc new-project {project-name}
 $ oc create -f service.sso.yaml
 ----
 
-. Get the public address of the {RHSSO} server:
-+
-[source,bash,options="nowrap",subs="attributes+"]
-----
-$ oc get route secure-sso -o jsonpath='{"https://"}{.spec.host}{"/auth\n"}'
-----
-
 ifndef::http-api-nodejs[]
 . Use Maven to start the deployment to {OpenShiftLocal}.
 +
 --
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ mvn clean fabric8:deploy -Popenshift -DskipTests -DSSO_AUTH_SERVER_URL=<SSO_AUTH_SERVER_URL>
+$ mvn clean fabric8:deploy -Popenshift -DskipTests \
+      -DSSO_AUTH_SERVER_URL=$(oc get route secure-sso -o jsonpath='{"https://"}{.spec.host}{"/auth\n"}')
 ----
-
-Here, replace `<SSO_AUTH_SERVER_URL>` with the public address of the {RHSSO} server.
 
 This command uses the Fabric8 Maven Plugin to launch the S2I process on {OpenShiftLocal} and to start the pod.
 --
@@ -56,10 +48,9 @@ ifdef::http-api-nodejs[]
 --
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ npm install && npm run openshift -- -d SSO_AUTH_SERVER_URL=<SSO_AUTH_SERVER_URL>
+$ npm install && npm run openshift -- \
+      -d SSO_AUTH_SERVER_URL=$(oc get route secure-sso -o jsonpath='{"https://"}{.spec.host}{"/auth\n"}')
 ----
-
-Here, replace `<SSO_AUTH_SERVER_URL>` with the public address of the {RHSSO} server.
 
 These commands install any missing package dependencies, then using the xref:about-nodeshift[Nodeshift] package, launch the S2I process on {OpenShiftLocal} to start the pod.
 --
