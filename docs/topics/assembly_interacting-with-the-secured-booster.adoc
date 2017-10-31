@@ -7,10 +7,8 @@
 [#interacting-with-the-secured-booster]
 = Interacting with the {name-mission-secured} Booster
 
-The Secured booster provides a default HTTP endpoint that accepts `GET` requests if the caller is authenticated and authorized.
+The {name-mission-secured} booster provides a default HTTP endpoint that accepts `GET` requests if the caller is authenticated and authorized.
 The client first authenticates against the {RHSSO} server and then performs a `GET` request against the {name-mission-secured} booster using the access token returned by the authentication step.
-
-The `sso` directory in the ZIP archive with the booster contains a Java client you can use to interact with the {name-mission-secured} booster.
 
 include::proc_getting-the-secured-booster-api-endpoint.adoc[leveloffset=+1]
 

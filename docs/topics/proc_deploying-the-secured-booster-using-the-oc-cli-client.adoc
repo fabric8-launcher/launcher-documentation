@@ -8,7 +8,7 @@
 ifndef::parameter-ocp[For more information, see xref:creating-the-secured-booster-using-launcher_{context}[].]
 
 ifndef::parameter-ocp[* Your {launcher} URL.]
-* The `oc` client authenticated. For more information, see xref:authenticating-the-oc-cli-client-to-access-launcher_{context}[].
+* The `oc` client authenticated. For more information, see xref:authenticating-the-oc-cli-client_{context}[].
 
 .Procedure
 
