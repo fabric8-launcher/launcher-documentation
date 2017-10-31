@@ -52,10 +52,13 @@ include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-design-tradeoffs.adoc[leveloffset=+3]
 
+:context: rest-api-osl
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
+:context: rest-api-oso
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
 
+:context: rest-api-ocp
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-basic-interaction-wf-swarm.adoc[leveloffset=+3]
@@ -155,8 +158,7 @@ include::topics/circuit-breaker-mission-resources.adoc[leveloffset=+3]
 === {mission-secured-wf-swarm-guide-name}
 :secured-wf-swarm-mission:
 :runtime-name: {WildFlySwarm}
-// This is used by the secured-mission-common-interaction.adoc to include the runtime specific information
-:runtime-tag: wf
+:context: secured
 
 include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
@@ -171,10 +173,15 @@ include::topics/secured-mission-intro.adoc[leveloffset=+3]
 //this needs to be a level lower due to secured-mission-intro.adoc
 include::topics/secured-mission-wf-swarm-adapter.adoc[leveloffset=+4]
 
+:context: secured-osl
+include::topics/assembly_building-and-deploying-the-secured-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
-include::topics/secured-mission-deploy-booster.adoc[leveloffset=+3]
+:context: secured-ocp
+include::topics/assembly_building-and-deploying-the-secured-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
-include::topics/secured-mission-common-interaction.adoc[leveloffset=+3]
+:parameter-runtime: wf
+include::topics/assembly_interacting-with-the-secured-booster.adoc[leveloffset=+3]
+:parameter-runtime!:
 
 include::topics/secured-mission-resources.adoc[leveloffset=+3]
 

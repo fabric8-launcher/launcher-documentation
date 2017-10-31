@@ -1,0 +1,81 @@
+
+[#deploying-the-secured-booster-using-the-oc-cli-client_{context}]
+= Deploying the {name-mission-secured} booster using the `oc` CLI client
+
+.Prerequisites
+
+* The booster application created using the {launcher} application.
+ifndef::parameter-ocp[For more information, see xref:creating-the-secured-booster-using-launcher_{context}[].]
+
+ifndef::parameter-ocp[* Your {launcher} URL.]
+* The `oc` client authenticated. For more information, see xref:authenticating-the-oc-cli-client-to-access-launcher_{context}[].
+
+.Procedure
+
+. Create a new project.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc new-project {project-name}
+----
+
+. Navigate to the root directory of your booster.
+
+. Deploy the {RHSSO} server using the `service.sso.yaml` file from your booster ZIP file:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc create -f service.sso.yaml
+----
+
+. Get the public address of the {RHSSO} server:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get route secure-sso -o jsonpath='{"https://"}{.spec.host}{"/auth\n"}'
+----
+
+ifndef::http-api-nodejs[]
+. Use Maven to start the deployment to {OpenShiftLocal}.
++
+--
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn clean fabric8:deploy -Popenshift -DskipTests -DSSO_AUTH_SERVER_URL=<SSO_AUTH_SERVER_URL>
+----
+
+Here, replace `<SSO_AUTH_SERVER_URL>` with the public address of the {RHSSO} server.
+
+This command uses the Fabric8 Maven Plugin to launch the S2I process on {OpenShiftLocal} and to start the pod.
+--
+endif::http-api-nodejs[]
+
+ifdef::http-api-nodejs[]
+. Use `npm` to start the deployment to {OpenShiftLocal}.
++
+--
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ npm install && npm run openshift -- -d SSO_AUTH_SERVER_URL=<SSO_AUTH_SERVER_URL>
+----
+
+Here, replace `<SSO_AUTH_SERVER_URL>` with the public address of the {RHSSO} server.
+
+These commands install any missing package dependencies, then using the xref:about-nodeshift[Nodeshift] package, launch the S2I process on {OpenShiftLocal} to start the pod.
+--
+endif::http-api-nodejs[]
+
+. Check the status of your booster and ensure your pod is running.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get pods -w
+NAME                             READY     STATUS      RESTARTS   AGE
+{app-name}-1-aaaaa               1/1       Running     0          58s
+{app-name}-s2i-1-build           0/1       Completed   0          2m
+----
++
+You `{app-name}-1-aaaaa` pod should have a status of `Running` once its fully deployed and started.
+
+This process generates the uberjar file as well as the OpenShift resources and deploys them to the current project on your {OpenShiftLocal} server.
+

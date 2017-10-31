@@ -1,0 +1,52 @@
+// This is a parameterized module. Parameters used:
+//
+//   parameter-runtime: A segment of the endpoint name
+//
+// Rationale: This procedure is identical in all deployments
+
+
+[#getting-the-secured-booster-api-endpoint]
+= Getting the {name-mission-secured} Booster API Endpoint
+
+When using a client to interact with the booster, you must specify the Secured booster endpoint, which is the _Greeting_ service.
+
+.Prerequisites
+
+* The {name-mission-secured} booster deployed and running.
+* The `oc` client authenticated.
+
+.Procedure
+. In a terminal application, execute the `oc get routes` command.
++
+--
+A sample output is shown in the following table:
+
+.List of {name-mission-secured} endpoints
+====
+[width="100%",options="header"]
+|===
+| Name | Host/Port | Path | Services | Port | Termination
+| secure-sso
+| secure-sso-myproject.LOCAL_OPENSHIFT_HOSTNAME
+|
+| secure-sso
+| <all>
+| passthrough
+
+| secured-{parameter-runtime}-http
+| secured-{parameter-runtime}-http-myproject.LOCAL_OPENSHIFT_HOSTNAME
+|
+| secured-{parameter-runtime}-http
+| <all>
+|
+
+| sso
+| sso-myproject.LOCAL_OPENSHIFT_HOSTNAME
+|
+| sso
+| <all>
+|
+|===
+====
+--
+

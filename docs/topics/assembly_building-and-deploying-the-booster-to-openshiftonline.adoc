@@ -1,7 +1,6 @@
 
 [#building-and-deploying-the-rest-api-booster-to-openshiftonline]
 = Building and Deploying the {name-mission-http-api} Booster to {OpenShiftOnline}
-:context: openshiftonline
 
 You have two options for executing the {name-mission-http-api} booster on {OpenShiftOnline}:
 
