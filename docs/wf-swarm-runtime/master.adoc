@@ -25,8 +25,8 @@ This sections contains information about configuring the {WildFlySwarm} runtime.
 
 include::topics/wildfly-swarm/docs/reference/maven-plugin.adoc[leveloffset=+2]
 include::topics/wildfly-swarm/docs/concepts/fractions.adoc[leveloffset=+2]
-include::topics/wildfly-swarm/docs/howto/autodetect-fractions/index.adoc[leveloffset=+2]
-include::topics/wildfly-swarm/docs/howto/explicit-fractions/index.adoc[leveloffset=+2]
+include::topics/wildfly-swarm/docs/howto/autodetect-fractions/index.adoc[leveloffset=+3]
+include::topics/wildfly-swarm/docs/howto/explicit-fractions/index.adoc[leveloffset=+3]
 
 include::topics/wildfly-swarm/docs/howto/use-a-bom/index.adoc[leveloffset=+2]
 
