@@ -1,7 +1,6 @@
 
 [#building-and-deploying-the-rest-api-booster-to-openshiftonline]
 = Building and Deploying the {name-mission-http-api} Booster to {OpenShiftOnline}
-:context: openshiftonline
 
 You have two options for executing the {name-mission-http-api} booster on {OpenShiftOnline}:
 
@@ -13,7 +12,7 @@ There is no functional difference between these methods, choose the one you pref
 :parameter-deployment: link:{link-launcher-oso}[{OpenShiftOnline}]
 include::proc_deploying-the-booster-using-the-launcher.adoc[leveloffset=+1]
 
-include::proc_authenticating-the-oc-cli-client-to-access-launcher.adoc[leveloffset=+1]
+include::proc_authenticating-the-oc-cli-client.adoc[leveloffset=+1]
 :parameter-deployment!:
 
 include::proc_deploying-the-booster-using-the-oc-cli-client.adoc[leveloffset=+1]

@@ -1,0 +1,65 @@
+// This is a parameterized module. Parameters used:
+//
+//   parameter-deployment: A string containing the deployment to use, possibly in the form of a link
+//
+// Rationale: This procedure is identical in all deployments
+
+[#deploying-the-secured-booster-using-the-oc-cli-client_{context}]
+= Deploying the {name-mission-secured} booster using the `oc` CLI client
+
+.Prerequisites
+
+* The booster application created using the {launcher} application.
+ifndef::parameter-ocp[For more information, see xref:creating-the-secured-booster-using-launcher_{context}[].]
+
+ifndef::parameter-ocp[* Your {launcher} URL.]
+* The `oc` client authenticated. For more information, see xref:authenticating-the-oc-cli-client_{context}[].
+
+.Procedure
+
+. Create a new project.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc new-project {project-name}
+----
+
+. Navigate to the root directory of your booster.
+
+. Deploy the {RHSSO} server using the `service.sso.yaml` file from your booster ZIP file:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc create -f service.sso.yaml
+----
+
+ifndef::secured-nodejs-mission[]
+. Use Maven to start the deployment to {parameter-deployment}.
++
+--
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn clean fabric8:deploy -Popenshift -DskipTests \
+      -DSSO_AUTH_SERVER_URL=$(oc get route secure-sso -o jsonpath='{"https://"}{.spec.host}{"/auth\n"}')
+----
+
+This command uses the Fabric8 Maven Plugin to launch the S2I process on {parameter-deployment} and to start the pod.
+--
+endif::secured-nodejs-mission[]
+
+ifdef::secured-nodejs-mission[]
+. Use `npm` to start the deployment to {parameter-deployment}.
++
+--
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ npm install && npm run openshift -- \
+      -d SSO_AUTH_SERVER_URL=$(oc get route secure-sso -o jsonpath='{"https://"}{.spec.host}{"/auth\n"}')
+----
+
+These commands install any missing package dependencies, then using the xref:about-nodeshift[Nodeshift] package, launch the S2I process on {parameter-deployment} to start the pod.
+--
+endif::secured-nodejs-mission[]
+
+This process generates the uberjar file as well as the OpenShift resources and deploys them to the current project on your {parameter-deployment} server.
+
