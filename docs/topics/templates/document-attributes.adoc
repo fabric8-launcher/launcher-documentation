@@ -34,6 +34,7 @@
 :revnumber: {localdate}
 
 :name-mission-http-api: REST API Level 0
+:name-mission-secured: Secured
 
 :mission-http-api-spring-boot-tomcat-guide-name: {name-mission-http-api} Mission - {SpringBoot} Booster
 :mission-http-api-vertx-guide-name: {name-mission-http-api} Mission - {VertX} Booster

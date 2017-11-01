@@ -1,0 +1,39 @@
+[#running-the-secured-booster-integration-tests]
+= Running the {name-mission-secured} Booster Integration Tests
+
+ifdef::secured-wf-swarm-mission[]
+[IMPORTANT]
+--
+The `keycloak-authz-client` library for {WildFlySwarm} is provided as a link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview].
+--
+
+endif::secured-wf-swarm-mission[]
+
+.Prerequisites
+
+* The `oc` client authenticated.
+
+.Procedure
+
+. In a terminal application, navigate to the directory with your project.
+ifdef::secured-wf-swarm-mission,secured-spring-boot-mission[]
+. Deploy the {RHSSO} server:
++
+[source,bash,options="nowrap",subs="attributes+"]
+--
+oc apply -f service.sso.yaml
+--
+. Wait until the {RHSSO} server is ready. Go to the Web console or view the output of `oc get pods` to check if the pod is ready.
+. Execute the integration tests. Provide the URL of the {RHSSO} server as a parameter:
++
+[source,bash,options="nowrap",subs="attributes+"]
+--
+$ mvn clean verify -Popenshift,openshift-it -DSSO_AUTH_SERVER_URL=$(oc get route secure-sso -o jsonpath='{"https://"}{.spec.host}{"/auth\n"}')
+--
+. Once the tests are finished, remove the {RHSSO} server:
++
+[source,bash,options="nowrap",subs="attributes+"]
+--
+oc delete -f service.sso.yaml
+--
+
