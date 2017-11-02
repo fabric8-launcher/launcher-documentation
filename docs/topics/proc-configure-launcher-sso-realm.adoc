@@ -1,6 +1,6 @@
 [[launcher-sso-settings]]
-= Configuring {launcher} {RHSSO} Federated Identity Settings
-In order to use {launcher} in {OpenShiftOnline}, you must grant it access to your GitHub and OpenShift accounts. This is a one-time action.
+= Configuring {launcher-oso} {RHSSO} Federated Identity Settings
+In order to use link:{link-launcher-oso}[{launcher-oso}], you must grant it access to your GitHub and OpenShift accounts. This is a one-time action.
 
 [sidebar]
 .Prerequisites

@@ -7,18 +7,11 @@
 //
 // Rationale: This procedure is identical in all deployments
 
-[#deploying-the-booster-using-launcher_{context}]
-= Deploying the Booster Using {launcher}
+[#deploying-the-booster-using-launcher-oso_{context}]
+= Deploying the Booster Using {launcher-oso}
 
 .Prerequisites
-
-ifdef::parameter-openshiftlocal[]
-* The URL and user credentials of your running {launcher} instance.
-For more information, see xref:getting-launcher-url-and-credentials-on-openshiftlocal_{context}[].  
-endif::[]
-ifndef::parameter-openshiftlocal[]
 * An account at {parameter-deployment}.
-endif::[]
 
 .Procedure
 

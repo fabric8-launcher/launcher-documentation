@@ -4,10 +4,10 @@
 :scm-repo-url: SCM_REPOSITORY_URL
 
 
-= Using a Nexus Repository Server With the {launcher} Application on a {OpenShiftLocal}
+= Using a Nexus Repository Server With the {launcher} Service on a {OpenShiftLocal}
 
 While developing your cloud-native applications with Java and Maven you may be required to build them repeatedly.
-You can deploy a Nexus Repository server alongside the {launcher} application on your {OpenShiftLocal} and use it to fetch artifacts from the Maven Central Repository and cache them locally.
+You can deploy a Nexus Repository server alongside the {launcher} service on your {OpenShiftLocal} and use it to fetch artifacts from the Maven Central Repository and cache them locally.
 This helps you speed up your builds and rolling updates and alleviates network load during build time.
 
 == Prerequisites for Deploying Nexus on {OpenShiftLocal}.
@@ -44,7 +44,7 @@ It has not been tested for use with CDK.
 You must use `oc` version `3.6.0` or later.
 --
 
-* Deploy the {launcher} application to your {OpenShiftLocal}.
+* Deploy the {launcher} service to your {OpenShiftLocal}.
 
 * Deploy a Booster application to your {OpenShiftLocal}.
 

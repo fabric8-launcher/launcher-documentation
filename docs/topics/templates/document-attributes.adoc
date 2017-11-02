@@ -14,9 +14,11 @@
 //:stylesheet: asciidoc-default.css
 :stylesheet: foundation.css
 
-:launcher: Fabric8 Launch
-:ProductName: {launcher} Experience with Runtimes
-:ProductShortName: {ProductName}
+:launcher: Fabric8 Launcher
+:launcher-oso: developers.redhat.com/launch
+:OpenShiftAppDev: Application Development on OpenShift
+:ProductName: {OpenShiftAppDev}
+//:ProductShortName: {ProductName}
 
 :OpenShiftOnline: OpenShift Online
 :OpenShiftLocal: Single-node OpenShift Cluster
@@ -67,7 +69,7 @@
 
 
 :openshift-local-guide-name: Install and Configure a {OpenShiftLocal}
-:minishift-installation-guide-name: Install and Configure the {launcher} Application
+:minishift-installation-guide-name: Install and Configure the {launcher} Service
 :getting-started-guide-name: Getting Started with {ProductName}
 :landing-page-name: Welcome
 :contrib-guide-name: Contribution Guide

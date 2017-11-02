@@ -40,8 +40,12 @@ link:https://www.openshift.com[Red Hat OpenShift] is a container application pla
 
 
 [[launcher-details]]
-.The {launcher} Application
-The {launcher} application provides a hassle-free way of creating functional example applications, called missions, as well as an easy way to build and deploy those missions to OpenShift. The {launcher} application is available link:{link-launcher-oso}[on {OpenShiftOnline}]. You can also install and execute it on your {OpenShiftLocal}. For more information, see the link:{link-launcher-openshift-local-install-guide}#create-launcher-app[Creating {launcher} Application] chapter of the {minishift-installation-guide-name} guide.
+.{launcher-oso}
+link:{link-launcher-oso}[{launcher-oso}] is a standalone getting started experience offered by Red Hat for jumpstarting cloud-native application development on OpenShift. It provides a hassle-free way of creating functional example applications, called missions, as well as an easy way to build and deploy those missions to OpenShift. 
+
+.The {launcher} Service
+The {launcher} service is the upstream project from which link:{link-launcher-oso}[{launcher-oso}] is based. You can also install and execute the {launcher} service on your {OpenShiftLocal}. For more information, see the link:{link-launcher-openshift-local-install-guide}#create-launcher-app[Creating the {launcher} Service] chapter of the {minishift-installation-guide-name} guide.
+
 
 
 .Missions and Boosters
@@ -65,7 +69,7 @@ Each mission is implemented in one or more runtimes. Both the specific implement
 [#build-and-deploy-process]
 .Process for Building and Deploying to OpenShift
 
-When using {launcher}, you can create and deploy a booster to OpenShift using the _Build and Deploy to OpenShift_ build process, which is based on the link:{link-wf-swarm-runtime-guide}#s2i-build-process[Source-to-Image (S2I) build process]. _Build and Deploy to OpenShift_ configures OpenShift to pull the code of your booster from your GitHub repository, build the code, and deploy it to OpenShift.
+When using link:{link-launcher-oso}[{launcher-oso}], you can create and deploy a booster to OpenShift using the _Build and Deploy to OpenShift_ build process, which is based on the link:{link-wf-swarm-runtime-guide}#s2i-build-process[Source-to-Image (S2I) build process]. _Build and Deploy to OpenShift_ configures OpenShift to pull the code of your booster from your GitHub repository, build the code, and deploy it to OpenShift.
 
 The benefit of this process is that it handles all the configuration, building, and deployment steps needed to get your booster running in OpenShift. It also allows you to quickly deploy code updates to help you rapidly iterate and see your changes in OpenShift.
 

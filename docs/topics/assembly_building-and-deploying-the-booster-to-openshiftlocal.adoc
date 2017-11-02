@@ -10,7 +10,7 @@
 = Building and Deploying the {parameter-mission-name} Booster to {OpenShiftLocal}
 You have two options for executing the {parameter-mission-name} booster locally on {OpenShiftLocal}:
 
-* xref:deploying-the-booster-using-launcher_{context}[Using {launcher}]
+* xref:deploying-the-booster-using-launcher-osl_{context}[Using {launcher}]
 * xref:deploying-the-{parameter-mission}-booster-using-the-oc-cli-client_{context}[Using the `oc` CLI client]
 
 There is no functional difference between these methods, choose the one you prefer.
@@ -19,10 +19,11 @@ include::proc_getting-launcher-url-and-credentials-on-openshiftlocal.adoc[levelo
 
 :parameter-openshiftlocal:
 :parameter-deployment: {OpenShiftLocal}
-include::proc_deploying-the-booster-using-the-launcher.adoc[leveloffset=+1]
+include::proc_deploying-the-booster-using-the-launcher-osl.adoc[leveloffset=+1]
 
 include::proc_authenticating-the-oc-cli-client.adoc[leveloffset=+1]
 
+:parameter-deployment: {launcher} service on a {OpenShiftLocal}
 include::proc_deploying-the-{parameter-mission}-booster-using-the-oc-cli-client.adoc[leveloffset=+1]
 :parameter-deployment!:
 :parameter-openshiftlocal!:

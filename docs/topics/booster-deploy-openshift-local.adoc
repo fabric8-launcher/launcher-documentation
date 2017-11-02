@@ -24,5 +24,5 @@
 
 == Deploying Using {launcher}
 
-Once you have the {launcher} application link:{link-launcher-openshift-local-install-guide}[installed and configured],
+Once you have the {launcher} service link:{link-launcher-openshift-local-install-guide}[installed and configured],
 navigate to it in your {OpenShiftLocal} and use it to create and launch your booster.

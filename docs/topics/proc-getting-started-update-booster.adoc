@@ -31,6 +31,6 @@ $ git push
 . Navigate back to the {OpenShiftOnline} or {OpenShiftLocal} Web console and ensure the project of your mission is selected.
 . Click on the three dots on the right side of your application's deployment and choose _Start Build_.
 +
-Your deployment is complete when you see _Build #2 is complete_ under _Builds_ and a `#2` next to the application's name under _Deployment_. This number will increase for each additional build and deployment.
+Your deployment is complete when you see _Build #2 is complete_ under _Builds_ and a `#2` next to the application name under _Deployment_. This number will increase for each additional build and deployment.
 
 . Confirm your changes when your deployment is complete.

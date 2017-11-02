@@ -1,11 +1,11 @@
 [[launcher-create-booster]]
-= Using the {launcher} Application to Launch a Booster
+= Using the {launcher} Service to Launch a Booster
 
-After you have the {launcher} application running on your {OpenShiftLocal}, you can use it to create a new project, your booster.
+After you have the {launcher} service running on your {OpenShiftLocal}, you can use it to create a new project, your booster.
 
 To create a booster:
 
-. Navigate to the {launcher} application using your browser.
+. Navigate to the {launcher} service using your browser.
 . Select _Prepare for Takeoff_.
 . At the bottom of the launch option explanations, choose a launch option, for example `Continuous Delivery`, and click _Next_.
 +
@@ -14,7 +14,7 @@ NOTE: `Continuous Delivery` will build and deploy your booster directly from you
 . Choose the mission, for example `{name-mission-http-api}` and click _Next_.
 . Choose the runtime you would like to run, for example `{VertX}`.
 +
-NOTE: Each mission illustrates a concept and is implemented as a booster in at least one runtime. You can come back to the {launcher} application later and try another mission and runtime.
+NOTE: Each mission illustrates a concept and is implemented as a booster in at least one runtime. You can come back to the {launcher} service later and try another mission and runtime.
 
 . You may update any of the pre-filled details or leave them with the default details. Click _Next_.
 
