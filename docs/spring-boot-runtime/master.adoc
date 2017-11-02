@@ -14,6 +14,93 @@ include::topics/sb-tomcat-runtime-overview.adoc[leveloffset=+1]
 
 {SpringBoot} has a version of its runtime that is tested and verified to run on OpenShift. Some components, for example, the Embedded Tomcat Container and the Java container image, are provided as part of a Red Hat subscription when used with {SpringBoot}.
 
+The features in the table below are available as a collection of missions which run on OpenShift. Some features are native as part of Kubernetes, others are available from link:https://github.com/spring-cloud-incubator/spring-cloud-kubernetes[Spring Cloud Kubernetes].
+ Features such as as Actuator are available directly in {SpringBoot}.
+
+.Features and Frameworks Summary
+[width="100%",options="header"]
+|====================================================================
+|Feature |Problem Addressed |Cloud Native |Framework
+
+a|
+Circuit Breaker
+
+a|
+Switch between services and continue to process incoming requests without interruption in case of service failure.
+
+a|
+Yes - using Kubernetes API
+
+a|
+Spring Cloud Kubernetes - Hystrix
+
+
+a|
+Health Check
+
+a|
+Check readiness and liveness of the service. Service restarts automatically if probing fails.
+
+a|
+Yes
+
+a|
+Spring Boot Actuator
+
+
+a|
+Service Discovery
+
+a|
+Discover Service/Endpoint deployed on OpenShift and exposed behind a service or route using the service name matching a DNS entry.
+
+a|
+Yes - using Kubernetes API
+
+a|
+Spring Cloud Kubernetes - DiscoveryClient
+
+
+a|
+Server Side Load Balancing
+
+a|
+Handle load increases by deploying multiple instances of a service, transparently distributing the load across instances.
+
+a|
+Yes - Using internal Kubernetes Load Balancer
+
+a|
+-
+
+
+a|
+Client Side Load Balancing
+
+a|
+Transparently handle load balancing on the client for better control and load distribution across multiple service instances.
+
+a|
+No
+
+a|
+Spring Cloud Kubernetes - Ribbon
+
+
+a|
+Externalize Parameters
+
+a|
+Externalize application parameters to make the application independent of the environment where it runs.
+
+a|
+Yes - Kubernetes ConfigMap or Secret
+
+a|
+Spring Cloud Kubernetes - ConfigMap
+
+
+|====================================================================
 
 
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
