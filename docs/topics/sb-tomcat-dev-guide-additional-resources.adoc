@@ -3,6 +3,7 @@
 
 * link:https://docs.openshift.org/latest/architecture/[OpenShift Architecture Overview]
 * link:https://access.redhat.com/documentation/en-us/reference_architectures/2017/html/spring_boot_microservices_on_red_hat_openshift_container_platform_3/[Spring Boot Microservices On Red Hat OpenShift Container Platform 3]
+* link:https://github.com/spring-cloud-incubator/spring-cloud-kubernetes/[Spring Cloud Kubernetes]
 * link:https://projects.spring.io/spring-boot/[Spring Boot Project]
 * link:https://projects.spring.io/spring-framework/[Spring Framework Project]
 * link:https://github.com/redhat-microservices/lab_springboot-openshift/[OpenShift Spring Boot Lab Microservices ]
