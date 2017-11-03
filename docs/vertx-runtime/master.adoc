@@ -15,6 +15,7 @@ include::topics/vertx-runtime-overview.adoc[leveloffset=+1]
 include::topics/runtime-info-product-version.adoc[leveloffset=+1]
 include::topics/runtime-info-community-version.adoc[leveloffset=+1]
 
+include::topics/vx-runtime-info.adoc[leveloffset=+1]
 
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
