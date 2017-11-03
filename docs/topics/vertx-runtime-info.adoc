@@ -1,0 +1,38 @@
+= {Vertx} Runtime Information
+
+.Certified {Vertx} Version
+
+{Vertx} version `3.4.2-redhat-006` is certified to run on OpenShift and provided as part of the Red Hat subscription.
+The certified {Vertx} runtime artifacts are available from the link:https://maven.repository.redhat.com/ga/[Red Hat Middleware JBoss General Availability Maven Repository].
+// link to release notes for full list of components
+
+.Installing {Vertx}
+
+To start developing applications using {Vertx}, download the BOM file containing the certified runtime artifacts available from the link:https://maven.repository.redhat.com/ga/[Red Hat Middleware JBoss General Availability Maven Repository].
+
+.Configuring {Vertx}
+
+To configure your application to use {Vertx}:
+
+. Reference the required artifacts in the dependency file of your application.
+. Reference `vertx-maven-plugin` as a dependency for your application.
+
+For more information on packaging your {Vertx} application, see the link:https://vmp.fabric8.io/[Vert.x Maven plugin] documentation.
+
+.Developing Applications with {Vertx}
+
+Follow the links to the {Vertx} community documentation for details and examples of basic application development:
+
+* link:http://vertx.io/blog/posts/introduction-to-vertx.html[Developing and testing your {Vertx} application].
+* link:http://Vertx.io/blog/vert-x-application-configuration/[Configuring your {Vert.x} application].
+* link:http://vertx.io/blog/unit-and-integration-tests/[Setting up unit and integration tests for your {Vertx} application].
+* link:http://vertx.io/blog/some-rest-with-vert-x/[Creating a REST API to access your {Vertx} application].
+
+For information on adding persistent storage to your {Vertx} application, see:
+
+* link:http://vertx.io/blog/using-the-asynchronous-sql-client/[Using the asynchronous JDBC client with your {Vertx} application].
+* link:http://Vertx.io/blog/combine-vert-x-and-mongo-to-build-a-giant/[Using the MongoDB client with your {Vertx} application].
+
+//.Upgrading to the latest {Vertx} release
+
+// add list of community components that are excluded from downstream version.
