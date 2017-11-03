@@ -1,7 +1,7 @@
 include::rest-level-0-mission-intro-paragraph.adoc[]
 More background information on REST is available in xref:about_rest[].
 
-This is an introduction to the mechanics of opening a service that is called remotely. Specifically, this booster is an application that allows a user to:
+This is an introduction to the mechanics of interacting with a remote service using the HTTP protocol. Specifically, this booster is an application that allows a user to:
 
 * Execute an HTTP `GET` request on the `api/greeting` endpoint.
 * Receive a response in JSON format with a payload consisting of the `Hello, World!` String.
