@@ -2,7 +2,7 @@ include::topics/templates/document-attributes.adoc[]
 
 :landing-page:
 :toc!:
-:title: https://developers.redhat.com/launch
+:title: {OpenShiftAppDev}
 //var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
 :docs-topic:
 
@@ -24,18 +24,14 @@ include::topics/templates/document-attributes.adoc[]
 <div _ngcontent-c3="" class="content">
 <section _ngcontent-c3="" id="intro">
   <div _ngcontent-c3="" class="container">
-    <h2 _ngcontent-c3="">launch</h2>
     <h1 _ngcontent-c3="">
       Continuous application delivery,
     </h1>
     <h1 _ngcontent-c3="">
       built and deployed on OpenShift.
     </h1>
-    <div class="col-md-6">
+    <div _ngcontent-c3="">
       <a _ngcontent-c3="" class="btn btn-lg" href="/docs/getting-started.html">Get Started Now</a>
-    </div>
-    <div class="col-md-6">
-      <a _ngcontent-c3="" class="btn btn-lg" href="/docs/minishift-installation.html">Run a Single-node OpenShift Cluster</a>
     </div>
   </div>
 </section>
