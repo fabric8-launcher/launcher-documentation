@@ -6,10 +6,10 @@
 // booster catalog.
 
 [#creating-launcher-application-manually]
-ifndef::parameter-custom-catalog[= Creating {launcher} Service Manually]
-ifdef::parameter-custom-catalog[= Creating {launcher} Service]
+ifndef::parameter-custom-catalog[= Creating {launcher} Tool Manually]
+ifdef::parameter-custom-catalog[= Creating {launcher} Tool]
 
-Create a local customized instance of the {launcher} service, which allows you to test the functionality or make modifications to the service using a web interface.
+Create a local customized instance of the {launcher} tool, which allows you to test the functionality or make modifications to the service using a web interface.
 
 .Prerequisites
 * xref:starting-and-configuring-the-openshiftlocal-for-the-launcher-application[{OpenShiftLocal} running].
@@ -17,7 +17,7 @@ Create a local customized instance of the {launcher} service, which allows you t
 
 .Procedure
 . Open the {OpenShiftLocal} Web console and log in.
-. Click _New Project_ to create a new OpenShift project to house the {launcher} service.
+. Click _New Project_ to create a new OpenShift project to house the {launcher} tool.
 +
 image::minishift_newproject.png[New Project Button]
 
@@ -46,7 +46,7 @@ image::minishift_processtemplate.png[Process Template]
 ** OpenShift username and password from your {OpenShiftLocal}, for example `developer` for the username and password.
 ** _KeyCloak URL_ and _KeyCloak Realm_ **MUST** be cleared out.
 +
-WARNING: You must clear these fields out for the {launcher} service on your {OpenShiftLocal} to be configured correctly.
+WARNING: You must clear these fields out for the {launcher} tool on your {OpenShiftLocal} to be configured correctly.
 
 ifndef::parameter-custom-catalog[** Do not modify _Catalog Git Repository_ and _Catalog Git Reference_ unless you are developing against a specific catalog repository.]
 ifdef::parameter-custom-catalog[** Set _Catalog Git Repository_ to the repository with the catalog that you are testing. Set _Catalog Git Reference_ to the branch in that repository you are testing.]
@@ -55,14 +55,14 @@ ifdef::parameter-custom-catalog[** Set _Catalog Git Repository_ to the repositor
 
 . Click `Create` to complete the setup. You will see a screen confirming that the service has been created. Click _Continue to overview_.
 
-. On the overview page, wait and confirm that the four pods for the {launcher} service have completed starting up.
+. On the overview page, wait and confirm that the four pods for the {launcher} tool have completed starting up.
 +
 image::minishift_launchpad_booting.png[{launcher} booting]
 
-. When all pods are running, click the link at the top of all pods, which typically ends in `nip.io`. A new browser tab opens with the {launcher} service. This is the same service as `{link-launcher-oso}` but running in a {OpenShiftLocal}.
+. When all pods are running, click the link at the top of all pods, which typically ends in `nip.io`. A new browser tab opens with the {launcher} tool. This is the same service as `{link-launcher-oso}` but running in a {OpenShiftLocal}.
 
 .Additional Resources
-* Start using your {launcher} service to launch booster applications.
+* Start using your {launcher} tool to launch booster applications.
 * See the link:{link-getting-started-guide}[{getting-started-guide-name}] for a walk-through of running a booster application.
 * Read the runtime guides for an overview of the runtimes and their boosters:
 ** link:{link-spring-boot-runtime-guide}[{spring-boot-runtime-guide-name}]

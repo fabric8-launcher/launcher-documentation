@@ -13,7 +13,7 @@
 ifndef::parameter-openshiftlocal[For more information, see xref:deploying-the-booster-using-launcher-oso_{context}[].]
 ifdef::parameter-openshiftlocal[]
 For more information, see xref:deploying-the-booster-using-launcher-osl_{context}[].
-* Your {launcher} service URL.
+* Your {launcher} tool URL.
 endif::[]
 
 * The `oc` client authenticated. For more information, see xref:authenticating-the-oc-cli-client_{context}[].

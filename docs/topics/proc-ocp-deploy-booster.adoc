@@ -4,7 +4,7 @@
 [sidebar]
 .Prerequisites
 --
-* Have a booster created using link:{link-launcher-oso}[{launcher-oso}] or the {launcher} service in xref:osl-create-booster[a {OpenShiftLocal}].
+* Have a booster created using link:{link-launcher-oso}[{launcher-oso}] or the {launcher} tool in xref:osl-create-booster[a {OpenShiftLocal}].
 * Have access to an {OpenShiftContainerPlatform} Web console.
 * Have the `oc` CLI client installed.
 --
