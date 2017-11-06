@@ -53,5 +53,5 @@ hystrix-dashboard   hystrix-dashboard-{project-name}.{osl-route-hostname}       
 +
 [source,bash,subs="attributes+",options="nowrap"]
 --
-http://{app-name}-greeting/hystrix.stream
+http://{app-name}-greeting-{project-name}.{osl-route-hostname}/hystrix.stream
 --
