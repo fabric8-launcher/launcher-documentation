@@ -8,7 +8,7 @@
 // Rationale: This procedure is identical in all deployments
 
 [#deploying-the-booster-using-launcher-osl_{context}]
-= Deploying the Booster Using the {launcher} Service
+= Deploying the Booster Using the {launcher} Tool
 
 .Prerequisites
 

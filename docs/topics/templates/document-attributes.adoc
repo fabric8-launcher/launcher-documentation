@@ -69,7 +69,7 @@
 
 
 :openshift-local-guide-name: Install and Configure a {OpenShiftLocal}
-:minishift-installation-guide-name: Install and Configure the {launcher} Service
+:minishift-installation-guide-name: Install and Configure the {launcher} Tool
 :getting-started-guide-name: Getting Started with {ProductName}
 :landing-page-name: Welcome
 :contrib-guide-name: Contribution Guide

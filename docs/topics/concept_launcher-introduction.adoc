@@ -1,11 +1,11 @@
 [#introduction-to-the-launcher-application]
-= Introduction to the {launcher} Service
+= Introduction to the {launcher} Tool
 
-The {launcher} service runs on OpenShift and provides a hassle-free way of creating functional example applications called missions. The {launcher} service walks you through:
+The {launcher} tool runs on OpenShift and provides a hassle-free way of creating functional example applications called missions. The {launcher} tool walks you through:
 
 * choosing the mission you want to generate,
 * choosing the runtime you want to use, and
 * choosing how you want to build and execute the mission.
 
-The {launcher} service uses your choices to generate a custom project, called a booster, and either launches it directly to the same OpenShift instance, or provides a downloadable ZIP version of the project.
+The {launcher} tool uses your choices to generate a custom project, called a booster, and either launches it directly to the same OpenShift instance, or provides a downloadable ZIP version of the project.
 

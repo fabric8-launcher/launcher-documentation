@@ -6,45 +6,23 @@ This section provides a brief overview of the foundational concepts behind {Prod
 {ProductName} is:
 
 * A collection of runtimes, such as {WildFlySwarm} and {SpringBoot}, designed to run on OpenShift.
-* A prescriptive approach to cloud-native development.
+* A prescriptive approach to cloud-native development on OpenShift.
 
 The goal of {ProductName} is to provide opinionated architectures, design patterns, tools, and best practices in ready-made example applications you can execute on OpenShift to enable cloud-native development.
 
 .Cloud-native Development
-Cloud-native development is an approach to developing, deploying, and running applications that fully embrace the advantages of cloud computing. The four key principles of cloud-native development are:
-
-DevOps::
-The processes and practices of cloud-native development are implemented in software, not just defined.
-
-Containers::
-Containers are used as deployment targets for cloud-native applications.
-
-Service-based Architecture::
-Cloud-native applications use a modular and loosely-coupled architecture such as microservices.
-
-Automation::
-Cloud-native applications are always deployed through automated processes such as pipelines.
-
-Usually, a cloud platform that follows these principles offers the following capabilities:
-
-* Application Runtimes
-* Containers as a Service
-* Containers as infrastructure supporting cloud-native applications and their lifecycles
-* Middleware as a Service
-
-.Cloud-native Applications
-Cloud-native applications are the result of adhering to cloud-native development.
+Cloud-native development is an approach to developing, deploying, and running applications that fully embrace the advantages of cloud computing.
 
 .OpenShift
-link:https://www.openshift.com[Red Hat OpenShift] is a container application platform that brings link:https://www.redhat.com/en/topics/containers/what-is-docker[Docker] and link:https://www.redhat.com/en/topics/containers/what-is-kubernetes[Kubernetes] to the enterprise. link:{link-launcher-oso}[{OpenShiftOnline}] is a public cloud hosted and supported by Red Hat. A {OpenShiftLocal} is a local cloud that you can install and execute on your local machine; this functionality is provided for example by the link:https://developers.redhat.com/products/cdk/overview/[{CDK}] or link:https://www.openshift.org/minishift/[{Minishift}].
+link:https://www.openshift.com[Red Hat OpenShift] is a container application platform that brings link:https://www.redhat.com/en/topics/containers/what-is-docker[Docker] and link:https://www.redhat.com/en/topics/containers/what-is-kubernetes[Kubernetes] to the enterprise. link:{link-launcher-oso}[{OpenShiftOnline}] is a public cloud hosted by Red Hat. A {OpenShiftLocal} is a local cloud that you can install and execute on your local machine; this functionality is provided for example by link:https://developers.redhat.com/products/cdk/overview/[{CDK}] or link:https://www.openshift.org/minishift/[{Minishift}].
 
 
 [[launcher-details]]
 .{launcher-oso}
-link:{link-launcher-oso}[{launcher-oso}] is a standalone getting started experience offered by Red Hat for jumpstarting cloud-native application development on OpenShift. It provides a hassle-free way of creating functional example applications, called missions, as well as an easy way to build and deploy those missions to OpenShift. 
+link:{link-launcher-oso}[{launcher-oso}] is a standalone getting started experience offered by Red Hat for jumpstarting cloud-native application development on OpenShift. It provides a hassle-free way of creating example applications, called boosters, as well as an easy way to build and deploy those boosters to OpenShift. 
 
-.The {launcher} Service
-The {launcher} service is the upstream project from which link:{link-launcher-oso}[{launcher-oso}] is based. You can also install and execute the {launcher} service on your {OpenShiftLocal}. For more information, see the link:{link-launcher-openshift-local-install-guide}#create-launcher-app[Creating the {launcher} Service] chapter of the {minishift-installation-guide-name} guide.
+.The {launcher} Tool
+The {launcher} is the upstream project from which link:{link-launcher-oso}[{launcher-oso}] is based. You can also install and execute the {launcher} tool on your {OpenShiftLocal}. For more information, see the link:{link-launcher-openshift-local-install-guide}#create-launcher-app[Creating the {launcher} Tool] chapter of the {minishift-installation-guide-name} guide.
 
 
 
