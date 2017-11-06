@@ -15,7 +15,7 @@ include::topics/sb-tomcat-runtime-overview.adoc[leveloffset=+1]
 {SpringBoot} has a version of its runtime that is tested and verified to run on OpenShift. Some components, for example, the Embedded Tomcat Container and the Java container image, are provided as part of a Red Hat subscription when used with {SpringBoot}.
 
 The features in the table below are available as a collection of missions which run on OpenShift. Some features are native as part of Kubernetes, others are available from link:https://github.com/spring-cloud-incubator/spring-cloud-kubernetes[Spring Cloud Kubernetes].
- Features such as as Actuator are available directly in {SpringBoot}.
+ Features such as Actuator are available directly in {SpringBoot}.
 
 .Features and Frameworks Summary
 [width="100%",options="header"]
