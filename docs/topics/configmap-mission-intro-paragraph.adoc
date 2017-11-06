@@ -4,4 +4,4 @@ ifdef::docs-topic[xref:proficiency_foundational[*{proficiency-foundational}*].]
 ifndef::docs-topic[link:https://appdev.openshift.io/docs/wf-swarm-runtime.html#proficiency_levels[*{proficiency-foundational}*^].]
 
 
-The {name-mission-configmap} Mission provides a basic example of using ConfigMap to take advantage of external configuration sources.
+The {name-mission-configmap} Mission provides a basic example of using the ConfigMap API to take advantage of external configuration sources.
