@@ -7,7 +7,7 @@ The SSO booster project contains:
 * the Keycloak adapter configuration to secure the service
 
 = Standing up {RHSSO}
-The `service.sso.yaml` file contains all OpenShift configuration items to stand up a pre-configured {RHSSO} server. The the SSO server configuration has been simplified for the sake of this exercise and does provide an out-of-the-box configuration, with pre-configured users and security settings. 
+The `service.sso.yaml` file contains all OpenShift configuration items to stand up a pre-configured {RHSSO} server. The SSO server configuration has been simplified for the sake of this exercise and does provide an out-of-the-box configuration, with pre-configured users and security settings.
 
 IMPORTANT: It is not recommended to use this SSO configuration in production. Specifically, the simplifications made to the booster security configuration impact the ability to use it in a production environment.
 
@@ -70,7 +70,7 @@ admin::
 The `admin` user has a password of `admin` and is the realm administrator. This user has full access to the {RHSSO} administration console, but none of the role mappings that are required to access the secured endpoints. You can use this user to illustrate the behavior of an authenticated, but unauthorized user.
 
 alice:: 
-The `alice` user has a password of `password` and is the canonical application. This user will demonstrate successful authenticated and authorized access to the secured endpoints. A representation of the role mappings is provided in this decoded JWT bearer token
+The `alice` user has a password of `password` and is the canonical application. This user will demonstrate successful authenticated and authorized access to the secured endpoints. An example representation of the role mappings is provided in this decoded JWT bearer token:
 +
 [source,json,options="nowrap"]
 ----
@@ -123,7 +123,7 @@ The `alice` user has a password of `password` and is the canonical application. 
 }
 ----
 +
-<1> The iss(user) field corresponds to the {RHSSO} realm instance URL that issues the token. This must be configured in the secured endpoint deployments in order for the token to be verified.
+<1> The `iss` field corresponds to the {RHSSO} realm instance URL that issues the token. This must be configured in the secured endpoint deployments in order for the token to be verified.
 <2> The `roles` object provides the roles that have been granted to the user at the global realm level. In this case
 `alice` has been granted the `vertx-admin` role. We will see that the {VertX} secured endpoint will look to the
 realm level for authorized roles.
