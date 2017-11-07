@@ -15,19 +15,20 @@ NOTE: The triple-dot indicates there are more files or directories in the partic
 │   │   ├── templates/ <5>
 │   │   │   ├── document-attributes.adoc <6>
 │   │   │   ├── ...
+│   │   │   ├── wildfly-swarm <7>
 │   │   ├── configmap-mission-design-tradeoffs.adoc
 │   │   ├── ...
-│   ├── $GUIDE_NAME/ <7>
-│   │   ├── master.adoc <8>
-│   │   ├── build_guide.sh <9>
-│   │   └── topics/ -> ../topics <10>
+│   ├── $GUIDE_NAME/ <8>
+│   │   ├── master.adoc <9>
+│   │   ├── build_guide.sh <10>
+│   │   └── topics/ -> ../topics <11>
 │   ├── ...
-├── scripts/ <11>
-│   ├── build_guides.sh <12>
-│   ├── validate_guides.sh <13>
+├── scripts/ <12>
+│   ├── build_guides.sh <13>
+│   ├── validate_guides.sh <14>
 │   ├── ...
-├── cico_build_deploy <14>
-├── CHANGELOG.adoc <15>
+├── cico_build_deploy <15>
+├── CHANGELOG.adoc <16>
 └── README.adoc
 ----
 <1> The directory with the sources of all the _{docs-name}_ guides, the _launchpad.openshift.io_ page, and the contributor guide.
@@ -36,12 +37,20 @@ NOTE: The triple-dot indicates there are more files or directories in the partic
 <4> The directory with all the stylesheets used in the sources.
 <5> The directory with all the templates used in the sources.
 <6> The file where all the common document attributes are defined.
-<7> The directory with the sources of a guide. Each guide has exactly one directory like this.
-<8> The main AsciiDoc file of the guide. The files from the `topics` directory are included from this file.
-<9> The script for building the particular guide.
-<10> A symbolic link to the shared `$REPO_HOME/docs/topics/` directory.
-<11> The directory with scripts used for manipulating files in the directory, building, and more.
-<12> The script for building all guides at once. This script does not validate the guides.
-<13> The script for validating all guides at once.
-<14> The script to start local server and to publish to production. For more information, see xref:_starting_preview_server[].
-<15> The file with changes made in each release.
+<7> The directory with sources synchronized from the {WildFlySwarm} repository.
+<8> The directory with the sources of a guide. Each guide has exactly one directory like this.
+<9> The main AsciiDoc file of the guide. The files from the `topics` directory are included from this file.
+<10> The script for building the particular guide.
+<11> A symbolic link to the shared `$REPO_HOME/docs/topics/` directory.
+<12> The directory with scripts used for manipulating files in the directory, building, and more.
+<13> The script for building all guides at once. This script does not validate the guides.
+<14> The script for validating all guides at once.
+<15> The script to start local server and to publish to production. For more information, see xref:_starting_preview_server[].
+<16> The file with changes made in each release.
+
+WARNING: Do not edit files in the `$REPO_HOME/docs/topics/wildfly-swarm` directory, always submit a pull request to the link:{link-repo-wildfly-swarm}[{WildFlySwarm} repository] and synchronize the files afterwards.
+
+[discrete]
+== Related Information
+
+* xref:syncing-with-wildfly-swarm-docs[]

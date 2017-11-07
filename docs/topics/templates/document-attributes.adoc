@@ -167,3 +167,6 @@
 // stage environment URLs for Docs and Launcher
 :link-docs-stage: https://appdev.prod-preview.openshift.io/
 :link-launcher-stage: https://launch.prod-preview.openshift.io/
+
+// WildFly Swarm repository (mostly for the Contribution Guide)
+:link-repo-wildfly-swarm: https://github.com/wildfly-swarm/wildfly-swarm/
