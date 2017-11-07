@@ -11,7 +11,7 @@ The variables are documented in the script.
 
 NOTE: Some files are not present in the upstream repository because they are generated. The script automatically builds the upstream project with Maven, ensuring these files are not missing.
 
-WARNING: Do not edit the files in the `$REPO_HOME/docs/topics/wildfly-swarm` directory, always submit a pull request to the upstream repository and synchronize the files when they are updated upstream.
+WARNING: Do not edit files in the `$REPO_HOME/docs/topics/wildfly-swarm` directory, always submit a pull request to the link:{link-repo-wildfly-swarm}[{WildFlySwarm} repository] and synchronize the files afterwards.
 
 .Prerequisites
 
