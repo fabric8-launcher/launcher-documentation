@@ -1,5 +1,59 @@
 = Change Log
 
+== link:https://github.com/fabric8-launch/appdev-documentation/releases/tag/2017-11-03[2017-11-03 Release]
+
+* https://github.com/openshiftio/appdev-documentation/issues/751[Issue
+751] - Spring Boot: Feedback about deploying SSO Booster
+* https://github.com/openshiftio/appdev-documentation/issues/749[Issue
+749] - Spring Boot: Update references section
+* https://github.com/openshiftio/appdev-documentation/issues/730[Issue
+730] - Secured mission: Remove java library from interaction section
+* https://github.com/openshiftio/appdev-documentation/issues/721[Issue
+721] - Secured mission: Add documentation for running integration tests
+* https://github.com/openshiftio/appdev-documentation/issues/717[Issue
+717] - Secured mission: ZIP booster deployment workflow
+* https://github.com/openshiftio/appdev-documentation/issues/716[Issue
+716] - Health check mission: Fix references to the `api/killme` endpoint
+in the docs.
+* https://github.com/openshiftio/appdev-documentation/issues/714[Issue
+714] - document how to deal with OpenShift quotas, especially on
+OpenShift Online Starter
+* https://github.com/openshiftio/appdev-documentation/issues/707[Issue
+707] - Update Minishift and CDK versions
+* https://github.com/openshiftio/appdev-documentation/issues/705[Issue
+705] - update readmes to be more explicit on JVM requirements
+* https://github.com/openshiftio/appdev-documentation/issues/701[Issue
+701] - Refactor the Secured booster documentation
+* https://github.com/openshiftio/appdev-documentation/issues/700[Issue
+700] - Add documentation around the Launcher
+* https://github.com/openshiftio/appdev-documentation/issues/698[Issue
+698] - remove SSO mission from docs for now
+* https://github.com/openshiftio/appdev-documentation/issues/697[Issue
+697] - Minishift guide name impractical
+* https://github.com/openshiftio/appdev-documentation/issues/695[Issue
+695] - Add note about persistent storage to CRUD mission
+* https://github.com/openshiftio/appdev-documentation/issues/694[Issue
+694] - Update urls for new github org
+* https://github.com/openshiftio/appdev-documentation/issues/691[Issue
+691] - Update all references to the docs repository to point to the new
+URL
+* https://github.com/openshiftio/appdev-documentation/issues/689[Issue
+689] - Update link-repo-docs attribute to point to the new docs repo URL
+* https://github.com/openshiftio/appdev-documentation/issues/686[Issue
+686] - Update changelog: add missing issues from previous relases.
+* https://github.com/openshiftio/appdev-documentation/issues/685[Issue
+685] - More user-friendly local preview server
+* https://github.com/openshiftio/appdev-documentation/issues/683[Issue
+683] - misc edits for Install and Configure Single-Node OpenShift
+Cluster guide
+* https://github.com/openshiftio/appdev-documentation/issues/641[Issue
+641] - Update nexus repository section based on S2I updates
+* https://github.com/openshiftio/appdev-documentation/issues/332[Issue
+332] - Update SSO Missions with instructions for using index.html with
+booster
+* https://github.com/openshiftio/appdev-documentation/issues/199[Issue
+199] - Document how to boost pipeline on minishift & persist pod .m2/repository
+
 == link:https://github.com/fabric8-launch/appdev-documentation/releases/tag/2017-09-29[2017-09-29 Release]
 
 * https://github.com/fabric8-launch/appdev-documentation/issues/671[Issue
