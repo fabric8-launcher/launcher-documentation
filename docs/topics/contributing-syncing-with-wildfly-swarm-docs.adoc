@@ -2,7 +2,7 @@
 [#syncing-with-wildfly-swarm-docs]
 = Syncing with {WildFlySwarm} Docs
 
-Some documentation files for the {WildFlySwarm} runtim are sourced directly from the {WildFlySwarm} repository.
+Some documentation files for the {WildFlySwarm} runtime are sourced directly from the {WildFlySwarm} repository.
 You must synchronize them manually before a release to ensure the newest version of the files is available.
 
 The synchronization script deletes the existing `$REPO_HOME/docs/topics/wildfly-swarm` directory and replaces it with the latest version of the `master` branch from the upstream repository.
