@@ -7,6 +7,6 @@ Create a custom booster catalog that links to the repository with your booster o
 include::minishift-creating-custom-booster-catalog.adoc[leveloffset=+1]
 
 :parameter-custom-catalog:
-include::proc_creating-launcher-application-manually.adoc[leveloffset=+1]
+include::proc_installing-launcher-application-manually.adoc[leveloffset=+1]
 :parameter-custom-catalog!:
 

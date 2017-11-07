@@ -5,11 +5,11 @@
 // Rationale: This module is useful both when setting up minishift as is and when testing a local
 // booster catalog.
 
-[#creating-launcher-application-manually]
-ifndef::parameter-custom-catalog[= Creating {launcher} Tool Manually]
-ifdef::parameter-custom-catalog[= Creating {launcher} Tool]
+[#installing-launcher-application-manually]
+ifndef::parameter-custom-catalog[= Installing {launcher} Tool Manually]
+ifdef::parameter-custom-catalog[= Installing {launcher} Tool]
 
-Create a local customized instance of the {launcher} tool, which allows you to test the functionality or make modifications to the service using a web interface.
+Install a local customized instance of the {launcher} tool, which allows you to test the functionality or make modifications to the service using a web interface.
 
 .Prerequisites
 * xref:starting-and-configuring-the-openshiftlocal-for-the-launcher-application[{OpenShiftLocal} running].

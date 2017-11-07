@@ -19,12 +19,18 @@ link:https://www.openshift.com[Red Hat OpenShift] is a container application pla
 
 [[launcher-details]]
 .{launcher-oso}
-link:{link-launcher-oso}[{launcher-oso}] is a standalone getting started experience offered by Red Hat for jumpstarting cloud-native application development on OpenShift. It provides a hassle-free way of creating example applications, called boosters, as well as an easy way to build and deploy those boosters to OpenShift. 
+link:{link-launcher-oso}[{launcher-oso}] is a project generator offered by Red Hat to accelerate your experience with cloud-native development on OpenShift. It provides a hassle-free way of creating example applications, called boosters, as well as an easy way to build and deploy those boosters to OpenShift. To use link:{link-launcher-oso}[{launcher-oso}]:
+
+* Navigate to link:{link-launcher-oso}[{launcher-oso}].
+* Choose the details for your example application.
+* Deploy application OpenShift automatically or manually.
+
+You can find more details on using {launcher-oso} in the xref:oso-create-booster[] section.
 
 .The {launcher} Tool
-The {launcher} is the upstream project from which link:{link-launcher-oso}[{launcher-oso}] is based. You can also install and execute the {launcher} tool on your {OpenShiftLocal}. For more information, see the link:{link-launcher-openshift-local-install-guide}#create-launcher-app[Creating the {launcher} Tool] chapter of the {minishift-installation-guide-name} guide.
+The {launcher} is the upstream project from which link:{link-launcher-oso}[{launcher-oso}] is based. 
 
-
+You can also install and execute the {launcher} tool on your {OpenShiftLocal} to use the same capabilities within your {OpenShiftLocal}. For more information, see the link:{link-launcher-openshift-local-install-guide}#install-launcher-app[Installing the {launcher} Tool] chapter of the {minishift-installation-guide-name} guide.
 
 .Missions and Boosters
 A mission implements a link:http://microservices.io/patterns/microservices.html[Microservice pattern] such as:

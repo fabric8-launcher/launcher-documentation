@@ -1,5 +1,5 @@
-[#creating-launcher-application-using-automated-script]
-= Creating {launcher} Tool Using Automated Script
+[#installing-launcher-application-using-automated-script]
+= Installing {launcher} Tool Using Automated Script
 
 You can install the {launcher} tool to your {OpenShiftLocal} using link:{link-launcher-install-script}[an automated script]. The script:
 
@@ -7,7 +7,7 @@ You can install the {launcher} tool to your {OpenShiftLocal} using link:{link-la
 * deploys the {launcher} tool to that project using the link:{link-launcher-yaml}[latest template]
 * configures the {launcher} tool with your GitHub username and personal access token.
 
-IMPORTANT: If you are running your {OpenShiftLocal} on Windows, you must use the xref:creating-launcher-application-manually[manual method] for installing the {launcher} tool.
+IMPORTANT: If you are running your {OpenShiftLocal} on Windows, you must use the xref:installing-launcher-application-manually[manual method] for installing the {launcher} tool.
 
 
 .Prerequisites
