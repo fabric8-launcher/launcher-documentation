@@ -135,7 +135,7 @@ for each of the secured endpoints.
 <7> The `preferred_username` field provides the username that was used to generate the access token.
 
 == The Application Clients
-The OAuth 2.0 specification allows you to define a role for application clients that access secured resources on behalf of resource owners. The `master` realm has four application clients defined:
+The OAuth 2.0 specification allows you to define a role for application clients that access secured resources on behalf of resource owners. The `master` realm has the following application clients defined:
 
 demoapp::
 This is a `confidential` type client with a client secret that is used to obtain an access token that contains grants for the `alice` user which enable `alice` to access the {WildFlySwarm}, {VertX} and {SpringBoot} based REST booster deployments.
