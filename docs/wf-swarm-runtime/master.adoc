@@ -18,16 +18,19 @@ include::topics/wf-swarm-runtime-overview.adoc[leveloffset=+1]
 
 include::topics/runtime-info-product-version.adoc[leveloffset=+1]
 
-== Configuring {WildFlySwarm}
+== Building your application
 
 This sections contains information about configuring the {WildFlySwarm} runtime.
 
 include::topics/wildfly-swarm/docs/reference/maven-plugin.adoc[leveloffset=+2]
+
 include::topics/wildfly-swarm/docs/concepts/fractions.adoc[leveloffset=+2]
 include::topics/wildfly-swarm/docs/howto/autodetect-fractions/index.adoc[leveloffset=+3]
 include::topics/wildfly-swarm/docs/howto/explicit-fractions/index.adoc[leveloffset=+3]
 
 include::topics/wildfly-swarm/docs/howto/use-a-bom/index.adoc[leveloffset=+2]
+
+include::topics/wildfly-swarm/docs/reference/configuration.adoc[leveloffset=+2]
 
 == Packaging your application
 
@@ -243,8 +246,15 @@ include::topics/http-api-wf-swarm-pom.adoc[leveloffset=+1]
 
 [appendix]
 == {WildFlySwarm} Fractions Reference
-ifdef::product[include::topics/wildfly-swarm/docs/reference/index-product.adoc[leveloffset=+2]]
-ifndef::product[include::topics/wildfly-swarm/docs/reference/index-community.adoc[leveloffset=+2]]
+
+For information about using the configuration properties provided in {WildFlySwarm} fractions, see xref:configuring-a-wildfly-swarm-application[].
+
+ifdef::product[]
+include::topics/wildfly-swarm/docs/reference/index-product.adoc[leveloffset=+2]
+endif::[]
+ifndef::product[]
+include::topics/wildfly-swarm/docs/reference/index-community.adoc[leveloffset=+2]
+endif::[]
 
 [appendix]
 include::topics/wf-swarm-dev-guide-additional-resources.adoc[leveloffset=+1]
