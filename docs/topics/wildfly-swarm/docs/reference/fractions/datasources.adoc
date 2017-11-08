@@ -124,7 +124,7 @@ swarm.datasources.data-sources._KEY_.driver-class::
 The fully qualified name of the JDBC driver class
 
 swarm.datasources.data-sources._KEY_.driver-name:: 
-Defines the JDBC driver the datasource should use. It is a symbolic name matching the the name of installed driver. In case the driver is deployed as jar, the name is the name of deployment unit
+Defines the JDBC driver the datasource should use. It is a symbolic name matching the name of installed driver. In case the driver is deployed as jar, the name is the name of deployment unit
 
 swarm.datasources.data-sources._KEY_.enlistment-trace:: 
 Defines if WildFly/IronJacamar should record enlistment traces
