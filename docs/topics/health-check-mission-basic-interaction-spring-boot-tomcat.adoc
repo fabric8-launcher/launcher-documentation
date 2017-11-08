@@ -20,9 +20,9 @@ $ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting
 {"content":"Hello, World!"}
 ----
 
-. Invoke the /api/stop endpoint and verify the availability of the /api/greeting endpoint shortly after that.
+. Invoke the `/api/stop` endpoint and verify the availability of the `/api/greeting` endpoint shortly after that.
 +
-Invoking the /api/stop endpoint simulates an internal service failure and triggers the OpenShift self-healing capabilities. When invoking /api/greeting after simulating the failure, the service should return a HTTP status 503.
+Invoking the `/api/stop` endpoint simulates an internal service failure and triggers the OpenShift self-healing capabilities. When invoking `/api/greeting` after simulating the failure, the service should return an `Application is not available` page.
 +
 [source,bash,option="nowrap",subs="attributes+"]
 ----
@@ -33,10 +33,19 @@ $ curl http://{app-name}-{project-name}.{os-route-hostname}/api/stop
 $ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting
 
 <html>
-  <head><title>Error</title></head>
-  <body>503 - Service Unavailable</body>
+  <head>
+  ...
+  </head>
+  <body>
+    <div>
+      <h1>Application is not available</h1>
+      ...
+    </div>
+  </body>
 </html>
 ----
++
+NOTE: Depending on when OpenShift removes the pod after you invoke the `/api/stop` endpoint, you may initially see a 404 error code. If continue to invoke the `/api/greeting` endpoint, you will see the `Application is not available` page after OpenShift removes the pod.
 
 . Use `oc get pods -w` to continuously watch the self-healing capabilities in action.
 +
