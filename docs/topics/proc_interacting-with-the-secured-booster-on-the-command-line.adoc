@@ -41,6 +41,8 @@ $ curl -sk -X POST https://<SSO_AUTH_SERVER_URL>/auth/realms/$REALM/protocol/ope
 ----
 +
 NOTE: The `-sk` option tells curl to ignore failures resulting from self-signed certificates. Do not use this option in a production environment.
++
+On macOS, you must have `curl` version `7.56.1` or greater installed. It must also be built with OpenSSL.
 
 ** Extract the access token information, for example using the `jq` tool:
 +
