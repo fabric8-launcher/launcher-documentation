@@ -6,6 +6,7 @@ You can quickly create, build, and deploy a booster to {OpenShiftOnline} using l
 .Prerequisites
 --
 * link:https://www.openshift.com[Have an {OpenShiftOnline} account]
+* Check which {OpenShiftOnline} cluster you belong to using link:https://manage.openshift.com[https://manage.openshift.com^].
 * link:https://developers.redhat.com[Have a Red Hat Developers account]
 * link:https://github.com[Have a GitHub account]
 * link:https://developers.redhat.com[Login to your Red Hat Developers account]
@@ -15,6 +16,9 @@ You can quickly create, build, and deploy a booster to {OpenShiftOnline} using l
 . Navigate to link:{link-launcher-oso}[{launcher-oso}] using your browser.
 . Select _Launch your Project_.
 ** You may be prompted to log in to your Red Hat Developers account. If you are, click _Log in or register_ and complete the authentication steps.
+. You may be prompted to grant {launcher-oso} access to your GitHub and {OpenShiftOnline} accounts. This is a one-time action.
+** Click the _Add_ button next to the _GitHub_ field and authorize {launcher-oso} to access your GitHub account.
+** Click the _Add_ button next to the {OpenShiftOnline} cluster you use.
 . Choose your deployment type.
 ** Use the _Deploy in OpenShift Online_ option to create a new GitHub repository containing your booster. It will also be launched to {OpenShiftOnline}.
 ** Use the _Build and Run Locally_ to create a ZIP download containing your booster. This will *not* create a GitHub repository or deploy your booster to {OpenShiftOnline}, but you can still deploy the booster to {OpenShiftOnline} manually.
