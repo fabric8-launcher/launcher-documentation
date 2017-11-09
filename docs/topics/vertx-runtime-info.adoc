@@ -15,24 +15,33 @@ To start developing applications using {Vertx}, download the BOM file containing
 To configure your application to use {Vertx}:
 
 . Reference the required artifacts in the dependency file of your application.
-. Reference `vertx-maven-plugin` as a dependency for your application.
+. Reference `vertx-maven-plugin` as a plugin used to package your application:
++
+[source,xml]
+--
+...
+<build>
+  <plugins>
+    <plugin>
+      <groupId>io.fabric8</groupId>
+      <artifactId>vertx-maven-plugin</artifactId>
+      <version>${vertx-maven-plugin.version}</version>
+      <executions>
+        <execution>
+          <id>vmp</id>
+          <goals>
+            <goal>initialize</goal>
+            <goal>package</goal>
+          </goals>
+        </execution>
+      </executions>
+      <configuration>
+        <redeploy>true</redeploy>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+...
+--
 
-For more information on packaging your {Vertx} application, see the link:https://vmp.fabric8.io/[Vert.x Maven plugin] documentation.
-
-.Developing Applications with {Vertx}
-
-Follow the links to the {Vertx} community documentation for details and examples of basic application development:
-
-* link:http://vertx.io/blog/posts/introduction-to-vertx.html[Developing and testing your {Vertx} application].
-* link:http://Vertx.io/blog/vert-x-application-configuration/[Configuring your {Vert.x} application].
-* link:http://vertx.io/blog/unit-and-integration-tests/[Setting up unit and integration tests for your {Vertx} application].
-* link:http://vertx.io/blog/some-rest-with-vert-x/[Creating a REST API to access your {Vertx} application].
-
-For information on adding persistent storage to your {Vertx} application, see:
-
-* link:http://vertx.io/blog/using-the-asynchronous-sql-client/[Using the asynchronous JDBC client with your {Vertx} application].
-* link:http://Vertx.io/blog/combine-vert-x-and-mongo-to-build-a-giant/[Using the MongoDB client with your {Vertx} application].
-
-//.Upgrading to the latest {Vertx} release
-
-// add list of community components that are excluded from downstream version.
+For more information on packaging your {Vertx} application, see the link:https://vmp.fabric8.io/[Vert.x Maven Plugin] documentation.
