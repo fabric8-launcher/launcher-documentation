@@ -1,6 +1,6 @@
 ifeval::["{runtime}" == "Spring Boot"]
 :guideURL: http://appdev.openshift.io/docs/spring-boot-runtime.html
-:guideName: Spring Boot Tomcat Runtime Guide
+:guideName: Spring Boot Runtime Guide
 endif::[]
 
 ifeval::["{runtime}" == "Eclipse Vert.x"]
