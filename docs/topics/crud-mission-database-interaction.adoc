@@ -32,13 +32,13 @@ curl http://{app-name}-{project-name}.{os-route-hostname}/api/fruits
 ----
 [ {
   "id" : 1,
-  "name" : "Apple",
+  "name" : "Cherry",
 }, {
   "id" : 2,
-  "name" : "Orange",
+  "name" : "Apple",
 }, {
   "id" : 3,
-  "name" : "Pear",
+  "name" : "Banana",
 } ]
 ----
 +
@@ -51,7 +51,7 @@ curl http://{app-name}-{project-name}.{os-route-hostname}/api/fruits/3
 ----
 {
   "id" : 3,
-  "name" : "Pear",
+  "name" : "Banana",
 }
 ----
 
@@ -59,13 +59,13 @@ curl http://{app-name}-{project-name}.{os-route-hostname}/api/fruits/3
 .Create a new entry:
 [source,bash,options="nowrap",subs="attributes+"]
 --
-curl -H "Content-Type: application/json" -X POST -d '{"name":"apple"}'  http://{app-name}-{project-name}.{os-route-hostname}/api/fruits
+curl -H "Content-Type: application/json" -X POST -d '{"name":"pear"}'  http://{app-name}-{project-name}.{os-route-hostname}/api/fruits
 --
 +
 ----
 {
   "id" : 4,
-  "name" : "apple",
+  "name" : "pear",
 }
 ----
 +
