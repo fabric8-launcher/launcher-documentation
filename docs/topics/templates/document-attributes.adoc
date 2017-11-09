@@ -26,7 +26,7 @@
 :CDK: Red Hat Container Development Kit
 :OpenShiftContainerPlatform: OpenShift Container Platform
 :WildFlySwarm: WildFly Swarm
-:SpringBoot: Spring Boot Tomcat
+:SpringBoot: Spring Boot
 :VertX: Eclipse Vert.x
 :NodeJS: Node.js
 :RHSSO: Red Hat SSO
