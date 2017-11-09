@@ -14,6 +14,8 @@
 
 .Procedure
 
+include::note-integration-tests-app-deletion-warning.adoc[]
+
 . In a terminal application, navigate to the directory with your project.
 . Create the {RHSSO} server application:
 +

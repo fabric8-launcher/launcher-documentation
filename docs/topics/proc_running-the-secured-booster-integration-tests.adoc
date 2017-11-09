@@ -15,6 +15,8 @@ endif::secured-wf-swarm-mission[]
 
 .Procedure
 
+include::note-integration-tests-app-deletion-warning.adoc[]
+
 . In a terminal application, navigate to the directory with your project.
 ifdef::secured-wf-swarm-mission,secured-spring-boot-mission[]
 . Deploy the {RHSSO} server:
@@ -36,4 +38,3 @@ $ mvn clean verify -Popenshift,openshift-it -DSSO_AUTH_SERVER_URL=$(oc get route
 --
 oc delete -f service.sso.yaml
 --
-
