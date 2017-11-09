@@ -2,20 +2,26 @@ include::topics/templates/document-attributes.adoc[]
 //override for a cleaner TOC
 :toclevels: 2
 
-
 = {spring-boot-runtime-guide-name}
 :runtime: {SpringBoot}
 //var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
 :docs-topic:
 
-This guide covers concepts as well as practical details needed by developers to use the {SpringBoot} runtime.
+This guide covers concepts as well as practical details needed by developers to use the {SpringBoot} runtime. It provides information governing the design of a {SpringBoot} application deployed as a Linux container on OpenShift.
 
 include::topics/sb-tomcat-runtime-overview.adoc[leveloffset=+1]
 
-{SpringBoot} has a version of its runtime that is tested and verified to run on OpenShift. Some components, for example, the Embedded Tomcat Container and the Java container image, are provided as part of a Red Hat subscription when used with {SpringBoot}.
+.{SpringBoot} Supported Version
+
+The {SpringBoot} runtime version `1.5.8` is tested and verified to run with the Embedded Apache Tomcat Container on OpenShift. This embedded container, as well as other components such as the Java container image, are provided as part of a Red Hat subscription when used with {SpringBoot}.
+
+.{SpringBoot} Features and Frameworks Summary
+
+The chapters in this guide cover the design of modern applications using link:https://projects.spring.io/spring-boot/[Spring Boot]. These concepts support development of Web or Websocket applications using either a HTTP connector or non-blocking HTTP connector.
+The applications can be packaged and deployed without modification or updated to use cloud native features on OpenShift.
 
 The features in the table below are available as a collection of missions which run on OpenShift. Some features are native as part of Kubernetes, others are available from link:https://github.com/spring-cloud-incubator/spring-cloud-kubernetes[Spring Cloud Kubernetes].
- Features such as Actuator are available directly in {SpringBoot}.
+Features such as Actuator are available directly in {SpringBoot}.
 
 .Features and Frameworks Summary
 [width="100%",options="header"]
