@@ -15,163 +15,163 @@
 swarm.default.multicast.address:: 
 Default multicast address for JGroups
 
-swarm.jgroups.channels._KEY_.address:: 
+swarm.j-groups.channels._KEY_.address:: 
 The IP address of the channel.
 
-swarm.jgroups.channels._KEY_.address-as-uuid:: 
+swarm.j-groups.channels._KEY_.address-as-uuid:: 
 The address of the channel as a UUID.
 
-swarm.jgroups.channels._KEY_.cluster:: 
+swarm.j-groups.channels._KEY_.cluster:: 
 The cluster name of the JGroups channel. If undefined, the name of the channel will be used.
 
-swarm.jgroups.channels._KEY_.discard-own-messages:: 
+swarm.j-groups.channels._KEY_.discard-own-messages:: 
 If true, do not receive messages sent by this node (ourself).
 
-swarm.jgroups.channels._KEY_.forks._KEY_.protocols._KEY_.module:: 
+swarm.j-groups.channels._KEY_.forks._KEY_.protocols._KEY_.module:: 
 The module with which to resolve the protocol type.
 
-swarm.jgroups.channels._KEY_.forks._KEY_.protocols._KEY_.properties:: 
+swarm.j-groups.channels._KEY_.forks._KEY_.protocols._KEY_.properties:: 
 The properties of this protocol.
 
-swarm.jgroups.channels._KEY_.forks._KEY_.protocols._KEY_.properties._KEY_.value:: 
+swarm.j-groups.channels._KEY_.forks._KEY_.protocols._KEY_.properties._KEY_.value:: 
 The value of a protocol property.
 
-swarm.jgroups.channels._KEY_.forks._KEY_.protocols._KEY_.socket-binding:: 
+swarm.j-groups.channels._KEY_.forks._KEY_.protocols._KEY_.socket-binding:: 
 The socket binding specification for this protocol layer, used to specify IP interfaces and ports for communication.
 
-swarm.jgroups.channels._KEY_.module:: 
+swarm.j-groups.channels._KEY_.module:: 
 The module from which to load channel services
 
-swarm.jgroups.channels._KEY_.num-tasks-in-timer:: 
+swarm.j-groups.channels._KEY_.num-tasks-in-timer:: 
 The current number of timer tasks.
 
-swarm.jgroups.channels._KEY_.num-timer-threads:: 
+swarm.j-groups.channels._KEY_.num-timer-threads:: 
 The number of timer threads.
 
-swarm.jgroups.channels._KEY_.received-bytes:: 
+swarm.j-groups.channels._KEY_.received-bytes:: 
 The number of bytes received by this channel.
 
-swarm.jgroups.channels._KEY_.received-messages:: 
+swarm.j-groups.channels._KEY_.received-messages:: 
 The number of messages received by this channel.
 
-swarm.jgroups.channels._KEY_.sent-bytes:: 
+swarm.j-groups.channels._KEY_.sent-bytes:: 
 The number of bytes sent by this channel.
 
-swarm.jgroups.channels._KEY_.sent-messages:: 
+swarm.j-groups.channels._KEY_.sent-messages:: 
 The number of messages sent by this channel.
 
-swarm.jgroups.channels._KEY_.stack:: 
+swarm.j-groups.channels._KEY_.stack:: 
 The protocol stack of the JGroups channel
 
-swarm.jgroups.channels._KEY_.state:: 
+swarm.j-groups.channels._KEY_.state:: 
 The state of the channel (OPEN, CONNECTING, CONNECTED, CLOSED).
 
-swarm.jgroups.channels._KEY_.stats-enabled:: 
+swarm.j-groups.channels._KEY_.stats-enabled:: 
 If enabled, collect channel statistics.
 
-swarm.jgroups.channels._KEY_.version:: 
+swarm.j-groups.channels._KEY_.version:: 
 The JGroups software version.
 
-swarm.jgroups.channels._KEY_.view:: 
+swarm.j-groups.channels._KEY_.view:: 
 The channel's view of group membership.
 
-swarm.jgroups.default-channel:: 
+swarm.j-groups.default-channel:: 
 The default JGroups channel.
 
-swarm.jgroups.stacks._KEY_.R-e-l-a-y2.properties:: 
+swarm.j-groups.stacks._KEY_.R-e-l-a-y2.properties:: 
 The properties of this protocol.
 
-swarm.jgroups.stacks._KEY_.R-e-l-a-y2.properties._KEY_.value:: 
+swarm.j-groups.stacks._KEY_.R-e-l-a-y2.properties._KEY_.value:: 
 The value of a protocol property.
 
-swarm.jgroups.stacks._KEY_.R-e-l-a-y2.remote-sites._KEY_.channel:: 
+swarm.j-groups.stacks._KEY_.R-e-l-a-y2.remote-sites._KEY_.channel:: 
 The name of the bridge channel used to communicate with this remote site.
 
-swarm.jgroups.stacks._KEY_.R-e-l-a-y2.site:: 
+swarm.j-groups.stacks._KEY_.R-e-l-a-y2.site:: 
 The name of the local site.
 
-swarm.jgroups.stacks._KEY_.protocols._KEY_.module:: 
+swarm.j-groups.stacks._KEY_.protocols._KEY_.module:: 
 The module with which to resolve the protocol type.
 
-swarm.jgroups.stacks._KEY_.protocols._KEY_.properties:: 
+swarm.j-groups.stacks._KEY_.protocols._KEY_.properties:: 
 The properties of this protocol.
 
-swarm.jgroups.stacks._KEY_.protocols._KEY_.properties._KEY_.value:: 
+swarm.j-groups.stacks._KEY_.protocols._KEY_.properties._KEY_.value:: 
 The value of a protocol property.
 
-swarm.jgroups.stacks._KEY_.protocols._KEY_.socket-binding:: 
+swarm.j-groups.stacks._KEY_.protocols._KEY_.socket-binding:: 
 The socket binding specification for this protocol layer, used to specify IP interfaces and ports for communication.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.default-thread-pool.keepalive-time:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.default-thread-pool.keepalive-time:: 
 Used to specify the amount of milliseconds that pool threads should be kept running when idle; if not specified, threads will run until the executor is shut down.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.default-thread-pool.max-threads:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.default-thread-pool.max-threads:: 
 The maximum thread pool size.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.default-thread-pool.min-threads:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.default-thread-pool.min-threads:: 
 The core thread pool size which is smaller than the maximum pool size. If undefined, the core thread pool size is the same as the maximum thread pool size.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.default-thread-pool.queue-length:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.default-thread-pool.queue-length:: 
 The queue length.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.diagnostics-socket-binding:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.diagnostics-socket-binding:: 
 The diagnostics socket binding specification for this protocol layer, used to specify IP interfaces and ports for communication.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.internal-thread-pool.keepalive-time:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.internal-thread-pool.keepalive-time:: 
 Used to specify the amount of milliseconds that pool threads should be kept running when idle; if not specified, threads will run until the executor is shut down.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.internal-thread-pool.max-threads:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.internal-thread-pool.max-threads:: 
 The maximum thread pool size.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.internal-thread-pool.min-threads:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.internal-thread-pool.min-threads:: 
 The core thread pool size which is smaller than the maximum pool size. If undefined, the core thread pool size is the same as the maximum thread pool size.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.internal-thread-pool.queue-length:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.internal-thread-pool.queue-length:: 
 The queue length.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.machine:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.machine:: 
 The machine (i.e. host) identifier for this node. Used by Infinispan topology-aware consistent hash.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.module:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.module:: 
 The module with which to resolve the protocol type.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.oob-thread-pool.keepalive-time:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.oob-thread-pool.keepalive-time:: 
 Used to specify the amount of milliseconds that pool threads should be kept running when idle; if not specified, threads will run until the executor is shut down.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.oob-thread-pool.max-threads:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.oob-thread-pool.max-threads:: 
 The maximum thread pool size.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.oob-thread-pool.min-threads:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.oob-thread-pool.min-threads:: 
 The core thread pool size which is smaller than the maximum pool size. If undefined, the core thread pool size is the same as the maximum thread pool size.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.oob-thread-pool.queue-length:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.oob-thread-pool.queue-length:: 
 The queue length.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.properties:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.properties:: 
 The properties of this protocol.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.properties._KEY_.value:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.properties._KEY_.value:: 
 The value of a protocol property.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.rack:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.rack:: 
 The rack (i.e. server rack) identifier for this node. Used by Infinispan topology-aware consistent hash.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.site:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.site:: 
 The site (i.e. data centre) identifier for this node. Used by Infinispan topology-aware consistent hash.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.socket-binding:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.socket-binding:: 
 The socket binding specification for this protocol layer, used to specify IP interfaces and ports for communication.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.timer-thread-pool.keepalive-time:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.timer-thread-pool.keepalive-time:: 
 Used to specify the amount of milliseconds that pool threads should be kept running when idle; if not specified, threads will run until the executor is shut down.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.timer-thread-pool.max-threads:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.timer-thread-pool.max-threads:: 
 The maximum thread pool size.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.timer-thread-pool.min-threads:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.timer-thread-pool.min-threads:: 
 The core thread pool size which is smaller than the maximum pool size. If undefined, the core thread pool size is the same as the maximum thread pool size.
 
-swarm.jgroups.stacks._KEY_.transports._KEY_.timer-thread-pool.queue-length:: 
+swarm.j-groups.stacks._KEY_.transports._KEY_.timer-thread-pool.queue-length:: 
 The queue length.
 
 

@@ -1,4 +1,4 @@
-# Management
+= Management
 
 Provides the WildFly management API.
 

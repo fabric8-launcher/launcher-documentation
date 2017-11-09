@@ -12,28 +12,28 @@
 
 .Configuration
 
-swarm.orientdb.orients._KEY_.database:: 
+swarm.orient-d-b.orients._KEY_.database:: 
 Database name
 
-swarm.orientdb.orients._KEY_.hosts._KEY_.outbound-socket-binding-ref:: 
+swarm.orient-d-b.orients._KEY_.hosts._KEY_.outbound-socket-binding-ref:: 
 OrientDB target hostname/port
 
-swarm.orientdb.orients._KEY_.id:: 
+swarm.orient-d-b.orients._KEY_.id:: 
 Unique profile identification
 
-swarm.orientdb.orients._KEY_.jndi-name:: 
+swarm.orient-d-b.orients._KEY_.jndi-name:: 
 Database JNDI address
 
-swarm.orientdb.orients._KEY_.max-partition-size:: 
+swarm.orient-d-b.orients._KEY_.max-partition-size:: 
 Max database pool partition size
 
-swarm.orientdb.orients._KEY_.max-pool-size:: 
+swarm.orient-d-b.orients._KEY_.max-pool-size:: 
 Max database pool size
 
-swarm.orientdb.orients._KEY_.module:: 
+swarm.orient-d-b.orients._KEY_.module:: 
 Module name
 
-swarm.orientdb.orients._KEY_.security-domain:: 
+swarm.orient-d-b.orients._KEY_.security-domain:: 
 Security domain name
 
 

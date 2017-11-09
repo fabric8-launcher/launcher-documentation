@@ -112,6 +112,6 @@ swarm.hystrix.threadpool.default.metrics.rollingStats.timeInMilliseconds::
 The duration of the statistical rolling window, in milliseconds
 
 swarm.hystrix.threadpool.default.queueSizeRejectionThreshold:: 
-The queue size rejection threshold — an artificial maximum queue size at which rejections will occur even if maxQueueSize has not been reached
+The queue size rejection threshold - an artificial maximum queue size at which rejections will occur even if maxQueueSize has not been reached
 
 
