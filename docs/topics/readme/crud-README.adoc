@@ -44,13 +44,13 @@ $ curl http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/fruits
 
 [ {
   "id" : 1,
-  "name" : "Apple",
+  "name" : "Cherry",
 }, {
   "id" : 2,
-  "name" : "Orange",
+  "name" : "Apple",
 }, {
   "id" : 3,
-  "name" : "Pear",
+  "name" : "Banana",
 } ]
 ----
 
@@ -61,7 +61,7 @@ curl http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/fruits/3
 
 {
   "id" : 3,
-  "name" : "Pear",
+  "name" : "Banana",
 }
 ----
 
@@ -69,11 +69,11 @@ curl http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/fruits/3
 .Create a new entry:
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-curl -H "Content-Type: application/json" -X POST -d '{"name":"apple"}'  http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/fruits
+curl -H "Content-Type: application/json" -X POST -d '{"name":"pear"}'  http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/fruits
 
 {
   "id" : 4,
-  "name" : "apple",
+  "name" : "pear",
 }
 ----
 
