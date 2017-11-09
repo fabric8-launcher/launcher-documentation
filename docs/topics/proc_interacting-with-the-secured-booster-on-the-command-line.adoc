@@ -69,7 +69,7 @@ $ curl -v -H "Authorization: Bearer <TOKEN>" http://<SERVICE_HOST>/api/greeting
 ====
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ > GET /api/greeting HTTP/1.1
+> GET /api/greeting HTTP/1.1
 > Host: <SERVICE_HOST>
 > User-Agent: curl/7.51.0
 > Accept: */*
