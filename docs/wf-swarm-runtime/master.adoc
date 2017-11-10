@@ -38,7 +38,6 @@ This sections contains information about packaging your {WildFlySwarm}&ndash;bas
 
 include::topics/wildfly-swarm/docs/concepts/packaging-types.adoc[leveloffset=+2]
 include::topics/wildfly-swarm/docs/howto/create-an-uberjar/index.adoc[leveloffset=+2]
-include::topics/wildfly-swarm/docs/howto/create-a-hollow-jar/index.adoc[leveloffset=+2]
 
 
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
