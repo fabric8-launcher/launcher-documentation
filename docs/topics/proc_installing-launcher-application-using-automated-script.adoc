@@ -21,28 +21,28 @@ IMPORTANT: If you are running your {OpenShiftLocal} on Windows, you must use the
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ chmod +x deploy_launchpad_mission.sh
+$ chmod +x deploy_launcher_mission.sh
 ----
 . Run the script. There are several options:
 ** Run the script with a username and password.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ ./deploy_launchpad_mission.sh -p PROJECT_NAME -i developer:developer -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN
+$ ./deploy_launcher_mission.sh -p PROJECT_NAME -i developer:developer -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN
 ----
 
 ** Run the script with a {OpenShiftLocal} access token.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ ./deploy_launchpad_mission.sh -p PROJECT_NAME -i OPENSHIFT_TOKEN -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN
+$ ./deploy_launcher_mission.sh -p PROJECT_NAME -i OPENSHIFT_TOKEN -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN
 ----
 
 ** Run the script and specify the version of the {launcher} tool template to use.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ ./deploy_launchpad_mission.sh -p PROJECT_NAME -i developer:developer -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN -v v11
+$ ./deploy_launcher_mission.sh -p PROJECT_NAME -i developer:developer -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN -v v11
 ----
 
 . When the script finishes, return to the {OpenShiftLocal} Web console and click the {launcher} tool project to see the deployment status.
