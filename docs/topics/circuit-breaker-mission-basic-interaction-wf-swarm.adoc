@@ -88,15 +88,3 @@ If the `{app-name}-name` service is available, you should receive the `Hello Wor
 $ curl http://{app-name}-greeting-{project-name}.{osl-route-hostname}/api/greeting
 {"content":"Hello, World!"}
 ----
-
-= Running Integration Tests
-
-This booster contains a set of integration tests.
-To run them, you must be connected to an OpenShift instance and select the project that will be used for testing.
-
-To run the integration tests, execute the following command:
-
-[source,bash,option="nowrap"]
---
-$ mvn clean verify -Popenshift,openshift-it
---

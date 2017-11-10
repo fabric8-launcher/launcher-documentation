@@ -68,6 +68,11 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontaine
 
 include::topics/rest-level-0-mission-basic-interaction-wf-swarm.adoc[leveloffset=+3]
 
+:parameter-runtime: wf-swarm
+:parameter-runtime-name: {WildFlySwarm}
+:context: {parameter-mission}-{parameter-runtime}
+include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
+
 include::topics/rest-level-0-mission-resources.adoc[leveloffset=+3]
 
 
@@ -94,6 +99,11 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.ad
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 include::topics/configmap-mission-basic-interaction-wf-swarm.adoc[leveloffset=+3]
+
+:parameter-runtime: wf-swarm
+:parameter-runtime-name: {WildFlySwarm}
+:context: {parameter-mission}-{parameter-runtime}
+include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
 
 include::topics/configmap-mission-resources.adoc[leveloffset=+3]
 
@@ -127,8 +137,10 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontaine
 //Interacting with the database
 include::topics/crud-mission-database-interaction.adoc[leveloffset=+3]
 
-// integration tests
-include::topics/crud-mission-integration-testing.adoc[leveloffset=+3]
+:parameter-runtime: wf-swarm
+:parameter-runtime-name: {WildFlySwarm}
+:context: {parameter-mission}-{parameter-runtime}
+include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
 
 // include additional resources
 include::topics/crud-mission-resources.adoc[leveloffset=+3]
@@ -156,6 +168,11 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontaine
 
 
 include::topics/health-check-mission-basic-interaction-wf-swarm.adoc[leveloffset=+3]
+
+:parameter-runtime: wf-swarm
+:parameter-runtime-name: {WildFlySwarm}
+:context: {parameter-mission}-{parameter-runtime}
+include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
 
 include::topics/health-check-mission-resources.adoc[leveloffset=+3]
 
@@ -189,6 +206,11 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontaine
 // CB basic interaction
 include::topics/circuit-breaker-mission-basic-interaction-wf-swarm.adoc[leveloffset=+3]
 //TODO
+
+:parameter-runtime: wf-swarm
+:parameter-runtime-name: {WildFlySwarm}
+:context: {parameter-mission}-{parameter-runtime}
+include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
 
 //Hystrix Dashboard
 include::topics/circuit-breaker-mission-access-hystrix-dashboard-wf-swarm.adoc[leveloffset=+3]
