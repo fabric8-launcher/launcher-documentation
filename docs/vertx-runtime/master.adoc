@@ -44,6 +44,11 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontaine
 
 include::topics/rest-level-0-mission-basic-interaction-vertx.adoc[leveloffset=+3]
 
+:parameter-runtime: vertx
+:parameter-runtime-name: {Vertx}
+:context: {parameter-mission}-{parameter-runtime}
+include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
+
 include::topics/rest-level-0-mission-resources.adoc[leveloffset=+3]
 
 
@@ -69,11 +74,16 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.ad
 :context: {parameter-mission}-ocp
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
-
 include::topics/configmap-mission-basic-interaction-vertx.adoc[leveloffset=+3]
+
+:parameter-runtime: vertx
+:parameter-runtime-name: {Vertx}
+:context: {parameter-mission}-{parameter-runtime}
+include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
 
 include::topics/configmap-mission-resources.adoc[leveloffset=+3]
 
+:configmap-vertx!:
 
 [[mission-crud-vertx]]
 === {mission-crud-vertx-guide-name}
@@ -104,7 +114,11 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontaine
 
 include::topics/crud-mission-database-interaction.adoc[leveloffset=+3]
 
-include::topics/crud-mission-integration-testing.adoc[leveloffset=+3]
+:parameter-runtime: vertx
+:parameter-runtime-name: {Vertx}
+:context: {parameter-mission}-{parameter-runtime}
+include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
+
 
 // include additional resources
 include::topics/crud-mission-resources.adoc[leveloffset=+3]
@@ -132,6 +146,11 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontaine
 
 
 include::topics/health-check-mission-basic-interaction-vertx.adoc[leveloffset=+3]
+
+:parameter-runtime: vertx
+:parameter-runtime-name: {Vertx}
+:context: {parameter-mission}-{parameter-runtime}
+include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
 
 include::topics/health-check-mission-resources.adoc[leveloffset=+3]
 
@@ -169,6 +188,11 @@ include::topics/circuit-breaker-mission-basic-interaction-vertx.adoc[leveloffset
 
 //Hystrix Dashboard
 include::topics/circuit-breaker-mission-access-hystrix-dashboard-vertx.adoc[leveloffset=+3]
+
+:parameter-runtime: vertx
+:parameter-runtime-name: {Vertx}
+:context: {parameter-mission}-{parameter-runtime}
+include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
 
 // CB resources
 include::topics/circuit-breaker-mission-resources.adoc[leveloffset=+3]
