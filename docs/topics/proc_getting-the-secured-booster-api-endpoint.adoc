@@ -33,10 +33,10 @@ A sample output is shown in the following table:
 | <all>
 | passthrough
 
-| secured-{parameter-runtime}-http
-| secured-{parameter-runtime}-http-myproject.LOCAL_OPENSHIFT_HOSTNAME
+| PROJECT_ID
+| PROJECT_ID-myproject.LOCAL_OPENSHIFT_HOSTNAME
 |
-| secured-{parameter-runtime}-http
+| PROJECT_ID
 | <all>
 |
 
@@ -50,3 +50,4 @@ A sample output is shown in the following table:
 ====
 --
 
+IMPORTANT: `PROJECT_ID` is based on the name you entered when generating your booster using link:{link-launcher-oso}[{launcher-oso}] or the {launcher} tool. The default value for `PROJECT_ID` is `{parameter-runtime}-rest-http-secured`.

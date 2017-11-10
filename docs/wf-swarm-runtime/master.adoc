@@ -245,7 +245,7 @@ include::topics/assembly_building-and-deploying-the-secured-booster-to-openshift
 :context: secured-ocp
 include::topics/assembly_building-and-deploying-the-secured-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
-:parameter-runtime: wf
+:parameter-runtime: wfswarm
 include::topics/assembly_interacting-with-the-secured-booster.adoc[leveloffset=+3]
 :parameter-runtime!:
 

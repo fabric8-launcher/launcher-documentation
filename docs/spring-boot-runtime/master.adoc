@@ -316,7 +316,7 @@ include::topics/assembly_building-and-deploying-the-secured-booster-to-openshift
 :context: {parameter-mission}-ocp
 include::topics/assembly_building-and-deploying-the-secured-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
-:parameter-runtime: sb
+:parameter-runtime: spring-boot
 include::topics/assembly_interacting-with-the-secured-booster.adoc[leveloffset=+3]
 
 // integration tests in a separate topic
