@@ -84,11 +84,11 @@ data:
 ----
 endif::configmap-wf-swarm[]
 ifdef::configmap-spring-boot-tomcat[]
-. Deploy your ConfigMap configuration to OpenShift using `src/main/etc/application.properties`.
+. Deploy your ConfigMap configuration to OpenShift using `greeting-service/src/main/etc/application.properties`.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc create configmap app-config --from-file=src/main/etc/application.properties
+$ oc create configmap app-config --from-file=greeting-service/src/main/etc/application.properties
 ----
 
 . Verify your ConfigMap configuration has been deployed.
