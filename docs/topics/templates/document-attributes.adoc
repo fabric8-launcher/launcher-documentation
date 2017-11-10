@@ -145,7 +145,7 @@
 
 :os-route-hostname: OPENSHIFT_HOSTNAME
 
-:link-launcher-install-script: https://raw.githubusercontent.com/fabric8-launch/appdev-documentation/master/scripts/deploy_launchpad_mission.sh
+:link-launcher-install-script: https://raw.githubusercontent.com/fabric8-launch/appdev-documentation/master/scripts/deploy_launcher_mission.sh
 
 
 // Mission Knowledge Proficiency

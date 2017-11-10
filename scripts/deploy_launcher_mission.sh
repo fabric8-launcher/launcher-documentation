@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 # Goal of the script :
-# 1) Deploy Launchpad mission control template using the parameters passed to authenticate the user,
+# 1) Deploy Launcher mission control template using the parameters passed to authenticate the user,
 # 2) Setup the Github identity (account & token) &
 # 3) Patch jenkins to use admin as role
 #
 # Command to be used
-# ./deploy_launchpad_mission.sh -p projectName -i username:password -g myGithubUser:myGithubToken OR
-# ./deploy_launchpad_mission.sh -p projectName -t myOpenShiftToken -g myGithubUser:myGithubToken OR
-# ./deploy_launchpad_mission.sh -p projectName -i username:password -g myGithubUser:myGithubToken -v v3
+# ./deploy_launcher_mission.sh -p projectName -i username:password -g myGithubUser:myGithubToken OR
+# ./deploy_launcher_mission.sh -p projectName -t myOpenShiftToken -g myGithubUser:myGithubToken OR
+# ./deploy_launcher_mission.sh -p projectName -i username:password -g myGithubUser:myGithubToken -v v3
 
 # Set Default values
 PROJECTNAME="myproject"
@@ -51,7 +51,7 @@ else
 fi
 echo "------------------------------------------"
 
-# Create Project where launchpad-mission control will be deployed
+# Create Project where launcher-mission control will be deployed
 echo "------------------ Create New Project ----------------------"
 oc new-project $PROJECTNAME
 echo "------------------------------------------"
@@ -61,7 +61,7 @@ echo "----------------- Install Launchpad template --------------------"
 oc create -n $PROJECTNAME -f https://raw.githubusercontent.com/openshiftio/launchpad-templates/$VERSION/openshift/launchpad-template.yaml
 echo "------------------------------------------"
 
-# Local Deployment of Launchpad
+# Local Deployment
 # -p LAUNCHPAD_MISSIONCONTROL_OPENSHIFT_API_URL=https://openshift.default.svc.cluster.local
 # -p LAUNCHPAD_KEYCLOAK_URL=https://sso.prod-preview.openshift.io/auth \
 # -p LAUNCHPAD_KEYCLOAK_REALM=fabric8 \
