@@ -1,6 +1,0 @@
-[IMPORTANT]
---
-You must grant *{launcher}* access to your GitHub and OpenShift accounts. Perform this one-time configuration procedure.
-
-More details about the {RHSSO} federated identity settings are available in the link:https://appdev.openshift.io/docs/getting-started.html#launcher-sso-settings[{getting-started-guide-name}^]
---
