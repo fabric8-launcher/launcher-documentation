@@ -10,7 +10,7 @@
 # NOTE: In the container docs build on ci.centos.org, Git is NOT available.
 
 LAUNCHPAD_INDEX="https://raw.githubusercontent.com/openshiftio/launchpad-frontend/master/src/assets/adoc.index"
-DOC_REPO_PREFIX="https://raw.githubusercontent.com/openshiftio/appdev-documentation/master/"
+DOC_REPO_PREFIX="https://raw.githubusercontent.com/.*/appdev-documentation/master/"
 
 echo "=== Verifying Launchpad Files ==="
 
