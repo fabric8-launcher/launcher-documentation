@@ -25,7 +25,7 @@ include::note-integration-tests-app-deletion-warning.adoc[]
 * an empty project in your OpenShift namespace
 
 ifdef::configmap-vertx,configmap-spring-boot-tomcat[]
-* view access permission assigned to the service account of your booster application. This allows your application to read the configuration from the ConfigMap object
+* view access permission assigned to the service account of your booster application. This allows your application to read the configuration from the ConfigMap:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
