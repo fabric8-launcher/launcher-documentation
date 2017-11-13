@@ -28,7 +28,9 @@ include::topics/wildfly-swarm/docs/concepts/fractions.adoc[leveloffset=+2]
 include::topics/wildfly-swarm/docs/howto/autodetect-fractions/index.adoc[leveloffset=+3]
 include::topics/wildfly-swarm/docs/howto/explicit-fractions/index.adoc[leveloffset=+3]
 
+:version: {WildFlySwarmVersion}
 include::topics/wildfly-swarm/docs/howto/use-a-bom/index.adoc[leveloffset=+2]
+:version!:
 
 include::topics/wildfly-swarm/docs/reference/configuration.adoc[leveloffset=+2]
 

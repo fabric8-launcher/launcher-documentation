@@ -82,6 +82,7 @@
 
 :MinishiftVersion: 1.7.0
 :CDKVersion: 3.1.1
+:WildFlySwarmVersion: 2017.10.0
 
 :link-http-api-level-0-spring-boot-tomcat-booster: https://github.com/snowdrop/rest_springboot-tomcat
 :link-http-api-level-0-vertx-booster: https://github.com/openshiftio-vertx-boosters/vertx-http-booster
