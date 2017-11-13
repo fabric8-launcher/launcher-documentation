@@ -71,7 +71,7 @@ admin::
 The `admin` user has a password of `admin` and is the realm administrator. This user has full access to the {RHSSO} administration console, but none of the role mappings that are required to access the secured endpoints. You can use this user to illustrate the behavior of an authenticated, but unauthorized user.
 
 alice:: 
-The `alice` user has a password of `password` and is the canonical application. This user will demonstrate successful authenticated and authorized access to the secured endpoints. An example representation of the role mappings is provided in this decoded JWT bearer token:
+The `alice` user has a password of `password` and is the canonical application user. This user will demonstrate successful authenticated and authorized access to the secured endpoints. An example representation of the role mappings is provided in this decoded JWT bearer token:
 +
 [source,json,options="nowrap",subs="attributes+"]
 ----
