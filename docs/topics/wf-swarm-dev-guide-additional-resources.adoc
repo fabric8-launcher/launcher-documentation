@@ -1,8 +1,8 @@
 [[wf-swarm-additional-resources]]
 = Additional Resources
 
-* link:https://howto.wildfly-swarm.io/[{WildFlySwarm} HowTo Guide]
-* link:https://reference.wildfly-swarm.io/[{WildFlySwarm} Reference]
-* link:https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-guide/content/v/2017.6.0/index.html[{WildFlySwarm} User Guide]
+* link:https://wildfly-swarm.gitbooks.io/wildfly-swarm-howto/v/2017.10.0/[{WildFlySwarm} HowTo Guide]
+* link:https://wildfly-swarm.gitbooks.io/wildfly-swarm-reference-guide/v/2017.10.0/[{WildFlySwarm} Reference]
+* link:https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-guide/v/2017.10.0/[{WildFlySwarm} User Guide]
 * link:https://github.com/wildfly-swarm/wildfly-swarm-presentations[{WildFlySwarm} Presentations]
 * link:https://github.com/redhat-Microservices/lab_swarm-openshift[{WildFlySwarm}, Microservices & OpenShift Lab]
