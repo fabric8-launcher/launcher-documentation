@@ -1,6 +1,6 @@
 = Management
 
-Provides the WildFly management API.
+Provides the {WildFly} management API.
 
 
 .Maven Coordinates
