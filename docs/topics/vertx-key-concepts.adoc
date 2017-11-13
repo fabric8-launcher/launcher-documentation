@@ -1,0 +1,32 @@
+[[key-vertx-concepts]]
+= Overview of key {Vertx} Concepts
+
+.Cloud-native applications
+
+Cloud-native applications are one of the key technological concepts behind microservices.
+They are designed to form distributed systems consisting of decoupled components that run inside containers, often on top of clusters containing a large number of nodes.
+These applications are intended to be  resistant to failure of individual components, and to be updated without requiring service downtime.
+Systems based on cloud-native applications rely on automating deployment, scaling, and administrative and maintenance tasks.
+Management and administration tasks are often carried out at cluster level using off-the-shelf management and orchestration tools, rather than on the level of individual machines.
+
+.Reactive Application Programming
+
+Reactive application are designed to be:
+
+Elastic:: The system remains responsive under varying workload, with individual components scaled and load-balanced as necessary to accommodate the differences in workload.
+Elastic application deliver the same quality of service regardless of the number of requests they receive at the same time.
+
+Resilient:: The system remains responsive in case any of its individual components fails.
+Components are isolated from each other, with each individual component being able to quickly recover after failure occurs.
+Failure of a single component should never prevent other components from functioning beyond a reasonable amount of time.
+This prevents cascading failure, where the failure of an isolated components causes other components to become blocked and gradually fail.
+
+Responsive:: Responsive systems are designed to always respond to requests in a reasonable amount of time to ensure a consistent quality of service.
+To maintain responsiveness, the communication channel between the applications must never be blocked.
+
+Message-driven:: The individual components of an application use asynchronous message-passing to communicate with each other.
+The components first detect each other using service discovery.
+If an event takes place (such as a mouse click or a search query) on a service, the service sends out a message over a common channel (the event bus).
+The messages is in turn caught and handled by the respective component.
+
+For further reading on reactive applications, see the xref:vertx-additional-resources[Additional Resources] section.

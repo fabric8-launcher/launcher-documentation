@@ -1,0 +1,63 @@
+[[configuring-vertx]]
+= Configuring Your Application to Use {Vertx}
+
+To configure your application to use {Vertx}:
+
+. Reference the {Vertx} BOM (Bill of Materials) artifact in the `<dependencyManagement>` section of the `pom.xml` file of your application. Specify the `<type>pom</type>` and `<scope>import</scope>`:
++
+[source,xml]
+--
+...
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-dependencies</artifactId>
+      <version>${vertx.version}</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+...
+--
++
+Include the following properties in your `pom.xml` file to track the version of {Vertx} and the Vert.x Maven Plugin you are using:
++
+[source,xml]
+--
+<properties>
+  <vertx.version>3.4.2.redhat-006</vertx.version>
+  <vertx-maven-plugin.version>1.0.13</vertx-maven-plugin.version>
+</properties>
+--
+. Reference `vertx-maven-plugin` as the plugin used to package your application:
++
+[source,xml]
+--
+...
+<build>
+  <plugins>
+    <plugin>
+      <groupId>io.fabric8</groupId>
+      <artifactId>vertx-maven-plugin</artifactId>
+      <version>${vertx-maven-plugin.version}</version>
+      <executions>
+        <execution>
+          <id>vmp</id>
+          <goals>
+            <goal>initialize</goal>
+            <goal>package</goal>
+          </goals>
+        </execution>
+      </executions>
+      <configuration>
+        <redeploy>true</redeploy>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+...
+--
+
+For more information on packaging your {Vertx} application, see the link:https://vmp.fabric8.io/[Vert.x Maven Plugin] documentation.
