@@ -185,6 +185,9 @@ include::topics/configmap-mission-resources.adoc[leveloffset=+3]
 
 include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
+:parameter-runtime: spring-boot
+:parameter-runtime-name: {SpringBoot}
+:context: {parameter-mission}-{parameter-runtime}
 include::topics/crud-mission-intro.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
