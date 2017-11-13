@@ -1,6 +1,7 @@
 [[vertx-additional-resources]]
 = Additional Resources
 
+* link:https://www.reactivemanifesto.org/[The Reactive Manifesto]
 * link:http://vertx.io[{VertX} project]
 * link:http://middlewareblog.redhat.com/2017/05/04/vert-x-for-reactive-programming-in-red-hat-openshift-application-runtimes/[{VertX} for Reactive Programming in Red Hat OpenShift Application Runtimes]
 * link:https://developers.redhat.com/promotions/building-reactive-microservices-in-java/[Building Reactive Microservices in Java]

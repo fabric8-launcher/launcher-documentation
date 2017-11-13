@@ -1,0 +1,20 @@
+[[vertx-tech-preview-components]]
+= {Vertx} Components available as a Technology Preview
+// module to be re-used in the RN
+Red Hat provides link:https://access.redhat.com/support/offerings/techpreview/[limited support^] for the following {Vertx} Components in this release.
+
+[options="header"]
+|===
+|GroupID | ArtifactID | Version
+|io.vertx | vertx-mongo | 3.4.2.redhat-006
+|io.vertx | vertx-mongo-service | 3.4.2.redhat-006
+|io.vertx | vertx-mongo-client | 3.4.2
+|io.vertx | vertx-rx | 3.4.2.redhat-006
+|io.vertx | vertx-rx-java | 3.4.2.redhat-006
+|io.vertx | vertx-sockjs-service-proxy | 3.4.2
+|io.vertx | vertx-redis-client | 3.4.2.redhat-006
+|io.vertx | vertx-infinispan | 3.4.2.redhat-006
+|io.vertx | vertx-proton | 3.4.2.redhat-006
+|io.vertx | vertx-grpc | 3.4.2.redhat-006
+|io.vertx | vertx-mqtt-server | 3.4.2.redhat-006
+|===
