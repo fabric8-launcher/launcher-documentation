@@ -50,4 +50,4 @@ A sample output is shown in the following table:
 ====
 --
 
-IMPORTANT: `PROJECT_ID` is based on the name you entered when generating your booster using link:{link-launcher-oso}[{launcher-oso}] or the {launcher} tool. The default value for `PROJECT_ID` is `{parameter-runtime}-rest-http-secured`.
+IMPORTANT: `PROJECT_ID` is based on the name you entered when generating your booster using link:{link-launcher-oso}[{launcher-oso}] or the {launcher} tool.
