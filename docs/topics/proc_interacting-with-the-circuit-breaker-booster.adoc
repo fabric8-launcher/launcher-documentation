@@ -1,6 +1,16 @@
-= Interacting with the Unmodified {Vertx} Booster
+// This is a parameterized module. Parameters used:
+//
+//  parameter-mission: id of the mission. This is used in anchors file imports.
+//  parameter-mission-name: used in the mission title
+//  parameter-runtime-name: used in the mission title
+//
+// Rationale: This procedure is identical in all deployments.
+// TODO: Add conditional includes for Node.
 
-Once you have the {Vertx} booster deployed, you have the following services running:
+[#interacting-with-the-unmodified-booster-{context}]
+= Interacting with the Unmodified {parameter-runtime-name} {parameter-mission-name} Booster
+
+Once you have the {parameter-runtime-name} booster deployed, you have the following services running:
 
 `{app-name}-name`::
 Exposes the following endpoints:
@@ -17,24 +27,24 @@ Exposes the following endpoints:
 When you call the `/api/greeting` endpoint, it issues a call against the `/api/name` endpoint of the `{app-name}-name` service as part of processing your request.
 The call made against the `/api/name` endpoint is protected by the Circuit Breaker.
 +
-If the remote endpoint is available, it responds with an HTTP code `200` and you receive the following greeting:
+If the remote endpoint is available, the `name` service responds with an HTTP code `200` (`OK`) and you receive the following greeting from the `/api/greeting` endpoint:
 +
 ----
 {"content":"Hello, World!"}
 ----
 +
-If the remote endpoint is unavailable, it responds with an HTTP code `500` and you receive a predefined fallback response:
+If the remote endpoint is unavailable, the `name` service responds with an HTTP code `500` (`Internal server error`) and you receive a predefined fallback response from the `/api/greeting` endpoint:
 +
 ----
 {"content":"Hello, Fallback!"}
 ----
 
-* the `/api/cb-state` endpoint, which returns the state of the Circuit Breaker. The state can be _open_ or _closed_.
+* the `/api/cb-state` endpoint, which returns the state of the Circuit Breaker.
+The state can be:
+** _open_ : the circuit breaker is preventing requests from reaching the failed service,
+** _closed_: the circuit breaker is allowing requests to reach the service.
 
-The following steps demonstrate how to verify the service availability, simulate a failure and receive a fallback response.
-
-
-NOTE: The following steps use the command line to interact with the service. Alternatively, you can use the web interface to perform the same steps.
+The following steps demonstrate how to verify the availability of the service, simulate a failure and receive a fallback response.
 
 //TODO: add a warning not to use `http` as it may contain cached responses from the remote endpoint.
 . Use `curl` to execute a `GET` request against the `{app-name}-greeting` service. You can also use the `Invoke` button in the web interface to do this.
@@ -60,7 +70,10 @@ $ curl http://{app-name}-greeting-{project-name}.{osl-route-hostname}/api/greeti
 $ curl -X PUT -H "Content-Type: application/json" -d '{"state": "fail"}' http://{app-name}-name-{project-name}.{osl-route-hostname}/api/state
 ----
 +
-. The Circuit Breaker state indicator in the web interface changes from `CLOSED` to `OPEN` and the Circuit Breaker issues the fallback response when you invoke the `/api/greeting` endpoint.
+. Invoke the `/api/greeting` endpoint. When several requests on the `/api/name` endpoint fail:
+.. the Circuit Breaker opens,
+.. the state indicator in the web interface changes from `CLOSED` to `OPEN`,
+.. the Circuit Breaker issues a fallback response when you invoke the `/api/greeting` endpoint:
 +
 [source,bash,option="nowrap",subs="attributes+"]
 ----
@@ -80,8 +93,10 @@ To do this you can:
 $ curl -X PUT -H "Content-Type: application/json" -d '{"state": "ok"}' http://{app-name}-name-{project-name}.{osl-route-hostname}/api/state
 ----
 +
-. Invoke the `/api/greeting` endpoint again.
-If the `{app-name}-name` service is available, you should receive the `Hello World!` greeting as the response:
+. Invoke the `/api/greeting` endpoint again. When several requests on the `/api/name` endpoint succeed:
+.. the Circuit Breaker closes,
+.. the state indicator in the web interface changes from `OPEN` to `CLOSED`,
+.. the Circuit Breaker issues a returns the `Hello World!` greeting when you invoke the `/api/greeting` endpoint:
 +
 [source,bash,options="nowrap",subs="attributes"]
 ----
