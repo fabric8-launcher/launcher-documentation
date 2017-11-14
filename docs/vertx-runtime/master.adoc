@@ -93,14 +93,16 @@ include::topics/configmap-mission-resources.adoc[leveloffset=+3]
 
 include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
+:parameter-runtime: vertx
+:parameter-runtime-name: {Vertx}
+:parameter-mission: crud
+:parameter-mission-name: {name-mission-crud}
+:context: {parameter-mission}-{parameter-runtime}
 include::topics/crud-mission-intro.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 include::topics/crud-mission-design-tradeoffs.adoc[leveloffset=+3]
-
-:parameter-mission: crud
-:parameter-mission-name: {name-mission-crud}
 
 :context: {parameter-mission}-oso
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
@@ -114,8 +116,6 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontaine
 
 include::topics/crud-mission-database-interaction.adoc[leveloffset=+3]
 
-:parameter-runtime: vertx
-:parameter-runtime-name: {Vertx}
 :context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
 
