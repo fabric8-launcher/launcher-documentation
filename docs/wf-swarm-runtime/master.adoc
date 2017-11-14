@@ -116,15 +116,17 @@ include::topics/configmap-mission-resources.adoc[leveloffset=+3]
 
 include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
+:parameter-runtime: wf-swarm
+:parameter-runtime-name: {WildFlySwarm}
+:parameter-mission: crud
+:parameter-mission-name: {name-mission-crud}
+:context: {parameter-mission}-{parameter-runtime}
 include::topics/crud-mission-intro.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 // design tradeoffs
 include::topics/crud-mission-design-tradeoffs.adoc[leveloffset=+3]
-
-:parameter-mission: crud
-:parameter-mission-name: {name-mission-crud}
 
 :context: {parameter-mission}-oso
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
@@ -138,8 +140,6 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontaine
 //Interacting with the database
 include::topics/crud-mission-database-interaction.adoc[leveloffset=+3]
 
-:parameter-runtime: wf-swarm
-:parameter-runtime-name: {WildFlySwarm}
 :context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
 
