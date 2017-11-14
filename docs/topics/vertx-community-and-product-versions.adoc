@@ -12,4 +12,4 @@ The productized {Vertx} version `3.4.2.redhat-006` is certified to run on OpenSh
 The certified {Vertx} runtime artifacts are available from the link:https://maven.repository.redhat.com/ga/[Red Hat Middleware JBoss General Availability Maven Repository].
 
 //RN link TBD
-For a complete list of {Vertx} components provided as part of this release, see the link:path/to/RN#relevant_section[RHOAR Release Notes].
+For a complete list of {Vertx} components provided as part of this release, see the Release Notes.
