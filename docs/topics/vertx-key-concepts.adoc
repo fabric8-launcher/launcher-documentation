@@ -1,32 +1,32 @@
 [[key-vertx-concepts]]
 = Overview of key {Vertx} Concepts
 
-.Cloud-native applications
+.Cloud- and Container-Native Applications
 
-Cloud-native applications are one of the key technological concepts behind microservices.
-They are designed to form distributed systems consisting of decoupled components that run inside containers, often on top of clusters containing a large number of nodes.
-These applications are intended to be  resistant to failure of individual components, and to be updated without requiring service downtime.
-Systems based on cloud-native applications rely on automating deployment, scaling, and administrative and maintenance tasks.
-Management and administration tasks are often carried out at cluster level using off-the-shelf management and orchestration tools, rather than on the level of individual machines.
+Cloud-native applications are one of the key technological concepts behind microservices. They are designed to form distributed systems consisting of decoupled components that often run inside containers, on top of clusters containing a large number of nodes. These applications are intended to be resistant to failure of individual components, and to be updated without requiring service downtime. Systems based on cloud-native applications rely on automated deployment, scaling, and administrative and maintenance tasks. Management and administration tasks are often carried out at cluster level using off-the-shelf management and orchestration tools, rather than on the level of individual machines.
 
-.Reactive Application Programming
+.Reactive Systems
 
-Reactive application are designed to be:
+A reactive system, as defined in the link:http://reactivemanifesto.org[reactive manifesto], is a distributed systems with the following characteristics:
 
-Elastic:: The system remains responsive under varying workload, with individual components scaled and load-balanced as necessary to accommodate the differences in workload.
-Elastic application deliver the same quality of service regardless of the number of requests they receive at the same time.
+Elastic:: The system remains responsive under varying workload, with individual components scaled and load-balanced as necessary to accommodate the differences in workload. Elastic application deliver the same quality of service regardless of the number of requests they receive at the same time.
 
-Resilient:: The system remains responsive in case any of its individual components fails.
-Components are isolated from each other, with each individual component being able to quickly recover after failure occurs.
-Failure of a single component should never prevent other components from functioning beyond a reasonable amount of time.
-This prevents cascading failure, where the failure of an isolated components causes other components to become blocked and gradually fail.
+Resilient:: The system remains responsive in case any of its individual components fails. Components are isolated from each other, with each individual component being able to quickly recover after failure occurs. Failure of a single component should never prevent other components from functioning beyond a reasonable amount of time. This prevents cascading failure, where the failure of an isolated components causes other components to become blocked and gradually fail.
 
-Responsive:: Responsive systems are designed to always respond to requests in a reasonable amount of time to ensure a consistent quality of service.
-To maintain responsiveness, the communication channel between the applications must never be blocked.
+Responsive:: Responsive systems are designed to always respond to requests in a reasonable amount of time to ensure a consistent quality of service. To maintain responsiveness, the communication channel between the applications must never be blocked.
 
-Message-driven:: The individual components of an application use asynchronous message-passing to communicate with each other.
-The components first detect each other using service discovery.
-If an event takes place (such as a mouse click or a search query) on a service, the service sends out a message over a common channel (the event bus).
-The messages is in turn caught and handled by the respective component.
+Message-Driven:: The individual components of an application use asynchronous message-passing to communicate with each other. The components first detect each other using service discovery. If an event takes place (such as a mouse click or a search query) on a service, the service sends out a message over a common channel (the event bus). The messages is in turn caught and handled by the respective component.
 
-For further reading on reactive applications, see the xref:vertx-additional-resources[Additional Resources] section.
+Reactive Systems can be understood as “distributed systems done right”.
+They are designed with asynchrony as their key property in mind.
+
+.Reactive Programming
+
+While the concept of reactive systems describes the architecture of a distributed system, reactive programming refers to practices that make applications reactive at the code level.
+Reactive programming is a development model to write asynchronous and event-driven applications.
+In reactive applicatios, the code reacts to events or messages.
+
+There are several implementations of reactive programming, from the simplest ones using callbacks, to more compleex ones, such as the Reactive eXtension, and co-routines.
+The Reactive eXtension (RX) is the most well-known form of reactive programming in Java, thanks to the frequently-used _RxJava_ library.
+
+For further reading on reactive systems, reactive programming, and reactive extensions, see the xref:vertx-additional-resources[Additional Resources] section.
