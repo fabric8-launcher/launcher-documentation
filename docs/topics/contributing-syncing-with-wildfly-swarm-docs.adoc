@@ -3,15 +3,15 @@
 = Syncing with {WildFlySwarm} Docs
 
 Some documentation files for the {WildFlySwarm} runtime are sourced directly from the {WildFlySwarm} repository.
-You must synchronize them manually before a release to ensure the newest version of the files is available.
+These files are stored in the `$REPO_HOME/docs/topics/wildfly-swarm` directory.
+Do not edit these files directly; always submit a pull request to the link:{link-repo-wildfly-swarm}[{WildFlySwarm} repository].
+When the pull request is accepted and synchronized to the {WildFlySwarm} product repository, follow the procedure below.
 
 The synchronization script deletes the existing `$REPO_HOME/docs/topics/wildfly-swarm` directory and replaces it with the latest version of the `master` branch from the upstream repository.
 Edit the variables in the `$REPO_HOME/scripts/sync_with_wildfly_swarm.sh` script to customize it.
 The variables are documented in the script.
 
-NOTE: Some files are not present in the upstream repository because they are generated. The script automatically builds the upstream project with Maven, ensuring these files are not missing.
-
-WARNING: Do not edit files in the `$REPO_HOME/docs/topics/wildfly-swarm` directory, always submit a pull request to the link:{link-repo-wildfly-swarm}[{WildFlySwarm} repository] and synchronize the files afterwards.
+Some files are not present in the upstream repository because they are generated. The script automatically builds the upstream project with Maven, ensuring these files are not missing.
 
 .Prerequisites
 
