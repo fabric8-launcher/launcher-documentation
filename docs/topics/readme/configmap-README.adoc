@@ -1,6 +1,6 @@
 = ${mission} - ${runtime} Booster
 
-IMPORTANT: While you can run and interact with this booster on our local host, you cannot take advantage of using ConfigMap with this booster without using OpenShift. For more details on using this booster with a single-node OpenShift cluster, CI/CD deployments, as well as the rest of the runtime, see the link:${guideURL}[${runtime} Runtime Guide].
+IMPORTANT: While you can run and interact with this booster on our local host, you cannot take advantage of using externalized configuration with this booster without using OpenShift. For more details on using this booster with a single-node OpenShift cluster, CI/CD deployments, as well as the rest of the runtime, see the link:${guideURL}[${runtime} Runtime Guide].
 
 ${prerequisite}
 
@@ -93,4 +93,4 @@ $ curl http://${app-name}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/greeting?
 ----
 
 == More Information
-You can learn more about this booster and rest of the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].
+You can learn more about this booster and the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].

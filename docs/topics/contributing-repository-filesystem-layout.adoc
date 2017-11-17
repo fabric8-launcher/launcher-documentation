@@ -16,7 +16,7 @@ NOTE: The triple-dot indicates there are more files or directories in the partic
 │   │   │   ├── document-attributes.adoc <6>
 │   │   │   ├── ...
 │   │   │   ├── wildfly-swarm <7>
-│   │   ├── configmap-mission-design-tradeoffs.adoc
+│   │   ├── circuit-breaker-mission-design-tradeoffs.adoc
 │   │   ├── ...
 │   ├── $GUIDE_NAME/ <8>
 │   │   ├── master.adoc <9>

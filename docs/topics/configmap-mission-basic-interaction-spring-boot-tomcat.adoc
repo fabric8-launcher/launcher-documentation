@@ -19,7 +19,7 @@ $ oc edit configmap app-config
 +
 Change the value for the `greeting.message` key to `Bonjour!` and save the file. After you save this, the changes will be propagated to your OpenShift instance.
 
-. Rollout the new version of your application so the ConfigMap configuraiton changes are picked up.
+. Deploy the new version of your application so the ConfigMap configuration changes are picked up.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----

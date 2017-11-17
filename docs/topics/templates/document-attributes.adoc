@@ -38,7 +38,7 @@
 :revnumber: {localdate}
 
 :name-mission-http-api: REST API Level 0
-:name-mission-configmap: ConfigMap
+:name-mission-configmap: Externalized Configuration
 :name-mission-health-check: Health Check
 :name-mission-circuit-breaker: Circuit Breaker
 :name-mission-crud: Relational Database Backend

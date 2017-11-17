@@ -1,7 +1,7 @@
 [[about_configmap]]
-= ConfigMap Resources
+= {name-mission-configmap} Resources
 
-More background and related information on ConfigMap can be found here:
+More background and related information on {name-mission-configmap} and ConfigMap can be found here:
 
 * link:https://docs.openshift.org/latest/dev_guide/configmaps.html[OpenShift ConfigMap Documentation]
 * link:https://blog.openshift.com/configuring-your-application-part-1/[Blog Post about ConfigMap in OpenShift]
@@ -11,25 +11,25 @@ ifdef::configmap-spring-boot-tomcat[]
 endif::configmap-spring-boot-tomcat[]
 
 ifdef::configmap-vertx[]
-* link:http://vertx.io/docs/vertx-config/js/[External Configuration with {VertX}]
+* link:http://vertx.io/docs/vertx-config/js/[Externalized Configuration with {VertX}]
 endif::configmap-vertx[]
 
 ifdef::configmap-wf-swarm[]
-* link:https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-guide/content/v/eee1f5ba4dd4f13855cbe98addd365ba29033810/configuration/index.html[External Configuration with {WildFlySwarm}]
+* link:https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-guide/content/v/eee1f5ba4dd4f13855cbe98addd365ba29033810/configuration/index.html[Externalized Configuration with {WildFlySwarm}]
 endif::configmap-wf-swarm[]
 
 ifndef::configmap-spring-boot-tomcat[]
-* link:{link-mission-configmap-spring-boot-tomcat}[ConfigMap - {SpringBoot} Booster]
+* link:{link-mission-configmap-spring-boot-tomcat}[Externalized Configuration - {SpringBoot} Booster]
 endif::configmap-spring-boot-tomcat[]
 
 ifndef::configmap-vertx[]
-* link:{link-mission-configmap-vertx}[ConfigMap - {VertX} Booster]
+* link:{link-mission-configmap-vertx}[Externalized Configuration - {VertX} Booster]
 endif::configmap-vertx[]
 
 ifndef::configmap-wf-swarm[]
-* link:{link-mission-configmap-wf-swarm}[ConfigMap - {WildFlySwarm} Booster]
+* link:{link-mission-configmap-wf-swarm}[Externalized Configuration - {WildFlySwarm} Booster]
 endif::configmap-wf-swarm[]
 
 ifndef::configmap-nodejs[]
-* link:{link-mission-configmap-nodejs}[ConfigMap - {NodeJS} Booster]
+* link:{link-mission-configmap-nodejs}[Externalized Configuration - {NodeJS} Booster]
 endif::configmap-nodejs[]
