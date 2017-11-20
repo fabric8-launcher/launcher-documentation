@@ -2,7 +2,7 @@
 
 .Next Steps: Update your Booster Manually
 
-You can build and deploy your booster application using the Fabric8 Maven Plugin to launch the S2I process on OpenShift.
+You can build and deploy your booster application using the Fabric8 Maven Plugin to launch the link:{link-wf-swarm-runtime-guide}#s2i-build-process}[S2I process] on OpenShift.
 
 . Clone your project from GitHub.
 +
@@ -29,7 +29,7 @@ $ oc project PROJECT_NAME
 $ mvn clean fabric8:deploy -Popenshift -DskipTests
 ----
 //+
-//NOTE: A mission's booster may contain tests that assume the build process is running on OpenShift. Since you are building your mission's booster outside of OpenShift before deploying it, you can use `-DskipTests` to skip the testing process. 
+//NOTE: A mission's booster may contain tests that assume the build process is running on OpenShift. Since you are building your mission's booster outside of OpenShift before deploying it, you can use `-DskipTests` to skip the testing process.
 
 . Click _See it here!_ in _Creating your project on OpenShift Online_.
 
