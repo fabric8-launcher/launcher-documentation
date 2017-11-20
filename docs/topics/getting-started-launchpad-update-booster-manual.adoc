@@ -1,6 +1,6 @@
 = Updating Manually
 
-This approach allows you to deploy updates directly from a local version of the GitHub repository created by {launcher}. 
+This approach allows you to deploy updates directly from a local version of the GitHub repository created by {launcher}.
 
 To update your mission manually:
 
@@ -39,7 +39,7 @@ $ oc login {link-osl-auth} --token=$MYTOKEN
 $ oc project {project-name}
 ----
 +
-NOTE: You can find your token in your {OpenShiftLocal} Web console. For example, if your {link-osl-auth} is `https://{osl-login-url}`, your token would be located at `https://{osl-login-url}/console/command-line`. 
+NOTE: You can find your token in your {OpenShiftLocal} Web console. For example, if your {link-osl-auth} is `https://{osl-login-url}`, your token would be located at `https://{osl-login-url}/console/command-line`.
 
 . Use maven to start the deployment to your {OpenShiftLocal}.
 +
@@ -48,7 +48,7 @@ NOTE: You can find your token in your {OpenShiftLocal} Web console. For example,
 $ mvn clean fabric8:deploy -Popenshift -DskipTests
 ----
 +
-This command uses the Fabric8 Maven Plugin to launch the S2I process on your {OpenShiftLocal} and to start the pod.
+This command uses the Fabric8 Maven Plugin to launch the link:{link-wf-swarm-runtime-guide}#s2i-build-process[S2I process] on your {OpenShiftLocal} and to start the pod.
 +
 NOTE: A mission's booster may contain tests that assume the build process is running on OpenShift. Since you are building your mission's booster outside of OpenShift before deploying it, you can use `-DskipTests` to skip the testing process. When xref:update-cd[updating using continuous deployment], these tests will not be skipped.
 
@@ -56,6 +56,6 @@ NOTE: A mission's booster may contain tests that assume the build process is run
 
 . Click on _Builds_ then _Builds_.
 +
-A new build will appear in the list and the status will appear. 
+A new build will appear in the list and the status will appear.
 
 . After the build is complete, return to the deployed version of your mission's booster application and observe that your changes appear.

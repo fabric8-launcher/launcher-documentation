@@ -1,16 +1,19 @@
 [[s2i-build-process]]
 = The Source-to-Image (S2I) Build Process
-link:https://docs.openshift.com/container-platform/3.4/architecture/core_concepts/builds_and_image_streams.html#source-build[Source-to-Image] (S2I) is a build tool for generating reproducible Docker-formatted container images from online SCM repositories with application sources.
+link:https://docs.openshift.com/container-platform/latest/architecture/core_concepts/builds_and_image_streams.html#source-build[Source-to-Image] (S2I) is a build tool for generating reproducible Docker-formatted container images from online SCM repositories with application sources.
 With S2I builds, you can easily deliver the latest version of your application into production with shorter build times, decreased resource and network usage, improved security, and a number of other advantages.
-For more information, see the link:https://docs.openshift.com/container-platform/3.4/architecture/core_concepts/builds_and_image_streams.html#source-build[Source-to-Image (S2I) Build] chapter of the OpenShift Container Platform documentation.
+OpenShift supports multiple link:https://docs.openshift.com/container-platform/latest/dev_guide/builds/index.html[build strategies and input sources].
 
-You must provide three elements to the S2I process:
+For more information, see the link:https://docs.openshift.com/container-platform/latest/architecture/core_concepts/builds_and_image_streams.html#source-build[Source-to-Image (S2I) Build] chapter of the OpenShift Container Platform documentation.
+
+You must provide three elements to the S2I process to assemble the final container image:
 
 * The application sources hosted in an online SCM repository, such as GitHub.
 
-* The link:https://docs.openshift.com/container-platform/3.4/creating_images/s2i.html#s2i-scripts[S2I scripts].
+* The link:https://docs.openshift.com/container-platform/latest/creating_images/s2i.html[S2I scripts].
 
-* The Builder image, which serves as the foundation for the assembled image and provides the ecosystem in which your application is running.
+* The Builder image, which serves as the foundation for the assembled image and provides the ecosystem in which your application is running. This includes environment variables and parameters used by S2I scripts.
 
 The process injects your application source and dependencies into the Builder image according to instructions specified in the S2I script, and generates a Docker-formatted container image that runs the assembled application.
-For more information, check the link:https://docs.openshift.com/container-platform/3.4/creating_images/s2i.html[S2I build requirements] and link:https://docs.openshift.com/enterprise/3.0/dev_guide/builds.html#source-to-image-strategy-options[build options] sections of the OpenShift Container Platform documentation.
+For more information, check the link:https://docs.openshift.com/container-platform/latest/creating_images/s2i.html[S2I build requirements], link:https://docs.openshift.com/container-platform/latest/dev_guide/builds/build_strategies.html#source-to-image-strategy-options[build options]
+and link:https://docs.openshift.com/container-platform/3.6/dev_guide/builds/index.html[how builds work] sections of the OpenShift Container Platform documentation.

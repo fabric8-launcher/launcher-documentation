@@ -1,5 +1,5 @@
-// This is a parameterized module. Parameters used: 
-// 
+// This is a parameterized module. Parameters used:
+//
 //  context: context of usage, e.g. "osl", "oso", "ocp", "rest-api", etc. This can also be a composite, e.g. "rest-api-oso"
 //
 // Rationale: This procedure is identical in all deployments.
@@ -57,7 +57,7 @@ ifndef::http-api-nodejs[]
 $ mvn clean fabric8:deploy -Popenshift
 ----
 +
-This command uses the Fabric8 Maven Plugin to launch the S2I process on OpenShift and to start the pod.
+This command uses the Fabric8 Maven Plugin to launch the link:{link-s2i-process}[S2I process] on OpenShift and to start the pod.
 endif::http-api-nodejs[]
 
 ifdef::http-api-nodejs[]
@@ -68,7 +68,7 @@ ifdef::http-api-nodejs[]
 $ npm install && npm run openshift
 ----
 +
-These commands install any missing package dependencies, then using the xref:about-nodeshift[Nodeshift] package, launch the S2I process on OpenShift to start the pod.
+These commands install any missing package dependencies, then using the xref:about-nodeshift[Nodeshift] package, launch the link:{link-s2i-process}[S2I process] on OpenShift to start the pod.
 endif::http-api-nodejs[]
 
 . Check the status of your booster and ensure your pod is running.

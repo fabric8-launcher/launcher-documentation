@@ -24,7 +24,7 @@ This helps you speed up your builds and rolling updates and alleviates network l
 ////
 
 ////
-* Ensure that you give each pod enough resources to function. You may have to edit the link:https://docs.openshift.com/container-platform/3.4/dev_guide/deployments/how_deployments_work.html#creating-a-deployment-configuration[pod template] in the Nexus deployment configuration to request more resources.
+* Ensure that you give each pod enough resources to function. You may have to edit the link:https://docs.openshift.com/container-platform/latest/dev_guide/deployments/how_deployments_work.html#creating-a-deployment-configuration[pod template] in the Nexus deployment configuration to request more resources.
 ////
 
 * Configure your {OpenShiftLocal} to use at least 4096 MiB of RAM and use the required `oc` CLI tool version.

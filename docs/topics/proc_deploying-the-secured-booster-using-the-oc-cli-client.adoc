@@ -43,7 +43,7 @@ $ mvn clean fabric8:deploy -Popenshift -DskipTests \
       -DSSO_AUTH_SERVER_URL=$(oc get route secure-sso -o jsonpath='{"https://"}{.spec.host}{"/auth\n"}')
 ----
 
-This command uses the Fabric8 Maven Plugin to launch the S2I process on {parameter-deployment} and to start the pod.
+This command uses the Fabric8 Maven Plugin to launch the link:{link-s2i-process}[S2I process] on {parameter-deployment} and to start the pod.
 --
 endif::secured-nodejs-mission[]
 
@@ -57,9 +57,8 @@ $ npm install && npm run openshift -- \
       -d SSO_AUTH_SERVER_URL=$(oc get route secure-sso -o jsonpath='{"https://"}{.spec.host}{"/auth\n"}')
 ----
 
-These commands install any missing package dependencies, then using the xref:about-nodeshift[Nodeshift] package, launch the S2I process on {parameter-deployment} to start the pod.
+These commands install any missing package dependencies, then using the xref:about-nodeshift[Nodeshift] package, launch the link:{link-s2i-process}[S2I process] on {parameter-deployment} to start the pod.
 --
 endif::secured-nodejs-mission[]
 
 This process generates the uberjar file as well as the OpenShift resources and deploys them to the current project on your {parameter-deployment} server.
-
