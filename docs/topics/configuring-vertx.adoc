@@ -60,4 +60,4 @@ Include the following properties in your `pom.xml` file to track the version of 
 ...
 --
 
-For more information on packaging your {Vertx} application, see the link:https://vmp.fabric8.io/[Vert.x Maven Plugin] documentation.
+For more information on packaging your {Vertx} application, see the link:https://vmp.fabric8.io/#packaging[Vert.x Maven Plugin] documentation.
