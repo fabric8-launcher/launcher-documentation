@@ -3,13 +3,13 @@
 
 .Community {Vertx} Version
 // link TBD
-Some of the {Vertx} components included in this release are not fully tested to run on OpenShift, and are provided as a xref:vertx-tech-preview-components[limited-supportability Technology Preview].
+Some of the {Vertx} components included in this release are not fully tested to run on OpenShift, and are provided as a xref:vertx-tech-preview-components[limited-supportability Technology Preview^].
 These components are based on the community version `3.4.2` of {Vertx}.
 
 .Certified {Vertx} Version
 
 The productized {Vertx} version `3.4.2.redhat-006` is certified to run on OpenShift and provided as part of the Red Hat subscription.
-The certified {Vertx} runtime artifacts are available from the link:https://maven.repository.redhat.com/ga/[Red Hat Middleware JBoss General Availability Maven Repository].
+The certified {Vertx} runtime artifacts are available from the link:https://maven.repository.redhat.com/ga/[Red Hat Middleware JBoss General Availability Maven Repository^].
 
 //RN link TBD
-For a complete list of {Vertx} components provided as part of this release, see the Release Notes.
+For a complete list of {Vertx} components provided as part of this release, see the link:https://access.redhat.com/documentation/en-us/red_hat_openshift_application_runtimes/1/html-single/red_hat_openshift_application_runtimes_release_notes/#rn-runtime-components-vertx[Release Notes^].
