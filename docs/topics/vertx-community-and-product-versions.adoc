@@ -3,7 +3,7 @@
 
 .Community {Vertx} Version
 // link TBD
-Some of the {Vertx} components included in this release are not fully tested to run on OpenShift, and are provided as a xref:vertx-tech-preview-components[limited-supportability Technology Preview^].
+Some of the {Vertx} components included in this release are not fully tested to run on OpenShift, and are provided as a xref:vertx-tech-preview-components[limited-supportability Technology Preview].
 These components are based on the community version `3.4.2` of {Vertx}.
 
 .Certified {Vertx} Version
