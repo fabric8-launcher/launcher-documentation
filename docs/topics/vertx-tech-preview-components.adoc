@@ -8,10 +8,10 @@ Red Hat provides link:https://access.redhat.com/support/offerings/techpreview/[l
 |GroupID | ArtifactID | Version
 |io.vertx | vertx-mongo | 3.4.2.redhat-006
 |io.vertx | vertx-mongo-service | 3.4.2.redhat-006
-|io.vertx | vertx-mongo-client | 3.4.2
+|io.vertx | vertx-mongo-client | 3.4.2.redhat-006
 |io.vertx | vertx-rx | 3.4.2.redhat-006
 |io.vertx | vertx-rx-java | 3.4.2.redhat-006
-|io.vertx | vertx-sockjs-service-proxy | 3.4.2
+|io.vertx | vertx-sockjs-service-proxy | 3.4.2.redhat-006
 |io.vertx | vertx-redis-client | 3.4.2.redhat-006
 |io.vertx | vertx-infinispan | 3.4.2.redhat-006
 |io.vertx | vertx-proton | 3.4.2.redhat-006
