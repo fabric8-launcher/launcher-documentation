@@ -13,10 +13,10 @@ include::topics/sb-tomcat-runtime-overview.adoc[leveloffset=+1]
 
 .{SpringBoot} Tested and Verified Version
 
-The {SpringBoot} runtime version `1.5.8.RELEASE` is tested and verified to run with the Embedded Apache Tomcat Container on OpenShift. This embedded container, as well as other components such as the Java container image, is provided as part of a Red Hat subscription when used with {SpringBoot}.
+The {SpringBoot} runtime version {SpringBootVersion} is tested and verified to run with the Embedded Apache Tomcat Container on OpenShift. This embedded container, as well as other components such as the Java container image, is provided as part of a Red Hat subscription when used with {SpringBoot}.
 
 For a complete list of {SpringBoot} components provided as part of this release, see the link:https://access.redhat.com/documentation/en-us/red_hat_openshift_application_runtimes/1/html-single/red_hat_openshift_application_runtimes_release_notes/index#rn-runtime-components-spring-boot/[Release Notes].
-
+git
 .{SpringBoot} Features and Frameworks Summary
 
 The chapters in this guide cover the design of modern applications using link:https://projects.spring.io/spring-boot/[Spring Boot]. These concepts support development of Web or Websocket applications using either a HTTP connector or non-blocking HTTP connector.
