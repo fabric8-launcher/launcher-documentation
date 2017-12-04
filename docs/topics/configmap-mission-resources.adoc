@@ -1,7 +1,7 @@
 [[about_configmap]]
-= Externalized Configuration Resources
+= {name-mission-configmap} Resources
 
-More background and related information on Externalized Configuration and ConfigMap can be found here:
+More background and related information on {name-mission-configmap} and ConfigMap can be found here:
 
 * link:https://docs.openshift.org/latest/dev_guide/configmaps.html[OpenShift ConfigMap Documentation]
 * link:https://blog.openshift.com/configuring-your-application-part-1/[Blog Post about ConfigMap in OpenShift]
