@@ -1,5 +1,5 @@
-// This is a parameterized module. Parameters used: 
-// 
+// This is a parameterized module. Parameters used:
+//
 //  context: context of usage, e.g. "osl", "oso", "ocp", "rest-api", etc. This can also be a composite, e.g. "rest-api-oso"
 //
 // Rationale: This procedure is identical in all deployments.
@@ -61,7 +61,7 @@ NAME                             READY     STATUS      RESTARTS   AGE
 {app-name}-s2i-1-build           0/1       Completed   0          2m
 ----
 +
-You `{app-name}-1-aaaaa` pod should have a status of `Running` once its fully deployed and started.
+Your `{app-name}-1-aaaaa` pod should have a status of `Running` once its fully deployed and started.
 
 . Once your booster is deployed and started, determine its route.
 +
