@@ -2,7 +2,7 @@
 
 .Next Steps: Update your Booster Manually
 
-You can build and deploy your booster application using the Fabric8 Maven Plugin to launch the link:{link-wf-swarm-runtime-guide}#s2i-build-process}[S2I process] on OpenShift.
+You can build and deploy your booster application using the Fabric8 Maven Plugin to launch the link:{link-wf-swarm-runtime-guide}#s2i-build-process[S2I process] on OpenShift.
 
 . Clone your project from GitHub.
 +

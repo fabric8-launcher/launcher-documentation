@@ -48,7 +48,7 @@ NOTE: You can find your token in your {OpenShiftLocal} Web console. For example,
 $ mvn clean fabric8:deploy -Popenshift -DskipTests
 ----
 +
-This command uses the Fabric8 Maven Plugin to launch the link:{link-wf-swarm-runtime-guide}#s2i-build-process}[S2I process] on your {OpenShiftLocal} and to start the pod.
+This command uses the Fabric8 Maven Plugin to launch the link:{link-wf-swarm-runtime-guide}#s2i-build-process[S2I process] on your {OpenShiftLocal} and to start the pod.
 +
 NOTE: A mission's booster may contain tests that assume the build process is running on OpenShift. Since you are building your mission's booster outside of OpenShift before deploying it, you can use `-DskipTests` to skip the testing process. When xref:update-cd[updating using continuous deployment], these tests will not be skipped.
 
