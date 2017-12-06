@@ -274,10 +274,7 @@ include::topics/appendix-s2i-build-process.adoc[leveloffset=+1]
 For information about using the configuration properties provided in {WildFlySwarm} fractions, see xref:configuring-a-wildfly-swarm-application[].
 
 ifdef::product[]
-include::topics/wildfly-swarm/docs/reference/index-product.adoc[leveloffset=+2]
-endif::[]
-ifndef::product[]
-include::topics/wildfly-swarm/docs/reference/index-community.adoc[leveloffset=+2]
+include::topics/wildfly-swarm/docs/reference/index.adoc[leveloffset=+2]
 endif::[]
 
 [appendix]

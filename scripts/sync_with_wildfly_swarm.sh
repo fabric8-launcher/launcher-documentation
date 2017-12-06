@@ -4,11 +4,39 @@ SCRIPT_SRC="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P )"           # Sc
 TEMP_DIR="$(mktemp -d)"                                                     # Temporary directory, will be deleted
 
 REPO_NAME="wildfly-swarm"                                                   # Repository base name, and the directory name on the disk
-REPO_URL="https://github.com/wildfly-swarm/${REPO_NAME}.git"                # Repo Git URL
-REPO_BRANCH="master"                                                        # Branch to be synchronized
+REPO_URL="git@github.com:wildfly-swarm-prod/${REPO_NAME}.git"               # Repo Git URL
+REPO_BRANCH="7.0.x"                                                         # Branch to be synchronized
+MAVEN_SETTINGS_URL="https://github.com/wildfly-swarm-prod/wildfly-swarm-repository/blob/master/debug-utils/settingsForLocalM2.xml" # Maven settings to use when building
 
 FILES_LIST="${SCRIPT_SRC}/wildfly-swarm-files.txt"                          # File with file- or directory names to synchronize
 FILES_DESTINATION="$(realpath ${SCRIPT_SRC}/../docs/topics/wildfly-swarm)"  # Destination directory in this repository where to sync
+
+# Testing whether the Maven config file was provided
+if [ $# -lt 1 ]; then
+    echo "Usage: sync_with_wildfly_swarmsh PATH_TO_MAVEN_SETTINGS
+
+Please provide the path to the Maven settings file.
+The file can be downloaded from $MAVEN_SETTINGS_URL."
+    exit 1
+fi
+
+maven_settings_file="$(realpath $1)"
+
+# Testing whether the Maven config file provided exists
+if ! test -f $maven_settings_file; then
+    echo "The \'$maven_settings_file\' file provided does not exist. Please provide a valid path.
+
+The file can be downloaded from $MAVEN_SETTINGS_URL."
+    exit 1
+fi
+
+# Testing if all required programs are present
+for binary in mvn git; do
+    if ! $binary --version &>/dev/null; then
+        echo "The $binary binary is missing, please install it." 1>&2
+        exit 127
+    fi
+done
 
 git rm -r $FILES_DESTINATION
 
@@ -18,19 +46,15 @@ set -e
 
 pushd $TEMP_DIR &>/dev/null
 git clone $REPO_URL --depth 1 --branch $REPO_BRANCH
-cd $REPO_NAME/docs
+cd $REPO_NAME
+
+# Store a commit hash into a file
+git rev-parse HEAD > docs/commit.hash
 
 # Generate product fractions reference
-mvn generate-resources -DskipTests -Dswarm.product.build
-mv reference/index{,-product}.adoc
-
-# Generate community fractions reference.
-#
-# We do not care that the some fractions are overwritten as they are always the
-# same files for community and product, only the reference/index.adoc file
-# changes.
-mvn generate-resources -DskipTests
-mv reference/index{,-community}.adoc
+mvn clean install -DskipTests -Dswarm.product.build -s $maven_settings_file
+cd docs
+mvn generate-resources -DskipTests -Dswarm.product.build -s $maven_settings_file
 
 # Remove unwanted files
 rm reference/.gitignore # Prevents the reference directory from being included in the RHOAR build
