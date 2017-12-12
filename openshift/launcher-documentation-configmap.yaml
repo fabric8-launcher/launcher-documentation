@@ -1,7 +1,7 @@
 kind: Template
 apiVersion: v1
 metadata:
-  name: appdev-documentation-configmap
+  name: launcher-documentation-configmap
   annotations:
     openshift.io/display-name: "Appdev Documentation - Configuration"
     description: This application contains the Appdev Documentation configuration settings
@@ -9,11 +9,11 @@ metadata:
     iconClass: icon-shadowman
     template.openshift.io/long-description: This application contains the Appdev Documentation configuration settings
     template.openshift.io/provider-display-name: Red Hat, Inc.
-    template.openshift.io/documentation-url: https://github.com/openshiftio/launchpad-templates
+    template.openshift.io/documentation-url: https://github.com/fabric8-launcher/launcher-openshift-templates
     template.openshift.io/support-url: https://access.redhat.com
 message: "The following service has been created in your project: launchpad-configuration.\n\nFor more information about using this template, including OpenShift considerations, see https://github.com/openshiftio"
 labels:
-  template: appdev-documentation-configmap
+  template: launcher-documentation-configmap
 parameters:
 - name: LAUNCHPAD_TRACKER_SEGMENT_TOKEN
   displayName: Segment Token
@@ -23,6 +23,6 @@ objects:
 - kind: ConfigMap
   apiVersion: v1
   metadata:
-    name: appdev-documentation
+    name: launcher-documentation
   data:
     tracker.segment.token: ${LAUNCHPAD_TRACKER_SEGMENT_TOKEN}
