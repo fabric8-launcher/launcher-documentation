@@ -1,21 +1,21 @@
 kind: Template
 apiVersion: v1
 metadata:
-  name: appdev-documentation
+  name: launcher-documentation
   annotations:
-    openshift.io/display-name: "Appdev - Documentation"
+    openshift.io/display-name: "Launcher - Documentation"
     description: This application contains the https://developers.redhat.com/launch documentation
     tags: instant-app,launchpad, documentation
     iconClass: icon-shadowman
     template.openshift.io/long-description: This application contains the Appdev documentation
     template.openshift.io/provider-display-name: Red Hat, Inc.
-    template.openshift.io/documentation-url: https://github.com/openshiftio
+    template.openshift.io/documentation-url: https://github.com/fabric8-launcher
     template.openshift.io/support-url: https://access.redhat.com
 labels:
-  template: appdev-documentation
+  template: launcher-documentation
 parameters:
 - name: IMAGE
-  value: openshiftio/appdev-documentation
+  value: fabric8/launcher-documentation
   required: true
 - name: IMAGE_TAG
   value: latest
@@ -24,11 +24,11 @@ objects:
 - kind: DeploymentConfig
   apiVersion: v1
   metadata:
-    name: appdev-documentation
+    name: launcher-documentation
   spec:
     replicas: 1
     selector:
-      service: appdev-documentation
+      service: launcher-documentation
     strategy:
       resources: {}
       rollingParams:
@@ -41,17 +41,17 @@ objects:
     template:
       metadata:
         labels:
-          service: appdev-documentation
+          service: launcher-documentation
       spec:
         containers:
         - image: ${IMAGE}:${IMAGE_TAG}
           imagePullPolicy: Always
-          name: appdev-documentation
+          name: launcher-documentation
           env:
           - name: LAUNCHPAD_TRACKER_SEGMENT_TOKEN
             valueFrom:
               configMapKeyRef:
-                name: appdev-documentation
+                name: launcher-documentation
                 key: tracker.segment.token
           ports:
           - containerPort: 8080
@@ -87,8 +87,8 @@ objects:
   apiVersion: v1
   metadata:
     labels:
-      service: appdev-documentation
-    name: appdev-documentation
+      service: launcher-documentation
+    name: launcher-documentation
   spec:
     ports:
     - name: "8080"
@@ -96,6 +96,6 @@ objects:
       protocol: TCP
       targetPort: 8080
     selector:
-      service: appdev-documentation
+      service: launcher-documentation
     sessionAffinity: None
     type: ClusterIP

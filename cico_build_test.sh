@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-BUILDER_IMAGE="appdev-documentation-builder"
-BUILDER_CONT="appdev-documentation-builder-container"
-DEPLOY_IMAGE="appdev-documentation-deploy"
+BUILDER_IMAGE="launcher-documentation-builder"
+BUILDER_CONT="launcher-documentation-builder-container"
+DEPLOY_IMAGE="launcher-documentation-deploy"
 TARGET_DIR="html"
 
 # Exit on error
