@@ -2,6 +2,7 @@
 
 This repository holds the documentation for link:https://appdev.openshift.io[appdev.openshift.io]. The source language is AsciiDoc.
 
+
 == Building and Health
 
 link:https://ci.centos.org/job/devtools-appdev-documentation-generator-build-master/[image:https://ci.centos.org/buildStatus/icon?job=devtools-appdev-documentation-generator-build-master[]]
