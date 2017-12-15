@@ -3,10 +3,10 @@
 
 //.{SpringBoot} Features and Frameworks Summary
 
-The chapters in this guide cover the design of modern applications using link:https://projects.spring.io/spring-boot/[Spring Boot]. These concepts support development of Web or Websocket applications using either a HTTP connector or non-blocking HTTP connector.
+This guide covers the design of modern applications using link:https://projects.spring.io/spring-boot/[Spring Boot]. These concepts support developing Web or Websocket applications using either a HTTP connector or non-blocking HTTP connector.
 The applications can be packaged and deployed without modification or updated to use cloud native features on OpenShift.
 
-The features in the table below are available as a collection of missions which run on OpenShift. Some features are native as part of Kubernetes, others are available from link:https://github.com/spring-cloud-incubator/spring-cloud-kubernetes[Spring Cloud Kubernetes].
+The features in the table below are available as a collection of missions on OpenShift. Some features are native to Kubernetes, others are available from link:https://github.com/spring-cloud-incubator/spring-cloud-kubernetes[Spring Cloud Kubernetes].
 Features such as Actuator are available directly in {SpringBoot}.
 
 .Features and Frameworks Summary
@@ -18,7 +18,7 @@ a|
 Circuit Breaker
 
 a|
-Switch between services and continue to process incoming requests without interruption in case of service failure.
+Switches between services and continues to process incoming requests without interruption in case of service failure.
 
 a|
 Yes - using Kubernetes API
@@ -31,7 +31,7 @@ a|
 Health Check
 
 a|
-Check readiness and liveness of the service. Service restarts automatically if probing fails.
+Checks readiness and liveness of the service. Service restarts automatically if probing fails.
 
 a|
 Yes
@@ -44,7 +44,7 @@ a|
 Service Discovery
 
 a|
-Discover Service/Endpoint deployed on OpenShift and exposed behind a service or route using the service name matching a DNS entry.
+Discovers Service/Endpoint deployed on OpenShift and exposed behind a service or route using the service name matching a DNS entry.
 
 a|
 Yes - using Kubernetes API
@@ -57,7 +57,7 @@ a|
 Server Side Load Balancing
 
 a|
-Handle load increases by deploying multiple instances of a service, transparently distributing the load across instances.
+Handles load increases by deploying multiple instances of a service; It transparently distributes the load across instances.
 
 a|
 Yes - Using internal Kubernetes Load Balancer
@@ -83,7 +83,7 @@ a|
 Externalize Parameters
 
 a|
-Externalize application parameters to make the application independent of the environment where it runs.
+Makes the application independent of the environment where it runs.
 
 a|
 Yes - Kubernetes ConfigMap or Secret

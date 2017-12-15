@@ -1,5 +1,11 @@
 = Runtime Details
 //https://projects.spring.io/spring-boot/
-{SpringBoot} enables you to create opinionated Spring-based standalone applications. Check out xref:sb-tomcat-additional-resources[Additional Resources] for further reading on {SpringBoot}.
+.What {SpringBoot} Does
+{SpringBoot} lets you create opinionated Spring-based standalone applications. See xref:sb-tomcat-additional-resources[Additional Resources] for a list of documents about {SpringBoot}.
 
-The {SpringBoot} runtime enables you to run {SpringBoot} applications and services in OpenShift while providing all the advantages and conveniences of the OpenShift platform such as rolling updates, service discovery, and canary deployments. OpenShift also makes it easier for your applications to implement common microservice patterns such as externalized configuration, health check, circuit breaker, and failover.
+The {SpringBoot} runtime gives you the advantages and conveniences of the OpenShift platform while running {SpringBoot}:
+
+* rolling updates
+* service discovery
+* canary deployments
+* Ways to implement common microservice patterns: externalized configuration, health check, circuit breaker, and failover.

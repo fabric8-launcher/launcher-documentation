@@ -1,18 +1,20 @@
 [[missions-intro]]
 = Missions
 
-Missions are working applications that showcase different fundamental pieces of building cloud native applications and services, such as:
+.What are Missions?
+Missions are working applications that showcase different fundamental pieces of building cloud native applications and services:
 
  * Creating REST APIs
  * Interoperating with a database
  * Implementing the Health Check pattern
 
-Missions can be used as:
+You can use missions for a variety of purposes:
 
-* A proof of technology demonstration.
-* A teaching tool, or even a sandbox for understanding how to develop applications for your project.
-* They can also be updated or extended for your own use case.
+* A proof of technology demonstration
+* A teaching tool, or a sandbox for understanding how to develop applications for your project
+* They can also be updated or extended for your own use case
 
-A booster is the implementation of a mission in a specific runtime. Boosters are preconfigured, functioning applications based on a mission that demonstrate a fundamental aspect of modern application development running in an environment similar to production.
+.What is a Booster?
+A booster is the implementation of a mission in a specific runtime. Boosters are preconfigured, functioning applications that demonstrate a fundamental aspect of modern application development run in an environment similar to production.
 
-NOTE: Each mission has different boosters that show how to implement the same mission in different runtimes. For example, the {name-mission-http-api} mission has a link:{link-mission-http-api-nodejs}[{NodeJS} booster], a link:{link-mission-http-api-spring-boot-tomcat}[{SpringBoot} booster], a link:{link-mission-http-api-vertx}[{VertX} booster], and a link:{link-mission-http-api-wf-swarm}[{WildFlySwarm} booster].
+NOTE: Each mission has different boosters that show how to implement the same mission in different runtimes. For example, the {name-mission-http-api} mission has a link:{link-mission-http-api-nodejs}[{NodeJS} booster], a link:{link-mission-http-api-spring-boot-tomcat}[{SpringBoot} booster], an link:{link-mission-http-api-vertx}[{VertX} booster], and a link:{link-mission-http-api-wf-swarm}[{WildFlySwarm} booster].

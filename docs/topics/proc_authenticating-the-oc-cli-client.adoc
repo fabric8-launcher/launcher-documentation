@@ -26,10 +26,9 @@ endif::[]
 . Click on the question mark icon in the top right-hand corner of the Web console, next to your user name.
 . Select _Command Line Tools_ in the drop-down menu.
 . Find the text box that contains the `oc login ...` command with the hidden token, and click the button next to it to copy its content to your clipboard.
-. Paste the command you copied in the previous step into a terminal application to authenticate your `oc` CLI client with your {parameter-deployment} account by using your authentication token.
+. Paste the command you copied into a terminal application. This command uses your authentication token to authenticate your `oc` CLI client with your {parameter-deployment} account.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc login {link-oso-auth} --token=MYTOKEN
 ----
-
