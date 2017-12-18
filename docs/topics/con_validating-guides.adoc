@@ -1,0 +1,41 @@
+
+[#validating-guides]
+= Validating Guides
+
+To ensure that all books can be built, validate them using the automatic script provided in the repository.
+
+== Validating All Guides
+
+The validation is performed on DocBook XML files generated from the AsciiDoc sources because it is very dificult to perform validations on AsciiDoc sources.
+
+To perform the validation, execute the `scripts/validate_guides.sh` script:
+
+[source,bash]
+----
+$ scripts/validate_guides.sh
+----
+
+== Excluding Books from Validation
+
+In case a failed validation is an expected behavior--for example if there is a bug in the XML generation--you can remove the book from validation by adding a file named `.ci-ignore` to the main directory of the book, for example:
+
+[source,bash]
+----
+$ touch docs/wf-swarm-runtime/.ci-ignore
+----
+
+To remove the book from validation permanently, commit this file to Git, for example:
+
+[source,bash]
+----
+$ git add docs/wf-swarm-runtime/.ci-ignore
+$ git commit docs/wf-swarm-runtime/.ci-ignore -m "Removed WildFly Swarm Guide from validation"
+----
+
+To re-enable validation of the book, remove the `.ci-ignore` file, for example:
+
+[source,bash]
+----
+$ rm docs/wf-swarm-runtime/.ci-ignore
+----
+
