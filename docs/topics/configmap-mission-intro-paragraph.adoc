@@ -1,7 +1,14 @@
-Mission proficiency level: 
+Mission proficiency level:
 //special case since topic is used by front end.
 ifdef::docs-topic[xref:proficiency_foundational[*{proficiency-foundational}*].]
 ifndef::docs-topic[link:https://appdev.openshift.io/docs/wf-swarm-runtime.html#proficiency_levels[*{proficiency-foundational}*^].]
 
 
 The {name-mission-configmap} Mission provides a basic example of using a ConfigMap to externalize configuration.
+
+.About ConfigMap
+_ConfigMap_ is an object used by OpenShift to inject configuration data as simple key and value pairs into one or more Linux containers while keeping the containers agnostic of OpenShift. You can create a ConfigMap object in a variety of different ways, including using a YAML file, and inject it into the Linux container. You can find more information about ConfigMap in the link:https://docs.openshift.org/latest/dev_guide/configmaps.html[OpenShift documentation].
+
+
+.Why ConfigMap is Important
+ConfigMaps enable the application configuration to be externalized and used in individual Linux containers and pods in a language-agnostic way. ConfigMaps also allow sets of configuration data to be easily grouped and scaled, which enables you to configure an arbitrarily large number of environments beyond the basic _Development_, _Stage_, and _Production_.
