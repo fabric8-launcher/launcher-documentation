@@ -3,6 +3,7 @@
 The SSO adapter is the _client side_, or client to the SSO server, component that enforces security on the web resources. In this specific case, it is the greeting service.
 
 In {WildFlySwarm}, the security configuration breaks down into two notable assets: 
+
 * The `web.xml` configuration to enact the security for the service
 * The `keycloak.json` configuration for the keycloak adapter. 
 
