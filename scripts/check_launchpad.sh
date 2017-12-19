@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Check if files used by openshiftio/launchpad-frontend were deleted. Returns 2
+# Check if files used by fabric8-launcher/launcher-frontend were deleted. Returns 2
 # on a tooling issue, returns 1 if deleted files were detected.
 #
 # Works by either analyzing the Git diff or by checking the files on the
@@ -9,8 +9,8 @@
 #
 # NOTE: In the container docs build on ci.centos.org, Git is NOT available.
 
-LAUNCHPAD_INDEX="https://raw.githubusercontent.com/openshiftio/launchpad-frontend/master/src/assets/adoc.index"
-DOC_REPO_PREFIX="https://raw.githubusercontent.com/.*/appdev-documentation/master/"
+LAUNCHPAD_INDEX="https://raw.githubusercontent.com/fabric8-launcher/launcher-frontend/master/src/assets/adoc.index"
+DOC_REPO_PREFIX="https://raw.githubusercontent.com/.*/launcher-documentation/master/"
 
 echo "=== Verifying Launchpad Files ==="
 
