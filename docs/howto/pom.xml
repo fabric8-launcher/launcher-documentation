@@ -9,7 +9,7 @@
 
   <groupId>org.wildfly.swarm.howto</groupId>
   <artifactId>howto-parent</artifactId>
-  <version>2018.1.0-SNAPSHOT</version>
+  <version>7.0.0</version>
 
   <name>WildFly Swarm HOWTO: Parent</name>
   <packaging>pom</packaging>
