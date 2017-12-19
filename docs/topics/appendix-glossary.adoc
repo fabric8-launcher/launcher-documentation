@@ -6,7 +6,7 @@
 
 {launcher-oso}:: link:{link-launcher-oso}[{launcher-oso}] is a standalone getting started experience offered by Red Hat for jumpstarting cloud-native application development on OpenShift. It provides a hassle-free way of creating functional example applications, called missions, as well as an easy way to build and deploy those missions to OpenShift. 
 
-{launcher}:: The {launcher} is the upstream project from which link:{link-launcher-oso}[{launcher-oso}] is based.
+{launcher}:: The {launcher} is the upstream project on which link:{link-launcher-oso}[{launcher-oso}] is based.
 
 {OpenShiftLocal}:: An OpenShift cluster running on your machine using Minishift.
 
