@@ -1,5 +1,15 @@
 :toc: left
-= WildFly Swarm Documentation: {version}
+:toclevels: 3
+:sectnums:
+:sectanchors:
+:source-highlighter: coderay
+
+
+= WildFly Swarm Documentation
+The WildFly Swarm Team
+v{version}
+
+include::introduction.adoc[]
 
 # Concepts
 
@@ -12,7 +22,9 @@ include::concepts/packaging-types.adoc[leveloffset=+1]
 
 include::howto/use-a-bom/index.adoc[leveloffset=+2]
 include::howto/create-an-uberjar/index.adoc[leveloffset=+2]
+ifndef::product[]
 include::howto/create-a-hollow-jar/index.adoc[leveloffset=+2]
+endif::[]
 include::howto/autodetect-fractions/index.adoc[leveloffset=+2]
 include::howto/explicit-fractions/index.adoc[leveloffset=+2]
 include::howto/create-a-datasource/index.adoc[leveloffset=+2]
@@ -25,5 +37,16 @@ include::howto/create-a-fraction/index.adoc[leveloffset=+2]
 
 endif::product[]
 
-## Reference
+# Reference
+
+## General
+
+include::reference/maven-plugin.adoc[leveloffset=+2]
+
+include::reference/configuration.adoc[leveloffset=+2]
+include::reference/network.adoc[leveloffset=+2]
+include::reference/usage.adoc[leveloffset=+2]
+
+## Fractions
+
 include::reference/index.adoc[leveloffset=+2]

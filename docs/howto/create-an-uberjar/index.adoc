@@ -10,9 +10,9 @@ with WildFly Swarm is as an _uberjar_.
 
 .Procedure
 
-. Add the `wildfly-swarm-maven-plugin` to your `pom.xml` in a `<plugin>` block,
+. Add the `wildfly-swarm-plugin` to your `pom.xml` in a `<plugin>` block,
   with an `<execution>` specifying the `package` goal.
-
++
 [source,xml]
 ----
 <plugins>
@@ -20,22 +20,23 @@ include::pom.xml[tag=plugin,indent=2]
 </plugins>
 ----
 
-[start=2]
 . Perform a normal Maven build:
-
++
 [source]
 ----
 $ mvn package
 ----
 
 . Execute the resulting uberjar:
-
++
 [source]
 ----
 $ java -jar ./target/myapp-swarm.jar
 ----
 
+ifndef::product[]
 .Related Information
 
 * xref:creating-a-hollow-jar[]
+endif::[]
 
