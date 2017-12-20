@@ -14,7 +14,7 @@
   </parent>
 
   <artifactId>wildfly-swarm</artifactId>
-  <version>7.0.0</version>
+  <version>7.0.1</version>
 
   <name>Root</name>
   <description>Root</description>
@@ -334,45 +334,45 @@
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>build-parent</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>build-resources</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>wildfly-swarm-enforcer-pattern-size</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>cli</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>tools</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>meta-spi</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>fraction-metadata</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>spi</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
@@ -399,419 +399,419 @@
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>asciidoctorj</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>batch-jberet</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>bean-validation</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>bootstrap</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>camel-core</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>camel-activemq</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>camel-cdi</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>camel-cxf</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>camel-ejb</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>camel-jaxb</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>camel-jms</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>camel-jmx</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>camel-jpa</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>camel-mail</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>camel-ognl</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>camel-swagger</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>camel-undertow</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>cdi</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>cdi-config</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>jaxrs-client-api</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>cdi-jaxrsapi</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>connector</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>container</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>datasources</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>drools-server</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>ee</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>ejb</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>ejb-remote</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>flyway</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>hibernate-search</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>hibernate-validator</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>infinispan</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>io</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>jaeger</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>javafx</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>jaxrs</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>jaxrs-cdi</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>jaxrs-jaxb</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>jaxrs-multipart</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>jaxrs-validator</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>jaxrs-jsonp</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>jca</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>jdr</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>jgroups</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>jmx</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>jolokia</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>jpa</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>jpa-spatial</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>jpa-eclipselink</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>jsf</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>jsonp</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>keycloak</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>keycloak-server</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>logging</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>logstash</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>mail</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>management</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>management-console</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>messaging</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>microprofile</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>mod_cluster</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>monitor</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>msc</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>naming</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <!-- NoSQL -->
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>cassandra</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>mongodb</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>neo4j</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>orientdb</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>opentracing</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>remoting</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>request-controller</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>resource-adapters</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
@@ -835,97 +835,97 @@
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>security</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>spring</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>swagger</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>swagger-webapp</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>teiid</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>topology</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>topology-consul</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>topology-jgroups</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>topology-openshift</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>topology-webapp</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>transactions</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>undertow</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>vertx</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>web</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>webservices</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
 
       <dependency>
         <groupId>org.wildfly.swarm</groupId>
         <artifactId>zipkin-jaxrs</artifactId>
-        <version>7.0.0</version>
+        <version>7.0.1</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

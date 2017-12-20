@@ -11,7 +11,7 @@
 
   <groupId>org.wildfly.swarm</groupId>
   <artifactId>build-resources</artifactId>
-  <version>7.0.0</version>
+  <version>7.0.1</version>
 
   <name>WildFly Swarm Build Resources</name>
   <description>Resources that are necessary for building WildFly Swarm</description>

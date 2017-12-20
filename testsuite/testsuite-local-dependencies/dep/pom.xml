@@ -10,7 +10,7 @@
   <parent>
     <groupId>org.wildfly.swarm.testsuite</groupId>
     <artifactId>testsuite-local-dependencies</artifactId>
-    <version>7.0.0</version>
+    <version>7.0.1</version>
     <relativePath>../</relativePath>
   </parent>
 
