@@ -4,7 +4,7 @@
 The SSO booster project contains:
 
 * the sources for the Greeting service, which is the one which we are going to to secure
-* a template file (`service.sso.yaml`) to stand up the SSO server 
+* a template file (`service.sso.yaml`) to stand up the SSO server
 * the Keycloak adapter configuration to secure the service
 
 = Standing up {RHSSO}
@@ -24,7 +24,7 @@ a|
 We did this because the end user can deploy Red Hat SSO module and have it in a usable state without needing to know the internals or how to configure Red Hat SSO.
 
 a|
-In production, it is recommend to not store any private key under source control and have it added by the server administrator.
+In production do not store private keys under source control. They should be added by the server administrator.
 
 
 a|
@@ -59,7 +59,7 @@ From a security perspective, the window an attacker would have to guess the acce
 
 = {RHSSO} Realm Model
 
-The `master` realm is used to secure this booster. There are two pre-configured application client definitions that provide a model for command line clients and the secured REST endpoint. 
+The `master` realm is used to secure this booster. There are two pre-configured application client definitions that provide a model for command line clients and the secured REST endpoint.
 
 There are also two pre-configured users in the {RHSSO} `master` realm that can be used to validate various authentication and authorization outcomes:  `admin` and `alice`.
 
@@ -70,7 +70,7 @@ The realm model for the secured boosters includes two users:
 admin::
 The `admin` user has a password of `admin` and is the realm administrator. This user has full access to the {RHSSO} administration console, but none of the role mappings that are required to access the secured endpoints. You can use this user to illustrate the behavior of an authenticated, but unauthorized user.
 
-alice:: 
+alice::
 The `alice` user has a password of `password` and is the canonical application user. This user will demonstrate successful authenticated and authorized access to the secured endpoints. An example representation of the role mappings is provided in this decoded JWT bearer token:
 +
 [source,json,options="nowrap",subs="attributes+"]
