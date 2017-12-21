@@ -1,7 +1,5 @@
 package org.wildfly.swarm.jsp.test;
 
-import category.CommunityOnly;
-import category.ProductOnly;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.fluent.Request;
 import org.apache.http.util.EntityUtils;
@@ -11,10 +9,14 @@ import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.wildfly.swarm.undertow.WARArchive;
+
+import category.CommunityOnly;
+import category.ProductOnly;
 
 @RunWith(Arquillian.class)
 public class ArquillianTest {
@@ -49,6 +51,7 @@ public class ArquillianTest {
     }
 
     @Test
+    @Ignore("ENTSWM-255")
     @Category(ProductOnly.class)
     @RunAsClient
     public void verifyTransformerFactoryName_Product() throws Exception {
