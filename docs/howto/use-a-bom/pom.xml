@@ -24,7 +24,7 @@
 
   <properties>
     <!-- tag::property[] -->
-    <version.wildfly-swarm>7.0.0</version.wildfly-swarm>
+    <version.wildfly-swarm>7.0.1</version.wildfly-swarm>
     <!-- end::property[] -->
   </properties>
 
