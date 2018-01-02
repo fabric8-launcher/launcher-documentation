@@ -2,6 +2,8 @@
 [#syncing-with-wildfly-swarm-docs]
 = Syncing with {WildFlySwarm} Docs
 
+WARNING: Do not edit files in the `$REPO_HOME/docs/topics/wildfly-swarm` directory, always submit a pull request to the link:{link-repo-wildfly-swarm}[{WildFlySwarm} repository] and synchronize the files afterwards.
+
 Some documentation files for the {WildFlySwarm} runtime are sourced directly from the {WildFlySwarm} repository.
 You must synchronize them manually before a release to ensure the newest version of the files is available.
 
@@ -9,9 +11,7 @@ The synchronization script deletes the existing `$REPO_HOME/docs/topics/wildfly-
 Edit the variables in the `$REPO_HOME/scripts/sync_with_wildfly_swarm.sh` script to customize it.
 The variables are documented in the script.
 
-NOTE: Some files are not present in the upstream repository because they are generated. The script automatically builds the upstream project with Maven, ensuring these files are not missing.
-
-WARNING: Do not edit files in the `$REPO_HOME/docs/topics/wildfly-swarm` directory, always submit a pull request to the link:{link-repo-wildfly-swarm}[{WildFlySwarm} repository] and synchronize the files afterwards.
+Some files are not present in the upstream repository because they are generated. The script automatically builds the upstream project with Maven, ensuring these files are not missing.
 
 .Prerequisites
 
@@ -21,7 +21,21 @@ WARNING: Do not edit files in the `$REPO_HOME/docs/topics/wildfly-swarm` directo
 
 . Execute the `$REPO_HOME/scripts/sync_with_wildfly_swarm.sh` script:
 +
+--
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ ./scripts/sync_with_wildfly_swarm.sh
 ----
+
+A Maven build is part of the sync process.
+If the build fails or unusually many files are deleted as the result of the sync, clone the link:https://github.com/wildfly-swarm/wildfly-swarm[{WildFlySwarm} repository] on your disk, navigate to the directory, and execute a full Maven build:
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ cd $WILDFLY_SWARM_REPO_LOCATION
+$ mvn clean install -DskipTests
+----
+
+This process builds and installs all the necessary artifacts needed for the sync. However, it can take an extremely long time on slow computers or unreliable connections (more than 30 minutes).
+--
+
