@@ -2,6 +2,8 @@
 [#syncing-with-wildfly-swarm-docs]
 = Syncing with {WildFlySwarm} Docs
 
+WARNING: *The {WildFlySwarm} repository is not ready for sync yet, do not synchronize the repositories as long as this message is up!*
+
 Some documentation files for the {WildFlySwarm} runtime are sourced directly from the {WildFlySwarm} repository.
 These files are stored in the `$REPO_HOME/docs/topics/wildfly-swarm` directory.
 Do not edit these files directly; always submit a pull request to the link:{link-repo-wildfly-swarm}[{WildFlySwarm} repository].
