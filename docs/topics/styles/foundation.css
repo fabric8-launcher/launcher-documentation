@@ -1820,13 +1820,18 @@ span.icon > [class^="icon-"], span.icon > [class*=" icon-"] {
   margin: 0 20px;
 }
 
-body:before {
-  content: "";
-  background: no-repeat 5%/15% url(images/RHD-logo.svg) #030303;
-  height: 70px;
-  width: 100%;
-  display: inline-block;
-  padding: 8px 35px;
+nav.navbar {
+  background: #17569e;
+}
+a.navbar-brand {
+  line-height: 2rem;
+  text-transform: uppercase;
+}
+a.nav-link {
+  color: #dddddd;
+}
+a.nav-link:hover {
+  color: #ffffff;
 }
 
 #footer-text {
@@ -1865,51 +1870,14 @@ body:before {
 }
 
 footer {
-  background-color: #010101;
-  font-size: 12px;
-  height: 60px;
-  padding: 15px 0;
-  width: 100%; }
-  footer   .conditions   a:first-child {
-    margin-left: 70px; }
-  footer   .logo   a {
-    background: url(images/redhat.svg) no-repeat;
-    height: 34px;
-    width: 94px;
-    margin: 0;
-    top: auto;
-    background-size: 94px 30px;
-    display: inline-block; }
-  footer   .summit {
-    position: absolute;
-    right: 20px;
-    bottom: 0; }
-  footer   a {
-    color: #858585;
-    top: 7px;
-    position: relative;
-    margin-left: 15px; }
-    footer   a.legal {
-      border-right: 1px solid #858585;
-      padding-right: 15px; }
-
-@media (max-width: 1024px) {
-  footer   .conditions {
-    font-size: 12px; }
-    .footer-openshiftio   .conditions   a:first-child {
-      margin-left: 35px; }
-  .footer-openshiftio   .social {
-    display: none; } }
-
-@media (max-width: 768px) {
-  footer   .conditions {
-    display: none; }
-  .footer-openshiftio   .summit {
-    position: absolute;
-    right: 20px;
-    bottom: 0; }
-  .footer-openshiftio   a.legal:nth-child(2n) {
-    margin-left: 70px; }
-  .footer-content   a:first-child {
-    position: absolute;
-    right: 20px; } }
+  background-color: #e9ecef;
+  margin: 4rem auto 0;
+  padding: 2rem 1rem;
+  text-align: center;
+  width: 100%; 
+}
+footer a {
+  color: #007bff;
+  margin: 1rem;
+  display: inline-block;
+}
