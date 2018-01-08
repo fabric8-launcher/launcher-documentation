@@ -1,7 +1,7 @@
 
 #Name of the html output file
 GUIDE_HTML_NAME=minishift-installation.html
-OUTPUT_DIR=../../html
+OUTPUT_DIR=../../html/docs
 
 rm -r $OUTPUT_DIR/images/
 cp -r topics/images/ $OUTPUT_DIR/images/

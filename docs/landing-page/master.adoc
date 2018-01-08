@@ -2,6 +2,7 @@ include::topics/templates/document-attributes.adoc[]
 
 :landing-page:
 :toc!:
+:docinfo1!:
 :title: {OpenShiftAppDev}
 //var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
 :docs-topic:
