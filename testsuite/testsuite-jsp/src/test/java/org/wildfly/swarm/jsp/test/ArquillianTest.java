@@ -11,7 +11,6 @@ import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.wildfly.swarm.undertow.WARArchive;
 
@@ -39,26 +38,4 @@ public class ArquillianTest {
         Assert.assertTrue(responseBody.startsWith("No TransformerFactory could be found!"));
     }
 
-    @Test
-    @Category(CommunityOnly.class)
-    @RunAsClient
-    public void verifyTransformerFactoryName_Community() throws Exception {
-        HttpResponse response = Request.Get("http://localhost:8080/transformer").execute().returnResponse();
-        String responseBody = EntityUtils.toString(response.getEntity());
-        Assert.assertEquals(200, response.getStatusLine().getStatusCode());
-        Assert.assertTrue("Expected transformer factory class to be org.apache.xalan.xsltc.trax.TransformerFactoryImpl but was " + responseBody,
-                          responseBody.startsWith("org.apache.xalan.xsltc.trax.TransformerFactoryImpl"));
-    }
-
-    @Test
-    @Ignore("ENTSWM-255")
-    @Category(ProductOnly.class)
-    @RunAsClient
-    public void verifyTransformerFactoryName_Product() throws Exception {
-        HttpResponse response = Request.Get("http://localhost:8080/transformer").execute().returnResponse();
-        String responseBody = EntityUtils.toString(response.getEntity());
-        Assert.assertEquals(200, response.getStatusLine().getStatusCode());
-        Assert.assertTrue("Expected transformer factory class to be org.apache.xalan.processor.TransformerFactoryImpl but was " + responseBody,
-                          responseBody.startsWith("org.apache.xalan.processor.TransformerFactoryImpl"));
-    }
 }
