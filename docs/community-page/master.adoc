@@ -18,7 +18,7 @@ include::topics/templates/document-attributes.adoc[]
 <section class="jumbotron">
     <img src="/docs/images/launch_logo.svg" alt="Fabric8 Launcher Logo">
     <div id="repoInfo">
-      <h1 class="display-4">Fabric8 Laucher</h1>
+      <h1 class="display-4">Fabric8 Launcher</h1>
       <p class="lead">Prepare to launch...</p>
     </div>
   </section>
