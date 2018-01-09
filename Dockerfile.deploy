@@ -14,4 +14,4 @@ RUN rm -rf /usr/share/nginx/html
 COPY scripts/entrypoint.sh /usr/bin/entrypoint.sh
 RUN chmod +x /usr/bin/entrypoint.sh
 
-COPY html /usr/share/nginx/html/docs
+COPY html /usr/share/nginx/html
