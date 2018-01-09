@@ -24,7 +24,7 @@ a|
 We did this because the end user can deploy Red Hat SSO module and have it in a usable state without needing to know the internals or how to configure Red Hat SSO.
 
 a|
-In production do not store private keys under source control. They should be added by the server administrator.
+In production, do not store private keys under source control. They should be added by the server administrator.
 
 
 a|
