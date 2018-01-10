@@ -1,7 +1,7 @@
 include::rest-level-0-mission-intro-paragraph.adoc[]
-For more background information on REST, see xref:about_rest[].
+For more information on REST, see xref:about_rest[].
 
-This booster introduces the mechanics of interacting with a remote service using the HTTP protocol. It allows a user to complete these tasks:
+This booster introduces the mechanics of interacting with a remote service using the HTTP protocol. It allows you to:
 
 * Execute an HTTP `GET` request on the `api/greeting` endpoint.
 * Receive a response in JSON format with a payload consisting of the `Hello, World!` String.

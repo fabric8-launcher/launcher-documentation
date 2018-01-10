@@ -10,11 +10,12 @@
 [#building-and-deploying-the-{parameter-mission}-booster-to-openshiftonline]
 = Building and Deploying the {parameter-mission-name} Booster to {OpenShiftOnline}
 
-You have two options for executing the {parameter-mission-name} booster on {OpenShiftOnline}. Although both methods use the same `oc` commands to deploy your application, using {launcher-oso} provides an automated booster deployment workflow that executes the `oc` commands for you.
+Use one of the following options to execute the {parameter-mission-name} booster on {OpenShiftOnline}. 
 
 * xref:deploying-the-booster-using-launcher-oso_{context}[Use {launcher-oso}]
 * xref:deploying-the-{parameter-mission}-booster-using-the-oc-cli-client_{context}[Use the `oc` CLI client]
 
+Although each method uses the same `oc` commands to deploy your application, using {launcher-oso} provides an automated booster deployment workflow that executes the `oc` commands for you.
 
 :parameter-deployment: link:{link-launcher-oso}[{OpenShiftOnline}]
 include::proc_deploying-the-booster-using-the-launcher-oso.adoc[leveloffset=+1]

@@ -14,7 +14,6 @@ The booster application exposes an HTTP API, which provides endpoints that allow
 * Execute an HTTP `DELETE` request on the `api/fruits/*` endpoint, passing in a valid ID as an argument. This removes the item with the specified ID from the database and returns an HTTP code `204` (No Content) as a response. If you pass in an invalid ID, the call results in an HTTP error `404`.
 
 ifndef::http-api-nodejs[]
-.Integration Tests and Design Tradeoffs
 This booster also contains a set of automated xref:running-the-booster-integration-tests_{context}[integration tests] that can be used to verify that the application is fully integrated with the database.
 endif::http-api-nodejs[]
 

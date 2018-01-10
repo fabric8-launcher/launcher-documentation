@@ -9,14 +9,14 @@
 
 .Prerequisites
 
-* Create the booster application using {parameter-deployment}.
+* The booster application created using {parameter-deployment}.
 ifndef::parameter-openshiftlocal[For more information, see xref:deploying-the-booster-using-launcher-oso_{context}[].]
 ifdef::parameter-openshiftlocal[]
 For more information, see xref:deploying-the-booster-using-launcher-osl_{context}[].
 * Your {launcher} tool URL.
 endif::[]
 
-* Authenticate the `oc` client . For more information, see xref:authenticating-the-oc-cli-client_{context}[].
+* The `oc` client authenticated. For more information, see xref:authenticating-the-oc-cli-client_{context}[].
 
 .Procedure
 
@@ -61,7 +61,7 @@ NAME                             READY     STATUS      RESTARTS   AGE
 {app-name}-s2i-1-build           0/1       Completed   0          2m
 ----
 +
-Your `{app-name}-1-aaaaa` pod should have a status of `Running` once it's fully deployed and started.
+Your `{app-name}-1-aaaaa` pod should have a status of `Running` once it is fully deployed and started.
 
 . Once your booster is deployed and started, determine its route.
 +

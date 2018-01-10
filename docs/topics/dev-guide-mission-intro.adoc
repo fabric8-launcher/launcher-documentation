@@ -2,7 +2,7 @@
 = Missions
 
 .What are Missions?
-Missions are working applications that showcase different fundamental pieces of building cloud native applications and services:
+Missions are working applications that showcase different fundamental pieces of building cloud native applications and services, such as:
 
  * Creating REST APIs
  * Interoperating with a database
