@@ -1,4 +1,4 @@
-= JCA
+# JCA
 
 Provides support for the Java Connector Architecture (JCA)
 according to JSR 322.
@@ -15,199 +15,199 @@ according to JSR 322.
 
 .Configuration
 
-swarm.j-c-a.archive-validation.enabled:: 
+swarm.jca.archive-validation.enabled:: 
 Specify whether archive validation is enabled
 
-swarm.j-c-a.archive-validation.fail-on-error:: 
+swarm.jca.archive-validation.fail-on-error:: 
 Should an archive validation error report fail the deployment
 
-swarm.j-c-a.archive-validation.fail-on-warn:: 
+swarm.jca.archive-validation.fail-on-warn:: 
 Should an archive validation warning report fail the deployment
 
-swarm.j-c-a.bean-validation.enabled:: 
+swarm.jca.bean-validation.enabled:: 
 Specify whether bean validation is enabled
 
-swarm.j-c-a.bootstrap-contexts._KEY_.name:: 
+swarm.jca.bootstrap-contexts._KEY_.name:: 
 The name of the BootstrapContext
 
-swarm.j-c-a.bootstrap-contexts._KEY_.workmanager:: 
+swarm.jca.bootstrap-contexts._KEY_.workmanager:: 
 The WorkManager instance for the BootstrapContext
 
-swarm.j-c-a.cached-connection-manager.debug:: 
+swarm.jca.cached-connection-manager.debug:: 
 Enable/disable debug information logging
 
-swarm.j-c-a.cached-connection-manager.error:: 
+swarm.jca.cached-connection-manager.error:: 
 Enable/disable error information logging
 
-swarm.j-c-a.cached-connection-manager.ignore-unknown-connections:: 
+swarm.jca.cached-connection-manager.ignore-unknown-connections:: 
 Do not cache unknown connections
 
-swarm.j-c-a.cached-connection-manager.install:: 
+swarm.jca.cached-connection-manager.install:: 
 Enable/disable the cached connection manager valve and interceptor
 
-swarm.j-c-a.distributed-workmanagers._KEY_.long-running-threads._KEY_.allow-core-timeout:: 
+swarm.jca.distributed-workmanagers._KEY_.long-running-threads._KEY_.allow-core-timeout:: 
 Whether core threads may time out.
 
-swarm.j-c-a.distributed-workmanagers._KEY_.long-running-threads._KEY_.core-threads:: 
+swarm.jca.distributed-workmanagers._KEY_.long-running-threads._KEY_.core-threads:: 
 The core thread pool size which is smaller than the maximum pool size. If undefined, the core thread pool size is the same as the maximum thread pool size.
 
-swarm.j-c-a.distributed-workmanagers._KEY_.long-running-threads._KEY_.current-thread-count:: 
+swarm.jca.distributed-workmanagers._KEY_.long-running-threads._KEY_.current-thread-count:: 
 The current number of threads in the pool.
 
-swarm.j-c-a.distributed-workmanagers._KEY_.long-running-threads._KEY_.handoff-executor:: 
+swarm.jca.distributed-workmanagers._KEY_.long-running-threads._KEY_.handoff-executor:: 
 An executor to delegate tasks to in the event that a task cannot be accepted. If not specified, tasks that cannot be accepted will be silently discarded.
 
-swarm.j-c-a.distributed-workmanagers._KEY_.long-running-threads._KEY_.keepalive-time:: 
+swarm.jca.distributed-workmanagers._KEY_.long-running-threads._KEY_.keepalive-time:: 
 Used to specify the amount of time that pool threads should be kept running when idle; if not specified, threads will run until the executor is shut down.
 
-swarm.j-c-a.distributed-workmanagers._KEY_.long-running-threads._KEY_.largest-thread-count:: 
+swarm.jca.distributed-workmanagers._KEY_.long-running-threads._KEY_.largest-thread-count:: 
 The largest number of threads that have ever simultaneously been in the pool.
 
-swarm.j-c-a.distributed-workmanagers._KEY_.long-running-threads._KEY_.max-threads:: 
+swarm.jca.distributed-workmanagers._KEY_.long-running-threads._KEY_.max-threads:: 
 The maximum thread pool size.
 
-swarm.j-c-a.distributed-workmanagers._KEY_.long-running-threads._KEY_.name:: 
+swarm.jca.distributed-workmanagers._KEY_.long-running-threads._KEY_.name:: 
 The name of the thread pool.
 
-swarm.j-c-a.distributed-workmanagers._KEY_.long-running-threads._KEY_.queue-length:: 
+swarm.jca.distributed-workmanagers._KEY_.long-running-threads._KEY_.queue-length:: 
 The queue length.
 
-swarm.j-c-a.distributed-workmanagers._KEY_.long-running-threads._KEY_.queue-size:: 
+swarm.jca.distributed-workmanagers._KEY_.long-running-threads._KEY_.queue-size:: 
 The queue size.
 
-swarm.j-c-a.distributed-workmanagers._KEY_.long-running-threads._KEY_.rejected-count:: 
+swarm.jca.distributed-workmanagers._KEY_.long-running-threads._KEY_.rejected-count:: 
 The number of tasks that have been passed to the handoff-executor (if one is specified) or discarded.
 
-swarm.j-c-a.distributed-workmanagers._KEY_.long-running-threads._KEY_.thread-factory:: 
+swarm.jca.distributed-workmanagers._KEY_.long-running-threads._KEY_.thread-factory:: 
 Specifies the name of a specific thread factory to use to create worker threads. If not defined an appropriate default thread factory will be used.
 
-swarm.j-c-a.distributed-workmanagers._KEY_.name:: 
+swarm.jca.distributed-workmanagers._KEY_.name:: 
 The name of the DistributedWorkManager
 
-swarm.j-c-a.distributed-workmanagers._KEY_.policy:: 
+swarm.jca.distributed-workmanagers._KEY_.policy:: 
 The policy decides when to redistribute a Work instance
 
-swarm.j-c-a.distributed-workmanagers._KEY_.policy-options:: 
+swarm.jca.distributed-workmanagers._KEY_.policy-options:: 
 List of policy's options key/value pairs
 
-swarm.j-c-a.distributed-workmanagers._KEY_.selector:: 
+swarm.jca.distributed-workmanagers._KEY_.selector:: 
 The selector decides to which nodes in the network to redistribute the Work instance to
 
-swarm.j-c-a.distributed-workmanagers._KEY_.selector-options:: 
+swarm.jca.distributed-workmanagers._KEY_.selector-options:: 
 List of selector's options key/value pairs
 
-swarm.j-c-a.distributed-workmanagers._KEY_.short-running-threads._KEY_.allow-core-timeout:: 
+swarm.jca.distributed-workmanagers._KEY_.short-running-threads._KEY_.allow-core-timeout:: 
 Whether core threads may time out.
 
-swarm.j-c-a.distributed-workmanagers._KEY_.short-running-threads._KEY_.core-threads:: 
+swarm.jca.distributed-workmanagers._KEY_.short-running-threads._KEY_.core-threads:: 
 The core thread pool size which is smaller than the maximum pool size. If undefined, the core thread pool size is the same as the maximum thread pool size.
 
-swarm.j-c-a.distributed-workmanagers._KEY_.short-running-threads._KEY_.current-thread-count:: 
+swarm.jca.distributed-workmanagers._KEY_.short-running-threads._KEY_.current-thread-count:: 
 The current number of threads in the pool.
 
-swarm.j-c-a.distributed-workmanagers._KEY_.short-running-threads._KEY_.handoff-executor:: 
+swarm.jca.distributed-workmanagers._KEY_.short-running-threads._KEY_.handoff-executor:: 
 An executor to delegate tasks to in the event that a task cannot be accepted. If not specified, tasks that cannot be accepted will be silently discarded.
 
-swarm.j-c-a.distributed-workmanagers._KEY_.short-running-threads._KEY_.keepalive-time:: 
+swarm.jca.distributed-workmanagers._KEY_.short-running-threads._KEY_.keepalive-time:: 
 Used to specify the amount of time that pool threads should be kept running when idle; if not specified, threads will run until the executor is shut down.
 
-swarm.j-c-a.distributed-workmanagers._KEY_.short-running-threads._KEY_.largest-thread-count:: 
+swarm.jca.distributed-workmanagers._KEY_.short-running-threads._KEY_.largest-thread-count:: 
 The largest number of threads that have ever simultaneously been in the pool.
 
-swarm.j-c-a.distributed-workmanagers._KEY_.short-running-threads._KEY_.max-threads:: 
+swarm.jca.distributed-workmanagers._KEY_.short-running-threads._KEY_.max-threads:: 
 The maximum thread pool size.
 
-swarm.j-c-a.distributed-workmanagers._KEY_.short-running-threads._KEY_.name:: 
+swarm.jca.distributed-workmanagers._KEY_.short-running-threads._KEY_.name:: 
 The name of the thread pool.
 
-swarm.j-c-a.distributed-workmanagers._KEY_.short-running-threads._KEY_.queue-length:: 
+swarm.jca.distributed-workmanagers._KEY_.short-running-threads._KEY_.queue-length:: 
 The queue length.
 
-swarm.j-c-a.distributed-workmanagers._KEY_.short-running-threads._KEY_.queue-size:: 
+swarm.jca.distributed-workmanagers._KEY_.short-running-threads._KEY_.queue-size:: 
 The queue size.
 
-swarm.j-c-a.distributed-workmanagers._KEY_.short-running-threads._KEY_.rejected-count:: 
+swarm.jca.distributed-workmanagers._KEY_.short-running-threads._KEY_.rejected-count:: 
 The number of tasks that have been passed to the handoff-executor (if one is specified) or discarded.
 
-swarm.j-c-a.distributed-workmanagers._KEY_.short-running-threads._KEY_.thread-factory:: 
+swarm.jca.distributed-workmanagers._KEY_.short-running-threads._KEY_.thread-factory:: 
 Specifies the name of a specific thread factory to use to create worker threads. If not defined an appropriate default thread factory will be used.
 
-swarm.j-c-a.tracer.enabled:: 
+swarm.jca.tracer.enabled:: 
 Specify whether tracer is enabled
 
-swarm.j-c-a.workmanagers._KEY_.long-running-threads._KEY_.allow-core-timeout:: 
+swarm.jca.workmanagers._KEY_.long-running-threads._KEY_.allow-core-timeout:: 
 Whether core threads may time out.
 
-swarm.j-c-a.workmanagers._KEY_.long-running-threads._KEY_.core-threads:: 
+swarm.jca.workmanagers._KEY_.long-running-threads._KEY_.core-threads:: 
 The core thread pool size which is smaller than the maximum pool size. If undefined, the core thread pool size is the same as the maximum thread pool size.
 
-swarm.j-c-a.workmanagers._KEY_.long-running-threads._KEY_.current-thread-count:: 
+swarm.jca.workmanagers._KEY_.long-running-threads._KEY_.current-thread-count:: 
 The current number of threads in the pool.
 
-swarm.j-c-a.workmanagers._KEY_.long-running-threads._KEY_.handoff-executor:: 
+swarm.jca.workmanagers._KEY_.long-running-threads._KEY_.handoff-executor:: 
 An executor to delegate tasks to in the event that a task cannot be accepted. If not specified, tasks that cannot be accepted will be silently discarded.
 
-swarm.j-c-a.workmanagers._KEY_.long-running-threads._KEY_.keepalive-time:: 
+swarm.jca.workmanagers._KEY_.long-running-threads._KEY_.keepalive-time:: 
 Used to specify the amount of time that pool threads should be kept running when idle; if not specified, threads will run until the executor is shut down.
 
-swarm.j-c-a.workmanagers._KEY_.long-running-threads._KEY_.largest-thread-count:: 
+swarm.jca.workmanagers._KEY_.long-running-threads._KEY_.largest-thread-count:: 
 The largest number of threads that have ever simultaneously been in the pool.
 
-swarm.j-c-a.workmanagers._KEY_.long-running-threads._KEY_.max-threads:: 
+swarm.jca.workmanagers._KEY_.long-running-threads._KEY_.max-threads:: 
 The maximum thread pool size.
 
-swarm.j-c-a.workmanagers._KEY_.long-running-threads._KEY_.name:: 
+swarm.jca.workmanagers._KEY_.long-running-threads._KEY_.name:: 
 The name of the thread pool.
 
-swarm.j-c-a.workmanagers._KEY_.long-running-threads._KEY_.queue-length:: 
+swarm.jca.workmanagers._KEY_.long-running-threads._KEY_.queue-length:: 
 The queue length.
 
-swarm.j-c-a.workmanagers._KEY_.long-running-threads._KEY_.queue-size:: 
+swarm.jca.workmanagers._KEY_.long-running-threads._KEY_.queue-size:: 
 The queue size.
 
-swarm.j-c-a.workmanagers._KEY_.long-running-threads._KEY_.rejected-count:: 
+swarm.jca.workmanagers._KEY_.long-running-threads._KEY_.rejected-count:: 
 The number of tasks that have been passed to the handoff-executor (if one is specified) or discarded.
 
-swarm.j-c-a.workmanagers._KEY_.long-running-threads._KEY_.thread-factory:: 
+swarm.jca.workmanagers._KEY_.long-running-threads._KEY_.thread-factory:: 
 Specifies the name of a specific thread factory to use to create worker threads. If not defined an appropriate default thread factory will be used.
 
-swarm.j-c-a.workmanagers._KEY_.name:: 
+swarm.jca.workmanagers._KEY_.name:: 
 The name of the WorkManager
 
-swarm.j-c-a.workmanagers._KEY_.short-running-threads._KEY_.allow-core-timeout:: 
+swarm.jca.workmanagers._KEY_.short-running-threads._KEY_.allow-core-timeout:: 
 Whether core threads may time out.
 
-swarm.j-c-a.workmanagers._KEY_.short-running-threads._KEY_.core-threads:: 
+swarm.jca.workmanagers._KEY_.short-running-threads._KEY_.core-threads:: 
 The core thread pool size which is smaller than the maximum pool size. If undefined, the core thread pool size is the same as the maximum thread pool size.
 
-swarm.j-c-a.workmanagers._KEY_.short-running-threads._KEY_.current-thread-count:: 
+swarm.jca.workmanagers._KEY_.short-running-threads._KEY_.current-thread-count:: 
 The current number of threads in the pool.
 
-swarm.j-c-a.workmanagers._KEY_.short-running-threads._KEY_.handoff-executor:: 
+swarm.jca.workmanagers._KEY_.short-running-threads._KEY_.handoff-executor:: 
 An executor to delegate tasks to in the event that a task cannot be accepted. If not specified, tasks that cannot be accepted will be silently discarded.
 
-swarm.j-c-a.workmanagers._KEY_.short-running-threads._KEY_.keepalive-time:: 
+swarm.jca.workmanagers._KEY_.short-running-threads._KEY_.keepalive-time:: 
 Used to specify the amount of time that pool threads should be kept running when idle; if not specified, threads will run until the executor is shut down.
 
-swarm.j-c-a.workmanagers._KEY_.short-running-threads._KEY_.largest-thread-count:: 
+swarm.jca.workmanagers._KEY_.short-running-threads._KEY_.largest-thread-count:: 
 The largest number of threads that have ever simultaneously been in the pool.
 
-swarm.j-c-a.workmanagers._KEY_.short-running-threads._KEY_.max-threads:: 
+swarm.jca.workmanagers._KEY_.short-running-threads._KEY_.max-threads:: 
 The maximum thread pool size.
 
-swarm.j-c-a.workmanagers._KEY_.short-running-threads._KEY_.name:: 
+swarm.jca.workmanagers._KEY_.short-running-threads._KEY_.name:: 
 The name of the thread pool.
 
-swarm.j-c-a.workmanagers._KEY_.short-running-threads._KEY_.queue-length:: 
+swarm.jca.workmanagers._KEY_.short-running-threads._KEY_.queue-length:: 
 The queue length.
 
-swarm.j-c-a.workmanagers._KEY_.short-running-threads._KEY_.queue-size:: 
+swarm.jca.workmanagers._KEY_.short-running-threads._KEY_.queue-size:: 
 The queue size.
 
-swarm.j-c-a.workmanagers._KEY_.short-running-threads._KEY_.rejected-count:: 
+swarm.jca.workmanagers._KEY_.short-running-threads._KEY_.rejected-count:: 
 The number of tasks that have been passed to the handoff-executor (if one is specified) or discarded.
 
-swarm.j-c-a.workmanagers._KEY_.short-running-threads._KEY_.thread-factory:: 
+swarm.jca.workmanagers._KEY_.short-running-threads._KEY_.thread-factory:: 
 Specifies the name of a specific thread factory to use to create worker threads. If not defined an appropriate default thread factory will be used.
 
 

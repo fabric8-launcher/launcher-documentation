@@ -1,4 +1,4 @@
-= Undertow
+# Undertow
 
 Provides basic HTTP support, including Java Servlets, JavaServer Pages (JSP),
 and JavaServer Pages Standard Tag Library (JSTL) according to JSR-340, JSR-245
@@ -886,7 +886,7 @@ Target VM level for compilation.
 swarm.undertow.servlet-containers._KEY_.jsp-setting.trim-spaces:: 
 Trim some spaces from the generated Servlet.
 
-swarm.undertow.servlet-containers._KEY_.jsp-setting.x-powered-by:: 
+swarm.undertow.servlet-containers._KEY_.jsp-setting.xPowered-by:: 
 Enable advertising the JSP engine in x-powered-by.
 
 swarm.undertow.servlet-containers._KEY_.max-sessions:: 

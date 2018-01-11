@@ -12,202 +12,202 @@
 
 .Configuration
 
-swarm.ejb3.async-service.thread-pool-name:: 
+swarm.ejb.async-service.thread-pool-name:: 
 The name of the thread pool which handles asynchronous invocations
 
-swarm.ejb3.caches._KEY_.aliases:: 
+swarm.ejb.caches._KEY_.aliases:: 
 The aliases by which this cache may also be referenced
 
-swarm.ejb3.caches._KEY_.passivation-store:: 
+swarm.ejb.caches._KEY_.passivation-store:: 
 The passivation store used by this cache
 
-swarm.ejb3.cluster-passivation-stores._KEY_.bean-cache:: 
+swarm.ejb.cluster-passivation-stores._KEY_.bean-cache:: 
 The name of the cache used to store bean instances.
 
-swarm.ejb3.cluster-passivation-stores._KEY_.cache-container:: 
+swarm.ejb.cluster-passivation-stores._KEY_.cache-container:: 
 The name of the cache container used for the bean and client-mappings caches
 
-swarm.ejb3.cluster-passivation-stores._KEY_.idle-timeout:: 
+swarm.ejb.cluster-passivation-stores._KEY_.idle-timeout:: 
 The timeout in units specified by idle-timeout-unit, after which a bean will passivate
 
-swarm.ejb3.cluster-passivation-stores._KEY_.max-size:: 
+swarm.ejb.cluster-passivation-stores._KEY_.max-size:: 
 The maximum number of beans this cache should store before forcing old beans to passivate
 
-swarm.ejb3.default-distinct-name:: 
+swarm.ejb.default-distinct-name:: 
 The default distinct name that is applied to every EJB deployed on this server
 
-swarm.ejb3.default-entity-bean-instance-pool:: 
+swarm.ejb.default-entity-bean-instance-pool:: 
 Name of the default entity bean instance pool, which will be applicable to all entity beans, unless overridden at the deployment or bean level
 
-swarm.ejb3.default-entity-bean-optimistic-locking:: 
+swarm.ejb.default-entity-bean-optimistic-locking:: 
 If set to true entity beans will use optimistic locking by default
 
-swarm.ejb3.default-mdb-instance-pool:: 
+swarm.ejb.default-mdb-instance-pool:: 
 Name of the default MDB instance pool, which will be applicable to all MDBs, unless overridden at the deployment or bean level
 
-swarm.ejb3.default-missing-method-permissions-deny-access:: 
+swarm.ejb.default-missing-method-permissions-deny-access:: 
 If this is set to true then methods on an EJB with a security domain specified or with other methods with security metadata will have an implicit @DenyAll unless other security metadata is present
 
-swarm.ejb3.default-resource-adapter-name:: 
+swarm.ejb.default-resource-adapter-name:: 
 Name of the default resource adapter name that will be used by MDBs, unless overridden at the deployment or bean level
 
-swarm.ejb3.default-security-domain:: 
+swarm.ejb.default-security-domain:: 
 The default security domain that will be used for EJBs if the bean doesn't explicitly specify one
 
-swarm.ejb3.default-sfsb-cache:: 
+swarm.ejb.default-sfsb-cache:: 
 Name of the default stateful bean cache, which will be applicable to all stateful EJBs, unless overridden at the deployment or bean level
 
-swarm.ejb3.default-sfsb-passivation-disabled-cache:: 
+swarm.ejb.default-sfsb-passivation-disabled-cache:: 
 Name of the default stateful bean cache, which will be applicable to all stateful EJBs which have passivation disabled. Each deployment or EJB can optionally override this cache name.
 
-swarm.ejb3.default-singleton-bean-access-timeout:: 
+swarm.ejb.default-singleton-bean-access-timeout:: 
 The default access timeout for singleton beans
 
-swarm.ejb3.default-slsb-instance-pool:: 
+swarm.ejb.default-slsb-instance-pool:: 
 Name of the default stateless bean instance pool, which will be applicable to all stateless EJBs, unless overridden at the deployment or bean level
 
-swarm.ejb3.default-stateful-bean-access-timeout:: 
+swarm.ejb.default-stateful-bean-access-timeout:: 
 The default access timeout for stateful beans
 
-swarm.ejb3.enable-statistics:: 
+swarm.ejb.enable-statistics:: 
 If set to true, enable the collection of invocation statistics.
 
-swarm.ejb3.file-passivation-stores._KEY_.idle-timeout:: 
+swarm.ejb.file-passivation-stores._KEY_.idle-timeout:: 
 The timeout in units specified by idle-timeout-unit, after which a bean will passivate
 
-swarm.ejb3.file-passivation-stores._KEY_.max-size:: 
+swarm.ejb.file-passivation-stores._KEY_.max-size:: 
 The maximum number of beans this cache should store before forcing old beans to passivate
 
-swarm.ejb3.iiop-service.enable-by-default:: 
+swarm.ejb.iiop-service.enable-by-default:: 
 If this is true EJB's will be exposed over IIOP by default, otherwise it needs to be explicitly enabled in the deployment descriptor
 
-swarm.ejb3.iiop-service.use-qualified-name:: 
+swarm.ejb.iiop-service.use-qualified-name:: 
 If true EJB names will be bound into the naming service with the application and module name prepended to the name (e.g. myapp/mymodule/MyEjb)
 
-swarm.ejb3.in-vm-remote-interface-invocation-pass-by-value:: 
+swarm.ejb.in-vm-remote-interface-invocation-pass-by-value:: 
 If set to false, the parameters to invocations on remote interface of an EJB, will be passed by reference. Else, the parameters will be passed by value.
 
-swarm.ejb3.log-system-exceptions:: 
+swarm.ejb.log-system-exceptions:: 
 If this is true then all EJB system (not application) exceptions will be logged. The EJB spec mandates this behaviour, however it is not recommended as it will often result in exceptions being logged twice (once by the EJB and once by the calling code)
 
-swarm.ejb3.mdb-delivery-groups._KEY_.active:: 
+swarm.ejb.mdb-delivery-groups._KEY_.active:: 
 Indicates if delivery for all MDBs belonging to this group is active
 
-swarm.ejb3.passivation-stores._KEY_.bean-cache:: 
+swarm.ejb.passivation-stores._KEY_.bean-cache:: 
 The name of the cache used to store bean instances.
 
-swarm.ejb3.passivation-stores._KEY_.cache-container:: 
+swarm.ejb.passivation-stores._KEY_.cache-container:: 
 The name of the cache container used for the bean and client-mappings caches
 
-swarm.ejb3.passivation-stores._KEY_.max-size:: 
+swarm.ejb.passivation-stores._KEY_.max-size:: 
 The maximum number of beans this cache should store before forcing old beans to passivate
 
-swarm.ejb3.remote-service.channel-creation-options._KEY_.type:: 
+swarm.ejb.remote-service.channel-creation-options._KEY_.type:: 
 The type of the channel creation option
 
-swarm.ejb3.remote-service.channel-creation-options._KEY_.value:: 
+swarm.ejb.remote-service.channel-creation-options._KEY_.value:: 
 The value for the EJB remote channel creation option
 
-swarm.ejb3.remote-service.cluster:: 
+swarm.ejb.remote-service.cluster:: 
 The name of the clustered cache container which will be used to store/access the client-mappings of the EJB remoting connector's socket-binding on each node, in the cluster
 
-swarm.ejb3.remote-service.connector-ref:: 
+swarm.ejb.remote-service.connector-ref:: 
 The name of the connector on which the EJB3 remoting channel is registered
 
-swarm.ejb3.remote-service.execute-in-worker:: 
+swarm.ejb.remote-service.execute-in-worker:: 
 If this is true the EJB request will be executed in the IO subsystems worker, otherwise it will dispatch to the EJB thread pool
 
-swarm.ejb3.remote-service.thread-pool-name:: 
+swarm.ejb.remote-service.thread-pool-name:: 
 The name of the thread pool that handles remote invocations
 
-swarm.ejb3.remoting-profiles._KEY_.exclude-local-receiver:: 
+swarm.ejb.remoting-profiles._KEY_.exclude-local-receiver:: 
 If set no local receiver is used in this profile
 
-swarm.ejb3.remoting-profiles._KEY_.local-receiver-pass-by-value:: 
+swarm.ejb.remoting-profiles._KEY_.local-receiver-pass-by-value:: 
 If set local receiver will pass ejb beans by value
 
-swarm.ejb3.remoting-profiles._KEY_.remoting-ejb-receivers._KEY_.channel-creation-options._KEY_.type:: 
+swarm.ejb.remoting-profiles._KEY_.remoting-ejb-receivers._KEY_.channel-creation-options._KEY_.type:: 
 The type of the channel creation option
 
-swarm.ejb3.remoting-profiles._KEY_.remoting-ejb-receivers._KEY_.channel-creation-options._KEY_.value:: 
+swarm.ejb.remoting-profiles._KEY_.remoting-ejb-receivers._KEY_.channel-creation-options._KEY_.value:: 
 The value for the EJB remote channel creation option
 
-swarm.ejb3.remoting-profiles._KEY_.remoting-ejb-receivers._KEY_.connect-timeout:: 
+swarm.ejb.remoting-profiles._KEY_.remoting-ejb-receivers._KEY_.connect-timeout:: 
 Remoting ejb receiver connect timeout
 
-swarm.ejb3.remoting-profiles._KEY_.remoting-ejb-receivers._KEY_.outbound-connection-ref:: 
+swarm.ejb.remoting-profiles._KEY_.remoting-ejb-receivers._KEY_.outbound-connection-ref:: 
 Name of outbound connection that will be used by the ejb receiver
 
-swarm.ejb3.strict-max-bean-instance-pools._KEY_.derive-size:: 
+swarm.ejb.strict-max-bean-instance-pools._KEY_.derive-size:: 
 Specifies if and what the max pool size should be derived from. A value of 'none', the default, indicates that the explicit value of max-pool-size should be used. A value of 'from-worker-pools' indicates that the max pool size should be derived from the size of the total threads for all worker pools configured on the system. A value of 'from-cpu-count' indicates that the max pool size should be derived from the total number of processors available on the system. Note that the computation isn't a 1:1 mapping, the values may or may not be augmented by other factors.
 
-swarm.ejb3.strict-max-bean-instance-pools._KEY_.max-pool-size:: 
+swarm.ejb.strict-max-bean-instance-pools._KEY_.max-pool-size:: 
 The maximum number of bean instances that the pool can hold at a given point in time
 
-swarm.ejb3.strict-max-bean-instance-pools._KEY_.timeout:: 
+swarm.ejb.strict-max-bean-instance-pools._KEY_.timeout:: 
 The maximum amount of time to wait for a bean instance to be available from the pool
 
-swarm.ejb3.strict-max-bean-instance-pools._KEY_.timeout-unit:: 
+swarm.ejb.strict-max-bean-instance-pools._KEY_.timeout-unit:: 
 The instance acquisition timeout unit
 
-swarm.ejb3.thread-pools._KEY_.active-count:: 
+swarm.ejb.thread-pools._KEY_.active-count:: 
 The approximate number of threads that are actively executing tasks.
 
-swarm.ejb3.thread-pools._KEY_.completed-task-count:: 
+swarm.ejb.thread-pools._KEY_.completed-task-count:: 
 The approximate total number of tasks that have completed execution.
 
-swarm.ejb3.thread-pools._KEY_.current-thread-count:: 
+swarm.ejb.thread-pools._KEY_.current-thread-count:: 
 The current number of threads in the pool.
 
-swarm.ejb3.thread-pools._KEY_.keepalive-time:: 
+swarm.ejb.thread-pools._KEY_.keepalive-time:: 
 Used to specify the amount of time that pool threads should be kept running when idle; if not specified, threads will run until the executor is shut down.
 
-swarm.ejb3.thread-pools._KEY_.largest-thread-count:: 
+swarm.ejb.thread-pools._KEY_.largest-thread-count:: 
 The largest number of threads that have ever simultaneously been in the pool.
 
-swarm.ejb3.thread-pools._KEY_.max-threads:: 
+swarm.ejb.thread-pools._KEY_.max-threads:: 
 The maximum thread pool size.
 
-swarm.ejb3.thread-pools._KEY_.name:: 
+swarm.ejb.thread-pools._KEY_.name:: 
 The name of the thread pool.
 
-swarm.ejb3.thread-pools._KEY_.queue-size:: 
+swarm.ejb.thread-pools._KEY_.queue-size:: 
 The queue size.
 
-swarm.ejb3.thread-pools._KEY_.rejected-count:: 
+swarm.ejb.thread-pools._KEY_.rejected-count:: 
 The number of tasks that have been rejected.
 
-swarm.ejb3.thread-pools._KEY_.task-count:: 
+swarm.ejb.thread-pools._KEY_.task-count:: 
 The approximate total number of tasks that have ever been scheduled for execution.
 
-swarm.ejb3.thread-pools._KEY_.thread-factory:: 
+swarm.ejb.thread-pools._KEY_.thread-factory:: 
 Specifies the name of a specific thread factory to use to create worker threads. If not defined an appropriate default thread factory will be used.
 
-swarm.ejb3.timer-service.database-data-stores._KEY_.allow-execution:: 
+swarm.ejb.timer-service.database-data-stores._KEY_.allow-execution:: 
 If this node is allowed to execute timers. If this is false then the timers will be added to the database, and another node may execute them. Note that depending on your refresh interval if you add timers with a very short delay they will not be executed until another node refreshes.
 
-swarm.ejb3.timer-service.database-data-stores._KEY_.database:: 
+swarm.ejb.timer-service.database-data-stores._KEY_.database:: 
 The type of database that is in use. SQL can be customised per database type.
 
-swarm.ejb3.timer-service.database-data-stores._KEY_.datasource-jndi-name:: 
+swarm.ejb.timer-service.database-data-stores._KEY_.datasource-jndi-name:: 
 The datasource that is used to persist the timers
 
-swarm.ejb3.timer-service.database-data-stores._KEY_.partition:: 
+swarm.ejb.timer-service.database-data-stores._KEY_.partition:: 
 The partition name. This should be set to a different value for every node that is sharing a database to prevent the same timer being loaded by multiple noded.
 
-swarm.ejb3.timer-service.database-data-stores._KEY_.refresh-interval:: 
+swarm.ejb.timer-service.database-data-stores._KEY_.refresh-interval:: 
 Interval between refreshing the current timer set against the underlying database. A low value means timers get picked up more quickly, but increase load on the database.
 
-swarm.ejb3.timer-service.default-data-store:: 
+swarm.ejb.timer-service.default-data-store:: 
 The default data store used for persistent timers
 
-swarm.ejb3.timer-service.file-data-stores._KEY_.path:: 
+swarm.ejb.timer-service.file-data-stores._KEY_.path:: 
 The directory to store persistent timer information in
 
-swarm.ejb3.timer-service.file-data-stores._KEY_.relative-to:: 
+swarm.ejb.timer-service.file-data-stores._KEY_.relative-to:: 
 The relative path that is used to resolve the timer data store location
 
-swarm.ejb3.timer-service.thread-pool-name:: 
+swarm.ejb.timer-service.thread-pool-name:: 
 The name of the thread pool used to run timer service invocations
 
 

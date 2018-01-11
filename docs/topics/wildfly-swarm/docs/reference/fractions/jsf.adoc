@@ -1,4 +1,4 @@
-= JSF
+# JSF
 
 Provides support for JavaServer Faces according to JSR-344.
 
@@ -14,7 +14,7 @@ Provides support for JavaServer Faces according to JSR-344.
 
 .Configuration
 
-swarm.j-s-f.default-jsf-impl-slot:: 
+swarm.jsf.default-jsf-impl-slot:: 
 Default JSF implementation slot
 
 
