@@ -1,4 +1,4 @@
-= CDI
+# CDI
 
 Provides context and dependency-injection support according to JSR-299.
 
@@ -14,13 +14,13 @@ Provides context and dependency-injection support according to JSR-299.
 
 .Configuration
 
-swarm.c-d-i.development-mode:: 
+swarm.cdi.development-mode:: 
 Weld comes with a special mode for application development. When the development mode is enabled, certain built-in tools, which facilitate the development of CDI applications, are available. Setting this attribute to true activates the development mode.
 
-swarm.c-d-i.non-portable-mode:: 
+swarm.cdi.non-portable-mode:: 
 If true then the non-portable mode is enabled. The non-portable mode is suggested by the specification to overcome problems with legacy applications that do not use CDI SPI properly and may be rejected by more strict validation in CDI 1.1.
 
-swarm.c-d-i.require-bean-descriptor:: 
+swarm.cdi.require-bean-descriptor:: 
 If true then implicit bean archives without bean descriptor file (beans.xml) are ignored by Weld
 
 

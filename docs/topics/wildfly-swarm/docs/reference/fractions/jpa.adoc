@@ -1,4 +1,4 @@
-= JPA
+# JPA
 
 Provides support for the Java Persistence API according
 to JSR-220.
@@ -15,10 +15,10 @@ to JSR-220.
 
 .Configuration
 
-swarm.j-p-a.default-datasource:: 
+swarm.jpa.default-datasource:: 
 The name of the default global datasource.
 
-swarm.j-p-a.default-extended-persistence-inheritance:: 
+swarm.jpa.default-extended-persistence-inheritance:: 
 Controls how JPA extended persistence context (XPC) inheritance is performed. 'DEEP' shares the extended persistence context at top bean level.  'SHALLOW' the extended persistece context is only shared with the parent bean (never with sibling beans).
 
 

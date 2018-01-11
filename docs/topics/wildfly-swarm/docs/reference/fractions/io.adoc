@@ -1,4 +1,4 @@
-= IO
+# IO
 
 Primarily an internal fraction supporting I/O activities
 for higher-level fractions.
@@ -15,25 +15,25 @@ for higher-level fractions.
 
 .Configuration
 
-swarm.i-o.buffer-pools._KEY_.buffer-size:: 
+swarm.io.buffer-pools._KEY_.buffer-size:: 
 The size of each buffer slice in bytes, if not set optimal value is calculated based on available RAM resources in your system.
 
-swarm.i-o.buffer-pools._KEY_.buffers-per-slice:: 
+swarm.io.buffer-pools._KEY_.buffers-per-slice:: 
 How many buffers per slice, if not set optimal value is calculated based on available RAM resources in your system.
 
-swarm.i-o.buffer-pools._KEY_.direct-buffers:: 
+swarm.io.buffer-pools._KEY_.direct-buffers:: 
 Does the buffer pool use direct buffers, some platforms don't support direct buffers
 
-swarm.i-o.workers._KEY_.io-threads:: 
+swarm.io.workers._KEY_.io-threads:: 
 Specify the number of I/O threads to create for the worker.  If not specified, a default will be chosen, which is calculated by cpuCount * 2
 
-swarm.i-o.workers._KEY_.stack-size:: 
+swarm.io.workers._KEY_.stack-size:: 
 The stack size (in bytes) to attempt to use for worker threads.
 
-swarm.i-o.workers._KEY_.task-keepalive:: 
+swarm.io.workers._KEY_.task-keepalive:: 
 Specify the number of milliseconds to keep non-core task threads alive.
 
-swarm.i-o.workers._KEY_.task-max-threads:: 
+swarm.io.workers._KEY_.task-max-threads:: 
 Specify the maximum number of threads for the worker task thread pool.If not set, default value used which is calculated by formula cpuCount * 16
 
 

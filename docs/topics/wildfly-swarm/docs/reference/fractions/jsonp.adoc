@@ -1,4 +1,4 @@
-= JSON-P
+# JSON-P
 
 Provides support for JSON Processing according to JSR-353.
 
