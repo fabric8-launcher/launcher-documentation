@@ -1,0 +1,25 @@
+include::topics/templates/document-attributes.adoc[]
+
+:community-page:
+:toc!:
+:title: Fabric8 Launcher Community
+
+++++
+<style>
+<!--
+.jumbotron {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+-->
+</style>
+<section class="jumbotron">
+    <img src="/docs/images/launch_logo.svg" alt="Fabric8 Launcher Logo">
+    <div id="repoInfo">
+      <h1 class="display-4">Fabric8 Launcher</h1>
+      <p class="lead">Prepare to launch...</p>
+    </div>
+  </section>
+++++
