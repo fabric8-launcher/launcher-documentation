@@ -31,6 +31,9 @@ $ oc new-project {project-name}
 . Navigate to the root directory of your booster.
 
 . Deploy the PostgreSQL database to OpenShift.
+Ensure that you use the following values for user name, password, and database name when creating your database application.
+The booster application is pre-configured to use these values.
+Using different values prevents your booster application from integrating with the database.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
