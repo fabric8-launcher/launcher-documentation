@@ -1,5 +1,7 @@
 = Change Log
 
+IMPORTANT: As of 2018.01.15, we have disabled Issues on this GitHub repository and moved to link:https://issues.jboss.org/projects/RHOARDOC/[Jira]. All issues have (both opened and closed) have been migrated.
+
 == link:https://github.com/fabric8-launch/appdev-documentation/releases/tag/2017-11-03[2017-11-03 Release]
 
 * https://github.com/openshiftio/appdev-documentation/issues/751[Issue
