@@ -1,7 +1,7 @@
 
 = Repository Filesystem Layout
 
-The following diagram describes the filesystem layout of the _appdev-documentation_ repository:
+The following diagram describes the filesystem layout of the _{repo-docs-name}_ repository:
 
 NOTE: The triple-dot indicates there are more files or directories in the particular directory.
 

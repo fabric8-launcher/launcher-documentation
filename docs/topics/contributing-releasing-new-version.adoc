@@ -96,5 +96,5 @@ Replace `$REMOTE` with the name of the upstream remote.
 --
 
 . Request publication:
-.. File a pull request in the link:https://github.com/openshiftio/saas-launchpad/blob/master/launchpad-services/appdev-documentation.yaml#L2[openshiftio/saas-launchpad] repository, where you change the `hash` value to the hash of the commit you want to publish from the link:{link-repo-docs}[appdev-documentation] repository. Usually, this will be the latest commit in the `master` branch.
+.. File a pull request in the link:https://github.com/openshiftio/saas-launchpad/blob/master/launchpad-services/appdev-documentation.yaml#L2[openshiftio/saas-launchpad] repository, where you change the `hash` value to the hash of the commit you want to publish from the link:{link-repo-docs}[{repo-docs-name}] repository. Usually, this will be the latest commit in the `master` branch.
 .. Wait for the pull request to be accepted. When that happens, verify that the link:{docs-stage}[stage build] succeeded.

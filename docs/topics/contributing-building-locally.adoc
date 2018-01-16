@@ -39,7 +39,7 @@ Example:
 
 [source,bash]
 ----
-$ firefox $REPO_HOME/html/contribution-guide.html
+$ firefox $REPO_HOME/html/docs/contribution-guide.html
 ----
 
 Replace `$REPO_HOME` with the real path to the repository, and `firefox` with the name of your preferred browser.
@@ -59,7 +59,7 @@ $ ./build_guides.sh
 --
 [source,bash]
 ----
-$ firefox $REPO_HOME/html/*.html
+$ firefox $REPO_HOME/html/docs/*.html
 ----
 
 Replace `$REPO_HOME` with the real path to the repository.

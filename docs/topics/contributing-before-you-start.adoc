@@ -3,7 +3,7 @@
 
 To contribute to the AppDev documentation, you need to configure the following tools and accounts:
 
-== Tools
+== Tools _(required)_
 
 You must install the following tools on your system:
 
@@ -32,7 +32,8 @@ To install Meld on Fedora, CentOS, or RHEL, run the following command (in Fedora
 # yum install meld
 ----
 
-== Accounts
+[[_accounts]]
+== Accounts _(required)_
 
 To contribute, you must have a link:https://github.com/join[GitHub account] with GPG configured. To configure GPG:
 
@@ -61,7 +62,7 @@ For more information, see link:https://help.github.com/articles/signing-commits-
 $ git config --global gpg.program gpg2
 ----
 
-== Setting Up Git Hooks
+== Setting Up Git Hooks _(recommended)_
 
 To make a contribution to the {repo-docs-name} repository, you need to set up the Git hooks directory. These hooks automatically make sure at commit time that your contribution does not break important parts of the repository.
 

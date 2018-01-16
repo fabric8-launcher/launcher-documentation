@@ -1,7 +1,8 @@
 
-= Making Changes
+[[git-workflow-making-changes]]
+= Git Workflow for Making Changes
 
-When making contributions, follow the standard link:https://guides.github.com/introduction/flow/[GitHub flow]. Below, you will find more details about the steps that are required in the _appdev-documentation_ repository.
+When making contributions, follow the standard link:https://guides.github.com/introduction/flow/[GitHub flow]. Below, you will find more details about the steps that are required in the _{repo-docs-name}_ repository.
 
 WARNING: Do not edit files in the `$REPO_HOME/docs/topics/wildfly-swarm` directory, always submit a pull request to the link:{link-repo-wildfly-swarm}[{WildFlySwarm} repository] and synchronize the files afterwards.
 
@@ -15,7 +16,7 @@ WARNING: Do not edit files in the `$REPO_HOME/docs/topics/wildfly-swarm` directo
 == Procedure
 
 .Contributor Workflow
-. Create a topic branch in your personal fork of the _appdev-documentation_ repository. If you want to resolve a particular issue with your changes, name the branch `issue-$ID`, where `$ID` is the numerical ID of the issue.
+. Create a topic branch in your personal fork of the _{repo-docs-name}_ repository. If you want to resolve a particular issue with your changes, name the branch `issue-$ID`, where `$ID` is the numerical ID of the issue.
 . Commit and push your changes to the topic branch. Verify your changes:
 ** Preview the build locally. For more information, see xref:_building_locally[].
 ** Optionally validate the books. This step is done automatically by a commit hook at commit time, but you can validate the books manually at any time. Execute the following script:

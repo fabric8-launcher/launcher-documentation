@@ -1,0 +1,9 @@
+
+= Modifying Existing Content
+
+To modify an existing guide, you must understand how it is structured as well as the basic workflow for modifying it.
+
+include::concept_contributing-guide-structure.adoc[leveloffset=+1]
+
+include::proc_contributing-basic-change-workflow.adoc[leveloffset=+1]
+

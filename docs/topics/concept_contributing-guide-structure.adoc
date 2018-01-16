@@ -1,0 +1,41 @@
+= Guide Structure
+
+Each guide is stored in a separate directory. The main file for the guide is `$REPO_HOME/docs/GUIDE_NAME/master.adoc`.
+
+.Example `master.adoc` file
+[source,asciidoc,options="nowrap"]
+----
+include::topics/templates/document-attributes.adoc[] <1>
+//var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end <2>
+:docs-topic: <3>
+
+= {contrib-guide-name} <4>
+
+
+== {launcher} Development
+
+This chapter contains information about developing your own runtimes or boosters, contributing changes to existing ones, and improving {launcher}.
+
+include::topics/assembly-updating-booster-catalog-for-local-minishift-testing.adoc[leveloffset=+2] <5>
+
+You can preview the latest state of {launcher} by navigating to the link:{launcher-stage}[stage build] of {launcher}.
+
+== Filing a Code Issue
+...
+----
+<1> Includes a file that sets common attributes across all guides.
+<2> A comment that will not be rendered in the final output.
+<3> Defines a new attribute called `docs-topic`
+<4> Sets the document title, in this case it uses the existing attribute `contrib-guide-name`. This attribute is defined in `$REPO_HOME/docs/topics/templates/document-attributes.adoc`.
+<5> Adds the content from `$REPO_HOME/docs/topics/assembly-updating-booster-catalog-for-local-minishift-testing.adoc` and adds a link:http://asciidoctor.org/docs/user-manual/#include-partitioning[level offset] of two, which means heading levels are offset by two. For example, first-level headings in `$REPO_HOME/docs/topics/assembly-updating-booster-catalog-for-local-minishift-testing.adoc` are rendered as third-level headings.
+
+There are a few important concepts that are heavily used that you need to learn:
+
+document-attributes file::
+  `$REPO_HOME/docs/topics/templates/document-attributes.adoc` sets common variables that are used across all the guides. Every guide includes this file.
+partitioning content::
+  Sections of content in each guide are separated into smaller files. This allows for content to be easily refactored within a guide as well as reused across different guides. The `include` directive is used to include these files in a piece of content.
+modular documentation::
+  An individual piece of content, called a module, is formatted in xref:writing-the-modular-way[a specific way], which allows for better reuse across guides.
+common topics directory::
+  All of the smaller content files and modules are located in the `$REPO_HOME/docs/topics/` directory. This is a common directory that contains all shared files across all guides. To help the build process, the `$REPO_HOME/docs/topics/` directory is symlinked in each guide's directory.

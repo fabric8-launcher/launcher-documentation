@@ -28,9 +28,9 @@ $ git remote -v
 .. Copy the repository URL beginning with `git@github.com:`.
 .. Execute the following command, replacing `username` with the user name of the contributor:
 +
-[source,bash,options="nowrap"]
+[source,bash,options="nowrap",subs="attributes+"]
 ----
-$ git remote add username git@github.com:username/appdev-documentation.git
+$ git remote add username git@github.com:username/{repo-docs-name}.git
 ----
 .. Use `git remote -v` to verify that the fork is now listed among your remotes.
 .. Execute `git remote update` to fetch the latest state of the remotes to your working directory.

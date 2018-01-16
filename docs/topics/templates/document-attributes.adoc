@@ -155,8 +155,7 @@
 
 :os-route-hostname: OPENSHIFT_HOSTNAME
 
-:link-launcher-install-script: https://raw.githubusercontent.com/fabric8-launch/appdev-documentation/master/scripts/deploy_launcher_mission.sh
-
+:link-launcher-install-script: https://raw.githubusercontent.com/fabric8-launcher/launcher-documentation/master/scripts/deploy_launcher_mission.sh
 
 // Mission Knowledge Proficiency
 // Usage expects all of these to be capitalized
@@ -168,8 +167,8 @@
 // Issue #489
 // externalize `github.com/appdev-documentation` repo references
 // changes NOT applicable to CHANGELOG and booster-specific README files.
-:repo-docs-name: appdev-documentation
-:link-repo-docs: https://github.com/fabric8-launch/appdev-documentation/
+:repo-docs-name: launcher-documentation
+:link-repo-docs: https://github.com/fabric8-launcher/launcher-documentation
 
 :docs-name: appdev.openshift.io
 :link-docs: https://appdev.openshift.io

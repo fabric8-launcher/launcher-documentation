@@ -19,7 +19,7 @@ _TBD_
 
 == Documentation
 
-This chapter contains information about contributing and releasing the {docs-name} documentation.
+This chapter contains information about contributing and releasing the {docs-name} documentation. You can also contribute to the documentation by filing an issue in our link:https://issues.jboss.org/projects/RHOARDOC/[Jira] project with corrections or feedback.
 
 include::topics/contributing-before-you-start.adoc[leveloffset=+2]
 
@@ -36,6 +36,8 @@ include::topics/contributing-branches.adoc[leveloffset=+3]
 === Contributing
 
 include::topics/contributing-making-changes.adoc[leveloffset=+3]
+
+include::topics/assembly_contributing-changing-existing-content.adoc[leveloffset=+3]
 
 include::topics/contributing-adding-new-guide.adoc[leveloffset=+3]
 
