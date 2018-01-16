@@ -1,4 +1,4 @@
-:toc:
+:toc: left
 :toclevels: 3
 :numbered:
 :docinfodir: topics/styles
