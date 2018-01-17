@@ -2,95 +2,177 @@ include::topics/templates/document-attributes.adoc[]
 
 :landing-page:
 :toc!:
-:docinfo1!:
 :title: {OpenShiftAppDev}
 //var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
 :docs-topic:
 
 ++++
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.23.3/css/patternfly.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.23.3/css/patternfly-additions.min.css">
-<style>@import url(https://overpass-30e2.kxcdn.com/overpass.css);.content[_ngcontent-c3]{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;min-height:calc(100% - 135px);font-family:Overpass,sans-serif}#intro[_ngcontent-c3]{background-image:url(/docs/images/losiohero-background-80_1.png);background-size:cover}#intro[_ngcontent-c3]   .container[_ngcontent-c3]{margin-top:40px;text-align:center}#intro[_ngcontent-c3]   h1[_ngcontent-c3]{font-size:20pt}#intro[_ngcontent-c3]   h1[_ngcontent-c3], #intro[_ngcontent-c3]   h2[_ngcontent-c3]{color:#fff;font-weight:700}#intro[_ngcontent-c3]   h2[_ngcontent-c3]{text-transform:uppercase;font-size:3em}#intro[_ngcontent-c3]   .row[_ngcontent-c3]{margin-top:5px}#intro[_ngcontent-c3]   .btn[_ngcontent-c3]{background:#fff none;border-color:#fff;color:#c00;padding:9px 40px;margin-top:40px;margin-bottom:30px;line-height:1.44;font-size:18px;text-transform:uppercase}#runtimes[_ngcontent-c3]{-ms-flex:1;flex:1;background-color:#f5f5f5;padding-top:10px;padding-bottom:10px}#runtimes[_ngcontent-c3]   h1[_ngcontent-c3]{color:#c00;font-weight:700}#runtimes[_ngcontent-c3]   a[_ngcontent-c3]:hover{color:#0088ce}#runtimes[_ngcontent-c3]   .row[_ngcontent-c3] + .row[_ngcontent-c3], #runtimes[_ngcontent-c3]   .runtime[_ngcontent-c3]{display:-ms-flexbox;display:flex}#runtimes[_ngcontent-c3]   .runtime[_ngcontent-c3]{-ms-flex-positive:1;flex-grow:1;background-color:#fff;margin:0 20px;-ms-flex-direction:column;flex-direction:column;padding:40px 20px}#runtimes[_ngcontent-c3]   .runtime[_ngcontent-c3]   p[_ngcontent-c3]{-ms-flex-positive:2;flex-grow:2}.icon[_ngcontent-c3]{background:no-repeat 50%;margin:auto;width:100%;height:110px}.boot[_ngcontent-c3]{background-image:url(/docs/images/project-select-icons/spring-boot-logo.png);background-size:25%}.swarm[_ngcontent-c3]{background-image:url(/docs/images/project-select-icons/swarm.svg)}.vertx[_ngcontent-c3]{background-image:url(/docs/images/project-select-icons/vertx.svg);background-size:80%}.node[_ngcontent-c3]{background-image:url(/docs/images/project-select-icons/nodejs-logo.png);background-size:60%}.ribbon[_ngcontent-c3]:after, .ribbon[_ngcontent-c3]:before{position:absolute;z-index:0;content:"";display:block;border:5px solid #8e0000}.ribbon[_ngcontent-c3]{width:120px;height:120px;overflow:hidden;position:absolute}.ribbon[_ngcontent-c3]   span[_ngcontent-c3]{position:absolute;display:block;width:220px;padding:9px 0;background-color:#c00;box-shadow:0 5px 10px rgba(0,0,0,.1);color:#fff;font:700 11px/1 Overpass,sans-serif;text-shadow:0 1px 1px rgba(0,0,0,.2);text-align:center}.ribbon-top-right[_ngcontent-c3]{top:-10px;right:-10px}.ribbon-top-right[_ngcontent-c3]   span[_ngcontent-c3]{left:-45px;top:30px;transform:rotate(45deg)}.ribbon-top-right[_ngcontent-c3]:before{top:0;left:0}.ribbon-top-right[_ngcontent-c3]:after, .ribbon-top-right[_ngcontent-c3]:before{border-top-color:transparent;border-right-color:transparent}.ribbon-top-right[_ngcontent-c3]:after{bottom:0;right:0}@media (max-width:425px){#runtimes[_ngcontent-c3]   .row[_ngcontent-c3] + .row[_ngcontent-c3]{display:initial}.content[_ngcontent-c3]{height:inherit}#intro[_ngcontent-c3]{margin-top:0}#intro[_ngcontent-c3]   h1[_ngcontent-c3]{font-size:22pt}#runtimes[_ngcontent-c3]{padding-top:0}#runtimes[_ngcontent-c3]   .runtime[_ngcontent-c3]{padding:10px;margin:5px}}@media (max-width:768px) and (min-width:426px){.content[_ngcontent-c3]{height:inherit}#intro[_ngcontent-c3]{margin-top:0}#intro[_ngcontent-c3]   h1[_ngcontent-c3]{font-size:28pt}#runtimes[_ngcontent-c3]{padding-top:20px}#runtimes[_ngcontent-c3]   .runtime[_ngcontent-c3]{padding:20px;margin:5px}}@media (max-width:1024px) and (min-width:769px){#intro[_ngcontent-c3]   h1[_ngcontent-c3]{font-size:35pt}#runtimes[_ngcontent-c3]   .runtime[_ngcontent-c3]   .inner[_ngcontent-c3]{padding:20px 50px}}@media (max-width:1200px) and (min-width:1025px){#intro[_ngcontent-c3]{margin-top:0}}</style>
 <style>
-#content {
-  max-width: none !important;
-  margin: 0px !important;
-  padding: 0px !important;
+.btn,[role=button]{cursor:pointer}.btn,.btn-danger.active,.btn-danger:active,.btn-default.active,.btn-default:active,.btn-info.active,.btn-info:active,.btn-primary.active,.btn-primary:active,.btn-success.active,.btn-success:active,.btn-warning.active,.btn-warning:active,.open>.dropdown-toggle.btn-danger,.open>.dropdown-toggle.btn-default,.open>.dropdown-toggle.btn-info,.open>.dropdown-toggle.btn-primary,.open>.dropdown-toggle.btn-success,.open>.dropdown-toggle.btn-warning{background-image:none}.btn,.btn-link{font-weight:400}.row{margin-left:-15px;margin-right:-15px}.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9{position:relative;min-height:1px;padding-left:15px;padding-right:15px}.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9{float:left}.col-xs-12{width:100%}.col-xs-11{width:91.66666667%}.col-xs-10{width:83.33333333%}.col-xs-9{width:75%}.col-xs-8{width:66.66666667%}.col-xs-7{width:58.33333333%}.col-xs-6{width:50%}.col-xs-5{width:41.66666667%}.col-xs-4{width:33.33333333%}.col-xs-3{width:25%}.col-xs-2{width:16.66666667%}.col-xs-1{width:8.33333333%}.col-xs-pull-12{right:100%}.col-xs-pull-11{right:91.66666667%}.col-xs-pull-10{right:83.33333333%}.col-xs-pull-9{right:75%}.col-xs-pull-8{right:66.66666667%}.col-xs-pull-7{right:58.33333333%}.col-xs-pull-6{right:50%}.col-xs-pull-5{right:41.66666667%}.col-xs-pull-4{right:33.33333333%}.col-xs-pull-3{right:25%}.col-xs-pull-2{right:16.66666667%}.col-xs-pull-1{right:8.33333333%}.col-xs-pull-0{right:auto}.col-xs-push-12{left:100%}.col-xs-push-11{left:91.66666667%}.col-xs-push-10{left:83.33333333%}.col-xs-push-9{left:75%}.col-xs-push-8{left:66.66666667%}.col-xs-push-7{left:58.33333333%}.col-xs-push-6{left:50%}.col-xs-push-5{left:41.66666667%}.col-xs-push-4{left:33.33333333%}.col-xs-push-3{left:25%}.col-xs-push-2{left:16.66666667%}.col-xs-push-1{left:8.33333333%}.col-xs-push-0{left:auto}.col-xs-offset-12{margin-left:100%}.col-xs-offset-11{margin-left:91.66666667%}.col-xs-offset-10{margin-left:83.33333333%}.col-xs-offset-9{margin-left:75%}.col-xs-offset-8{margin-left:66.66666667%}.col-xs-offset-7{margin-left:58.33333333%}.col-xs-offset-6{margin-left:50%}.col-xs-offset-5{margin-left:41.66666667%}.col-xs-offset-4{margin-left:33.33333333%}.col-xs-offset-3{margin-left:25%}.col-xs-offset-2{margin-left:16.66666667%}.col-xs-offset-1{margin-left:8.33333333%}.col-xs-offset-0{margin-left:0}@media (min-width:768px){.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9{float:left}.col-sm-12{width:100%}.col-sm-11{width:91.66666667%}.col-sm-10{width:83.33333333%}.col-sm-9{width:75%}.col-sm-8{width:66.66666667%}.col-sm-7{width:58.33333333%}.col-sm-6{width:50%}.col-sm-5{width:41.66666667%}.col-sm-4{width:33.33333333%}.col-sm-3{width:25%}.col-sm-2{width:16.66666667%}.col-sm-1{width:8.33333333%}.col-sm-pull-12{right:100%}.col-sm-pull-11{right:91.66666667%}.col-sm-pull-10{right:83.33333333%}.col-sm-pull-9{right:75%}.col-sm-pull-8{right:66.66666667%}.col-sm-pull-7{right:58.33333333%}.col-sm-pull-6{right:50%}.col-sm-pull-5{right:41.66666667%}.col-sm-pull-4{right:33.33333333%}.col-sm-pull-3{right:25%}.col-sm-pull-2{right:16.66666667%}.col-sm-pull-1{right:8.33333333%}.col-sm-pull-0{right:auto}.col-sm-push-12{left:100%}.col-sm-push-11{left:91.66666667%}.col-sm-push-10{left:83.33333333%}.col-sm-push-9{left:75%}.col-sm-push-8{left:66.66666667%}.col-sm-push-7{left:58.33333333%}.col-sm-push-6{left:50%}.col-sm-push-5{left:41.66666667%}.col-sm-push-4{left:33.33333333%}.col-sm-push-3{left:25%}.col-sm-push-2{left:16.66666667%}.col-sm-push-1{left:8.33333333%}.col-sm-push-0{left:auto}.col-sm-offset-12{margin-left:100%}.col-sm-offset-11{margin-left:91.66666667%}.col-sm-offset-10{margin-left:83.33333333%}.col-sm-offset-9{margin-left:75%}.col-sm-offset-8{margin-left:66.66666667%}.col-sm-offset-7{margin-left:58.33333333%}.col-sm-offset-6{margin-left:50%}.col-sm-offset-5{margin-left:41.66666667%}.col-sm-offset-4{margin-left:33.33333333%}.col-sm-offset-3{margin-left:25%}.col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-1{margin-left:8.33333333%}.col-sm-offset-0{margin-left:0}}@media (min-width:992px){.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9{float:left}.col-md-12{width:100%}.col-md-11{width:91.66666667%}.col-md-10{width:83.33333333%}.col-md-9{width:75%}.col-md-8{width:66.66666667%}.col-md-7{width:58.33333333%}.col-md-6{width:50%}.col-md-5{width:41.66666667%}.col-md-4{width:33.33333333%}.col-md-3{width:25%}.col-md-2{width:16.66666667%}.col-md-1{width:8.33333333%}.col-md-pull-12{right:100%}.col-md-pull-11{right:91.66666667%}.col-md-pull-10{right:83.33333333%}.col-md-pull-9{right:75%}.col-md-pull-8{right:66.66666667%}.col-md-pull-7{right:58.33333333%}.col-md-pull-6{right:50%}.col-md-pull-5{right:41.66666667%}.col-md-pull-4{right:33.33333333%}.col-md-pull-3{right:25%}.col-md-pull-2{right:16.66666667%}.col-md-pull-1{right:8.33333333%}.col-md-pull-0{right:auto}.col-md-push-12{left:100%}.col-md-push-11{left:91.66666667%}.col-md-push-10{left:83.33333333%}.col-md-push-9{left:75%}.col-md-push-8{left:66.66666667%}.col-md-push-7{left:58.33333333%}.col-md-push-6{left:50%}.col-md-push-5{left:41.66666667%}.col-md-push-4{left:33.33333333%}.col-md-push-3{left:25%}.col-md-push-2{left:16.66666667%}.col-md-push-1{left:8.33333333%}.col-md-push-0{left:auto}.col-md-offset-12{margin-left:100%}.col-md-offset-11{margin-left:91.66666667%}.col-md-offset-10{margin-left:83.33333333%}.col-md-offset-9{margin-left:75%}.col-md-offset-8{margin-left:66.66666667%}.col-md-offset-7{margin-left:58.33333333%}.col-md-offset-6{margin-left:50%}.col-md-offset-5{margin-left:41.66666667%}.col-md-offset-4{margin-left:33.33333333%}.col-md-offset-3{margin-left:25%}.col-md-offset-2{margin-left:16.66666667%}.col-md-offset-1{margin-left:8.33333333%}.col-md-offset-0{margin-left:0}}@media (min-width:1200px){.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9{float:left}.col-lg-12{width:100%}.col-lg-11{width:91.66666667%}.col-lg-10{width:83.33333333%}.col-lg-9{width:75%}.col-lg-8{width:66.66666667%}.col-lg-7{width:58.33333333%}.col-lg-6{width:50%}.col-lg-5{width:41.66666667%}.col-lg-4{width:33.33333333%}.col-lg-3{width:25%}.col-lg-2{width:16.66666667%}.col-lg-1{width:8.33333333%}.col-lg-pull-12{right:100%}.col-lg-pull-11{right:91.66666667%}.col-lg-pull-10{right:83.33333333%}.col-lg-pull-9{right:75%}.col-lg-pull-8{right:66.66666667%}.col-lg-pull-7{right:58.33333333%}.col-lg-pull-6{right:50%}.col-lg-pull-5{right:41.66666667%}.col-lg-pull-4{right:33.33333333%}.col-lg-pull-3{right:25%}.col-lg-pull-2{right:16.66666667%}.col-lg-pull-1{right:8.33333333%}.col-lg-pull-0{right:auto}.col-lg-push-12{left:100%}.col-lg-push-11{left:91.66666667%}.col-lg-push-10{left:83.33333333%}.col-lg-push-9{left:75%}.col-lg-push-8{left:66.66666667%}.col-lg-push-7{left:58.33333333%}.col-lg-push-6{left:50%}.col-lg-push-5{left:41.66666667%}.col-lg-push-4{left:33.33333333%}.col-lg-push-3{left:25%}.col-lg-push-2{left:16.66666667%}.col-lg-push-1{left:8.33333333%}.col-lg-push-0{left:auto}.col-lg-offset-12{margin-left:100%}.col-lg-offset-11{margin-left:91.66666667%}.col-lg-offset-10{margin-left:83.33333333%}.col-lg-offset-9{margin-left:75%}.col-lg-offset-8{margin-left:66.66666667%}.col-lg-offset-7{margin-left:58.33333333%}.col-lg-offset-6{margin-left:50%}.col-lg-offset-5{margin-left:41.66666667%}.col-lg-offset-4{margin-left:33.33333333%}.col-lg-offset-3{margin-left:25%}.col-lg-offset-2{margin-left:16.66666667%}.col-lg-offset-1{margin-left:8.33333333%}.col-lg-offset-0{margin-left:0}}.btn-block,input[type=button].btn-block,input[type=submit].btn-block,input[type=reset].btn-block{width:100%}.btn{display:inline-block;margin-bottom:0;text-align:center;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;border:1px solid transparent;white-space:nowrap;padding:6px 12px;font-size:14px;line-height:1.42857143;border-radius:4px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.btn.active.focus,.btn.active:focus,.btn.focus,.btn:active.focus,.btn:active:focus,.btn:focus{outline:-webkit-focus-ring-color auto 5px;outline-offset:-2px}.btn.focus,.btn:focus,.btn:hover{color:#333;text-decoration:none}.btn.active,.btn:active{outline:0;background-image:none;-webkit-box-shadow:inset 0 3px 5px rgba(0,0,0,.125);box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}.btn.disabled,.btn[disabled],fieldset[disabled] .btn{cursor:not-allowed;opacity:.65;filter:alpha(opacity=65);-webkit-box-shadow:none;box-shadow:none}a.btn.disabled,fieldset[disabled] a.btn{pointer-events:none}.btn-default{color:#333;background-color:#fff;border-color:#ccc}.btn-default.focus,.btn-default:focus{color:#333;background-color:#e6e6e6;border-color:#8c8c8c}.btn-default.active,.btn-default:active,.btn-default:hover,.open>.dropdown-toggle.btn-default{color:#333;background-color:#e6e6e6;border-color:#adadad}.btn-default.active.focus,.btn-default.active:focus,.btn-default.active:hover,.btn-default:active.focus,.btn-default:active:focus,.btn-default:active:hover,.open>.dropdown-toggle.btn-default.focus,.open>.dropdown-toggle.btn-default:focus,.open>.dropdown-toggle.btn-default:hover{color:#333;background-color:#d4d4d4;border-color:#8c8c8c}.btn-default.disabled.focus,.btn-default.disabled:focus,.btn-default.disabled:hover,.btn-default[disabled].focus,.btn-default[disabled]:focus,.btn-default[disabled]:hover,fieldset[disabled] .btn-default.focus,fieldset[disabled] .btn-default:focus,fieldset[disabled] .btn-default:hover{background-color:#fff;border-color:#ccc}.btn-default .badge{color:#fff;background-color:#333}.btn-primary{color:#fff;background-color:#337ab7;border-color:#2e6da4}.btn-primary.focus,.btn-primary:focus{color:#fff;background-color:#286090;border-color:#122b40}.btn-primary.active,.btn-primary:active,.btn-primary:hover,.open>.dropdown-toggle.btn-primary{color:#fff;background-color:#286090;border-color:#204d74}.btn-primary.active.focus,.btn-primary.active:focus,.btn-primary.active:hover,.btn-primary:active.focus,.btn-primary:active:focus,.btn-primary:active:hover,.open>.dropdown-toggle.btn-primary.focus,.open>.dropdown-toggle.btn-primary:focus,.open>.dropdown-toggle.btn-primary:hover{color:#fff;background-color:#204d74;border-color:#122b40}.btn-primary.disabled.focus,.btn-primary.disabled:focus,.btn-primary.disabled:hover,.btn-primary[disabled].focus,.btn-primary[disabled]:focus,.btn-primary[disabled]:hover,fieldset[disabled] .btn-primary.focus,fieldset[disabled] .btn-primary:focus,fieldset[disabled] .btn-primary:hover{background-color:#337ab7;border-color:#2e6da4}.btn-primary .badge{color:#337ab7;background-color:#fff}.btn-success{color:#fff;background-color:#5cb85c;border-color:#4cae4c}.btn-success.focus,.btn-success:focus{color:#fff;background-color:#449d44;border-color:#255625}.btn-success.active,.btn-success:active,.btn-success:hover,.open>.dropdown-toggle.btn-success{color:#fff;background-color:#449d44;border-color:#398439}.btn-success.active.focus,.btn-success.active:focus,.btn-success.active:hover,.btn-success:active.focus,.btn-success:active:focus,.btn-success:active:hover,.open>.dropdown-toggle.btn-success.focus,.open>.dropdown-toggle.btn-success:focus,.open>.dropdown-toggle.btn-success:hover{color:#fff;background-color:#398439;border-color:#255625}.btn-success.disabled.focus,.btn-success.disabled:focus,.btn-success.disabled:hover,.btn-success[disabled].focus,.btn-success[disabled]:focus,.btn-success[disabled]:hover,fieldset[disabled] .btn-success.focus,fieldset[disabled] .btn-success:focus,fieldset[disabled] .btn-success:hover{background-color:#5cb85c;border-color:#4cae4c}.btn-success .badge{color:#5cb85c;background-color:#fff}.btn-info{color:#fff;background-color:#5bc0de;border-color:#46b8da}.btn-info.focus,.btn-info:focus{color:#fff;background-color:#31b0d5;border-color:#1b6d85}.btn-info.active,.btn-info:active,.btn-info:hover,.open>.dropdown-toggle.btn-info{color:#fff;background-color:#31b0d5;border-color:#269abc}.btn-info.active.focus,.btn-info.active:focus,.btn-info.active:hover,.btn-info:active.focus,.btn-info:active:focus,.btn-info:active:hover,.open>.dropdown-toggle.btn-info.focus,.open>.dropdown-toggle.btn-info:focus,.open>.dropdown-toggle.btn-info:hover{color:#fff;background-color:#269abc;border-color:#1b6d85}.btn-info.disabled.focus,.btn-info.disabled:focus,.btn-info.disabled:hover,.btn-info[disabled].focus,.btn-info[disabled]:focus,.btn-info[disabled]:hover,fieldset[disabled] .btn-info.focus,fieldset[disabled] .btn-info:focus,fieldset[disabled] .btn-info:hover{background-color:#5bc0de;border-color:#46b8da}.btn-info .badge{color:#5bc0de;background-color:#fff}.btn-warning{color:#fff;background-color:#f0ad4e;border-color:#eea236}.btn-warning.focus,.btn-warning:focus{color:#fff;background-color:#ec971f;border-color:#985f0d}.btn-warning.active,.btn-warning:active,.btn-warning:hover,.open>.dropdown-toggle.btn-warning{color:#fff;background-color:#ec971f;border-color:#d58512}.btn-warning.active.focus,.btn-warning.active:focus,.btn-warning.active:hover,.btn-warning:active.focus,.btn-warning:active:focus,.btn-warning:active:hover,.open>.dropdown-toggle.btn-warning.focus,.open>.dropdown-toggle.btn-warning:focus,.open>.dropdown-toggle.btn-warning:hover{color:#fff;background-color:#d58512;border-color:#985f0d}.btn-warning.disabled.focus,.btn-warning.disabled:focus,.btn-warning.disabled:hover,.btn-warning[disabled].focus,.btn-warning[disabled]:focus,.btn-warning[disabled]:hover,fieldset[disabled] .btn-warning.focus,fieldset[disabled] .btn-warning:focus,fieldset[disabled] .btn-warning:hover{background-color:#f0ad4e;border-color:#eea236}.btn-warning .badge{color:#f0ad4e;background-color:#fff}.btn-danger{color:#fff;background-color:#d9534f;border-color:#d43f3a}.btn-danger.focus,.btn-danger:focus{color:#fff;background-color:#c9302c;border-color:#761c19}.btn-danger.active,.btn-danger:active,.btn-danger:hover,.open>.dropdown-toggle.btn-danger{color:#fff;background-color:#c9302c;border-color:#ac2925}.btn-danger.active.focus,.btn-danger.active:focus,.btn-danger.active:hover,.btn-danger:active.focus,.btn-danger:active:focus,.btn-danger:active:hover,.open>.dropdown-toggle.btn-danger.focus,.open>.dropdown-toggle.btn-danger:focus,.open>.dropdown-toggle.btn-danger:hover{color:#fff;background-color:#ac2925;border-color:#761c19}.btn-danger.disabled.focus,.btn-danger.disabled:focus,.btn-danger.disabled:hover,.btn-danger[disabled].focus,.btn-danger[disabled]:focus,.btn-danger[disabled]:hover,fieldset[disabled] .btn-danger.focus,fieldset[disabled] .btn-danger:focus,fieldset[disabled] .btn-danger:hover{background-color:#d9534f;border-color:#d43f3a}.btn-danger .badge{color:#d9534f;background-color:#fff}.btn-link{color:#337ab7;border-radius:0}.btn-link,.btn-link.active,.btn-link:active,.btn-link[disabled],fieldset[disabled] .btn-link{background-color:transparent;-webkit-box-shadow:none;box-shadow:none}.btn-link,.btn-link:active,.btn-link:focus,.btn-link:hover{border-color:transparent}.btn-link:focus,.btn-link:hover{color:#23527c;text-decoration:underline;background-color:transparent}.btn-link[disabled]:focus,.btn-link[disabled]:hover,fieldset[disabled] .btn-link:focus,fieldset[disabled] .btn-link:hover{color:#777;text-decoration:none}.btn-lg{padding:10px 16px;font-size:18px;line-height:1.3333333;border-radius:6px}.btn-sm,.btn-xs{font-size:12px;line-height:1.5;border-radius:3px}.btn-sm{padding:5px 10px}.btn-xs{padding:1px 5px}.btn-block{display:block}.btn-block+.btn-block{margin-top:5px}.clearfix:after,.clearfix:before,.row:after,.row:before{content:" ";display:table}.clearfix:after,.row:after{clear:both}.center-block{display:block;margin-left:auto;margin-right:auto}.pull-right{float:right!important}.pull-left{float:left!important}.hide{display:none!important}.show{display:block!important}.invisible{visibility:hidden}.text-hide{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0}.hidden{display:none!important}.affix{position:fixed}
+#toc {
+  display: none;
 }
-#intro {
-  margin-top: -6px;
+#content {
+  max-width: initial;
+  padding: 0;
+}
+.jumbotron {
+  background-color: white;
+  padding: 50px;
+}
+.icon {
+  background:no-repeat 50%;
+  margin:auto;
+  width:100%;
+  height:110px
+}
+.boot {
+  background-image:url(/docs/images/project-select-icons/spring-boot-logo.png);
+  background-size:25%
+}
+.swarm {
+  background-image:url(/docs/images/project-select-icons/swarm.svg)
+}
+.vertx {
+  background-image:url(/docs/images/project-select-icons/vertx.svg);
+  background-size:80%
+}
+.node {
+  background-image:url(/docs/images/project-select-icons/nodejs-logo.png);
+  background-size:60%
+}
+#runtimes {
+  flex: 1;
+  background-color: #f5f5f5;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#runtimes .row + .row {
+  display: flex;
+}
+#runtimes .runtime {
+  flex-grow: 1;
+  background-color: white;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
+}
+#runtimes .runtime p {
+  flex-grow: 2;
+}
+
+.ribbon::before, .ribbon::after {
+  position: absolute;
+  z-index: 0;
+  content: '';
+  display: block;
+  border: 5px solid #8e0000;
+}
+
+.ribbon {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  position: absolute;
+}
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 220px;
+  padding: 9px 0;
+  background-color: #c00;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font: 700 11px/1 'Overpass', sans-serif;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.ribbon-top-right {
+  top: -10px;
+  right: -10px;
+}
+.ribbon-top-right span {
+  left: -45px;
+  top: 30px;
+  transform: rotate(45deg);
+}
+.ribbon-top-right::before {
+  border-top-color: transparent;
+  border-right-color: transparent;
+  top: 0;
+  left: 0;
+}
+.ribbon-top-right::after {
+  border-top-color: transparent;
+  border-right-color: transparent;
+  bottom: 0;
+  right: 0;
 }
 </style>
-
-<div _ngcontent-c3="" class="content">
-<section _ngcontent-c3="" id="intro">
-  <div _ngcontent-c3="" class="container">
-    <h1 _ngcontent-c3="">
-      Continuous application delivery,
-    </h1>
-    <h1 _ngcontent-c3="">
-      built and deployed on OpenShift.
-    </h1>
-    <div _ngcontent-c3="">
-      <a _ngcontent-c3="" class="btn btn-lg" href="/docs/getting-started.html">Get Started Now</a>
-    </div>
+<div class="jumbotron">
+  <div class="container">
+    <img src="/docs/images/launch_logo.svg" alt="Fabric8 Launcher Logo" class="pull-right">
+    <h2>Fabric8 Launcher documentation</h2>
+    <p class="lead">
+      Read how to get started and setup your environment and all the good stuff that you can do with Fabric8 Launcher.
+    </p>
+    <p>
+      <a class="btn btn-primary btn-lg" href="/docs/getting-started.html" role="button">Getting started</a>
+    </p>
   </div>
-</section>
-
-<section _ngcontent-c3="" id="runtimes">
-  <div _ngcontent-c3="" class="container">
-    <div _ngcontent-c3="" class="row">
-      <div _ngcontent-c3="" class="col-md-12">
-        <h1 _ngcontent-c3="">Supported Runtimes</h1>
-      </div>
-    </div>
-    <div _ngcontent-c3="" class="row">
-      <div _ngcontent-c3="" class="col-sm-3 runtime">
-        <div _ngcontent-c3="" class="fa icon swarm"></div>
-        <p _ngcontent-c3="">
-          WildFly Swarm offers an innovative approach to packaging and running 
-          Java EE applications by packaging them with just enough of the server 
-          runtime to "java -jar" your application.
-        </p>
-        <a _ngcontent-c3="" href="/docs/wf-swarm-runtime.html" target="_blank">
-          Learn more <i _ngcontent-c3="" class="glyphicon glyphicon-triangle-right"></i>
-        </a>
-      </div>
-
-      <div _ngcontent-c3="" class="col-sm-3 runtime">
-        <div _ngcontent-c3="" class="fa icon vertx"></div>
-        <p _ngcontent-c3="">
-          Eclipse Vert.x is a tool-kit for building reactive applications on the JVM.
-        </p>
-        <a _ngcontent-c3="" href="/docs/vertx-runtime.html" target="_blank">
-          Learn more <i _ngcontent-c3="" class="glyphicon glyphicon-triangle-right"></i>
-        </a>
-      </div>
-
-      <div _ngcontent-c3="" class="col-sm-3 runtime">
-        <div _ngcontent-c3="" class="fa icon boot"></div>
-        <p _ngcontent-c3="">
-          Spring Boot makes it easy to create stand-alone,
-          production-grade Spring based Applications that you can "just run".
-        </p>
-        <a _ngcontent-c3="" href="/docs/spring-boot-runtime.html" target="_blank">
-          Learn more <i _ngcontent-c3="" class="glyphicon glyphicon-triangle-right"></i>
-        </a>
-      </div>
-
-      <div _ngcontent-c3="" class="col-sm-3 runtime">
-        <div _ngcontent-c3="" class="fa icon node"></div>
-        <div _ngcontent-c3="" class="ribbon ribbon-top-right"><span _ngcontent-c3="">technology preview</span></div>
-        <p _ngcontent-c3="">
-            Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. 
-            Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient.
-        </p>
-        <a _ngcontent-c3="" href="/docs/nodejs-runtime.html" target="_blank">
-          Learn more <i _ngcontent-c3="" class="glyphicon glyphicon-triangle-right"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
 </div>
+
+<section id="runtimes">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Documentation on the Supported Runtimes</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3 runtime">
+        <div class="fa icon swarm"></div>
+        <p>
+          Learn how to use launcher for Wildfly swarm projects
+        </p>
+        <a href="/docs/wf-swarm-runtime.html" class="btn btn-default" role="button">
+          Learn more
+        </a>
+      </div>
+
+      <div class="col-sm-3 runtime">
+        <div class="fa icon vertx"></div>
+        <p >
+          Learn how to use launcher for Eclipse Vert.x projects
+        </p>
+        <a href="/docs/vertx-runtime.html" class="btn btn-default" role="button">
+          Learn more
+        </a>
+      </div>
+
+      <div class="col-sm-3 runtime">
+        <div class="fa icon boot"></div>
+        <p >
+          Learn how to use launcher for Spring boot projects
+        </p>
+        <a href="/docs/spring-boot-runtime.html" class="btn btn-default" role="button">
+          Learn more
+        </a>
+      </div>
+
+      <div class="col-sm-3 runtime">
+        <div class="fa icon node"></div>
+        <div class="ribbon ribbon-top-right"><span >technology preview</span></div>
+        <p >
+            Learn how to use launcher for Node.js® projects
+        </p>
+        <a href="/docs/nodejs-runtime.html" class="btn btn-default" role="button">
+          Learn more
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 ++++
