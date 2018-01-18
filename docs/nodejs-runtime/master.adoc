@@ -17,6 +17,12 @@ include::topics/runtime-info-community-version.adoc[leveloffset=+1]
 
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
+
+[[nodejs-available-missions-and-boosters]]
+== {NodeJS} - Available Missions and Boosters
+
+The {NodeJS} runtime supports the following missions and boosters.
+
 [[mission-http-api-nodejs]]
 === {mission-http-api-nodejs-guide-name}
 :http-api-nodejs:

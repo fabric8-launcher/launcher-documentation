@@ -6,8 +6,8 @@
 //
 // Rationale: This procedure is identical in all deployments.
 
-[#building-and-deploying-the-{parameter-mission}-booster-to-openshiftlocal]
-= Building and Deploying the {parameter-mission-name} Booster to {OpenShiftLocal}
+[#deploying-the-{parameter-mission}-booster-to-openshiftlocal]
+= Deploying the {parameter-mission-name} Booster to {OpenShiftLocal}
 Use one of the following options to execute the {parameter-mission-name} booster locally on {OpenShiftLocal}:
 * xref:deploying-the-booster-using-launcher-osl_{context}[Using {launcher}]
 * xref:deploying-the-{parameter-mission}-booster-using-the-oc-cli-client_{context}[Using the `oc` CLI client]

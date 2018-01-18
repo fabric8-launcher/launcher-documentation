@@ -7,8 +7,8 @@
 //
 // Rationale: This procedure is highly similar for all boosters and mission except the Secured Booster.
 
-[#running-the-booster-integration-tests_{context}]
-= Running the {parameter-mission-name} Booster Integration Tests on {parameter-runtime-name}
+[#running-the-parameter-mission-booster-integration-tests_{context}]
+= Running the {parameter-mission-name} Booster Integration Tests
 
 This booster includes a self-contained set of integration tests.
 When run inside an OpenShift project, the tests:

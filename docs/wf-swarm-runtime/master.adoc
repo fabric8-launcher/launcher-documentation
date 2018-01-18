@@ -62,6 +62,12 @@ include::topics/proc_attaching-a-remote-debugger-to-the-application.adoc[levelof
 // MISSIONS
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
+
+[[wf-swarm-available-missions-and-boosters]]
+== {WildFlySwarm} - Available Missions and Boosters
+
+The {WildFlySwarm} runtime supports the following missions and boosters.
+
 [[mission-http-api-wf-swarm]]
 === {mission-http-api-wf-swarm-guide-name}
 :http-api-wf-swarm:
