@@ -7,10 +7,10 @@
 // Rationale: This procedure is identical in all deployments.
 
 
-[#building-and-deploying-the-{parameter-mission}-booster-to-openshiftonline]
-= Building and Deploying the {parameter-mission-name} Booster to {OpenShiftOnline}
+[#deploying-the-{parameter-mission}-booster-to-openshiftonline]
+= Deploying the {parameter-mission-name} Booster to {OpenShiftOnline}
 
-Use one of the following options to execute the {parameter-mission-name} booster on {OpenShiftOnline}. 
+Use one of the following options to execute the {parameter-mission-name} booster on {OpenShiftOnline}.
 
 * xref:deploying-the-booster-using-launcher-oso_{context}[Use {launcher-oso}]
 * xref:deploying-the-{parameter-mission}-booster-using-the-oc-cli-client_{context}[Use the `oc` CLI client]

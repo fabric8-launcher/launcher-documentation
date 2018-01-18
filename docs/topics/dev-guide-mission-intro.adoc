@@ -1,8 +1,10 @@
-[[missions-intro]]
-= Missions
+[#missions-and-cloud-native-development-on-openshift]
+= Missions and Cloud-Native Development on OpenShift
 
 .What are Missions?
-Missions are working applications that showcase different fundamental pieces of building cloud native applications and services, such as:
+Missions are working applications that showcase different fundamental pieces of building cloud native applications and services.
+
+A mission implements a link:http://microservices.io/patterns/microservices.html[Microservice pattern] such as:
 
  * Creating REST APIs
  * Interoperating with a database
@@ -15,6 +17,13 @@ You can use missions for a variety of purposes:
 * They can also be updated or extended for your own use case
 
 .What is a Booster?
-A booster is the implementation of a mission in a specific runtime. Boosters are preconfigured, functioning applications that demonstrate a fundamental aspect of modern application development run in an environment similar to production.
+A booster is the implementation of a mission in a specific runtime. Boosters are preconfigured, functioning applications that demonstrate a fundamental aspect of modern application development and run in an environment similar to production.
 
-NOTE: Each mission has different boosters that show how to implement the same mission in different runtimes. For example, the {name-mission-http-api} mission has a link:{link-mission-http-api-nodejs}[{NodeJS} booster], a link:{link-mission-http-api-spring-boot-tomcat}[{SpringBoot} booster], an link:{link-mission-http-api-vertx}[{VertX} booster], and a link:{link-mission-http-api-wf-swarm}[{WildFlySwarm} booster].
+Each mission is implemented in one or more runtimes. Both the specific implementation and the actual project that contains your code are called a booster.
+
+For example, the {name-mission-http-api} mission is implemented for these runtimes:
+
+* link:{link-mission-http-api-nodejs}[{NodeJS} booster]
+* link:{link-mission-http-api-spring-boot-tomcat}[{SpringBoot} booster]
+* link:{link-mission-http-api-vertx}[{VertX} booster]
+* link:{link-mission-http-api-wf-swarm}[{WildFlySwarm} booster]

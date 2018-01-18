@@ -2,9 +2,8 @@
 :nexus-project-name: NEXUS_PROJECT_NAME
 // e.g. https://github.com/path/to/source.git
 :scm-repo-url: SCM_REPOSITORY_URL
-
-
-= Using a Nexus Repository Server With the {launcher} Tool on a {OpenShiftLocal}
+[#using-a-nexus-repository-server-on-a-openshiftlocal]
+= Using a Nexus Repository Server on a {OpenShiftLocal}
 
 While developing your cloud-native applications with Java and Maven you may be required to build them repeatedly.
 You can deploy a Nexus Repository server alongside the {launcher} tool on your {OpenShiftLocal} and use it to fetch artifacts from the Maven Central Repository and cache them locally.

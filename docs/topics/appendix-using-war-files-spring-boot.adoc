@@ -1,5 +1,5 @@
-[[using-war-files-spring-boot]]
-= Building and Deploying {SpringBoot} Application WAR Files
+[[deploying-a-spring-boot-application-using-war-files]]
+= Deploying a {SpringBoot} Application using WAR Files
 // Cnsider placing this inthe Spring Boot Runtime documentation instead?
 // You can Package and deploy your application as a war file
 [IMPORTANT]

@@ -4,8 +4,8 @@
 //
 // Rationale: The API endpoint procedure is identical on all runtimes
 
-[#interacting-with-the-secured-booster]
-= Interacting with the {name-mission-secured} Booster
+[#authenticating-to-the-secured-booster-api-endpoint]
+= Authenticating to the {name-mission-secured} Booster API Endpoint
 
 The {name-mission-secured} booster provides a default HTTP endpoint that accepts `GET` requests if the caller is authenticated and authorized.
 The client first authenticates against the {RHSSO} server and then performs a `GET` request against the {name-mission-secured} booster using the access token returned by the authentication step.
@@ -15,4 +15,3 @@ include::proc_getting-the-secured-booster-api-endpoint.adoc[leveloffset=+1]
 include::proc_interacting-with-the-secured-booster-on-the-command-line.adoc[leveloffset=+1]
 
 include::proc_interacting-with-the-secured-booster-using-the-web-interface.adoc[leveloffset=+1]
-

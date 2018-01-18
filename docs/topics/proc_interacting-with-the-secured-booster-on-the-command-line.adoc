@@ -1,6 +1,6 @@
 
-[#interacting-with-the-secured-booster-on-the-command-line]
-= Interacting with the {name-mission-secured} Booster on the Command Line
+[#authenticating-http-requests-using-the-command-line]
+= Authenticating HTTP requests using the Command Line
 
 Request a token by sending a HTTP POST request to the {RHSSO} server.
 In the following example, the link:https://stedolan.github.io/jq/[jq CLI tool] is used to extract the token value from the JSON response.
@@ -105,4 +105,3 @@ NOTE: This is the master realm public key from the {RHSSO} server deployment of 
 +
 The _Signature Verified_ sign appears on the debugger page.
 --
-

@@ -70,6 +70,12 @@ include::topics/proc_accessing-jolokia-using-hawtio-on-openshift.adoc[leveloffse
 // MISSIONS
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
+
+[[wf-swarm-available-missions-and-boosters]]
+== Available Missions and Boosters for {WildFlySwarm}
+
+The {WildFlySwarm} runtime supports the following missions and boosters.
+
 [[mission-http-api-wf-swarm]]
 === {mission-http-api-wf-swarm-guide-name}
 :http-api-wf-swarm:

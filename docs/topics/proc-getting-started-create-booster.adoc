@@ -1,5 +1,5 @@
-[[oso-create-booster]]
-= Creating and Deploying a Booster Using {OpenShiftOnline}
+[[deploying-a-booster-to-oso]]
+= Deploying a Booster to {OpenShiftOnline}
 You can quickly create, build, and deploy a booster to {OpenShiftOnline} using link:{link-launcher-oso}[{launcher-oso}]. link:{link-launcher-oso}[{launcher-oso}] creates a new repository in your GitHub account containing the booster's code and deploys it to your {OpenShiftOnline} account. It can also create a ZIP of the booster for you to download and run on your localhost.
 
 [sidebar]

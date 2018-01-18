@@ -5,7 +5,7 @@ To push changes to this booster running in {OpenShiftOnline} or your {OpenShiftL
 [sidebar]
 .Prerequisites
 --
-* Have a booster deployed to xref:oso-create-booster[{OpenShiftOnline}] or xref:osl-create-booster[{OpenShiftLocal}] using the _Deploy in OpenShift Online_ option.
+* Have a booster deployed to xref:deploying-a-booster-to-oso[{OpenShiftOnline}] or xref:osl-create-booster[{OpenShiftLocal}] using the _Deploy in OpenShift Online_ option.
 --
 
 .Procedure
