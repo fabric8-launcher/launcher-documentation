@@ -1,5 +1,5 @@
-[[missions-intro]]
-= Missions and Cloud Native Development on OpenShift
+[#missions-and-cloud-native-development-on-openshift]
+= Missions and Cloud-Native Development on OpenShift
 
 .What are Missions?
 Missions are working applications that showcase different fundamental pieces of building cloud native applications and services.

@@ -4,8 +4,8 @@
 //
 // Rationale: The API endpoint procedure is identical on all runtimes
 
-[#Authenticating-with-the-secured-booster]
-= Authenticating with the {name-mission-secured} Booster
+[#authenticating-to-the-secured-booster-api-endpoint]
+= Authenticating to the {name-mission-secured} Booster API Endpoint
 
 The {name-mission-secured} booster provides a default HTTP endpoint that accepts `GET` requests if the caller is authenticated and authorized.
 The client first authenticates against the {RHSSO} server and then performs a `GET` request against the {name-mission-secured} booster using the access token returned by the authentication step.

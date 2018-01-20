@@ -64,7 +64,7 @@ include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
 
 [[wf-swarm-available-missions-and-boosters]]
-== {WildFlySwarm} - Available Missions and Boosters
+== {WildFlySwarm}--Available Missions and Boosters
 
 The {WildFlySwarm} runtime supports the following missions and boosters.
 

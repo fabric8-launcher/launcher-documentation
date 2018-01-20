@@ -1,6 +1,6 @@
 
-[#authenticating-with-the-secured-booster-using-the-web-interface]
-== Authenticating with the {name-mission-secured} Booster Using the Web Interface
+[#authenticating-http-requests-using-the-web-interface]
+== Authenticating HTTP requests using the Web Interface
 
 In addition to the HTTP API, the secured endpoint also contains a web interface to interact with.
 

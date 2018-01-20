@@ -5,14 +5,13 @@
 .Prerequisites
 
 * The URL and user credentials of your running {launcher} instance.
-For more information, see xref:getting-launcher-url-and-credentials-on-openshiftlocal_{context}[].
+For more information, see xref:getting-the-launcher-tool-url-and-credentials_{context}[].
 
 .Procedure
 
 * Navigate to the {launcher} URL in a browser and log in.
 * Follow the on-screen instructions to create your booster in {runtime}.
-When asked about which deployment type, select _I will build and run locally._ 
+When asked about which deployment type, select _I will build and run locally._
 * Follow on-screen instructions.
 +
 When done, click the *Download as ZIP file* button and store the file on your hard drive.
-

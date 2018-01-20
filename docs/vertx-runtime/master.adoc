@@ -28,7 +28,7 @@ include::topics/configuring-vertx.adoc[leveloffset=+2]
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
 [[vertx-available-missions-and-boosters]]
-== {Vertx} - Available Missions and Boosters
+== {Vertx}--Available Missions and Boosters
 
 The {Vertx} runtime supports the following missions and boosters.
 
