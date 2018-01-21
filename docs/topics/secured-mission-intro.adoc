@@ -3,14 +3,18 @@
 
 The SSO booster project contains:
 
-* the sources for the Greeting service, which is the one which we are going to to secure
+* the sources for the Greeting service, which we are going to to secure
 * a template file (`service.sso.yaml`) to stand up the SSO server
 * the Keycloak adapter configuration to secure the service
 
 = Standing up {RHSSO}
-The `service.sso.yaml` file contains all OpenShift configuration items to stand up a pre-configured {RHSSO} server. The SSO server configuration has been simplified for the sake of this exercise and does provide an out-of-the-box configuration, with pre-configured users and security settings.
+The `service.sso.yaml` file contains:
 
-IMPORTANT: It is not recommended to use this SSO configuration in production. Specifically, the simplifications made to the booster security configuration impact the ability to use it in a production environment.
+* all OpenShift configuration items needed to stand up a pre-configured {RHSSO} server
+* a default SSO server configuration which has been simplified for this exercise
+* pre-configured users and security settings
+
+IMPORTANT: This SSO configuration should not be used in a production environment. The simplified booster security configuration in this exercise is for demonstration purposes only.
 
 .SSO Booster Simplifications
 [width="100%",options="header"]
@@ -21,7 +25,7 @@ a|
 The default configuration includes both public and **private keys in the yaml configuration files**.
 
 a|
-We did this because the end user can deploy Red Hat SSO module and have it in a usable state without needing to know the internals or how to configure Red Hat SSO.
+This allows the end user to deploy the Red Hat SSO module without needing to know the internals or how to configure Red Hat SSO.
 
 a|
 In production, do not store private keys under source control. They should be added by the server administrator.
@@ -31,28 +35,28 @@ a|
 The configured **clients accept any callback url**.
 
 a|
-To avoid having a custom configuration per runtime we avoid the verification of the callback as mandated by the OAuth2 specification.
+This example does not perform verification of the callback as mandated by the OAuth2 specification. A default configuration suitable for all runtimes was used.
 
 a|
-An application-specific callback URL should be provided with a valid domain name.
+In production, an application-specific (custom) callback URL with a valid domain name should be provided.
 
 a|
-**Clients do not require SSL/TLS and the secured applications are not exposed over HTTPS**.
+**Clients do not require SSL/TLS authentication and the secured applications are not exposed over HTTPS**.
 
 a|
-The boosters are simplified by not requiring certificates generated for each runtime.
+The boosters are simplified and don't require certificates to be generated for each runtime.
 
 a|
-In production a secure application should use HTTPS rather than plain HTTP.
+In production, a secure application should use HTTPS rather than standard HTTP.
 
 a|
-**The token timeout has been increased to 10 minutes from the default of 1 minute.**
+**The token timeout has been increased from 1 minute to 10 minutes.**
 
 a|
-Provides a better user experience when working with the command line examples
+This provides a better user experience when working with the command line examples. From a security perspective, this extends the time an attacker would have to guess the access token.
 
 a|
-From a security perspective, the window an attacker would have to guess the access token is extended. It is recommended to keep this window short as it makes it much harder for a potential attacker to guess the current token.
+In production, a short timeout period is recommended. This makes it much harder for a potential attacker to guess the current token.
 
 |====================================================================
 
