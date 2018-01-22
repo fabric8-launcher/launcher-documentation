@@ -7,8 +7,8 @@
 // Rationale: This procedure is identical in all deployments.
 
 
-[#deploying-the-{parameter-mission}-booster-using-openshiftonline]
-= Deploying the {parameter-mission-name} Booster using {OpenShiftOnline}
+[#deploying-the-{parameter-mission}-booster-to-openshiftonline]
+= Deploying the {parameter-mission-name} Booster to {OpenShiftOnline}
 
 Use one of the following options to execute the {parameter-mission-name} booster on {OpenShiftOnline}.
 

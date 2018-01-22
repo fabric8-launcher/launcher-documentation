@@ -21,7 +21,7 @@ A booster is the implementation of a mission in a specific runtime. Boosters are
 
 Each mission is implemented in one or more runtimes. Both the specific implementation and the actual project that contains your code are called a booster.
 
-For example, the {name-mission-http-api} mission has support for boosters and runtimes such as:
+For example, the {name-mission-http-api} mission is implemented for these runtimes:
 
 * link:{link-mission-http-api-nodejs}[{NodeJS} booster]
 * link:{link-mission-http-api-spring-boot-tomcat}[{SpringBoot} booster]

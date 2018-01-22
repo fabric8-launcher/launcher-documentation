@@ -18,7 +18,7 @@ include::topics/sb-features-and-frameworks-summary.adoc[leveloffset=+2]
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
 [[spring-boot-tomcat-available-missions-and-boosters]]
-== {SpringBoot}--Available Missions and Boosters
+== Available Missions and Boosters for {SpringBoot}
 
 The {SpringBoot} runtime supports the following missions and boosters.
 

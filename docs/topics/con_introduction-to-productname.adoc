@@ -25,10 +25,10 @@ link:{link-launcher-oso}[{launcher-oso}] is a project generator offered by Red H
 * Choose the details for your example application.
 * Deploy application OpenShift automatically or manually.
 
-You can find more details on using {launcher-oso} in the xref:oso-create-booster[] section.
+You can find more details on using {launcher-oso} in the xref:deploying-a-booster-to-oso[] section.
 
 .The {launcher} Tool
-The {launcher} is the upstream project from which link:{link-launcher-oso}[{launcher-oso}] is based. 
+The {launcher} is the upstream project from which link:{link-launcher-oso}[{launcher-oso}] is based.
 
 You can also install and execute the {launcher} tool on your {OpenShiftLocal} to use the same capabilities within your {OpenShiftLocal}. For more information, see the link:{link-launcher-openshift-local-install-guide}#install-launcher-app[Installing the {launcher} Tool] chapter of the {minishift-installation-guide-name} guide.
 
@@ -60,4 +60,3 @@ The benefit of this process is that it handles all the configuration, building, 
 OpenShift supports different link:https://docs.openshift.com/online/dev_guide/builds/index.html[build strategies] including Source-to-Image and Jenkins Pipeline. The {ProductName} boosters use the link:https://docs.openshift.com/online/architecture/core_concepts/builds_and_image_streams.html#source-build[Source-to-Image strategy] for simplicity of use and implementation. Other build strategies, such as the Jenkins Pipeline, are more complex, for example employing multiple servers for building or using webhooks to trigger builds.
 
 Boosters created using the _Build and Deploy to OpenShift_ build process can also be executed locally, as well as built locally and manually deployed to OpenShift. For more information on these options, see the `README.adoc` file of your booster.
-
