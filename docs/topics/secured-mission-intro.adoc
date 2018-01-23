@@ -3,16 +3,16 @@
 
 The SSO booster project contains:
 
-* the sources for the Greeting service, which we are going to to secure
-* a template file (`service.sso.yaml`) to stand up the SSO server
-* the Keycloak adapter configuration to secure the service
+* The sources for the Greeting service, which we are going to to secure
+* A template file (`service.sso.yaml`) to deploy the SSO server
+* The Keycloak adapter configuration to secure the service
 
-= Standing up {RHSSO}
+= Deploying {RHSSO}
 The `service.sso.yaml` file contains:
 
-* all OpenShift configuration items needed to stand up a pre-configured {RHSSO} server
-* a default SSO server configuration which has been simplified for this exercise
-* pre-configured users and security settings
+* All OpenShift configuration items needed to stand up a preconfigured {RHSSO} server
+* A default SSO server configuration 
+* Preconfigured users and security settings
 
 IMPORTANT: This SSO configuration should not be used in a production environment. The simplified booster security configuration in this exercise is for demonstration purposes only.
 
@@ -25,10 +25,10 @@ a|
 The default configuration includes both public and **private keys in the yaml configuration files**.
 
 a|
-This allows the end user to deploy the Red Hat SSO module without needing to know the internals or how to configure Red Hat SSO.
+Allows the end user to deploy the {RHSSO} module without needing to know the internals or how to configure {RHSSO}.
 
 a|
-In production, do not store private keys under source control. They should be added by the server administrator.
+In production, do not store private keys under version control. They should be added by the server administrator.
 
 
 a|
@@ -44,19 +44,19 @@ a|
 **Clients do not require SSL/TLS authentication and the secured applications are not exposed over HTTPS**.
 
 a|
-The boosters are simplified and don't require certificates to be generated for each runtime.
+The boosters are simplified and do not require certificates to be generated for each runtime.
 
 a|
-In production, a secure application should use HTTPS rather than standard HTTP.
+In production, a secure application should use HTTPS rather than plain HTTP.
 
 a|
-**The token timeout has been increased from 1 minute to 10 minutes.**
+**The token timeout has been increased from the default of 1 minute to 10 minutes.**
 
 a|
-This provides a better user experience when working with the command line examples. From a security perspective, this extends the time an attacker would have to guess the access token.
+Provides a better user experience when working with the command line examples. From a security perspective, this configuration extends the time an attacker would have to guess the access token.
 
 a|
-In production, a short timeout period is recommended. This makes it much harder for a potential attacker to guess the current token.
+In production, it is recommended to keep this window short as it makes it much harder for a potential attacker to guess the current token.
 
 |====================================================================
 
