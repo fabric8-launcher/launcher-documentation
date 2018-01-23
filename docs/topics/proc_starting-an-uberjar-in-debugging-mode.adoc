@@ -1,0 +1,36 @@
+// This is a parameterized module. Parameters used:
+//
+//  parameter-uberjar-documented: Set if the current runtime has the chapter about creating uberjars
+//
+// Rationale: This procedure is identical in multiple Java-based deployments.
+
+[#starting-an-uberjar-in-debugging-mode]
+= Starting an Uberjar in Debugging Mode
+
+If you chose to package your application as a {runtime} uberjar, debug it by executing it with the following parameters.
+
+.Prerequisites
+
+* An uberjar with your application
+
+.Procedure
+
+. In a console, navigate to the directory with the uberjar.
+. Execute the uberjar with the following parameters.
+Ensure that all the parameters are specified before the name of the uberjar on the line.
++
+--
+[source,bash,options="nowrap"]
+----
+$ java -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=$PORT_NUMBER -jar $UBERJAR_FILENAME
+----
+
+Here, `$PORT_NUMBER` is an unused port number of your choice.
+Remember this number for the remote debugger configuration.
+--
+
+ifdef::parameter-uberjar-documented[]
+.Related Information
+
+* xref:creating-an-uberjar[]
+endif::[]

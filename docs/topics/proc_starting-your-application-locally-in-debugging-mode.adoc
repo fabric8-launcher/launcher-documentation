@@ -1,0 +1,31 @@
+
+[#starting-your-application-locally-in-debugging-mode_{context}]
+= Starting Your Application Locally in Debugging Mode
+
+One of the ways of debugging a Maven-based project is manually launching the application while specifying a debugging port, and subsequently connecting a remote debugger to that port.
+This method is applicable at least to the following deployments of the application:
+
+* When launching the application manually using the `mvn wildfly-swarm:run` goal.
+* When starting the application without waiting for the it to exit using the `mvn wildfly-swarm:start` goal.
+This is useful especially when performing integration testing.
+* When using the Arquillian adapter for {runtime}.
+
+.Prerequisites
+
+* A Maven-based application
+
+.Procedure
+
+. In a console, navigate to the directory with your application.
+. Launch your application and specify the debug port using the `-Dswarm.debug.port` argument:
++
+--
+[source,bash,options="nowrap"]
+----
+$ mvn wildfly-swarm:run -Dswarm.debug.port=$PORT_NUMBER
+----
+
+Here, `$PORT_NUMBER` is an unused port number of your choice.
+Remember this number for the remote debugger configuration.
+--
+
