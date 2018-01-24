@@ -1,0 +1,4 @@
+[#nodejs-runtime-api]
+= {NodeJS} Runtime API
+
+The {NodeJS} runtime provides the core {NodeJS} API which is documented in the link:https://nodejs.org/api/[{NodeJS} API documentation^]. 
