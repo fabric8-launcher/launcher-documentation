@@ -201,7 +201,12 @@ include::topics/secured-mission-resources.adoc[leveloffset=+3]
 include::topics/proc_debug-logging-nodejs.adoc[leveloffset=+2]
 
 
-//== Creating an Application from Scratch
+== Developing an Application for the {NodeJS} Runtime
+
+include::topics/con_nodejs-runtime-api.adoc[leveloffset=+2]
+
+include::topics/con_creating-nodejs-app.adoc[leveloffset=+2]
+
 //todo
 //Building blocks
 //Minimum Viable App
@@ -213,6 +218,9 @@ include::topics/appendix-s2i-build-process.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/http-api-nodejs-package-json.adoc[leveloffset=+1]
+
+[appendix]
+include::topics/proc-using-nodemon.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/nodejs-dev-guide-additional-resources.adoc[leveloffset=+1]

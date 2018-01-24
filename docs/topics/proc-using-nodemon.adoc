@@ -1,0 +1,62 @@
+= Using nodemon
+
+link:https://nodemon.io/[nodemon^] is a utility that watches a directory and restarts your application when it sees a change. This allows you to quickly test changes to your application which is useful during application development.
+
+[discrete]
+== Prerequisites
+* An application you want to use with nodemon. For example, xref:mission-http-api-nodejs[a booster].
+* `npm` installed.
+
+[discrete]
+== Procedure
+
+. Use `npm` to install nodemon.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ npm install -g nodemon
+----
+
+. Start nodemon.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ nodemon npm start
+[nodemon] 1.14.11
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching: *.*
+[nodemon] starting `PORT=8080 node ./bin/www npm start`
+----
+
+. When you change a file in your project, nodemon automatically restarts your application so your changes appear. Optionally, you can force nodemon to restart your application using `rs`.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+...
+[nodemon] starting `PORT=8080 node ./bin/www npm start`
+rs
+[nodemon] starting `PORT=8080 node ./bin/www npm start`
+----
+
+To enable verbose logging, use the `-V` flag when starting nodemon.
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ nodemon -V npm start
+[nodemon] 1.14.11
+[nodemon] to restart at any time, enter `rs`
+[nodemon] or send SIGHUP to 47785 to restart
+[nodemon] watching: *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `PORT=8080 node ./bin/www npm start`
+[nodemon] spawning
+[nodemon] child pid: 47788
+[nodemon] watching 10 files
+
+//file changed
+
+[nodemon] files triggering change check: public/index.html
+[nodemon] matched rule: **/*.*
+[nodemon] changes after filters (before/after): 1/0
+----
+
