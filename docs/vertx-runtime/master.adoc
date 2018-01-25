@@ -25,6 +25,15 @@ include::topics/vertx-community-and-product-versions.adoc[leveloffset=+2]
 
 include::topics/configuring-vertx.adoc[leveloffset=+2]
 
+== Monitoring
+
+This section contains information about monitoring your {VertX}&#x2013;based application running on OpenShift.
+
+=== Accessing JVM metrics for your application on OpenShift
+
+include::topics/proc_accessing-jolokia-using-hawtio-on-openshift.adoc[leveloffset=+3]
+
+// MISSIONS
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
 [[mission-http-api-vertx]]
@@ -252,6 +261,7 @@ include::topics/secured-mission-resources.adoc[leveloffset=+3]
 
 [appendix]
 include::topics/appendix-s2i-build-process.adoc[leveloffset=+1]
+
 
 //[appendix]
 //include::topics/http-api-vertx-pom.adoc[leveloffset=+1]
