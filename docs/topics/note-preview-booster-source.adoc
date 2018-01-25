@@ -1,2 +1,3 @@
-NOTE: To view the source code and README file of this booster, download and extract the ZIP file with the booster.
+.Viewing the Booster source code and README
+To view the source code and README file of this booster, download and extract the ZIP file with the booster.
 To get the download link of the ZIP file, see the link:{link-getting-started-guide}#oso-create-booster[Creating and Deploying a Booster Using OpenShift Online] chapter of the {getting-started-guide-name}.
