@@ -229,7 +229,7 @@ include::topics/circuit-breaker-mission-resources.adoc[leveloffset=+3]
 
 include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
-include::topics/secured-mission-intro-paragraph.adoc[leveloffset=+3]
+include::topics/secured-mission-intro-paragraph-missions.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
