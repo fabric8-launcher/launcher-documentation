@@ -255,6 +255,9 @@ include::topics/appendix-using-war-files-spring-boot.adoc[leveloffset=+1]
 include::topics/sb-tomcat-dev-guide-additional-resources.adoc[leveloffset=+1]
 
 [appendix]
+include::topics/appendix-application-development-resources.adoc[leveloffset=+1]
+
+[appendix]
 include::topics/appendix-proficiency-levels.adoc[leveloffset=+1]
 
 [appendix]

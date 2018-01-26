@@ -6,3 +6,4 @@
 * link:https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-guide/v/{WildFlySwarmVersion}/[{WildFlySwarm} User Guide]
 * link:https://github.com/wildfly-swarm/wildfly-swarm-presentations[{WildFlySwarm} Presentations]
 * link:https://github.com/redhat-Microservices/lab_swarm-openshift[{WildFlySwarm}, Microservices & OpenShift Lab]
+* link:https://access.redhat.com/documentation/en-us/reference_architectures/2017/html/wildfly_swarm_microservices_on_red_hat_openshift_container_platform_3/[{WildFlySwarm} Microservices On Red Hat OpenShift Container Platform 3]

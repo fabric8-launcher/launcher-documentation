@@ -1,0 +1,7 @@
+[[application-development-resources]]
+= Application Development Resources
+
+For additional information on application development with OpenShift see:
+
+* link:https://learn.openshift.com/[OpenShift Interactive Learning Portal]
+* link:https://developers.redhat.com/products/rhoar/overview/[Red Hat OpenShift Application Runtimes Overview]

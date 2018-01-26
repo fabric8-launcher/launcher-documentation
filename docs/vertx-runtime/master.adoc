@@ -260,6 +260,9 @@ include::topics/appendix-s2i-build-process.adoc[leveloffset=+1]
 include::topics/vertx-dev-guide-additional-resources.adoc[leveloffset=+1]
 
 [appendix]
+include::topics/appendix-application-development-resources.adoc[leveloffset=+1]
+
+[appendix]
 include::topics/appendix-proficiency-levels.adoc[leveloffset=+1]
 
 [appendix]
