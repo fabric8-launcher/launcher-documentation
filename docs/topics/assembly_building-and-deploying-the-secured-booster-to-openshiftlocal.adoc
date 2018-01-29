@@ -1,6 +1,6 @@
 
-[#deploying-the-secured-booster-using-openshiftlocal]
-=  Deploying the {name-mission-secured} booster using {OpenShiftLocal}
+[#deploying-the-secured-booster-to-openshiftlocal]
+=  Deploying the {name-mission-secured} booster to {OpenShiftLocal}
 
 include::proc_getting-launcher-url-and-credentials-on-openshiftlocal.adoc[leveloffset=+1]
 
