@@ -151,7 +151,10 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontaine
 
 
 // CB basic interaction
-include::topics/circuit-breaker-mission-basic-interaction-nodejs.adoc[leveloffset=+3]
+:parameter-runtime-name: {NodeJS}
+:context: {parameter-mission}-nodejs
+include::topics/proc_interacting-with-the-circuit-breaker-booster.adoc[leveloffset=+3]
+
 //TODO
 
 // Hystrix Dashboard
