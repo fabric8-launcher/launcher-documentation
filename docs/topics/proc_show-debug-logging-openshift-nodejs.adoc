@@ -1,0 +1,90 @@
+= Show Debug Logging on OpenShift
+
+Use the the `DEBUG` environment variable in your application pod in OpenShift to enable debug logging.
+
+.Prerequisites 
+* An application with debug logging.
+* The `oc` CLI client installed.
+
+
+.Procedure
+
+. Use the `oc` CLI client to log into your OpenShift instance.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc login ...
+----
+
+. Deploy your application to OpenShift.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ npm run openshift
+----
++
+This runs the `openshift` npm script, which wraps direct calls to xref:about-nodeshift[nodeshift].
+
+. Find the name of your pod and follow the logs to watch it start.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get pods
+....
+$ oc logs -f pod/POD_NAME
+----
++
+IMPORTANT: After your pod has started, keep watching the logs.
+
+. Test your application. 
++
+For example, if you had debug logging in the xref:mission-http-api-nodejs[{name-mission-http-api} booster] to log the `name` variable in the `/api/greeting` method:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get routes
+...
+$ curl $APPLICATION_ROUTE/api/greeting?name=Sarah
+----
+
+. Return to your pod logs and notice there are no debug logging messages in the logs. 
+
+. Set the `DEBUG` environment variable in your application pod to enable debug logging.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get dc
+...
+$ oc set env dc DC_NAME DEBUG=mybooster
+----
+
+. Return to your pod logs to watch the update roll out.
++
+IMPORTANT: After the update has rolled out, keep watching the logs. This is where the debug logging will appear.
+
+. Test the application to invoke debug logging. 
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get routes
+...
+$ curl $APPLICATION_ROUTE/api/greeting?name=Sarah
+----
+
+. View the application logs to see the debug messages.
++
+[source,options="nowrap",subs="attributes+"]
+----
+...
+mybooster name: Sarah +3m
+----
+
+
+To disable debug logging, remove the `DEBUG` environment variable from the pod:
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc set env dc DC_NAME DEBUG-
+----
+
+.Related Information
+More details on environment variables are available in the link:https://docs.openshift.com/online/dev_guide/environment_variables.html[OpenShift documentation].

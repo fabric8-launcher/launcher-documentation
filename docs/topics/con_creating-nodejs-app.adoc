@@ -81,7 +81,7 @@ $ curl http://localhost:8080
 $ npm install nodeshift --save
 ----
 
-. Add the `openshift` entry to the `scripts` section in `package.json`.
+. Add the `openshift` and `start` entries to the `scripts` section in `package.json`.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -93,6 +93,7 @@ $ npm install nodeshift --save
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "openshift": "nodeshift --strictSSL=false --metadata.out=deployment-metadata.json --build.forcePull=true --nodeVersion=9.x",
+    "start": "node app.js",
     ...
   }
   ...
