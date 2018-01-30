@@ -220,9 +220,6 @@ include::topics/appendix-s2i-build-process.adoc[leveloffset=+1]
 include::topics/http-api-nodejs-package-json.adoc[leveloffset=+1]
 
 [appendix]
-include::topics/proc-using-nodemon.adoc[leveloffset=+1]
-
-[appendix]
 include::topics/nodejs-dev-guide-additional-resources.adoc[leveloffset=+1]
 
 [appendix]
