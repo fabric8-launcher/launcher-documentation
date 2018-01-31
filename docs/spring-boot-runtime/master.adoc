@@ -15,6 +15,28 @@ include::topics/sb-product-versions.adoc[leveloffset=+2]
 
 include::topics/sb-features-and-frameworks-summary.adoc[leveloffset=+2]
 
+== Debugging
+
+This sections contains information about debugging your {SpringBoot} based application both in local and remote deployments.
+
+=== Remote Debugging
+
+To remotely debug an application, you must first configure it to start in a debugging mode, and then attach a debugger to it.
+
+:parameter-runtime: spring-boot
+:parameter-runtime-name: {SpringBoot}
+:context: {parameter-runtime}
+//include and define parameter runtime
+//include::topics/proc_starting-your-application-locally-in-debugging-mode.adoc[leveloffset=+3]
+
+//:parameter-uberjar-documented:
+//include::topics/proc_starting-an-uberjar-in-debugging-mode.adoc[leveloffset=+3]
+//:parameter-uberjar-documented!:
+
+include::topics/proc_starting-your-application-on-openshift-in-debugging-mode.adoc[leveloffset=+3]
+
+include::topics/proc_attaching-a-remote-debugger-to-the-application.adoc[leveloffset=+3]
+
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
 
