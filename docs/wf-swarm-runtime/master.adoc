@@ -3,6 +3,7 @@ include::topics/templates/document-attributes.adoc[]
 // Used for specifying this is product docs in the modules sourced from the
 // WildFly Swarm repository (anything stored in docs/wildfly-swarm).
 :product:
+:wf-swarm:
 
 //override for a cleaner TOC
 :toclevels: 2
@@ -36,14 +37,14 @@ include::topics/wildfly-swarm/docs/reference/configuration.adoc[leveloffset=+2]
 
 == Packaging your application
 
-This sections contains information about packaging your {WildFlySwarm}&ndash;based application for deployment and execution.
+This sections contains information about packaging your {WildFlySwarm}&#x2013;based application for deployment and execution.
 
 include::topics/wildfly-swarm/docs/concepts/packaging-types.adoc[leveloffset=+2]
 include::topics/wildfly-swarm/docs/howto/create-an-uberjar/index.adoc[leveloffset=+2]
 
 == Debugging
 
-This sections contains information about debugging your {WildFlySwarm}&ndash;based application both in local and remote deployments.
+This sections contains information about debugging your {WildFlySwarm}&#x2013;based application both in local and remote deployments.
 
 === Remote Debugging
 

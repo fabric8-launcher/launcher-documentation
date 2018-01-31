@@ -1,6 +1,7 @@
 include::topics/templates/document-attributes.adoc[]
 //override for a cleaner TOC
 :toclevels: 2
+:spring-boot:
 
 = {spring-boot-runtime-guide-name}
 :runtime: {SpringBoot}

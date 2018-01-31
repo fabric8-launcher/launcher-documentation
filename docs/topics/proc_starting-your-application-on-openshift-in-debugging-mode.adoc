@@ -18,37 +18,37 @@ To debug your {runtime}-based application on OpenShift remotely, you must set th
 $ oc get dc
 ----
 
-. Set the `JAVA_DEBUG` environment variable in the deployment configuration of your application to `true`, which configures the JVM to open the port number 5005 for debugging. For example:
+. Set the `JAVA_DEBUG` environment variable in the deployment configuration of your application to `true`, which configures the JVM to open the port number `5005` for debugging. For example:
 +
-[source,bash]
+[source,bash,subs="attributes+"]
 ----
-$ oc set env dc/my-application JAVA_DEBUG=true
+$ oc set env dc/{app-name} JAVA_DEBUG=true
 ----
 
 . Redeploy the application if it is not set to redeploy automatically on environment change. For example:
 +
-[source,bash]
+[source,bash,subs="attributes+"]
 ----
-$ oc rollout latest dc/my-application
+$ oc rollout latest dc/{app-name}
 ----
 
 . Configure port forwarding from your local machine to the application pod:
 .. List the currently running pods and find one containing your application:
 +
-[source,bash,options="nowrap"]
+[source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc get pod
 NAME                            READY     STATUS      RESTARTS   AGE
-my-application-3-1xrsp          0/1       Running     0          6s
+{app-name}-3-1xrsp          0/1       Running     0          6s
 ...
 ----
 
 .. Configure port forwarding:
 +
 --
-[source,bash,options="nowrap"]
+[source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc port-forward my-application-3-1xrsp $LOCAL_PORT_NUMBER:5005
+$ oc port-forward {app-name}-3-1xrsp $LOCAL_PORT_NUMBER:5005
 ----
 
 Here, `$LOCAL_PORT_NUMBER` is an unused port number of your choice on your local machine.
@@ -57,8 +57,7 @@ Remember this number for the remote debugger configuration.
 
 . When you are done debugging, unset the `JAVA_DEBUG` environment variable in your application pod. For example:
 +
-[source,bash]
+[source,bash,subs="attributes+"]
 ----
-$ oc set env dc/my-application JAVA_DEBUG-
+$ oc set env dc/{app-name} JAVA_DEBUG-
 ----
-

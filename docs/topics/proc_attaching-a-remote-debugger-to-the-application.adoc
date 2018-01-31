@@ -9,7 +9,7 @@ In this guide, link:https://www.redhat.com/en/technologies/jboss-middleware/deve
 
 * The application running either locally or on OpenShift, and configured for debugging.
 * The port number that your application is listening on for debugging.
-* Red Hat JBoss Developer Studio installed on your machine. You can download it from the xref:https://developers.redhat.com/products/devstudio/download/[Red Hat JBoss Developer Studio download page].
+* Red Hat JBoss Developer Studio installed on your machine. You can download it from the link:https://developers.redhat.com/products/devstudio/download/[Red Hat JBoss Developer Studio download page].
 
 .Procedure
 

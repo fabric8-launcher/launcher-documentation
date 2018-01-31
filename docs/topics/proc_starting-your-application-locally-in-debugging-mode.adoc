@@ -1,13 +1,22 @@
-
 [#starting-your-application-locally-in-debugging-mode_{context}]
 = Starting Your Application Locally in Debugging Mode
 
 One of the ways of debugging a Maven-based project is manually launching the application while specifying a debugging port, and subsequently connecting a remote debugger to that port.
 This method is applicable at least to the following deployments of the application:
 
-* When launching the application manually using the `mvn wildfly-swarm:run` goal.
-* When starting the application without waiting for the it to exit using the `mvn wildfly-swarm:start` goal.
+ifdef::wf-swarm[]
+* When launching the application manually using the `mvn wildfly-swarm:run`goal.
+endif::[]
+ifdef::vertx[]
+* When launching the application manually using the `mvn vertx:debug` goal. This starts the application with debugging enabled.
+endif::[]
+ifdef::spring-boot[]
+* When launching the application manually using the `mvn spring-boot:run`goal.
+endif::[]
+ifdef::wf-swarm[]
+* When starting the application without waiting for it to exit using the `mvn wildfly-swarm:start` goal.
 This is useful especially when performing integration testing.
+endif::[]
 * When using the Arquillian adapter for {runtime}.
 
 .Prerequisites
@@ -17,15 +26,36 @@ This is useful especially when performing integration testing.
 .Procedure
 
 . In a console, navigate to the directory with your application.
+ifdef::wf-swarm[]
 . Launch your application and specify the debug port using the `-Dswarm.debug.port` argument:
+endif::[]
+ifdef::vertx[]
+. Launch your application and specify the debug port using the `-Ddebug.port` argument:
+endif::[]
+ifdef::spring-boot[]
+. Launch your application and specify the debug port using the `-Dspring-boot.debug.port` argument:
+endif::[]
 +
---
+ifdef::wf-swarm[]
 [source,bash,options="nowrap"]
 ----
 $ mvn wildfly-swarm:run -Dswarm.debug.port=$PORT_NUMBER
 ----
+endif::[]
+ifdef::vertx[]
+[source,bash,options="nowrap"]
+----
+$ mvn vertx:debug -Ddebug.port=$PORT_NUMBER
+----
++
+Use the `-Ddebug.suspend=true` argument to make the application wait until a debugger is attached to start.
+endif::[]
+ifdef::spring-boot[]
+[source,bash,options="nowrap"]
+----
+$ mvn spring-boot:run -Drun.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=$PORT_NUMBER"
+----
+endif::[]
 
 Here, `$PORT_NUMBER` is an unused port number of your choice.
 Remember this number for the remote debugger configuration.
---
-
