@@ -49,7 +49,7 @@ $ curl $APPLICATION_ROUTE/api/greeting?name=Sarah
 
 . Return to your pod logs and notice there are no debug logging messages in the logs. 
 
-. Set the `DEBUG` environment variable in your application pod to enable debug logging.
+. Set the `DEBUG` environment variable to enable debug logging.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
