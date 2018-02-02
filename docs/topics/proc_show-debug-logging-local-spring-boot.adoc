@@ -1,0 +1,31 @@
+= Show Debug Logging on Localhost
+
+Deploy your application with the Fabric8 Maven Plugin `debug` option to enable debug logging.
+
+.Prerequisites
+* An application with debug logging.
+
+.Procedure
+.  Deploy your application with fabric8:debug to enable debug logging.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn clean fabric8:debug
+----
++
+
+. Test your application to invoke debug logging.
++
+For example, when debug logging in the xref:mission-http-api-spring-boot[{name-mission-http-api} booster] is set to log the `name` variable in the `/api/greeting` method:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl http://localhost:8080/api/greeting?name=Sarah
+----
+
+. View your application logs to see your debug messages.
++
+[source,options="nowrap",subs="attributes+"]
+----
+mybooster name: Sarah +3m
+----

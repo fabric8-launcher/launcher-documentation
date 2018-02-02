@@ -1,0 +1,27 @@
+= Add Debug Logging
+There are several options for debug logging. This example uses the JAVA-OPTIONS environment variable.
+
+
+.Prerequisites
+* An application you want to debug. For example, xref:mission-http-api-spring-boot[a booster].
+
+.Procedure
+
+. Enable `debug` mode for your application.
++
+[source,js,options="nowrap",subs="attributes+"]
+----
+Set debug=true in your application properties file
+----
+
+. Add debug statements.
++
+[source,js,options="nowrap",subs="attributes+"]
+----
+app.use('/api/greeting', (request, response) => {
+  const name = request.query ? request.query.name : undefined;
+  //log name in debugging
+  debug('name: '+name);
+  response.send({content: `Hello, ${name || 'World'}`});
+});
+----
