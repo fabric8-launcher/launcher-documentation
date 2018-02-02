@@ -2,10 +2,7 @@
 = Starting Your {SpringBoot} Application Locally in Debugging Mode
 
 One of the ways of debugging a Maven-based project is manually launching the application while specifying a debugging port, and subsequently connecting a remote debugger to that port.
-This method is applicable at least to the following deployments of the application:
-
-* When launching the application manually using the `mvn spring-boot:run` goal.
-* When using the Arquillian adapter for {runtime}.
+This method is applicable at least when launching the application manually using the `mvn spring-boot:run` goal.
 
 .Prerequisites
 

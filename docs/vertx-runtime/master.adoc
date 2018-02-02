@@ -28,7 +28,7 @@ include::topics/configuring-vertx.adoc[leveloffset=+2]
 
 == Debugging
 
-This sections contains information about debugging your {WildFlySwarm}&#x2013;based application both in local and remote deployments.
+This sections contains information about debugging your {VertX}&#x2013;based application both in local and remote deployments.
 
 === Remote Debugging
 :context: 

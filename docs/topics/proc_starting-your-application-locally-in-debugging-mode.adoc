@@ -17,8 +17,8 @@ ifdef::wf-swarm[]
 * When launching the application manually using the `mvn {parameter-maven-goal}` goal.
 * When starting the application without waiting for it to exit using the `mvn wildfly-swarm:start` goal.
 This is useful especially when performing integration testing.
-endif::[]
 * When using the Arquillian adapter for {runtime}.
+endif::[]
 
 .Prerequisites
 
