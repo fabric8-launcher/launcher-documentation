@@ -2,7 +2,7 @@ include::topics/templates/document-attributes.adoc[]
 
 //override for a cleaner TOC
 :toclevels: 2
-:vertx:
+:vert-x:
 
 = {vertx-runtime-guide-name}
 :runtime: {VertX}
