@@ -30,7 +30,7 @@
 
     <version.keycloak.config-api>1.1.0.Final</version.keycloak.config-api>
     <version.teiid.config-api>1.0.2</version.teiid.config-api>
-    <version.keycloak>2.5.14.Final-redhat-1</version.keycloak>
+    <version.keycloak>2.5.15.Final-redhat-3</version.keycloak>
     <version.mongo.config-api>1.2.0</version.mongo.config-api>
     <version.cassandra.config-api>1.2.0</version.cassandra.config-api>
     <version.neo4j.config-api>1.2.0</version.neo4j.config-api>
