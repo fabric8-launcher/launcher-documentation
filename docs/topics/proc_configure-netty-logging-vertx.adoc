@@ -1,0 +1,20 @@
+
+[#_configure-netty-logging-vertx]
+= Configuring Netty Logging
+
+Netty does not rely on an external logging configuration using system properties.
+Instead, it implements a logging configuration based on logging libraries visible to Netty classes in your project:
+
+* use `SLF4J` library if it is visible
+
+* otherwise use `Log4j` if it is visible
+
+* as a fallback option, use java.util.logging
+
+You can force the logger to use a specific implementation by setting Netty’s internal logger implementation directly to `io.netty.util.internal.logging.InternalLoggerFactory`:
+
+[source,java,options="nowrap",subs="attributes+"]
+--
+// Force logging to Log4j
+InternalLoggerFactory.setDefaultFactory(Log4JLoggerFactory.INSTANCE);
+--

@@ -1,0 +1,23 @@
+
+[#_specify_custom_logging_framework_vertx]
+= Specify a custom logging framework
+
+If you don’t want {VertX} to use JUL for logging, you can configure it to use a different logging framework, for example, `Log4J` or `SLF4J`:
+
+.  Set the `vertx.logger-delegate-factory-class-name` system property, where `class-name` corresponds to the name of the class that implements the `LogDelegateFactory` interface.
+{Vertx} provides the pre-built implementations for the following libraries with their corresponding pre-defined classnames listed below:
++
+[options="header"]
+|===
+| Library | Class name
+| `Log4J` (v1) |`io.vertx.core.logging.Log4jLogDelegateFactory`
+| `Log4J` (v2) | `io.vertx.core.logging.Log4j2LogDelegateFactory`
+| `SLF4J` |  `io.vertx.core.logging.SLF4JLogDelegateFactory`
+|===
++
+When implementing logging using a custom library, ensure that the relevant `Log4J` or `SLF4J` jars are included among the dependencies for your application.
++
+[CAUTION]
+--
+Notice that the provided delegate for Log4J 1 does not support parameterized message. The delegate for Log4J 2 uses the `{}` syntax like the SLF4J delegate. JUL delegate uses the `\{x}` syntax.
+--

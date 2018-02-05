@@ -1,0 +1,19 @@
+
+[#_configure_jul_logging_vertx]
+= Configuring logging for your {VertX} application using JUL
+To configure debug logging for your {VertX} application using JUL:
+
+// is it just `properties` file , more accurate designation
+* specify the `java.util.logging.config.file` system property in the properties file of your project.
+The value of this variable must correspond to the name of your link:https://docs.oracle.com/javase/8/docs/technotes/guides/logging/overview.html#a1.8[JUL configuration file^].
+This ensures that `LogManager` initializes JUL logging at application startup.
+// the JUL file is in a standard java.utils.Properties file.
+//Alternative:  add a logger class to your application. see docs.
+
+* alternatively, add a JUL configuration file with the name `vertx-default-jul-logging.properties` to the classpath of your Maven project
+//(e.g. inside your fatjar).
+{VertX} will use that file to configure JUL on application startup.
+
+{VertX} allows lets you specify a custom logging backend using the `LogDelegateFactory` that provides pre-built implementations for the `Log4J`, `Log4J2` and `SLF4J` Libraries.
+Unlike JUL which is included by default, the other backends require that you specify their respective libraries as dependencies in for your application.
+// li9nk to module with custom logging procedure.
