@@ -218,7 +218,7 @@ include::topics/proc_debug-start-v8-debug-nodejs.adoc[leveloffset=+3]
 [#debug-logging]
 === Debug Logging
 
-Debug logging is a way to add granular logging to an application can be explicitly enabled only when performing debugging. This allows you to keep the logging capability in your application and only enable it when needed.
+Debug logging is a way to add granular logging to an application that can be explicitly enabled only when performing debugging. This allows you to keep the logging capability in your application and only enable it when needed.
 
 include::topics/proc_add-debug-logging-nodejs.adoc[leveloffset=+3]
 
