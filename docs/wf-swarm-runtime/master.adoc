@@ -42,6 +42,10 @@ This sections contains information about packaging your {WildFlySwarm}&#x2013;ba
 include::topics/wildfly-swarm/docs/concepts/packaging-types.adoc[leveloffset=+2]
 include::topics/wildfly-swarm/docs/howto/create-an-uberjar/index.adoc[leveloffset=+2]
 
+== Testing
+
+include::topics/wildfly-swarm/docs/howto/test-in-container/index.adoc[leveloffset=+2]
+
 == Debugging
 
 This sections contains information about debugging your {WildFlySwarm}&#x2013;based application both in local and remote deployments.
