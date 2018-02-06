@@ -2,6 +2,6 @@
 = Runtime Details
 //https://nodejs.org
 
-{NodeJS} is a JavaScript runtime built on link:https://developers.google.com/v8/[Chrome's V8 JavaScript engine]. {NodeJS} uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. {NodeJS}' package ecosystem, link:https://www.npmjs.com/[npm], is the largest ecosystem of open source libraries in the world.
+{NodeJS} is a JavaScript runtime built on the link:https://developers.google.com/v8/[V8 JavaScript engine] from Google. {NodeJS} uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. The {NodeJS} package ecosystem, link:https://www.npmjs.com/[npm], is the largest ecosystem of open source libraries in the world.
 
-The {NodeJS} runtime enables you to run {NodeJS} applications and services in OpenShift while providing all the advantages and conveniences of the OpenShift platform such as rolling updates, continuous delivery pipelines, service discovery, and canary deployments. OpenShift also makes it easier for your applications to implement common microservice patterns such as externalized configuration, health check, circuit breaker, and failover.
+The {NodeJS} runtime enables you to run {NodeJS} applications and services on OpenShift while providing all the advantages and conveniences of the OpenShift platform such as rolling updates, continuous delivery pipelines, service discovery, and canary deployments. OpenShift also makes it easier for your applications to implement common microservice patterns such as externalized configuration, health check, circuit breaker, and failover.
