@@ -2,6 +2,7 @@
 //
 //   parameter-openshiftlocal: A local OpenShift installation is used, so a URL is required for proceeding.
 //   parameter-deployment: A string containing the deployment to use, possibly in the form of a link
+//   parameter-launcher: url for launcher
 //   context: context of usage, e.g. "osl", "oso", "ocp", "rest-api", etc. This can also be a composite, e.g. "rest-api-oso"
 //   runtime: runtime used.
 //
@@ -15,6 +16,6 @@
 
 .Procedure
 
-* Navigate to the {parameter-deployment} URL in a browser and log in.
+* Navigate to the {parameter-launcher} URL in a browser and log in.
 * Follow on-screen instructions to create and launch your booster in {runtime}.
 
