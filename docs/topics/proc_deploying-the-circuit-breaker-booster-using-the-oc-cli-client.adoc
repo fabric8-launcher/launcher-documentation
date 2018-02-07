@@ -27,9 +27,9 @@ endif::[]
 $ oc new-project {project-name}
 ----
 
-ifndef::circuit-breaker-nodejs[]
 . Navigate to the root directory of your booster.
 
+ifndef::circuit-breaker-nodejs[]
 . Use Maven to start the deployment to OpenShift.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -41,19 +41,16 @@ This command uses the Fabric8 Maven Plugin to launch the link:{link-s2i-process}
 endif::circuit-breaker-nodejs[]
 
 ifdef::circuit-breaker-nodejs[]
-. Clone a fork of the booster at `git@github.com:bucharest-gold/nodejs-circuit-breaker.git`, and use the provided `start-openshift.sh` script to start the deployment to OpenShift.
-
+. Use the provided `start-openshift.sh` script to start the deployment to OpenShift.
++
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ git clone git@github.com:my-boosters/nodejs-circuit-breaker.git
-$ cd nodejs-circuit-breaker
+$ chmod +x start-openshift.sh
 $ ./start-openshift.sh
 ----
-
-These commands use the xref:about-nodeshift[Nodeshift] `npm` module to install your dependencies, launch the S2I build process on your
-OpenShift and start the services.
++
+These commands use the xref:about-nodeshift[Nodeshift] `npm` module to install your dependencies, launch the S2I build process on OpenShift, and start the services.
 endif::circuit-breaker-nodejs[]
-
 
 
 . Check the status of your booster and ensure your pod is running.

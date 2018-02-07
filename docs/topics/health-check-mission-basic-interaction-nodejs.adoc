@@ -45,7 +45,6 @@ $ oc get pods -w
 NAME                           READY     STATUS    RESTARTS   AGE
 {app-name}-1-26iy7   0/1       Running   5          18m
 {app-name}-1-26iy7   1/1       Running   5         19m
-
 ----
 
 . Optional: Use the web interface to invoke the service.
@@ -57,4 +56,4 @@ Alternatively to the interaction using the terminal window, you can use the web 
 http://{app-name}-{project-name}.{os-route-hostname}
 --
 
-include::health-check-mission-web-console-log-output.adoc[leveloffset=+1]
+include::health-check-mission-web-console-log-output.adoc[]

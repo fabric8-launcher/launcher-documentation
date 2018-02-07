@@ -240,7 +240,7 @@ include::topics/con_creating-nodejs-app.adoc[leveloffset=+2]
 //Building your app
 
 [appendix]
-include::topics/appendix-s2i-build-process.adoc[leveloffset=+1]
+include::topics/appendix-nodeshift.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/http-api-nodejs-package-json.adoc[leveloffset=+1]
@@ -252,10 +252,10 @@ include::topics/nodejs-dev-guide-additional-resources.adoc[leveloffset=+1]
 include::topics/appendix-application-development-resources.adoc[leveloffset=+1]
 
 [appendix]
-include::topics/appendix-proficiency-levels.adoc[leveloffset=+1]
+include::topics/appendix-s2i-build-process.adoc[leveloffset=+1]
 
 [appendix]
-include::topics/appendix-nodeshift.adoc[leveloffset=+1]
+include::topics/appendix-proficiency-levels.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/appendix-glossary.adoc[leveloffset=+1]
