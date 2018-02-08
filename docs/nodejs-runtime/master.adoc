@@ -12,9 +12,6 @@ This guide covers concepts as well as practical details needed by developers to 
 
 include::topics/nodejs-runtime-overview.adoc[leveloffset=+1]
 
-include::topics/runtime-info-community-version.adoc[leveloffset=+1]
-
-
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
 
