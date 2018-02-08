@@ -10,8 +10,8 @@ If you don’t want {VertX} to use `java.util.logging` for logging, you can conf
 [options="header"]
 |===
 | Library | Class name
-| `Log4J` (v1) |`io.vertx.core.logging.Log4jLogDelegateFactory`
-| `Log4J` (v2) | `io.vertx.core.logging.Log4j2LogDelegateFactory`
+| `Log4J` v1 |`io.vertx.core.logging.Log4jLogDelegateFactory`
+| `Log4J` v2 | `io.vertx.core.logging.Log4j2LogDelegateFactory`
 | `SLF4J` |  `io.vertx.core.logging.SLF4JLogDelegateFactory`
 |===
 +
@@ -19,5 +19,6 @@ When implementing logging using a custom library, ensure that the relevant `Log4
 +
 [CAUTION]
 --
-Notice that the provided delegate for Log4J 1 does not support parameterized message. The delegate for Log4J 2 uses the `{}` syntax like the SLF4J delegate. `java.util.logging` delegate uses the `\{x}` syntax.
+The _Log4J_ v1 delegate provided with {VertX} does not support parameterized messages.
+The delegate for _Log4J_ v2 uses the `{}` syntax like the _SLF4J_ delegate. `java.util.logging` delegate uses the `\{x}` syntax.
 --
