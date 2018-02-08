@@ -1,7 +1,7 @@
 [[about-nodeshift]]
 = Nodeshift 
 
-link:https://github.com/bucharest-gold/nodeshift[Nodeshift] is a plugin for running OpenShift deployments with {NodeJS} projects.
+link:https://github.com/bucharest-gold/nodeshift[Nodeshift] is a module for running OpenShift deployments with {NodeJS} projects.
 
 IMPORTANT: Nodeshift assumes you have the `oc` CLI client installed, and you are logged into your OpenShift cluster. Nodeshift also uses the current project the `oc` CLI client is using.
 

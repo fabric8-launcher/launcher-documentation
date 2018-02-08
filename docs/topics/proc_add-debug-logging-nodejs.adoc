@@ -9,14 +9,14 @@ This example uses the link:https://www.npmjs.com/package/debug[debug package], b
 
 . Add the `debug` logging definition.
 +
-[source,js,options="nowrap",subs="attributes+"]
+[source,javascript,options="nowrap",subs="attributes+"]
 ----
-var debug = require('debug')('mybooster');
+const debug = require('debug')('mybooster');
 ----
 
 . Add debug statements.
 +
-[source,js,options="nowrap",subs="attributes+"]
+[source,javascript,options="nowrap",subs="attributes+"]
 ----
 app.use('/api/greeting', (request, response) => {
   const name = request.query ? request.query.name : undefined;

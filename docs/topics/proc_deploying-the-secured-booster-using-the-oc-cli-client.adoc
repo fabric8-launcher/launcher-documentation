@@ -57,7 +57,7 @@ $ npm install && npm run openshift -- \
       -d SSO_AUTH_SERVER_URL=$(oc get route secure-sso -o jsonpath='{"https://"}{.spec.host}{"/auth\n"}')
 ----
 
-These commands install any missing package dependencies, then using the xref:about-nodeshift[Nodeshift] package, launch the link:{link-s2i-process}[S2I process] on {parameter-deployment} to start the pod.
+These commands install any missing module dependencies, then using the xref:about-nodeshift[Nodeshift] module, deploy the booster on OpenShift.
 --
 endif::secured-nodejs-mission[]
 
