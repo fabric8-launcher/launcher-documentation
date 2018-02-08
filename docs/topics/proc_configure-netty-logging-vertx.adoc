@@ -8,18 +8,22 @@ Netty:
 
 * allows quick and easy development of network applications, such as protocol servers and clients,
 * simplifies and streamlines network programming, such as TCP and UDP socket server development,
-* provides a unified API for
+* provides a unified API for managing blocking and non-blocking connections.
 
 Netty does not rely on an external logging configuration using system properties.
-Instead, it implements a logging configuration based on logging libraries visible to Netty classes in your project:
+Instead, it implements a logging configuration based on logging libraries visible to Netty classes in your project.
+Netty tries to use the libraries in the following order:
 
-* use `SLF4J` library if it is visible
+. `SLF4J`,
 
-* otherwise use `Log4j` if it is visible
+. `Log4J`,
 
-* as a fallback option, use java.util.logging
+. `java.util.logging`, as a fallback option.
 
-You can force the logger to use a specific implementation by setting Netty’s internal logger implementation directly to `io.netty.util.internal.logging.InternalLoggerFactory`:
+You can set `io.netty.util.internal.logging.InternalLoggerFactory` directly to a particular logger:
+//TODO: add context: where can the developer do this?
+// at the beginning of the application's `main` method.
+
 
 [source,java,options="nowrap",subs="attributes+"]
 --

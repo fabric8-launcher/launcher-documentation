@@ -20,5 +20,5 @@ When implementing logging using a custom library, ensure that the relevant `Log4
 [CAUTION]
 --
 The _Log4J_ v1 delegate provided with {VertX} does not support parameterized messages.
-The delegate for _Log4J_ v2 uses the `{}` syntax like the _SLF4J_ delegate. `java.util.logging` delegate uses the `\{x}` syntax.
+The delegate for _Log4J_ v2 uses the `{}` syntax like the _SLF4J_ delegate. `java.util.logging` delegate uses the `{x}` syntax.
 --
