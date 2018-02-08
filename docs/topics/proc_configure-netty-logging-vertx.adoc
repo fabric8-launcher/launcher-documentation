@@ -2,6 +2,14 @@
 [#_configure-netty-logging-vertx]
 = Configuring Netty Logging
 
+link:http://netty.io/wiki/user-guide-for-4.x.html[_Netty_^] is a library used by VertX to manage asynchronous network communication in applications.
+
+Netty:
+
+* allows quick and easy development of network applications, such as protocol servers and clients,
+* simplifies and streamlines network programming, such as TCP and UDP socket server development,
+* provides a unified API for
+
 Netty does not rely on an external logging configuration using system properties.
 Instead, it implements a logging configuration based on logging libraries visible to Netty classes in your project:
 
