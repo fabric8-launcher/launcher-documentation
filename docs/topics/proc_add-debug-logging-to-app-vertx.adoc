@@ -1,9 +1,8 @@
 
 [#_add_debug_logging_to_application_vertx]
-= Adding log output to your {VertX} application.
+s= Adding log output to your {VertX} application.
 
-. To add logging for your application, define a method to access the `Logger` class:
-To do that you use `LoggerFactory` class to get an instance of `Logger` which you then use for logging, for example:
+. To add logging for your application, define a `io.vertx.core.logging.Logger` class:
 +
 [source,java,options="nowrap",subs="attributes+"]
 --
@@ -18,42 +17,5 @@ logger.warn("warning");
 [CAUTION]
 --
 Logging backends use different formats to represent replaceable tokens in parameterized messages.
-As a consequence, if you rely on Vert.x parameterized logging methods, you will not be able to switch logging backends without changing your code.
+If you rely on parameterized logging methods, you will not be able to switch logging backends without changing your code.
 --
-
-////
-1.7 The LogManager
-There is a global LogManager object that keeps track of global logging information. This includes:
-A hierarchical namespace of named Loggers.
-
-A set of logging control properties read from the configuration file. See section 1.8.
-There is a single LogManager object that can be retrieved using the static LogManager.getLogManager method. This is created during LogManager initialization, based on a system property. This property allows container applications (such as EJB containers) to substitute their own subclass of LogManager in place of the default class.
-
-1.8 Configuration File
-The logging configuration can be initialized using a logging configuration file that will be read at startup. This logging configuration file is in standard java.util.Properties format.
-
-Alternatively, the logging configuration can be initialized by specifying a class that can be used for reading initialization properties. This mechanism allows configuration data to be read from arbitrary sources, such as LDAP, JDBC, etc. See the LogManager API Specification for details.
-
-There is a small set of global configuration information. This is specified in the description of the LogManager class and includes a list of root-level Handlers to install during startup.
-
-The initial configuration may specify levels for particular loggers. These levels are applied to the named logger and any loggers below it in the naming hierarchy. The levels are applied in the order they are defined in the configuration file.
-
-The initial configuration may contain arbitrary properties for use by Handlers or by subsystems doing logging. By convention these properties should use names starting with the name of the handler class or the name of the main Logger for the subsystem.
-
-For example, the MemoryHandler uses a property "java.util.logging.MemoryHandler.size" to determine the default size for its ring buffer.
-
-1.9 Default Configuration
-The default logging configuration that ships with the JRE is only a default, and can be overridden by ISVs, system admins, and end users.
-
-The default configuration makes only limited use of disk space. It doesn't flood the user with information, but does make sure to always capture key failure information.
-
-The default configuration establishes a single handler on the root logger for sending output to the console.
-
-
-
-A `java.util.logging` logging configuration file can be specified in the normal `java.util.logging` way by providing a system property called: java.util.logging.config.file with the value being your configuration file.
-For more information on this and the structure of a `java.util.logging` config file please consult the `java.util.logging` logging documentation.
-
-Vert.x also provides a slightly more convenient way to specify a configuration file without having to set a system property.
-Just provide a `java.util.logging` config file with the name vertx-default-`java.util.logging`-logging.properties on your classpath (e.g. inside your fatjar) and Vert.x will use that to configure `java.util.logging`.
-////
