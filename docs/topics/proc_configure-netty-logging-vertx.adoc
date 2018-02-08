@@ -20,7 +20,7 @@ Netty tries to use the libraries in the following order:
 
 . `java.util.logging`, as a fallback option.
 
-You can set `io.netty.util.internal.logging.InternalLoggerFactory` directly to a particular logger:
+You can set `io.netty.util.internal.logging.InternalLoggerFactory` directly to a particular logger by adding the following code at the beginning of `main` method of your application:
 //TODO: add context: where can the developer do this?
 // at the beginning of the application's `main` method.
 
