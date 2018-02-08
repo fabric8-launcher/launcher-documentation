@@ -285,8 +285,8 @@ include::topics/proc_attaching-a-remote-debugger-to-the-application.adoc[levelof
 === Debug Logging
 
 {VertX} provides a built-in logging API.
-The default logging implementation for {VertX} uses Java JDK Logging (JUL), that is provided with the {ProductShortName} release of {VertX}
-Alternatively, {VertX} allows you to implement another logging framework of your choice, for example, link:https://logging.apache.org/log4j/2.x/javadoc.html[Log4J^] ({VertX} supports Log4J 1 and 2) or link:https://www.slf4j.org/docs.html[SLF4J^].
+The default logging implementation for {VertX} uses the `java.util.logging` library that is provided with the {ProductShortName} release of {VertX}.
+Alternatively, {VertX} allows you to implement a different logging framework, for example, link:https://logging.apache.org/log4j/2.x/javadoc.html[Log4J^] ({VertX} supports Log4J v1 and v2) or link:https://www.slf4j.org/docs.html[SLF4J^].
 
 include::topics/proc_configuring-jul-logging-vertx.adoc[leveloffset=+3]
 
