@@ -19,73 +19,6 @@ include::topics/wf-swarm-runtime-overview.adoc[leveloffset=+1]
 
 include::topics/runtime-info-product-version.adoc[leveloffset=+1]
 
-== Building your application
-
-This sections contains information about configuring the {WildFlySwarm} runtime.
-
-include::topics/wildfly-swarm/docs/reference/maven-plugin.adoc[leveloffset=+2]
-
-include::topics/wildfly-swarm/docs/concepts/fractions.adoc[leveloffset=+2]
-include::topics/wildfly-swarm/docs/howto/autodetect-fractions/index.adoc[leveloffset=+3]
-include::topics/wildfly-swarm/docs/howto/explicit-fractions/index.adoc[leveloffset=+3]
-
-:version: {WildFlySwarmProductVersion}
-include::topics/wildfly-swarm/docs/howto/use-a-bom/index.adoc[leveloffset=+2]
-
-=== Logging
-
-include::topics/wildfly-swarm/docs/howto/enabling-logging/index.adoc[leveloffset=+3]
-include::topics/wildfly-swarm/docs/howto/logging-to-a-file/index.adoc[leveloffset=+3]
-:version!:
-
-include::topics/wildfly-swarm/docs/reference/configuration.adoc[leveloffset=+2]
-
-== Packaging your application
-
-This sections contains information about packaging your {WildFlySwarm}&#x2013;based application for deployment and execution.
-
-include::topics/wildfly-swarm/docs/concepts/packaging-types.adoc[leveloffset=+2]
-include::topics/wildfly-swarm/docs/howto/create-an-uberjar/index.adoc[leveloffset=+2]
-
-== Testing
-
-include::topics/wildfly-swarm/docs/howto/test-in-container/index.adoc[leveloffset=+2]
-
-== Debugging
-
-This sections contains information about debugging your {WildFlySwarm}&#x2013;based application both in local and remote deployments.
-
-=== Remote Debugging
-:context:
-
-To remotely debug an application, you must first configure it to start in a debugging mode, and then attach a debugger to it.
-
-:parameter-debug-property: swarm.debug.port
-:parameter-maven-goal: wildfly-swarm:run
-include::topics/proc_starting-your-application-locally-in-debugging-mode.adoc[leveloffset=+3]
-:parameter-debug-property!:
-:parameter-maven-goal!:
-
-:parameter-uberjar-documented:
-include::topics/proc_starting-an-uberjar-in-debugging-mode.adoc[leveloffset=+3]
-:parameter-uberjar-documented!:
-
-include::topics/proc_starting-your-application-on-openshift-in-debugging-mode.adoc[leveloffset=+3]
-
-include::topics/proc_attaching-a-remote-debugger-to-the-application.adoc[leveloffset=+3]
-
-=== Debug Logging
-
-include::topics/con_local-debug-logging.adoc[leveloffset=+3]
-
-== Monitoring
-
-This section contains information about monitoring your {WildFlySwarm}&ndash;based application running on OpenShift.
-
-=== Accessing JVM metrics for your application on OpenShift
-
-include::topics/proc_accessing-jolokia-using-hawtio-on-openshift.adoc[leveloffset=+3]
-
 // MISSIONS
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
@@ -312,6 +245,65 @@ include::topics/secured-mission-resources.adoc[leveloffset=+3]
 //Minimum Viable App
 //Add-ons
 //Building your app
+
+== Building your application
+
+This sections contains information about configuring the {WildFlySwarm} runtime.
+
+include::topics/wildfly-swarm/docs/reference/maven-plugin.adoc[leveloffset=+2]
+
+include::topics/wildfly-swarm/docs/concepts/fractions.adoc[leveloffset=+2]
+include::topics/wildfly-swarm/docs/howto/autodetect-fractions/index.adoc[leveloffset=+3]
+include::topics/wildfly-swarm/docs/howto/explicit-fractions/index.adoc[leveloffset=+3]
+
+:version: {WildFlySwarmProductVersion}
+include::topics/wildfly-swarm/docs/howto/use-a-bom/index.adoc[leveloffset=+2]
+
+=== Logging
+
+include::topics/wildfly-swarm/docs/howto/enabling-logging/index.adoc[leveloffset=+3]
+include::topics/wildfly-swarm/docs/howto/logging-to-a-file/index.adoc[leveloffset=+3]
+:version!:
+
+include::topics/wildfly-swarm/docs/reference/configuration.adoc[leveloffset=+2]
+
+== Packaging your application
+
+This sections contains information about packaging your {WildFlySwarm}&ndash;based application for deployment and execution.
+
+include::topics/wildfly-swarm/docs/concepts/packaging-types.adoc[leveloffset=+2]
+include::topics/wildfly-swarm/docs/howto/create-an-uberjar/index.adoc[leveloffset=+2]
+
+== Debugging
+
+This sections contains information about debugging your {WildFlySwarm}&ndash;based application both in local and remote deployments.
+
+=== Remote Debugging
+
+To remotely debug an application, you must first configure it to start in a debugging mode, and then attach a debugger to it.
+
+include::topics/proc_starting-your-application-locally-in-debugging-mode.adoc[leveloffset=+3]
+
+:parameter-uberjar-documented:
+include::topics/proc_starting-an-uberjar-in-debugging-mode.adoc[leveloffset=+3]
+:parameter-uberjar-documented!:
+
+include::topics/proc_starting-your-application-on-openshift-in-debugging-mode.adoc[leveloffset=+3]
+
+include::topics/proc_attaching-a-remote-debugger-to-the-application.adoc[leveloffset=+3]
+
+=== Debug Logging
+
+include::topics/con_local-debug-logging.adoc[leveloffset=+3]
+
+== Monitoring
+
+This section contains information about monitoring your {WildFlySwarm}&ndash;based application running on OpenShift.
+
+=== Accessing JVM metrics for your application on OpenShift
+
+include::topics/proc_accessing-jolokia-using-hawtio-on-openshift.adoc[leveloffset=+3]
+
 
 [appendix]
 include::topics/appendix-s2i-build-process.adoc[leveloffset=+1]
