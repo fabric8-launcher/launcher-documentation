@@ -1,35 +1,19 @@
 = Add Debug Logging
-There are several options for debug logging. This example uses the Arquillian Testrunner JUnit Container.
+This procedure enables logging and adds debugging statements to your application.
 
-The Testrunner uses a new java class to add debugging statements to your application.
 
 
 .Prerequisites
 * An application you want to debug. For example, xref:mission-http-api-spring-boot[a booster].
-*
 
 .Procedure
-
-. Enable `debug` mode for your application.
-+
-[source,js,options="nowrap",subs="attributes+"]
-----
-Set the JAVA_ENABLE_DEBUG environment variable to true
-----
 
 . Add debug statements to your application. For example, Create a new java class `AbstractBoosterApplicationTestapp.java`
 +
 .Example `AbstractBoosterApplicationTestapp.java`
 [source,javascript,options="nowrap"]
 ----
-cpackage io.openshift.booster;
-
-import io.openshift.booster.service.GreetingProperties;
-import org.junit.Test;
-
-import static com.jayway.restassured.RestAssured.given;
-import static com.jayway.restassured.RestAssured.when;
-import static org.hamcrest.core.Is.is;
+...
 
 public abstract class AbstractBoosterApplicationTest {
 
@@ -54,60 +38,6 @@ public abstract class AbstractBoosterApplicationTest {
     protected abstract GreetingProperties getProperties();
 
 }
-----
-
-. Add debug statements in your application to use the new java class `AbstractBoosterApplicationTestapp.java`
-+
-.Example `OpenShiftIT.java`
-[source,javascript,options="nowrap"]
-----
-
-package io.openshift.booster;
-
-import java.net.URL;
-
-import com.jayway.restassured.RestAssured;
-import io.openshift.booster.service.GreetingProperties;
-import org.arquillian.cube.openshift.impl.enricher.RouteURL;
-import org.jboss.arquillian.junit.Arquillian;
-import org.junit.Before;
-import org.junit.runner.RunWith;
-
-@RunWith(Arquillian.class)
-public class OpenShiftIT extends AbstractBoosterApplicationTest {
-
-    @RouteURL("${app.name}")
-    private URL baseURL;
-
-    @Before
-    public void setup() throws Exception {
-        RestAssured.baseURI = baseURL + "api/greeting";
-    }
-
-    protected GreetingProperties getProperties() {
-        return new GreetingProperties();
-    }
-
-}
-----
-
-. Add dependencies for the Arquillian JUnit Container to the `pom.xml` file of your project:
-+
-[source,xml]
---
-...
-
-   <!-- Testing -->
-   <dependency>
-     <groupId>org.jboss.arquillian.junit</groupId>
-     <artifactId>arquillian-junit-container</artifactId>
-     <scope>test</scope>
-   </dependency>
-   <dependency>
-     <groupId>org.arquillian.cube</groupId>
-     <artifactId>arquillian-cube-openshift</artifactId>
-     <scope>test</scope>
-   </dependency>
 
 ...
---
+----

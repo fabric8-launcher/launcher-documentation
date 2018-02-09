@@ -1,28 +1,32 @@
 = Show Debug Logging on Localhost
 
-Use the `JAVA_DEBUG_ENABLED` environment variable when starting your application to enable debug logging.
+Deploy and interact with your application and view debug statements logged.
 
 .Prerequisites
-* An application with debug logging.
+* An application with debug logging enabled.
 
 .Procedure
-.  Deploy your application to enable debug logging.
+. Deploy your application to enable debug logging.
 +
+--
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ mvn clean fabric8:debug
+$ mvn spring-boot:run -Drun.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=$PORT_NUMBER"
 ----
-+
 
-. Test your application to invoke debug logging.
+Here, `$PORT_NUMBER` is an unused port number of your choice.
+Remember this number for the remote debugger configuration.
+--
 +
+. Test your application to invoke debug logging.
 For example, when debug logging in the xref:mission-http-api-spring-boot[{name-mission-http-api} booster] is set to log the `name` variable in the `/api/greeting` method:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ curl http://localhost:8080/api/greeting?name=Sarah
 ----
-
++
+// logging output format TBD
 . View your application logs to see your debug messages.
 +
 [source,options="nowrap",subs="attributes+"]

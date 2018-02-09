@@ -42,7 +42,7 @@ include::topics/proc_add-debug-logging-spring-boot.adoc[leveloffset=+3]
 
 include::topics/proc_show-debug-logging-local-spring-boot.adoc[leveloffset=+3]
 
-include::topics/proc_show-debug-logging-openshift-spring-boot.adoc[leveloffset=+3]
+//include::topics/proc_show-debug-logging-openshift-spring-boot.adoc[leveloffset=+3]
 
 include::topics/proc_add-tomcat-logging.adoc[leveloffset=+3]
 

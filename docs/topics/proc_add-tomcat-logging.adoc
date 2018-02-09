@@ -1,6 +1,6 @@
 = Add Tomcat Logging
 
- This example adds configuration necessary to send the Embedded Tomcat containers’ access logging to stdout.
+ This example adds configuration necessary to send the Embedded Tomcat containers’ access logging to STDOUT.
 
 
 .Prerequisites
@@ -26,7 +26,7 @@ logging:
   file: "application.log"
 ----
 
-. Configure your embedded Tomcat container and add `logback-access` by defining a provider method.
+. Add a LogbackValve to your Embedded Tomcat container to use the Logback logging framework.
 +
 [source,js,options="nowrap",subs="attributes+"]
 .Example `TomcatLoggingApplication.java`
