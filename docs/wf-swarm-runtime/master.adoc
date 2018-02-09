@@ -31,6 +31,11 @@ include::topics/wildfly-swarm/docs/howto/explicit-fractions/index.adoc[leveloffs
 
 :version: {WildFlySwarmProductVersion}
 include::topics/wildfly-swarm/docs/howto/use-a-bom/index.adoc[leveloffset=+2]
+
+=== Logging
+
+include::topics/wildfly-swarm/docs/howto/enabling-logging/index.adoc[leveloffset=+3]
+include::topics/wildfly-swarm/docs/howto/logging-to-a-file/index.adoc[leveloffset=+3]
 :version!:
 
 include::topics/wildfly-swarm/docs/reference/configuration.adoc[leveloffset=+2]
@@ -68,6 +73,10 @@ include::topics/proc_starting-an-uberjar-in-debugging-mode.adoc[leveloffset=+3]
 include::topics/proc_starting-your-application-on-openshift-in-debugging-mode.adoc[leveloffset=+3]
 
 include::topics/proc_attaching-a-remote-debugger-to-the-application.adoc[leveloffset=+3]
+
+=== Debug Logging
+
+include::topics/con_local-debug-logging.adoc[leveloffset=+3]
 
 == Monitoring
 
