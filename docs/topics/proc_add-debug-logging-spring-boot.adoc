@@ -1,9 +1,12 @@
 = Add Debug Logging
-There are several options for debug logging. This example uses the JAVA-OPTIONS environment variable.
+There are several options for debug logging. This example uses the Arquillian Testrunner JUnit Container.
+
+The Testrunner uses a new java class to add debugging statements to your application.
 
 
 .Prerequisites
 * An application you want to debug. For example, xref:mission-http-api-spring-boot[a booster].
+*
 
 .Procedure
 
@@ -11,17 +14,100 @@ There are several options for debug logging. This example uses the JAVA-OPTIONS 
 +
 [source,js,options="nowrap",subs="attributes+"]
 ----
-Set debug=true in your application properties file
+Set the JAVA_ENABLE_DEBUG environment variable to true
 ----
 
-. Add debug statements.
+. Add debug statements to your application. For example, Create a new java class `AbstractBoosterApplicationTestapp.java`
 +
-[source,js,options="nowrap",subs="attributes+"]
+.Example `AbstractBoosterApplicationTestapp.java`
+[source,javascript,options="nowrap"]
 ----
-app.use('/api/greeting', (request, response) => {
-  const name = request.query ? request.query.name : undefined;
-  //log name in debugging
-  debug('name: '+name);
-  response.send({content: `Hello, ${name || 'World'}`});
-});
+cpackage io.openshift.booster;
+
+import io.openshift.booster.service.GreetingProperties;
+import org.junit.Test;
+
+import static com.jayway.restassured.RestAssured.given;
+import static com.jayway.restassured.RestAssured.when;
+import static org.hamcrest.core.Is.is;
+
+public abstract class AbstractBoosterApplicationTest {
+
+    @Test
+    public void testGreetingEndpoint() {
+        when().get()
+                .then()
+                .statusCode(200)
+                .body("content", is(String.format(getProperties().getMessage(), "World")));
+    }
+
+    @Test
+    public void testGreetingEndpointWithNameParameter() {
+        given().param("name", "John")
+                .when()
+                .get()
+                .then()
+                .statusCode(200)
+                .body("content", is(String.format(getProperties().getMessage(), "John")));
+    }
+
+    protected abstract GreetingProperties getProperties();
+
+}
 ----
+
+. Add debug statements in your application to use the new java class `AbstractBoosterApplicationTestapp.java`
++
+.Example `OpenShiftIT.java`
+[source,javascript,options="nowrap"]
+----
+
+package io.openshift.booster;
+
+import java.net.URL;
+
+import com.jayway.restassured.RestAssured;
+import io.openshift.booster.service.GreetingProperties;
+import org.arquillian.cube.openshift.impl.enricher.RouteURL;
+import org.jboss.arquillian.junit.Arquillian;
+import org.junit.Before;
+import org.junit.runner.RunWith;
+
+@RunWith(Arquillian.class)
+public class OpenShiftIT extends AbstractBoosterApplicationTest {
+
+    @RouteURL("${app.name}")
+    private URL baseURL;
+
+    @Before
+    public void setup() throws Exception {
+        RestAssured.baseURI = baseURL + "api/greeting";
+    }
+
+    protected GreetingProperties getProperties() {
+        return new GreetingProperties();
+    }
+
+}
+----
+
+. Add dependencies for the Arquillian JUnit Container to the `pom.xml` file of your project:
++
+[source,xml]
+--
+...
+
+   <!-- Testing -->
+   <dependency>
+     <groupId>org.jboss.arquillian.junit</groupId>
+     <artifactId>arquillian-junit-container</artifactId>
+     <scope>test</scope>
+   </dependency>
+   <dependency>
+     <groupId>org.arquillian.cube</groupId>
+     <artifactId>arquillian-cube-openshift</artifactId>
+     <scope>test</scope>
+   </dependency>
+
+...
+--

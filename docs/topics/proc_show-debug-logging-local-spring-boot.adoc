@@ -1,12 +1,12 @@
 = Show Debug Logging on Localhost
 
-Deploy your application with the Fabric8 Maven Plugin `debug` option to enable debug logging.
+Use the `JAVA_DEBUG_ENABLED` environment variable when starting your application to enable debug logging.
 
 .Prerequisites
 * An application with debug logging.
 
 .Procedure
-.  Deploy your application with fabric8:debug to enable debug logging.
+.  Deploy your application to enable debug logging.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -27,5 +27,5 @@ $ curl http://localhost:8080/api/greeting?name=Sarah
 +
 [source,options="nowrap",subs="attributes+"]
 ----
-mybooster name: Sarah +3m
+myapp name: Sarah +3m
 ----

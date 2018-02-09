@@ -1,7 +1,7 @@
 
 = Show Debug Logging on OpenShift
 
-Use the the `DEBUG` environment variable in your application pod in OpenShift to enable debug logging.
+Use the the `JAVA_DEBUG` environment variable in your application pod in OpenShift to enable debug logging.
 
 .Prerequisites
 * An application with debug logging.
@@ -50,13 +50,13 @@ $ curl $APPLICATION_ROUTE/api/greeting?name=Sarah
 
 . Return to your pod logs and notice there are no debug logging messages in the logs.
 
-. Set the `DEBUG` environment variable to enable debug logging.
+. Set the `JAVA_DEBUG` environment variable to enable debug logging.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc get dc
 ...
-$ oc set env dc DC_NAME DEBUG=mybooster
+$ oc set env dc DC_NAME JAVA_DEBUG=mybooster
 ----
 
 . Return to your pod logs to watch the update roll out.
@@ -81,10 +81,10 @@ mybooster name: Sarah +3m
 ----
 
 
-To disable debug logging, remove the `DEBUG` environment variable from the pod:
+To disable debug logging, remove the `JAVA_DEBUG` environment variable from the pod:
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc set env dc DC_NAME DEBUG-
+$ oc set env dc DC_NAME JAVA_DEBUG-
 ----
 
 .Related Information

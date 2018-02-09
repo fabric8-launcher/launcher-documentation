@@ -43,13 +43,15 @@ include::topics/proc_add-debug-logging-spring-boot.adoc[leveloffset=+3]
 include::topics/proc_show-debug-logging-local-spring-boot.adoc[leveloffset=+3]
 
 include::topics/proc_show-debug-logging-openshift-spring-boot.adoc[leveloffset=+3]
-// tbd proc for tomcat logging levels
+
+include::topics/proc_add-tomcat-logging.adoc[leveloffset=+3]
+
+include::topics/proc_show-tomcat-logging-levels.adoc[leveloffset=+3]
 
 //== Developing an Application for the {SpringBoot} Runtime
 
 //include::topics/creating-app-on_spring-boot-runtime-api.adoc[leveloffset=+2]
 //include::topics/creating-spring-boot-app.adoc[leveloffset=+2]
-//include::topics/creating-spring-boot-app-fabric8.adoc[leveloffset=+2]
 
 == Monitoring
 

@@ -1,0 +1,82 @@
+= Add Tomcat Logging
+
+ This example adds configuration necessary to send the Embedded Tomcat containers’ access logging to stdout.
+
+
+.Prerequisites
+* An application you want to enable Tomcat logging for. For example, xref:mission-http-api-spring-boot[a booster].
+*
+
+.Procedure
+
+.  Set `server.use-forward-headers` to  `true` in your application.yml file:
++
+[source,js,options="nowrap",subs="attributes+"]
+----
+server:
+  use-forward-headers: true
+----
+
+. Specify logging levels (e.g. DEBUG) for the  ` org.apache.tomcat` package and specify the name of the logging file.
++
+[source,js,options="nowrap",subs="attributes+"]
+----
+logging:
+  level.org.apache.tomcat: "DEBUG"
+  file: "application.log"
+----
+
+. Configure your embedded Tomcat container and add `logback-access` by defining a provider method.
++
+[source,js,options="nowrap",subs="attributes+"]
+.Example `TomcatLoggingApplication.java`
+[source,javascript,options="nowrap"]
+----
+@org.springframework.boot.autoconfigure.SpringBootApplication
+public class TomcatLoggingApplication {
+    private static Log logger = LogFactory.getLog(TomcatLoggingApplication.class);
+
+    // tag::snippet-listener[]
+    @Bean
+    protected ServletContextListener listener() {
+        return new ServletContextListener() {
+
+            @Override
+            public void contextInitialized(ServletContextEvent sce) {
+                logger.info("---> ServletContext initialized");
+            }
+
+            @Override
+            public void contextDestroyed(ServletContextEvent sce) {
+                logger.info("---> ServletContext destroyed");
+            }
+
+        };
+    }
+    // end::snippet-listener[]
+
+    // tag::snippet-container[]
+    @Bean
+    public EmbeddedServletContainerFactory servletContainer() {
+        // configure embedded Tomcat container
+        TomcatEmbeddedServletContainerFactory tomcat = new TomcatEmbeddedServletContainerFactory();
+
+        // Default configuration file: logback-access.xml
+        LogbackValve logbackValve = new LogbackValve();
+
+        logbackValve.setFilename("logback-access.xml");
+
+        // Add logback valve to embedded Tomcat
+        tomcat.addContextValves(logbackValve);
+
+        // return the configured factory
+        return tomcat;
+    }
+    // end::snippet-container[]
+
+    public static void main(String[] args) {
+        SpringApplication.run(TomcatLoggingApplication.class, args);
+    }
+}
+
+----
