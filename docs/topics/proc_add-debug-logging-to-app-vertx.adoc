@@ -1,5 +1,5 @@
 
-[#_add_debug_logging_to_application_vertx]
+[#adding-log-output-to-your-application_{context}]
 = Adding log output to your {VertX} application.
 
 . To add logging for your application, define a `io.vertx.core.logging.Logger` class:

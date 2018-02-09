@@ -1,6 +1,6 @@
 
-[#_specify_custom_logging_framework_vertx]
-= Specify a custom logging framework
+[#specifying-custom-logging-framework-for-your-application_{context}]
+= Specifying a custom logging framework for your application
 
 If you don’t want {VertX} to use `java.util.logging` for logging, you can configure it to use a different logging framework, for example, `Log4J` or `SLF4J`:
 

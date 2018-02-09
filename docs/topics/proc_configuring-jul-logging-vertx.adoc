@@ -1,5 +1,5 @@
 
-[#_configure_jul_logging_vertx]
+[#configuring-java-util-logging_{context}]
 = Configuring logging for your {VertX} application using `java.util.logging`
 To configure debug logging for your {VertX} application using `java.util.logging`:
 

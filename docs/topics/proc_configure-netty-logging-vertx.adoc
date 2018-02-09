@@ -1,6 +1,6 @@
 
-[#_configure-netty-logging-vertx]
-= Configuring Netty Logging
+[#configuring-netty-logging-for-your-application_{context}]
+= Configuring Netty Logging for your {VertX} application.
 
 link:http://netty.io/wiki/user-guide-for-4.x.html[_Netty_^] is a library used by VertX to manage asynchronous network communication in applications.
 
