@@ -1,6 +1,7 @@
 
 [#configuring-java-util-logging_{context}]
 = Configuring logging for your {VertX} application using `java.util.logging`
+
 To configure debug logging for your {VertX} application using `java.util.logging`:
 
 // is it just `properties` file , more accurate designation
@@ -10,10 +11,9 @@ This ensures that `LogManager` initializes `java.util.logging` at application st
 // the `java.util.logging` file is in a standard java.utils.Properties file.
 //Alternative:  add a logger class to your application. see docs.
 
-* Alternatively, add a `java.util.logging` configuration file with the name `vertx-default-java.util.logging-logging.properties` to the classpath of your Maven project
+* Alternatively, add a `java.util.logging` configuration file with the `vertx-default-jul-logging.properties` name to the classpath of your Maven project.
 //(e.g. inside your fatjar).
 {VertX} will use that file to configure `java.util.logging` on application startup.
 
 {VertX} allows you to specify a custom logging backend using the `LogDelegateFactory` that provides pre-built implementations for the `Log4J`, `Log4J2` and `SLF4J` libraries.
-Unlike `java.util.logging` which is included by default, the other backends require that you specify their respective libraries as dependencies in for your application.
-// li9nk to module with custom logging procedure.
+Unlike `java.util.logging`, which is link:https://docs.oracle.com/javase/8/docs/api/java/util/logging/package-summary.html[included with Java] by default, the other backends require that you specify their respective libraries as dependencies for your application.

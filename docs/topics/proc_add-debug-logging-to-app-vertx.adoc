@@ -2,7 +2,7 @@
 [#adding-log-output-to-your-application_{context}]
 = Adding log output to your {VertX} application.
 
-. To add logging for your application, define a `io.vertx.core.logging.Logger` class:
+. To add logging to your application, create a `io.vertx.core.logging.Logger`:
 +
 [source,java,options="nowrap",subs="attributes+"]
 --

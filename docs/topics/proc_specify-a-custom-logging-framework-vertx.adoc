@@ -2,9 +2,9 @@
 [#specifying-custom-logging-framework-for-your-application_{context}]
 = Specifying a custom logging framework for your application
 
-If you don’t want {VertX} to use `java.util.logging` for logging, you can configure it to use a different logging framework, for example, `Log4J` or `SLF4J`:
+If you do not want {VertX} to use `java.util.logging`, configure `io.vertx.core.logging.Logger to use a different logging framework, for example, `Log4J` or `SLF4J`:
 
-.  Set the `vertx.logger-delegate-factory-class-name` system property, where `class-name` corresponds to the name of the class that implements the `LogDelegateFactory` interface.
+.  Set the value of the `vertx.logger-delegate-factory-class-name` system property to the name of the class that implements the `LogDelegateFactory` interface.
 {Vertx} provides the pre-built implementations for the following libraries with their corresponding pre-defined classnames listed below:
 +
 [options="header"]
@@ -20,5 +20,6 @@ When implementing logging using a custom library, ensure that the relevant `Log4
 [CAUTION]
 --
 The _Log4J_ v1 delegate provided with {VertX} does not support parameterized messages.
-The delegate for _Log4J_ v2 uses the `{}` syntax like the _SLF4J_ delegate. `java.util.logging` delegate uses the `{x}` syntax.
+The delegates for _Log4J v2_ and _SLF4J_ both use the `{}` syntax.
+The `java.util.logging` delegate relies on link:https://docs.oracle.com/javase/8/docs/api/java/text/MessageFormat.html[`java.text.MessageFormat`] that uses the `{n}` syntax.
 --
