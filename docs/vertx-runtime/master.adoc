@@ -297,6 +297,12 @@ include::topics/proc_specify-a-custom-logging-framework-vertx.adoc[leveloffset=+
 // netty logging
 include::topics/proc_configure-netty-logging-vertx.adoc[leveloffset=+3]
 
+// Debug Logging on OpenShift
+// `:context:` is used here as a workaround to facilitate shareability of this module. For a more permanent solution, we need t revise the anchor naming scheme as per RHOARDOC-793.
+:context: vertx
+include::topics/proc_accessing-debug-log-output-on-openshift.adoc[leveloffset=+3]
+:!context:
+
 // Troubleshooting? TBD
 
 == Monitoring
