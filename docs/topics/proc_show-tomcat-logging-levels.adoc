@@ -1,12 +1,12 @@
 
-= Show Tomcat Logging Levels on OpenShift
+= Show Tomcat Logging on OpenShift
 
-Use the the `JAVA_DEBUG` environment variable in your application pod in OpenShift to enable debug logging.
+This procedure provides an example for redirecting the Embedded Tomcat containers’ access logging on OpenShift.
 
 .Prerequisites
 * Tomcat logging redirected to STDOUT.
+* An Application you want to enable Tomcat logging for.
 * The `oc` CLI client installed.
-
 
 .Procedure
 
@@ -17,20 +17,12 @@ Use the the `JAVA_DEBUG` environment variable in your application pod in OpenShi
 $ oc login ...
 ----
 +
-. Create a new project `tomcat-logging`
-+
-[source,bash,options="nowrap",subs="attributes+"]
-----
-$oc new-project tomcat-logging
-----
-+
 . Build and deploy the application using the Fabric8 Maven Plugin.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ mvn clean fabric8:deploy -Popenshift
 ----
-
 
 . Retrieve the route for the application:
 +

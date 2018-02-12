@@ -50,8 +50,6 @@ include::topics/proc_show-tomcat-logging-levels.adoc[leveloffset=+3]
 
 //== Developing an Application for the {SpringBoot} Runtime
 
-//include::topics/creating-app-on_spring-boot-runtime-api.adoc[leveloffset=+2]
-//include::topics/creating-spring-boot-app.adoc[leveloffset=+2]
 
 == Monitoring
 
