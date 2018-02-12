@@ -2,7 +2,7 @@
 [#specifying-custom-logging-framework-for-your-application_{context}]
 = Specifying a custom logging framework for your application
 
-If you do not want {VertX} to use `java.util.logging`, configure `io.vertx.core.logging.Logger to use a different logging framework, for example, `Log4J` or `SLF4J`:
+If you do not want {VertX} to use `java.util.logging`, configure `io.vertx.core.logging.Logger` to use a different logging framework, for example, `Log4J` or `SLF4J`:
 
 .  Set the value of the `vertx.logger-delegate-factory-class-name` system property to the name of the class that implements the `LogDelegateFactory` interface.
 {Vertx} provides the pre-built implementations for the following libraries with their corresponding pre-defined classnames listed below:
