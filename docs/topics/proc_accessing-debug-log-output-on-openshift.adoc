@@ -5,7 +5,7 @@
 This procedure shows you how to view the debug log output of your Java application running in a container on OpenShift.
 
 .Prerequisites
-* An application with debug logging runnig on OpenShift.
+* An application with debug logging running on OpenShift.
 * The `oc` client authenticated.
 
 .Procedure
@@ -43,6 +43,7 @@ $ oc get pods
 // Add alternative workflow using web console?
 . Follow the console log output for the pod you have just redeployed:
 +
+[source,subs="attributes+"]
 ----
 $ oc logs -f pod/{app-name}-2-aaaaa
 ----
@@ -83,7 +84,7 @@ INFO: Greeting: Hello, Sarah
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc set env dc DC_NAME DEBUG-
+$ oc set env dc/{app-name} JAVA_ENABLE_DEBUG-
 ----
 
 .Related Information
