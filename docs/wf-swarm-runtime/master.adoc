@@ -260,7 +260,7 @@ include::topics/wildfly-swarm/docs/howto/explicit-fractions/index.adoc[leveloffs
 include::topics/wildfly-swarm/docs/howto/use-a-bom/index.adoc[leveloffset=+2]
 
 === Logging
-:context: 
+:context: wf-swarm
 
 include::topics/wildfly-swarm/docs/howto/enabling-logging/index.adoc[leveloffset=+3]
 include::topics/wildfly-swarm/docs/howto/logging-to-a-file/index.adoc[leveloffset=+3]
