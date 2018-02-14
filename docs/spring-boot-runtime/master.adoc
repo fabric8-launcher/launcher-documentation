@@ -33,6 +33,24 @@ include::topics/proc_starting-your-application-on-openshift-in-debugging-mode.ad
 
 include::topics/proc_attaching-a-remote-debugger-to-the-application.adoc[leveloffset=+3]
 
+[#debug-logging]
+=== Debug Logging
+
+Debug logging is a way to add granular logging to an application that is explicitly enabled when performing debugging. This allows you to keep the logging capability in your application and only enable it when needed.
+
+include::topics/proc_add-debug-logging-spring-boot.adoc[leveloffset=+3]
+
+include::topics/proc_show-debug-logging-local-spring-boot.adoc[leveloffset=+3]
+
+//include::topics/proc_show-debug-logging-openshift-spring-boot.adoc[leveloffset=+3]
+
+include::topics/proc_add-tomcat-logging.adoc[leveloffset=+3]
+
+include::topics/proc_show-tomcat-logging-levels.adoc[leveloffset=+3]
+
+//== Developing an Application for the {SpringBoot} Runtime
+
+
 == Monitoring
 
 This section contains information about monitoring your {SpringBoot}&#x2013;based application running on OpenShift.
@@ -40,6 +58,8 @@ This section contains information about monitoring your {SpringBoot}&#x2013;base
 === Accessing JVM metrics for your application on OpenShift
 
 include::topics/proc_accessing-jolokia-using-hawtio-on-openshift.adoc[leveloffset=+3]
+
+
 
 // Missions
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]

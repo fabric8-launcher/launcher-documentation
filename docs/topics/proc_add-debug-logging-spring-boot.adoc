@@ -1,0 +1,43 @@
+= Add Debug Logging
+This procedure enables logging and adds debugging statements to your application.
+
+
+
+.Prerequisites
+* An application you want to debug. For example, xref:mission-http-api-spring-boot[a booster].
+
+.Procedure
+
+. Add debug statements to your application. For example, Create a new java class `AbstractBoosterApplicationTestapp.java`
++
+.Example `AbstractBoosterApplicationTestapp.java`
+[source,javascript,options="nowrap"]
+----
+...
+
+public abstract class AbstractBoosterApplicationTest {
+
+    @Test
+    public void testGreetingEndpoint() {
+        when().get()
+                .then()
+                .statusCode(200)
+                .body("content", is(String.format(getProperties().getMessage(), "World")));
+    }
+
+    @Test
+    public void testGreetingEndpointWithNameParameter() {
+        given().param("name", "John")
+                .when()
+                .get()
+                .then()
+                .statusCode(200)
+                .body("content", is(String.format(getProperties().getMessage(), "John")));
+    }
+
+    protected abstract GreetingProperties getProperties();
+
+}
+
+...
+----

@@ -1,0 +1,48 @@
+
+= Show Tomcat Logging on OpenShift
+
+This procedure provides an example for redirecting the Embedded Tomcat containers’ access logging on OpenShift.
+
+.Prerequisites
+* Tomcat logging redirected to STDOUT.
+* An Application you want to enable Tomcat logging for.
+* The `oc` CLI client installed.
+
+.Procedure
+
+. Use the `oc` CLI client to log into your OpenShift instance.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc login ...
+----
++
+. Build and deploy the application using the Fabric8 Maven Plugin.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn clean fabric8:deploy -Popenshift
+----
+
+. Retrieve the route for the application:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get route tomcat-logging -o jsonpath='http://{.spec.host}/greet/world'
+----
++
+. Interact with the application by navigating to the route URL in your browser and changing the last path part (world in the example above) and try accessing different URLs.
++
+
+. Open your OpenShift console, navigate to the application deployment: `<openshift host>/console/project/tomcat-logging/browse/dc/tomcat-logging` and click on  `View Log`. You should see access entries similar to:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+192.168.64.1 - - 22/Nov/2017:15:18:44 +0000 "GET /greet/world HTTP/1.1" 200 -
+192.168.64.1 - - 22/Nov/2017:15:18:45 +0000 "GET /greet/ HTTP/1.1" 404 -----
+----
+
+.Related Information
+
+* link:https://maven.fabric8.io[Fabric8 Maven Plugin Reference].
+* link:https://logback.qos.ch/access.html[HTTP-access logs with logback-access, Jetty and Tomcat].
