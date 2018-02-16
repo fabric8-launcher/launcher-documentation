@@ -16,31 +16,6 @@ include::topics/sb-product-versions.adoc[leveloffset=+2]
 
 include::topics/sb-features-and-frameworks-summary.adoc[leveloffset=+2]
 
-== Debugging
-
-This sections contains information about debugging your {SpringBoot}&#x2013;based application both in local and remote deployments.
-
-=== Remote Debugging
-:context: remote-debugging
-
-To remotely debug an application, you must first configure it to start in a debugging mode, and then attach a debugger to it.
-
-include::topics/proc_starting-your-spring-boot-application-locally-in-debugging-mode.adoc[leveloffset=+3]
-
-include::topics/proc_starting-an-uberjar-in-debugging-mode.adoc[leveloffset=+3]
-
-include::topics/proc_starting-your-application-on-openshift-in-debugging-mode.adoc[leveloffset=+3]
-
-include::topics/proc_attaching-a-remote-debugger-to-the-application.adoc[leveloffset=+3]
-
-== Monitoring
-
-This section contains information about monitoring your {SpringBoot}&#x2013;based application running on OpenShift.
-
-=== Accessing JVM metrics for your application on OpenShift
-
-include::topics/proc_accessing-jolokia-using-hawtio-on-openshift.adoc[leveloffset=+3]
-
 // Missions
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
@@ -265,6 +240,45 @@ include::topics/proc_running-the-secured-booster-integration-tests-on-sb-vx.adoc
 :parameter-runtime!:
 
 include::topics/secured-mission-resources.adoc[leveloffset=+3]
+
+
+
+== Debugging
+
+This sections contains information about debugging your {SpringBoot}&#x2013;based application both in local and remote deployments.
+
+=== Remote Debugging
+:context: remote-debugging
+
+To remotely debug an application, you must first configure it to start in a debugging mode, and then attach a debugger to it.
+
+include::topics/proc_starting-your-spring-boot-application-locally-in-debugging-mode.adoc[leveloffset=+3]
+
+include::topics/proc_starting-an-uberjar-in-debugging-mode.adoc[leveloffset=+3]
+
+include::topics/proc_starting-your-application-on-openshift-in-debugging-mode.adoc[leveloffset=+3]
+
+include::topics/proc_attaching-a-remote-debugger-to-the-application.adoc[leveloffset=+3]
+
+
+=== Debug Logging
+
+include::topics/proc_add-debug-logging-spring-boot.adoc[leveloffset=+3]
+
+include::topics/proc_show-debug-logging-local-spring-boot.adoc[leveloffset=+3]
+
+include::topics/proc_show-debug-logging-openshift-spring-boot.adoc[leveloffset=+3]
+
+
+== Monitoring
+
+This section contains information about monitoring your {SpringBoot}&#x2013;based application running on OpenShift.
+
+=== Accessing JVM metrics for your application on OpenShift
+
+include::topics/proc_accessing-jolokia-using-hawtio-on-openshift.adoc[leveloffset=+3]
+
+
 
 //== Creating an Application from Scratch
 //todo

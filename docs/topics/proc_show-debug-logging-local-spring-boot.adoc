@@ -1,0 +1,32 @@
+= Show Debug Logging on Localhost
+
+Start your application and interact with it to see the debugging statements.
+
+.Prerequisites
+* An application with debug logging enabled.
+
+.Procedure
+. Start your application.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn spring-boot:run
+----
+
+. Test your application to invoke debug logging. 
++
+For example, to test the xref:mission-http-api-spring-boot-tomcat[{name-mission-http-api} booster], you can invoke the `/api/greeting` method:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl http://localhost:8080/api/greeting?name=Sarah
+----
+
+. View your application logs to see your debug messages.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+i.o.booster.service.GreetingEndpoint     : Message: Hello, Sarah!
+----
+
+To disable debug logging, remove `logging.level.fully.qualified.name.of.TheClass=DEBUG` from `src/resources/application.properties` and restart your application.
