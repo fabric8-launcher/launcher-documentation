@@ -19,15 +19,15 @@ If you chose to package your application as a {runtime} uberjar, debug it by exe
 . Execute the uberjar with the following parameters.
 Ensure that all the parameters are specified before the name of the uberjar on the line.
 +
---
 [source,bash,options="nowrap"]
 ----
-$ java -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=$PORT_NUMBER -jar $UBERJAR_FILENAME
+$ java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=$PORT_NUMBER -jar $UBERJAR_FILENAME
 ----
-
-Here, `$PORT_NUMBER` is an unused port number of your choice.
++
+`$PORT_NUMBER` is an unused port number of your choice. 
 Remember this number for the remote debugger configuration.
---
++
+If you want the JVM to pause and wait for remote debugger connection before it starts the application, change `suspend` to `y`.
 
 ifdef::parameter-uberjar-documented[]
 .Related Information

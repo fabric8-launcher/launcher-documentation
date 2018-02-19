@@ -1,4 +1,3 @@
-
 [#starting-your-application-on-openshift-in-debugging-mode_{context}]
 = Starting Your Application on OpenShift in Debugging Mode
 
@@ -8,6 +7,7 @@ To debug your {runtime}-based application on OpenShift remotely, you must set th
 
 * Your application running on OpenShift.
 * The `oc` binary installed on your machine.
+* The ability to execute the `oc port-forward` command in your target OpenShift environment.
 
 .Procedure
 
@@ -61,3 +61,7 @@ Remember this number for the remote debugger configuration.
 ----
 $ oc set env dc/{app-name} JAVA_DEBUG-
 ----
+
+.Related Information
+
+You can also set the `JAVA_DEBUG_PORT` environment variable if you want to change the debug port from the default, which is `5005`.

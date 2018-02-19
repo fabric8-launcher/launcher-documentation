@@ -13,13 +13,15 @@ This method is applicable at least when launching the application manually using
 . In a console, navigate to the directory with your application.
 . Launch your application and specify the necessary JVM arguments and the debug port using the following syntax:
 +
---
 [source,bash,options="nowrap"]
 ----
-$ mvn spring-boot:run -Drun.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=$PORT_NUMBER"
+$ mvn spring-boot:run -Drun.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=$PORT_NUMBER"
 ----
-
-Here, `$PORT_NUMBER` is an unused port number of your choice.
++
+`$PORT_NUMBER` is an unused port number of your choice. 
 Remember this number for the remote debugger configuration.
---
++
+If you want the JVM to pause and wait for remote debugger connection before it starts the application, change `suspend` to `y`.
+
+
 

@@ -283,7 +283,11 @@ This sections contains information about debugging your {WildFlySwarm}&#x2013;ba
 
 To remotely debug an application, you must first configure it to start in a debugging mode, and then attach a debugger to it.
 
+:parameter-debug-property: swarm.debug.port
+:parameter-maven-goal: wildfly-swarm:run
 include::topics/proc_starting-your-application-locally-in-debugging-mode.adoc[leveloffset=+3]
+:parameter-debug-property!: 
+:parameter-maven-goal!:
 
 :parameter-uberjar-documented:
 include::topics/proc_starting-an-uberjar-in-debugging-mode.adoc[leveloffset=+3]
