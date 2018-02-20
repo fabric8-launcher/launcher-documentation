@@ -31,7 +31,7 @@ NAME         REVISION   DESIRED   CURRENT   TRIGGERED BY
 ...
 ----
 +
-. Open the YAML deployment template of the pod running you application for editing.
+. Open the YAML deployment template of the pod running your application for editing.
 +
 [source,bash,subs="attributes+"]
 --
@@ -53,7 +53,7 @@ spec:
 ...
 --
 +
-. Redeploy the pod running you application.
+. Redeploy the pod running your application.
 +
 [source,bash,subs="attributes+"]
 --
