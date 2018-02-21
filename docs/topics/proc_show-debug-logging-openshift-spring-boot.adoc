@@ -52,4 +52,4 @@ $ curl $APPLICATION_ROUTE/api/greeting?name=Sarah
 i.o.booster.service.GreetingEndpoint     : Message: Hello, Sarah!
 ---- 
 
-To disable debug logging, remove `logging.level.fully.qualified.name.of.TheClass=DEBUG` from `src/resources/application.properties` and redeploy your application.
+To disable debug logging, remove `logging.level.fully.qualified.name.of.TheClass=DEBUG` from `src/main/resources/application.properties` and redeploy your application.
