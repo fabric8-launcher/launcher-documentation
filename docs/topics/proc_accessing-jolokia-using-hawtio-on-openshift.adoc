@@ -31,7 +31,7 @@ NAME         REVISION   DESIRED   CURRENT   TRIGGERED BY
 ...
 ----
 +
-. Open the YAML deployment template of the pod running you application for editing.
+. Open the YAML deployment template of the pod running your application for editing.
 +
 [source,bash,subs="attributes+"]
 --
@@ -53,7 +53,7 @@ spec:
 ...
 --
 +
-. Redeploy the pod running you application.
+. Redeploy the pod running your application.
 +
 [source,bash,subs="attributes+"]
 --
@@ -61,7 +61,7 @@ oc rollout latest dc/{app-name}
 --
 +
 // The above workflow can also be accomplished using the web console
-The pod is redeployed with the updated deployment configuration and has port `8778` exposed on the OpenShift host.
+The pod is redeployed with the updated deployment configuration and exposes the port `8778`.
 +
 . Log into the OpenShift Web console.
 +

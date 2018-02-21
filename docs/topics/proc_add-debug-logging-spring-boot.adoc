@@ -36,7 +36,7 @@ public Greeting greeting(@QueryParam("name") @DefaultValue("World") String name)
 }
 ----
 
-. Add a `logging.level.fully.qualified.name.of.TheClass=DEBUG` in `src/resources/application.properties`.
+. Add a `logging.level.fully.qualified.name.of.TheClass=DEBUG` in `src/main/resources/application.properties`.
 +
 For example, if you added a logging statement to `io.openshift.booster.service.GreetingEndpoint` you would use:
 +
