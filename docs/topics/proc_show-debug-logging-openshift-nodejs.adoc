@@ -58,9 +58,20 @@ $ oc get dc
 $ oc set env dc DC_NAME DEBUG=mybooster
 ----
 
-. Return to your pod logs to watch the update roll out.
+. Return to your pod logs and start following the new pod.
 +
-IMPORTANT: After the update has rolled out, keep watching the logs. This is where the debug logging will appear.
+After the update is rolled out, a new pod is started with your update and the current pod is stopped. This means you need to start following the new pod.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+# current pod stops
+...
+$ oc get pods
+...
+$ oc logs -f pod/POD_NAME
+----
++
+IMPORTANT: After your pod has started, keep watching the logs. This is where the debug logging will appear.
 
 . Test the application to invoke debug logging. 
 +
