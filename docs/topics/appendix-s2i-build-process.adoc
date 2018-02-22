@@ -10,9 +10,10 @@ You must provide three elements to the S2I process to assemble the final contain
 
 * The application sources hosted in an online SCM repository, such as GitHub.
 
-* The link:https://docs.openshift.com/container-platform/latest/creating_images/s2i.html[S2I scripts].
+* The S2I Builder image, which serves as the foundation for the assembled image and provides the ecosystem in which your application is running.
 
-* The Builder image, which serves as the foundation for the assembled image and provides the ecosystem in which your application is running. This includes environment variables and parameters used by S2I scripts.
+* Optionally, you can also provide environment variables and parameters that are used by link:https://docs.openshift.com/container-platform/latest/creating_images/s2i.html[S2I scripts].
+
 
 The process injects your application source and dependencies into the Builder image according to instructions specified in the S2I script, and generates a Docker-formatted container image that runs the assembled application.
 For more information, check the link:https://docs.openshift.com/container-platform/latest/creating_images/s2i.html[S2I build requirements], link:https://docs.openshift.com/container-platform/latest/dev_guide/builds/build_strategies.html#source-to-image-strategy-options[build options]
