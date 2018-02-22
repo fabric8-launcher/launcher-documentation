@@ -1,7 +1,7 @@
 = Configuring Your {OpenShiftLocal}
-Before you can run the Secured Booster, you must update your {OpenShiftLocal} from the default configuration. You only need to do this once for the secured booster missions.
+Before you can run the Secured Booster, you must update your {OpenShiftLocal} from the default configuration. 
+You only need to do this once for any of the secured mission boosters.
 They all share the same {RHSSO}/{OpenShiftLocal} setup.
-You can use your {OpenShiftLocal} to run your secured booster, but you need to update it from the default configuration.
 
 Before you can use your {OpenShiftLocal}, you need to have it installed, configured, and running. You can find details on installing a {OpenShiftLocal} for your platform in link:{link-launcher-openshift-local-install-guide}#installing-a-openshiftlocal[{minishift-installation-guide-name}].
 
