@@ -45,6 +45,8 @@ $ mvn clean fabric8:deploy -Popenshift -DskipTests \
 
 This command uses the Fabric8 Maven Plugin to launch the link:{link-s2i-process}[S2I process] on {parameter-deployment} and to start the pod.
 --
+
+This process generates the uberjar file as well as the OpenShift resources and deploys them to the current project on your {parameter-deployment} server.
 endif::secured-nodejs-mission[]
 
 ifdef::secured-nodejs-mission[]
@@ -60,5 +62,3 @@ $ npm install && npm run openshift -- \
 These commands install any missing module dependencies, then using the xref:about-nodeshift[Nodeshift] module, deploy the booster on OpenShift.
 --
 endif::secured-nodejs-mission[]
-
-This process generates the uberjar file as well as the OpenShift resources and deploys them to the current project on your {parameter-deployment} server.
