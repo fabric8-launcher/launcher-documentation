@@ -1,4 +1,6 @@
-= Show Debug Logging on OpenShift
+
+[#accessing-debug-logs-on-openshift]
+= Accessing Debug Logs on OpenShift
 
 Use the the `DEBUG` environment variable in your application pod in OpenShift to enable debug logging.
 

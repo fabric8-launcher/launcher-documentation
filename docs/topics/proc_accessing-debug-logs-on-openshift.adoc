@@ -1,0 +1,105 @@
+
+[#accessing-debug-logs-on-openshift]
+= Accessing Debug Logs on OpenShift
+
+Start your application and interact with it to see the debugging statements in OpenShift.
+
+.Prerequisites
+
+* A Maven-based application with debug logging enabled.
+* The `oc` CLI client installed and authenticated.
+
+
+.Procedure
+
+. Deploy your application to OpenShift:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn clean fabric8:deploy -Popenshift
+----
+
+. View the logs:
++
+--
+. Get the name of the pod with your application:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get pods
+----
+
+. Start watching the log output:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc logs -f pod/MY_APP_NAME-2-aaaaa
+----
++
+Keep the terminal window displaying the log output open so that you can watch the log output.
+--
+
+. Interact with your application:
++
+For example, if you had debug logging in the xref:mission-http-api-{context}[{name-mission-http-api} booster] to log the `message` variable in the `/api/greeting` method:
++
+--
+. Get the route of your application:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get routes
+----
+
+. Make an HTTP request on the `/api/greeting` endpoint of your application:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl $APPLICATION_ROUTE/api/greeting?name=Sarah
+----
+--
+
+. Return to the window with your pod logs and inspect debug logging messages in the logs.
++
+--
+ifdef::spring-boot[]
+[source,options="nowrap",subs="attributes+"]
+----
+i.o.booster.service.GreetingEndpoint     : Message: Hello, Sarah!
+----
+endif::[]
+ifdef::vert-x[]
+[source,options="nowrap",subs="attributes+"]
+----
+...
+Feb 11, 2017 10:23:42 AM io.openshift.{app-name}
+INFO: Greeting: Hello, Sarah
+...
+----
+endif::[]
+ifdef::wf-swarm[]
+[source,options="nowrap",subs="attributes+"]
+----
+...
+2018-02-11 11:12:31,158 INFO  [io.openshift.{app-name}] (default task-18) Hello, Sarah!
+...
+----
+endif::[]
+--
+
+ifdef::spring-boot[]
+. To disable debug logging, remove `logging.level.fully.qualified.name.of.TheClass=DEBUG` from `src/main/resources/application.properties` and redeploy your application.
+endif::[]
+ifdef::vert-x[]
+. To disable debug logging, update your logging configuration file, for example `src/main/resources/vertx-default-jul-logging.properties`, remove the logging configuration for your class and redeploy your application.
+endif::[]
+ifdef::wf-swarm[]
+. To disable debug logging, remove the `logging` key from the `project-defaults.yml` file and redeploy the appliation.
+endif::[]
+
+ifdef::wf-swarm[]
+.Related Information
+
+* xref:_logging[]
+endif::[]
+

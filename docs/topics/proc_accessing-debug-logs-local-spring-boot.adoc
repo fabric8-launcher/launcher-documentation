@@ -1,4 +1,5 @@
-= Show Debug Logging on Localhost
+[#accessing-debug-logs-on-localhost]
+= Accessing Debug Logs on Localhost
 
 Start your application and interact with it to see the debugging statements.
 

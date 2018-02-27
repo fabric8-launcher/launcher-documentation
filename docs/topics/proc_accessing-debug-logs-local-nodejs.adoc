@@ -1,4 +1,6 @@
-= Show Debug Logging on Localhost
+
+[#accessing-debug-logs-on-localhost]
+= Accessing Debug Logs on Localhost
 
 Use the `DEBUG` environment variable when starting your application to enable debug logging.
 

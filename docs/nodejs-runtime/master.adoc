@@ -222,9 +222,9 @@ Debug logging is a way to add granular logging to an application that can be exp
 
 include::topics/proc_add-debug-logging-nodejs.adoc[leveloffset=+3]
 
-include::topics/proc_show-debug-logging-local-nodejs.adoc[leveloffset=+3]
+include::topics/proc_accessing-debug-logs-local-nodejs.adoc[leveloffset=+3]
 
-include::topics/proc_show-debug-logging-openshift-nodejs.adoc[leveloffset=+3]
+include::topics/proc_accessing-debug-logs-on-openshift-nodejs.adoc[leveloffset=+3]
 
 
 == Developing an Application for the {NodeJS} Runtime

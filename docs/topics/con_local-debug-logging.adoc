@@ -4,3 +4,12 @@
 
 To enable debug logging locally, see the xref:enabling-logging_{context}[] section and use the `DEBUG` log level.
 
+If you want to enable debug logging permanently, add the following configuration to the `src/main/resources/project-defaults.yml` file in your application:
+
+.Debug logging YAML configuration
+[source,yaml]
+----
+swarm:
+  logging: DEBUG
+----
+
