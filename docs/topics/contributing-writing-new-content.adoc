@@ -13,4 +13,17 @@ link:https://redhat-documentation.github.io/asciidoc-markup-conventions/[Red Hat
 
 link:https://mojo.redhat.com/groups/minimalism-quality-initiative[Minimalism in Red Hat Documentation]:: A Red Hat internal document about applying minimalism to documentation.
 
+[#writing-rules-specific-to-this-repository]
+== Writing Rules Specific to This Repository
+
+When writing new content, adhere to the following rules:
+
+* When using the link:https://en.wikipedia.org/wiki/Dash#En_dash[en dash], use the `\{ndash\}` attribute.
++
+--
+Do *not* use:
+
+* `&amp;ndash;` because it breaks validation.
+* `&amp;#x2013;` even though `\{ndash\}` is currently set to it, because the attribute can change in the future.
+--
 
