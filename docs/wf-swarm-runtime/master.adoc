@@ -270,7 +270,7 @@ include::topics/wildfly-swarm/docs/reference/configuration.adoc[leveloffset=+2]
 
 == Packaging your application
 
-This sections contains information about packaging your {WildFlySwarm}&#x2013;based application for deployment and execution.
+This sections contains information about packaging your {WildFlySwarm}{ndash}based application for deployment and execution.
 
 include::topics/wildfly-swarm/docs/concepts/packaging-types.adoc[leveloffset=+2]
 include::topics/wildfly-swarm/docs/howto/create-an-uberjar/index.adoc[leveloffset=+2]
@@ -281,7 +281,7 @@ include::topics/wildfly-swarm/docs/howto/test-in-container/index.adoc[leveloffse
 
 == Debugging
 
-This sections contains information about debugging your {WildFlySwarm}&#x2013;based application both in local and remote deployments.
+This sections contains information about debugging your {WildFlySwarm}{ndash}based application both in local and remote deployments.
 
 === Remote Debugging
 
@@ -311,7 +311,7 @@ include::topics/proc_accessing-debug-logs-on-openshift.adoc[leveloffset=+3]
 
 == Monitoring
 
-This section contains information about monitoring your {WildFlySwarm}&#x2013;based application running on OpenShift.
+This section contains information about monitoring your {WildFlySwarm}{ndash}based application running on OpenShift.
 
 === Accessing JVM metrics for your application on OpenShift
 

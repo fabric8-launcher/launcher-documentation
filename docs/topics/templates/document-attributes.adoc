@@ -8,6 +8,8 @@
 
 :imagesdir: images
 
+:ndash: &#x2013;
+
 //uncomment to add styles
 :stylesdir: topics/styles
 //:stylesheet: style.css

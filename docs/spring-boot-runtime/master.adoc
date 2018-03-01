@@ -245,7 +245,7 @@ include::topics/secured-mission-resources.adoc[leveloffset=+3]
 
 == Debugging
 
-This sections contains information about debugging your {SpringBoot}&#x2013;based application both in local and remote deployments.
+This sections contains information about debugging your {SpringBoot}{ndash}based application both in local and remote deployments.
 
 === Remote Debugging
 :context: remote-debugging
@@ -273,7 +273,7 @@ include::topics/proc_accessing-debug-logs-on-openshift.adoc[leveloffset=+3]
 
 == Monitoring
 
-This section contains information about monitoring your {SpringBoot}&#x2013;based application running on OpenShift.
+This section contains information about monitoring your {SpringBoot}{ndash}based application running on OpenShift.
 
 === Accessing JVM metrics for your application on OpenShift
 
