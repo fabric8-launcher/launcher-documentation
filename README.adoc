@@ -21,7 +21,5 @@ For general information about missions and boosters, see the link:https://appdev
 
 == Publishing
 
-You can find the list of issues addressed in each release in the link:https://github.com/fabric8-launch/appdev-documentation/blob/master/CHANGELOG.adoc[CHANGELOG.adoc] file.
-
 Basic information about publishing a release is described in the link:https://appdev.openshift.io/docs/contrib-guide.html#releasing_new_version[Releasing New Version] chapter of the __Contribution Guide.__
 
