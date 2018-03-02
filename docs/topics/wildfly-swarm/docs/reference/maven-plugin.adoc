@@ -35,7 +35,7 @@ Executes your application in the Maven process. The application is stopped if th
 [#maven-plugin-multistart-goal]
 start and multistart::
 Executes your application in a forked process. Generally, it is only useful for running integration tests using a plugin, such as the `maven-failsafe-plugin`.
-The `multistart` variant allows starting multiple WildFly Swarm&#x2013;built applications using Maven GAVs to support complex testing scenarios.
+The `multistart` variant allows starting multiple WildFly Swarm{ndash}built applications using Maven GAVs to support complex testing scenarios.
 
 stop::
 Stops any previously started applications.
@@ -303,7 +303,7 @@ Properties can be used to configure execution and affect the packaging
 or running of your application.
 
 If you add a `<properties>` or `<propertiesFile>` section to the `<configuration>` of the plugin, the properties are used when executing your application using the `mvn wildfly-swarm:run` command.
-In addition to that, the same properties are added to your `MYAPP-swarm.jar` file to affect subsequent executions of the uberjar.
+In addition to that, the same properties are added to your `_myapp_-swarm.jar` file to affect subsequent executions of the uberjar.
 Any properties loaded from the `<propertiesFile>` override identically-named properties in the `<properties>` section.
 
 Any properties added to the uberjar can be overridden at runtime using the traditional `-Dname=value` mechanism of the `java` binary, or using the YAML-based configuration files.
