@@ -7,9 +7,6 @@ ${prerequisite}
 == Running the Booster on a Single-node OpenShift Cluster
 If you have a single-node OpenShift cluster, such as Minishift or Red Hat Container Development Kit, link:http://appdev.openshift.io/docs/minishift-installation.html[installed and running], you can deploy your booster there. A single-node OpenShift cluster provides you with access to a local cloud environment.
 
-IMPORTANT: You *MUST* link:${missionURL}[update the configuration of your single-node OpenShift cluster as detailed in the mission documentation] before you can deploy this mission. 
-
-
 To deploy your booster to a running single-node OpenShift cluster:
 
 . Log in and create your project.

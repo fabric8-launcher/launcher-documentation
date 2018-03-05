@@ -182,8 +182,6 @@ include::topics/secured-mission-intro-paragraph-missions.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
-include::topics/secured-booster-minishift.adoc[leveloffset=+3]
-
 include::topics/secured-mission-intro.adoc[leveloffset=+3]
 
 //this needs to be a level lower due to secured-mission-intro.adoc
