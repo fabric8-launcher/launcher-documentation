@@ -85,7 +85,7 @@
 :CDKVersion: 3.2.0
 
 // used in the BOM file example.
-:WildFlySwarmProductVersion: 7.0.0.redhat-8
+:WildFlySwarmProductVersion: 7.0.1.redhat-20
 
 // used in the links to additional upstream Swarm docs.
 :WildFlySwarmVersion: 2017.10.0
