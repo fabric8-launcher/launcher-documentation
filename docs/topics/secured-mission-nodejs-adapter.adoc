@@ -14,13 +14,13 @@ const app = express();
 
 app.use(kc.middleware());  <3>
 
-app.use(‘/api/greeting’, kc.protect(), callback);  <4>
+app.use(‘/api/greeting’, kc.protect('booster-admin'), callback);  <4>
 ----
 
 <1> `npm` module link:https://www.npmjs.com/package/keycloak-connect[keycloak-connect] must be installed and `required`. The keycloak-connect module acts as link:https://github.com/senchalabs/connect[connect middleware], which provides integration with `express`.
 <2> Instantiate a new `Keycloak` object and pass in an empty configuration object.
 <3> Tells `express` to use Keycloak as middleware.
-<4> Enforces that a user must be authenticated before accessing a resource.
+<4> Enforces that a user must be authenticated and part of the booster-admin role before accessing a resource.
 
 
 .Enacting Security in Keycloak Adapter using `keycloak.json`
