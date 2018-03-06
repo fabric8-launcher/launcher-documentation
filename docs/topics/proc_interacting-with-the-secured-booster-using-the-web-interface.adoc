@@ -1,3 +1,10 @@
+// This assembly uses a parameterized module. Parameters used:
+//
+//   node-js-sso-temp-workaround: indicates we need the node.js sso woraround
+//
+// Rationale: output is slightly different for node due to an issue
+
+// 
 
 [#authenticating-http-requests-using-the-web-interface]
 == Authenticating HTTP requests using the Web Interface
@@ -20,10 +27,18 @@ The following procedure is an exercise for you to see how security is enforced, 
 .Unauthenticated {name-mission-secured} Booster Web Interface
 image::sso-main.png[]
 
+ifdef::node-js-sso-temp-workaround[]
+The services responds with an `HTTP 403 Forbidden` status code.
+
+NOTE: This is not the correct status code. It should be `HTTP 401 Unauthorized`. This issue link:https://github.com/bucharest-gold/nodejs-rest-http-secured-redhat/issues/21[has been identified] and this booster will be updated as soon as it is resolved.
+
+endif::node-js-sso-temp-workaround[]
+ifndef::node-js-sso-temp-workaround[]
 The services responds with an `HTTP 401 Unauthorized` status code.
 
 .Unauthenticated Error Message
 image::sso-unauthenticated.png[]
+endif::node-js-sso-temp-workaround[]
 --
 
 . Perform an authenticated request as a user:

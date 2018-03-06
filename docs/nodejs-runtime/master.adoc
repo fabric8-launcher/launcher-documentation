@@ -196,6 +196,7 @@ include::topics/assembly_building-and-deploying-the-secured-booster-to-openshift
 include::topics/assembly_building-and-deploying-the-secured-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 :parameter-runtime: nodejs
+:node-js-sso-temp-workaround:
 include::topics/assembly_interacting-with-the-secured-booster.adoc[leveloffset=+3]
 :parameter-runtime!:
 
