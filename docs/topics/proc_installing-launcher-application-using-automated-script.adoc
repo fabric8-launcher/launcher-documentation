@@ -42,7 +42,7 @@ $ ./deploy_launcher_mission.sh -p PROJECT_NAME -i OPENSHIFT_TOKEN -g GITHUB_USER
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ ./deploy_launcher_mission.sh -p PROJECT_NAME -i developer:developer -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN -v v13
+$ ./deploy_launcher_mission.sh -p PROJECT_NAME -i developer:developer -g GITHUB_USERNAME:GITHUB_PERSONAL_ACCESS_TOKEN -v v14
 ----
 
 . When the script finishes, return to the {OpenShiftLocal} Web console and click the {launcher} tool project to see the deployment status.
