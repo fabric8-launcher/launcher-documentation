@@ -26,12 +26,12 @@ To configure your application to use {Vertx}:
 +
 Include the following properties in your `pom.xml` file to track the version of {Vertx} and the Vert.x Maven Plugin you are using:
 +
-[source,xml]
+[source,xml,subs="attributes+"]
 --
 <project>
   ...
   <properties>
-    <vertx.version>3.4.2.redhat-006</vertx.version>
+    <vertx.version>{VertXVersion}</vertx.version>
     <vertx-maven-plugin.version>1.0.13</vertx-maven-plugin.version>
   </properties>
   ...
