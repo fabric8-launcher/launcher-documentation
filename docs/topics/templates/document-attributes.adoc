@@ -91,7 +91,7 @@
 :WildFlySwarmVersion: 2017.10.0
 
 // spring boot version for rt guide
-:SpringBootVersion: 1.5.8.RELEASE
+:SpringBootVersion: 1.5.10.RELEASE
 
 :link-http-api-level-0-spring-boot-tomcat-booster: https://github.com/snowdrop/rest_springboot-tomcat
 :link-http-api-level-0-vertx-booster: https://github.com/openshiftio-vertx-boosters/vertx-http-booster
