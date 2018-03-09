@@ -58,7 +58,7 @@ echo "------------------------------------------"
 
 # Install the launchpad-missioncontrol template
 echo "----------------- Install Launchpad template --------------------"
-oc create -n $PROJECTNAME -f https://raw.githubusercontent.com/openshiftio/launchpad-templates/$VERSION/openshift/launchpad-template.yaml
+oc create -n $PROJECTNAME -f https://raw.githubusercontent.com/fabric8-launcher/launcher-openshift-templates/$VERSION/openshift/launcher-template.yaml
 echo "------------------------------------------"
 
 # Local Deployment
