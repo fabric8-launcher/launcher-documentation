@@ -1,6 +1,6 @@
 = ${mission} - ${runtime} Booster
 
-IMPORTANT: While you can run and interact with this booster on our local host, it requires that you also have a database installed and configured. This booster runs best when deployed on OpenShift with a PostgreSQL database. For more details on using this booster with a single-node OpenShift cluster, CI/CD deployments, as well as the rest of the runtime, see the link:${guideURL}[${runtime} Runtime Guide].
+IMPORTANT: While you can run and interact with this booster on localhost, it requires that you also have a database installed and configured. This booster runs best when deployed on OpenShift with a PostgreSQL database. For more details on using this booster with a single-node OpenShift cluster, CI/CD deployments, as well as the rest of the runtime, see the link:${guideURL}[${runtime} Runtime Guide].
 
 ${prerequisite}
 
