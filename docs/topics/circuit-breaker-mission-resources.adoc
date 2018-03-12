@@ -18,3 +18,7 @@ endif::http-api-vertx[]
 ifndef::http-api-wf-swarm[]
 * link:{link-mission-circuit-breaker-wf-swarm}[{mission-circuit-breaker-wf-swarm-guide-name}]
 endif::http-api-wf-swarm[]
+
+ifndef::http-api-nodejs[]
+* link:{link-mission-circuit-breaker-nodejs}[{mission-circuit-breaker-nodejs-guide-name}]
+endif::http-api-nodejs[]

@@ -140,6 +140,8 @@
 :link-mission-health-check-nodejs: {link-nodejs-runtime-guide}#mission-health-check-nodejs
 :link-mission-crud-nodejs: {link-nodejs-runtime-guide}#mission-crud-nodejs
 :link-mission-circuit-breaker-nodejs: {link-nodejs-runtime-guide}#mission-circuit-breaker-nodejs
+:link-mission-secured-nodejs: {link-nodejs-runtime-guide}#mission-secured-nodejs
+
 
 :link-oso-auth: OPENSHIFT_URL
 :link-osl-auth: LOCAL_OPENSHIFT_URL

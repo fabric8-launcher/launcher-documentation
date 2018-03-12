@@ -20,3 +20,7 @@ endif::http-api-vertx[]
 ifndef::http-api-wf-swarm[]
 * link:{link-mission-secured-wf-swarm}[{mission-secured-wf-swarm-guide-name}]
 endif::http-api-wf-swarm[]
+
+ifndef::secured-nodejs-mission[]
+* link:{link-mission-secured-nodejs}[{mission-secured-nodejs-guide-name}]
+endif::secured-nodejs-mission[]
