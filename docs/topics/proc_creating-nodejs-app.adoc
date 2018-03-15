@@ -102,6 +102,37 @@ $ npm install nodeshift --save
 +
 The `openshift` script uses `nodeshift` to deploy the application to OpenShift.
 
+. _Optional_: Add a `files` section in `package.json`.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+{
+  "name": "myApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    ...
+  },
+  "files": {
+    "package.json",
+    "app.js"
+  }
+  ...
+}
+----
++
+The `files` section tells `nodeshift` what files and directories to include when deploying to OpenShift.
+`nodeshift` uses the link:https://github.com/npm/node-tar[`node-tar`] module to create a tar file based on the files and directories you list in the `files` section.
+This tar file is used when `nodeshift` deploys your application to OpenShift.
+If the `files` section is not specified, `nodeshift` will send the entire current directory, excluding:
++
+* `node_modules/`
+* `.git/`
+* `tmp/`
++
+It is recommended that you include a `files` section in `package.json` to avoid including unnecessary files when deploying to OpenShift.
+
 . Log in to your OpenShift instance with the `oc` client.
 +
 [source,bash,options="nowrap",subs="attributes+"]

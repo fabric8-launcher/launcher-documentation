@@ -227,7 +227,7 @@ include::topics/proc_accessing-debug-logs-on-openshift-nodejs.adoc[leveloffset=+
 
 include::topics/con_nodejs-runtime-api.adoc[leveloffset=+2]
 
-include::topics/con_creating-nodejs-app.adoc[leveloffset=+2]
+include::topics/proc_creating-nodejs-app.adoc[leveloffset=+2]
 
 //todo
 //Building blocks
