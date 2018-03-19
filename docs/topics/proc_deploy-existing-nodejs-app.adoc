@@ -1,0 +1,9 @@
+= Deploying an Existing {NodeJS} Application to OpenShift
+
+You can deploy an existing {NodeJS} application to OpenShift using the steps in xref:proc_deploy-new-nodejs-app-openshift[].
+
+In addition, you must verify the following items when deploying an existing application:
+
+* Ensure the `files` section of `package.json` lists all files and directories you need to deploy with your application.
+* Ensure the `start` entry in the `scripts` section of `package.json` correctly starts your application.
+* Ensure all the ports used by your application are correctly exposed when configuring your routes.

@@ -65,6 +65,7 @@ $ curl http://localhost:8080
 {"content":"Hello, World!"}
 ----
 
+[#proc_deploy-new-nodejs-app-openshift]
 == Deploying an Application to OpenShift
 
 .Prerequisites

@@ -229,11 +229,8 @@ include::topics/con_nodejs-runtime-api.adoc[leveloffset=+2]
 
 include::topics/proc_creating-nodejs-app.adoc[leveloffset=+2]
 
-//todo
-//Building blocks
-//Minimum Viable App
-//Add-ons
-//Building your app
+include::topics/proc_deploy-existing-nodejs-app.adoc[leveloffset=+2]
+
 
 [appendix]
 include::topics/appendix-nodeshift.adoc[leveloffset=+1]
