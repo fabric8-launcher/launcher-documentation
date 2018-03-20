@@ -1,0 +1,8 @@
+[#creating-a-spring-boot-application]
+= Creating a {SpringBoot} Application
+
+In addition to xref:mission-http-api-spring-boot-tomcat[using a booster], you can create new {SpringBoot} applications from scratch and deploy them to OpenShift.
+
+include::proc_creating-an-application.adoc[leveloffset=+1]
+
+include::proc_deploying-an-application-to-openshift.adoc[leveloffset=+1]

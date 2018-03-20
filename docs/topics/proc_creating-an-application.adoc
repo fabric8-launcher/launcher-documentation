@@ -1,0 +1,153 @@
+[#creating-an-application]
+= Creating an application
+
+Create a simple `Greeting` application to run on OpenShift using {SpringBoot}.
+The following procedure shows you how to:
+
+* Write some simple application code that makes use of functionalities provided by {SpringBoot}.
+* Declare dependencies and configure the application build using a `pom.xml` file.
+* Start  your application on localhost and verify that it works.
+
+
+.Prerequisites
+
+* Maven installed.
+
+.Procedure
+
+. Create the application directory and navigate to it.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mkdir myApp
+$ cd myApp
+----
+
+. Create a `pom.xml` file.
++
+[source,xml,options="nowrap",subs="attributes+"]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.example</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+
+  <name>MyApp</name>
+  <description>My Application</description>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>me.snowdrop</groupId>
+        <artifactId>spring-boot-bom</artifactId>
+        <version>1.5.10.SP4-SNAPSHOT</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-tomcat</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-spring-boot-starter-jaxrs</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.jaxrs</groupId>
+      <artifactId>jackson-jaxrs-json-provider</artifactId>
+    </dependency>
+  </dependencies>
+
+  <profiles>
+    <profile>
+      <id>openshift</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>io.fabric8</groupId>
+            <artifactId>fabric8-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>resource</goal>
+                  <goal>build</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>
+----
+
+. Create a new class in `src/main/java/com/example/`.
++
+The location of your class will vary depending on the value you set in `groupId` in your `pom.xml`. For example, for `<groupId>my.awesome.project</groupId>`, the location of the class is `src/main/java/my/awesome/project/`.
++
+.Example `src/main/java/com/example/MyApp.java`
+[source,java,options="nowrap",subs="attributes+"]
+----
+package com.example;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@SpringBootApplication
+@RestController
+public class MyApp {
+
+    public static void main(String[] args) {
+        SpringApplication.run(MyApp.class, args);
+    }
+
+    @RequestMapping("/")
+    @ResponseBody
+    public Message displayMessage() {
+        return new Message();
+    }
+
+    static class Message {
+        private String content = "Greetings!";
+
+        public String getContent() {
+            return content;
+        }
+
+        public void setContent(String content) {
+            this.content = content;
+        }
+    }
+}
+----
+
+. Start your application.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn spring-boot:run
+----
+
+. Using `curl` or your browser, verify your application is running at `http://localhost:8080`.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl http://localhost:8080
+{"content":"Greetings!"}
+----
