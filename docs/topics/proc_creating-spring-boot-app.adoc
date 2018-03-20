@@ -1,0 +1,209 @@
+[#proc_creating-a-spring-boot-app]
+= Creating a {SpringBoot} Application
+
+In addition to xref:mission-http-api-spring-boot-tomcat[using a booster], you can also create new {SpringBoot} applications from scratch and deploy them to OpenShift.
+
+== Creating an Application
+
+.Prerequisites
+* `mvn` installed.
+
+.Procedure
+
+. Create the application folder.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mkdir myApp
+$ cd myApp
+----
+
+. Create a `pom.xml`.
++
+[source,xml,options="nowrap",subs="attributes+"]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.openshift.booster</groupId>
+    <artifactId>spring-boot-booster-parent</artifactId>
+    <version>1.5.10-15</version>
+  </parent>
+
+  <artifactId>my-app</artifactId>
+  <version>1.5.10-5-SNAPSHOT</version>
+  <groupId>com.example</groupId>
+
+  <name>MyApp</name>
+  <description>My Application</description>
+
+
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-tomcat</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-spring-boot-starter-jaxrs</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.jaxrs</groupId>
+      <artifactId>jackson-jaxrs-json-provider</artifactId>
+    </dependency>
+  </dependencies>
+
+  <profiles>
+    <profile>
+      <id>openshift-it</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <configuration>
+              <systemPropertyVariables>
+                <app.name>${project.artifactId}</app.name>
+              </systemPropertyVariables>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>
+----
+
+. Create your class in `src/main/java/com/example/`.
++
+The location of your class will vary depending on the value you set in `groupId` in your `pom.xml`. For example, if you had `<groupId>my.awesome.project</groupId>` the location of the class would be `src/main/java/my/awesome/project/`.
++
+.Example `src/main/java/com/example/MyApp.java`
+[source,java,options="nowrap",subs="attributes+"]
+----
+package com.example;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@SpringBootApplication
+@RestController
+public class MyApp
+{
+	public static void main(String[] args) {
+        SpringApplication.run(MyApp.class, args);
+    }
+
+	@RequestMapping("/")
+	@ResponseBody
+	public Message displayMessage()
+	{
+		return new Message();
+	}
+
+	class Message
+	{
+		private String content = "Greetings!";
+
+		public String getContent() {
+			return content;
+		}
+
+		public void setContent(String content) {
+			this.content = content;
+		}
+	}
+}
+----
+
+
+. Start your application.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn spring-boot:run
+----
+
+. Using `curl` or your browser, verify your application is running at `http://localhost:8080`.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl http://localhost:8080
+{"content":"Greetings!"}
+----
+
+[#proc_deploy-new-app-openshift]
+== Deploying an Application to OpenShift
+
+.Prerequisites
+
+* The `oc` CLI client installed.
+* `mvn` installed.
+
+.Procedure
+
+. Log in to your OpenShift instance with the `oc` client.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc login ...
+----
+
+. Create a new project.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc new-project {project-name}
+----
+
+. Use Maven to start the deployment to OpenShift.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn clean fabric8:deploy -Popenshift
+----
++
+This command uses the Fabric8 Maven Plugin to launch the link:{link-s2i-process}[S2I process] on OpenShift and to start the pod.
+
+. Check the status of your booster and ensure your pod is running.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get pods -w
+NAME                             READY     STATUS      RESTARTS   AGE
+{app-name}-1-aaaaa               1/1       Running     0          58s
+{app-name}-s2i-1-build           0/1       Completed   0          2m
+----
++
+Your `{app-name}-1-aaaaa` pod should have a status of `Running` once it is fully deployed and started.
+
+. Once your booster is deployed and started, determine its route.
++
+.Example Route Information
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get routes
+NAME                 HOST/PORT                                                     PATH      SERVICES        PORT      TERMINATION
+{app-name}         {app-name}-{project-name}.{os-route-hostname}      {app-name}      8080
+----
++
+The route information of a pod gives you the base URL which you use to access it. In the example above, you would use `http://{app-name}-{project-name}.{os-route-hostname}` as the base URL to access the application.
+
+. Using `curl` or your browser, verify your application is running in OpenShift.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl http://{app-name}-{project-name}.{os-route-hostname}
+{"content":"Greetings!"}
+----
