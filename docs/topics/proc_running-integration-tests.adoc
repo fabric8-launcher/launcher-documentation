@@ -5,7 +5,7 @@
 //  parameter-runtime-name: human-readable name of the runtime. This is used in readable text
 //  parameter-mission-name: used to display the mission name in the readable title
 //
-// Rationale: This procedure is highly similar for all boosters and mission except the Secured Booster.
+// Rationale: This procedure is highly similar for all boosters and mission except the Secured booster.
 
 [#running-the-booster-integration-tests_{context}]
 = Running the {parameter-mission-name} Booster Integration Tests

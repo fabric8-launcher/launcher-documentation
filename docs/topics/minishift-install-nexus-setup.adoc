@@ -45,7 +45,7 @@ You must use `oc` version `3.6.0` or later.
 
 * Deploy the {launcher} tool to your {OpenShiftLocal}.
 
-* Deploy a Booster application to your {OpenShiftLocal}.
+* Deploy a booster application to your {OpenShiftLocal}.
 
 == Configuring your {OpenShiftLocal} to Use Nexus.
 
@@ -98,7 +98,7 @@ oc expose svc/nexus
 oc volumes dc/nexus --add --name 'nexus-volume-1' --type 'pvc' --mount-path '/sonatype-work/' --claim-name 'nexus-pv' --claim-size '10Gi' --overwrite
 --
 +
-.  Navigate to the project containing your Booster application.
+.  Navigate to the project containing your booster application.
 +
 [source,bash,subs="attributes+"]
 --

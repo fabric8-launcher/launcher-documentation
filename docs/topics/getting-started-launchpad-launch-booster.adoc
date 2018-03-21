@@ -30,7 +30,7 @@ NOTE: It may take a few minutes for the link to appear.
 
 You will be redirected to the startup logs in the `jenkins` pod. You have also given your {OpenShiftLocal} access to the `jenkins` pod and its logging information. Once you see the build start in the Jenkins logs, if you return to the _Overview_ page for your project in your {OpenShiftLocal}, you can see that the pipelines now show the build status.
 
-Once your booster is deployed, you can then interact with its application or applications. You can find more details on how to interact with a mission's booster in the _interaction section_ of each mission's guide. For example, if you deployed the {VertX} {name-mission-http-api} mission booster, use the link:{link-mission-http-api-vertx}#interact[Interact with the Unmodified {VertX} Booster] section in {mission-http-api-vertx-guide-name}. You can find a full list of mission guides in xref:available-missions[Available Missions].
+Once your booster is deployed, you can then interact with its application or applications. You can find more details on how to interact with a mission's booster in the _interaction section_ of each mission's guide. For example, if you deployed the {VertX} {name-mission-http-api} mission booster, use the link:{link-mission-http-api-vertx}#interact[Interacting with the Unmodified {VertX} Booster] section in {mission-http-api-vertx-guide-name}. You can find a full list of mission guides in xref:available-missions[].
 
 NOTE: Each mission guide covers deploying as well as interacting with the booster. If you have already deployed your booster using the steps above, skip the _deployment section_ in the mission guide which covers the process for xref:launcher-launch-booster-manual[launching manually].
 

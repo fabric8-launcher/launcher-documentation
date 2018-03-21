@@ -1,5 +1,5 @@
 = Configuring Your {OpenShiftLocal}
-Before you can run the Secured Booster, you must update your {OpenShiftLocal} from the default configuration. 
+Before you can run the Secured booster, you must update your {OpenShiftLocal} from the default configuration. 
 You only need to do this once for any of the secured mission boosters.
 They all share the same {RHSSO}/{OpenShiftLocal} setup.
 
@@ -7,7 +7,7 @@ Before you can use your {OpenShiftLocal}, you need to have it installed, configu
 
 .Updating your {OpenShiftLocal} from the default Configuration
 
-{RHSSO} will not start up unless you switch from the default configuration. The SSO Booster currently only works with the CentOS base image. If you have already run the `minishift` command with a different memory setting and iso-url value,
+{RHSSO} will not start up unless you switch from the default configuration. The SSO booster currently only works with the CentOS base image. If you have already run the `minishift` command with a different memory setting and iso-url value,
 you need to stop it and completely delete the `~/.minishift` directory before running the startup sequence.
 
 . Delete the current {OpenShiftLocal} configuration and restart it with a new ISO.

@@ -5,5 +5,5 @@ ifndef::docs-topic[link:https://appdev.openshift.io/docs/wf-swarm-runtime.html#p
 
 .What the {name-mission-http-api} Mission Does
 
-The {name-mission-http-api} Mission shows how to map business operations to a remote procedure call endpoint over HTTP using a REST framework. This corresponds to link:https://martinfowler.com/articles/richardsonMaturityModel.html#level0[Level 0 in the Richardson Maturity Model^].
+The {name-mission-http-api} mission shows how to map business operations to a remote procedure call endpoint over HTTP using a REST framework. This corresponds to link:https://martinfowler.com/articles/richardsonMaturityModel.html#level0[Level 0 in the Richardson Maturity Model^].
 Creating an HTTP endpoint using REST and its underlying principles to define your API lets you quickly prototype and design the API flexibly.
