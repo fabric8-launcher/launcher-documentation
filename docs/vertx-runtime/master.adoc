@@ -248,6 +248,38 @@ include::topics/proc_running-the-secured-booster-integration-tests-on-sb-vx.adoc
 
 include::topics/secured-mission-resources.adoc[leveloffset=+3]
 
+
+[[mission-cache-vertx]]
+=== {mission-cache-vertx-guide-name}
+:cache-vertx:
+
+include::topics/cache-mission-intro.adoc[leveloffset=+3]
+
+include::topics/note-preview-booster-source.adoc[leveloffset=+3]
+
+:parameter-mission: cache
+:parameter-mission-name: {name-mission-cache}
+
+:context: {parameter-mission}-oso
+include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
+
+:context: {parameter-mission}-osl
+include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
+
+:context: {parameter-mission}-ocp
+include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+
+
+include::topics/cache-mission-basic-interaction.adoc[leveloffset=+3]
+
+:parameter-runtime: vertx
+:parameter-runtime-name: {VertX}
+:context: {parameter-mission}-{parameter-runtime}
+include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
+
+include::topics/cache-mission-resources.adoc[leveloffset=+3]
+
+
 == Application Development
 //creating an app from scratch
 //TODO:

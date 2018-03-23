@@ -1,0 +1,84 @@
+= ${mission} - ${runtime} Booster
+
+[IMPORTANT]
+====
+While you can run and interact with this booster on localhost, it requires that you also have a cache server installed and configured. This booster runs best when deployed on OpenShift with a JBoss Data Grid cache server. 
+For more details on using this booster with a single-node OpenShift cluster, CI/CD deployments, as well as the rest of the runtime, see the link:${guideURL}[${runtime} Runtime Guide].
+====
+
+${prerequisite}
+
+${cicdSection}
+
+== Running the Booster on a Single-node OpenShift Cluster
+If you have a single-node OpenShift cluster, such as Minishift or Red Hat Container Development Kit, link:http://appdev.openshift.io/docs/minishift-installation.html[installed and running], you can also deploy your booster there. A single-node OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
+
+To deploy your booster to a running single-node OpenShift cluster:
+
+. Navigate to the root directory of your booster.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ ${gitCMD}
+
+$ cd ${targetRepository}
+----
+
+. Log in and create your project.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc login -u developer -p developer
+
+$ oc new-project MY_PROJECT_NAME
+----
+
+. Deploy the cache service.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc create -f service.cache.yaml
+----
+
+. Deploy your booster.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ ${OSORunCMD}
+----
+
+${integrationTestSection}
+
+
+== Interacting with the Booster on a Single-node OpenShift Cluster
+
+. Determine the URL of the `greeting` service.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get route ${app-name} -o jsonpath={$.spec.host}
+
+${app-name}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME
+----
+
+. Navigate to the `greeting` service using your browser.
+
+. Click _Invoke the service_ once.
++
+Notice the `duration` value is above `2000`. Also notice the cache state has changed form `No cached value` to `A value is cached`.
+
+. Wait 5 seconds and notice cache state has changed back to `No cached value`.
++
+The TTL for the cached value is set to 5 seconds.
+Once the TTL expires, the value is no longer cached.
+
+. Click _Invoke the service_ once more to cache the value.
+
+. Click _Invoke the service_ a few more times over the course of a few seconds while cache state is `A value is cached`.
++
+Notice a significantly lower `duration` value since it is using a cached value.
+If you click _Clear the cache_, the cache is emptied.
+
+
+== More Information
+You can learn more about this booster and the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].

@@ -45,6 +45,7 @@
 :name-mission-circuit-breaker: Circuit Breaker
 :name-mission-crud: Relational Database Backend
 :name-mission-secured: Secured
+:name-mission-cache: Cache
 
 :mission-http-api-spring-boot-guide-name: {name-mission-http-api} Mission - {SpringBoot} Booster
 :mission-http-api-vertx-guide-name: {name-mission-http-api} Mission - {VertX} Booster
@@ -70,6 +71,11 @@
 :mission-crud-vertx-guide-name: {name-mission-crud} Mission - {VertX} Booster
 :mission-crud-wf-swarm-guide-name: {name-mission-crud} Mission - {WildFlySwarm} Booster
 :mission-crud-nodejs-guide-name: {name-mission-crud} Mission - {NodeJS} Booster
+:mission-cache-spring-boot-guide-name: {name-mission-cache} Mission - {SpringBoot} Booster
+:mission-cache-vertx-guide-name: {name-mission-cache} Mission - {VertX} Booster
+:mission-cache-wf-swarm-guide-name: {name-mission-cache} Mission - {WildFlySwarm} Booster
+:mission-cache-nodejs-guide-name: {name-mission-cache} Mission - {NodeJS} Booster
+
 
 
 :minishift-installation-guide-name: Install and Configure the {launcher} Tool
@@ -133,6 +139,7 @@
 :link-mission-health-check-spring-boot: {link-spring-boot-runtime-guide}#mission-health-check-spring-boot
 :link-mission-secured-spring-boot: {link-spring-boot-runtime-guide}#mission-rest-http-secured-spring-boot
 :link-mission-circuit-breaker-spring-boot: {link-spring-boot-runtime-guide}#mission-circuit-breaker-spring-boot
+:link-mission-cache-spring-boot: {link-spring-boot-runtime-guide}#mission-cache-spring-boot
 
 :link-mission-http-api-vertx: {link-vertx-runtime-guide}#mission-rest-http-vertx
 :link-mission-configmap-vertx: {link-vertx-runtime-guide}#mission-configmap-vertx
@@ -140,6 +147,8 @@
 :link-mission-health-check-vertx: {link-vertx-runtime-guide}#mission-health-check-vertx
 :link-mission-secured-vertx: {link-vertx-runtime-guide}#mission-rest-http-secured-vertx
 :link-mission-circuit-breaker-vertx: {link-vertx-runtime-guide}#mission-circuit-breaker-vertx
+:link-mission-cache-vertx: {link-vertx-runtime-guide}#mission-cache-vertx
+
 
 :link-mission-http-api-wf-swarm: {link-wf-swarm-runtime-guide}#mission-rest-http-wf-swarm
 :link-mission-configmap-wf-swarm: {link-wf-swarm-runtime-guide}#mission-configmap-wf-swarm
@@ -147,6 +156,7 @@
 :link-mission-health-check-wf-swarm: {link-wf-swarm-runtime-guide}#mission-health-check-wf-swarm
 :link-mission-secured-wf-swarm: {link-wf-swarm-runtime-guide}#mission-rest-http-secured-wf-swarm
 :link-mission-circuit-breaker-wf-swarm: {link-wf-swarm-runtime-guide}#mission-circuit-breaker-wf-swarm
+:link-mission-cache-wf-swarm: {link-wf-swarm-runtime-guide}#mission-cache-wf-swarm
 
 :link-mission-http-api-nodejs: {link-nodejs-runtime-guide}#mission-rest-http-nodejs
 :link-mission-configmap-nodejs: {link-nodejs-runtime-guide}#mission-configmap-nodejs
@@ -154,6 +164,7 @@
 :link-mission-crud-nodejs: {link-nodejs-runtime-guide}#mission-crud-nodejs
 :link-mission-circuit-breaker-nodejs: {link-nodejs-runtime-guide}#mission-circuit-breaker-nodejs
 :link-mission-secured-nodejs: {link-nodejs-runtime-guide}#mission-rest-http-secured-nodejs
+:link-mission-cache-nodejs: {link-nodejs-runtime-guide}#mission-cache-nodejs
 
 
 :link-oso-auth: OPENSHIFT_URL
