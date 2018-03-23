@@ -1,4 +1,4 @@
-[#proc_deploying-an-application-to-openshift]
+[#deploying-an-application-to-openshift]
 = Deploying an Application to OpenShift
 
 This procedure shows you how to:
@@ -10,7 +10,7 @@ This procedure shows you how to:
 
 * The `oc` CLI client installed.
 * Maven installed.
-* A {SpringBoot} application.
+* A Maven-based application.
 
 .Procedure
 
