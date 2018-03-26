@@ -8,18 +8,18 @@ More background and related information on health checking can be found here:
 * link:https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/[Kubernetes Liveness and Readiness Probes]
 * link:https://kubernetes.io/docs/api-reference/v1/definitions/#_v1_probe[Kubernetes Probes]
 
-ifndef::http-api-spring-boot-tomcat[]
+ifndef::health-check-spring-boot-tomcat[]
 * link:{link-mission-health-check-spring-boot-tomcat}[Health Check - {SpringBoot} Booster]
-endif::http-api-spring-boot-tomcat[]
+endif::health-check-spring-boot-tomcat[]
 
-ifndef::http-api-vertx[]
+ifndef::health-check-vertx[]
 * link:{link-mission-health-check-vertx}[Health Check - {VertX} Booster]
-endif::http-api-vertx[]
+endif::health-check-vertx[]
 
-ifndef::http-api-wf-swarm[]
+ifndef::health-check-wf-swarm[]
 * link:{link-mission-health-check-wf-swarm}[Health Check - {WildFlySwarm} Booster]
-endif::http-api-wf-swarm[]
+endif::health-check-wf-swarm[]
 
-ifndef::http-api-nodejs[]
+ifndef::health-check-nodejs[]
   * link:{link-mission-health-check-nodejs}[Health Check - {NodeJS} Booster]
-endif::http-api-nodejs[]
+endif::health-check-nodejs[]

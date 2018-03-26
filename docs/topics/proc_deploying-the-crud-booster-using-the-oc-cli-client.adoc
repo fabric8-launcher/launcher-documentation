@@ -52,7 +52,7 @@ my-database-1-deploy   0/1       Completed   0         53s
 Your `my-database-1-aaaaa` pod should have a status of `Running` and should be indicated as ready once it is fully deployed and started.
 
 
-ifndef::http-api-nodejs[]
+ifndef::crud-nodejs-mission[]
 . Use maven to start the deployment to OpenShift.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -61,9 +61,9 @@ $ mvn clean fabric8:deploy -Popenshift
 ----
 +
 This command uses the Fabric8 Maven Plugin to launch the link:{link-s2i-process}[S2I process] on OpenShift and to start the pod.
-endif::http-api-nodejs[]
+endif::crud-nodejs-mission[]
 
-ifdef::http-api-nodejs[]
+ifdef::crud-nodejs-mission[]
 . Use `npm` to start the deployment to OpenShift.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -72,7 +72,7 @@ $ npm install && npm run openshift
 ----
 +
 These commands install any missing module dependencies, then using the xref:about-nodeshift[Nodeshift] module, deploy the booster on OpenShift.
-endif::http-api-nodejs[]
+endif::crud-nodejs-mission[]
 
 . Check the status of your booster and ensure your pod is running.
 +

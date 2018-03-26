@@ -9,17 +9,17 @@ Follow the links below for additional information on the principles behind the O
 
 * link:http://www.keycloak.org/archive/documentation-3.2.html[Keycloak 3.2 Documentation]
 
-ifndef::http-api-spring-boot-tomcat[]
+ifndef::secured-spring-boot-mission[]
 * link:{link-mission-secured-spring-boot}[{mission-secured-spring-boot-guide-name}]
-endif::http-api-spring-boot-tomcat[]
+endif::secured-spring-boot-mission[]
 
-ifndef::http-api-vertx[]
+ifndef::secured-vertx-mission[]
 * link:{link-mission-secured-vertx}[{mission-secured-vertx-guide-name}]
-endif::http-api-vertx[]
+endif::secured-vertx-mission[]
 
-ifndef::http-api-wf-swarm[]
+ifndef::secured-wf-swarm-mission[]
 * link:{link-mission-secured-wf-swarm}[{mission-secured-wf-swarm-guide-name}]
-endif::http-api-wf-swarm[]
+endif::secured-wf-swarm-mission[]
 
 ifndef::secured-nodejs-mission[]
 * link:{link-mission-secured-nodejs}[{mission-secured-nodejs-guide-name}]

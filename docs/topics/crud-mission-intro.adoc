@@ -13,8 +13,8 @@ The booster application exposes an HTTP API, which provides endpoints that allow
 * Execute an HTTP `PUT` request on the `api/fruits/*` endpoint passing in a valid ID and a name as an argument. This updates the name of the item with the given ID to match the name specified in your request.
 * Execute an HTTP `DELETE` request on the `api/fruits/*` endpoint, passing in a valid ID as an argument. This removes the item with the specified ID from the database and returns an HTTP code `204` (No Content) as a response. If you pass in an invalid ID, the call results in an HTTP error `404`.
 
-ifndef::http-api-nodejs[]
+ifndef::crud-nodejs-mission[]
 This booster also contains a set of automated xref:running-the-booster-integration-tests_{context}[integration tests] that can be used to verify that the application is fully integrated with the database.
-endif::http-api-nodejs[]
+endif::crud-nodejs-mission[]
 
 This booster does not showcase a fully matured RESTful model (level 3), but it does use compatible HTTP verbs and status, following the recommended HTTP API practices.
