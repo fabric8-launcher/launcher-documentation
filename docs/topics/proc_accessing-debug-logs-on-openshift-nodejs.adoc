@@ -36,7 +36,7 @@ $ oc get pods
 $ oc logs -f pod/POD_NAME
 ----
 +
-IMPORTANT: After your pod has started, keep watching the logs.
+IMPORTANT: After your pod has started, leave this command running and execute the remaining steps in a new terminal window. This allows you to _follow_ the logs and see new entries made to it.
 
 . Test your application. 
 +
@@ -62,7 +62,18 @@ $ oc set env dc DC_NAME DEBUG=mybooster
 
 . Return to your pod logs to watch the update roll out.
 +
-IMPORTANT: After the update has rolled out, keep watching the logs. This is where the debug logging will appear.
+After the update has rolled out, your pod will stop and you will no longer be following the logs.
+
+. Find the name of your new pod and follow the logs.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get pods
+....
+$ oc logs -f pod/POD_NAME
+----
++
+IMPORTANT: After your pod has started, leave this command running and execute the remaining steps in a different terminal window. This allows you to _follow_ the logs and see new entries made to it. Specifically, the logs will show your debug messages.
 
 . Test the application to invoke debug logging. 
 +
@@ -73,7 +84,7 @@ $ oc get routes
 $ curl $APPLICATION_ROUTE/api/greeting?name=Sarah
 ----
 
-. View the application logs to see the debug messages.
+. Return to your pod logs to see the debug messages.
 +
 [source,options="nowrap",subs="attributes+"]
 ----
