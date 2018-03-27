@@ -248,13 +248,19 @@ include::topics/proc_running-the-secured-booster-integration-tests-on-sb-vx.adoc
 
 include::topics/secured-mission-resources.adoc[leveloffset=+3]
 
-
-//== Creating an Application from Scratch
-//todo
+== Application Development
+//creating an app from scratch
+//TODO:
 //Building blocks
 //Minimum Viable App
 //Add-ons
 //Building your app
+
+// workaround to resolve ID conflicts:
+:context: vert-x
+// TODO: make content properly reusable
+include::topics/assembly_creating-a-vertx-application.adoc[leveloffset=+2]
+:!context:
 
 == Debugging
 

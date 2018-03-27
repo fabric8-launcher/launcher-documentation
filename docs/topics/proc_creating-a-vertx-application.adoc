@@ -1,10 +1,10 @@
 [id='creating-an-application_{context}']
 = Creating an application
 
-Create a simple `Greeting` application to run on OpenShift using {SpringBoot}.
+Create a simple `Greeting` application to run on OpenShift using {Vertx}.
 The following procedure shows you how to:
 
-* Write some simple application code that makes use of functionalities provided by {SpringBoot}.
+* Write some simple application code that makes use of functionalities provided by {Vertx}.
 * Declare dependencies and configure the application build using a `pom.xml` file.
 * Start your application on localhost and verify that it works.
 
@@ -28,7 +28,7 @@ $ cd myApp
 +
 [source,xml,options="nowrap",subs="attributes+"]
 ----
-include::resources/spring-boot-starter-example-pom.xml[]
+include::resources/vertx-starter-example-pom.xml[]
 ----
 
 . Create a new class in `src/main/java/com/example/`.
@@ -37,16 +37,17 @@ As a recommended practice, ensure that the location of your class within the dir
 For example, for `<groupId>my.awesome.project</groupId>`, the location of the class should be `src/main/java/my/awesome/project/`.
 +
 .Example `src/main/java/com/example/MyApp.java`
+
 [source,java,options="nowrap",subs="attributes+"]
 ----
-include::resources/springBootGreetingApp.java[]
+include::resources/vertxGreetingApp.java[]
 ----
 
-. Start your application.
+. Start your application. Execute the following command in the directory containing you application.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ mvn spring-boot:run
+$ mvn vertx:run
 ----
 
 . Using `curl` or your browser, verify your application is running at `http://localhost:8080`.

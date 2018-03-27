@@ -240,8 +240,12 @@ include::topics/proc_running-the-secured-booster-integration-tests-on-sb-vx.adoc
 include::topics/secured-mission-resources.adoc[leveloffset=+3]
 
 == Application Development
+// workaround to resolve ID conflicts:
+:context: spring-boot-tomcat
+// TODO: make content properly reusable
 //creating an app from scratch
 include::topics/assembly_creating-a-spring-boot-application.adoc[leveloffset=+2]
+:!context:
 
 == Debugging
 
