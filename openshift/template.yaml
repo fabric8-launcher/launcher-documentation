@@ -13,6 +13,7 @@ metadata:
     template.openshift.io/support-url: https://access.redhat.com
 labels:
   template: launcher-documentation
+
 parameters:
 - name: IMAGE
   value: fabric8/launcher-documentation
@@ -20,13 +21,44 @@ parameters:
 - name: IMAGE_TAG
   value: latest
   required: true
+
+- description: CPU request
+  displayName: CPU request
+  required: true
+  name: CPU_REQUEST
+  value: "10m"
+
+- description: CPU limit
+  displayName: CPU limit
+  required: true
+  name: CPU_LIMIT
+  value: "50m"
+
+- description: Memory request
+  displayName: Memory request
+  required: true
+  name: MEMORY_REQUEST
+  value: "8M"
+
+- description: Memory limit
+  displayName: Memory limit
+  required: true
+  name: MEMORY_LIMIT
+  value: "32M"
+
+- description: Number of deployment replicas
+  displayName: Number of deployment replicas
+  required: true
+  name: REPLICAS
+  value: "1"
+
 objects:
 - kind: DeploymentConfig
   apiVersion: v1
   metadata:
     name: launcher-documentation
   spec:
-    replicas: 1
+    replicas: "${{REPLICAS}}"
     selector:
       service: launcher-documentation
     strategy:
@@ -76,6 +108,13 @@ objects:
             failureThreshold: 3
             periodSeconds: 10
             successThreshold: 1
+          resources:
+            requests:
+              cpu: ${CPU_REQUEST}
+              memory: ${MEMORY_REQUEST}
+            limits:
+              cpu: ${CPU_LIMIT}
+              memory: ${MEMORY_LIMIT}
         restartPolicy: Always
         dnsPolicy: ClusterFirst
         securityContext: {}
