@@ -44,7 +44,7 @@ $ cd myApp
       <dependency>
         <groupId>me.snowdrop</groupId>
         <artifactId>spring-boot-bom</artifactId>
-        <version>1.5.10.SP4-SNAPSHOT</version>
+        <version>{SpringBootBOMVersion}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

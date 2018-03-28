@@ -93,6 +93,9 @@
 // spring boot version for rt guide
 :SpringBootVersion: 1.5.10.RELEASE
 
+//used in BOM file example
+:SpringBootBOMVersion: 1.5.10.SP3
+
 :VertXVersion: 3.4.2.redhat-009
 
 :link-http-api-level-0-spring-boot-tomcat-booster: https://github.com/snowdrop/rest_springboot-tomcat
