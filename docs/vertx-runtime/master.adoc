@@ -256,10 +256,19 @@ include::topics/secured-mission-resources.adoc[leveloffset=+3]
 //Add-ons
 //Building your app
 
+//creating an app from scratch
+
 // workaround to resolve ID conflicts:
 :context: vert-x
-// TODO: make content properly reusable
-include::topics/assembly_creating-a-vertx-application.adoc[leveloffset=+2]
+:parameter-maven-command: $ mvn vertx:run
+:parameter-runtime-name: {VertX}
+:parameter-runtime: vertx
+:vert-x:
+include::topics/assembly_creating-an-application.adoc[leveloffset=+2]
+:vert-x!:
+:parameter-runtime!:
+:parameter-runtime-name!:
+:parameter-maven-command!:
 :!context:
 
 == Debugging

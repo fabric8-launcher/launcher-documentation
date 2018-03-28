@@ -26,10 +26,18 @@ $ cd myApp
 
 . Create a `pom.xml` file.
 +
+ifdef::vert-x[]
 [source,xml,options="nowrap",subs="attributes+"]
 ----
 include::resources/vertx-starter-example-pom.xml[]
 ----
+endif::[]
+ifdef::spring-boot[]
+[source,xml,options="nowrap",subs="attributes+"]
+----
+include::resources/spring-boot-starter-example-pom.xml[]
+----
+endif::[]
 
 . Create a new class in `src/main/java/com/example/`.
 +
@@ -37,17 +45,25 @@ As a recommended practice, ensure that the location of your class within the dir
 For example, for `<groupId>my.awesome.project</groupId>`, the location of the class should be `src/main/java/my/awesome/project/`.
 +
 .Example `src/main/java/com/example/MyApp.java`
-
++
+ifdef::vert-x[]
 [source,java,options="nowrap",subs="attributes+"]
 ----
 include::resources/vertxGreetingApp.java[]
 ----
+endif::[]
+ifdef::spring-boot[]
+[source,java,options="nowrap",subs="attributes+"]
+----
+include::resources/springBootGreetingApp.java[]
+----
+endif::[]
 
 . Start your application. Execute the following command in the directory containing you application.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ mvn vertx:run
+{parameter-maven-command}
 ----
 
 . Using `curl` or your browser, verify your application is running at `http://localhost:8080`.

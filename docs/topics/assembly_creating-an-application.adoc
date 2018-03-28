@@ -1,0 +1,17 @@
+// This is a parameterized assembly. Parameters used:
+//
+//  parameter-runtime: runtime identifier. This is used to make xrefs link to the mission guide for the appropriate runtime.
+//  parameter-runtime-name: human-readable name of the mission. This is used in readable text
+//  context: used in anchor IDs to conflicts due to duplicate IDs
+//
+// Rationale: This procedure is the same for 2 or more runtimes.
+
+[id="creating-a-basic-application_{context}"]
+= Creating a basic {parameter-runtime-name} Application
+//parameterize the ID using {context}
+
+In addition to xref:mission-http-api-{parameter-runtime}[using a booster], you can create new {parameter-runtime-name} applications from scratch and deploy them to OpenShift.
+
+include::proc_creating-an-application.adoc[leveloffset=+1]
+
+include::proc_deploying-an-application-to-openshift.adoc[leveloffset=+1]
