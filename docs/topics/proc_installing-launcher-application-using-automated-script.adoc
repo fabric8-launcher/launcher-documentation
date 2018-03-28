@@ -47,7 +47,7 @@ $ ./deploy_launcher_mission.sh -p PROJECT_NAME -i developer:developer -g GITHUB_
 
 . When the script finishes, return to the {OpenShiftLocal} Web console and click the {launcher} tool project to see the deployment status.
 +
-image::minishift_launchpad_booting.png[{launcher} tool booting]
+image::minishift_launcher_booting.png[{launcher} tool booting]
 +
 
 . When all pods are running, click the link at the top of all pods, which typically ends in `nip.io`. A new browser tab opens with the {launcher} tool. This is the same service as link:{link-launcher-oso}[{launcher-oso}] but running in a {OpenShiftLocal}.
