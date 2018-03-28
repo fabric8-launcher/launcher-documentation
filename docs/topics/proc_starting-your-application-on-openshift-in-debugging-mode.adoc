@@ -25,7 +25,7 @@ $ oc get dc
 $ oc set env dc/{app-name} JAVA_DEBUG=true
 ----
 
-. Redeploy the application if it is not set to redeploy automatically on environment change. For example:
+. Redeploy the application if it is not set to redeploy automatically on configuration change. For example:
 +
 [source,bash,subs="attributes+"]
 ----
