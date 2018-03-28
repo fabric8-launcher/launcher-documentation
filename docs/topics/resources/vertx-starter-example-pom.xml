@@ -12,8 +12,8 @@
   <description>Example application using RHOAR Vert.x</description>
 
   <properties>
-    <vertx.version>3.4.2.redhat-009</vertx.version>
-    <vertx-maven-plugin.version>1.0.13</vertx-maven-plugin.version>
+    <vertx.version>{VertXVersion}</vertx.version>
+    <vertx-maven-plugin.version>{VertXMvnPluginVersion}</vertx-maven-plugin.version>
     <vertx.verticle>io.openshift.booster.MyApplication</vertx.verticle>
   </properties>
 
