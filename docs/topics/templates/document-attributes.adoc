@@ -94,7 +94,7 @@
 :SpringBootVersion: 1.5.10.RELEASE
 
 //used in BOM file example
-:SpringBootBOMVersion: 1.5.10.SP3
+:SpringBootBOMVersion: 1.5.10.SP2-redhat-2
 
 :VertXVersion: 3.4.2.redhat-009
 
