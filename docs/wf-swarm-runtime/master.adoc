@@ -249,6 +249,7 @@ include::topics/secured-mission-resources.adoc[leveloffset=+3]
 
 This sections contains information about creating your application and configuring the {WildFlySwarm} runtime for it.
 
+:version: {WildFlySwarmProductVersion}
 include::topics/wildfly-swarm/docs/howto/writing-an-application-from-scratch/index.adoc[leveloffset=+2]
 include::topics/proc_deploying-an-application-to-openshift.adoc[leveloffset=+2]
 
@@ -258,7 +259,6 @@ include::topics/wildfly-swarm/docs/concepts/fractions.adoc[leveloffset=+2]
 include::topics/wildfly-swarm/docs/howto/autodetect-fractions/index.adoc[leveloffset=+3]
 include::topics/wildfly-swarm/docs/howto/explicit-fractions/index.adoc[leveloffset=+3]
 
-:version: {WildFlySwarmProductVersion}
 include::topics/wildfly-swarm/docs/howto/use-a-bom/index.adoc[leveloffset=+2]
 
 === Logging
