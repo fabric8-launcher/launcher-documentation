@@ -24,14 +24,14 @@ include::note-integration-tests-app-deletion-warning.adoc[]
 * the `oc` client authenticated
 * an empty project in your OpenShift namespace
 
-ifdef::configmap-vertx,configmap-spring-boot-tomcat[]
+ifdef::configmap-vertx,configmap-spring-boot[]
 * view access permission assigned to the service account of your booster application. This allows your application to read the configuration from the ConfigMap:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc policy add-role-to-user view -n $(oc project -q) -z default
 ----
-endif::configmap-vertx,configmap-spring-boot-tomcat[]
+endif::configmap-vertx,configmap-spring-boot[]
 
 .Procedure
 

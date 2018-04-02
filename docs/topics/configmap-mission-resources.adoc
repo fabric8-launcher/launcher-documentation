@@ -6,9 +6,9 @@ More background and related information on {name-mission-configmap} and ConfigMa
 * link:https://docs.openshift.org/latest/dev_guide/configmaps.html[OpenShift ConfigMap Documentation]
 * link:https://blog.openshift.com/configuring-your-application-part-1/[Blog Post about ConfigMap in OpenShift]
 
-ifdef::configmap-spring-boot-tomcat[]
+ifdef::configmap-spring-boot[]
 * link:http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config[Externalized Configuration with {SpringBoot}]
-endif::configmap-spring-boot-tomcat[]
+endif::configmap-spring-boot[]
 
 ifdef::configmap-vertx[]
 * link:http://vertx.io/docs/vertx-config/js/[Externalized Configuration with {VertX}]
@@ -18,9 +18,9 @@ ifdef::configmap-wf-swarm[]
 * link:https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-guide/content/v/eee1f5ba4dd4f13855cbe98addd365ba29033810/configuration/index.html[Externalized Configuration with {WildFlySwarm}]
 endif::configmap-wf-swarm[]
 
-ifndef::configmap-spring-boot-tomcat[]
-* link:{link-mission-configmap-spring-boot-tomcat}[Externalized Configuration - {SpringBoot} Booster]
-endif::configmap-spring-boot-tomcat[]
+ifndef::configmap-spring-boot[]
+* link:{link-mission-configmap-spring-boot}[Externalized Configuration - {SpringBoot} Booster]
+endif::configmap-spring-boot[]
 
 ifndef::configmap-vertx[]
 * link:{link-mission-configmap-vertx}[Externalized Configuration - {VertX} Booster]

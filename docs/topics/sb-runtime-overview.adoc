@@ -1,7 +1,7 @@
 = Runtime Details
 //https://projects.spring.io/spring-boot/
 .What {SpringBoot} Does
-{SpringBoot} lets you create opinionated Spring-based stand-alone applications. See xref:sb-tomcat-additional-resources[Additional Resources] for a list of documents about {SpringBoot}.
+{SpringBoot} lets you create opinionated Spring-based stand-alone applications. See xref:sb-additional-resources[Additional Resources] for a list of documents about {SpringBoot}.
 
 The {SpringBoot} runtime gives you the advantages and convenience of the OpenShift platform:
 

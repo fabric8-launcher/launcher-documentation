@@ -1,17 +1,17 @@
 [[available-missions]]
 = Available Missions
 
-* link:{link-mission-http-api-spring-boot-tomcat}[{mission-http-api-spring-boot-tomcat-guide-name}]
+* link:{link-mission-http-api-spring-boot}[{mission-http-api-spring-boot-guide-name}]
 * link:{link-mission-http-api-vertx}[{mission-http-api-vertx-guide-name}]
 * link:{link-mission-http-api-wf-swarm}[{mission-http-api-wf-swarm-guide-name}]
-* link:{link-mission-crud-spring-boot-tomcat}[{mission-crud-spring-boot-tomcat-guide-name}]
+* link:{link-mission-crud-spring-boot}[{mission-crud-spring-boot-guide-name}]
 * link:{link-mission-crud-vertx}[{mission-crud-vertx-guide-name}]
 * link:{link-mission-crud-wf-swarm}[{mission-crud-wf-swarm-guide-name}]
-* link:{link-mission-health-check-spring-boot-tomcat}[{mission-health-check-spring-boot-tomcat-guide-name}]
+* link:{link-mission-health-check-spring-boot}[{mission-health-check-spring-boot-guide-name}]
 * link:{link-mission-health-check-vertx}[{mission-health-check-vertx-guide-name}]
 * link:{link-mission-health-check-wf-swarm}[{mission-health-check-wf-swarm-guide-name}]
 
-* link:{link-mission-configmap-spring-boot-tomcat}[{mission-configmap-spring-boot-tomcat-guide-name}]
+* link:{link-mission-configmap-spring-boot}[{mission-configmap-spring-boot-guide-name}]
 * link:{link-mission-configmap-vertx}[{mission-configmap-vertx-guide-name}]
 * link:{link-mission-configmap-wf-swarm}[{mission-configmap-wf-swarm-guide-name}]
 
@@ -21,7 +21,7 @@
 * link:{link-mission-secured-wf-swarm}[{mission-secured-wf-swarm-guide-name}]
 
 *
-link:{link-mission-circuit-breaker-spring-boot-tomcat}[{mission-circuit-breaker-spring-boot-tomcat-guide-name}]
+link:{link-mission-circuit-breaker-spring-boot}[{mission-circuit-breaker-spring-boot-guide-name}]
 
 *
 link:{link-mission-circuit-breaker-vertx}[{mission-circuit-breaker-vertx-guide-name}]

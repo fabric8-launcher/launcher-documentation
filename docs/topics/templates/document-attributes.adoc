@@ -46,19 +46,19 @@
 :name-mission-crud: Relational Database Backend
 :name-mission-secured: Secured
 
-:mission-http-api-spring-boot-tomcat-guide-name: {name-mission-http-api} Mission - {SpringBoot} Booster
+:mission-http-api-spring-boot-guide-name: {name-mission-http-api} Mission - {SpringBoot} Booster
 :mission-http-api-vertx-guide-name: {name-mission-http-api} Mission - {VertX} Booster
 :mission-http-api-wf-swarm-guide-name: {name-mission-http-api} Mission - {WildFlySwarm} Booster
 :mission-http-api-nodejs-guide-name: {name-mission-http-api} Mission - {NodeJS} Booster
-:mission-configmap-spring-boot-tomcat-guide-name: {name-mission-configmap} Mission - {SpringBoot} Booster
+:mission-configmap-spring-boot-guide-name: {name-mission-configmap} Mission - {SpringBoot} Booster
 :mission-configmap-vertx-guide-name: {name-mission-configmap} Mission - {VertX} Booster
 :mission-configmap-nodejs-guide-name: {name-mission-configmap} Mission - {NodeJS} Booster
 :mission-configmap-wf-swarm-guide-name: {name-mission-configmap} Mission - {WildFlySwarm} Booster
-:mission-health-check-spring-boot-tomcat-guide-name: {name-mission-health-check} Mission - {SpringBoot} Booster
+:mission-health-check-spring-boot-guide-name: {name-mission-health-check} Mission - {SpringBoot} Booster
 :mission-health-check-vertx-guide-name: {name-mission-health-check} Mission - {VertX} Booster
 :mission-health-check-wf-swarm-guide-name: {name-mission-health-check} Mission - {WildFlySwarm} Booster
 :mission-health-check-nodejs-guide-name: {name-mission-health-check} Mission - {NodeJS} Booster
-:mission-circuit-breaker-spring-boot-tomcat-guide-name: {name-mission-circuit-breaker} Mission - {SpringBoot} Booster
+:mission-circuit-breaker-spring-boot-guide-name: {name-mission-circuit-breaker} Mission - {SpringBoot} Booster
 :mission-circuit-breaker-vertx-guide-name: {name-mission-circuit-breaker} Mission - {VertX} Booster
 :mission-circuit-breaker-wf-swarm-guide-name: {name-mission-circuit-breaker} Mission - {WildFlySwarm} Booster
 :mission-circuit-breaker-nodejs-guide-name: {name-mission-circuit-breaker} Mission - {NodeJS} Booster
@@ -66,7 +66,7 @@
 :mission-secured-vertx-guide-name: {name-mission-secured} Mission - {VertX} Booster
 :mission-secured-wf-swarm-guide-name: {name-mission-secured} Mission - {WildFlySwarm} Booster
 :mission-secured-nodejs-guide-name: {name-mission-secured} Mission - {NodeJS} Booster
-:mission-crud-spring-boot-tomcat-guide-name: {name-mission-crud} Mission - {SpringBoot} Booster
+:mission-crud-spring-boot-guide-name: {name-mission-crud} Mission - {SpringBoot} Booster
 :mission-crud-vertx-guide-name: {name-mission-crud} Mission - {VertX} Booster
 :mission-crud-wf-swarm-guide-name: {name-mission-crud} Mission - {WildFlySwarm} Booster
 :mission-crud-nodejs-guide-name: {name-mission-crud} Mission - {NodeJS} Booster
@@ -101,12 +101,12 @@
 :VertXMvnPluginVersion: 1.0.13
 
 
-:link-http-api-level-0-spring-boot-tomcat-booster: https://github.com/snowdrop/rest_springboot-tomcat
+:link-http-api-level-0-spring-boot-booster: https://github.com/snowdrop/rest_springboot
 :link-http-api-level-0-vertx-booster: https://github.com/openshiftio-vertx-boosters/vertx-http-booster
 :link-http-api-level-0-wf-swarm-booster: https://github.com/wildfly-swarm-openshiftio-boosters/rest-http
 :link-http-api-level-0-nodejs-booster: https://github.com/bucharest-gold/nodejs-rest-http
 
-:link-configmap-spring-boot-tomcat-booster: https://github.com/snowdrop/rest_configmap_springboot-tomcat
+:link-configmap-spring-boot-booster: https://github.com/snowdrop/rest_configmap_springboot
 :link-configmap-vertx-booster: https://github.com/openshiftio-vertx-boosters/vertx-configmap-booster
 :link-configmap-nodejs-booster: https://github.com/bucharest-gold/nodejs-configmap
 :link-configmap-wf-swarm-booster: https://github.com/wildfly-swarm-openshiftio-boosters/configmap
@@ -120,12 +120,12 @@
 :link-nodejs-runtime-guide: /docs/nodejs-runtime.html
 
 
-:link-mission-http-api-spring-boot-tomcat: {link-spring-boot-runtime-guide}#mission-http-api-spring-boot-tomcat
-:link-mission-configmap-spring-boot-tomcat: {link-spring-boot-runtime-guide}#mission-configmap-spring-boot-tomcat
-:link-mission-crud-spring-boot-tomcat: {link-spring-boot-runtime-guide}#mission-crud-spring-boot-tomcat
-:link-mission-health-check-spring-boot-tomcat: {link-spring-boot-runtime-guide}#mission-health-check-spring-boot-tomcat
+:link-mission-http-api-spring-boot: {link-spring-boot-runtime-guide}#mission-http-api-spring-boot
+:link-mission-configmap-spring-boot: {link-spring-boot-runtime-guide}#mission-configmap-spring-boot
+:link-mission-crud-spring-boot: {link-spring-boot-runtime-guide}#mission-crud-spring-boot
+:link-mission-health-check-spring-boot: {link-spring-boot-runtime-guide}#mission-health-check-spring-boot
 :link-mission-secured-spring-boot: {link-spring-boot-runtime-guide}#mission-secured-spring-boot
-:link-mission-circuit-breaker-spring-boot-tomcat: {link-spring-boot-runtime-guide}#mission-circuit-breaker-spring-boot-tomcat
+:link-mission-circuit-breaker-spring-boot: {link-spring-boot-runtime-guide}#mission-circuit-breaker-spring-boot
 
 :link-mission-http-api-vertx: {link-vertx-runtime-guide}#mission-http-api-vertx
 :link-mission-configmap-vertx: {link-vertx-runtime-guide}#mission-configmap-vertx
