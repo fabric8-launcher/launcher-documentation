@@ -1,7 +1,7 @@
 [#installing-a-openshiftlocal]
 = Installing a {OpenShiftLocal}
 
-To use the {launcher} tool on a local cloud, you must have a {OpenShiftLocal} installed and configured. You can use either {Minishift} `{MinishiftVersion}` or {CDK} `{CDKVersion}`.
+To use the {launcher} tool on a local cloud, you must have a {OpenShiftLocal} installed and configured. You can use either {Minishift} or {CDK}.
 
 .Prerequisites
 

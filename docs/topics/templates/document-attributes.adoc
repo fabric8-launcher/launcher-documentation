@@ -81,9 +81,6 @@
 :wf-swarm-runtime-guide-name: {WildFlySwarm} Runtime Guide
 :nodejs-runtime-guide-name: {NodeJS} Runtime Guide
 
-:MinishiftVersion: 1.8.0
-:CDKVersion: 3.2.0
-
 // used in the BOM file example.
 :WildFlySwarmProductVersion: 7.0.1.redhat-20
 
