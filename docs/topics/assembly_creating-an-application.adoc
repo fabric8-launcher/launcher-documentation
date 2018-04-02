@@ -7,7 +7,7 @@
 // Rationale: This procedure is the same for 2 or more runtimes.
 
 [id="creating-a-basic-application_{context}"]
-= Creating a basic {parameter-runtime-name} Application
+= Creating a Basic {parameter-runtime-name} Application
 //parameterize the ID using {context}
 
 In addition to xref:mission-http-api-{parameter-runtime}[using a booster], you can create new {parameter-runtime-name} applications from scratch and deploy them to OpenShift.
