@@ -10,7 +10,7 @@ include::topics/templates/document-attributes.adoc[]
 
 This guide covers concepts as well as practical details needed by developers to use the {SpringBoot} runtime. It provides information governing the design of a {SpringBoot} application deployed as a Linux container on OpenShift.
 
-include::topics/sb-tomcat-runtime-overview.adoc[leveloffset=+1]
+include::topics/sb-runtime-overview.adoc[leveloffset=+1]
 
 include::topics/sb-product-versions.adoc[leveloffset=+2]
 
@@ -19,14 +19,14 @@ include::topics/sb-features-and-frameworks-summary.adoc[leveloffset=+2]
 // Missions
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
-[[spring-boot-tomcat-available-missions-and-boosters]]
+[[spring-boot-available-missions-and-boosters]]
 == Available Missions and Boosters for {SpringBoot}
 
 The {SpringBoot} runtime supports the following missions and boosters.
 
-[[mission-http-api-spring-boot-tomcat]]
-=== {mission-http-api-spring-boot-tomcat-guide-name}
-:http-api-spring-boot-tomcat:
+[[mission-http-api-spring-boot]]
+=== {mission-http-api-spring-boot-guide-name}
+:http-api-spring-boot:
 :context: rest-api
 
 include::topics/rest-level-0-mission-intro.adoc[leveloffset=+3]
@@ -47,7 +47,7 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.ad
 :context: {parameter-mission}-ocp
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
-include::topics/rest-level-0-mission-basic-interaction-spring-boot-tomcat.adoc[leveloffset=+3]
+include::topics/rest-level-0-mission-basic-interaction-spring-boot.adoc[leveloffset=+3]
 
 :parameter-runtime: spring-boot
 :parameter-runtime-name: {SpringBoot}
@@ -57,9 +57,9 @@ include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
 include::topics/rest-level-0-mission-resources.adoc[leveloffset=+3]
 
 
-[[mission-configmap-spring-boot-tomcat]]
-=== {mission-configmap-spring-boot-tomcat-guide-name}
-:configmap-spring-boot-tomcat:
+[[mission-configmap-spring-boot]]
+=== {mission-configmap-spring-boot-guide-name}
+:configmap-spring-boot:
 
 include::topics/configmap-mission-intro.adoc[leveloffset=+3]
 
@@ -79,7 +79,7 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.ad
 :context: {parameter-mission}-ocp
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
-include::topics/configmap-mission-basic-interaction-spring-boot-tomcat.adoc[leveloffset=+3]
+include::topics/configmap-mission-basic-interaction-spring-boot.adoc[leveloffset=+3]
 
 :parameter-runtime: spring-boot
 :parameter-runtime-name: {SpringBoot}
@@ -88,12 +88,12 @@ include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
 
 include::topics/configmap-mission-resources.adoc[leveloffset=+3]
 
-:configmap-spring-boot-tomcat!:
+:configmap-spring-boot!:
 
-[[mission-crud-spring-boot-tomcat]]
-=== {mission-crud-spring-boot-tomcat-guide-name}
+[[mission-crud-spring-boot]]
+=== {mission-crud-spring-boot-guide-name}
 //redefine this for spring boot
-:crud-spring-boot-tomcat-mission:
+:crud-spring-boot-mission:
 
 include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
@@ -129,9 +129,9 @@ include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
 include::topics/crud-mission-resources.adoc[leveloffset=+3]
 
 
-[[mission-health-check-spring-boot-tomcat]]
-=== {mission-health-check-spring-boot-tomcat-guide-name}
-:health-check-spring-boot-tomcat:
+[[mission-health-check-spring-boot]]
+=== {mission-health-check-spring-boot-guide-name}
+:health-check-spring-boot:
 
 include::topics/health-check-mission-intro.adoc[leveloffset=+3]
 
@@ -150,7 +150,7 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.ad
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 
-include::topics/health-check-mission-basic-interaction-spring-boot-tomcat.adoc[leveloffset=+3]
+include::topics/health-check-mission-basic-interaction-spring-boot.adoc[leveloffset=+3]
 
 :parameter-runtime: spring-boot
 :parameter-runtime-name: {SpringBoot}
@@ -159,9 +159,9 @@ include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
 
 include::topics/health-check-mission-resources.adoc[leveloffset=+3]
 
-[[mission-circuit-breaker-spring-boot-tomcat]]
-=== {mission-circuit-breaker-spring-boot-tomcat-guide-name}
-:circuit-breaker-spring-boot-tomcat:
+[[mission-circuit-breaker-spring-boot]]
+=== {mission-circuit-breaker-spring-boot-guide-name}
+:circuit-breaker-spring-boot:
 
 include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
@@ -243,10 +243,10 @@ include::topics/secured-mission-resources.adoc[leveloffset=+3]
 The recommended approach for specifying and using supported and tested maven artifacts in a {SpringBoot} application is to use the OpenShift Application Runtimes {SpringBoot} BOM.
 
 // workaround to resolve ID conflicts:
-:context: spring-boot-tomcat
+:context: spring-boot
 :parameter-maven-command: $ mvn spring-boot:run
 :parameter-runtime-name: {SpringBoot}
-:parameter-runtime: spring-boot-tomcat
+:parameter-runtime: spring-boot
 :spring-boot:
 //creating an app from scratch
 include::topics/assembly_creating-an-application.adoc[leveloffset=+2]
@@ -280,7 +280,7 @@ include::topics/proc_add-debug-logging-spring-boot.adoc[leveloffset=+3]
 
 include::topics/proc_accessing-debug-logs-local-spring-boot.adoc[leveloffset=+3]
 
-:context: spring-boot-tomcat
+:context: spring-boot
 include::topics/proc_accessing-debug-logs-on-openshift.adoc[leveloffset=+3]
 :context!:
 
@@ -311,7 +311,7 @@ include::topics/appendix-using-war-files-spring-boot.adoc[leveloffset=+1]
 //include::topics/http-api-spring-boot-pom.adoc[leveloffset=+1]
 
 [appendix]
-include::topics/sb-tomcat-dev-guide-additional-resources.adoc[leveloffset=+1]
+include::topics/sb-dev-guide-additional-resources.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/appendix-application-development-resources.adoc[leveloffset=+1]
