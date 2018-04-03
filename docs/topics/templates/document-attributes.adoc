@@ -97,6 +97,7 @@
 :VertXVersion: 3.4.2.redhat-009
 :VertXMvnPluginVersion: 1.0.13
 
+:nodeshiftNodeVersion: --dockerImage=registry.access.redhat.com/rhoar-nodejs/nodejs-8
 
 :link-http-api-level-0-spring-boot-booster: https://github.com/snowdrop/rest_springboot
 :link-http-api-level-0-vertx-booster: https://github.com/openshiftio-vertx-boosters/vertx-http-booster

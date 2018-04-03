@@ -93,7 +93,7 @@ $ npm install nodeshift --save
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "openshift": "nodeshift --strictSSL=false --metadata.out=deployment-metadata.json --build.forcePull=true --nodeVersion=9.x",
+    "openshift": "nodeshift --strictSSL=false --metadata.out=deployment-metadata.json --build.forcePull=true {nodeshiftNodeVersion}",
     "start": "node app.js",
     ...
   }
@@ -115,10 +115,10 @@ The `openshift` script uses `nodeshift` to deploy the application to OpenShift.
   "scripts": {
     ...
   },
-  "files": {
+  "files": [
     "package.json",
     "app.js"
-  }
+  ]
   ...
 }
 ----
