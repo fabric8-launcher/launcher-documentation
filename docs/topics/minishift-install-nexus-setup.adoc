@@ -126,7 +126,7 @@ Nexus comes pre-configured for the Maven Central Repository, but you may need ot
 +
 . To ensure that your new build is using Nexus to retrieve artifacts, you can:
 
-* Navigate to `http://nexus-{nexus-project-name}.{osl-route-hostname}/nexus/content/groups/public` to view the list of artifacts stored in your local repository.
+* Navigate to `\http://nexus-{nexus-project-name}.{osl-route-hostname}/nexus/content/groups/public` to view the list of artifacts stored in your local repository.
 * Check the log output of the build:
 +
 [source,bash,subs="attributes+"]
@@ -134,4 +134,4 @@ Nexus comes pre-configured for the Maven Central Repository, but you may need ot
 $ oc logs build/{app-name}-1 --follow
 --
 +
-If your build uses Nexus to retrieve artifacts, the build log output should reference the path `http://nexus.{nexus-project-name}:8081/`.
+If your build uses Nexus to retrieve artifacts, the build log output should reference the path `\http://nexus.{nexus-project-name}:8081/`.

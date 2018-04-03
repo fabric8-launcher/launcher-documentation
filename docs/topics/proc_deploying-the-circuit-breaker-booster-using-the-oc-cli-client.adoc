@@ -78,4 +78,4 @@ NAME                 HOST/PORT                                                  
 {app-name}-name       {app-name}-{project-name}.{os-route-hostname}            {app-name}-name       8080                    None
 ----
 +
-The route information of a pod gives you the base URL which you use to access it. In the example above, you would use `http://{app-name}-{project-name}.{os-route-hostname}` as the base URL to access the application.
+The route information of a pod gives you the base URL which you use to access it. In the example above, you would use `\http://{app-name}-{project-name}.{os-route-hostname}` as the base URL to access the application.
