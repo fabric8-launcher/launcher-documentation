@@ -153,7 +153,7 @@ $ npm run openshift
 .Example for exposing a service using a route
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc create route edge my-route --service=myApp --port=8080
+$ oc expose service myapp
 ----
 
 
@@ -165,10 +165,11 @@ Optionally, you can create a `.nodeshift` directory at the root of your project 
 apiVersion: v1
 kind: Route
 metadata:
-  name: myApp
+  name: myapp
 spec:
   port:
     targetPort: 8080
   to:
     kind: Service
+    name: myapp
 ----
