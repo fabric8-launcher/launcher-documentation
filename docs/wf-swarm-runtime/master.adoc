@@ -253,6 +253,8 @@ This sections contains information about creating your application and configuri
 include::topics/wildfly-swarm/docs/howto/writing-an-application-from-scratch/index.adoc[leveloffset=+2]
 include::topics/proc_deploying-an-application-to-openshift.adoc[leveloffset=+2]
 
+include::topics/proc_deploying-an-existing-wildfly-swarm-application-to-openshift.adoc[leveloffset=+2]
+
 include::topics/wildfly-swarm/docs/reference/maven-plugin.adoc[leveloffset=+2]
 
 include::topics/wildfly-swarm/docs/concepts/fractions.adoc[leveloffset=+2]
