@@ -1,16 +1,16 @@
 [[deploying-a-booster-to-oso]]
 = Deploying a Booster to {OpenShiftOnline}
-You can quickly create, build, and deploy a booster to {OpenShiftOnline} using link:{link-launcher-oso}[{launcher-oso}]. link:{link-launcher-oso}[{launcher-oso}] creates a new repository in your GitHub account containing the booster's code and deploys it to your {OpenShiftOnline} account. It can also create a ZIP of the booster for you to download and run on your localhost.
+You can quickly create, build, and deploy a booster to {OpenShiftOnline} using link:{link-launcher-oso}[{launcher-oso}]. 
+link:{link-launcher-oso}[{launcher-oso}] creates a new repository in your GitHub account containing the booster's code and deploys it to your {OpenShiftOnline} account. 
+It can also create a ZIP of the booster for you to download and run on your localhost.
 
-[sidebar]
+
 .Prerequisites
---
 * link:https://www.openshift.com[Have an {OpenShiftOnline} account]
 * Check which {OpenShiftOnline} cluster you belong to using link:https://manage.openshift.com[https://manage.openshift.com^].
 * link:https://developers.redhat.com[Have a Red Hat Developers account]
 * link:https://github.com[Have a GitHub account]
 * link:https://developers.redhat.com[Login to your Red Hat Developers account]
---
 
 .Procedure
 . Navigate to link:{link-launcher-oso}[{launcher-oso}] using your browser.
@@ -30,10 +30,7 @@ At this time, you cannot use the `us-east-2` OpenShift Starter cluster with link
 .. Click _Grant Access_.
 .. Click the _Add_ button next to the _GitHub_ field and authorize {launcher-oso} to access your GitHub account.
 .. Click the _Add_ button next to the {OpenShiftOnline} cluster you use.
-. Choose your deployment type.
-** Use the _Deploy in OpenShift Online_ option to create a new GitHub repository containing your booster. It will also be launched to {OpenShiftOnline}.
-** Use the _Build and Run Locally_ to create a ZIP download containing your booster. This will *not* create a GitHub repository or deploy your booster to {OpenShiftOnline}, but you can still deploy the booster to {OpenShiftOnline} manually.
-. Follow the instructions to create a booster of your choice.
+. Follow the instructions to create a booster based on a mission, runtime, and target environment.
 . Open the `README.adoc` file in your booster's project and follow the instructions for building, deploying, and interacting with your booster.
 
 [IMPORTANT]

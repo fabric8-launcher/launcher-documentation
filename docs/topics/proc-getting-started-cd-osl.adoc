@@ -22,16 +22,8 @@ $ minishift console
 ----
 
 . Select _Launch Your Project_.
-. Select _Use {OpenShiftOnline}_.
-** Use the _Deploy in OpenShift Online_ option to create a new GitHub repository containing your booster. It will also be launched to your {OpenShiftLocal}.
-** Use the _Build and Run Locally_ to create a ZIP download containing your booster. This will *not* create a GitHub repository or deploy your booster to your {OpenShiftLocal}.
-
-. Follow the instructions to create a booster of your choice.
-. Click the _Take a look at your build_ to navigate to your booster in the {OpenShiftLocal} Web console to see the deployment status of your booster.
-** You can expand your deployment and view the details as it deploys. Your deployment is complete when you see _Build #1 is complete_ under _Builds_ and you see `1 pod` in the blue circle.
-
-. When your deployment is complete, click on the URL at the top of the page to start interacting with your booster. 
-** Open the `README.adoc` file in your booster project for more details about interacting with your booster.
+. Follow the instructions to create a booster based on a mission, runtime, and target environment.
+. Open the `README.adoc` file in your booster project for more details about interacting with your booster.
 
 .Related Information
 Take a look the different runtime guides to learn more about runtimes as well as their boosters:
