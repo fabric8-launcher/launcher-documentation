@@ -35,7 +35,7 @@ include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
 The {Vertx} runtime supports the following missions and boosters.
 
-[[mission-http-api-vertx]]
+[[mission-rest-http-vertx]]
 === {mission-http-api-vertx-guide-name}
 :http-api-vertx:
 :context: rest-api
@@ -216,7 +216,7 @@ include::topics/circuit-breaker-mission-resources.adoc[leveloffset=+3]
 
 
 
-[[mission-secured-vertx]]
+[[mission-rest-http-secured-vertx]]
 === {mission-secured-vertx-guide-name}
 :secured-vertx-mission:
 :runtime-name: {VertX}

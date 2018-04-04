@@ -1,6 +1,6 @@
 = Creating a {NodeJS} Application
 
-In addition to xref:mission-http-api-nodejs[using a booster], you can also create new {NodeJS} applications from scratch and deploy them to OpenShift.
+In addition to xref:mission-rest-http-nodejs[using a booster], you can also create new {NodeJS} applications from scratch and deploy them to OpenShift.
 
 == Creating an Application
 

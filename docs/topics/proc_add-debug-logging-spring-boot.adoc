@@ -3,7 +3,7 @@
 Add debug logging to your application.
 
 .Prerequisites 
-* An application you want to debug. For example, the xref:mission-http-api-spring-boot[{name-mission-http-api} booster].
+* An application you want to debug. For example, the xref:mission-rest-http-spring-boot[{name-mission-http-api} booster].
 
 .Procedure
 
@@ -17,7 +17,7 @@ import org.apache.commons.logging.LogFactory;
 private static Log logger = LogFactory.getLog(TheClass.class);
 ----
 +
-For example, if you wanted to add logging to the `GreetingEndpoint` class in the xref:mission-http-api-spring-boot[{name-mission-http-api} booster], you would use `GreetingEndpoint.class`.
+For example, if you wanted to add logging to the `GreetingEndpoint` class in the xref:mission-rest-http-spring-boot[{name-mission-http-api} booster], you would use `GreetingEndpoint.class`.
 
 . Add debugging statements using `logger.debug("my logging message")`.
 +

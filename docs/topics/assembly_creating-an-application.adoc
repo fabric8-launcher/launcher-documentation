@@ -10,7 +10,7 @@
 = Creating a Basic {parameter-runtime-name} Application
 //parameterize the ID using {context}
 
-In addition to xref:mission-http-api-{parameter-runtime}[using a booster], you can create new {parameter-runtime-name} applications from scratch and deploy them to OpenShift.
+In addition to xref:mission-rest-http-{parameter-runtime}[using a booster], you can create new {parameter-runtime-name} applications from scratch and deploy them to OpenShift.
 
 include::proc_creating-an-application.adoc[leveloffset=+1]
 
