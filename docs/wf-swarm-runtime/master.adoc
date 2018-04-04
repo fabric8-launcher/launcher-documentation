@@ -28,7 +28,7 @@ include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 
 The {WildFlySwarm} runtime supports the following missions and boosters.
 
-[[mission-http-api-wf-swarm]]
+[[mission-rest-http-wf-swarm]]
 === {mission-http-api-wf-swarm-guide-name}
 :http-api-wf-swarm:
 :context: rest-api
@@ -205,7 +205,7 @@ include::topics/circuit-breaker-mission-access-hystrix-dashboard-wf-swarm.adoc[l
 include::topics/circuit-breaker-mission-resources.adoc[leveloffset=+3]
 
 
-[[mission-secured-wf-swarm]]
+[[mission-rest-http-secured-wf-swarm]]
 === {mission-secured-wf-swarm-guide-name}
 :secured-wf-swarm-mission:
 :runtime-name: {WildFlySwarm}

@@ -21,7 +21,7 @@ If you have a different entry point for your application, you need to change the
 $ node --inspect path/to/entrypoint
 ----
 +
-For example, when using the link:https://expressjs.com/en/starter/generator.html[express generator] to create your application, the entry point is set to `./bin/www` by default. Some of the boosters, such as the xref:mission-http-api-nodejs[{name-mission-http-api} booster], use `./bin/www` as an entry point.
+For example, when using the link:https://expressjs.com/en/starter/generator.html[express generator] to create your application, the entry point is set to `./bin/www` by default. Some of the boosters, such as the xref:mission-rest-http-nodejs[{name-mission-http-api} booster], use `./bin/www` as an entry point.
 
 . Attach the V8 inspector and perform debugging commands. 
 +

@@ -117,33 +117,33 @@
 :link-nodejs-runtime-guide: /docs/nodejs-runtime.html
 
 
-:link-mission-http-api-spring-boot: {link-spring-boot-runtime-guide}#mission-http-api-spring-boot
+:link-mission-http-api-spring-boot: {link-spring-boot-runtime-guide}#mission-rest-http-spring-boot
 :link-mission-configmap-spring-boot: {link-spring-boot-runtime-guide}#mission-configmap-spring-boot
 :link-mission-crud-spring-boot: {link-spring-boot-runtime-guide}#mission-crud-spring-boot
 :link-mission-health-check-spring-boot: {link-spring-boot-runtime-guide}#mission-health-check-spring-boot
-:link-mission-secured-spring-boot: {link-spring-boot-runtime-guide}#mission-secured-spring-boot
+:link-mission-secured-spring-boot: {link-spring-boot-runtime-guide}#mission-rest-http-secured-spring-boot
 :link-mission-circuit-breaker-spring-boot: {link-spring-boot-runtime-guide}#mission-circuit-breaker-spring-boot
 
-:link-mission-http-api-vertx: {link-vertx-runtime-guide}#mission-http-api-vertx
+:link-mission-http-api-vertx: {link-vertx-runtime-guide}#mission-rest-http-vertx
 :link-mission-configmap-vertx: {link-vertx-runtime-guide}#mission-configmap-vertx
 :link-mission-crud-vertx: {link-vertx-runtime-guide}#mission-crud-vertx
 :link-mission-health-check-vertx: {link-vertx-runtime-guide}#mission-health-check-vertx
-:link-mission-secured-vertx: {link-vertx-runtime-guide}#mission-secured-vertx
+:link-mission-secured-vertx: {link-vertx-runtime-guide}#mission-rest-http-secured-vertx
 :link-mission-circuit-breaker-vertx: {link-vertx-runtime-guide}#mission-circuit-breaker-vertx
 
-:link-mission-http-api-wf-swarm: {link-wf-swarm-runtime-guide}#mission-http-api-wf-swarm
+:link-mission-http-api-wf-swarm: {link-wf-swarm-runtime-guide}#mission-rest-http-wf-swarm
 :link-mission-configmap-wf-swarm: {link-wf-swarm-runtime-guide}#mission-configmap-wf-swarm
 :link-mission-crud-wf-swarm: {link-wf-swarm-runtime-guide}#mission-crud-wf-swarm
 :link-mission-health-check-wf-swarm: {link-wf-swarm-runtime-guide}#mission-health-check-wf-swarm
-:link-mission-secured-wf-swarm: {link-wf-swarm-runtime-guide}#mission-secured-wf-swarm
+:link-mission-secured-wf-swarm: {link-wf-swarm-runtime-guide}#mission-rest-http-secured-wf-swarm
 :link-mission-circuit-breaker-wf-swarm: {link-wf-swarm-runtime-guide}#mission-circuit-breaker-wf-swarm
 
-:link-mission-http-api-nodejs: {link-nodejs-runtime-guide}#mission-http-api-nodejs
+:link-mission-http-api-nodejs: {link-nodejs-runtime-guide}#mission-rest-http-nodejs
 :link-mission-configmap-nodejs: {link-nodejs-runtime-guide}#mission-configmap-nodejs
 :link-mission-health-check-nodejs: {link-nodejs-runtime-guide}#mission-health-check-nodejs
 :link-mission-crud-nodejs: {link-nodejs-runtime-guide}#mission-crud-nodejs
 :link-mission-circuit-breaker-nodejs: {link-nodejs-runtime-guide}#mission-circuit-breaker-nodejs
-:link-mission-secured-nodejs: {link-nodejs-runtime-guide}#mission-secured-nodejs
+:link-mission-secured-nodejs: {link-nodejs-runtime-guide}#mission-rest-http-secured-nodejs
 
 
 :link-oso-auth: OPENSHIFT_URL
