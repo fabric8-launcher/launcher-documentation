@@ -13,7 +13,7 @@ You can easily deploy your existing application to OpenShift using the Fabric8 M
 . Add the following profile to the `pom.xml` file in the root directory of your application:
 +
 --
-[source,xml,options="nowrap"]
+[source,xml,options="nowrap",subs="attributes+"]
 ----
 <profile>
   <id>openshift</id>
@@ -22,6 +22,7 @@ You can easily deploy your existing application to OpenShift using the Fabric8 M
       <plugin>
         <groupId>io.fabric8</groupId>
         <artifactId>fabric8-maven-plugin</artifactId>
+        <version>{Fabric8MavenPluginVersion}</version>
         <executions>
           <execution>
             <goals>
