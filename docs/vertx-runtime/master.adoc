@@ -265,6 +265,8 @@ include::topics/secured-mission-resources.adoc[leveloffset=+3]
 :parameter-runtime: vertx
 :vert-x:
 include::topics/assembly_creating-an-application.adoc[leveloffset=+2]
+
+include::topics/proc_deploying-an-existing-application-to-openshift.adoc[leveloffset=+2]
 :vert-x!:
 :parameter-runtime!:
 :parameter-runtime-name!:

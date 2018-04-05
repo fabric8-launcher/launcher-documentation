@@ -250,6 +250,8 @@ The recommended approach for specifying and using supported and tested maven art
 :spring-boot:
 //creating an app from scratch
 include::topics/assembly_creating-an-application.adoc[leveloffset=+2]
+
+include::topics/proc_deploying-an-existing-application-to-openshift.adoc[leveloffset=+2]
 :spring-boot!:
 :parameter-runtime!:
 :parameter-runtime-name!:

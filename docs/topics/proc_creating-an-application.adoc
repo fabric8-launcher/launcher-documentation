@@ -38,13 +38,13 @@ $ cd myApp
 ifdef::vert-x[]
 [source,xml,options="nowrap",subs="attributes+"]
 ----
-include::resources/vertx-starter-example-pom.xml[]
+include::resources/vert-x/vertx-starter-example-pom.xml[]
 ----
 endif::[]
 ifdef::spring-boot[]
 [source,xml,options="nowrap",subs="attributes+"]
 ----
-include::resources/spring-boot-starter-example-pom.xml[]
+include::resources/spring-boot/spring-boot-starter-example-pom.xml[]
 ----
 endif::[]
 
@@ -58,13 +58,13 @@ For example, for `<groupId>my.awesome.project</groupId>`, the location of the cl
 ifdef::vert-x[]
 [source,java,options="nowrap",subs="attributes+"]
 ----
-include::resources/vertxGreetingApp.java[]
+include::resources/vert-x/vertxGreetingApp.java[]
 ----
 endif::[]
 ifdef::spring-boot[]
 [source,java,options="nowrap",subs="attributes+"]
 ----
-include::resources/springBootGreetingApp.java[]
+include::resources/spring-boot/springBootGreetingApp.java[]
 ----
 endif::[]
 

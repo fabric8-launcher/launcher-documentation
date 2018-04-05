@@ -83,6 +83,7 @@
 
 // used in the BOM file example.
 :WildFlySwarmProductVersion: 7.0.1.redhat-20
+// also used in pom.xml examples for Spring Boot and Vertx
 :Fabric8MavenPluginVersion: 3.5.38
 
 // used in the links to additional upstream Swarm docs.
