@@ -4,14 +4,18 @@ This repository holds the documentation for link:https://appdev.openshift.io[app
 
 == Building and Health
 
-link:https://ci.centos.org/job/devtools-appdev-documentation-generator-build-master/[image:https://ci.centos.org/buildStatus/icon?job=devtools-appdev-documentation-generator-build-master[]]
+link:https://ci.centos.org/job/devtools-launcher-documentation-generator-build-master/[image:https://ci.centos.org/buildStatus/icon?job=devtools-launcher-documentation-generator-build-master[]]
 
-The documentation is built on link:https://ci.centos.org/job/devtools-appdev-documentation-generator-build-master/[ci.centos.org]. Both the `master` branch and individual pull requests are subject to testing.
+The documentation is built on link:https://ci.centos.org/job/devtools-launcher-documentation-generator-build-master/[ci.centos.org]. Both the `master` branch and individual pull requests are subject to testing.
 
 == Providing Feedback
 
 If you see an error or would like to provide feedback, please file an issue in our link:https://issues.jboss.org/projects/RHOARDOC/[Jira] project.
 
+
+== Running locally
+
+Run the `scripts/preview-server.sh` script. Because it requires Docker, you need to have sudo access to run it.
 
 == Contributing
 
