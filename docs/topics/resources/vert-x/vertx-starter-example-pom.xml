@@ -67,6 +67,7 @@
           <plugin>
             <groupId>io.fabric8</groupId>
             <artifactId>fabric8-maven-plugin</artifactId>
+            <version>{Fabric8MavenPluginVersion}</version>
             <executions>
               <execution>
                 <id>fmp</id>
