@@ -41,6 +41,23 @@
     </dependency>
   </dependencies>
 
+  <!-- Specify the repositories containing RHOAR artifacts -->
+  <repositories>
+    <repository>
+      <id>{red-hat-ga-repo-id}</id>
+      <name>{red-hat-ga-repo-name}</name>
+      <url>{red-hat-ga-repo-url}</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>{red-hat-ga-repo-id}</id>
+      <name>{red-hat-ga-repo-name}</name>
+      <url>{red-hat-ga-repo-url}</url>
+    </pluginRepository>
+  </pluginRepositories>
+
   <profiles>
     <profile>
       <id>openshift</id>

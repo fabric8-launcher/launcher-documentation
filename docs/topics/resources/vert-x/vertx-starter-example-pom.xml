@@ -40,7 +40,7 @@
     </dependency>
   </dependencies>
 
-<!-- Specify the repositories containing RHOAR artifacts -->
+  <!-- Specify the repositories containing RHOAR artifacts -->
   <repositories>
     <repository>
       <id>{red-hat-ga-repo-id}</id>
