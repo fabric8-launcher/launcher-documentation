@@ -26,6 +26,7 @@ $ oc create -f service.sso.yaml
 $ ${localRunCMD}
 ----
 
+${integrationTestSection}
 
 == Interacting with the Booster on a Single-node OpenShift Cluster
 

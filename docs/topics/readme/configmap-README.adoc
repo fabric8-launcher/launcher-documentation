@@ -67,7 +67,7 @@ $ oc create configmap app-config --from-file=${configmapFileName}
 $ ${OSORunCMD}
 ----
 
-
+${integrationTestSection}
 
 == Interacting with the Booster on a Single-node OpenShift Cluster
 

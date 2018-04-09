@@ -102,6 +102,7 @@ curl -X DELETE http://MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/f
 
 NOTE: If you receive an HTTP Error code `503` as a response after executing these commands, it means that the application is not ready yet.
 
+${integrationTestSection}
 
 == More Information
 You can learn more about this booster and rest of the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].

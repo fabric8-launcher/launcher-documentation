@@ -26,6 +26,7 @@ $ oc new-project MY_PROJECT_NAME
 $ ${OSORunCMD}
 ----
 
+${integrationTestSection}
 
 == Interacting with the Booster on a Single-node OpenShift Cluster
 
