@@ -19,8 +19,20 @@ endif::[]
 * The `oc` client authenticated. For more information, see xref:authenticating-the-oc-cli-client_{context}[].
 
 .Procedure
-
-. Create a new project.
+. Clone your project from GitHub.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git clone git@github.com:USERNAME/{project-name}.git
+----
++
+Alternatively, if you downloaded a ZIP file of your project, extract it.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ unzip {project-name}
+----
+. Create a new OpenShift project.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
