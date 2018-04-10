@@ -41,6 +41,16 @@
     </dependency>
   </dependencies>
 
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>{SpringBootMvnPluginVersion}</version>
+      </plugin>
+    </plugins>
+  </build>
+
   <!-- Specify the repositories containing RHOAR artifacts -->
   <repositories>
     <repository>
@@ -63,11 +73,6 @@
       <id>openshift</id>
       <build>
         <plugins>
-          <plugin>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-            <version>{SpringBootMvnPluginVersion}</version>
-          </plugin>
           <plugin>
             <groupId>io.fabric8</groupId>
             <artifactId>fabric8-maven-plugin</artifactId>
