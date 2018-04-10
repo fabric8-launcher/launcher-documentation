@@ -9,14 +9,6 @@ This section contains all information you need to release a new version of the d
 
 .Releasing New Version to Production
 . Ensure the catalog has been updated. Contact the development team for this information.
-. Update the following lines with the latest version:
-+
---
-* link:{link-repo-docs}blob/master/scripts/deploy_launcher_mission.sh#L16[Catalog Version in Build Script]
-* link:{link-repo-docs}blob/master/docs/topics/minishift-install-create-launchpad-app-script.adoc#L33[Update Install Instructions when using the `-v` option]
-
-Usually, update version `vX` to `vX+1`, for example `v3` to `v4`.
---
 
 . Synchronize the {WildFlySwarm} sources. For more information, see xref:syncing-with-wildfly-swarm-docs[].
 

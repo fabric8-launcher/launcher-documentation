@@ -17,14 +17,7 @@ include::topics/proc_starting-and-configuring-the-openshiftlocal-for-the-launche
 
 include::topics/proc_creating-a-github-personal-access-token.adoc[leveloffset=+1]
 
-[[install-launcher-app]]
-== Installing the {launcher} Tool
-
-This chapter describes installing the {launcher} tool.
-
-//include::topics/proc_installing-launcher-application-using-automated-script.adoc[leveloffset=+2]
-
-include::topics/proc_installing-launcher-application-manually.adoc[leveloffset=+2]
+include::topics/proc_installing-launcher-application-manually.adoc[leveloffset=+1]
 
 // temporary location for Nexus install
 [appendix]

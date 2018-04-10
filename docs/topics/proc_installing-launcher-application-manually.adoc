@@ -5,10 +5,8 @@
 // Rationale: This module is useful both when setting up minishift as is and when testing a local
 // booster catalog.
 
-[#installing-launcher-application-manually]
-ifndef::parameter-custom-catalog[= Installing {launcher} Tool Manually]
-ifdef::parameter-custom-catalog[= Installing {launcher} Tool]
-
+[#installing-launcher-application]
+= Installing {launcher} Tool
 Install a local customized instance of the {launcher} tool, which allows you to test the functionality or make modifications to the service using a web interface.
 
 .Prerequisites
