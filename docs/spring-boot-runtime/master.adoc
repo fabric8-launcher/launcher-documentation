@@ -313,6 +313,9 @@ include::topics/appendix-using-war-files-spring-boot.adoc[leveloffset=+1]
 //include::topics/http-api-spring-boot-pom.adoc[leveloffset=+1]
 
 [appendix]
+include::topics/proc_deploying-a-booster-using-openshift-templates.adoc[leveloffset=+1]
+
+[appendix]
 include::topics/sb-dev-guide-additional-resources.adoc[leveloffset=+1]
 
 [appendix]

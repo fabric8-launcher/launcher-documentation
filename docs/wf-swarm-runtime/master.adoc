@@ -338,6 +338,9 @@ include::topics/wildfly-swarm/docs/reference/index.adoc[leveloffset=+2]
 endif::[]
 
 [appendix]
+include::topics/proc_deploying-a-booster-using-openshift-templates.adoc[leveloffset=+1]
+
+[appendix]
 include::topics/wf-swarm-dev-guide-additional-resources.adoc[leveloffset=+1]
 
 [appendix]
