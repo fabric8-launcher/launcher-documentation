@@ -1,0 +1,16 @@
+
+[id="creating-a-basic-spring-boot-application_{context}"]
+= Creating a Basic {runtime} Application
+
+In addition to xref:mission-rest-http-wf-swarm[using a booster], you can create new {runtime} applications from scratch and deploy them to OpenShift.
+
+include::wildfly-swarm/docs/howto/writing-an-application-from-scratch/index.adoc[leveloffset=+1]
+
+:parameter-maven-command: $ mvn wildfly-swarm:run
+:parameter-response: Hello from WildFly Swarm!
+:parameter-url: http://{app-name}-{project-name}.{os-route-hostname}/rest/hello
+include::proc_deploying-an-application-to-openshift.adoc[leveloffset=+1]
+:parameter-maven-command!:
+:parameter-response:
+:parameter-url:
+
