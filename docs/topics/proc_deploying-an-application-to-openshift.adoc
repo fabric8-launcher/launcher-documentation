@@ -1,3 +1,12 @@
+// This is a parameterized module. Parameters used:
+//
+//  parameter-url: URL to query when interacting with the application
+//  parameter-response: Response received from the application
+//  context: used in anchor IDs to conflicts due to duplicate IDs
+//
+// Rationale: This procedure is the same for 2 or more runtimes.
+
+
 [#deploying-an-application-to-openshift]
 = Deploying an Application to OpenShift
 
@@ -72,6 +81,7 @@ The route information of a pod gives you the base URL which you use to access it
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ curl http://{app-name}-{project-name}.{os-route-hostname}
-{"content":"Greetings!"}
+$ curl {parameter-url}
+{parameter-response}
 ----
+
