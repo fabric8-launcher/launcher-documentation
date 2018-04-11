@@ -4,13 +4,14 @@
 
 In addition to xref:mission-rest-http-vertx[using a booster], you can create new {runtime} applications from scratch and deploy them to OpenShift.
 
+:parameter-runtime: vertx
 :parameter-maven-command: $ mvn vertx:run
-:parameter-response: {"content":"Greetings!"}
+:parameter-response: Greetings!
 :parameter-url: http://{app-name}-{project-name}.{os-route-hostname}
 include::proc_creating-an-application.adoc[leveloffset=+1]
 
 include::proc_deploying-an-application-to-openshift.adoc[leveloffset=+1]
-:parameter-maven-command!:
-:parameter-response:
 :parameter-url:
-
+:parameter-response:
+:parameter-maven-command:
+:parameter-runtime:

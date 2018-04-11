@@ -15,18 +15,6 @@
                 </goals>
               </execution>
             </executions>
-            <configuration>
-              <enricher>
-                <excludes>
-                  <exclude>f8-maven-scm</exclude>
-                </excludes>
-                <config>
-                  <vertx-health-check>
-                    <path>/</path>
-                  </vertx-health-check>
-                </config>
-              </enricher>
-            </configuration>
           </plugin>
         </plugins>
       </build>

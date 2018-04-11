@@ -17,6 +17,7 @@
     <vertx.verticle>io.openshift.booster.MyApplication</vertx.verticle>
   </properties>
 
+  <!-- Import dependencies from the RHOAR Vert.x BOM file. -->
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -29,6 +30,7 @@
     </dependencies>
   </dependencyManagement>
 
+  <!-- Specify the RHOAR Vert.x artifacts that your application depends on. -->
   <dependencies>
     <dependency>
       <groupId>io.vertx</groupId>
@@ -40,7 +42,7 @@
     </dependency>
   </dependencies>
 
-  <!-- Specify the repositories containing RHOAR artifacts -->
+  <!-- Specify the repositories containing RHOAR artifacts. -->
   <repositories>
     <repository>
       <id>{red-hat-ga-repo-id}</id>
@@ -49,6 +51,7 @@
     </repository>
   </repositories>
 
+  <!-- Specify the repositories containing the plugins used to execute the build of your application. -->
   <pluginRepositories>
     <pluginRepository>
       <id>{red-hat-ga-repo-id}</id>
@@ -57,6 +60,7 @@
     </pluginRepository>
   </pluginRepositories>
 
+  <!-- Configure your application to be packaged using the Vert.x Maven Plugin. -->
   <build>
     <plugins>
       <plugin>
@@ -76,6 +80,7 @@
     </plugins>
   </build>
 
+  <!-- Configure your application to be deployed to OpenShift using the Fabric8 Maven Plugin. -->
   <profiles>
     <profile>
       <id>openshift</id>
@@ -87,25 +92,12 @@
             <version>{Fabric8MavenPluginVersion}</version>
             <executions>
               <execution>
-                <id>fmp</id>
                 <goals>
                   <goal>resource</goal>
                   <goal>build</goal>
                 </goals>
               </execution>
             </executions>
-            <configuration>
-              <enricher>
-                <excludes>
-                  <exclude>f8-maven-scm</exclude>
-                </excludes>
-                <config>
-                  <vertx-health-check>
-                    <path>/</path>
-                  </vertx-health-check>
-                </config>
-              </enricher>
-            </configuration>
           </plugin>
         </plugins>
       </build>

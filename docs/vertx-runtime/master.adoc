@@ -260,16 +260,12 @@ include::topics/secured-mission-resources.adoc[leveloffset=+3]
 
 // workaround to resolve ID conflicts:
 :context: vert-x
+:parameter-runtime: vertx
 include::topics/assembly_creating-a-basic-vertx-application.adoc[leveloffset=+2]
 
-:parameter-maven-command: $ mvn vertx:run
-:parameter-runtime-name: {VertX}
-:parameter-runtime: vertx
 include::topics/proc_deploying-an-existing-application-to-openshift.adoc[leveloffset=+2]
 :parameter-runtime!:
-:parameter-runtime-name!:
-:parameter-maven-command!:
-:!context:
+:context!:
 
 == Debugging
 

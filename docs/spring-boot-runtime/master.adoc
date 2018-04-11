@@ -242,18 +242,13 @@ include::topics/secured-mission-resources.adoc[leveloffset=+3]
 == Application Development
 The recommended approach for specifying and using supported and tested maven artifacts in a {SpringBoot} application is to use the OpenShift Application Runtimes {SpringBoot} BOM.
 
+//creating an app from scratch
 // workaround to resolve ID conflicts:
 :context: spring-boot
-//creating an app from scratch
-include::topics/assembly_creating-a-basic-spring-boot-application.adoc[leveloffset=+2]
-
-:parameter-maven-command: $ mvn spring-boot:run
-:parameter-runtime-name: {SpringBoot}
 :parameter-runtime: spring-boot
+include::topics/assembly_creating-a-basic-spring-boot-application.adoc[leveloffset=+2]
 include::topics/proc_deploying-an-existing-application-to-openshift.adoc[leveloffset=+2]
 :parameter-runtime!:
-:parameter-runtime-name!:
-:parameter-maven-command!:
 :!context:
 
 == Debugging
