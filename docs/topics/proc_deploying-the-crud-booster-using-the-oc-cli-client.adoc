@@ -62,7 +62,10 @@ my-database-1-aaaaa   1/1       Running   0         45s
 my-database-1-deploy   0/1       Completed   0         53s
 ----
 +
-Your `my-database-1-aaaaa` pod should have a status of `Running` and should be indicated as ready once it is fully deployed and started.
+The `my-database-1-aaaaa` pod should have a status of `Running` and should be indicated as ready once it is fully deployed and started.
+Your specific pod name will vary.
+The number in the middle will increase with each new build.
+The letters at the end are generated when the pod is created.
 
 
 ifndef::crud-nodejs-mission[]

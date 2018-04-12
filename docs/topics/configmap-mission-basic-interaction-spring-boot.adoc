@@ -36,7 +36,10 @@ NAME                             READY     STATUS      RESTARTS   AGE
 {app-name}-s2i-1-build   0/1       Completed   0          2m
 ----
 +
-Your `{app-name}-1-aaaaa` pod should have a status of `Running` once it's fully deployed and started.
+The `{app-name}-1-aaaaa` pod should have a status of `Running` once it's fully deployed and started. 
+Your specific pod name will vary.
+The number in the middle will increase with each new build.
+The letters at the end are generated when the pod is created.
 
 . Execute a `GET` request using `curl` against the booster with the updated ConfigMap configuration to see your updated greeting.
 You can also do this from your browser using the web form provided by the application.

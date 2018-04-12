@@ -158,10 +158,13 @@ NAME                                       READY     STATUS      RESTARTS   AGE
 {app-name}-s2i-1-build           0/1       Completed   0          2m
 ----
 +
-Your `{app-name}-1-aaaaa` pod should have a status of `Running` once its fully deployed and started.
+The `{app-name}-1-aaaaa` pod should have a status of `Running` once its fully deployed and started.
 ifdef::configmap-vertx[]
 You should also wait for your pod to be _ready_ before proceeding, which is shown in the `READY` column. For example, `{app-name}-1-aaaaa` is _ready_ when the `READY` column is `1/1`.
 endif::configmap-vertx[]
+Your specific pod name will vary.
+The number in the middle will increase with each new build.
+The letters at the end are generated when the pod is created.
 
 
 . Once your booster is deployed and started, determine its route.

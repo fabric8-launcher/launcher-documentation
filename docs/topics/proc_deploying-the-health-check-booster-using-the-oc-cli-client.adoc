@@ -73,7 +73,11 @@ NAME                             READY     STATUS      RESTARTS   AGE
 {app-name}-s2i-1-build           0/1       Completed   0          2m
 ----
 +
-Your `{app-name}-1-aaaaa` pod should have a status of `Running` once its fully deployed and started. You should also wait for your pod to be ready before proceeding, which is shown in the `READY` column. For example, `{app-name}-1-aaaaa` is ready when the `READY` column is `1/1`.
+The `{app-name}-1-aaaaa` pod should have a status of `Running` once its fully deployed and started. You should also wait for your pod to be ready before proceeding, which is shown in the `READY` column. For example, `{app-name}-1-aaaaa` is ready when the `READY` column is `1/1`.
+Your specific pod name will vary.
+The number in the middle will increase with each new build.
+The letters at the end are generated when the pod is created.
+
 
 . Once your booster is deployed and started, determine its route.
 +
