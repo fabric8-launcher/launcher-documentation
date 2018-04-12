@@ -1,8 +1,6 @@
 // This is a parameterized module. Parameters used:
 //
 //  context: used in anchor IDs to conflicts due to duplicate IDs.
-//  parameter-runtime: runtime identifier. This is used to make xrefs link to the mission guide for the appropriate runtime.
-//  parameter-runtime-name: human-readable name of the mission. This is used in readable text.
 //  parameter-maven-command: This is used to substitute the Maven command appropriate to the runtime being used.
 //
 // Rationale: This procedure is the same for 2 or more runtimes.
@@ -10,10 +8,10 @@
 [id='creating-an-application_{context}']
 = Creating an application
 
-Create a simple `Greeting` application to run on OpenShift using {parameter-runtime-name}.
+Create a simple `Greeting` application to run on OpenShift using {runtime}.
 The following procedure shows you how to:
 
-* Write some simple application code that makes use of functionalities provided by {parameter-runtime-name}.
+* Write some simple application code that makes use of functionalities provided by {runtime}.
 * Declare dependencies and configure the application build using a `pom.xml` file.
 * Start your application on localhost and verify that it works.
 
