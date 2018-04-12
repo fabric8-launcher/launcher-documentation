@@ -1,0 +1,61 @@
+[[deploying-a-booster-using-openshift-templates]]
+= Deploying a Booster Using OpenShift Templates
+
+In addition to using the Fabric8 Maven Plugin or nodeshift to deploy your booster to OpenShift, you can also use the `.openshiftio/application.yaml` template provided by the booster.
+
+.Prerequisites
+* The booster application created using the {launcher} or link:{link-launcher-oso}[{launcher-oso}] with OpenShift as the target environment.
+* The `oc` client authenticated.
+
+.Procedure
+. Clone your project from GitHub.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git clone git@github.com:USERNAME/PROJECT-NAME.git
+----
+
+. Navigate to the root directory of your booster.
+
+. Create a new OpenShift project.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc new-project PROJECT-NAME
+----
+
+. Edit the `SOURCE_REPOSITORY_URL` in `.openshiftio/application.yaml` to match your GitHub repository.
++
+[source,yaml,options="nowrap",subs="attributes+"]
+----
+parameters:
+  - name: SOURCE_REPOSITORY_URL
+    description: The source URL for the application
+    displayName: Source URL
+    value: https://github.com/USERNAME/PROJECT-NAME.git
+    required: true
+----
+
+. Add the template to the OpenShift project.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc apply -f .openshiftio/application.yaml
+----
+
+
+. Get the template name.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get template
+NAME                DESCRIPTION                                                         PARAMETERS        OBJECTS
+TEMPLATE_NAME   This template creates a Build Configuration using an S2I builder.   4 (1 generated)   6
+----
+
+. Create a new application using the template.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc new-app --template=TEMPLATE_NAME
+----
