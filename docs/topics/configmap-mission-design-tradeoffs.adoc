@@ -7,7 +7,7 @@ a|
 * Can be updated independently
 * Can be shared across services
 a|
-* Configuration is separate from deployments
+* Adding configuration to environment requires additional step
 * Has to be maintained separately
 * Requires coordination beyond the scope of a service
 |====================================================================
