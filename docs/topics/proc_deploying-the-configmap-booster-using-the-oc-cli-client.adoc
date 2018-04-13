@@ -31,7 +31,7 @@ Alternatively, if you downloaded a ZIP file of your project, extract it.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ unzip {project-name}
+$ unzip {project-name}.zip
 ----
 
 . Create a new OpenShift project.

@@ -44,12 +44,7 @@ $ oc login -u developer -p developer
 $ oc new-project MY_PROJECT_NAME
 ----
 
-. Be sure that view access rights for the service account are added before deploying your booster.
-+
-[source,bash,options="nowrap",subs="attributes+"]
-----
-$ oc policy add-role-to-user view -n $(oc project -q) -z default
-----
+${accessRightsCMD}
 
 . Navigate to the root directory of your booster.
 
