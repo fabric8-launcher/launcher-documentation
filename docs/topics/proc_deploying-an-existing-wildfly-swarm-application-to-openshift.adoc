@@ -1,5 +1,5 @@
 
-[id='deploying-an-existing-wildfly-swarm-application-to-openshift]
+[id='deploying-an-existing-wildfly-swarm-application-to-openshift']
 = Deploying an existing {WildFlySwarm} application to OpenShift
 
 You can easily deploy your existing application to OpenShift using the Fabric8 Maven plugin.
