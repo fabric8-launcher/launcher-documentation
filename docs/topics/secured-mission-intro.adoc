@@ -8,9 +8,13 @@ The SSO booster project contains:
 * the Keycloak adapter configuration to secure the service
 
 = Standing up {RHSSO}
-The `service.sso.yaml` file contains all OpenShift configuration items to stand up a pre-configured {RHSSO} server. The SSO server configuration has been simplified for the sake of this exercise and does provide an out-of-the-box configuration, with pre-configured users and security settings.
+The `service.sso.yaml` file contains all OpenShift configuration items to stand up a pre-configured {RHSSO} server. 
+The SSO server configuration has been simplified for the sake of this exercise and does provide an out-of-the-box configuration, with pre-configured users and security settings.
+The `service.sso.yaml` file also contains very long lines, and some text editors, such as link:https://wiki.gnome.org/Apps/Gedit[gedit], may have issues reading this file.
 
-IMPORTANT: It is not recommended to use this SSO configuration in production. Specifically, the simplifications made to the booster security configuration impact the ability to use it in a production environment.
+WARNING: It is not recommended to use this SSO configuration in production. Specifically, the simplifications made to the booster security configuration impact the ability to use it in a production environment.
+
+
 
 .SSO Booster Simplifications
 [width="100%",options="header"]

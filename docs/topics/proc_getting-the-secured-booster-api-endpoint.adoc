@@ -8,7 +8,7 @@
 [#getting-the-secured-booster-api-endpoint]
 = Getting the {name-mission-secured} Booster API Endpoint
 
-When using a client to interact with the booster, you must specify the {name-mission-secured} booster endpoint, which is the _Greeting_ service.
+When using a client to interact with the booster, you must specify the {name-mission-secured} booster endpoint, which is the _PROJECT_ID_ service.
 
 .Prerequisites
 
@@ -49,5 +49,6 @@ A sample output is shown in the following table:
 |===
 ====
 --
-
-IMPORTANT: `PROJECT_ID` is based on the name you entered when generating your booster using link:{link-launcher-oso}[{launcher-oso}] or the {launcher} tool.
++
+In the above example, the booster endpoint would be `\http://PROJECT_ID-myproject.LOCAL_OPENSHIFT_HOSTNAME`.
+`PROJECT_ID` is based on the name you entered when generating your booster using link:{link-launcher-oso}[{launcher-oso}] or the {launcher} tool.
