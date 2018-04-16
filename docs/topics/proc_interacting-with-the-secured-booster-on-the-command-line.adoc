@@ -7,52 +7,34 @@ In the following example, the link:https://stedolan.github.io/jq/[jq CLI tool] i
 
 .Prerequisites
 
-* The secured endpoint URL. For more information, see xref:getting-the-secured-booster-api-endpoint[].
+* The secured booster endpoint URL. For more information, see xref:getting-the-secured-booster-api-endpoint[].
 * The `jq` command-line tool (optional). To download the tool and for more information, see https://stedolan.github.io/jq/.
 
 .Procedure
-. Request an access token:
+. Request an access token with `curl`, the credentials, and `<SSO_AUTH_SERVER_URL>` and extract the token from the response with the `jq` command:
 +
 --
-The attributes are usually shared with each service and kept secret, but for demonstration purposes, they are displayed here:
-
-.{name-mission-secured} booster credentials
-====
-[source,bash,options="nowrap",subs="attributes+"]
-----
-REALM=master
-USER=alice
-PASSWORD=password
-CLIENT_ID=demoapp
-SECRET=1daa57a2-b60e-468b-a3ac-25bd2dc2eadc
-----
-====
-
-** Using the credentials, use the `curl` command to request a token:
-+
-[source,bash,options="nowrap",subs="attributes+"]
-----
-$ curl -sk -X POST https://<SSO_AUTH_SERVER_URL>/auth/realms/$REALM/protocol/openid-connect/token \
-  -d grant_type=password \
-  -d username=$USER \
-  -d password=$PASSWORD \
-  -d client_id=$CLIENT_ID \
-  -d client_secret=$SECRET
-----
-+
-NOTE: The `-sk` option tells curl to ignore failures resulting from self-signed certificates. Do not use this option in a production environment.
-+
-On macOS, you must have `curl` version `7.56.1` or greater installed. It must also be built with OpenSSL.
-
-** Extract the access token information, for example using the `jq` tool:
-+
 [source,bash,subs="attributes+"]
 ----
-$ curl ... | jq -r '.access_token'
+curl -sk -X POST https://<SSO_AUTH_SERVER_URL>/auth/realms/master/protocol/openid-connect/token \
+  -d grant_type=password \
+  -d username=alice\
+  -d password=password \
+  -d client_id=demoapp \
+  -d client_secret=1daa57a2-b60e-468b-a3ac-25bd2dc2eadc \
+  | jq -r '.access_token'
 
 eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJRek1nbXhZMUhrQnpxTnR0SnkwMm5jNTNtMGNiWDQxV1hNSTU1MFo4MGVBIn0.eyJqdGkiOiI0NDA3YTliNC04YWRhLTRlMTctODQ2ZS03YjI5MjMyN2RmYTIiLCJleHAiOjE1MDc3OTM3ODcsIm5iZiI6MCwiaWF0IjoxNTA3NzkzNzI3LCJpc3MiOiJodHRwczovL3NlY3VyZS1zc28tc3NvLWRlbW8uYXBwcy5jYWZlLWJhYmUub3JnL2F1dGgvcmVhbG1zL21hc3RlciIsImF1ZCI6ImRlbW9hcHAiLCJzdWIiOiJjMDE3NWNjYi0wODkyLTRiMzEtODI5Zi1kZGE4NzM4MTVmZTgiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJkZW1vYXBwIiwiYXV0aF90aW1lIjowLCJzZXNzaW9uX3N0YXRlIjoiMDFjOTkzNGQtNmZmOS00NWYzLWJkNWUtMTU4NDI5ZDZjNDczIiwiYWNyIjoiMSIsImNsaWVudF9zZXNzaW9uIjoiMzM3Yzk0MTYtYTdlZS00ZWUzLThjZWQtODhlODI0MGJjNTAyIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImJvb3N0ZXItYWRtaW4iXX0sInJlc291cmNlX2FjY2VzcyI6eyJzZWN1cmVkLWJvb3N0ZXItZW5kcG9pbnQiOnsicm9sZXMiOlsiYm9vc3Rlci1hZG1pbiJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsInZpZXctcHJvZmlsZSJdfX0sIm5hbWUiOiJBbGljZSBJbkNoYWlucyIsInByZWZlcnJlZF91c2VybmFtZSI6ImFsaWNlIiwiZ2l2ZW5fbmFtZSI6IkFsaWNlIiwiZmFtaWx5X25hbWUiOiJJbkNoYWlucyIsImVtYWlsIjoiYWxpY2VAa2V5Y2xvYWsub3JnIn0.mjmZe37enHpigJv0BGuIitOj-kfMLPNwYzNd3n0Ax4Nga7KpnfytGyuPSvR4KAG8rzkfBNN9klPYdy7pJEeYlfmnFUkM4EDrZYgn4qZAznP1Wzy1RfVRdUFi0-GqFTMPb37o5HRldZZ09QljX_j3GHnoMGXRtYW9RZN4eKkYkcz9hRwgfJoTy2CuwFqeJwZYUyXifrfA-JoTr0UmSUed-0NMksGrtJjjPggUGS-qOn6OgKcmN2vaVAQlxW32y53JqUXctfLQ6DhJzIMYTmOflIPy0sgG1mG7sovQhw1xTg0vTjdx8zQ-EJcexkj7IivRevRZsslKgqRFWs67jQAFQA
 ----
+`<SSO_AUTH_SERVER_URL>` is the url of the `secure-sso` service.
+
+The attributes, such as `username`, `password`, and `client_secret` are usually kept secret, but the above command uses the default provided credentials with this booster for demonstration purpose.
+
+If you do not want to use `jq` to extract the token, you can run just the `curl` command and manually extract the access token.
+
+NOTE: The `-sk` option tells curl to ignore failures resulting from self-signed certificates. Do not use this option in a production environment. On macOS, you must have `curl` version `7.56.1` or greater installed. It must also be built with OpenSSL.
 --
+
 
 . Invoke the {name-mission-secured} service. Attach the access (bearer) token to the HTTP headers:
 +
@@ -78,6 +60,9 @@ $ curl -v -H "Authorization: Bearer <TOKEN>" http://<SERVICE_HOST>/api/greeting
 > Authorization: Bearer <TOKEN>
 ----
 ====
+
+`<SERVICE_HOST>` is the URL of the secured booster endpoint.
+For more information, see xref:getting-the-secured-booster-api-endpoint[].
 --
 
 . Verify the signature of the access token.
