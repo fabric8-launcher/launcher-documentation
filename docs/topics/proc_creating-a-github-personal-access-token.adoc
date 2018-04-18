@@ -13,7 +13,8 @@ To install the {launcher} tool on a {OpenShiftLocal}, you must provide the {laun
 . Select _Generate new token._
 . Add a token description, for example `{launcher} tool on a {OpenShiftLocal}`.
 . Select the check boxes of the following parent scopes and all their children:
-** `repo`
+** `public_repo`
+** `read:org`
 ** `admin:repo_hook`
 . Click  _Generate token_.
 . Save the hex code of the personal access token. You need this to complete the installation of the {launcher} tool on your {OpenShiftLocal}.
