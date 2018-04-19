@@ -12,54 +12,6 @@ This section contains all information you need to release a new version of the d
 
 . Synchronize the {WildFlySwarm} sources. For more information, see xref:syncing-with-wildfly-swarm-docs[].
 
-. Update the current milestone in GitHub:
-.. Rename the _Current Development_ milestone to the current date in the _YYYY-MM-DD_ format.
-.. Create a new milestone called _Current Development._
-.. Move all open issues from the old milestone to _Current Development:_
-... Open the recently closed milestone from the link:{link-repo-docs}milestones[list of milestones].
-... Ensure you are only seeing open issues by clicking _Open._
-... Select all issues.
-... In the top right corner of the table, click _Milestone_ -> _Current Development_ to assign the selected issues to the current milestone.
-.. Close the old milestone.
-
-. Add the issues resolved in the last milestone to `CHANGELOG.adoc`:
-.. Execute the `generate_changelog.sh` script from the `$REPO_HOME/scripts` directory with the name of the milestone.
-+
---
-WARNING: Ensure you use the human-readable name of the milestone, not the numerical ID.
-
-For example, with the _2017-04-21_ milestone:
-
-[source,bash,options="nowrap"]
-----
-$ ./scripts/generate_changelog.sh '2017-04-21'
-----
-
-[NOTE]
-====
-The script asks you for a GitHub token. If you do not have such a token, generate one at link:https://github.com/settings/tokens[your GitHub token page].
-When creating the token, set the access permission for it to `public_repo`.
-
-Alternatively, you can store the access token in the `.github_token` file in `$REPO_HOME`.
-If you do that, ensure the access permissions on the `.github_token` file do not allow reading by other users.
-====
-
-The script outputs a list of issues in the AsciiDoc format to the standard output. If the output is empty, it is likely one of the following situations occurred:
-
-* You have misspelled the name of the milestone.
-* You have not specified an access token and GitHub started limiting queries from your IP address. In this case, execute the script again and input the access token when asked.
---
-.. Copy the output of the `generate_changelog.sh` script to the `CHANGELOG.adoc` file and add a heading that points to the corresponding release.
-+
---
-For example, with the _2017-04-21_ release:
-
-[source,asciidoc,options="nowrap"]
-----
-== link:{link-repo-docs}/releases/tag/2017-04-21[2017-04-21 Release]
-----
---
-
 . Tag the release:
 .. Execute the `tag_release.sh` script in the `$REPO_HOME/scripts` directory:
 +
@@ -69,12 +21,14 @@ For example, with the _2017-04-21_ release:
 $ ./tag_release.sh
 ----
 
-The script automatically tags the commit with the current date in the `YYYY-MM-DD` format. If you are re-releasing the same day, a suffix `_2`, `_3`, etc. is appended. If you want to tag with a different date or manually, execute the following command:
-
+The script automatically tags the commit with the current date in the `YYYY-MM-DD` format. 
+If you want to tag with a different date or manually, execute the following command:
 [source,bash]
 ----
 $ git tag 2017-04-21
 ----
+If you are re-releasing the same day, a suffix `_2`, `_3`, etc. is appended. 
+
 --
 .. Push the changes and tags:
 +
@@ -88,5 +42,5 @@ Replace `$REMOTE` with the name of the upstream remote.
 --
 
 . Request publication:
-.. File a pull request in the link:https://github.com/openshiftio/saas-launchpad/blob/master/launchpad-services/appdev-documentation.yaml#L2[openshiftio/saas-launchpad] repository, where you change the `hash` value to the hash of the commit you want to publish from the link:{link-repo-docs}[{repo-docs-name}] repository. Usually, this will be the latest commit in the `master` branch.
-.. Wait for the pull request to be accepted. When that happens, verify that the link:{docs-stage}[stage build] succeeded.
+.. File a pull request in the link:https://github.com/openshiftio/saas-launchpad/blob/master/launchpad-services/launcher-documentation.yaml#L2[openshiftio/saas-launchpad] repository, where you change the `hash` value to the hash of the commit you want to publish from the link:{link-repo-docs}[{repo-docs-name}] repository. Usually, this will be the latest commit in the `master` branch.
+.. Wait for the pull request to be accepted. When that happens, verify that the link:{link-docs}[production build] succeeded.
