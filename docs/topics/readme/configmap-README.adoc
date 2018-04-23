@@ -62,7 +62,6 @@ $ oc create configmap app-config --from-file=${configmapFileName}
 $ ${OSORunCMD}
 ----
 
-${integrationTestSection}
 
 == Interacting with the Booster on a Single-node OpenShift Cluster
 
@@ -74,7 +73,6 @@ $ oc get route ${app-name} -o jsonpath={$.spec.host}
 
 ${app-name}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME
 ----
-
 
 You can use the form at your application's url or you can use the `curl` command:
 
@@ -89,3 +87,5 @@ $ curl http://${app-name}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/greeting?
 
 == More Information
 You can learn more about this booster and the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].
+
+${integrationTestSection}

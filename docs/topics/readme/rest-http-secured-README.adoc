@@ -26,8 +26,6 @@ $ oc create -f service.sso.yaml
 $ ${localRunCMD}
 ----
 
-${integrationTestSection}
-
 == Interacting with the Booster on a Single-node OpenShift Cluster
 
 To interact with your booster while it's running on a Single-node OpenShift Cluster, you first need to obtain the secured booster endpoint URL, which is the _${app-name}_ service:
@@ -120,3 +118,9 @@ $ > GET /api/greeting HTTP/1.1
 ====
 +
 `<SERVICE_HOST>` is the URL of the secured booster endpoint.
+
+
+== More Information
+You can learn more about this booster and rest of the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].
+
+${integrationTestSection}

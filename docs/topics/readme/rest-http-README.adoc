@@ -56,7 +56,7 @@ $ oc new-project MY_PROJECT_NAME
 $ ${OSORunCMD}
 ----
 
-${integrationTestSection}
-
 == More Information
 You can learn more about this booster and rest of the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].
+
+${integrationTestSection}
