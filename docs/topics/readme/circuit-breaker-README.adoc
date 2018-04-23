@@ -26,8 +26,6 @@ $ oc new-project MY_PROJECT_NAME
 $ ${OSORunCMD}
 ----
 
-${integrationTestSection}
-
 == Interacting with the Booster on a Single-node OpenShift Cluster
 
 To interact with your booster while it's running on a Single-node OpenShift Cluster, you first need to obtain it's URL:
@@ -65,3 +63,5 @@ $ curl http://${greeting-app-name}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/
 
 == More Information
 You can learn more about this booster and rest of the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].
+
+${integrationTestSection}

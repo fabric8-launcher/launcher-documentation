@@ -47,8 +47,6 @@ $ oc create -f service.cache.yaml
 $ ${OSORunCMD}
 ----
 
-${integrationTestSection}
-
 
 == Interacting with the Booster on a Single-node OpenShift Cluster
 
@@ -82,3 +80,5 @@ If you click _Clear the cache_, the cache is emptied.
 
 == More Information
 You can learn more about this booster and the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].
+
+${integrationTestSection}

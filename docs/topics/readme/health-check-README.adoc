@@ -18,8 +18,6 @@ $ cd ${targetRepository}
 $ ${localRunCMD}
 ----
 
-${integrationTestSection}
-
 == Interacting with the Booster Locally
 To interact with your booster while its running, use the form at `http://localhost:8080` or the `curl` command:
 
@@ -82,3 +80,5 @@ When `READY` changes to `0/1`, if you re-execute a `curl` command to `api/greeti
 
 == More Information
 You can learn more about this booster and rest of the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].
+
+${integrationTestSection}
