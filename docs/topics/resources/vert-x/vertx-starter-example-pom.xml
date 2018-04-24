@@ -14,7 +14,12 @@
   <properties>
     <vertx.version>{VertXVersion}</vertx.version>
     <vertx-maven-plugin.version>{VertXMvnPluginVersion}</vertx-maven-plugin.version>
-    <vertx.verticle>io.openshift.booster.MyApplication</vertx.verticle>
+    <vertx.verticle>com.example.MyApp</vertx.verticle>
+    <fabric8.generator.from>registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift:1.2</fabric8.generator.from>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
 
   <!-- Import dependencies from the RHOAR Vert.x BOM file. -->

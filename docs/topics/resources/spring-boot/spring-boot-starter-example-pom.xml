@@ -10,6 +10,10 @@
   <name>MyApp</name>
   <description>My Application</description>
 
+  <properties>
+    <fabric8.generator.from>registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift:1.2</fabric8.generator.from>
+  </properties>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
