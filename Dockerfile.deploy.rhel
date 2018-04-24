@@ -1,0 +1,16 @@
+FROM prod.registry.devshift.net/osio-prod/base/openshift-nginx:latest
+LABEL maintainer "Devtools <devtools@redhat.com>"
+LABEL author "Devtools <devtools@redhat.com>"
+
+ENV LANG=en_US.utf8
+ENTRYPOINT /usr/bin/entrypoint.sh
+
+USER root
+ADD nginx.conf /etc/nginx/nginx.conf
+
+RUN rm -rf /usr/share/nginx/html
+
+COPY scripts/entrypoint.sh /usr/bin/entrypoint.sh
+RUN chmod +x /usr/bin/entrypoint.sh
+
+COPY html /usr/share/nginx/html
