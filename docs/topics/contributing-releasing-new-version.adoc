@@ -35,7 +35,7 @@ If you are re-releasing the same day, a suffix `_2`, `_3`, etc. is appended.
 --
 [source,bash]
 ----
-$ git push --follow-tags $REMOTE
+$ git push --tags $REMOTE
 ----
 
 Replace `$REMOTE` with the name of the upstream remote.
