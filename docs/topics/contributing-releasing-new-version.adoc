@@ -21,13 +21,13 @@ This section contains all information you need to release a new version of the d
 $ ./tag_release.sh
 ----
 
-The script automatically tags the commit with the current date in the `YYYY-MM-DD` format. 
+The script automatically tags the commit with the current date in the `YYYY-MM-DD` format.
 If you want to tag with a different date or manually, execute the following command:
 [source,bash]
 ----
 $ git tag 2017-04-21
 ----
-If you are re-releasing the same day, a suffix `_2`, `_3`, etc. is appended. 
+If you are re-releasing the same day, a suffix `_2`, `_3`, etc. is appended.
 
 --
 .. Push the changes and tags:
@@ -44,3 +44,9 @@ Replace `$REMOTE` with the name of the upstream remote.
 . Request publication:
 .. File a pull request in the link:https://github.com/openshiftio/saas-launchpad/blob/master/launchpad-services/launcher-documentation.yaml#L2[openshiftio/saas-launchpad] repository, where you change the `hash` value to the hash of the commit you want to publish from the link:{link-repo-docs}[{repo-docs-name}] repository. Usually, this will be the latest commit in the `master` branch.
 .. Wait for the pull request to be accepted. When that happens, verify that the link:{link-docs}[production build] succeeded.
+.. Once your changes have been merged and the build succeeds, delete the topic branch you used to introduce the update.
++
+[source,bash,options="nowrap",subs="attributes+"]
+--
+$ git branch -d $TOPIC_BRANCH_NAME
+--
