@@ -242,6 +242,8 @@ include::topics/secured-mission-resources.adoc[leveloffset=+3]
 === {mission-cache-wf-swarm-guide-name}
 :cache-wf-swarm:
 
+include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
+
 include::topics/cache-mission-intro.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
