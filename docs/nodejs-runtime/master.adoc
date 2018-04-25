@@ -80,6 +80,8 @@ include::topics/configmap-mission-resources.adoc[leveloffset=+3]
 :crud-nodejs-mission:
 :nodejs-runtime-name: {NodeJS}
 
+include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
+
 include::topics/crud-mission-intro.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
@@ -201,6 +203,8 @@ include::topics/secured-mission-resources.adoc[leveloffset=+3]
 [[mission-cache-nodejs]]
 === {mission-cache-nodejs-guide-name}
 :cache-nodejs:
+
+include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
 include::topics/cache-mission-intro.adoc[leveloffset=+3]
 
