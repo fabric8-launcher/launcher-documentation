@@ -37,7 +37,7 @@ $ oc new-project MY_PROJECT_NAME
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc create -f service.cache.yaml
+$ oc create -f service.cache.yml
 ----
 
 . Deploy your booster.
