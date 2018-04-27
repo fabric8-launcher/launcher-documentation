@@ -97,11 +97,11 @@ data:
 ----
 endif::configmap-wf-swarm[]
 ifdef::configmap-spring-boot[]
-. Deploy your ConfigMap configuration to OpenShift using `greeting-service/src/main/etc/application.properties`.
+. Deploy your ConfigMap configuration to OpenShift using `application.yml`.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc create configmap app-config --from-file=greeting-service/src/main/etc/application.properties
+$ oc create configmap app-config --from-file=application.yml
 ----
 
 . Verify your ConfigMap configuration has been deployed.
@@ -112,8 +112,10 @@ $ oc get configmap app-config -o yaml
 
 apiVersion: v1
 data:
-  application.properties: |-
-      greeting.message=Hello %s from a ConfigMap!
+  application.yml: |
+     # This properties file should be used to initialise a ConfigMap
+     greeting:
+       message: "Hello %s from a ConfigMap!"
 ...
 ----
 endif::configmap-spring-boot[]
