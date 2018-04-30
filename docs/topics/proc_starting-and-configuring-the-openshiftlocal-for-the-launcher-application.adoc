@@ -10,8 +10,6 @@ NOTE: Starting your {OpenShiftLocal} can trigger a download of large virtual mac
 Because a {OpenShiftLocal} is intended for development purposes, it uses HTTPS for the web console and only provides a self-signed certificate. If your browser prevents you from accessing the page due to an SSL error, you must allow your browser to bypass SSL security policies for the {OpenShiftLocal} URL to use it. The screenshot below shows the warning message in the Google Chrome browser.
 
 image::minishift_sslwarning.png[SSL warning]
-
-At this time, Safari on macOS does not work with a {OpenShiftLocal}; this is a link:https://github.com/openshiftio/appdev-planning/issues/16[known issue]. Other browsers, such as Google Chrome, work with a {OpenShiftLocal} on macOS normally.
 ====
 
 .Prerequisites
