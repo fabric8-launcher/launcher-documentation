@@ -1,0 +1,37 @@
+// This is a parameterized module. Parameters used:
+//
+//   parameter-runtime: runtime name in the module ID
+//
+// Rationale: This parameter displays the correct runtime name (`sb` or `vx`) in the module ID that is visible when linking to this section.
+
+[#running-the-secured-booster-integration-tests_context]
+= Running the {name-mission-secured} Booster Integration Tests
+//[#running-the-secured-booster-integration-tests-on-{parameter-runtime}]
+//= Running the {name-mission-secured} Booster Integration Tests on {runtime}
+
+.Prerequisites
+
+* The `oc` client authenticated.
+// * An empty OpenShift project in which to run the tests.
+
+.Procedure
+// space here to prevent the section title and admonition from sticking together in the rendered version
+{nbsp}
+include::note-integration-tests-app-deletion-warning.adoc[]
+
+By default, the SSO server is deployed (and destroyed) as part of testing. The steps for executing integration tests are as follows:
+
+. In a terminal application, navigate to the directory with your project.
+. Execute the integration tests:
++
+[source,bash,options="nowrap",subs="attributes+"]
+--
+mvn clean verify -Popenshift,openshift-it
+--
+
+You can also skip the SSO server deployment in case you have deployed a SSO server instance beforehand, e.g. by executing `oc create -f service.sso.yaml`.
+In that case, you can set an additional maven property `skip.sso.init` to `true`, similar to example below:
+[source,bash,options="nowrap",subs="attributes+"]
+--
+mvn clean verify -Popenshift,openshift-it -Dskip.sso.init=true
+--
