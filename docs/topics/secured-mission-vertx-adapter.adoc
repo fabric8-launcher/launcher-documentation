@@ -5,10 +5,14 @@ The SSO adapter is the _client side_, or client to the SSO server, component tha
 .Enacting security
 [source,java,options="nowrap",subs="attributes+"]
 ----
-router.route("/greeting")         <1>
-  .handler(JWTAuthHandler.create( <2>
-    JWTAuth.create(vertx,         <3>
-      config)));                  <4>
+router.route("/greeting")                                       <1>
+  .handler(JWTAuthHandler.create(                               <2>
+    JWTAuth.create(vertx,                                       <3>
+      new JWTAuthOptions()                                      <4>
+            .addPubSecKey(new PubSecKeyOptions()
+              .setAlgorithm("RS256")                            <5>
+              .setPublicKey(System.getenv("REALM_PUBLIC_KEY"))) <6>
+            .setPermissionsClaimKey("realm_access/roles"))));   <7>
 
 ----
 
@@ -16,25 +20,25 @@ router.route("/greeting")         <1>
 <2> Instantiate a new JWT security handler.
 <3> The authorization enforcer is created.
 <4> The configuration to the enforcer.
+<5> Public key encryption algorithm.
+<6> PEM format of the realm public key. You can obtain this from the administration console.
+<7> Where the authorization enforcer should lookup permissions.
 
-The enforcer is configured using JSON with the exact same format keycloak exports from the configuration console. In this case the JSON file is reconstructed from the deployment environment variables as:
+The enforcer here is configured using PEM format of the realm public key and specifying the algorithm. And since the enforcer is configured to consume keycloak JWTs, we also need to provide a location for the permission claims in the token.
+
+Below is a JSON file reconstructed from the deployment environment variables, which is used when interacting with the application through web interface.
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-JsonObject config = new JsonObject()
+JsonObject keycloakJson = new JsonObject()
   	.put("realm", System.getenv("REALM")) <1>
-  	.put("public-key", System.getenv("REALM_PUBLIC_KEY")) <3>
-  	.put("auth-server-url", System.getenv("SSO_AUTH_SERVER_URL")) <4>
+  	.put("auth-server-url", System.getenv("SSO_AUTH_SERVER_URL")) <3>
   	.put("ssl-required", "external")
   	.put("resource", System.getenv("CLIENT_ID")) <2>
   	.put("credentials", new JsonObject()
-    	.put("secret", System.getenv("SECRET")))
-  	// since we're consuming keycloak JWTs we need to locate the permission claims in the token
-  	.put("permissionsClaimKey", "realm_access/roles"); <5>
+    	.put("secret", System.getenv("SECRET")));
 ----
 
 <1> The security realm to be used.
 <2> The actual keycloak _client_ configuration.
-<3> PEM format of the realm public key. You can obtain this from the administration console. 
-<4> The address of the {RHSSO} server (Interpolation at build time)
-<5> Where the authorization enforcer should lookup permissions.
+<3> The address of the {RHSSO} server (Interpolation at build time)
