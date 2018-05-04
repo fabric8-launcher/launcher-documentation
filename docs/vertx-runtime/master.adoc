@@ -243,7 +243,7 @@ include::topics/assembly_building-and-deploying-the-secured-booster-to-openshift
 include::topics/assembly_interacting-with-the-secured-booster.adoc[leveloffset=+3]
 
 // integration tests in a separate topic
-include::topics/proc_running-the-secured-booster-integration-tests-on-sb-vx.adoc[leveloffset=+3]
+include::topics/proc_running-the-secured-booster-integration-tests-on-vx.adoc[leveloffset=+3]
 :parameter-runtime!:
 
 include::topics/secured-mission-resources.adoc[leveloffset=+3]
