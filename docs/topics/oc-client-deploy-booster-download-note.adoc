@@ -1,6 +1,0 @@
-[IMPORTANT]
-====
-You must still create a booster using the {launcher} tool before you can deploy it using the `oc` CLI client. 
-
-If you choose _I will build and run locally_, unzip the ZIP file you downloaded. If you chose _Use {OpenShiftOnline} to build and deploy_ you need to clone the GitHub repository created by the {launcher} tool.
-====
