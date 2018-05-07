@@ -1,4 +1,0 @@
-To launch using {OpenShiftOnline}, click the _Use {OpenShiftOnline}_ button. This will:
-
-* In your GitHub namespace, create a repository containing your new project's code.
-* Configure {OpenShiftOnline} to build and deploy your code on each push to your repository’s master branch.

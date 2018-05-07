@@ -38,4 +38,3 @@ To re-enable validation of the book, remove the `.ci-ignore` file, for example:
 ----
 $ rm docs/wf-swarm-runtime/.ci-ignore
 ----
-

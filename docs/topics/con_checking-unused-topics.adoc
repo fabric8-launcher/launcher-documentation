@@ -1,0 +1,21 @@
+= Checking for Unused Topics
+
+In some cases, an update can leave one or more topic files unused.
+All unused topics should be removed before committing your changes.
+
+To verify you have removed all unused topics:
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ ./scripts/list_unused_topics.sh
+/path/to/docs/topics/unused-topic.adoc
+----
+
+If the script finds any unused topics, remove them and rerun the script to verify all unused topics have been removed:
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ rm docs/topics/unused-topic.adoc
+$ ./scripts/list_unused_topics.sh
+$
+----
