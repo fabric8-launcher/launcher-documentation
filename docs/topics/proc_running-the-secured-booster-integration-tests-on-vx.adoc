@@ -21,8 +21,9 @@ By default, the SSO server is deployed (and destroyed) as part of testing. The s
 mvn clean verify -Popenshift,openshift-it
 --
 
-You can also skip the SSO server deployment in case you have deployed a SSO server instance beforehand, e.g. by executing `oc create -f service.sso.yaml`.
-In that case, you can set an additional maven property `skip.sso.init` to `true`, similar to example below:
+If you deployed an SSO server beforehand, e.g. by executing `oc create -f service.sso.yaml`, set the system property `skip.sso.init` to `true` when running the tests (example shown below).
+The tests will then use the existing SSO server and won't deploy their own, nor would they destroy the existing one.
+
 [source,bash,options="nowrap",subs="attributes+"]
 --
 mvn clean verify -Popenshift,openshift-it -Dskip.sso.init=true
