@@ -21,10 +21,12 @@ By default, the SSO server is deployed (and destroyed) as part of testing. The s
 mvn clean verify -Popenshift,openshift-it
 --
 
-If you deployed an SSO server beforehand, e.g. by executing `oc create -f service.sso.yaml`, set the system property `skip.sso.init` to `true` when running the tests (example shown below).
-The tests will then use the existing SSO server and won't deploy their own, nor would they destroy the existing one.
+If you deployed an SSO server beforehand, e.g. by executing `oc create -f service.sso.yaml`, set the system property `skip.sso.init` to `true` when running the tests:
 
 [source,bash,options="nowrap",subs="attributes+"]
 --
 mvn clean verify -Popenshift,openshift-it -Dskip.sso.init=true
 --
+
+When executed like this, the tests will use the existing SSO server.
+The tests will not deploy their own SSO server, nor will they destroy the existing one.
