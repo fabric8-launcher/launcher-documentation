@@ -18,7 +18,7 @@ include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 [[nodejs-available-missions-and-boosters]]
 == Available Missions and Boosters for {NodeJS}
 
-The {NodeJS} runtime supports the following missions and boosters.
+The following boosters are available for {NodeJS}.
 
 [[mission-rest-http-nodejs]]
 === {mission-http-api-nodejs-guide-name}

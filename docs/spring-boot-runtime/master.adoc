@@ -22,7 +22,7 @@ include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
 [[spring-boot-available-missions-and-boosters]]
 == Available Missions and Boosters for {SpringBoot}
 
-The {SpringBoot} runtime supports the following missions and boosters.
+The following boosters are available for {SpringBoot}.
 
 [[mission-rest-http-spring-boot]]
 === {mission-http-api-spring-boot-guide-name}

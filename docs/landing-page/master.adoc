@@ -69,7 +69,7 @@ include::topics/templates/document-attributes.adoc[]
     <img src="/docs/images/launch_logo.svg" alt="Fabric8 Launcher Logo" class="pull-right">
     <h2>Fabric8 Launcher documentation</h2>
     <p class="lead">
-      Read how to get started and setup your environment and all the good stuff that you can do with Fabric8 Launcher.
+      Read how to configure your environment, use the Fabric8 Launcher, and work with cloud-native runtimes on OpenShift.
     </p>
     <p>
       <a class="btn btn-primary btn-lg" href="/docs/getting-started.html" role="button">Getting started</a>
@@ -88,7 +88,7 @@ include::topics/templates/document-attributes.adoc[]
       <div class="col-sm-3 runtime">
         <div class="fa icon swarm"></div>
         <p>
-          Learn how to use launcher for Wildfly Swarm projects
+          Learn how to use Wildfly Swarm.
         </p>
         <a href="/docs/wf-swarm-runtime.html" class="btn btn-default" role="button">
           Learn more
@@ -98,7 +98,7 @@ include::topics/templates/document-attributes.adoc[]
       <div class="col-sm-3 runtime">
         <div class="fa icon vertx"></div>
         <p >
-          Learn how to use launcher for Eclipse Vert.x projects
+          Learn how to use Eclipse Vert.x.
         </p>
         <a href="/docs/vertx-runtime.html" class="btn btn-default" role="button">
           Learn more
@@ -108,7 +108,7 @@ include::topics/templates/document-attributes.adoc[]
       <div class="col-sm-3 runtime">
         <div class="fa icon boot"></div>
         <p >
-          Learn how to use launcher for Spring Boot projects
+          Learn how to use Spring Boot.
         </p>
         <a href="/docs/spring-boot-runtime.html" class="btn btn-default" role="button">
           Learn more
@@ -117,8 +117,8 @@ include::topics/templates/document-attributes.adoc[]
 
       <div class="col-sm-3 runtime">
         <div class="fa icon node"></div>
-        <p >
-            Learn how to use launcher for Node.js® projects
+        <p>
+            Learn how to use Node.js®.
         </p>
         <a href="/docs/nodejs-runtime.html" class="btn btn-default" role="button">
           Learn more
