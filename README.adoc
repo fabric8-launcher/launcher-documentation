@@ -27,3 +27,4 @@ For general information about missions and boosters, see the link:https://appdev
 
 Basic information about publishing a release is described in the link:https://appdev.openshift.io/docs/contrib-guide.html#releasing_new_version[Releasing New Version] chapter of the __Contribution Guide.__
 
+// TEST
