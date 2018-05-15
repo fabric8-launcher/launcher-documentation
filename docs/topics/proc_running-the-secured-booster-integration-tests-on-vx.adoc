@@ -1,4 +1,4 @@
-[#running-the-secured-booster-integration-tests_context]
+[#running-the-secured-booster-integration-tests_vertx]
 = Running the {name-mission-secured} Booster Integration Tests
 
 .Prerequisites
