@@ -1,0 +1,996 @@
+= Elytron
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>elytron</artifactId>
+</dependency>
+----
+
+.Configuration
+
+swarm.elytron.add-prefix-role-mappers._KEY_.prefix:: 
+The prefix to add to each role.
+
+swarm.elytron.add-suffix-role-mappers._KEY_.suffix:: 
+The suffix to add to each role.
+
+swarm.elytron.aggregate-http-server-mechanism-factories._KEY_.available-mechanisms:: 
+The HTTP mechanisms available from this factory instance.
+
+swarm.elytron.aggregate-http-server-mechanism-factories._KEY_.http-server-mechanism-factories:: 
+The referenced http server factories to aggregate.
+
+swarm.elytron.aggregate-principal-decoders._KEY_.principal-decoders:: 
+The referenced principal decoders to aggregate.
+
+swarm.elytron.aggregate-principal-transformers._KEY_.principal-transformers:: 
+The referenced principal transformers to aggregate.
+
+swarm.elytron.aggregate-providers._KEY_.providers:: 
+The referenced Provider[] resources to aggregate.
+
+swarm.elytron.aggregate-realms._KEY_.authentication-realm:: 
+Reference to the security realm to use for authentication steps (obtaining or validating credentials).
+
+swarm.elytron.aggregate-realms._KEY_.authorization-realm:: 
+Reference to the security realm to use for loading the identity for authorization steps (loading of the identity).
+
+swarm.elytron.aggregate-role-mappers._KEY_.role-mappers:: 
+The referenced role mappers to aggregate.
+
+swarm.elytron.aggregate-sasl-server-factories._KEY_.available-mechanisms:: 
+The SASL mechanisms available from this factory after all filtering has been applied.
+
+swarm.elytron.aggregate-sasl-server-factories._KEY_.sasl-server-factories:: 
+The referenced sasl server factories to aggregate.
+
+swarm.elytron.aggregate-security-event-listeners._KEY_.security-event-listeners:: 
+The referenced security event listener resources to aggregate.
+
+swarm.elytron.authentication-configurations._KEY_.anonymous:: 
+Enables anonymous authentication.
+
+swarm.elytron.authentication-configurations._KEY_.attribute-extends:: 
+A previously defined authentication configuration to extend.
+
+swarm.elytron.authentication-configurations._KEY_.authentication-name:: 
+The authentication name to use.
+
+swarm.elytron.authentication-configurations._KEY_.authorization-name:: 
+The authorization name to use.
+
+swarm.elytron.authentication-configurations._KEY_.credential-reference:: 
+The reference to credential stored in CredentialStore under defined alias or clear text password.
+
+swarm.elytron.authentication-configurations._KEY_.forwarding-mode:: 
+The type of security identity forwarding to use. A mode of 'authentication' forwarding forwards the principal and credential. A mode of 'authorization' forwards the authorization id, allowing for a different authentication identity.
+
+swarm.elytron.authentication-configurations._KEY_.host:: 
+The host to use.
+
+swarm.elytron.authentication-configurations._KEY_.kerberos-security-factory:: 
+Reference to a kerberos security factory used to obtain a GSS kerberos credential
+
+swarm.elytron.authentication-configurations._KEY_.mechanism-properties:: 
+Configuration properties for the SASL authentication mechanism.
+
+swarm.elytron.authentication-configurations._KEY_.port:: 
+The port to use.
+
+swarm.elytron.authentication-configurations._KEY_.protocol:: 
+The protocol to use.
+
+swarm.elytron.authentication-configurations._KEY_.realm:: 
+The realm to use.
+
+swarm.elytron.authentication-configurations._KEY_.sasl-mechanism-selector:: 
+The SASL mechanism selector string.
+
+swarm.elytron.authentication-configurations._KEY_.security-domain:: 
+Reference to a security domain to obtain a forwarded identity.
+
+swarm.elytron.authentication-contexts._KEY_.attribute-extends:: 
+A previously defined authentication context to extend.
+
+swarm.elytron.authentication-contexts._KEY_.match-rules:: 
+The match-rules for this authentication context.
+
+swarm.elytron.caching-realms._KEY_.maximum-age:: 
+The time in milliseconds that an item can stay in the cache.
+
+swarm.elytron.caching-realms._KEY_.maximum-entries:: 
+The maximum number of entries to keep in the cache.
+
+swarm.elytron.caching-realms._KEY_.realm:: 
+A reference to a cacheable security realm.
+
+swarm.elytron.chained-principal-transformers._KEY_.principal-transformers:: 
+The referenced principal transformers to chain.
+
+swarm.elytron.client-ssl-contexts._KEY_.active-session-count:: 
+The count of current active sessions.
+
+swarm.elytron.client-ssl-contexts._KEY_.cipher-suite-filter:: 
+The filter to apply to specify the enabled cipher suites.
+
+swarm.elytron.client-ssl-contexts._KEY_.key-manager:: 
+Reference to the key manager to use within the SSLContext.
+
+swarm.elytron.client-ssl-contexts._KEY_.protocols:: 
+The enabled protocols.
+
+swarm.elytron.client-ssl-contexts._KEY_.provider-name:: 
+The name of the provider to use. If not specified, all providers from providers will be passed to the SSLContext.
+
+swarm.elytron.client-ssl-contexts._KEY_.providers:: 
+The name of the providers to obtain the Provider[] to use to load the SSLContext.
+
+swarm.elytron.client-ssl-contexts._KEY_.ssl-sessions._KEY_.application-buffer-size:: 
+The application buffer size as reported by the SSLSession.
+
+swarm.elytron.client-ssl-contexts._KEY_.ssl-sessions._KEY_.cipher-suite:: 
+The selected cipher suite as reported by the SSLSession.
+
+swarm.elytron.client-ssl-contexts._KEY_.ssl-sessions._KEY_.creation-time:: 
+The creation time as reported by the SSLSession.
+
+swarm.elytron.client-ssl-contexts._KEY_.ssl-sessions._KEY_.last-accessed-time:: 
+The last accessed time as reported by the SSLSession.
+
+swarm.elytron.client-ssl-contexts._KEY_.ssl-sessions._KEY_.local-certificates:: 
+The local certificates from the SSLSession.
+
+swarm.elytron.client-ssl-contexts._KEY_.ssl-sessions._KEY_.local-principal:: 
+The local principal as reported by the SSLSession.
+
+swarm.elytron.client-ssl-contexts._KEY_.ssl-sessions._KEY_.packet-buffer-size:: 
+The packet buffer size as reported by the SSLSession.
+
+swarm.elytron.client-ssl-contexts._KEY_.ssl-sessions._KEY_.peer-certificates:: 
+The peer certificates from the SSLSession.
+
+swarm.elytron.client-ssl-contexts._KEY_.ssl-sessions._KEY_.peer-host:: 
+The peer host as reported by the SSLSession.
+
+swarm.elytron.client-ssl-contexts._KEY_.ssl-sessions._KEY_.peer-port:: 
+The peer port as reported by the SSLSession.
+
+swarm.elytron.client-ssl-contexts._KEY_.ssl-sessions._KEY_.peer-principal:: 
+The peer principal as reported by the SSLSession.
+
+swarm.elytron.client-ssl-contexts._KEY_.ssl-sessions._KEY_.protocol:: 
+The protocol as reported by the SSLSession.
+
+swarm.elytron.client-ssl-contexts._KEY_.ssl-sessions._KEY_.valid:: 
+The validity of the session as reported by the SSLSession.
+
+swarm.elytron.client-ssl-contexts._KEY_.trust-manager:: 
+Reference to the trust manager to use within the SSLContext.
+
+swarm.elytron.concatenating-principal-decoders._KEY_.joiner:: 
+The string to use to join the results of the referenced principal decoders.
+
+swarm.elytron.concatenating-principal-decoders._KEY_.principal-decoders:: 
+The referenced principal decoders to concatenate.
+
+swarm.elytron.configurable-http-server-mechanism-factories._KEY_.available-mechanisms:: 
+The HTTP mechanisms available from this factory instance.
+
+swarm.elytron.configurable-http-server-mechanism-factories._KEY_.filters:: 
+Filtering to be applied to enable / disable mechanisms based on the name.
+
+swarm.elytron.configurable-http-server-mechanism-factories._KEY_.http-server-mechanism-factory:: 
+The http server factory to be wrapped.
+
+swarm.elytron.configurable-http-server-mechanism-factories._KEY_.properties:: 
+Custom properties to be passed in to the http server factory calls.
+
+swarm.elytron.configurable-sasl-server-factories._KEY_.available-mechanisms:: 
+The SASL mechanisms available from this factory after all filtering has been applied.
+
+swarm.elytron.configurable-sasl-server-factories._KEY_.filters:: 
+List of filters to be evaluated sequentially combining the results using 'or'.
+
+swarm.elytron.configurable-sasl-server-factories._KEY_.properties:: 
+Custom properties to be passed in to the sasl server factory calls.
+
+swarm.elytron.configurable-sasl-server-factories._KEY_.protocol:: 
+The protocol that should be passed into factory when creating the mechanism.
+
+swarm.elytron.configurable-sasl-server-factories._KEY_.sasl-server-factory:: 
+The sasl server factory to be wrapped.
+
+swarm.elytron.configurable-sasl-server-factories._KEY_.server-name:: 
+The server name that should be passed into factory when creating the mechanism.
+
+swarm.elytron.constant-permission-mappers._KEY_.permissions:: 
+The permissions to assign.
+
+swarm.elytron.constant-principal-decoders._KEY_.constant:: 
+The constant value the principal decoder will always return.
+
+swarm.elytron.constant-principal-transformers._KEY_.constant:: 
+The constant value this PrincipalTransformer will always return.
+
+swarm.elytron.constant-realm-mappers._KEY_.realm-name:: 
+The name of the constant realm to return.
+
+swarm.elytron.constant-role-mappers._KEY_.roles:: 
+The constant roles to be returned by this role mapper.
+
+swarm.elytron.credential-stores._KEY_.create:: 
+Specifies whether credential store should create storage when it doesn't exist.
+
+swarm.elytron.credential-stores._KEY_.credential-reference:: 
+Credential reference to be used to create protection parameter.
+
+swarm.elytron.credential-stores._KEY_.implementation-properties:: 
+Map of credentials store implementation specific properties.
+
+swarm.elytron.credential-stores._KEY_.location:: 
+File name of credential store storage.
+
+swarm.elytron.credential-stores._KEY_.modifiable:: 
+Specifies whether credential store is modifiable.
+
+swarm.elytron.credential-stores._KEY_.other-providers:: 
+The name of the providers defined within the subsystem to obtain the Providers to search for the one that can create the required JCA objects within credential store. This is valid only for key-store based CredentialStore. If this is not specified then the global list of Providers is used instead.
+
+swarm.elytron.credential-stores._KEY_.provider-name:: 
+The name of the provider to use to instantiate the CredentialStoreSpi. If the provider is not specified then the first provider found that can create an instance of the specified 'type' will be used.
+
+swarm.elytron.credential-stores._KEY_.providers:: 
+The name of the providers defined within the subsystem to obtain the Providers to search for the one that can create the required CredentialStore type. If this is not specified then the global list of Providers is used instead.
+
+swarm.elytron.credential-stores._KEY_.relative-to:: 
+A reference to a previously defined path that the file name is relative to.
+
+swarm.elytron.credential-stores._KEY_.state:: 
+The state of the underlying service that represents this credential store at runtime.
+
+swarm.elytron.credential-stores._KEY_.type:: 
+The credential store type, e.g. KeyStoreCredentialStore.
+
+swarm.elytron.custom-credential-security-factories._KEY_.class-name:: 
+The class name of the implementation of the custom security factory.
+
+swarm.elytron.custom-credential-security-factories._KEY_.configuration:: 
+The optional key/value configuration for the custom security factory.
+
+swarm.elytron.custom-credential-security-factories._KEY_.module:: 
+The module to use to load the custom security factory.
+
+swarm.elytron.custom-modifiable-realms._KEY_.class-name:: 
+The class name of the implementation of the custom realm.
+
+swarm.elytron.custom-modifiable-realms._KEY_.configuration:: 
+The optional key/value configuration for the custom realm.
+
+swarm.elytron.custom-modifiable-realms._KEY_.module:: 
+The module to use to load the custom realm.
+
+swarm.elytron.custom-permission-mappers._KEY_.class-name:: 
+Fully qualified class name of the permission mapper
+
+swarm.elytron.custom-permission-mappers._KEY_.configuration:: 
+The optional kay/value configuration for the permission mapper
+
+swarm.elytron.custom-permission-mappers._KEY_.module:: 
+Name of the module to use to load the permission mapper
+
+swarm.elytron.custom-principal-decoders._KEY_.class-name:: 
+Fully qualified class name of the principal decoder
+
+swarm.elytron.custom-principal-decoders._KEY_.configuration:: 
+The optional kay/value configuration for the principal decoder
+
+swarm.elytron.custom-principal-decoders._KEY_.module:: 
+Name of the module to use to load the principal decoder
+
+swarm.elytron.custom-principal-transformers._KEY_.class-name:: 
+The class name of the implementation of the custom principal transformer.
+
+swarm.elytron.custom-principal-transformers._KEY_.configuration:: 
+The optional key/value configuration for the custom principal transformer.
+
+swarm.elytron.custom-principal-transformers._KEY_.module:: 
+The module to use to load the custom principal transformer.
+
+swarm.elytron.custom-realm-mappers._KEY_.class-name:: 
+Fully qualified class name of the RealmMapper
+
+swarm.elytron.custom-realm-mappers._KEY_.configuration:: 
+The optional kay/value configuration for the RealmMapper
+
+swarm.elytron.custom-realm-mappers._KEY_.module:: 
+Name of the module to use to load the RealmMapper
+
+swarm.elytron.custom-realms._KEY_.class-name:: 
+The class name of the implementation of the custom realm.
+
+swarm.elytron.custom-realms._KEY_.configuration:: 
+The optional key/value configuration for the custom realm.
+
+swarm.elytron.custom-realms._KEY_.module:: 
+The module to use to load the custom realm.
+
+swarm.elytron.custom-role-decoders._KEY_.class-name:: 
+Fully qualified class name of the RoleDecoder
+
+swarm.elytron.custom-role-decoders._KEY_.configuration:: 
+The optional kay/value configuration for the RoleDecoder
+
+swarm.elytron.custom-role-decoders._KEY_.module:: 
+Name of the module to use to load the RoleDecoder
+
+swarm.elytron.custom-role-mappers._KEY_.class-name:: 
+Fully qualified class name of the RoleMapper
+
+swarm.elytron.custom-role-mappers._KEY_.configuration:: 
+The optional key/value configuration for the RoleMapper
+
+swarm.elytron.custom-role-mappers._KEY_.module:: 
+Name of the module to use to load the RoleMapper
+
+swarm.elytron.default-authentication-context:: 
+The default authentication context to be associated with all deployments.
+
+swarm.elytron.dir-contexts._KEY_.authentication-context:: 
+The authentication context to obtain login credentials to connect to the LDAP server. Can be omitted if authentication-level is "none" (anonymous).
+
+swarm.elytron.dir-contexts._KEY_.authentication-level:: 
+The authentication level (security level/authentication mechanism) to use. Corresponds to SECURITY_AUTHENTICATION ("java.naming.security.authentication") environment property. Allowed values: "none", "simple", sasl_mech, where sasl_mech is a space-separated list of SASL mechanism names.
+
+swarm.elytron.dir-contexts._KEY_.connection-timeout:: 
+The timeout for connecting to the LDAP server in milliseconds.
+
+swarm.elytron.dir-contexts._KEY_.credential-reference:: 
+The credential reference to authenticate and connect to the LDAP server. Can be omitted if authentication-level is "none" (anonymous).
+
+swarm.elytron.dir-contexts._KEY_.enable-connection-pooling:: 
+Indicates if connection pooling is enabled.
+
+swarm.elytron.dir-contexts._KEY_.module:: 
+Name of module that will be used as class loading base.
+
+swarm.elytron.dir-contexts._KEY_.principal:: 
+The principal to authenticate and connect to the LDAP server. Can be omitted if authentication-level is "none" (anonymous).
+
+swarm.elytron.dir-contexts._KEY_.properties:: 
+The additional connection properties for the DirContext.
+
+swarm.elytron.dir-contexts._KEY_.read-timeout:: 
+The read timeout for an LDAP operation in milliseconds.
+
+swarm.elytron.dir-contexts._KEY_.referral-mode:: 
+If referrals should be followed.
+
+swarm.elytron.dir-contexts._KEY_.ssl-context:: 
+The name of ssl-context used to secure connection to the LDAP server.
+
+swarm.elytron.dir-contexts._KEY_.url:: 
+The connection url.
+
+swarm.elytron.disallowed-providers:: 
+A list of providers that are not allowed, and will be removed from the providers list.
+
+swarm.elytron.file-audit-logs._KEY_.attribute-synchronized:: 
+Whether every event should be immediately synchronised to disk.
+
+swarm.elytron.file-audit-logs._KEY_.format:: 
+The format to use to record the audit event.
+
+swarm.elytron.file-audit-logs._KEY_.path:: 
+Path of the file to be written.
+
+swarm.elytron.file-audit-logs._KEY_.relative-to:: 
+The relative path to the audit log.
+
+swarm.elytron.filesystem-realms._KEY_.encoded:: 
+Whether the identity names should be stored encoded (Base32) in file names.
+
+swarm.elytron.filesystem-realms._KEY_.levels:: 
+The number of levels of directory hashing to apply.
+
+swarm.elytron.filesystem-realms._KEY_.path:: 
+The path to the file containing the realm.
+
+swarm.elytron.filesystem-realms._KEY_.relative-to:: 
+The pre-defined path the path is relative to.
+
+swarm.elytron.filtering-key-stores._KEY_.alias-filter:: 
+A filter to apply to the aliases returned from the KeyStore, can either be a comma separated list of aliases to return or one of the following formats ALL:-alias1:-alias2, NONE:+alias1:+alias2
+
+swarm.elytron.filtering-key-stores._KEY_.key-store:: 
+Name of filtered KeyStore.
+
+swarm.elytron.filtering-key-stores._KEY_.state:: 
+The state of the underlying service that represents this KeyStore at runtime, if it is anything other than UP runtime operations will not be available.
+
+swarm.elytron.final-providers:: 
+Reference to the Providers that should be registered after all existing Providers.
+
+swarm.elytron.http-authentication-factories._KEY_.available-mechanisms:: 
+The HTTP mechanisms available from this configuration after all filtering has been applied.
+
+swarm.elytron.http-authentication-factories._KEY_.http-server-mechanism-factory:: 
+The HttpServerAuthenticationMechanismFactory to associate with this resource
+
+swarm.elytron.http-authentication-factories._KEY_.mechanism-configurations:: 
+Mechanism specific configuration
+
+swarm.elytron.http-authentication-factories._KEY_.security-domain:: 
+The SecurityDomain to associate with this resource
+
+swarm.elytron.identity-realms._KEY_.attribute-name:: 
+The name of the attribute associated with this identity.
+
+swarm.elytron.identity-realms._KEY_.attribute-values:: 
+The values associated with the identities attribute.
+
+swarm.elytron.identity-realms._KEY_.identity:: 
+The identity available from the security realm.
+
+swarm.elytron.initial-providers:: 
+Reference to the Providers that should be registered ahead of all existing Providers.
+
+swarm.elytron.jdbc-realms._KEY_.principal-query:: 
+The authentication query used to authenticate users based on specific key types.
+
+swarm.elytron.kerberos-security-factories._KEY_.debug:: 
+Should the JAAS step of obtaining the credential have debug logging enabled.
+
+swarm.elytron.kerberos-security-factories._KEY_.mechanism-names:: 
+The mechanism names the credential should be usable with. Names will be converted to OIDs and used together with OIDs from mechanism-oids attribute.
+
+swarm.elytron.kerberos-security-factories._KEY_.mechanism-oids:: 
+The mechanism OIDs the credential should be usable with. Will be used together with OIDs derived from names from mechanism-names attribute.
+
+swarm.elytron.kerberos-security-factories._KEY_.minimum-remaining-lifetime:: 
+How much lifetime (in seconds) should a cached credential have remaining before it is recreated.
+
+swarm.elytron.kerberos-security-factories._KEY_.obtain-kerberos-ticket:: 
+Should the KerberosTicket also be obtained and associated with the credential. This is required to be true where credentials are delegated to the server.
+
+swarm.elytron.kerberos-security-factories._KEY_.options:: 
+The Krb5LoginModule additional options.
+
+swarm.elytron.kerberos-security-factories._KEY_.path:: 
+The path of the KeyTab to load to obtain the credential.
+
+swarm.elytron.kerberos-security-factories._KEY_.principal:: 
+The principal represented by the KeyTab
+
+swarm.elytron.kerberos-security-factories._KEY_.relative-to:: 
+The name of another previously named path, or of one of the standard paths provided by the system. If 'relative-to' is provided, the value of the 'path' attribute is treated as relative to the path specified by this attribute.
+
+swarm.elytron.kerberos-security-factories._KEY_.request-lifetime:: 
+How much lifetime (in seconds) should be requested for newly created credentials.
+
+swarm.elytron.kerberos-security-factories._KEY_.required:: 
+Is the keytab file with adequate principal required to exist at the time the service starts?
+
+swarm.elytron.kerberos-security-factories._KEY_.server:: 
+If this for use server side or client side?
+
+swarm.elytron.kerberos-security-factories._KEY_.wrap-gss-credential:: 
+Should generated GSS credentials be wrapped to prevent improper disposal or not?
+
+swarm.elytron.key-managers._KEY_.algorithm:: 
+The name of the algorithm to use to create the underlying KeyManagerFactory.
+
+swarm.elytron.key-managers._KEY_.alias-filter:: 
+A filter to apply to the aliases returned from the KeyStore, can either be a comma separated list of aliases to return or one of the following formats ALL:-alias1:-alias2, NONE:+alias1:+alias2
+
+swarm.elytron.key-managers._KEY_.credential-reference:: 
+The credential reference to decrypt KeyStore item. (Not a password of the KeyStore.)
+
+swarm.elytron.key-managers._KEY_.key-store:: 
+Reference to the KeyStore to use to initialise the underlying KeyManagerFactory.
+
+swarm.elytron.key-managers._KEY_.provider-name:: 
+The name of the provider to use to create the underlying KeyManagerFactory.
+
+swarm.elytron.key-managers._KEY_.providers:: 
+Reference to obtain the Provider[] to use when creating the underlying KeyManagerFactory.
+
+swarm.elytron.key-store-realms._KEY_.key-store:: 
+Reference to the KeyStore that should be used to back this security realm.
+
+swarm.elytron.key-stores._KEY_.alias-filter:: 
+A filter to apply to the aliases returned from the KeyStore, can either be a comma separated list of aliases to return or one of the following formats ALL:-alias1:-alias2, NONE:+alias1:+alias2
+
+swarm.elytron.key-stores._KEY_.attribute-synchronized:: 
+The time this KeyStore was last loaded or saved. Note: Some providers may continue to apply updates after the KeyStore was loaded within the application server.
+
+swarm.elytron.key-stores._KEY_.credential-reference:: 
+The reference to credential stored in CredentialStore under defined alias or clear text password.
+
+swarm.elytron.key-stores._KEY_.loaded-provider:: 
+Information about the provider that was used for this KeyStore.
+
+swarm.elytron.key-stores._KEY_.modified:: 
+Indicates if the in-memory representation of the KeyStore has been changed since it was last loaded or stored.  Note: For some providers updates may be immediate without further load or store calls.
+
+swarm.elytron.key-stores._KEY_.path:: 
+The path to the KeyStore file.
+
+swarm.elytron.key-stores._KEY_.provider-name:: 
+The name of the provider to use to load the KeyStore, disables searching for the first Provider that can create a KeyStore of the specified type.
+
+swarm.elytron.key-stores._KEY_.providers:: 
+A reference to the providers that should be used to obtain the list of Provider instances to search, if not specified the global list of providers will be used instead.
+
+swarm.elytron.key-stores._KEY_.relative-to:: 
+The base path this store is relative to.
+
+swarm.elytron.key-stores._KEY_.required:: 
+Is the file required to exist at the time the KeyStore service starts?
+
+swarm.elytron.key-stores._KEY_.size:: 
+The number of entries in the KeyStore.
+
+swarm.elytron.key-stores._KEY_.state:: 
+The state of the underlying service that represents this KeyStore at runtime, if it is anything other than UP runtime operations will not be available.
+
+swarm.elytron.key-stores._KEY_.type:: 
+The type of the KeyStore, used when creating the new KeyStore instance.
+
+swarm.elytron.ldap-key-stores._KEY_.alias-attribute:: 
+The name of LDAP attribute, where will be item alias stored.
+
+swarm.elytron.ldap-key-stores._KEY_.certificate-attribute:: 
+The name of LDAP attribute, where will be certificate stored.
+
+swarm.elytron.ldap-key-stores._KEY_.certificate-chain-attribute:: 
+The name of LDAP attribute, where will be certificate chain stored.
+
+swarm.elytron.ldap-key-stores._KEY_.certificate-chain-encoding:: 
+The encoding of the certificate chain.
+
+swarm.elytron.ldap-key-stores._KEY_.certificate-type:: 
+The type of the Certificate.
+
+swarm.elytron.ldap-key-stores._KEY_.dir-context:: 
+The name of DirContext, which will be used to communication with LDAP server.
+
+swarm.elytron.ldap-key-stores._KEY_.filter-alias:: 
+The LDAP filter for obtaining an item of the KeyStore by alias. If this is not specified then the default value will be (alias_attribute={0}). The string '{0}' will be replaced by the searched alias and the 'alias_attribute' value will be the value of the attribute 'alias-attribute'.
+
+swarm.elytron.ldap-key-stores._KEY_.filter-certificate:: 
+The LDAP filter for obtaining an item of the KeyStore by certificate. If this is not specified then the default value will be (certificate_attribute={0}). The string '{0}' will be replaced by searched encoded certificate and the 'certificate_attribute' will be the value of the attribute 'certificate-attribute'.
+
+swarm.elytron.ldap-key-stores._KEY_.filter-iterate:: 
+The LDAP filter for iterating over all items of the KeyStore. If this is not specified then the default value will be (alias_attribute=*). The 'alias_attribute' will be the value of the attribute 'alias-attribute'.
+
+swarm.elytron.ldap-key-stores._KEY_.key-attribute:: 
+The name of LDAP attribute, where will be key stored.
+
+swarm.elytron.ldap-key-stores._KEY_.key-type:: 
+The type of KeyStore, in which will be key serialized to LDAP attribute.
+
+swarm.elytron.ldap-key-stores._KEY_.new-item-template:: 
+Configuration for item creation. Define how will look LDAP entry of newly created keystore item.
+
+swarm.elytron.ldap-key-stores._KEY_.search-path:: 
+The path in LDAP, where will be KeyStore items searched.
+
+swarm.elytron.ldap-key-stores._KEY_.search-recursive:: 
+If the LDAP search should be recursive.
+
+swarm.elytron.ldap-key-stores._KEY_.search-time-limit:: 
+The time limit for obtaining keystore items from LDAP.
+
+swarm.elytron.ldap-key-stores._KEY_.size:: 
+The size of LDAP KeyStore in amount of items/aliases.
+
+swarm.elytron.ldap-key-stores._KEY_.state:: 
+The state of the underlying service that represents this KeyStore at runtime, if it is anything other than UP runtime operations will not be available.
+
+swarm.elytron.ldap-realms._KEY_.allow-blank-password:: 
+Does this realm support blank password direct verification? Blank password attempt will be rejected otherwise.
+
+swarm.elytron.ldap-realms._KEY_.dir-context:: 
+The configuration to connect to a LDAP server.
+
+swarm.elytron.ldap-realms._KEY_.direct-verification:: 
+Does this realm support verification of credentials by directly connecting to LDAP as the account being authenticated?
+
+swarm.elytron.ldap-realms._KEY_.identity-mapping:: 
+The configuration options that define how principals are mapped to their corresponding entries in the underlying LDAP server.
+
+swarm.elytron.logical-permission-mappers._KEY_.left:: 
+Reference to the permission mapper to use to the left of the operation.
+
+swarm.elytron.logical-permission-mappers._KEY_.logical-operation:: 
+The logical operation to use to combine the permission mappers.
+
+swarm.elytron.logical-permission-mappers._KEY_.right:: 
+Reference to the permission mapper to use to the right of the operation.
+
+swarm.elytron.logical-role-mappers._KEY_.left:: 
+Reference to a role mapper to be used on the left side of the operation.
+
+swarm.elytron.logical-role-mappers._KEY_.logical-operation:: 
+The logical operation to be performed on the role mapper mappings.
+
+swarm.elytron.logical-role-mappers._KEY_.right:: 
+Reference to a role mapper to be used on the right side of the operation.
+
+swarm.elytron.mapped-regex-realm-mappers._KEY_.delegate-realm-mapper:: 
+The RealmMapper to delegate to if the pattern does not match. If no delegate is specified then the default realm on the domain will be used instead. If the username does not match the pattern and a delegate realm-mapper is present, the result of delegate-realm-mapper is mapped via the realm-map.
+
+swarm.elytron.mapped-regex-realm-mappers._KEY_.pattern:: 
+The regular expression which must contain at least one capture group to extract the realm from the name. If the regular expression matches more than one capture group, the first capture group is used.
+
+swarm.elytron.mapped-regex-realm-mappers._KEY_.realm-map:: 
+Mapping of realm name extracted using the regular expression to a defined realm name. If the value for the mapping is not in the map or the realm whose name is the result of the mapping does not exist in the given security domain, the default realm is used.
+
+swarm.elytron.mechanism-provider-filtering-sasl-server-factories._KEY_.available-mechanisms:: 
+The SASL mechanisms available from this factory after all filtering has been applied.
+
+swarm.elytron.mechanism-provider-filtering-sasl-server-factories._KEY_.enabling:: 
+When set to 'true' no provider loaded mechanisms are enabled unless matched by one of the filters, setting to 'false' has the inverse effect.
+
+swarm.elytron.mechanism-provider-filtering-sasl-server-factories._KEY_.filters:: 
+The filters to apply when comparing the mechanisms from the providers, a filter matches when all of the specified values match the mechanism / provider pair.
+
+swarm.elytron.mechanism-provider-filtering-sasl-server-factories._KEY_.sasl-server-factory:: 
+Reference to a sasl server factory to be wrapped by this definition.
+
+swarm.elytron.periodic-rotating-file-audit-logs._KEY_.attribute-synchronized:: 
+Whether every event should be immediately synchronised to disk.
+
+swarm.elytron.periodic-rotating-file-audit-logs._KEY_.format:: 
+The format to use to record the audit event.
+
+swarm.elytron.periodic-rotating-file-audit-logs._KEY_.path:: 
+Path of the file to be written.
+
+swarm.elytron.periodic-rotating-file-audit-logs._KEY_.relative-to:: 
+The relative path to the audit log.
+
+swarm.elytron.periodic-rotating-file-audit-logs._KEY_.suffix:: 
+The suffix string in a format which can be understood by java.time.format.DateTimeFormatter. The period of the rotation is automatically calculated based on the suffix.
+
+swarm.elytron.policies._KEY_.custom-policy:: 
+A custom policy provider definition.
+
+swarm.elytron.policies._KEY_.jacc-policy:: 
+A policy provider definition that sets up JACC and related services.
+
+swarm.elytron.properties-realms._KEY_.attribute-synchronized:: 
+The time the properties files that back this realm were last loaded.
+
+swarm.elytron.properties-realms._KEY_.groups-attribute:: 
+The name of the attribute in the returned AuthorizationIdentity that should contain the group membership information for the identity.
+
+swarm.elytron.properties-realms._KEY_.groups-properties:: 
+The properties file containing the users and their groups.
+
+swarm.elytron.properties-realms._KEY_.users-properties:: 
+The properties file containing the users and their passwords.
+
+swarm.elytron.provider-http-server-mechanism-factories._KEY_.available-mechanisms:: 
+The HTTP mechanisms available from this factory instance.
+
+swarm.elytron.provider-http-server-mechanism-factories._KEY_.providers:: 
+The providers to use to locate the factories, if not specified the globally registered list of Providers will be used.
+
+swarm.elytron.provider-loaders._KEY_.argument:: 
+An argument to be passed into the constructor as the Provider is instantiated.
+
+swarm.elytron.provider-loaders._KEY_.class-names:: 
+The fully qualified class names of the providers to load, these are loaded after the service-loader discovered providers and duplicates will be skipped.
+
+swarm.elytron.provider-loaders._KEY_.configuration:: 
+The key/value configuration to be passed to the Provider to initialise it.
+
+swarm.elytron.provider-loaders._KEY_.loaded-providers:: 
+The list of providers loaded by this provider loader.
+
+swarm.elytron.provider-loaders._KEY_.module:: 
+The name of the module to load the provider from.
+
+swarm.elytron.provider-loaders._KEY_.path:: 
+The path of the file to use to initialise the providers.
+
+swarm.elytron.provider-loaders._KEY_.relative-to:: 
+The base path of the configuration file.
+
+swarm.elytron.provider-sasl-server-factories._KEY_.available-mechanisms:: 
+The SASL mechanisms available from this factory after all filtering has been applied.
+
+swarm.elytron.provider-sasl-server-factories._KEY_.providers:: 
+The providers to use to locate the factories, if not specified the globally registered list of Providers will be used.
+
+swarm.elytron.regex-principal-transformers._KEY_.pattern:: 
+The regular expression to use to locate the portion of the name to be replaced.
+
+swarm.elytron.regex-principal-transformers._KEY_.replace-all:: 
+Should all occurrences of the pattern matched be replaced or only the first occurrence.
+
+swarm.elytron.regex-principal-transformers._KEY_.replacement:: 
+The value to be used as the replacement.
+
+swarm.elytron.regex-validating-principal-transformers._KEY_.match:: 
+If set to true, the name must match the given pattern to make validation successful. If set to false, the name must not match the given pattern to make validation successful.
+
+swarm.elytron.regex-validating-principal-transformers._KEY_.pattern:: 
+The regular expression to use for the principal transformer.
+
+swarm.elytron.sasl-authentication-factories._KEY_.available-mechanisms:: 
+The SASL mechanisms available from this configuration after all filtering has been applied.
+
+swarm.elytron.sasl-authentication-factories._KEY_.mechanism-configurations:: 
+Mechanism specific configuration
+
+swarm.elytron.sasl-authentication-factories._KEY_.sasl-server-factory:: 
+The SaslServerFactory to associate with this resource
+
+swarm.elytron.sasl-authentication-factories._KEY_.security-domain:: 
+The SecurityDomain to associate with this resource
+
+swarm.elytron.security-domains._KEY_.default-realm:: 
+The default realm contained by this security domain.
+
+swarm.elytron.security-domains._KEY_.outflow-anonymous:: 
+When outflowing to a security domain if outflow is not possible should the anonymous identity be used?  Outflowing anonymous has the effect of clearing any identity already established for that domain.
+
+swarm.elytron.security-domains._KEY_.outflow-security-domains:: 
+The list of security domains that the security identity from this domain should automatically outflow to.
+
+swarm.elytron.security-domains._KEY_.permission-mapper:: 
+A reference to a PermissionMapper to be used by this domain.
+
+swarm.elytron.security-domains._KEY_.post-realm-principal-transformer:: 
+A reference to a principal transformer to be applied after the realm has operated on the supplied identity name.
+
+swarm.elytron.security-domains._KEY_.pre-realm-principal-transformer:: 
+A reference to a principal transformer to be applied before the realm is selected.
+
+swarm.elytron.security-domains._KEY_.principal-decoder:: 
+A reference to a PrincipalDecoder to be used by this domain.
+
+swarm.elytron.security-domains._KEY_.realm-mapper:: 
+Reference to the RealmMapper to be used by this domain.
+
+swarm.elytron.security-domains._KEY_.realms:: 
+The list of realms contained by this security domain.
+
+swarm.elytron.security-domains._KEY_.role-mapper:: 
+Reference to the RoleMapper to be used by this domain.
+
+swarm.elytron.security-domains._KEY_.security-event-listener:: 
+Reference to a listener for security events.
+
+swarm.elytron.security-domains._KEY_.trusted-security-domains:: 
+The list of security domains that are trusted by this security domain.
+
+swarm.elytron.security-properties:: 
+Security properties to be set.
+
+swarm.elytron.server-ssl-contexts._KEY_.active-session-count:: 
+The count of current active sessions.
+
+swarm.elytron.server-ssl-contexts._KEY_.authentication-optional:: 
+Rejecting of the client certificate by the security domain will not prevent the connection. Allows a fall through to use other authentication mechanisms (like form login) when the client certificate is rejected by security domain. Has an effect only when the security domain is set.
+
+swarm.elytron.server-ssl-contexts._KEY_.cipher-suite-filter:: 
+The filter to apply to specify the enabled cipher suites.
+
+swarm.elytron.server-ssl-contexts._KEY_.final-principal-transformer:: 
+A final principal transformer to apply for this mechanism realm.
+
+swarm.elytron.server-ssl-contexts._KEY_.key-manager:: 
+Reference to the key manager to use within the SSLContext.
+
+swarm.elytron.server-ssl-contexts._KEY_.maximum-session-cache-size:: 
+The maximum number of SSL sessions in the cache. The default value -1 means use the JVM default value. Value zero means there is no limit.
+
+swarm.elytron.server-ssl-contexts._KEY_.need-client-auth:: 
+To require a client certificate on SSL handshake. Connection without trusted client certificate (see trust-manager) will be rejected.
+
+swarm.elytron.server-ssl-contexts._KEY_.post-realm-principal-transformer:: 
+A principal transformer to apply after the realm is selected.
+
+swarm.elytron.server-ssl-contexts._KEY_.pre-realm-principal-transformer:: 
+A principal transformer to apply before the realm is selected.
+
+swarm.elytron.server-ssl-contexts._KEY_.protocols:: 
+The enabled protocols.
+
+swarm.elytron.server-ssl-contexts._KEY_.provider-name:: 
+The name of the provider to use. If not specified, all providers from providers will be passed to the SSLContext.
+
+swarm.elytron.server-ssl-contexts._KEY_.providers:: 
+The name of the providers to obtain the Provider[] to use to load the SSLContext.
+
+swarm.elytron.server-ssl-contexts._KEY_.realm-mapper:: 
+The realm mapper to be used for SSL authentication.
+
+swarm.elytron.server-ssl-contexts._KEY_.security-domain:: 
+The security domain to use for authentication during SSL session establishment.
+
+swarm.elytron.server-ssl-contexts._KEY_.session-timeout:: 
+The timeout for SSL sessions, in seconds. The default value -1 means use the JVM default value. Value zero means there is no limit.
+
+swarm.elytron.server-ssl-contexts._KEY_.ssl-sessions._KEY_.application-buffer-size:: 
+The application buffer size as reported by the SSLSession.
+
+swarm.elytron.server-ssl-contexts._KEY_.ssl-sessions._KEY_.cipher-suite:: 
+The selected cipher suite as reported by the SSLSession.
+
+swarm.elytron.server-ssl-contexts._KEY_.ssl-sessions._KEY_.creation-time:: 
+The creation time as reported by the SSLSession.
+
+swarm.elytron.server-ssl-contexts._KEY_.ssl-sessions._KEY_.last-accessed-time:: 
+The last accessed time as reported by the SSLSession.
+
+swarm.elytron.server-ssl-contexts._KEY_.ssl-sessions._KEY_.local-certificates:: 
+The local certificates from the SSLSession.
+
+swarm.elytron.server-ssl-contexts._KEY_.ssl-sessions._KEY_.local-principal:: 
+The local principal as reported by the SSLSession.
+
+swarm.elytron.server-ssl-contexts._KEY_.ssl-sessions._KEY_.packet-buffer-size:: 
+The packet buffer size as reported by the SSLSession.
+
+swarm.elytron.server-ssl-contexts._KEY_.ssl-sessions._KEY_.peer-certificates:: 
+The peer certificates from the SSLSession.
+
+swarm.elytron.server-ssl-contexts._KEY_.ssl-sessions._KEY_.peer-host:: 
+The peer host as reported by the SSLSession.
+
+swarm.elytron.server-ssl-contexts._KEY_.ssl-sessions._KEY_.peer-port:: 
+The peer port as reported by the SSLSession.
+
+swarm.elytron.server-ssl-contexts._KEY_.ssl-sessions._KEY_.peer-principal:: 
+The peer principal as reported by the SSLSession.
+
+swarm.elytron.server-ssl-contexts._KEY_.ssl-sessions._KEY_.protocol:: 
+The protocol as reported by the SSLSession.
+
+swarm.elytron.server-ssl-contexts._KEY_.ssl-sessions._KEY_.valid:: 
+The validity of the session as reported by the SSLSession.
+
+swarm.elytron.server-ssl-contexts._KEY_.trust-manager:: 
+Reference to the trust manager to use within the SSLContext.
+
+swarm.elytron.server-ssl-contexts._KEY_.use-cipher-suites-order:: 
+To honor local cipher suites preference.
+
+swarm.elytron.server-ssl-contexts._KEY_.want-client-auth:: 
+To request (but not to require) a client certificate on SSL handshake. If a security domain is referenced and supports X509 evidence, this will be set to true automatically. Ignored when need-client-auth is set.
+
+swarm.elytron.server-ssl-contexts._KEY_.wrap:: 
+Should the SSLEngine, SSLSocket, and SSLServerSocket instances returned be wrapped to protect against further modification.
+
+swarm.elytron.service-loader-http-server-mechanism-factories._KEY_.available-mechanisms:: 
+The HTTP mechanisms available from this factory instance.
+
+swarm.elytron.service-loader-http-server-mechanism-factories._KEY_.module:: 
+The module to use to obtain the classloader to load the factories, if not specified the classloader to load the resource will be used instead.
+
+swarm.elytron.service-loader-sasl-server-factories._KEY_.available-mechanisms:: 
+The SASL mechanisms available from this factory after all filtering has been applied.
+
+swarm.elytron.service-loader-sasl-server-factories._KEY_.module:: 
+The module to use to obtain the classloader to load the factories, if not specified the classloader to load the resource will be used instead.
+
+swarm.elytron.simple-permission-mappers._KEY_.mapping-mode:: 
+The mapping mode that should be used in the event of multiple matches.
+
+swarm.elytron.simple-permission-mappers._KEY_.permission-mappings:: 
+The defined permission mappings.
+
+swarm.elytron.simple-regex-realm-mappers._KEY_.delegate-realm-mapper:: 
+The RealmMapper to delegate to if there is no match using the pattern.
+
+swarm.elytron.simple-regex-realm-mappers._KEY_.pattern:: 
+The regular expression which must contain at least one capture group to extract the realm from the name. If the regular expression matches more than one capture group, the first capture group is used.
+
+swarm.elytron.simple-role-decoders._KEY_.attribute:: 
+The name of the attribute from the identity to map directly to roles.
+
+swarm.elytron.size-rotating-file-audit-logs._KEY_.attribute-synchronized:: 
+Whether every event should be immediately synchronised to disk.
+
+swarm.elytron.size-rotating-file-audit-logs._KEY_.format:: 
+The format to use to record the audit event.
+
+swarm.elytron.size-rotating-file-audit-logs._KEY_.max-backup-index:: 
+The maximum number of files to backup when rotating.
+
+swarm.elytron.size-rotating-file-audit-logs._KEY_.path:: 
+Path of the file to be written.
+
+swarm.elytron.size-rotating-file-audit-logs._KEY_.relative-to:: 
+The relative path to the audit log.
+
+swarm.elytron.size-rotating-file-audit-logs._KEY_.rotate-on-boot:: 
+Whether the file should be rotated before the a new file is set.
+
+swarm.elytron.size-rotating-file-audit-logs._KEY_.rotate-size:: 
+The log file size the file should rotate at.
+
+swarm.elytron.size-rotating-file-audit-logs._KEY_.suffix:: 
+Format of date used as suffix of log file names in java.time.format.DateTimeFormatter. The suffix does not play a role in determining when the file should be rotated.
+
+swarm.elytron.syslog-audit-logs._KEY_.format:: 
+The format to use to record the audit event.
+
+swarm.elytron.syslog-audit-logs._KEY_.host-name:: 
+The host name to embed withing all events sent to the remote syslog server.
+
+swarm.elytron.syslog-audit-logs._KEY_.port:: 
+The listening port on the syslog server.
+
+swarm.elytron.syslog-audit-logs._KEY_.server-address:: 
+The server address of the syslog server the events should be sent to.
+
+swarm.elytron.syslog-audit-logs._KEY_.ssl-context:: 
+The SSLContext to use to connect to the syslog server when SSL_TCP transport is used.
+
+swarm.elytron.syslog-audit-logs._KEY_.transport:: 
+The transport to use to connect to the syslog server.
+
+swarm.elytron.token-realms._KEY_.jwt:: 
+A token validator to be used in conjunction with a token-based realm that handles security tokens based on the JWT/JWS standard.
+
+swarm.elytron.token-realms._KEY_.oauth2-introspection:: 
+A token validator to be used in conjunction with a token-based realm that handles OAuth2 Access Tokens and validates them using an endpoint compliant with OAuth2 Token Introspection specification(RFC-7662).
+
+swarm.elytron.token-realms._KEY_.principal-claim:: 
+The name of the claim that should be used to obtain the principal's name.
+
+swarm.elytron.trust-managers._KEY_.algorithm:: 
+The name of the algorithm to use to create the underlying TrustManagerFactory.
+
+swarm.elytron.trust-managers._KEY_.alias-filter:: 
+A filter to apply to the aliases returned from the KeyStore, can either be a comma separated list of aliases to return or one of the following formats ALL:-alias1:-alias2, NONE:+alias1:+alias2
+
+swarm.elytron.trust-managers._KEY_.certificate-revocation-list:: 
+Enables certificate revocation list checks to a trust manager.
+
+swarm.elytron.trust-managers._KEY_.key-store:: 
+Reference to the KeyStore to use to initialise the underlying TrustManagerFactory.
+
+swarm.elytron.trust-managers._KEY_.provider-name:: 
+The name of the provider to use to create the underlying TrustManagerFactory.
+
+swarm.elytron.trust-managers._KEY_.providers:: 
+Reference to obtain the Provider[] to use when creating the underlying TrustManagerFactory.
+
+swarm.elytron.x500-attribute-principal-decoders._KEY_.attribute-name:: 
+The name of the X.500 attribute to map (can be defined using OID instead)
+
+swarm.elytron.x500-attribute-principal-decoders._KEY_.convert:: 
+When set to 'true', if the Principal is not already an X500Principal conversion will be attempted
+
+swarm.elytron.x500-attribute-principal-decoders._KEY_.joiner:: 
+The joining string
+
+swarm.elytron.x500-attribute-principal-decoders._KEY_.maximum-segments:: 
+The maximum number of occurrences of the attribute to map
+
+swarm.elytron.x500-attribute-principal-decoders._KEY_.oid:: 
+The OID of the X.500 attribute to map (can be defined using attribute name instead)
+
+swarm.elytron.x500-attribute-principal-decoders._KEY_.required-attributes:: 
+The attributes names of the attributes that must be present in the principal
+
+swarm.elytron.x500-attribute-principal-decoders._KEY_.required-oids:: 
+The OIDs of the attributes that must be present in the principal
+
+swarm.elytron.x500-attribute-principal-decoders._KEY_.reverse:: 
+When set to 'true', the attribute values will be processed and returned in reverse order
+
+swarm.elytron.x500-attribute-principal-decoders._KEY_.start-segment:: 
+The 0-based starting occurrence of the attribute to map
+
+

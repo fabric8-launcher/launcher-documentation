@@ -1,4 +1,4 @@
-# JCA
+= JCA
 
 Provides support for the Java Connector Architecture (JCA)
 according to JSR 322.
@@ -44,6 +44,9 @@ Do not cache unknown connections
 
 swarm.jca.cached-connection-manager.install:: 
 Enable/disable the cached connection manager valve and interceptor
+
+swarm.jca.distributed-workmanagers._KEY_.elytron-enabled:: 
+Enables Elytron security for this workmanager.
 
 swarm.jca.distributed-workmanagers._KEY_.long-running-threads._KEY_.allow-core-timeout:: 
 Whether core threads may time out.
@@ -134,6 +137,9 @@ Specifies the name of a specific thread factory to use to create worker threads.
 
 swarm.jca.tracer.enabled:: 
 Specify whether tracer is enabled
+
+swarm.jca.workmanagers._KEY_.elytron-enabled:: 
+Enables Elytron security for this workmanager.
 
 swarm.jca.workmanagers._KEY_.long-running-threads._KEY_.allow-core-timeout:: 
 Whether core threads may time out.

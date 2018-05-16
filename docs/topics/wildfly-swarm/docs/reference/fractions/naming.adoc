@@ -1,4 +1,4 @@
-# Naming
+= Naming
 
 Provides support for JNDI.
 

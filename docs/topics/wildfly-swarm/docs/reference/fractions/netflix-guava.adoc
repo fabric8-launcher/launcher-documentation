@@ -1,6 +1,4 @@
-= JSON-P
-
-Provides support for JSON Processing according to JSR-353.
+= Guava
 
 
 .Maven Coordinates
@@ -8,7 +6,7 @@ Provides support for JSON Processing according to JSR-353.
 ----
 <dependency>
   <groupId>org.wildfly.swarm</groupId>
-  <artifactId>jsonp</artifactId>
+  <artifactId>netflix-guava</artifactId>
 </dependency>
 ----
 

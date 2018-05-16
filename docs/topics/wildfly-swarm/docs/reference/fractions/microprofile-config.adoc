@@ -1,0 +1,30 @@
+= Eclipse MicroProfile Config
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>microprofile-config</artifactId>
+</dependency>
+----
+
+.Configuration
+
+swarm.microprofile.config.config-source-providers._KEY_.attribute-class:: 
+Class of the ConfigSourceProvider to load
+
+swarm.microprofile.config.config-sources._KEY_.attribute-class:: 
+Class of the config source to load
+
+swarm.microprofile.config.config-sources._KEY_.dir:: 
+Directory that is scanned to config properties for this config source (file names are key, file content are value)
+
+swarm.microprofile.config.config-sources._KEY_.ordinal:: 
+Ordinal value for the config source
+
+swarm.microprofile.config.config-sources._KEY_.properties:: 
+Properties configured for this config source
+
+

@@ -1,6 +1,6 @@
-# Management
+= Management
 
-Provides the WildFly management API.
+Provides the {WildFly} management API.
 
 
 .Maven Coordinates
@@ -41,6 +41,9 @@ The path of the audit log file.
 swarm.management.audit-access.file-handlers._KEY_.relative-to:: 
 The name of another previously named path, or of one of the standard paths provided by the system. If 'relative-to' is provided, the value of the 'path' attribute is treated as relative to the path specified by this attribute.
 
+swarm.management.audit-access.file-handlers._KEY_.rotate-at-startup:: 
+Whether the old log file should be rotated at server startup.
+
 swarm.management.audit-access.in-memory-handlers._KEY_.max-history:: 
 The maximum number of operation stored in history for this handler.
 
@@ -48,7 +51,7 @@ swarm.management.audit-access.json-formatters._KEY_.compact::
 If true will format the JSON on one line. There may still be values containing new lines, so if having the whole record on one line is important, set escape-new-line or escape-control-characters to true.
 
 swarm.management.audit-access.json-formatters._KEY_.date-format:: 
-The date format to use as understood by {@link java.text.SimpleDateFormat}. Will be ignored if include-date="false".
+The date format to use as understood by java.text.SimpleDateFormat. Will be ignored if include-date="false".
 
 swarm.management.audit-access.json-formatters._KEY_.date-separator:: 
 The separator between the date and the rest of the formatted log message. Will be ignored if include-date="false".
@@ -147,11 +150,17 @@ If a connection drop is detected, the number of seconds to wait before reconnect
 swarm.management.audit-access.syslog-handlers._KEY_.tls-protocol.client-certificate-store-authentication.key-password:: 
 The password for the keystore key.
 
+swarm.management.audit-access.syslog-handlers._KEY_.tls-protocol.client-certificate-store-authentication.key-password-credential-reference:: 
+The reference to credential for the keystore key stored in CredentialStore under defined alias or clear text password.
+
 swarm.management.audit-access.syslog-handlers._KEY_.tls-protocol.client-certificate-store-authentication.keystore-password:: 
 The password for the keystore.
 
+swarm.management.audit-access.syslog-handlers._KEY_.tls-protocol.client-certificate-store-authentication.keystore-password-credential-reference:: 
+The reference to credential for the keystore password stored in CredentialStore under defined alias or clear text password.
+
 swarm.management.audit-access.syslog-handlers._KEY_.tls-protocol.client-certificate-store-authentication.keystore-path:: 
-=The path of the keystore.
+The path of the keystore.
 
 swarm.management.audit-access.syslog-handlers._KEY_.tls-protocol.client-certificate-store-authentication.keystore-relative-to:: 
 The name of another previously named path, or of one of the standard paths provided by the system. If 'keystore-relative-to' is provided, the value of the 'keystore-path' attribute is treated as relative to the path specified by this attribute.
@@ -171,8 +180,11 @@ If a connection drop is detected, the number of seconds to wait before reconnect
 swarm.management.audit-access.syslog-handlers._KEY_.tls-protocol.truststore-authentication.keystore-password:: 
 The password for the truststore.
 
+swarm.management.audit-access.syslog-handlers._KEY_.tls-protocol.truststore-authentication.keystore-password-credential-reference:: 
+The reference to credential for the truststore password stored in CredentialStore under defined alias or clear text password.
+
 swarm.management.audit-access.syslog-handlers._KEY_.tls-protocol.truststore-authentication.keystore-path:: 
-=The path of the truststore.
+The path of the truststore.
 
 swarm.management.audit-access.syslog-handlers._KEY_.tls-protocol.truststore-authentication.keystore-relative-to:: 
 The name of another previously named path, or of one of the standard paths provided by the system. If 'keystore-relative-to' is provided, the value of the 'keystore-path' attribute is treated as relative to the path specified by this attribute.
@@ -255,6 +267,9 @@ Whether targets having this application type constraint are considered applicati
 swarm.management.authorization-access.standard-role-names:: 
 The official names of the standard roles supported by the current management access control provider.
 
+swarm.management.authorization-access.use-identity-roles:: 
+Should the raw roles obtained from the underlying security identity be used directly?
+
 swarm.management.authorization-access.vault-expression-constraint.configured-requires-read:: 
 Set to override the default as to whether reading attributes containing vault expressions should be considered sensitive.
 
@@ -279,6 +294,12 @@ Comma separated list of trusted Origins for sending Cross-Origin Resource Sharin
 swarm.management.http-interface-management-interface.console-enabled:: 
 Flag that indicates admin console is enabled
 
+swarm.management.http-interface-management-interface.http-authentication-factory:: 
+The authentication policy to use to secure the interface for normal HTTP requests.
+
+swarm.management.http-interface-management-interface.http-upgrade:: 
+HTTP Upgrade specific configuration
+
 swarm.management.http-interface-management-interface.http-upgrade-enabled:: 
 Flag that indicates HTTP Upgrade is enabled, which allows HTTP requests to be upgraded to native remoting connections
 
@@ -286,16 +307,19 @@ swarm.management.http-interface-management-interface.sasl-protocol::
 The name of the protocol to be passed to the SASL mechanisms used for authentication.
 
 swarm.management.http-interface-management-interface.secure-socket-binding:: 
-The name of the socket binding configuration to use for the HTTPS management interface's socket.
+The name of the socket binding configuration to use for the HTTPS management interface's socket.  When defined at least one of ssl-context or security-realm must also be defined.
 
 swarm.management.http-interface-management-interface.security-realm:: 
-The security realm to use for the HTTP management interface.
+The legacy security realm to use for the HTTP management interface.
 
 swarm.management.http-interface-management-interface.server-name:: 
 The name of the server used in the initial Remoting exchange and within the SASL mechanisms.
 
 swarm.management.http-interface-management-interface.socket-binding:: 
 The name of the socket binding configuration to use for the HTTP management interface's socket.
+
+swarm.management.http-interface-management-interface.ssl-context:: 
+Reference to the SSLContext to use for this management interface.
 
 swarm.management.http.disable:: 
 Flag to disable HTTP access to management interface
@@ -305,6 +329,12 @@ Port for HTTP access to management interface
 
 swarm.management.https.port:: 
 Port for HTTPS access to management interface
+
+swarm.management.identity-access.security-domain:: 
+Reference to the security domain to use to obtain the current identity performing a management request.
+
+swarm.management.ldap-connections._KEY_.always-send-client-cert:: 
+If true, the client SSL certificate will be sent to LDAP server with every request; otherwise the client SSL certificate will not be sent when verifying the user credentials
 
 swarm.management.ldap-connections._KEY_.handles-referrals-for:: 
 List of URLs that this connection handles referrals for.
@@ -320,6 +350,9 @@ The referral handling mode for this connection.
 
 swarm.management.ldap-connections._KEY_.search-credential:: 
 The credential to use when connecting to perform a search.
+
+swarm.management.ldap-connections._KEY_.search-credential-reference:: 
+The reference to the search credential stored in CredentialStore under defined alias or clear text password.
 
 swarm.management.ldap-connections._KEY_.search-dn:: 
 The distinguished name to use when connecting to the LDAP server to perform searches.
@@ -346,7 +379,7 @@ swarm.management.management-operations-service.active-operations._KEY_.domain-ro
 True if the operation is a subsidiary request on a domain process other than the one directly handling the original operation, executing locally as part of the rollout of the original operation across the domain.
 
 swarm.management.management-operations-service.active-operations._KEY_.domain-uuid:: 
-Identifier of an overall multi-process domain operation of which this operation is a part, or undefined is this operation is not associated with such a domain operation.
+Identifier of an overall multi-process domain operation of which this operation is a part, or undefined if this operation is not associated with such a domain operation.
 
 swarm.management.management-operations-service.active-operations._KEY_.exclusive-running-time:: 
 Amount of time the operation has been executing with the exclusive operation execution lock held, or -1 if the operation does not hold the exclusive execution lock.
@@ -360,17 +393,23 @@ The name of the operation, or '<hidden>' if the caller is not authorized to addr
 swarm.management.management-operations-service.active-operations._KEY_.running-time:: 
 Amount of time the operation has been executing.
 
+swarm.management.native-interface-management-interface.sasl-authentication-factory:: 
+The SASL authentication policy to use to secure this interface.
+
 swarm.management.native-interface-management-interface.sasl-protocol:: 
 The name of the protocol to be passed to the SASL mechanisms used for authentication.
 
 swarm.management.native-interface-management-interface.security-realm:: 
-The security realm to use for the native management interface.
+The legacy security realm to use for the native management interface.
 
 swarm.management.native-interface-management-interface.server-name:: 
 The name of the server used in the initial Remoting exchange and within the SASL mechanisms.
 
 swarm.management.native-interface-management-interface.socket-binding:: 
 The name of the socket binding configuration to use for the native management interface's socket.
+
+swarm.management.native-interface-management-interface.ssl-context:: 
+Reference to the SSLContext to use for this management interface.
 
 swarm.management.security-realms._KEY_.jaas-authentication.assign-groups:: 
 Map the roles loaded by JAAS to groups.
@@ -573,6 +612,9 @@ Which attribute on a group entry is it's simple name.
 swarm.management.security-realms._KEY_.ldap-authorization.principal-to-group-group-search.iterative:: 
 Should further searches be performed to identify groups that the groups identified are a member of?
 
+swarm.management.security-realms._KEY_.ldap-authorization.principal-to-group-group-search.parse-group-name-from-dn:: 
+Should the group name be extracted from the distinguished name.
+
 swarm.management.security-realms._KEY_.ldap-authorization.principal-to-group-group-search.prefer-original-connection:: 
 After following a referral should subsequent searches prefer the original connection or use the connection of the last referral.
 
@@ -687,6 +729,9 @@ The path of the properties file containing the users roles.
 swarm.management.security-realms._KEY_.properties-authorization.relative-to:: 
 The name of another previously named path, or of one of the standard paths provided by the system. If 'relative-to' is provided, the value of the 'path' attribute is treated as relative to the path specified by this attribute.
 
+swarm.management.security-realms._KEY_.secret-server-identity.credential-reference:: 
+The reference to credential for the secret / password stored in CredentialStore under defined alias or clear text password.
+
 swarm.management.security-realms._KEY_.secret-server-identity.value:: 
 The secret / password - Base64 Encoded.
 
@@ -705,8 +750,14 @@ If the keystore does not exist and this attribute is set then a self signed cert
 swarm.management.security-realms._KEY_.ssl-server-identity.key-password:: 
 The password to obtain the key from the keystore.
 
+swarm.management.security-realms._KEY_.ssl-server-identity.key-password-credential-reference:: 
+The reference to credential for the keystore key stored in CredentialStore under defined alias or clear text password.
+
 swarm.management.security-realms._KEY_.ssl-server-identity.keystore-password:: 
 The password to open the keystore.
+
+swarm.management.security-realms._KEY_.ssl-server-identity.keystore-password-credential-reference:: 
+The reference to credential for the keystore password stored in CredentialStore under defined alias or clear text password.
 
 swarm.management.security-realms._KEY_.ssl-server-identity.keystore-path:: 
 The path of the keystore, will be ignored if the keystore-provider is anything other than JKS.
@@ -723,6 +774,9 @@ The protocol to use when creating the SSLContext.
 swarm.management.security-realms._KEY_.truststore-authentication.keystore-password:: 
 The password to open the keystore.
 
+swarm.management.security-realms._KEY_.truststore-authentication.keystore-password-credential-reference:: 
+The reference to credential for the keystore password stored in CredentialStore under defined alias or clear text password.
+
 swarm.management.security-realms._KEY_.truststore-authentication.keystore-path:: 
 The path of the keystore, will be ignored if the keystore-provider is anything other than JKS.
 
@@ -731,6 +785,9 @@ The provider for loading the keystore, defaults to JKS.
 
 swarm.management.security-realms._KEY_.truststore-authentication.keystore-relative-to:: 
 The name of another previously named path, or of one of the standard paths provided by the system. If 'relative-to' is provided, the value of the 'path' attribute is treated as relative to the path specified by this attribute.
+
+swarm.management.security-realms._KEY_.users-authentication.users._KEY_.credential-reference:: 
+The reference to credential for the password stored in CredentialStore under defined alias or clear text password.
 
 swarm.management.security-realms._KEY_.users-authentication.users._KEY_.password:: 
 The user's password.

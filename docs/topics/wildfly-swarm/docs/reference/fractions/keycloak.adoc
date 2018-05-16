@@ -27,6 +27,9 @@ Base URL of the Realm Auth Server
 swarm.keycloak.realms._KEY_.auth-server-url-for-backend-requests:: 
 URL to use to make background calls to auth server
 
+swarm.keycloak.realms._KEY_.autodetect-bearer-only:: 
+autodetect bearer-only requests
+
 swarm.keycloak.realms._KEY_.client-key-password:: 
 n/a
 
@@ -36,6 +39,9 @@ n/a
 swarm.keycloak.realms._KEY_.client-keystore-password:: 
 n/a
 
+swarm.keycloak.realms._KEY_.confidential-port:: 
+Specify the confidential port (SSL/TLS) used by the Realm Auth Server
+
 swarm.keycloak.realms._KEY_.connection-pool-size:: 
 Connection pool size for the client used by the adapter
 
@@ -44,6 +50,9 @@ CORS allowed headers
 
 swarm.keycloak.realms._KEY_.cors-allowed-methods:: 
 CORS allowed methods
+
+swarm.keycloak.realms._KEY_.cors-exposed-headers:: 
+CORS exposed headers
 
 swarm.keycloak.realms._KEY_.cors-max-age:: 
 CORS max-age header
@@ -56,6 +65,9 @@ Enable Keycloak CORS support
 
 swarm.keycloak.realms._KEY_.expose-token:: 
 Enable secure URL that exposes access token
+
+swarm.keycloak.realms._KEY_.ignore-oauth-query-parameter:: 
+disable query parameter parsing for access_token
 
 swarm.keycloak.realms._KEY_.principal-attribute:: 
 token attribute to use to set Principal name
@@ -93,6 +105,9 @@ Base URL of the Realm Auth Server
 swarm.keycloak.secure-deployments._KEY_.auth-server-url-for-backend-requests:: 
 URL to use to make background calls to auth server
 
+swarm.keycloak.secure-deployments._KEY_.autodetect-bearer-only:: 
+autodetect bearer-only requests
+
 swarm.keycloak.secure-deployments._KEY_.bearer-only:: 
 Bearer Token Auth only
 
@@ -105,6 +120,9 @@ n/a
 swarm.keycloak.secure-deployments._KEY_.client-keystore-password:: 
 n/a
 
+swarm.keycloak.secure-deployments._KEY_.confidential-port:: 
+Specify the confidential port (SSL/TLS) used by the Realm Auth Server
+
 swarm.keycloak.secure-deployments._KEY_.connection-pool-size:: 
 Connection pool size for the client used by the adapter
 
@@ -113,6 +131,9 @@ CORS allowed headers
 
 swarm.keycloak.secure-deployments._KEY_.cors-allowed-methods:: 
 CORS allowed methods
+
+swarm.keycloak.secure-deployments._KEY_.cors-exposed-headers:: 
+CORS exposed headers
 
 swarm.keycloak.secure-deployments._KEY_.cors-max-age:: 
 CORS max-age header
@@ -132,6 +153,9 @@ Enable Keycloak CORS support
 swarm.keycloak.secure-deployments._KEY_.expose-token:: 
 Enable secure URL that exposes access token
 
+swarm.keycloak.secure-deployments._KEY_.ignore-oauth-query-parameter:: 
+disable query parameter parsing for access_token
+
 swarm.keycloak.secure-deployments._KEY_.min-time-between-jwks-requests:: 
 If adapter recognize token signed by unknown public key, it will try to download new public key from keycloak server. However it won't try to download if already tried it in less than 'min-time-between-jwks-requests' seconds
 
@@ -146,6 +170,9 @@ Keycloak realm
 
 swarm.keycloak.secure-deployments._KEY_.realm-public-key:: 
 Public key of the realm
+
+swarm.keycloak.secure-deployments._KEY_.redirect-rewrite-rules._KEY_.value:: 
+redirect-rewrite-rule value
 
 swarm.keycloak.secure-deployments._KEY_.register-node-at-startup:: 
 Cluster setting
@@ -175,6 +202,117 @@ swarm.keycloak.secure-deployments._KEY_.turn-off-change-session-id-on-login::
 The session id is changed by default on a successful login.  Change this to true if you want to turn this off
 
 swarm.keycloak.secure-deployments._KEY_.use-resource-role-mappings:: 
+Use resource level permissions from token
+
+swarm.keycloak.secure-servers._KEY_.allow-any-hostname:: 
+SSL Setting
+
+swarm.keycloak.secure-servers._KEY_.always-refresh-token:: 
+Refresh token on every single web request
+
+swarm.keycloak.secure-servers._KEY_.auth-server-url:: 
+Base URL of the Realm Auth Server
+
+swarm.keycloak.secure-servers._KEY_.auth-server-url-for-backend-requests:: 
+URL to use to make background calls to auth server
+
+swarm.keycloak.secure-servers._KEY_.autodetect-bearer-only:: 
+autodetect bearer-only requests
+
+swarm.keycloak.secure-servers._KEY_.bearer-only:: 
+Bearer Token Auth only
+
+swarm.keycloak.secure-servers._KEY_.client-key-password:: 
+n/a
+
+swarm.keycloak.secure-servers._KEY_.client-keystore:: 
+n/a
+
+swarm.keycloak.secure-servers._KEY_.client-keystore-password:: 
+n/a
+
+swarm.keycloak.secure-servers._KEY_.confidential-port:: 
+Specify the confidential port (SSL/TLS) used by the Realm Auth Server
+
+swarm.keycloak.secure-servers._KEY_.connection-pool-size:: 
+Connection pool size for the client used by the adapter
+
+swarm.keycloak.secure-servers._KEY_.cors-allowed-headers:: 
+CORS allowed headers
+
+swarm.keycloak.secure-servers._KEY_.cors-allowed-methods:: 
+CORS allowed methods
+
+swarm.keycloak.secure-servers._KEY_.cors-exposed-headers:: 
+CORS exposed headers
+
+swarm.keycloak.secure-servers._KEY_.cors-max-age:: 
+CORS max-age header
+
+swarm.keycloak.secure-servers._KEY_.credentials._KEY_.value:: 
+Credential value
+
+swarm.keycloak.secure-servers._KEY_.disable-trust-manager:: 
+Adapter will not use a trust manager when making adapter HTTPS requests
+
+swarm.keycloak.secure-servers._KEY_.enable-basic-auth:: 
+Enable Basic Authentication
+
+swarm.keycloak.secure-servers._KEY_.enable-cors:: 
+Enable Keycloak CORS support
+
+swarm.keycloak.secure-servers._KEY_.expose-token:: 
+Enable secure URL that exposes access token
+
+swarm.keycloak.secure-servers._KEY_.ignore-oauth-query-parameter:: 
+disable query parameter parsing for access_token
+
+swarm.keycloak.secure-servers._KEY_.min-time-between-jwks-requests:: 
+If adapter recognize token signed by unknown public key, it will try to download new public key from keycloak server. However it won't try to download if already tried it in less than 'min-time-between-jwks-requests' seconds
+
+swarm.keycloak.secure-servers._KEY_.principal-attribute:: 
+token attribute to use to set Principal name
+
+swarm.keycloak.secure-servers._KEY_.public-client:: 
+Public client
+
+swarm.keycloak.secure-servers._KEY_.realm:: 
+Keycloak realm
+
+swarm.keycloak.secure-servers._KEY_.realm-public-key:: 
+Public key of the realm
+
+swarm.keycloak.secure-servers._KEY_.redirect-rewrite-rules._KEY_.value:: 
+redirect-rewrite-rule value
+
+swarm.keycloak.secure-servers._KEY_.register-node-at-startup:: 
+Cluster setting
+
+swarm.keycloak.secure-servers._KEY_.register-node-period:: 
+how often to re-register node
+
+swarm.keycloak.secure-servers._KEY_.resource:: 
+Application name
+
+swarm.keycloak.secure-servers._KEY_.ssl-required:: 
+Specify if SSL is required (valid values are all, external and none)
+
+swarm.keycloak.secure-servers._KEY_.token-minimum-time-to-live:: 
+The adapter will refresh the token if the current token is expired OR will expire in 'token-minimum-time-to-live' seconds or less
+
+swarm.keycloak.secure-servers._KEY_.token-store:: 
+cookie or session storage for auth session data
+
+swarm.keycloak.secure-servers._KEY_.truststore:: 
+Truststore used for adapter client HTTPS requests
+
+swarm.keycloak.secure-servers._KEY_.truststore-password:: 
+Password of the Truststore
+
+swarm.keycloak.secure-servers._KEY_.turn-off-change-session-id-on-login:: 
+The session id is changed by default on a successful login.  Change this to true if you want to turn this off
+
+swarm.keycloak.secure-servers._KEY_.use-resource-role-mappings:: 
 Use resource level permissions from token
 
 

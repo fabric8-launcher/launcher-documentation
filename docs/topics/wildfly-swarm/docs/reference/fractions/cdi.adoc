@@ -1,4 +1,4 @@
-# CDI
+= CDI
 
 Provides context and dependency-injection support according to JSR-299.
 
@@ -22,5 +22,8 @@ If true then the non-portable mode is enabled. The non-portable mode is suggeste
 
 swarm.cdi.require-bean-descriptor:: 
 If true then implicit bean archives without bean descriptor file (beans.xml) are ignored by Weld
+
+swarm.cdi.thread-pool-size:: 
+The number of threads to be used by the Weld thread pool. The pool is shared across all CDI-enabled deployments and used primarily for parallel Weld bootstrap.
 
 

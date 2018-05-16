@@ -1,4 +1,4 @@
-# JSF
+= JSF
 
 Provides support for JavaServer Faces according to JSR-344.
 

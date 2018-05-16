@@ -1,12 +1,12 @@
-# Datasources Fraction
+= Datasources
 
 Provides support for container-managed database connections.
 
-## Autodetectable drivers
+== Autodetectable drivers
 
 If your application includes the appropriate vendor JDBC
 library in its normal dependencies, these drivers will be detected
-and installed by WildFly Swarm without any additional effort.
+and installed by {Thorntail} without any additional effort.
 
 The list of detectable drivers and their `driver-name` which
 may be used when defining a datasource is as follows:
@@ -141,6 +141,9 @@ The allocation retry wait millis element specifies the amount of time, in millis
 swarm.datasources.data-sources._KEY_.allow-multiple-users:: 
 Specifies if multiple users will access the datasource through the getConnection(user, password) method and hence if the internal pool type should account for that
 
+swarm.datasources.data-sources._KEY_.authentication-context:: 
+The Elytron authentication context which defines the javax.security.auth.Subject that is used to distinguish connections in the pool.
+
 swarm.datasources.data-sources._KEY_.background-validation:: 
 An element to specify that connections should be validated on a background thread versus being validated prior to use. Changing this value can be done only on disabled datasource,  requires a server restart otherwise.
 
@@ -180,6 +183,9 @@ Each connection-property specifies a string name/value pair with the property na
 swarm.datasources.data-sources._KEY_.connection-url:: 
 The JDBC driver connection URL
 
+swarm.datasources.data-sources._KEY_.credential-reference:: 
+Credential (from Credential Store) to authenticate on data source
+
 swarm.datasources.data-sources._KEY_.datasource-class:: 
 The fully qualified name of the JDBC datasource class
 
@@ -188,6 +194,9 @@ The fully qualified name of the JDBC driver class
 
 swarm.datasources.data-sources._KEY_.driver-name:: 
 Defines the JDBC driver the datasource should use. It is a symbolic name matching the the name of installed driver. In case the driver is deployed as jar, the name is the name of deployment unit
+
+swarm.datasources.data-sources._KEY_.elytron-enabled:: 
+Enables Elytron security for handling authentication of connections. The Elytron authentication-context to be used will be current context if no context is specified (see authentication-context).
 
 swarm.datasources.data-sources._KEY_.enlistment-trace:: 
 Defines if WildFly/IronJacamar should record enlistment traces
@@ -199,7 +208,7 @@ swarm.datasources.data-sources._KEY_.exception-sorter-properties::
 The exception sorter properties
 
 swarm.datasources.data-sources._KEY_.flush-strategy:: 
-Specifies how the pool should be flush in case of an error. Valid values are: FailingConnectionOnly (default), IdleConnections and EntirePool
+Specifies how the pool should be flush in case of an error.
 
 swarm.datasources.data-sources._KEY_.idle-timeout-minutes:: 
 The idle-timeout-minutes elements specifies the maximum time, in minutes, a connection may be idle before being closed. The actual maximum time depends also on the IdleRemover scan time, which is half of the smallest idle-timeout-minutes value of any pool. Changing this value can be done only on disabled datasource, requires a server restart otherwise.
@@ -229,7 +238,7 @@ swarm.datasources.data-sources._KEY_.password::
 Specifies the password used when creating a new connection
 
 swarm.datasources.data-sources._KEY_.pool-fair:: 
-Defines if pool should use be fair
+Defines if pool use should be fair
 
 swarm.datasources.data-sources._KEY_.pool-prefill:: 
 Should the pool be prefilled. Changing this value can be done only on disabled datasource, requires a server restart otherwise.
@@ -250,7 +259,7 @@ swarm.datasources.data-sources._KEY_.reauth-plugin-properties::
 The properties for the reauthentication plugin
 
 swarm.datasources.data-sources._KEY_.security-domain:: 
-Specifies the security domain which defines the javax.security.auth.Subject that are used to distinguish connections in the pool
+Specifies the PicketBox security domain which defines the PicketBox javax.security.auth.Subject that are used to distinguish connections in the pool
 
 swarm.datasources.data-sources._KEY_.set-tx-query-timeout:: 
 Whether to set the query timeout based on the time remaining until transaction timeout. Any configured query timeout will be used if there is no transaction
@@ -277,7 +286,7 @@ swarm.datasources.data-sources._KEY_.tracking::
 Defines if IronJacamar should track connection handles across transaction boundaries
 
 swarm.datasources.data-sources._KEY_.transaction-isolation:: 
-Set the java.sql.Connection transaction isolation level. Valid values are: TRANSACTION_READ_UNCOMMITTED, TRANSACTION_READ_COMMITTED, TRANSACTION_REPEATABLE_READ, TRANSACTION_SERIALIZABLE and TRANSACTION_NONE
+Set the java.sql.Connection transaction isolation level. Valid values are: TRANSACTION_READ_UNCOMMITTED, TRANSACTION_READ_COMMITTED, TRANSACTION_REPEATABLE_READ, TRANSACTION_SERIALIZABLE and TRANSACTION_NONE. Different values are used to set customLevel using TransactionIsolation#customLevel
 
 swarm.datasources.data-sources._KEY_.url-delimiter:: 
 Specifies the delimiter for URLs in connection-url for HA datasources
@@ -342,6 +351,9 @@ Whether or not the driver is JDBC compliant
 swarm.datasources.jdbc-drivers._KEY_.module-slot:: 
 The slot of the module from which the driver was loaded, if it was loaded from the module path
 
+swarm.datasources.jdbc-drivers._KEY_.profile:: 
+Domain Profile in which driver is defined. Null in case of standalone server
+
 swarm.datasources.jdbc-drivers._KEY_.xa-datasource-class:: 
 XA datasource class
 
@@ -354,11 +366,14 @@ The allocation retry wait millis element specifies the amount of time, in millis
 swarm.datasources.xa-data-sources._KEY_.allow-multiple-users:: 
 Specifies if multiple users will access the datasource through the getConnection(user, password) method and hence if the internal pool type should account for that
 
+swarm.datasources.xa-data-sources._KEY_.authentication-context:: 
+The Elytron authentication context which defines the javax.security.auth.Subject that is used to distinguish connections in the pool.
+
 swarm.datasources.xa-data-sources._KEY_.background-validation:: 
-An element to specify that connections should be validated on a background thread versus being validated prior to use. Changing this value can be done only on disabled datasource,  requires a server restart otherwise.
+An element to specify that connections should be validated on a background thread versus being validated prior to use.
 
 swarm.datasources.xa-data-sources._KEY_.background-validation-millis:: 
-The background-validation-millis element specifies the amount of time, in milliseconds, that background validation will run. Changing this value can be done only on disabled datasource,  requires a server restart otherwise
+The background-validation-millis element specifies the amount of time, in milliseconds, that background validation will run.
 
 swarm.datasources.xa-data-sources._KEY_.blocking-timeout-wait-millis:: 
 The blocking-timeout-millis element specifies the maximum time, in milliseconds, to block while waiting for a connection before throwing an exception. Note that this blocks only while waiting for locking a connection, and will never throw an exception if creating a new connection takes an inordinately long time
@@ -387,8 +402,14 @@ Speciefies class name extending org.jboss.jca.adapters.jdbc.spi.listener.Connect
 swarm.datasources.xa-data-sources._KEY_.connection-listener-property:: 
 Properties to be injected in class specified in connection-listener-class
 
+swarm.datasources.xa-data-sources._KEY_.credential-reference:: 
+Credential (from Credential Store) to authenticate on data source
+
 swarm.datasources.xa-data-sources._KEY_.driver-name:: 
 Defines the JDBC driver the datasource should use. It is a symbolic name matching the the name of installed driver. In case the driver is deployed as jar, the name is the name of deployment unit
+
+swarm.datasources.xa-data-sources._KEY_.elytron-enabled:: 
+Enables Elytron security for handling authentication of connections for recovery. The Elytron authentication-context to be used will be current context if no context is specified (see authentication-context).
 
 swarm.datasources.xa-data-sources._KEY_.enlistment-trace:: 
 Defines if WildFly/IronJacamar should record enlistment traces
@@ -400,7 +421,7 @@ swarm.datasources.xa-data-sources._KEY_.exception-sorter-properties::
 The exception sorter properties
 
 swarm.datasources.xa-data-sources._KEY_.flush-strategy:: 
-Specifies how the pool should be flush in case of an error. Valid values are: FailingConnectionOnly (default), IdleConnections and EntirePool
+Specifies how the pool should be flush in case of an error.
 
 swarm.datasources.xa-data-sources._KEY_.idle-timeout-minutes:: 
 The idle-timeout-minutes elements specifies the maximum time, in minutes, a connection may be idle before being closed. The actual maximum time depends also on the IdleRemover scan time, which is half of the smallest idle-timeout-minutes value of any pool. Changing this value can be done only on disabled datasource, requires a server restart otherwise.
@@ -439,7 +460,7 @@ swarm.datasources.xa-data-sources._KEY_.password::
 Specifies the password used when creating a new connection
 
 swarm.datasources.xa-data-sources._KEY_.pool-fair:: 
-Defines if pool should use be fair
+Defines if pool use should be fair
 
 swarm.datasources.xa-data-sources._KEY_.pool-prefill:: 
 Should the pool be prefilled. Changing this value can be done only on disabled datasource, requires a server restart otherwise.
@@ -458,6 +479,15 @@ The fully qualified class name of the reauthentication plugin implementation
 
 swarm.datasources.xa-data-sources._KEY_.reauth-plugin-properties:: 
 The properties for the reauthentication plugin
+
+swarm.datasources.xa-data-sources._KEY_.recovery-authentication-context:: 
+The Elytron authentication context which defines the javax.security.auth.Subject that is used to distinguish connections in the pool.
+
+swarm.datasources.xa-data-sources._KEY_.recovery-credential-reference:: 
+Credential (from Credential Store) to authenticate on data source
+
+swarm.datasources.xa-data-sources._KEY_.recovery-elytron-enabled:: 
+Enables Elytron security for handling authentication of connections for recovery. The Elytron authentication-context to be used will be current context if no context is specified (see authentication-context).
 
 swarm.datasources.xa-data-sources._KEY_.recovery-password:: 
 The password used for recovery
@@ -478,7 +508,7 @@ swarm.datasources.xa-data-sources._KEY_.same-rm-override::
 The is-same-rm-override element allows one to unconditionally set whether the javax.transaction.xa.XAResource.isSameRM(XAResource) returns true or false
 
 swarm.datasources.xa-data-sources._KEY_.security-domain:: 
-Specifies the security domain which defines the javax.security.auth.Subject that are used to distinguish connections in the pool
+Specifies the PicketBox security domain which defines the javax.security.auth.Subject that are used to distinguish connections in the pool
 
 swarm.datasources.xa-data-sources._KEY_.set-tx-query-timeout:: 
 Whether to set the query timeout based on the time remaining until transaction timeout. Any configured query timeout will be used if there is no transaction
@@ -505,7 +535,7 @@ swarm.datasources.xa-data-sources._KEY_.tracking::
 Defines if IronJacamar should track connection handles across transaction boundaries
 
 swarm.datasources.xa-data-sources._KEY_.transaction-isolation:: 
-Set the java.sql.Connection transaction isolation level. Valid values are: TRANSACTION_READ_UNCOMMITTED, TRANSACTION_READ_COMMITTED, TRANSACTION_REPEATABLE_READ, TRANSACTION_SERIALIZABLE and TRANSACTION_NONE
+Set the java.sql.Connection transaction isolation level. Valid values are: TRANSACTION_READ_UNCOMMITTED, TRANSACTION_READ_COMMITTED, TRANSACTION_REPEATABLE_READ, TRANSACTION_SERIALIZABLE and TRANSACTION_NONE. Different values are used to set customLevel using TransactionIsolation#customLevel.
 
 swarm.datasources.xa-data-sources._KEY_.url-delimiter:: 
 Specifies the delimiter for URLs in connection-url for HA datasources
