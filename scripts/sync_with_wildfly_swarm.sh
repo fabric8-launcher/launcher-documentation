@@ -5,7 +5,7 @@ TEMP_DIR="$(mktemp -d)"                                                     # Te
 
 REPO_NAME="wildfly-swarm"                                                   # Repository base name, and the directory name on the disk
 REPO_URL="git@github.com:wildfly-swarm-prod/${REPO_NAME}.git"               # Repo Git URL
-REPO_BRANCH="7.0.x"                                                         # Branch to be synchronized
+REPO_BRANCH="7.1.x"                                                         # Branch to be synchronized
 MAVEN_SETTINGS_URL="https://github.com/wildfly-swarm-prod/wildfly-swarm-repository/blob/master/debug-utils/settingsForLocalM2.xml" # Maven settings to use when building
 
 FILES_LIST="${SCRIPT_SRC}/wildfly-swarm-files.txt"                          # File with file- or directory names to synchronize
