@@ -1,0 +1,5 @@
+= Deploying your Booster to {OpenShiftContainerPlatform}
+
+IMPORTANT: In order to deploy a booster to {OpenShiftContainerPlatform}, you must first create it using link:{link-launcher-oso}[{launcher-oso] or link:{link-getting-started-guide}#osl-create-booster[the {launcher} tool on a {OpenShiftLocal}].
+
+To use the `oc` CLI Client with {OpenShiftContainerPlatform}, follow the same steps as with your {OpenShiftLocal} but use the authentication token and URL from the {OpenShiftContainerPlatform} Web Console.

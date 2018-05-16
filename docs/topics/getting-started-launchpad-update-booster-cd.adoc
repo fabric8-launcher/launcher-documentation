@@ -1,0 +1,45 @@
+[[update-cd]]
+= Updating Using Continuous Delivery
+
+This approach allows you to deploy updates directly from the GitHub repository created by the {launcher}.
+
+To update your booster using continuous delivery:
+
+. Clone your project from GitHub.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git clone git@github.com:USERNAME/PROJECT-NAME.git
+----
+
+. Open your project in your desired IDE or editor, such as xref:use_devstudio[Developer Studio].
+
+. Perform any updates you want to the the project. For example, if you were using the {VertX} HTTP booster, you could update the `src/main/resources/webroot/index.html` to have a different title in the `<h1>` element.
++
+.Example update to `index.html`
+[source,xml,options="nowrap",subs="attributes+"]
+----
+<div class="container">
+
+    <div>
+        <h1>Vert.x HTTP Booster - Updated</h1>
+----
+
+. Commit and push your changes back to GitHub.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git add src/main/resources/webroot/index.html
+$ git commit -m "Updated title of main page"
+$ git push
+----
+
+. Navigate back to the {OpenShiftLocal} Web console and ensure your mission's project is selected.
+
+. Click on _Builds_ then _Pipelines_.
+
+. Click _Start Pipeline_ to start a new build with your updates.
++
+A new build will appear in the _Recent Runs_ list and the status of the `Build` and `Deploy` stages will appear. Optionally, you can click _View Log_ in your build to see the logs in Jenkins.
+
+. After the `Deploy` stage is complete, return to the deployed version of your mission's booster application and observe that your changes appear.

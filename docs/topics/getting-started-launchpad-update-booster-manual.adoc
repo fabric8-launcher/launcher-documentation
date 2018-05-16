@@ -1,0 +1,61 @@
+= Updating Manually
+
+This approach allows you to deploy updates directly from a local version of the GitHub repository created by {launcher}.
+
+To update your mission manually:
+
+. Clone your project from GitHub.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git clone git@github.com:USERNAME/PROJECT-NAME.git
+----
+
+. Open your project in your desired IDE or editor, such as xref:use_devstudio[Developer Studio].
+
+. Perform any updates you want to the project. For example, if you were using the {VertX} HTTP booster, you could update the `src/main/resources/webroot/index.html` to have a different title in the `<h1>` element.
++
+.Example update to `index.html`
+[source,xml,options="nowrap",subs="attributes+"]
+----
+<div class="container">
+
+    <div>
+        <h1>Vert.x HTTP Booster - Updated</h1>
+----
+
+. Ensure you are logged in with your `oc` CLI client.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc login {link-osl-auth}
+  ...follow prompts for username and password; ie. developer/developer
+
+  - or -
+
+$ oc login {link-osl-auth} --token=$MYTOKEN
+ ...@see how to obtain your token in note below
+
+$ oc project {project-name}
+----
++
+NOTE: You can find your token in your {OpenShiftLocal} Web console. For example, if your {link-osl-auth} is `https://{osl-login-url}`, your token would be located at `https://{osl-login-url}/console/command-line`.
+
+. Use maven to start the deployment to your {OpenShiftLocal}.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn clean fabric8:deploy -Popenshift -DskipTests
+----
++
+This command uses the Fabric8 Maven Plugin to launch the link:{link-wf-swarm-runtime-guide}#s2i-build-process[S2I process] on your {OpenShiftLocal} and to start the pod.
++
+NOTE: A mission's booster may contain tests that assume the build process is running on OpenShift. Since you are building your mission's booster outside of OpenShift before deploying it, you can use `-DskipTests` to skip the testing process. When xref:update-cd[updating using continuous deployment], these tests will not be skipped.
+
+. Navigate back to your {OpenShiftLocal} Web console and ensure your mission's project is selected.
+
+. Click on _Builds_ then _Builds_.
++
+A new build will appear in the list and the status will appear.
+
+. After the build is complete, return to the deployed version of your mission's booster application and observe that your changes appear.

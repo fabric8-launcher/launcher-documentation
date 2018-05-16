@@ -1,0 +1,8 @@
+= Cloning the {VertX} Secured Booster
+
+You need to clone the secured booster, which includes a submodule for the {RHSSO} portion of the booster.
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git clone --recurse-submodules https://github.com/openshiftio-vertx-boosters/vertx-secured-http-booster
+----

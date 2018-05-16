@@ -1,6 +1,0 @@
-proc_deploying-the-cache-booster-using-the-oc-cli-client.adoc
-proc_deploying-the-circuit-breaker-booster-using-the-oc-cli-client.adoc
-proc_deploying-the-configmap-booster-using-the-oc-cli-client.adoc
-proc_deploying-the-crud-booster-using-the-oc-cli-client.adoc
-proc_deploying-the-health-check-booster-using-the-oc-cli-client.adoc
-proc_deploying-the-rest-api-booster-using-the-oc-cli-client.adoc

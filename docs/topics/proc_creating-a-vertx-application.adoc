@@ -1,0 +1,75 @@
+[id='creating-an-application_{context}']
+= Creating an application
+
+Create a simple `Greeting` application to run on OpenShift using {Vertx}.
+The following procedure shows you how to:
+
+* Write some simple application code that makes use of functionalities provided by {Vertx}.
+* Declare dependencies and configure the application build using a `pom.xml` file.
+* Start your application on localhost and verify that it works.
+
+
+.Prerequisites
+
+* Maven installed.
+* JDK 8 or later installed.
+
+.Procedure
+
+. Create the application directory and navigate to it.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mkdir myApp
+$ cd myApp
+----
+
+. Create a `pom.xml` file.
++
+ifdef::vert-x[]
+[source,xml,options="nowrap",subs="attributes+"]
+----
+include::resources/vertx-starter-example-pom.xml[]
+----
+endif::[]
+ifdef::spring-boot[]
+[source,xml,options="nowrap",subs="attributes+"]
+----
+include::resources/spring-boot-starter-example-pom.xml[]
+----
+endif::[]
+
+. Create a new class in `src/main/java/com/example/`.
++
+As a recommended practice, ensure that the location of your class within the directory structure of your project reflects the value that you set for `groupId` in your `pom.xml` file.
+For example, for `<groupId>my.awesome.project</groupId>`, the location of the class should be `src/main/java/my/awesome/project/`.
++
+.Example `src/main/java/com/example/MyApp.java`
++
+ifdef::vert-x[]
+[source,java,options="nowrap",subs="attributes+"]
+----
+include::resources/vertxGreetingApp.java[]
+----
+endif::[]
+ifdef::spring-boot[]
+[source,java,options="nowrap",subs="attributes+"]
+----
+include::resources/springBootGreetingApp.java[]
+----
+endif::[]
+
+. Start your application. Execute the following command in the directory containing you application.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+{parameter-maven-command}
+----
+
+. Using `curl` or your browser, verify your application is running at `http://localhost:8080`.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl http://localhost:8080
+{"content":"Greetings!"}
+----
