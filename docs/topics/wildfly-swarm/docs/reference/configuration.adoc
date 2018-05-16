@@ -1,7 +1,7 @@
 [#configuring-a-wildfly-swarm-application]
-= Configuring a WildFly Swarm application
+= Configuring a {Thorntail} application
 
-You can configure numerous options with applications built with WildFly Swarm.
+You can configure numerous options with applications built with {Thorntail}.
 For all options, reasonable defaults are already applied, so you do not have to change any options unless you explicitly want to.
 
 This reference is a complete list of all configurable items, grouped by the fraction that introduces them.
@@ -67,6 +67,20 @@ To use a property on the command line, pass it as a command-line parameter to th
 $ java -Dswarm.bind.address=127.0.0.1 -jar myapp-swarm.jar
 ----
 
+[discrete]
+==== Specifying JDBC drivers for hollow JARs
+
+When executing a hollow JAR, you can specify a JDBC Driver JAR using the `swarm.classpath` property.
+This way, you do not need to package the driver in the hollow JAR.
+
+[source,bash]
+----
+$ java -Dswarm.classpath=./h2-1.4.196.jar -jar microprofile-jpa-hollow-swarm.jar example-jpa-jaxrs-cdi.war
+----
+
+The `swarm.classpath` property accepts one or more paths to JAR files separated by `;`.
+The specified JAR files are added to the classpath of the application.
+
 [#configuring-an-application-using-yaml]
 == Configuring an application using YAML
 
@@ -95,7 +109,7 @@ swarm:
 [discrete]
 === Default YAML Files
 
-If the original `.war` file with your application contains a file named `project-defaults.yml`, that file represents the defaults applied over the absolute defaults that WildFly Swarm provides.
+If the original `.war` file with your application contains a file named `project-defaults.yml`, that file represents the defaults applied over the absolute defaults that {Thorntail} provides.
 
 In addition to the `project-defaults.yml` file, you can provide specific configuration files using the `-S <name>` command-line option.
 The specified files are loaded, in the order you provided them, before `project-defaults.yml`.

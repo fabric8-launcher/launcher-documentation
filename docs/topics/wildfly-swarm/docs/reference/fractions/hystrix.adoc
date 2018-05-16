@@ -1,0 +1,120 @@
+= Hystrix
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>hystrix</artifactId>
+</dependency>
+----
+
+.Configuration
+
+swarm.hystrix.collapser.default.maxRequestsInBatch:: 
+The maximum number of requests allowed in a batch before this triggers a batch execution
+
+swarm.hystrix.collapser.default.requestCache.enabled:: 
+Indicates whether request caching is enabled for HystrixCollapser.execute() and HystrixCollapser.queue() invocations
+
+swarm.hystrix.collapser.default.timerDelayInMilliseconds:: 
+The number of milliseconds after the creation of the batch that its execution is triggered
+
+swarm.hystrix.command.default.circuitBreaker.enabled:: 
+Determines whether a circuit breaker will be used to track health and to short-circuit requests if it trips
+
+swarm.hystrix.command.default.circuitBreaker.errorThresholdPercentage:: 
+The error percentage at or above which the circuit should trip open and start short-circuiting requests to fallback logic
+
+swarm.hystrix.command.default.circuitBreaker.forceClosed:: 
+If true, forces the circuit breaker into a closed state in which it will allow requests regardless of the error percentage
+
+swarm.hystrix.command.default.circuitBreaker.forceOpen:: 
+If true, forces the circuit breaker into an open (tripped) state in which it will reject all requests
+
+swarm.hystrix.command.default.circuitBreaker.requestVolumeThreshold:: 
+The minimum number of requests in a rolling window that will trip the circuit
+
+swarm.hystrix.command.default.circuitBreaker.sleepWindowInMilliseconds:: 
+The amount of time, after tripping the circuit, to reject requests before allowing attempts again to determine if the circuit should again be closed
+
+swarm.hystrix.command.default.execution.isolation.semaphore.maxConcurrentRequests:: 
+The maximum number of requests allowed to a HystrixCommand.run() method when you are using ExecutionIsolationStrategy.SEMAPHORE
+
+swarm.hystrix.command.default.execution.isolation.strategy:: 
+Isolation strategy (THREAD or SEMAPHORE)
+
+swarm.hystrix.command.default.execution.isolation.thread.interruptOnCancel:: 
+Indicates whether the HystrixCommand.run() execution should be interrupted when a cancellation occurs
+
+swarm.hystrix.command.default.execution.isolation.thread.interruptOnTimeout:: 
+Indicates whether the HystrixCommand.run() execution should be interrupted when a timeout occurs
+
+swarm.hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds:: 
+The time in milliseconds after which the caller will observe a timeout and walk away from the command execution
+
+swarm.hystrix.command.default.execution.timeout.enabled:: 
+Indicates whether the HystrixCommand.run() execution should have a timeout
+
+swarm.hystrix.command.default.fallback.enabled:: 
+Determines whether a call to HystrixCommand.getFallback() will be attempted when failure or rejection occurs
+
+swarm.hystrix.command.default.fallback.isolation.semaphore.maxConcurrentRequests:: 
+The maximum number of requests allowed to a HystrixCommand.getFallback() method when you are using ExecutionIsolationStrategy.SEMAPHORE
+
+swarm.hystrix.command.default.metrics.healthSnapshot.intervalInMilliseconds:: 
+The time to wait, in milliseconds, between allowing health snapshots to be taken that calculate success and error percentages and affect circuit breaker status
+
+swarm.hystrix.command.default.metrics.rollingPercentile.bucketSize:: 
+The maximum number of execution times that are kept per bucket
+
+swarm.hystrix.command.default.metrics.rollingPercentile.enabled:: 
+Indicates whether execution latencies should be tracked and calculated as percentiles
+
+swarm.hystrix.command.default.metrics.rollingPercentile.numBuckets:: 
+The number of buckets the rollingPercentile window will be divided into
+
+swarm.hystrix.command.default.metrics.rollingPercentile.timeInMilliseconds:: 
+The duration of the rolling window in which execution times are kept to allow for percentile calculations, in milliseconds
+
+swarm.hystrix.command.default.metrics.rollingStats.numBuckets:: 
+The number of buckets the rolling statistical window is divided into
+
+swarm.hystrix.command.default.metrics.rollingStats.timeInMilliseconds:: 
+The duration of the statistical rolling window, in milliseconds. This is how long Hystrix keeps metrics for the circuit breaker to use and for publishing
+
+swarm.hystrix.command.default.requestCache.enabled:: 
+Indicates whether HystrixCommand.getCacheKey() should be used with HystrixRequestCache to provide de-duplication functionality via request-scoped caching
+
+swarm.hystrix.command.default.requestLog.enabled:: 
+Indicates whether HystrixCommand execution and events should be logged to HystrixRequestLog
+
+swarm.hystrix.stream.path:: 
+Context path for the stream
+
+swarm.hystrix.threadpool.default.allowMaximumSizeToDivergeFromCoreSize:: 
+Allows the configuration for maximumSize to take effect
+
+swarm.hystrix.threadpool.default.coreSize:: 
+The core thread-pool size
+
+swarm.hystrix.threadpool.default.keepAliveTimeMinutes:: 
+The keep-alive time, in minutes
+
+swarm.hystrix.threadpool.default.maxQueueSize:: 
+The maximum queue size of the BlockingQueue implementation
+
+swarm.hystrix.threadpool.default.maximumSize:: 
+The maximum thread-pool size
+
+swarm.hystrix.threadpool.default.metrics.rollingPercentile.numBuckets:: 
+The number of buckets the rolling statistical window is divided into
+
+swarm.hystrix.threadpool.default.metrics.rollingStats.timeInMilliseconds:: 
+The duration of the statistical rolling window, in milliseconds
+
+swarm.hystrix.threadpool.default.queueSizeRejectionThreshold:: 
+The queue size rejection threshold - an artificial maximum queue size at which rejections will occur even if maxQueueSize has not been reached
+
+

@@ -1,4 +1,4 @@
-# Logging
+= Logging
 
 Provides facilities to configure logging categories, levels and handlers.
 
@@ -30,6 +30,9 @@ A filter expression value to define a filter. Example for a filter that does not
 swarm.logging.async-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this handler. Message levels lower than this value will be discarded.
 
+swarm.logging.async-handlers._KEY_.name:: 
+The name of the handler.
+
 swarm.logging.async-handlers._KEY_.overflow-action:: 
 Specify what action to take when the overflowing.  The valid options are 'block' and 'discard'
 
@@ -56,6 +59,9 @@ Defines a pattern for the formatter.
 
 swarm.logging.console-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this logger. Message levels lower than this value will be discarded.
+
+swarm.logging.console-handlers._KEY_.name:: 
+The name of the handler.
 
 swarm.logging.console-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.
@@ -93,6 +99,9 @@ The log level specifying which message levels will be logged by this logger. Mes
 swarm.logging.custom-handlers._KEY_.module:: 
 The module that the logging handler depends on.
 
+swarm.logging.custom-handlers._KEY_.name:: 
+The name of the handler.
+
 swarm.logging.custom-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.
 
@@ -123,6 +132,9 @@ Defines a pattern for the formatter.
 swarm.logging.file-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this logger. Message levels lower than this value will be discarded.
 
+swarm.logging.file-handlers._KEY_.name:: 
+The name of the handler.
+
 swarm.logging.file-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.
 
@@ -151,7 +163,7 @@ swarm.logging.loggers._KEY_.level::
 The log level specifying which message levels will be logged by the logger. Message levels lower than this value will be discarded.
 
 swarm.logging.loggers._KEY_.use-parent-handlers:: 
-Specifies whether or not this logger should send its output to it's parent Logger.
+Specifies whether or not this logger should send its output to its parent Logger.
 
 swarm.logging.logging-profiles._KEY_.async-handlers._KEY_.enabled:: 
 If set to true the handler is enabled and functioning as normal, if set to false the handler is ignored when processing log messages.
@@ -161,6 +173,9 @@ A filter expression value to define a filter. Example for a filter that does not
 
 swarm.logging.logging-profiles._KEY_.async-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this handler. Message levels lower than this value will be discarded.
+
+swarm.logging.logging-profiles._KEY_.async-handlers._KEY_.name:: 
+The name of the handler.
 
 swarm.logging.logging-profiles._KEY_.async-handlers._KEY_.overflow-action:: 
 Specify what action to take when the overflowing.  The valid options are 'block' and 'discard'
@@ -188,6 +203,9 @@ Defines a pattern for the formatter.
 
 swarm.logging.logging-profiles._KEY_.console-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this logger. Message levels lower than this value will be discarded.
+
+swarm.logging.logging-profiles._KEY_.console-handlers._KEY_.name:: 
+The name of the handler.
 
 swarm.logging.logging-profiles._KEY_.console-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.
@@ -225,6 +243,9 @@ The log level specifying which message levels will be logged by this logger. Mes
 swarm.logging.logging-profiles._KEY_.custom-handlers._KEY_.module:: 
 The module that the logging handler depends on.
 
+swarm.logging.logging-profiles._KEY_.custom-handlers._KEY_.name:: 
+The name of the handler.
+
 swarm.logging.logging-profiles._KEY_.custom-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.
 
@@ -255,6 +276,9 @@ Defines a pattern for the formatter.
 swarm.logging.logging-profiles._KEY_.file-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this logger. Message levels lower than this value will be discarded.
 
+swarm.logging.logging-profiles._KEY_.file-handlers._KEY_.name:: 
+The name of the handler.
+
 swarm.logging.logging-profiles._KEY_.file-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.
 
@@ -283,7 +307,7 @@ swarm.logging.logging-profiles._KEY_.loggers._KEY_.level::
 The log level specifying which message levels will be logged by the logger. Message levels lower than this value will be discarded.
 
 swarm.logging.logging-profiles._KEY_.loggers._KEY_.use-parent-handlers:: 
-Specifies whether or not this logger should send its output to it's parent Logger.
+Specifies whether or not this logger should send its output to its parent Logger.
 
 swarm.logging.logging-profiles._KEY_.pattern-formatters._KEY_.color-map:: 
 The color-map attribute allows for a comma delimited list of colors to be used for different levels with a pattern formatter. The format for the color mapping pattern is level-name:color-name.Valid Levels; severe, fatal, error, warn, warning, info, debug, trace, config, fine, finer, finest Valid Colors; black, green, red, yellow, blue, magenta, cyan, white, brightblack, brightred, brightgreen, brightblue, brightyellow, brightmagenta, brightcyan, brightwhite
@@ -314,6 +338,9 @@ Defines a pattern for the formatter.
 
 swarm.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this logger. Message levels lower than this value will be discarded.
+
+swarm.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.name:: 
+The name of the handler.
 
 swarm.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.
@@ -347,6 +374,9 @@ The log level specifying which message levels will be logged by this logger. Mes
 
 swarm.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.max-backup-index:: 
 The maximum number of backups to keep.
+
+swarm.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.name:: 
+The name of the handler.
 
 swarm.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.
@@ -395,6 +425,9 @@ The log level specifying which message levels will be logged by this logger. Mes
 
 swarm.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.max-backup-index:: 
 The maximum number of backups to keep.
+
+swarm.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.name:: 
+The name of the handler.
 
 swarm.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.
@@ -462,6 +495,9 @@ Defines a pattern for the formatter.
 swarm.logging.periodic-rotating-file-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this logger. Message levels lower than this value will be discarded.
 
+swarm.logging.periodic-rotating-file-handlers._KEY_.name:: 
+The name of the handler.
+
 swarm.logging.periodic-rotating-file-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.
 
@@ -494,6 +530,9 @@ The log level specifying which message levels will be logged by this logger. Mes
 
 swarm.logging.periodic-size-rotating-file-handlers._KEY_.max-backup-index:: 
 The maximum number of backups to keep.
+
+swarm.logging.periodic-size-rotating-file-handlers._KEY_.name:: 
+The name of the handler.
 
 swarm.logging.periodic-size-rotating-file-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.
@@ -542,6 +581,9 @@ The log level specifying which message levels will be logged by this logger. Mes
 
 swarm.logging.size-rotating-file-handlers._KEY_.max-backup-index:: 
 The maximum number of backups to keep.
+
+swarm.logging.size-rotating-file-handlers._KEY_.name:: 
+The name of the handler.
 
 swarm.logging.size-rotating-file-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.

@@ -1,4 +1,4 @@
-# Remoting
+= Remoting
 
 Primarily an internal fraction providing remote invocation
 support for higher-level fractions such as EJB.
@@ -20,6 +20,9 @@ The "authentication-provider" element contains the name of the authentication pr
 
 swarm.remoting.connectors._KEY_.properties._KEY_.value:: 
 The property value.
+
+swarm.remoting.connectors._KEY_.sasl-authentication-factory:: 
+Reference to the SASL authentication factory to secure this connector.
 
 swarm.remoting.connectors._KEY_.sasl-protocol:: 
 The protocol to pass into the SASL mechanisms used for authentication.
@@ -67,7 +70,10 @@ swarm.remoting.connectors._KEY_.server-name::
 The server name to send in the initial message exchange and for SASL based authentication.
 
 swarm.remoting.connectors._KEY_.socket-binding:: 
-The name (or names) of the socket binding(s) to attach to.
+The name of the socket binding to attach to.
+
+swarm.remoting.connectors._KEY_.ssl-context:: 
+Reference to the SSLContext to use for this connector.
 
 swarm.remoting.endpoint-configuration.auth-realm:: 
 The authentication realm to use if no authentication {@code CallbackHandler} is specified.
@@ -85,22 +91,22 @@ swarm.remoting.endpoint-configuration.heartbeat-interval::
 The interval to use for connection heartbeat, in milliseconds.  If the connection is idle in the outbound directionfor this amount of time, a ping message will be sent, which will trigger a corresponding reply message.
 
 swarm.remoting.endpoint-configuration.max-inbound-channels:: 
-The maximum number of concurrent inbound messages on a channel.
+The maximum number of inbound channels to support for a connection.
 
 swarm.remoting.endpoint-configuration.max-inbound-message-size:: 
 The maximum inbound message size to be allowed.  Messages exceeding this size will cause an exception to be thrown on the reading side as well as the writing side.
 
 swarm.remoting.endpoint-configuration.max-inbound-messages:: 
-The maximum number of inbound channels to support for a connection.
+The maximum number of concurrent inbound messages on a channel.
 
 swarm.remoting.endpoint-configuration.max-outbound-channels:: 
-The maximum number of concurrent outbound messages on a channel.
+The maximum number of outbound channels to support for a connection.
 
 swarm.remoting.endpoint-configuration.max-outbound-message-size:: 
 The maximum outbound message size to send.  No messages larger than this well be transmitted; attempting to do so will cause an exception on the writing side.
 
 swarm.remoting.endpoint-configuration.max-outbound-messages:: 
-The maximum number of outbound channels to support for a connection.
+The maximum number of concurrent outbound messages on a channel.
 
 swarm.remoting.endpoint-configuration.receive-buffer-size:: 
 The size of the largest buffer that this endpoint will accept over a connection.
@@ -131,6 +137,9 @@ The name (or names) of a connector in the Undertow subsystem to connect to.
 
 swarm.remoting.http-connectors._KEY_.properties._KEY_.value:: 
 The property value.
+
+swarm.remoting.http-connectors._KEY_.sasl-authentication-factory:: 
+Reference to the SASL authentication factory to use for this connector.
 
 swarm.remoting.http-connectors._KEY_.sasl-protocol:: 
 The protocol to pass into the SASL mechanisms used for authentication.
@@ -192,6 +201,9 @@ The connection URI for the outbound connection.
 swarm.remoting.port:: 
 Port for legacy remoting connector
 
+swarm.remoting.remote-outbound-connections._KEY_.authentication-context:: 
+Reference to the authentication context instance containing the configuration for outbound connections.
+
 swarm.remoting.remote-outbound-connections._KEY_.outbound-socket-binding-ref:: 
 Name of the outbound-socket-binding which will be used to determine the destination address and port for the connection.
 
@@ -199,7 +211,7 @@ swarm.remoting.remote-outbound-connections._KEY_.properties._KEY_.value::
 The property value.
 
 swarm.remoting.remote-outbound-connections._KEY_.protocol:: 
-The protocol to use for the remote connection. Defaults to http-remoting.
+The protocol to use for the remote connection.
 
 swarm.remoting.remote-outbound-connections._KEY_.security-realm:: 
 Reference to the security realm to use to obtain the password and SSL configuration.
@@ -209,5 +221,23 @@ The user name to use when authenticating against the remote server.
 
 swarm.remoting.required:: 
 (not yet documented)
+
+swarm.remoting.worker-read-threads:: 
+The number of read threads to create for the remoting worker.
+
+swarm.remoting.worker-task-core-threads:: 
+The number of core threads for the remoting worker task thread pool.
+
+swarm.remoting.worker-task-keepalive:: 
+The number of milliseconds to keep non-core remoting worker task threads alive.
+
+swarm.remoting.worker-task-limit:: 
+The maximum number of remoting worker tasks to allow before rejecting.
+
+swarm.remoting.worker-task-max-threads:: 
+The maximum number of threads for the remoting worker task thread pool.
+
+swarm.remoting.worker-write-threads:: 
+The number of write threads to create for the remoting worker.
 
 

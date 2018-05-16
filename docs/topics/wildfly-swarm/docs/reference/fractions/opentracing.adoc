@@ -1,0 +1,18 @@
+= OpenTracing
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>opentracing</artifactId>
+</dependency>
+----
+
+.Configuration
+
+swarm.opentracing.servlet.skipPattern:: 
+The servlet skip pattern as a Java compilable Pattern. Optional. Ex.: `/health-check`
+
+

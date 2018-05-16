@@ -1,3 +1,5 @@
+include::fractions/archaius.adoc[leveloffset=+0]
+
 include::fractions/bean-validation.adoc[leveloffset=+0]
 
 include::fractions/cdi.adoc[leveloffset=+0]
@@ -14,9 +16,15 @@ include::fractions/ee.adoc[leveloffset=+0]
 
 include::fractions/ejb.adoc[leveloffset=+0]
 
+include::fractions/elytron.adoc[leveloffset=+0]
+
 include::fractions/hibernate-validator.adoc[leveloffset=+0]
 
+include::fractions/hystrix.adoc[leveloffset=+0]
+
 include::fractions/io.adoc[leveloffset=+0]
+
+include::fractions/jaeger.adoc[leveloffset=+0]
 
 include::fractions/jaxrs.adoc[leveloffset=+0]
 
@@ -48,11 +56,27 @@ include::fractions/management.adoc[leveloffset=+0]
 
 include::fractions/microprofile.adoc[leveloffset=+0]
 
+include::fractions/microprofile-config.adoc[leveloffset=+1]
+
+include::fractions/microprofile-fault-tolerance.adoc[leveloffset=+1]
+
+include::fractions/microprofile-health.adoc[leveloffset=+1]
+
+include::fractions/microprofile-jwt.adoc[leveloffset=+1]
+
+include::fractions/microprofile-metrics.adoc[leveloffset=+1]
+
 include::fractions/monitor.adoc[leveloffset=+0]
 
 include::fractions/msc.adoc[leveloffset=+0]
 
 include::fractions/naming.adoc[leveloffset=+0]
+
+include::fractions/netflix-guava.adoc[leveloffset=+0]
+
+include::fractions/netflix-rxjava.adoc[leveloffset=+0]
+
+include::fractions/opentracing.adoc[leveloffset=+0]
 
 include::fractions/remoting.adoc[leveloffset=+0]
 

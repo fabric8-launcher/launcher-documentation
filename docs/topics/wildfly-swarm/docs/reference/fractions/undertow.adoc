@@ -1,4 +1,4 @@
-# Undertow
+= Undertow
 
 Provides basic HTTP support, including Java Servlets, JavaServer Pages (JSP),
 and JavaServer Pages Standard Tag Library (JSTL) according to JSR-340, JSR-245
@@ -34,8 +34,20 @@ Should a self-signed certificate be generated
 swarm.https.certificate.generate.host:: 
 Hostname for the generated self-signed certificate
 
+swarm.https.key.alias:: 
+Alias to the server certificate key entry in the keystore
+
+swarm.https.key.password:: 
+Password to the server certificate
+
 swarm.https.keystore.embedded:: 
 Should an embedded keystore be created
+
+swarm.https.keystore.password:: 
+Password to the server keystore
+
+swarm.https.keystore.path:: 
+Path to the server keystore
 
 swarm.https.only:: 
 Only enable the HTTPS  Listener
@@ -43,8 +55,44 @@ Only enable the HTTPS  Listener
 swarm.https.port:: 
 Set the port for the default HTTPS listener
 
-swarm.undertow.alias:: 
-Alias to the server certificate key entry in the keystore
+swarm.undertow.application-security-domains._KEY_.enable-jacc:: 
+Enable authorization using JACC
+
+swarm.undertow.application-security-domains._KEY_.http-authentication-factory:: 
+The HTTP Authentication Factory to be used by deployments that reference the mapped security domain.
+
+swarm.undertow.application-security-domains._KEY_.override-deployment-config:: 
+Should the authentication configuration in the deployment be overridden by the factory.
+
+swarm.undertow.application-security-domains._KEY_.referencing-deployments:: 
+The deployments currently referencing this mapping.
+
+swarm.undertow.application-security-domains._KEY_.single-sign-on-setting.client-ssl-context:: 
+Reference to the SSL context used to secure back-channel logout connection.
+
+swarm.undertow.application-security-domains._KEY_.single-sign-on-setting.cookie-name:: 
+Name of the cookie
+
+swarm.undertow.application-security-domains._KEY_.single-sign-on-setting.credential-reference:: 
+The credential reference to decrypt the private key entry.
+
+swarm.undertow.application-security-domains._KEY_.single-sign-on-setting.domain:: 
+The cookie domain that will be used.
+
+swarm.undertow.application-security-domains._KEY_.single-sign-on-setting.http-only:: 
+Set Cookie httpOnly attribute.
+
+swarm.undertow.application-security-domains._KEY_.single-sign-on-setting.key-alias:: 
+Alias of the private key entry used for signing and verifying back-channel logout connection.
+
+swarm.undertow.application-security-domains._KEY_.single-sign-on-setting.key-store:: 
+Reference to key store containing a private key entry.
+
+swarm.undertow.application-security-domains._KEY_.single-sign-on-setting.path:: 
+Cookie path.
+
+swarm.undertow.application-security-domains._KEY_.single-sign-on-setting.secure:: 
+Set Cookie secure attribute.
 
 swarm.undertow.buffer-caches._KEY_.buffer-size:: 
 The size of an individual buffer, in bytes.
@@ -92,13 +140,13 @@ swarm.undertow.filter-configuration.mod-clusters._KEY_.advertise-frequency::
 The frequency (in milliseconds) that mod-cluster advertises itself on the network
 
 swarm.undertow.filter-configuration.mod-clusters._KEY_.advertise-path:: 
-The path that mod-cluster is registered under, defaults to /
+The path that mod-cluster is registered under.
 
 swarm.undertow.filter-configuration.mod-clusters._KEY_.advertise-protocol:: 
-The protocol that is in use, defaults to HTTP
+The protocol that is in use.
 
 swarm.undertow.filter-configuration.mod-clusters._KEY_.advertise-socket-binding:: 
-The multicast group that is used to advertise
+The multicast group and port that is used to advertise.
 
 swarm.undertow.filter-configuration.mod-clusters._KEY_.balancers._KEY_.max-attempts:: 
 The number of attempts to send the request to a backend server
@@ -188,10 +236,13 @@ swarm.undertow.filter-configuration.mod-clusters._KEY_.connection-idle-timeout::
 The amount of time a connection can be idle before it will be closed. Connections will not time out once the pool size is down to the configured minimum (as configured by cached-connections-per-thread)
 
 swarm.undertow.filter-configuration.mod-clusters._KEY_.connections-per-thread:: 
-The number of connections that will be maintained to backend servers, per IO thread. Defaults to 10.
+The number of connections that will be maintained to backend servers, per IO thread.
 
 swarm.undertow.filter-configuration.mod-clusters._KEY_.enable-http2:: 
 If the load balancer should attempt to upgrade back end connections to HTTP2. If HTTP2 is not supported HTTP or HTTPS will be used as normal
+
+swarm.undertow.filter-configuration.mod-clusters._KEY_.failover-strategy:: 
+Determines how a failover node is chosen, in the event that the node to which a session has affinity is not available.
 
 swarm.undertow.filter-configuration.mod-clusters._KEY_.health-check-interval:: 
 The frequency of health check pings to backend nodes
@@ -218,13 +269,16 @@ swarm.undertow.filter-configuration.mod-clusters._KEY_.management-access-predica
 A predicate that is applied to incoming requests to determine if they can perform mod cluster management commands. Provides additional security on top of what is provided by limiting management to requests that originate from the management-socket-binding
 
 swarm.undertow.filter-configuration.mod-clusters._KEY_.management-socket-binding:: 
-The socket binding of the mod_cluster management port. When using mod_cluster two HTTP listeners should be defined, a public one to handle requests, and one bound to the internal network to handle mod cluster commands. This socket binding should correspond to the internal listener, and should not be publicly accessible
+The socket binding of the mod_cluster management address and port. When using mod_cluster two HTTP listeners should be defined, a public one to handle requests, and one bound to the internal network to handle mod cluster commands. This socket binding should correspond to the internal listener, and should not be publicly accessible.
 
 swarm.undertow.filter-configuration.mod-clusters._KEY_.max-ajp-packet-size:: 
 The maximum size for AJP packets. Increasing this will allow AJP to work for requests/responses that have a large amount of headers. This is an advanced option, and must be the same between load balancers and backend servers.
 
 swarm.undertow.filter-configuration.mod-clusters._KEY_.max-request-time:: 
 The max amount of time that a request to a backend node can take before it is killed
+
+swarm.undertow.filter-configuration.mod-clusters._KEY_.max-retries:: 
+The number of times to attempt to retry a request if it fails. Note that if a request is not considered idempotent then it will only be retried if the proxy can be sure it was not sent to the backend server).
 
 swarm.undertow.filter-configuration.mod-clusters._KEY_.request-queue-size:: 
 The number of requests that can be queued if the connection pool is full before requests are rejected with a 503
@@ -234,6 +288,9 @@ The security key that is used for the mod-cluster group. All members must use th
 
 swarm.undertow.filter-configuration.mod-clusters._KEY_.security-realm:: 
 The security realm that provides the SSL configuration
+
+swarm.undertow.filter-configuration.mod-clusters._KEY_.ssl-context:: 
+Reference to the SSLContext to be used by this filter.
 
 swarm.undertow.filter-configuration.mod-clusters._KEY_.use-alias:: 
 If an alias check is performed
@@ -287,7 +344,10 @@ swarm.undertow.handler-configuration.reverse-proxies._KEY_.connection-idle-timeo
 The amount of time a connection can be idle before it will be closed. Connections will not time out once the pool size is down to the configured minimum (as configured by cached-connections-per-thread)
 
 swarm.undertow.handler-configuration.reverse-proxies._KEY_.connections-per-thread:: 
-The number of connections that will be maintained to backend servers, per IO thread. Defaults to 10.
+The number of connections that will be maintained to backend servers, per IO thread.
+
+swarm.undertow.handler-configuration.reverse-proxies._KEY_.hosts._KEY_.enable-http2:: 
+If this is true then the proxy will attempt to use HTTP/2 to connect to the backend. If it is not supported it will fall back to HTTP/1.1/
 
 swarm.undertow.handler-configuration.reverse-proxies._KEY_.hosts._KEY_.instance-id:: 
 The instance id (aka JVM route) that will be used to enable sticky sessions
@@ -304,8 +364,14 @@ What kind of scheme is used
 swarm.undertow.handler-configuration.reverse-proxies._KEY_.hosts._KEY_.security-realm:: 
 The security realm that provides the SSL configuration for the connection to the host
 
+swarm.undertow.handler-configuration.reverse-proxies._KEY_.hosts._KEY_.ssl-context:: 
+Reference to the SSLContext to be used by this handler.
+
 swarm.undertow.handler-configuration.reverse-proxies._KEY_.max-request-time:: 
-The maximum time that a proxy request can be active for, before being killed. Defaults to unlimited
+The maximum time that a proxy request can be active for, before being killed
+
+swarm.undertow.handler-configuration.reverse-proxies._KEY_.max-retries:: 
+The number of times to attempt to retry a request if it fails. Note that if a request is not considered idempotent then it will only be retried if the proxy can be sure it was not sent to the backend server).
 
 swarm.undertow.handler-configuration.reverse-proxies._KEY_.problem-server-retry:: 
 Time in seconds to wait before attempting to reconnect to a server that is down
@@ -318,15 +384,6 @@ Comma separated list of session cookie names. Generally this will just be JSESSI
 
 swarm.undertow.instance-id:: 
 The cluster instance id
-
-swarm.undertow.key-password:: 
-Password to the server certificate
-
-swarm.undertow.keystore-password:: 
-Password to the server keystore
-
-swarm.undertow.keystore-path:: 
-Path to the server keystore
 
 swarm.undertow.servers._KEY_.ajp-listeners._KEY_.allow-encoded-slash:: 
 If a request comes in with encoded / characters (i.e. %2F), will these be decoded.
@@ -354,9 +411,6 @@ If this is true then the parser will decode the URL and query parameters using t
 
 swarm.undertow.servers._KEY_.ajp-listeners._KEY_.disallowed-methods:: 
 A comma separated list of HTTP methods that are not allowed
-
-swarm.undertow.servers._KEY_.ajp-listeners._KEY_.enabled:: 
-If the listener is enabled
 
 swarm.undertow.servers._KEY_.ajp-listeners._KEY_.error-count:: 
 The number of 500 responses that have been sent by this listener
@@ -389,7 +443,7 @@ swarm.undertow.servers._KEY_.ajp-listeners._KEY_.max-processing-time::
 The maximum processing time taken by a request on this listener
 
 swarm.undertow.servers._KEY_.ajp-listeners._KEY_.no-request-timeout:: 
-The length of time in milliseconds that the connection can be idle before it is closed by the container, defaults to 60000 (one minute)
+The length of time in milliseconds that the connection can be idle before it is closed by the container.
 
 swarm.undertow.servers._KEY_.ajp-listeners._KEY_.processing-time:: 
 The total processing time of all requests handed by this listener
@@ -414,6 +468,9 @@ The maximum amount of time (in milliseconds) that can be spent parsing the reque
 
 swarm.undertow.servers._KEY_.ajp-listeners._KEY_.resolve-peer-address:: 
 Enables host dns lookup
+
+swarm.undertow.servers._KEY_.ajp-listeners._KEY_.rfc6265-cookie-validation:: 
+If cookies should be validated to ensure they comply with RFC6265.
 
 swarm.undertow.servers._KEY_.ajp-listeners._KEY_.scheme:: 
 The listener scheme, can be HTTP or HTTPS. By default the scheme will be taken from the incoming AJP request.
@@ -470,7 +527,7 @@ swarm.undertow.servers._KEY_.hosts._KEY_.access-log-setting.suffix::
 Suffix for the log file name.
 
 swarm.undertow.servers._KEY_.hosts._KEY_.access-log-setting.use-server-log:: 
-If the log should be written to the server log, rather than a separate file. Defaults to false.
+If the log should be written to the server log, rather than a separate file.
 
 swarm.undertow.servers._KEY_.hosts._KEY_.access-log-setting.worker:: 
 Name of the worker to use for logging
@@ -492,6 +549,15 @@ Predicates provide a simple way of making a true/false decision  based on an exc
 
 swarm.undertow.servers._KEY_.hosts._KEY_.filter-refs._KEY_.priority:: 
 Defines filter order, it should be set to 1 or more, higher number instructs server to be included earlier in handler chain than others under same context.
+
+swarm.undertow.servers._KEY_.hosts._KEY_.http-invoker-setting.http-authentication-factory:: 
+The HTTP authentication factory to use for authentication
+
+swarm.undertow.servers._KEY_.hosts._KEY_.http-invoker-setting.path:: 
+The path that the services are installed under
+
+swarm.undertow.servers._KEY_.hosts._KEY_.http-invoker-setting.security-realm:: 
+The legacy security realm to use for authentication
 
 swarm.undertow.servers._KEY_.hosts._KEY_.locations._KEY_.filter-refs._KEY_.predicate:: 
 Predicates provide a simple way of making a true/false decision  based on an exchange. Many handlers have a requirement that they be applied conditionally, and predicates provide a general way to specify a condition.
@@ -550,9 +616,6 @@ A comma separated list of HTTP methods that are not allowed
 swarm.undertow.servers._KEY_.http-listeners._KEY_.enable-http2:: 
 Enables HTTP2 support for this listener
 
-swarm.undertow.servers._KEY_.http-listeners._KEY_.enabled:: 
-If the listener is enabled
-
 swarm.undertow.servers._KEY_.http-listeners._KEY_.error-count:: 
 The number of 500 responses that have been sent by this listener
 
@@ -599,13 +662,13 @@ swarm.undertow.servers._KEY_.http-listeners._KEY_.max-processing-time::
 The maximum processing time taken by a request on this listener
 
 swarm.undertow.servers._KEY_.http-listeners._KEY_.no-request-timeout:: 
-The length of time in milliseconds that the connection can be idle before it is closed by the container, defaults to 60000 (one minute)
+The length of time in milliseconds that the connection can be idle before it is closed by the container.
 
 swarm.undertow.servers._KEY_.http-listeners._KEY_.processing-time:: 
 The total processing time of all requests handed by this listener
 
 swarm.undertow.servers._KEY_.http-listeners._KEY_.proxy-address-forwarding:: 
-enables x-forwarded-host and similar headers and set a remote ip address and hostname
+Enables  handling of x-forwarded-host header (and other x-forwarded-* headers) and use this header information to set the remote address. This should only be used behind a trusted proxy that sets these headers otherwise a remote user can spoof their IP address.
 
 swarm.undertow.servers._KEY_.http-listeners._KEY_.read-timeout:: 
 Configure a read timeout for a socket, in milliseconds.  If the given amount of time elapses without a successful read taking place, the socket's next read will throw a {@link ReadTimeoutException}.
@@ -625,8 +688,14 @@ The number of requests this listener has served
 swarm.undertow.servers._KEY_.http-listeners._KEY_.request-parse-timeout:: 
 The maximum amount of time (in milliseconds) that can be spent parsing the request
 
+swarm.undertow.servers._KEY_.http-listeners._KEY_.require-host-http11:: 
+Require that all HTTP/1.1 requests have a 'Host' header, as per the RFC. IF the request does not include this header it will be rejected with a 403.
+
 swarm.undertow.servers._KEY_.http-listeners._KEY_.resolve-peer-address:: 
 Enables host dns lookup
+
+swarm.undertow.servers._KEY_.http-listeners._KEY_.rfc6265-cookie-validation:: 
+If cookies should be validated to ensure they comply with RFC6265.
 
 swarm.undertow.servers._KEY_.http-listeners._KEY_.secure:: 
 If this is true then requests that originate from this listener are marked as secure, even if the request is not using HTTPS.
@@ -673,6 +742,9 @@ The number of bytes that have been received by this listener
 swarm.undertow.servers._KEY_.https-listeners._KEY_.bytes-sent:: 
 The number of bytes that have been sent out on this listener
 
+swarm.undertow.servers._KEY_.https-listeners._KEY_.certificate-forwarding:: 
+If certificate forwarding should be enabled. If this is enabled then the listener will take the certificate from the SSL_CLIENT_CERT attribute. This should only be enabled if behind a proxy, and the proxy is configured to always set these headers.
+
 swarm.undertow.servers._KEY_.https-listeners._KEY_.decode-url:: 
 If this is true then the parser will decode the URL and query parameters using the selected character encoding (UTF-8 by default). If this is false they will not be decoded. This will allow a later handler to decode them into whatever charset is desired.
 
@@ -682,11 +754,8 @@ A comma separated list of HTTP methods that are not allowed
 swarm.undertow.servers._KEY_.https-listeners._KEY_.enable-http2:: 
 Enables HTTP2 support for this listener
 
-swarm.undertow.servers._KEY_.https-listeners._KEY_.enabled:: 
-If the listener is enabled
-
 swarm.undertow.servers._KEY_.https-listeners._KEY_.enabled-cipher-suites:: 
-Configures Enabled SSL cyphers
+Configures Enabled SSL ciphers
 
 swarm.undertow.servers._KEY_.https-listeners._KEY_.enabled-protocols:: 
 Configures SSL protocols
@@ -737,10 +806,13 @@ swarm.undertow.servers._KEY_.https-listeners._KEY_.max-processing-time::
 The maximum processing time taken by a request on this listener
 
 swarm.undertow.servers._KEY_.https-listeners._KEY_.no-request-timeout:: 
-The length of time in milliseconds that the connection can be idle before it is closed by the container, defaults to 60000 (one minute)
+The length of time in milliseconds that the connection can be idle before it is closed by the container.
 
 swarm.undertow.servers._KEY_.https-listeners._KEY_.processing-time:: 
 The total processing time of all requests handed by this listener
+
+swarm.undertow.servers._KEY_.https-listeners._KEY_.proxy-address-forwarding:: 
+Enables  handling of x-forwarded-host header (and other x-forwarded-* headers) and use this header information to set the remote address. This should only be used behind a trusted proxy that sets these headers otherwise a remote user can spoof their IP address.
 
 swarm.undertow.servers._KEY_.https-listeners._KEY_.read-timeout:: 
 Configure a read timeout for a socket, in milliseconds.  If the given amount of time elapses without a successful read taking place, the socket's next read will throw a {@link ReadTimeoutException}.
@@ -757,8 +829,14 @@ The number of requests this listener has served
 swarm.undertow.servers._KEY_.https-listeners._KEY_.request-parse-timeout:: 
 The maximum amount of time (in milliseconds) that can be spent parsing the request
 
+swarm.undertow.servers._KEY_.https-listeners._KEY_.require-host-http11:: 
+Require that all HTTP/1.1 requests have a 'Host' header, as per the RFC. IF the request does not include this header it will be rejected with a 403.
+
 swarm.undertow.servers._KEY_.https-listeners._KEY_.resolve-peer-address:: 
 Enables host dns lookup
+
+swarm.undertow.servers._KEY_.https-listeners._KEY_.rfc6265-cookie-validation:: 
+If cookies should be validated to ensure they comply with RFC6265.
 
 swarm.undertow.servers._KEY_.https-listeners._KEY_.secure:: 
 If this is true then requests that originate from this listener are marked as secure, even if the request is not using HTTPS.
@@ -771,6 +849,9 @@ The send buffer size, in bytes.
 
 swarm.undertow.servers._KEY_.https-listeners._KEY_.socket-binding:: 
 The listener socket binding
+
+swarm.undertow.servers._KEY_.https-listeners._KEY_.ssl-context:: 
+Reference to the SSLContext to be used by this listener.
 
 swarm.undertow.servers._KEY_.https-listeners._KEY_.ssl-session-cache-size:: 
 The maximum number of active SSL sessions
@@ -806,7 +887,7 @@ swarm.undertow.servlet-containers._KEY_.crawler-session-management-setting.sessi
 The session timeout for sessions that are owned by crawlers
 
 swarm.undertow.servlet-containers._KEY_.crawler-session-management-setting.user-agents:: 
-Regular expression that is used to match the user agenet of a crawler
+Regular expression that is used to match the user agent of a crawler
 
 swarm.undertow.servlet-containers._KEY_.default-buffer-cache:: 
 The buffer cache to use for caching static resources
@@ -823,6 +904,12 @@ If directory listing should be enabled for default servlets.
 swarm.undertow.servlet-containers._KEY_.disable-caching-for-secured-pages:: 
 If Undertow should set headers to disable caching for secured paged. Disabling this can cause security problems, as sensitive pages may be cached by an intermediary.
 
+swarm.undertow.servlet-containers._KEY_.disable-file-watch-service:: 
+If this is true then the file watch service will not be used to monitor exploded deployments for changes
+
+swarm.undertow.servlet-containers._KEY_.disable-session-id-reuse:: 
+If this is true then an unknown session ID will never be reused, and a new session id will be generated. If this is false then it will be re-used if and only if it is present in the session manager of another deployment, to allow the same session id to be shared between applications on the same server.
+
 swarm.undertow.servlet-containers._KEY_.eager-filter-initialization:: 
 If true undertow calls filter init() on deployment start rather than when first requested.
 
@@ -830,13 +917,13 @@ swarm.undertow.servlet-containers._KEY_.ignore-flush::
 Ignore flushes on the servlet output stream. In most cases these just hurt performance for no good reason.
 
 swarm.undertow.servlet-containers._KEY_.jsp-setting.check-interval:: 
-Check interval for JSP updates using a background thread.
+Check interval for JSP updates using a background thread. This has no effect for most deployments where JSP change notifications are handled using the File System notification API. This only takes effect if the file watch service is disabled.
 
 swarm.undertow.servlet-containers._KEY_.jsp-setting.development:: 
 Enable Development mode which enables reloading JSP on-the-fly
 
 swarm.undertow.servlet-containers._KEY_.jsp-setting.disabled:: 
-Enable the JSP container.
+Disable the JSP container.
 
 swarm.undertow.servlet-containers._KEY_.jsp-setting.display-source-fragment:: 
 When a runtime error occurs, attempts to display corresponding JSP source fragment
@@ -923,7 +1010,7 @@ swarm.undertow.servlet-containers._KEY_.session-cookie-setting.secure::
 Is cookie secure?
 
 swarm.undertow.servlet-containers._KEY_.session-id-length:: 
-The length of the generated session ID. Longer session ID's are more secure.
+The length of the generated session ID. Longer session ID's are more secure. This number refers to the number of bytes of randomness that are used to generate the session ID, the actual ID that is sent to the client will be base64 encoded so will be approximately 33% larger (e.g. a session id length of 30 will result in a cookie value of length 40).
 
 swarm.undertow.servlet-containers._KEY_.stack-trace-on-error:: 
 If an error page with the stack trace should be generated on error. Values are all, none and local-only
@@ -934,13 +1021,19 @@ Use encoding defined on listener
 swarm.undertow.servlet-containers._KEY_.websockets-setting.buffer-pool:: 
 The buffer pool to use for websocket deployments
 
+swarm.undertow.servlet-containers._KEY_.websockets-setting.deflater-level:: 
+Configures the level of compression of the DEFLATE algorithm
+
 swarm.undertow.servlet-containers._KEY_.websockets-setting.dispatch-to-worker:: 
 If callbacks should be dispatched to a worker thread. If this is false then they will be run in the IO thread, which is faster however care must be taken not to perform blocking operations.
+
+swarm.undertow.servlet-containers._KEY_.websockets-setting.per-message-deflate:: 
+Enables websocket's per-message compression extension, RFC-7692
 
 swarm.undertow.servlet-containers._KEY_.websockets-setting.worker:: 
 The worker to use for websocket deployments
 
 swarm.undertow.statistics-enabled:: 
-Configures if statistics are enabled
+Configures if statistics are enabled. Changes take effect on the connector level statistics immediately, deployment level statistics will only be affected after the deployment is redeployed (or the container is reloaded).
 
 

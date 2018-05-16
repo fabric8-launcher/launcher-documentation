@@ -1,0 +1,30 @@
+
+= Microprofile Fault Tolerance Fraction
+:icons: font
+
+This fraction implements the https://github.com/eclipse/microprofile-fault-tolerance[Eclipse Microprofile Fault tolerance API^].
+The implementation depends on the xref:_hystrix[Hystrix fraction], which is added transitively into your application.
+Use xref:configuring-a-wildfly-swarm-application[standard configuration mechanisms] to configure Hystrix properties in your application.
+
+== Bulkhead fallback rejection
+
+If you use the semaphore-style `@Bulkhead` pattern with a `@Fallback` logic to limit the number of concurrent requests, the invocation may still result in a `BulkheadException` if the maximum concurrent limit for the `HystrixCommand.getFallback()` method is reached.
+To avoid that, set the `swarm.hystrix.command.default.fallback.isolation.semaphore.maxConcurrentRequests` property to increase the limit.
+
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>org.wildfly.swarm</groupId>
+  <artifactId>microprofile-fault-tolerance</artifactId>
+</dependency>
+----
+
+.Configuration
+
+swarm.microprofile.fault-tolerance.synchronous-circuit-breaker:: 
+Enable/disable synchronous circuit breaker functionality. If disabled, `CircuitBreaker#successThreshold()` of value greater than 1 is not supported. Moreover, circuit breaker does not necessarily transition from `CLOSED` to `OPEN` immediately when a fault tolerance operation completes. However, applications are encouraged to disable this feature on high-volume circuits.
+
+

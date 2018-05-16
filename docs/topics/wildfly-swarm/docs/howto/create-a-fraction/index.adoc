@@ -2,14 +2,14 @@
 
 ## Introduction
 
-The composable pieces of WildFly Swarm are called _fractions_. Each fraction
+The composable pieces of {Thorntail} are called _fractions_. Each fraction
 starts with a single Maven-addressable artifact which may transitively bring
 in others.
 
 ## The `pom.xml`
 
 It is useful to set at least a pair of properties, specifying the version
-of the WildFly Swarm SPI and fraction-plugin being used:
+of the {Thorntail} SPI and fraction-plugin being used:
 
 [source,xml,subs=+attributes]
 ----
@@ -19,7 +19,7 @@ of the WildFly Swarm SPI and fraction-plugin being used:
 </properties>
 ----
 
-You can include all of the primary bits of WildFly Swarm using the
+You can include all of the primary bits of {Thorntail} using the
 `bom-all` artifact in a `<dependencyManagement>` import. Additionally,
 you'll need two more dependencies added in order to write CDI components
 to configure the server.
@@ -83,22 +83,30 @@ a fraction contributes configuration or capabilities to a runtime system.
 
 ### Package Layout
 
-For a given fraction, a unique package root is required.  In the usual
-case of the core code, it matches the pattern of `org.wildfly.swarm._CAPABILITY_`,
+For a given fraction, a unique package root is required.
+In the usual case of the core code, it matches the pattern of `org.wildfly.swarm._CAPABILITY_`,
 such as `org.wildfly.swarm.undertow` or `org.wildfly.swarm.naming`.
 
-Within the root may be two (or more) additional sub-packages, named
-'runtime' and 'deployment'.
+Within the root there may be additional sub-packages with special meaning:
 
-The `org.wildfly.swarm._CAPABILITY_.runtime` package holds classes that are
+* The `org.wildfly.swarm._CAPABILITY_.runtime` package holds classes that are
 considered "back-end" components, loaded via our internal CDI implementation
 in order to configure and setup the server.
-
-The `org.wildfly.swarm._CAPABILITY_.deployment` package holds other classes
+* The `org.wildfly.swarm._CAPABILITY_.deployment` package holds other classes
 that should not be considered either part of the front-end API of the fraction
 exposed to users, nor a part of the back-end components to configure the
 server.  Instead, the `.deployment` package is a sidecar to hold additional
 classes that may be added to deployment archives.
+* The `org.wildfly.swarm._CAPABILITY_.detect` package holds fraction autodetection logic classes.
+See also <<auto-detection>>.
+
+The `wildfly-swarm-fraction-plugin` automatically generates a number of `module.xml` descriptors depending on what features it has found in the fraction.
+Each generated module descriptor is used to isolate a particular part of a fraction functionality.
+E.g. a fraction module with `deployment` slot (which includes the content of `org.wildfly.swarm._CAPABILITY_.deployment`) is automatically added as a module dependency to any deployment.
+It’s a convenient way to add code into the user deployment for handling integrations with the container.
+Or, for example, a fraction module with `runtime` slot is used to load the fraction and any of its runtime code.
+
+NOTE: The generated descriptors may be overriden by providing the corresponding module.xml in the `src/main/resources/modules` directory.
 
 ### The `module.conf`
 
@@ -165,12 +173,12 @@ Within the `runtime` sub-package of the fraction, a variety of CDI-enabled
 components may be used.  Within these classes, you can use typical CDI mechanisms
 such as `@Inject`, `@Produces`, and `Instance<>` in order to accomplish whatever
 is required for your fraction.  Typically these components would, at the minimum,
-inject their own fraction. They should each be marked as `@ApplicationScoped`.
+inject their own fraction.
 
 [source,java]
 ----
 @ApplicationScoped
-public class MyComponents implements Whatever {
+public class MyComponent implements Whatever {
 
   @Inject
   private MyFraction myFraction;
@@ -178,41 +186,27 @@ public class MyComponents implements Whatever {
 }
 ----
 
-#### `ArchivePreparer`
+#### `DeploymentProcessor`
 
-If your fraction needs an opportunity to alter or otherwise prepare all deployed
-archives, you may implement the `org.wildfly.swarm.spi.api.ArchivePreparer` interface.
+If your fraction needs an opportunity to process the deployment, e.g. to alter or otherwise prepare the deployed archive or to process Jandex metadata of the deployed
+archive, you may implement the `org.wildfly.swarm.spi.api.DeploymentProcessor` interface. The implementation class should be marked as `@DeploymentScoped`.
 
 [source,java]
 ----
-@ApplicationScoped
-public class MyArchivePreparer implements ArchivePreparer {
+@DeploymentScoped
+public class MyDeploymentProcessor implements DeploymentProcessor {
 
   @Inject
   private MyFraction myFraction;
 
-  public void prepareArchive(Archive<?> archive) {
-    archive.as( WARArchive.class ).setContextRoot( myFraction.getContextRoot() );
-  }
-}
-----
-
-#### `ArchiveMetadataProcessor`
-
-If your fraction needs an opportunity to process the Jandex metadata of all deployed
-archives, you may implement the `org.wildfly.swarm.spi.api.ArchiveMetadataProcessor`
-interface.
-
-[source,java]
-----
-@ApplicationScoped
-public class MyArchiveMetadataProcessor implements ArchiveMetadataProcessor {
+  @Inject
+  private Archive archive;
 
   @Inject
-  private MyFraction myFraction;
+  private IndexView index;
 
-  public void processArchive(Archive<?> archive, Index index) {
-    // ...
+  public void process() {
+     archive.as(WARArchive.class).setContextRoot(myFraction.getContextRoot());
   }
 }
 
@@ -277,7 +271,7 @@ public MyArchiveProducers {
 #### `@Configurable` and `Defaultable<>`
 
 When creating a new `Fraction` implementation, each of its fields
-will automatically be configurable through the `project-*.yml` 
+will automatically be configurable through the `project-*.yml`
 mechanisms.  In the case that different names for the configurable
 items are desired, the `@Configuration` annotation may be used.
 
@@ -314,11 +308,12 @@ Generally speaking, it is easier to push all configurable bits to the
 related `*Fraction` implementation, and `@Inject` the fraction into
 the relevant CDI components.
 
+[[auto-detection]]
 ### Auto-detection
 
-An important point of WildFly Swarm is the capability of the plugin
+An important point of {Thorntail} is the capability of the plugin
 to autodetect that a fraction is required.  Currently this is only supported
-by fractions that are part of the core WildFly Swarm distribution. In
+by fractions that are part of the core {Thorntail} distribution. In
 the event that your fraction is merged into core, you will want to possibly
 also support auto-detection.
 
@@ -409,7 +404,7 @@ public interface MyFractionMessages extends BasicLogger {
 }
 ----
 
-Now, typesafe logging may occur such as 
+Now, typesafe logging may occur such as
 
 [source,java]
 ----
