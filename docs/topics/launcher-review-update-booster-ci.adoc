@@ -1,0 +1,24 @@
+.Next Steps: Update your booster using Continuous Delivery
+Your booster is automatically configured to build and deploy with new commits.
+
+. Clone your project from GitHub.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git clone {GITHUB_CREATE}
+----
+
+. Open your project in your desired IDE or editor.
+. Perform any updates you want to the project.
+. Commit and push your changes back to GitHub.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git add .
+$ git commit -m "Made an update"
+$ git push
+----
+
+IMPORTANT: When changes are pushed to your GitHub repository, a new build is automatically triggered on your OpenShift project with those changes.
+
+More details on interacting with your booster can be found in your booster's link:{GITHUB_CREATE}/blob/master/README.adoc[README.adoc^].

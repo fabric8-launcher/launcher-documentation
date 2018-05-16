@@ -1,0 +1,33 @@
+= Running Locally 
+
+. Navigate to link:{link-launcher-oso}[{launcher}] using your browser.
+. Select _Prepare for Takeoff_.
+. Choose _I will build and run locally_.
+. Choose `REST API Level 0` and click _Next_.
+. Choose the {WildFlySwarm} runtime.
+. You can update any of the additional metadata fields or leave them as the default. Click _Next_.
+. Click the _Download as ZIP File_ button.
+. Unzip the ZIP file.
+. Build and run the booster application on your local machine.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ cd booster-rest-http-wildfly-swarm
+$ mvn wildfly-swarm:run -DskipTests
+----
+
+. Interact with your booster.
++
+Use `curl` to execute a `GET` request against the booster.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl http://localhost:8080/api/greeting
+{"content":"Hello, World!"}
+$ curl http://localhost:8080/api/greeting?name=Sarah
+{"content":"Hello, Sarah!"}
+----
++
+You can also use a browser to do this by opening the booster's URL in a browser: `http://localhost:8080`. This presents a simple HTML form that enables you to make these same `GET` requests.
+
+You now have a running microservice on your local machine that you can interact with. This booster provides a microservice running using {WildFlySwarm}, specifically the link:https://github.com/wildfly-swarm-openshiftio-boosters/wfswarm-rest-http[{mission-http-api-wf-swarm-guide-name}]. 

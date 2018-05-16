@@ -23,6 +23,18 @@ set -e
 
 echo "[POLICY] === Executing Commit Hook ==="
 
+# Check launchpad files
+GIT_AVAILABLE=1 ${SCRIPT_SRC}/../scripts/check_launchpad.sh 2>&1 | (sed -e 's/^/[POLICY] /')
+# 2 is returned if binaries are missing or the index is unreachable.
+# We don't want to block the commit on that. Using PIPESTATUS because otherwise
+# we'd check for the retval of sed instead of check_launchpad.sh
+success=${PIPESTATUS[0]}
+if [ $success -ne 0 -a $success -ne 2 ]; then
+    exit 1
+elif [ $success -eq 2 ]; then
+    echo "[POLICY] Verification aborted. Continuing..."
+fi
+
 # Validate books
 ${SCRIPT_SRC}/../scripts/validate_guides.sh 2>&1 | (sed -e 's/^/[POLICY] /')
 

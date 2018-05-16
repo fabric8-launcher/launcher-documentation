@@ -47,8 +47,6 @@ include::topics/contributing-starting-preview-server.adoc[leveloffset=+3]
 
 include::topics/con_validating-guides.adoc[leveloffset=+3]
 
-include::topics/con_checking-unused-topics.adoc[leveloffset=+3]
-
 === Requirements
 
 This chapter contains the requirements your contributions must meet in order to be accepted.

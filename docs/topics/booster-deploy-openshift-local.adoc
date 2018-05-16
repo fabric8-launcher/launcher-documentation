@@ -1,0 +1,28 @@
+= Deploying the Booster to a {OpenShiftLocal}
+
+. Before you can use a {OpenShiftLocal}, you need to have it installed, configured, and running. You can find more details in link:{link-launcher-openshift-local-install-guide}#installing-a-openshiftlocal[{minishift-installation-guide-name}].
+
+. Once you have a {OpenShiftLocal} running, check the console output for the URL you can use to access it.
++
+.Example Console Output from a {OpenShiftLocal} Startup
+[source,bash,options="nowrap",subs="attributes+"]
+----
+...
+-- Removing temporary directory ... OK
+-- Server Information ...
+   OpenShift server started.
+   The server is accessible via web console at:
+       https://192.168.42.152:8443
+
+   You are logged in as:
+       User:     developer
+       Password: developer
+
+   To login as administrator:
+       oc login -u system:admin
+----
+
+== Deploying Using {launcher}
+
+Once you have the {launcher} tool link:{link-launcher-openshift-local-install-guide}[installed and configured],
+navigate to it in your {OpenShiftLocal} and use it to create and launch your booster.

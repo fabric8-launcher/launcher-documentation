@@ -1,0 +1,26 @@
+= {Vertx} Runtime Information
+
+.Certified {Vertx} Version
+
+{Vertx} version `3.42-3` is certified to run on OpenShift.
+Supported {Vertx} runtime components are provided as part of a Red Hat subscription and can be downloaded from the link:https://maven.repository.redhat.com/ga/[Red Hat Middleware JBoss General Availability Maven Repository].
+
+.Installing {Vertx}
+
+To start using {Vertx} to develop your applications, you must download the BOM file containing the certified runtime components available from the link:https://maven.repository.redhat.com/ga/[Red Hat Middleware JBoss General Availability Maven Repository].
+
+.Configuring {Vertx}
+
+To configure your application to use {Vertx}:
+
+. Reference the required artifacts in the dependency file of your application.
+. Reference `Vertx-maven-plugin` as a dependency for your application.
+
+For more information on packaging your {Vertx} application, see the link:https://vmp.fabric8.io/[Vert.x Maven plugin] documentation.
+
+.Developing Applications with {Vertx}
+
+For a quick introduction to developing with {Vertx}, see the sections on link:http://vertx.io/blog/posts/introduction-to-vertx.html[developing and testing] and link:http://Vertx.io/blog/vert-x-application-configuration/[configuring your first Vert.x application].
+For more information on setting up integration tests for your application, see the section on link:http://vertx.io/blog/unit-and-integration-tests/[unit and integration testing with {Vertx}].
+When developing a REST API for your application, follow the section link:http://vertx.io/blog/some-rest-with-vert-x/[developing a REST API with {Vertx}].
+To add persistent storage to your {Vertx} application, see the tutorial on on link:http://vertx.io/blog/using-the-asynchronous-sql-client/[using the asynchronous JDBC client] and link:http://Vertx.io/blog/combine-vert-x-and-mongo-to-build-a-giant/[MongoDB client].

@@ -1,0 +1,3 @@
+:linkattrs:
+
+Done!  We've created your booster, a starter application, in your new GitHub repo.  To learn about your app and the mission it fulfills, select it from the link:http://appdev.openshift.io/docs/getting-started.html#_next_steps[available missions documentation, window="_blank"].

@@ -1,0 +1,30 @@
+= Deploying the {name-mission-crud} Booster Application and Obtaining the Application URL
+
+You can build and deploy the {VertX} {name-mission-crud} booster application to OpenShift from source using a Jenkins Conitnuous Integration server instance running in your OpenShift project.
+
+. To define the build pipeline for the Relational Database Backend application, deploy the Jenkins CI server instance to your project by executing the following command:
++
+[source,bash,option="nowrap"]
+--
+oc new-app -f src/openshift/openshift-pipeline-template.yml
+--
++
+. To start the build, execute the following command:
++
+[source,bash,option="nowrap"]
+--
+oc start-build vertx-crud
+--
++
+. When your application is fully deployed, execute the following command to obtain its path:
++
+[source,bash,option="nowrap"]
+--
+oc get route {app-name} -o jsonpath={$.spec.host}
+--
++
+This returns the application URL that you can use to access the web interface or interact with the application endpoints:
++
+----
+vertx-crud-crud-mission.int.open.paas.redhat.com
+----

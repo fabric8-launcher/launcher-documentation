@@ -1,0 +1,22 @@
+ifeval::["{runtime}" == "Spring Boot"]
+:guideURL: http://appdev.openshift.io/docs/spring-boot-runtime.html
+:guideName: Spring Boot Runtime Guide
+endif::[]
+
+ifeval::["{runtime}" == "Eclipse Vert.x"]
+:guideURL: http://appdev.openshift.io/docs/vertx-runtime.html
+:guideName: Eclipse Vert.x Runtime Guide
+endif::[]
+
+ifeval::["{runtime}" == "WildFly Swarm"]
+:guideURL: http://appdev.openshift.io/docs/wf-swarm-runtime.html
+:guideName: WildFly Swarm Runtime Guide
+endif::[]
+
+ifeval::["{runtime}" == "Node.js"]
+:guideURL: http://appdev.openshift.io/docs/nodejs-runtime.html
+:guideName: Node.js Runtime Guide
+endif::[]
+
+
+Your project is available for download and is ready to build and deploy locally. Refer to the mission details in the link:{guideURL}[{guideName}^] for more information on building, deploying, and interacting with your booster.

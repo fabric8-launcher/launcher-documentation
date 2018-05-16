@@ -1,0 +1,4 @@
+[IMPORTANT]
+--
+You must grant *{launcher}* access to your GitHub and OpenShift accounts. You only need to do this once for every account.
+--

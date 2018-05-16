@@ -1,0 +1,15 @@
+:icons: font
+
+.Next Steps: Grant Access to the Jenkins Pod
+You need to grant the OpenShift Web console access to read information about the deployment that the Jenkins pod is performing.
+
+. Click _See it here!_ in _Creating your project on OpenShift Online_.
+. Click _View Log_ in the pipeline at the top.
++
+NOTE: It may take a few minutes for the link to appear.
+
+. Click _Login with OpenShift_ at the login prompt for Jenkins. 
+. Click _Login with Red Hat_.
+. Ensure all the boxes are checked and click _Allow selected permissions_.
+
+This grants the OpenShift Web console the correct permissions and directs you to the Jenkins pod that is deploying your application.

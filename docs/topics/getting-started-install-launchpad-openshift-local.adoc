@@ -1,0 +1,7 @@
+= Installing the {launcher} Tool on a {OpenShiftLocal}
+
+The {launcher} tool is where everything starts. It helps you create projects called _boosters_ intended to jumpstart your development with a fully-working application. Each booster fulfills a _mission_, which defines the primary objective of your new project.  As an example, a mission might define how to open an HTTP endpoint or interact with a relational database.  Over time we will continue to grow the available missions, showing you how to accomplish tasks common to real enterprise development. Since the {launcher} tool sets you up with a continuous delivery pipeline, you can evolve the example to fit your needs.
+
+The boosters are implemented in various runtimes such as {VertX}, {WildFlySwarm}, and {SpringBoot}, and within a mission are designed to be functionally equivalent. Feel free to explore how the different frameworks compare!
+
+Before you can use the {launcher} tool locally, you need to install it on a {OpenShiftLocal} and configure it to integrate with your GitHub account. Using virtual machine technology supported by your operating system, a {OpenShiftLocal} runs the OpenShift Container Platform in your own development environment.  Follow the instructions in link:{link-launcher-openshift-local-install-guide}[{minishift-installation-guide-name}] to get it set up.
