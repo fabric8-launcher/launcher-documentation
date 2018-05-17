@@ -1,0 +1,49 @@
+[id="configuring-your-application-to-use-agroal"]
+= Configuring your {VertX} application to use Agroal
+
+// hard-coded version, beacuse it does not change
+Starting with {ProductShortName} {VertX} release `3.5.1.redhat-003`, Agroal is the default JDBC connection pool, replacing c3p0 used as the default option in previous releases.
+Due to differences in property names between c3p0 and Agroal, upgrading to a newer release of {ProductShortName} {VertX} might break the JDBC client configuration of your existing {VertX} applications.
+Update the property names in the configuration of your JDBC client to avoid this issue.
+
+NOTE: To continue using c3p0 as the JDBC client for your application, set the value of the `provider_class` property in your JDBC client configuration to `io.vertx.ext.jdbc.spi.impl.C3P0DataSourceProvider`.
+
+.Procedure
+
+. Update the following property names within your JDBC client configuration to match the client you use:
+
+[options="header"]
+|===
+| c3p0 property name | Agroal property name
+| url | jdbcUrl
+| driver_class | driverClassName
+| user | principal
+| password | credential
+| castUUID | castUUID
+|===
+
+.Additional information
+
+* Example JDBC client configuration using c3p0:
++
+[source,java,options="nowrap"]
+--
+JsonObject config = new JsonObject()
+	.put("url", JDBC_URL)
+	.put("driver_class", "org.postgresql.Driver")
+	.put("user", JDBC_USER)
+	.put("password", JDBC_PASSWORD)
+	.put("castUUID", true);
+--
+
+* Example JDBC client configuration using Agroal:
++
+[source,java,options="nowrap"]
+--
+JsonObject config = new JsonObject()
+	.put("jdbcUrl", JDBC_URL)
+	.put("driverClassName", "org.postgresql.Driver")
+	.put("principal", JDBC_USER)
+	.put("credential", JDBC_PASSWORD)
+	.put("castUUID", true);
+--
