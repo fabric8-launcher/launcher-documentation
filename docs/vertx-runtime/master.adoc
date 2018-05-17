@@ -26,6 +26,8 @@ include::topics/vertx-key-concepts.adoc[leveloffset=+2]
 
 include::topics/configuring-vertx.adoc[leveloffset=+2]
 
+// agroal bit goes here
+include::topics/proc_configuring-your-vertx-application-to-use-agroal.adoc[leveloffset=+2]
 
 // MISSIONS
 include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
