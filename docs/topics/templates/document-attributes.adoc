@@ -94,7 +94,7 @@
 :Fabric8MavenPluginVersion: 3.5.38
 
 // used in the links to additional upstream Swarm docs.
-:WildFlySwarmVersion: 2017.10.0
+:WildFlySwarmVersion: 2018.3.3
 
 // spring boot version for rt guide
 :SpringBootVersion: 1.5.10.RELEASE
