@@ -89,7 +89,7 @@
 :nodejs-runtime-guide-name: {NodeJS} Runtime Guide
 
 // used in the BOM file example.
-:WildFlySwarmProductVersion: 7.0.1.redhat-20
+:WildFlySwarmProductVersion: 7.1.0.redhat-77
 // also used in pom.xml examples for Spring Boot and Vertx
 :Fabric8MavenPluginVersion: 3.5.38
 
