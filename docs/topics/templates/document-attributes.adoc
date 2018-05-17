@@ -28,6 +28,7 @@
 :CDK: Red Hat Container Development Kit
 :OpenShiftContainerPlatform: OpenShift Container Platform
 :WildFlySwarm: WildFly Swarm
+:Thorntail: WildFly Swarm // Before rename
 :SpringBoot: Spring Boot
 :VertX: Eclipse Vert.x
 :NodeJS: Node.js
