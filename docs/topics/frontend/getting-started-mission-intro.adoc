@@ -1,1 +1,0 @@
-Missions are preconfigured, functioning applications that demonstrate a fundamental aspect of modern application development running in an environment similar to production. These can be used as a proof of technology demonstration, a teaching tool, or even a sandbox for understanding how to develop applications.

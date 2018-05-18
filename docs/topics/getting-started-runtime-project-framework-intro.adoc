@@ -1,1 +1,0 @@
-We offer a choice of runtime frameworks to best fit your needs. WildFly Swarm delivers a microservices approach to Java EE, Eclipse Vert.x excels at reactive, asynchronous applications, and Spring Boot users may bring their projects to OpenShift as well.

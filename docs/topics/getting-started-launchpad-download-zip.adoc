@@ -1,4 +1,0 @@
-To launch manually, click on _I will build and run locally_ and follow the instructions in the project's guide (found linked in the README). This will:
-
-* Scaffold a project based on your chosen runtime
-* Allow you to download the project as a ZIP file

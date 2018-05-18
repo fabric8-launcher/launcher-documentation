@@ -1,8 +1,0 @@
-Mission proficiency level:
-//special case since topic is used by front end.
-ifdef::docs-topic[xref:proficiency_advanced[*{proficiency-advanced}*].]
-ifndef::docs-topic[link:https://appdev.openshift.io/docs/wf-swarm-runtime.html#proficiency_levels[*{proficiency-advanced}*^].]
-
-The {name-mission-secured} booster expands on the {name-mission-http-api} booster by securing a REST endpoint using link:https://access.redhat.com/products/red-hat-single-sign-on[{RHSSO}^]. {RHSSO} implements the link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.1/html/securing_applications_and_services_guide/openid_connect_3[Open ID Connect] protocol that is an extension of the OAuth 2.0 specification and uses it to issue access tokens to provide clients with various access rights to secured resources. Securing an application with SSO enables you to add security to your applications while centralizing the security configuration.
-
-IMPORTANT:  While this mission comes with {RHSSO} pre-configured for demonstration purposes, it does not explain its principles, usage, or configuration. Before using this mission, ensure that you are familiar with the basic concepts related to link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.1/html-single/getting_started_guide/[{RHSSO}^]. 
