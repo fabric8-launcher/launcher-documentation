@@ -1,3 +1,3 @@
 :linkattrs:
 
-Done! {OpenShiftOnline} is now configured to build and deploy your code on each push to your repository’s master branch. For more information on this build process see the link:http://appdev.openshift.io/docs/getting-started.html#build-and-deploy-process[Build and Deploy to OpenShift Build Process^] section of the Getting Started guide.
+Done! {OpenShiftOnline} is now configured to build and deploy your code on each push to your repository’s master branch. For more information on this build process see the link:http://launcher.fabric8.io/docs/getting-started.html#build-and-deploy-process[Build and Deploy to OpenShift Build Process^] section of the Getting Started guide.

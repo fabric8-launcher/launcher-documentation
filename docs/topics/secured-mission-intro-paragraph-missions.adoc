@@ -1,7 +1,7 @@
 Mission proficiency level:
 // topic is only used by missions.
 ifdef::docs-topic[xref:proficiency_advanced[*{proficiency-advanced}*].]
-ifndef::docs-topic[link:https://appdev.openshift.io/docs/wf-swarm-runtime.html#proficiency_levels[*{proficiency-advanced}*^].]
+ifndef::docs-topic[link:https://launcher.fabric8.io/docs/wf-swarm-runtime.html#proficiency_levels[*{proficiency-advanced}*^].]
 
 .What the {name-mission-secured} Booster does
 The {name-mission-secured} booster secures a REST endpoint using link:https://access.redhat.com/products/red-hat-single-sign-on[{RHSSO}^]. (This booster expands on the {name-mission-http-api} booster).

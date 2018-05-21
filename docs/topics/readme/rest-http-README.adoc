@@ -44,7 +44,7 @@ NOTE: To stop your running booster in a Linux or macOS terminal, use `CTRL+C`. I
 
 
 == Running the Booster on a Single-node OpenShift Cluster
-If you have a single-node OpenShift cluster, such as Minishift or Red Hat Container Development Kit, link:http://appdev.openshift.io/docs/minishift-installation.html[installed and running], you can also deploy your booster there. A single-node OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
+If you have a single-node OpenShift cluster, such as Minishift or Red Hat Container Development Kit, link:http://launcher.fabric8.io/docs/minishift-installation.html[installed and running], you can also deploy your booster there. A single-node OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
 
 To deploy your booster to a running single-node OpenShift cluster:
 [source,bash,options="nowrap",subs="attributes+"]

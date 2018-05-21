@@ -8,6 +8,6 @@ IMPORTANT: Your booster application is not the same as your Jenkins pod, and it 
 
 You are now at your booster's main page. For more details on interacting with your booster, see the relevant mission section in the runtime guide:
 
-* link:http://appdev.openshift.io/docs/spring-boot-runtime.html[Spring Boot Runtime Guide]
-* link:http://appdev.openshift.io/docs/vertx-runtime.html[Eclipse Vert.x Runtime Guide]
-* link:http://appdev.openshift.io/docs/wf-swarm-runtime.html[WildFly Swarm Runtime Guide]
+* link:http://launcher.fabric8.io/docs/spring-boot-runtime.html[Spring Boot Runtime Guide]
+* link:http://launcher.fabric8.io/docs/vertx-runtime.html[Eclipse Vert.x Runtime Guide]
+* link:http://launcher.fabric8.io/docs/wf-swarm-runtime.html[WildFly Swarm Runtime Guide]

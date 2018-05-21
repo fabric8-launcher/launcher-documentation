@@ -1,6 +1,6 @@
 Mission proficiency level: 
 //special case since topic is used by front end.
 ifdef::docs-topic[xref:proficiency_foundational[*{proficiency-foundational}*].]
-ifndef::docs-topic[link:https://appdev.openshift.io/docs/wf-swarm-runtime.html#proficiency_levels[*{proficiency-foundational}*^].]
+ifndef::docs-topic[link:https://launcher.fabric8.io/docs/wf-swarm-runtime.html#proficiency_levels[*{proficiency-foundational}*^].]
 
 The _Circuit Breaker_ mission demonstrates a generic pattern for reporting the failure of a service and then limiting access to the failed service until it becomes available to handle requests. This helps prevent cascading failure in other services that depend on the failed services for functionality.

@@ -1,7 +1,7 @@
 Mission proficiency level: 
 //special case since topic is used by front end.
 ifdef::docs-topic[xref:proficiency_foundational[*{proficiency-foundational}*].]
-ifndef::docs-topic[link:https://appdev.openshift.io/docs/wf-swarm-runtime.html#proficiency_levels[*{proficiency-foundational}*^].]
+ifndef::docs-topic[link:https://launcher.fabric8.io/docs/wf-swarm-runtime.html#proficiency_levels[*{proficiency-foundational}*^].]
 
 
 When you deploy an application, its important to know if it is available and if it can start handling incoming requests. Implementing the _health check_ pattern allows you to monitor the health of an application, which includes if an application is available and whether it is able to service requests.
