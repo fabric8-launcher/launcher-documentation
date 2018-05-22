@@ -334,6 +334,10 @@ include::topics/proc_starting-your-application-locally-in-debugging-mode.adoc[le
 include::topics/proc_starting-an-uberjar-in-debugging-mode.adoc[leveloffset=+3]
 :parameter-uberjar-documented!:
 
+:env-var-name: JAVA_DEBUG
+:env-var-val: true
+:port: 5005
+:nodejs!:
 include::topics/proc_starting-your-application-on-openshift-in-debugging-mode.adoc[leveloffset=+3]
 
 include::topics/proc_attaching-a-remote-debugger-to-the-application.adoc[leveloffset=+3]
