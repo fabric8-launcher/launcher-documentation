@@ -13,11 +13,11 @@ include::topics/concept_launcher-introduction.adoc[leveloffset=+1]
 
 include::topics/proc_installing-a-openshiftlocal.adoc[leveloffset=+1]
 
-include::topics/proc_starting-and-configuring-the-openshiftlocal-for-the-launcher-application.adoc[leveloffset=+1]
+include::topics/proc_starting-and-configuring-the-openshiftlocal-for-the-launcher-tool.adoc[leveloffset=+1]
 
 include::topics/proc_creating-a-github-personal-access-token.adoc[leveloffset=+1]
 
-include::topics/proc_installing-launcher-application-manually.adoc[leveloffset=+1]
+include::topics/proc_installing-launcher-tool.adoc[leveloffset=+1]
 
 // temporary location for Nexus install
 [appendix]

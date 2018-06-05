@@ -1,0 +1,43 @@
+// This is a parameterized module. Parameters used:
+//
+//  parameter-runtime: the id of the runtime used in the {context} attribute
+//  parameter-mission: id of the mission. This is used in anchors file imports and in the {context} attribute
+//  parameter-runtime-name: human-readable name of the runtime. This is used in readable text
+//  parameter-mission-name: used to display the mission name in the readable title
+//
+// Rationale: This procedure is highly similar for all boosters and mission except the Secured booster.
+
+[id='running-the-booster-integration-tests_{context}']
+= Running the {parameter-mission-name} Booster Integration Tests
+
+This booster includes a self-contained set of integration tests.
+When run inside an OpenShift project, the tests:
+
+* deploy a test instance of the application to the project,
+* execute the individual tests on that instance,
+* remove all instances of the application from the project when the testing is done.
+
+include::note-integration-tests-app-deletion-warning.adoc[]
+
+.Prerequisites
+
+* the `oc` client authenticated
+* an empty project in your OpenShift namespace
+
+ifdef::configmap-vertx,configmap-spring-boot[]
+* view access permission assigned to the service account of your booster application. This allows your application to read the configuration from the ConfigMap:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc policy add-role-to-user view -n $(oc project -q) -z default
+----
+endif::configmap-vertx,configmap-spring-boot[]
+
+.Procedure
+
+Execute the following command to run the integration tests:
+
+[source,bash,options="nowrap",subs="attributes+"]
+--
+$ mvn clean verify -Popenshift,openshift-it
+--

@@ -35,15 +35,15 @@ include::topics/contributing-branches.adoc[leveloffset=+3]
 
 === Contributing
 
-include::topics/contributing-making-changes.adoc[leveloffset=+3]
+include::topics/proc_git-workflow-for-making-changes.adoc[leveloffset=+3]
 
 include::topics/assembly_contributing-changing-existing-content.adoc[leveloffset=+3]
 
-include::topics/contributing-adding-new-guide.adoc[leveloffset=+3]
+include::topics/proc_adding-new-guide.adoc[leveloffset=+3]
 
-include::topics/contributing-building-locally.adoc[leveloffset=+3]
+include::topics/proc_building-locally.adoc[leveloffset=+3]
 
-include::topics/contributing-starting-preview-server.adoc[leveloffset=+3]
+include::topics/proc_starting-preview-server.adoc[leveloffset=+3]
 
 include::topics/con_validating-guides.adoc[leveloffset=+3]
 
@@ -57,13 +57,13 @@ include::topics/contributing-writing-the-modular-way.adoc[leveloffset=+3]
 
 === Administration
 
-include::topics/contributing-reviewing-changes.adoc[leveloffset=+3]
+include::topics/proc_reviewing-changes.adoc[leveloffset=+3]
 
-include::topics/contributing-merging-changes.adoc[leveloffset=+3]
+include::topics/proc_merging-contributions.adoc[leveloffset=+3]
 
-include::topics/contributing-syncing-with-wildfly-swarm-docs.adoc[leveloffset=+3]
+include::topics/proc_syncing-with-wildflyswarm-docs.adoc[leveloffset=+3]
 
-include::topics/contributing-releasing-new-version.adoc[leveloffset=+3]
+include::topics/proc_releasing-new-version.adoc[leveloffset=+3]
 
 === Issues
 

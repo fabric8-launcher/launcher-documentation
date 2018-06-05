@@ -1,4 +1,4 @@
-[id="configuring-your-application-to-use-agroal"]
+[id='configuring-your-vertx-application-to-use-agroal_{context}']
 = Configuring your {VertX} application to use Agroal
 
 // hard-coded version, beacuse it does not change

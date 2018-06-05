@@ -1,0 +1,68 @@
+[id='building-locally_{context}']
+
+= Building Locally
+
+When you are making a contribution, you should preview your changes before you commit or push them. This section describes the most typical procedure of doing so.
+
+[discrete]
+== Prerequisites
+
+* Asciidoctor
+
+[discrete]
+== Procedure
+
+.Building a Single Guide
+. In a console application, navigate to the directory of the book you want to build.
++
+--
+Example:
+
+[source,bash]
+----
+$ cd $REPO_HOME/docs/contribution-guide/
+----
+
+Replace `$REPO_HOME` with the real path to the repository.
+--
+
+. Execute the `build_guide.sh` script:
++
+[source,bash]
+----
+$ ./build_guide.sh
+----
+
+. View the resulting document in the `$REPO_HOME/html` directory.
++
+--
+Example:
+
+[source,bash]
+----
+$ firefox $REPO_HOME/html/docs/contribution-guide.html
+----
+
+Replace `$REPO_HOME` with the real path to the repository, and `firefox` with the name of your preferred browser.
+--
+
+.Building All Guides
+. In a console application, navigate to the `$REPO_HOME/scripts` directory.
+. Build all books by executing the `build_guides.sh` script:
++
+[source,bash]
+----
+$ ./build_guides.sh
+----
+
+. View the resulting documents in the `$REPO_HOME/html` directory:
++
+--
+[source,bash]
+----
+$ firefox $REPO_HOME/html/docs/*.html
+----
+
+Replace `$REPO_HOME` with the real path to the repository.
+--
+

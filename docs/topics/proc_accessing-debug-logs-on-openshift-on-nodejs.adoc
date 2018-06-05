@@ -1,0 +1,103 @@
+
+[id='accessing-debug-logs-on-openshift-on-nodejs_{context}']
+= Accessing Debug Logs on OpenShift on {NodeJS}
+
+Use the the `DEBUG` environment variable in your application pod in OpenShift to enable debug logging.
+
+.Prerequisites 
+* An application with debug logging.
+* The `oc` CLI client installed.
+
+
+.Procedure
+
+. Use the `oc` CLI client to log into your OpenShift instance.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc login ...
+----
+
+. Deploy your application to OpenShift.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ npm run openshift
+----
++
+This runs the `openshift` npm script, which wraps direct calls to xref:about-nodeshift[nodeshift].
+
+. Find the name of your pod and follow the logs to watch it start.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get pods
+....
+$ oc logs -f pod/POD_NAME
+----
++
+IMPORTANT: After your pod has started, leave this command running and execute the remaining steps in a new terminal window. This allows you to _follow_ the logs and see new entries made to it.
+
+. Test your application. 
++
+For example, if you had debug logging in the xref:mission-rest-http-nodejs[{name-mission-http-api} booster] to log the `name` variable in the `/api/greeting` method:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get routes
+...
+$ curl $APPLICATION_ROUTE/api/greeting?name=Sarah
+----
+
+. Return to your pod logs and notice there are no debug logging messages in the logs. 
+
+. Set the `DEBUG` environment variable to enable debug logging.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get dc
+...
+$ oc set env dc DC_NAME DEBUG=mybooster
+----
+
+. Return to your pod logs to watch the update roll out.
++
+After the update has rolled out, your pod will stop and you will no longer be following the logs.
+
+. Find the name of your new pod and follow the logs.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get pods
+....
+$ oc logs -f pod/POD_NAME
+----
++
+IMPORTANT: After your pod has started, leave this command running and execute the remaining steps in a different terminal window. This allows you to _follow_ the logs and see new entries made to it. Specifically, the logs will show your debug messages.
+
+. Test the application to invoke debug logging. 
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get routes
+...
+$ curl $APPLICATION_ROUTE/api/greeting?name=Sarah
+----
+
+. Return to your pod logs to see the debug messages.
++
+[source,options="nowrap",subs="attributes+"]
+----
+...
+mybooster name: Sarah +3m
+----
+
+
+To disable debug logging, remove the `DEBUG` environment variable from the pod:
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc set env dc DC_NAME DEBUG-
+----
+
+.Related Information
+More details on environment variables are available in the link:https://docs.openshift.com/online/dev_guide/environment_variables.html[OpenShift documentation].

@@ -1,7 +1,7 @@
 = Making Changes Locally
 
 . Stop your booster.
-. Open your project in your desired IDE or editor, such as xref:use_devstudio[Developer Studio].
+. Open your project in your desired IDE or editor, such as xref:using-red-hat-jboss-developer-studio-with-a-booster-project_{context}[Developer Studio].
 . Update `src/main/java/io/openshift/booster/GreetingEndpoint.java` to present a different greeting. 
 +
 .Example update to `GreetingEndpoint.java`

@@ -41,7 +41,7 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.a
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-basic-interaction-nodejs.adoc[leveloffset=+3]
 
@@ -67,7 +67,7 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.a
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 
 include::topics/configmap-mission-basic-interaction-nodejs.adoc[leveloffset=+3]
@@ -98,7 +98,7 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.a
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 include::topics/crud-mission-database-interaction.adoc[leveloffset=+3]
 
@@ -123,7 +123,7 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.a
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 
 include::topics/health-check-mission-basic-interaction-nodejs.adoc[leveloffset=+3]
@@ -152,7 +152,7 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.a
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 
 // CB basic interaction
@@ -220,7 +220,7 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.a
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 
 include::topics/cache-mission-basic-interaction.adoc[leveloffset=+3]
@@ -229,7 +229,7 @@ include::topics/cache-mission-basic-interaction.adoc[leveloffset=+3]
 :parameter-runtime: nodejs
 :parameter-runtime-name: {NodeJS}
 :context: {parameter-mission}-{parameter-runtime}
-include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
+include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 ////
 
 include::topics/cache-mission-resources.adoc[leveloffset=+3]
@@ -243,9 +243,9 @@ This section contains information about debugging your {NodeJS}{ndash}based appl
 === Remote Debugging 
 To remotely debug an application, you need to start it in a debugging mode and attach a debugger to it.
 
-include::topics/proc_debug-start-native-debug-nodejs.adoc[leveloffset=+3]
+include::topics/proc_starting-your-application-locally-and-attaching-the-native-debugger.adoc[leveloffset=+3]
 
-include::topics/proc_debug-start-v8-debug-nodejs.adoc[leveloffset=+3]
+include::topics/proc_starting-your-application-locally-and-attaching-the-v8-inspector.adoc[leveloffset=+3]
 
 :nodejs:
 :env-var-name: NODE_ENV
@@ -259,18 +259,18 @@ include::topics/proc_starting-your-application-on-openshift-in-debugging-mode.ad
 
 Debug logging is a way to add granular logging to an application that can be explicitly enabled only when performing debugging. This allows you to keep the logging capability in your application and only enable it when needed.
 
-include::topics/proc_add-debug-logging-nodejs.adoc[leveloffset=+3]
+include::topics/proc_add-debug-logging.adoc[leveloffset=+3]
 
-include::topics/proc_accessing-debug-logs-local-nodejs.adoc[leveloffset=+3]
+include::topics/proc_accessing-debug-logs-on-localhost.adoc[leveloffset=+3]
 
-include::topics/proc_accessing-debug-logs-on-openshift-nodejs.adoc[leveloffset=+3]
+include::topics/proc_accessing-debug-logs-on-openshift-on-nodejs.adoc[leveloffset=+3]
 
 
 == Developing an Application for the {NodeJS} Runtime
 
 include::topics/con_nodejs-runtime-api.adoc[leveloffset=+2]
 
-include::topics/proc_creating-nodejs-app.adoc[leveloffset=+2]
+include::topics/proc_creating-a-nodejs-application.adoc[leveloffset=+2]
 
 include::topics/proc_deploy-existing-nodejs-app.adoc[leveloffset=+2]
 

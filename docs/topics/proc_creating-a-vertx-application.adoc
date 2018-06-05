@@ -1,4 +1,4 @@
-[id='creating-an-application_{context}']
+[id='creating-a-vertx-application_{context}']
 = Creating a {VertX} application
 
 Create a simple `Greeting` application to run on OpenShift using {Vertx}.

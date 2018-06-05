@@ -1,5 +1,5 @@
 
-[#creating-the-secured-booster-using-launcher_{context}]
+[id='creating-the-secured-booster-using-launcher_{context}']
 = Creating the {name-mission-secured} Booster Using {launcher}
 
 .Prerequisites

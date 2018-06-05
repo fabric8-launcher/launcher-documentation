@@ -1,0 +1,93 @@
+// This is a parameterized module. Parameters used:
+//
+//  context: context of usage, e.g. "osl", "oso", "ocp", "rest-api", etc. This can also be a composite, e.g. "rest-api-oso"
+//
+// Rationale: This procedure is identical in all deployments.
+
+[id='deploying-the-http-api-booster-using-the-oc-cli-client_{context}']
+= Deploying the {name-mission-http-api} Booster using the `oc` CLI Client
+
+.Prerequisites
+
+* The booster application created using {parameter-deployment}.
+ifndef::parameter-openshiftlocal[For more information, see xref:deploying-the-booster-using-launcher-oso_{context}[].]
+ifdef::parameter-openshiftlocal[]
+For more information, see xref:deploying-the-booster-using-the-launcher-tool_{context}[].
+* Your {launcher} tool URL.
+endif::[]
+
+* The `oc` client authenticated. For more information, see xref:authenticating-the-oc-cli-client_{context}[].
+
+.Procedure
+. Clone your project from GitHub.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git clone git@github.com:USERNAME/{project-name}.git
+----
++
+Alternatively, if you downloaded a ZIP file of your project, extract it.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ unzip {project-name}.zip
+----
+
+. Create a new project in OpenShift.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc new-project {project-name}
+----
+
+. Navigate to the root directory of your booster.
+
+ifndef::http-api-nodejs[]
+. Use Maven to start the deployment to OpenShift.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn clean fabric8:deploy -Popenshift
+----
++
+This command uses the Fabric8 Maven Plugin to launch the link:{link-s2i-process}[S2I process] on OpenShift and to start the pod.
+endif::http-api-nodejs[]
+
+ifdef::http-api-nodejs[]
+. Use `npm` to start the deployment to OpenShift.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ npm install && npm run openshift
+----
++
+These commands install any missing module dependencies, then using the xref:about-nodeshift[Nodeshift] module, deploy the booster on OpenShift.
+endif::http-api-nodejs[]
+
+. Check the status of your booster and ensure your pod is running.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get pods -w
+NAME                             READY     STATUS      RESTARTS   AGE
+{app-name}-1-aaaaa               1/1       Running     0          58s
+{app-name}-s2i-1-build           0/1       Completed   0          2m
+----
++
+The `{app-name}-1-aaaaa` pod should have a status of `Running` once it is fully deployed and started.
+Your specific pod name will vary.
+The number in the middle will increase with each new build.
+The letters at the end are generated when the pod is created.
+
+
+. Once your booster is deployed and started, determine its route.
++
+.Example Route Information
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get routes
+NAME                 HOST/PORT                                                     PATH      SERVICES        PORT      TERMINATION
+{app-name}         {app-name}-{project-name}.{os-route-hostname}      {app-name}      8080
+----
++
+The route information of a pod gives you the base URL which you use to access it. In the example above, you would use `\http://{app-name}-{project-name}.{os-route-hostname}` as the base URL to access the application.

@@ -1,0 +1,34 @@
+
+[id='accessing-debug-logs-on-localhost_{context}']
+= Accessing Debug Logs on Localhost
+
+Use the `DEBUG` environment variable when starting your application to enable debug logging.
+
+.Prerequisites 
+* An application with debug logging.
+
+.Procedure
+. Set the `DEBUG` environment variable when starting your application to enable debug logging.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ DEBUG=mybooster npm start
+----
++
+The `debug` module can use link:https://www.npmjs.com/package/debug#wildcards[wildcards] to filter debugging messages. This is set using the `DEBUG` environment variable.
+
+. Test your application to invoke debug logging. 
++
+For example, when debug logging in the xref:mission-rest-http-nodejs[{name-mission-http-api} booster] is set to log the `name` variable in the `/api/greeting` method:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl http://localhost:8080/api/greeting?name=Sarah
+----
+
+. View your application logs to see your debug messages.
++
+[source,options="nowrap",subs="attributes+"]
+----
+mybooster name: Sarah +3m
+----

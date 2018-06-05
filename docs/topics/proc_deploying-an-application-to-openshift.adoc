@@ -7,7 +7,7 @@
 // Rationale: This procedure is the same for 2 or more runtimes.
 
 
-[#deploying-an-application-to-openshift]
+[id='deploying-an-application-to-openshift_{context}']
 = Deploying an Application to OpenShift
 
 This procedure shows you how to:

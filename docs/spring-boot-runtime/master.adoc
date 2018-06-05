@@ -45,14 +45,14 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.a
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-basic-interaction-spring-boot.adoc[leveloffset=+3]
 
 :parameter-runtime: spring-boot
 :parameter-runtime-name: {SpringBoot}
 :context: {parameter-mission}-{parameter-runtime}
-include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
+include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-resources.adoc[leveloffset=+3]
 
@@ -77,14 +77,14 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.a
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 include::topics/configmap-mission-basic-interaction-spring-boot.adoc[leveloffset=+3]
 
 :parameter-runtime: spring-boot
 :parameter-runtime-name: {SpringBoot}
 :context: {parameter-mission}-{parameter-runtime}
-include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
+include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
 include::topics/configmap-mission-resources.adoc[leveloffset=+3]
 
@@ -117,13 +117,13 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.a
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 //Interacting with the database
 include::topics/crud-mission-database-interaction.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-{parameter-runtime}
-include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
+include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
 // include additional resources
 include::topics/crud-mission-resources.adoc[leveloffset=+3]
@@ -147,7 +147,7 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.a
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 
 include::topics/health-check-mission-basic-interaction-spring-boot.adoc[leveloffset=+3]
@@ -155,7 +155,7 @@ include::topics/health-check-mission-basic-interaction-spring-boot.adoc[leveloff
 :parameter-runtime: spring-boot
 :parameter-runtime-name: {SpringBoot}
 :context: {parameter-mission}-{parameter-runtime}
-include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
+include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
 include::topics/health-check-mission-resources.adoc[leveloffset=+3]
 
@@ -183,7 +183,7 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.a
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 
 // CB basic interaction
@@ -195,7 +195,7 @@ include::topics/proc_interacting-with-the-circuit-breaker-booster.adoc[leveloffs
 
 :parameter-runtime: spring-boot
 :context: {parameter-mission}-{parameter-runtime}
-include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
+include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
 //Hystrix Dashboard
 include::topics/circuit-breaker-mission-access-hystrix-dashboard-spring-boot.adoc[leveloffset=+3]
@@ -233,7 +233,7 @@ include::topics/assembly_building-and-deploying-the-secured-booster-to-openshift
 include::topics/assembly_interacting-with-the-secured-booster.adoc[leveloffset=+3]
 
 // integration tests in a separate topic
-include::topics/proc_running-the-secured-booster-integration-tests-on-sb.adoc[leveloffset=+3]
+include::topics/proc_running-the-secured-booster-integration-tests-on-springboot.adoc[leveloffset=+3]
 
 :parameter-runtime!:
 
@@ -261,7 +261,7 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.a
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 
 include::topics/cache-mission-basic-interaction.adoc[leveloffset=+3]
@@ -269,7 +269,7 @@ include::topics/cache-mission-basic-interaction.adoc[leveloffset=+3]
 :parameter-runtime: spring-boot
 :parameter-runtime-name: {SpringBoot}
 :context: {parameter-mission}-{parameter-runtime}
-include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
+include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
 include::topics/cache-mission-resources.adoc[leveloffset=+3]
 
@@ -295,7 +295,7 @@ This sections contains information about debugging your {SpringBoot}{ndash}based
 
 To remotely debug an application, you must first configure it to start in a debugging mode, and then attach a debugger to it.
 
-include::topics/proc_starting-your-spring-boot-application-locally-in-debugging-mode.adoc[leveloffset=+3]
+include::topics/proc_starting-your-springboot-application-locally-in-debugging-mode.adoc[leveloffset=+3]
 
 include::topics/proc_starting-an-uberjar-in-debugging-mode.adoc[leveloffset=+3]
 
@@ -310,9 +310,9 @@ include::topics/proc_attaching-a-remote-debugger-to-the-application.adoc[levelof
 
 === Debug Logging
 
-include::topics/proc_add-debug-logging-spring-boot.adoc[leveloffset=+3]
+include::topics/proc_add-debug-logging-on-springboot.adoc[leveloffset=+3]
 
-include::topics/proc_accessing-debug-logs-local-spring-boot.adoc[leveloffset=+3]
+include::topics/proc_accessing-debug-logs-on-localhost-on-springboot.adoc[leveloffset=+3]
 
 :context: spring-boot
 include::topics/proc_accessing-debug-logs-on-openshift.adoc[leveloffset=+3]
@@ -324,7 +324,7 @@ This section contains information about monitoring your {SpringBoot}{ndash}based
 
 === Accessing JVM metrics for your application on OpenShift
 
-include::topics/proc_accessing-jolokia-using-hawtio-on-openshift.adoc[leveloffset=+3]
+include::topics/proc_accessing-jvm-metrics-using-jolokia-on-openshift.adoc[leveloffset=+3]
 
 
 
@@ -339,7 +339,7 @@ include::topics/proc_accessing-jolokia-using-hawtio-on-openshift.adoc[leveloffse
 include::topics/appendix-s2i-build-process.adoc[leveloffset=+1]
 
 [appendix]
-include::topics/appendix-using-war-files-spring-boot.adoc[leveloffset=+1]
+include::topics/proc_deploying-a-springboot-application-using-war-files.adoc[leveloffset=+1]
 
 //[appendix]
 //include::topics/http-api-spring-boot-pom.adoc[leveloffset=+1]

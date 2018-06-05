@@ -7,7 +7,7 @@
 //
 // Rationale: This procedure is the same for 2 or more runtimes.
 
-[#starting-your-application-on-openshift-in-debugging-mode_{context}]
+[id='starting-your-application-on-openshift-in-debugging-mode_{context}']
 = Starting Your Application on OpenShift in Debugging Mode
 
 To debug your {runtime}-based application on OpenShift remotely, you must set the `{env-var-name}` environment variable inside the container to `{env-var-val}` and configure port forwarding so that you can connect to your application from a remote debugger.

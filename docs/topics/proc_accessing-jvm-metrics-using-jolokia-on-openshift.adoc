@@ -1,0 +1,74 @@
+[id='accessing-jvm-metrics-using-jolokia-on-openshift_{context}']
+= Accessing JVM metrics using Jolokia on OpenShift
+
+link:https://jolokia.org/documentation.html[Jolokia^] is a built-in lightweight solution for accessing JMX (Java Management Extension) metrics over HTTP on OpenShift.
+It allows you to access CPU, storage, and memory usage data collected by JMX over an HTTP bridge using a REST interface and JSON-formatted message payloads, making it suitable for monitoring cloud applications, due to its comparably high speed and low resource-requirements.
+
+[#accessing-jvm-metrics-using-hawtio-console]
+== Accessing Jolokia metrics using the hawt.io console
+
+For Java-based applications, the OpenShift Web console provides the integrated link:https://docs.openshift.com/container-platform/3.6/architecture/infrastructure_components/web_console.html#jvm-console[_hawt.io_ console^] that collects and displays all relevant metrics output by the JVM running your application.
+
+.Prerequistes
+
+* the `oc` client authenticated
+* a Java-based application container running in a project on OpenShift
+* latest link:https://github.com/jboss-container-images/redhat-openjdk-18-openshift-image/blob/openjdk18-dev/image.yaml[JDK 1.8.0 image^]
+
+.Procedure
+
+. List the deployment configurations of the pods inside your project and select the one that corresponds to your application.
++
+[source,bash,options="nowrap",subs="attributes+"]
+--
+oc get dc
+--
++
+[subs="attributes+"]
+----
+NAME         REVISION   DESIRED   CURRENT   TRIGGERED BY
+{app-name}   2          1         1         config,image(my-app:6)
+...
+----
++
+. Open the YAML deployment template of the pod running your application for editing.
++
+[source,bash,subs="attributes+"]
+--
+oc edit dc/{app-name}
+--
++
+. Add the following entry to the `ports` section of the template and save your changes:
++
+[source,yaml]
+--
+...
+spec:
+  ...
+  ports:
+  - containerPort: 8778
+    name: jolokia
+    protocol: TCP
+  ...
+...
+--
++
+. Redeploy the pod running your application.
++
+[source,bash,subs="attributes+"]
+--
+oc rollout latest dc/{app-name}
+--
++
+// The above workflow can also be accomplished using the web console
+The pod is redeployed with the updated deployment configuration and exposes the port `8778`.
++
+. Log into the OpenShift Web console.
++
+. In the sidebar, navigate to _Applications_ > _Pods_, and click on the name of the pod running your application.
++
+. In the pod details screen, click _Open Java Console_ to access the hawt.io console.
+
+.Additional information
+
+* link:http://hawt.io/docs/index.html[hawt.io documentation]

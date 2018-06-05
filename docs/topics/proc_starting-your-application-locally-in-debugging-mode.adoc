@@ -6,7 +6,7 @@
 // Rationale: This procedure is identical in Swarm and Vert.x
 
 
-[#starting-your-application-locally-in-debugging-mode_{context}]
+[id='starting-your-application-locally-in-debugging-mode_{context}']
 = Starting Your Application Locally in Debugging Mode
 
 One of the ways of debugging a Maven-based project is manually launching the application while specifying a debugging port, and subsequently connecting a remote debugger to that port.

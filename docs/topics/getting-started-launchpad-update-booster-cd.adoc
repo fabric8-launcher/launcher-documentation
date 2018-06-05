@@ -12,7 +12,7 @@ To update your booster using continuous delivery:
 $ git clone git@github.com:USERNAME/PROJECT-NAME.git
 ----
 
-. Open your project in your desired IDE or editor, such as xref:use_devstudio[Developer Studio].
+. Open your project in your desired IDE or editor, such as xref:using-red-hat-jboss-developer-studio-with-a-booster-project_{context}[Developer Studio].
 
 . Perform any updates you want to the the project. For example, if you were using the {VertX} HTTP booster, you could update the `src/main/resources/webroot/index.html` to have a different title in the `<h1>` element.
 +

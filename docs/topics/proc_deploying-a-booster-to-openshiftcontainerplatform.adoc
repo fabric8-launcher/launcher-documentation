@@ -1,0 +1,57 @@
+[id='deploying-a-booster-to-openshiftcontainerplatform_{context}']
+= Deploying a Booster to {OpenShiftContainerPlatform}
+
+[sidebar]
+.Prerequisites
+--
+* Have a booster created using link:{link-launcher-oso}[{launcher-oso}] or the {launcher} tool in xref:creating-and-deploying-a-booster-using-your-openshiftlocal_{context}[a {OpenShiftLocal}].
+* Have access to an {OpenShiftContainerPlatform} Web console.
+* Have the `oc` CLI client installed.
+--
+
+.Procedure
+. Clone your booster Github repository, or download and extract the booster ZIP archive.
+. Get the command containing your authentication token for using the `oc` CLI client with your {OpenShiftContainerPlatform} Web Console:
+.. Login to your {OpenShiftContainerPlatform} Web console.
+.. Click on the question mark icon in the top right-hand corner of the Web console, next to your user name.
+.. Select _Command Line Tools_ in the drop-down menu.
+.. Find the text box that contains the `oc login ...` command with the hidden token, and click the button next to it to copy its content to your clipboard.
+. Paste the command you copied in the previous step into a terminal to authenticate your `oc` CLI client with your {OpenShiftContainerPlatform} account by using your authentication token.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc login OCP_URL --token=MYTOKEN
+----
+
+. Create a new project.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc new-project {project-name}
+----
+
+. Navigate to the root directory of your booster.
+
+. Deploy your booster to {OpenShiftContainerPlatform}.
+.. If your booster uses Maven: 
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn clean fabric8:deploy -Popenshift
+----
+.. If your booster uses `npm`.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ npm install && npm run openshift
+----
+
+. Open the `README.adoc` file in your booster's project and follow the instructions for interacting with your booster.
+
+.Related Information
+Take a look at the different runtime guides to learn more about runtimes as well as their boosters:
+
+* link:{link-spring-boot-runtime-guide}[{spring-boot-runtime-guide-name}]
+* link:{link-vertx-runtime-guide}[{vertx-runtime-guide-name}]
+* link:{link-wf-swarm-runtime-guide}[{wf-swarm-runtime-guide-name}]
+* link:{link-nodejs-runtime-guide}[{nodejs-runtime-guide-name}]

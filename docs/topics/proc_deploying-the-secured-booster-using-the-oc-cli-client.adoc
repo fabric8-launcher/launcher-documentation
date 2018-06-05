@@ -4,7 +4,7 @@
 //   context: context of usage, e.g. "osl", "oso", "ocp", "rest-api", etc. This can also be a composite, e.g. "rest-api-oso"
 // Rationale: This procedure is identical in all deployments
 
-[#deploying-the-secured-booster-using-the-oc-cli-client_{context}]
+[id='deploying-the-secured-booster-using-the-oc-cli-client_{context}']
 = Deploying the {name-mission-secured} booster using the `oc` CLI client
 
 .Prerequisites

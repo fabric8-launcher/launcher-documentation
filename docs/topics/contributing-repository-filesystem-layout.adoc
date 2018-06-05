@@ -45,7 +45,7 @@ NOTE: The triple-dot indicates there are more files or directories in the partic
 <12> The directory with scripts used for manipulating files in the directory, building, and more.
 <13> The script for building all guides at once. This script does not validate the guides.
 <14> The script for validating all guides at once.
-<15> The script to start local server and to publish to production. For more information, see xref:_starting_preview_server[].
+<15> The script to start local server and to publish to production. For more information, see xref:starting-preview-server_{context}[].
 <16> The file with changes made in each release.
 
 WARNING: Do not edit files in the `$REPO_HOME/docs/topics/wildfly-swarm` directory, always submit a pull request to the link:{link-repo-wildfly-swarm}[{WildFlySwarm} repository] and synchronize the files afterwards.
@@ -53,4 +53,4 @@ WARNING: Do not edit files in the `$REPO_HOME/docs/topics/wildfly-swarm` directo
 [discrete]
 == Related Information
 
-* xref:syncing-with-wildfly-swarm-docs[]
+* xref:syncing-with-wildflyswarm-docs_{context}[]

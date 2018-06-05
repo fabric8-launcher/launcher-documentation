@@ -1,0 +1,81 @@
+// This assembly uses a parameterized module. Parameters used:
+//
+//   node-js-sso-temp-workaround: indicates we need the node.js sso woraround
+//
+// Rationale: output is slightly different for node due to an issue
+
+// 
+
+[id='authenticating-http-requests-using-the-web-interface_{context}']
+= Authenticating HTTP requests using the Web Interface
+
+In addition to the HTTP API, the secured endpoint also contains a web interface to interact with.
+
+The following procedure is an exercise for you to see how security is enforced, how you authenticate, and how you work with the authentication token.
+
+.Prerequisites
+
+* The secured endpoint URL. For more information, see xref:getting-the-secured-booster-api-endpoint_{context}[].
+
+.Procedure
+
+. In a web browser, navigate to the endpoint URL.
+. Perform an unauthenticated request:
+.. Click the _Invoke_ button.
++
+--
+.Unauthenticated {name-mission-secured} Booster Web Interface
+image::sso-main.png[]
+
+ifdef::node-js-sso-temp-workaround[]
+The services responds with an `HTTP 403 Forbidden` status code.
+
+NOTE: This is not the correct status code. It should be `HTTP 401 Unauthorized`. This issue link:https://github.com/bucharest-gold/nodejs-rest-http-secured-redhat/issues/21[has been identified] and this booster will be updated as soon as it is resolved.
+
+endif::node-js-sso-temp-workaround[]
+ifndef::node-js-sso-temp-workaround[]
+The services responds with an `HTTP 401 Unauthorized` status code.
+
+.Unauthenticated Error Message
+image::sso-unauthenticated.png[]
+endif::node-js-sso-temp-workaround[]
+--
+
+. Perform an authenticated request as a user:
+.. Click the _Login_ button to authenticate against {RHSSO}. You will be redirected to the SSO server.
+.. Log in as xref:sso-users[the _Alice_ user]. You will be redirected back to the web interface.
++
+--
+NOTE: You can see the access (bearer) token in the command line output at the bottom of the page.
+
+.Authenticated {name-mission-secured} Booster Web Interface (as Alice)
+image::sso-alice.png[]
+--
+
+.. Click _Invoke_ again to access the Greeting service.
++
+--
+Confirm that there is no exception and the JSON response payload is displayed. This means the service accepted your access (bearer) token and you are authorized access to the Greeting service.
+
+.The Result of an Authenticated Greeting Request (as Alice)
+image::sso-invoke-alice.png[]
+--
+.. Log out.
+
+. Perform an authenticated request as an admininstrator:
+.. Click the _Invoke_ button.
++
+Confirm that this sends an unauthenticated request to the Greeting service.
+.. Click the _Login_ button and log in as xref:sso-users[the _admin_ user].
++
+.Authenticated {name-mission-secured} Booster Web Interface (as admin)
+image::sso-admin.png[]
+
+. Click the _Invoke_ button.
++
+--
+The service responds with an `HTTP 403 Forbidden` status code because the _admin_ user is not authorized to access the Greeting service.
+
+.Unauthorized Error Message
+image::sso-unauthorized.png[]
+--
