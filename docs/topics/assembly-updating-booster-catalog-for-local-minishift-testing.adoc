@@ -4,9 +4,9 @@
 One of important life cycle stages of a booster is testing it in a booster catalog.
 Create a custom booster catalog that links to the repository with your booster on GitHub, and test your booster by following the instructions below:
 
-include::minishift-creating-custom-booster-catalog.adoc[leveloffset=+1]
+include::proc_creating-custom-booster-catalog.adoc[leveloffset=+1]
 
 :parameter-custom-catalog:
-include::proc_installing-launcher-application-manually.adoc[leveloffset=+1]
+include::proc_installing-launcher-tool.adoc[leveloffset=+1]
 :parameter-custom-catalog!:
 

@@ -7,7 +7,7 @@
 // Rationale: This procedure is identical in all deployments
 
 
-[#authenticating-the-oc-cli-client_{context}]
+[id='authenticating-the-oc-cli-client_{context}']
 = Authenticating the `oc` CLI Client
 
 To work with boosters on {parameter-deployment} using the `oc` command-line client, you need to authenticate the client using the token provided by the {parameter-deployment} web interface.

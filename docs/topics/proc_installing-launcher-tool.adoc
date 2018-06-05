@@ -1,0 +1,69 @@
+// This is a parameterized module. Parameters used:
+//
+//   parameter-custom-catalog: A custom catalog is used instead of the default one
+//
+// Rationale: This module is useful both when setting up minishift as is and when testing a local
+// booster catalog.
+
+[id='installing-launcher-tool_{context}']
+= Installing {launcher} Tool
+Install a local customized instance of the {launcher} tool, which allows you to test the functionality or make modifications to the service using a web interface.
+
+.Prerequisites
+* xref:starting-and-configuring-the-openshiftlocal-for-the-launcher-tool_{context}[{OpenShiftLocal} running].
+* A link:{link-launcher-openshift-local-install-guide}#creating-a-github-personal-access-token[GitHub personal access token].
+
+.Procedure
+. Open the {OpenShiftLocal} Web console and log in.
+. Click _New Project_ to create a new OpenShift project to house the {launcher} tool.
++
+image::minishift_newproject.png[New Project Button]
+
+. Name the project and optionally provide a description. This example uses `my-launcher` for the project's name.
++
+image::minishift_projectconfig.png[New Project Config]
+
+. Click _Create_ to complete the project creation.
+
+. Click _Import YAML/JSON_ to add services to your new project from a template.
++
+image::minishift_yamljson.png[Import YAML/JSON]
+
+. Copy the contents of link:{link-launcher-yaml}[the current {launcher} template from the GitHub repository^] and paste it into the text box provided.
++
+NOTE: We are working on removing this step entirely, but for now it is required. The full details and a current status are available link:https://github.com/openshiftio/launchpad-templates/issues/2[on GitHub].
+
+. Click _Create_, ensure that only the _Process the template_ option is selected, and click _Continue_.
++
+image::minishift_processtemplate.png[Process Template]
+
+. Fill out the following fields.
+** _Your GitHub username_.
+** _Your GitHub Mission Control access token_ is your personal access token for GitHub.
+** The _Target OpenShift Console URL_ is the OpenShift Console URL from your {OpenShiftLocal}. This should be the same base URL you are currently using to complete the form, for example `+++https://192.168.42.152:8443+++`.
+** OpenShift username and password from your {OpenShiftLocal}, for example `developer` for the username and password.
+** _KeyCloak URL_ and _KeyCloak Realm_ **MUST** be cleared out.
++
+WARNING: You must clear these fields out for the {launcher} tool on your {OpenShiftLocal} to be configured correctly.
+
+ifndef::parameter-custom-catalog[** Do not modify _Catalog Git Repository_ and _Catalog Git Reference_ unless you are developing against a specific catalog repository.]
+ifdef::parameter-custom-catalog[** Set _Catalog Git Repository_ to the repository with the catalog that you are testing. Set _Catalog Git Reference_ to the branch in that repository you are testing.]
+
+. Before proceeding to the next steps, confirm all the fields are correct. Also confirm that _KeyCloak URL_ and _KeyCloak Realm_ **have been cleared out**.
+
+. Click `Create` to complete the setup. You will see a screen confirming that the service has been created. Click _Continue to overview_.
+
+. On the overview page, wait and confirm that the four pods for the {launcher} tool have completed starting up.
++
+image::minishift_launcher_booting.png[{launcher} booting]
+
+. When all pods are running, click the link at the top of all pods, which typically ends in `nip.io`. A new browser tab opens with the {launcher} tool. This is the same service as `{link-launcher-oso}` but running in a {OpenShiftLocal}.
+
+.Additional Resources
+* Start using your {launcher} tool to launch booster applications.
+* See the link:{link-getting-started-guide}[{getting-started-guide-name}] for a walk-through of running a booster application.
+* Read the runtime guides for an overview of the runtimes and their boosters:
+** link:{link-spring-boot-runtime-guide}[{spring-boot-runtime-guide-name}]
+** link:{link-vertx-runtime-guide}[{vertx-runtime-guide-name}]
+** link:{link-wf-swarm-runtime-guide}[{wf-swarm-runtime-guide-name}]
+** link:{link-nodejs-runtime-guide}[{nodejs-runtime-guide-name}]

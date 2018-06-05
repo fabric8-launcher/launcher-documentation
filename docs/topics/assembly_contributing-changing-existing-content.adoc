@@ -5,5 +5,5 @@ To modify an existing guide, you must understand how it is structured as well as
 
 include::concept_contributing-guide-structure.adoc[leveloffset=+1]
 
-include::proc_contributing-basic-change-workflow.adoc[leveloffset=+1]
+include::proc_basic-workflow-for-modifying-existing-guides.adoc[leveloffset=+1]
 

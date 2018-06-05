@@ -1,4 +1,4 @@
-[#creating-a-github-personal-access-token]
+[id='creating-a-github-personal-access-token_{context}']
 = Creating a GitHub Personal Access Token
 
 To install the {launcher} tool on a {OpenShiftLocal}, you must provide the {launcher} tool with a GitHub personal access token. This enables the {launcher} tool to create booster applications and save them as Git repositories in your GitHub namespace.

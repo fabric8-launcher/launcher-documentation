@@ -1,3 +1,4 @@
+[id='installing-a-openshiftlocal_{context}']
 [#installing-a-openshiftlocal]
 = Installing a {OpenShiftLocal}
 

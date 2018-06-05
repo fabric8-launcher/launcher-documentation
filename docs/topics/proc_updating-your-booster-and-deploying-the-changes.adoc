@@ -1,0 +1,36 @@
+[id='updating-your-booster-and-deploying-the-changes_{context}']
+= Updating Your Booster and Deploying the Changes
+To push changes to this booster running in {OpenShiftOnline} or your {OpenShiftLocal}, you can push a new commit to the GitHub repository and start a new build.
+
+[sidebar]
+.Prerequisites
+--
+* Have a booster deployed to xref:deploying-a-booster-to-openshiftonline_{context}[{OpenShiftOnline}] or xref:creating-and-deploying-a-booster-using-your-openshiftlocal_{context}[{OpenShiftLocal}] using the _Deploy in OpenShift Online_ option.
+--
+
+.Procedure
+. Clone your project from GitHub:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git clone git@github.com:USERNAME/PROJECT-NAME.git
+----
+
+. Open your project in your desired IDE or editor, such as xref:using-red-hat-jboss-developer-studio-with-a-booster-project_{context}[JBDS].
+. Make an update to the project.
+. Save your changes.
+. Commit and push your changes back to GitHub:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git add .
+$ git commit -m "Made an update"
+$ git push
+----
+
+. Navigate back to the {OpenShiftOnline} or {OpenShiftLocal} Web console and ensure the project of your mission is selected.
+. Click on the three dots on the right side of your application's deployment and choose _Start Build_.
++
+Your deployment is complete when you see _Build #2 is complete_ under _Builds_ and a `#2` next to the application name under _Deployment_. This number will increase for each additional build and deployment.
+
+. Confirm your changes when your deployment is complete.

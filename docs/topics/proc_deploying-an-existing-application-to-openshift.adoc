@@ -34,4 +34,4 @@ endif::[]
 +
 In this profile, the Fabric8 Maven plugin is invoked for building and deploying the application to OpenShift.
 
-. Deploy the application to OpenShift according to instructions in xref:deploying-an-application-to-openshift[].
+. Deploy the application to OpenShift according to instructions in xref:deploying-an-application-to-openshift_{context}[].

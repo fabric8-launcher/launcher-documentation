@@ -49,14 +49,14 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.a
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-basic-interaction-wf-swarm.adoc[leveloffset=+3]
 
 :parameter-runtime: wf-swarm
 :parameter-runtime-name: {WildFlySwarm}
 :context: {parameter-mission}-{parameter-runtime}
-include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
+include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-resources.adoc[leveloffset=+3]
 
@@ -81,14 +81,14 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.a
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 include::topics/configmap-mission-basic-interaction-wf-swarm.adoc[leveloffset=+3]
 
 :parameter-runtime: wf-swarm
 :parameter-runtime-name: {WildFlySwarm}
 :context: {parameter-mission}-{parameter-runtime}
-include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
+include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
 include::topics/configmap-mission-resources.adoc[leveloffset=+3]
 
@@ -119,13 +119,13 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.a
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 //Interacting with the database
 include::topics/crud-mission-database-interaction.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-{parameter-runtime}
-include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
+include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
 // include additional resources
 include::topics/crud-mission-resources.adoc[leveloffset=+3]
@@ -149,7 +149,7 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.a
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 
 include::topics/health-check-mission-basic-interaction-wf-swarm.adoc[leveloffset=+3]
@@ -157,7 +157,7 @@ include::topics/health-check-mission-basic-interaction-wf-swarm.adoc[leveloffset
 :parameter-runtime: wf-swarm
 :parameter-runtime-name: {WildFlySwarm}
 :context: {parameter-mission}-{parameter-runtime}
-include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
+include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
 include::topics/health-check-mission-resources.adoc[leveloffset=+3]
 
@@ -185,7 +185,7 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.a
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 
 // CB basic interaction
@@ -196,7 +196,7 @@ include::topics/proc_interacting-with-the-circuit-breaker-booster.adoc[leveloffs
 
 :parameter-runtime: wf-swarm
 :context: {parameter-mission}-{parameter-runtime}
-include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
+include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
 //Hystrix Dashboard
 include::topics/circuit-breaker-mission-access-hystrix-dashboard-wf-swarm.adoc[leveloffset=+3]
@@ -258,7 +258,7 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.a
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 
 include::topics/cache-mission-basic-interaction.adoc[leveloffset=+3]
@@ -266,7 +266,7 @@ include::topics/cache-mission-basic-interaction.adoc[leveloffset=+3]
 :parameter-runtime: wf-swarm
 :parameter-runtime-name: {WildFlySwarm}
 :context: {parameter-mission}-{parameter-runtime}
-include::topics/proc_running-integration-tests.adoc[leveloffset=+3]
+include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
 include::topics/cache-mission-resources.adoc[leveloffset=+3]
 
@@ -286,7 +286,7 @@ This sections contains information about creating your application and configuri
 :version: {WildFlySwarmProductVersion}
 include::topics/assembly_creating-a-basic-wildfly-swarm-application.adoc[leveloffset=+2]
 
-include::topics/proc_deploying-an-existing-wildfly-swarm-application-to-openshift.adoc[leveloffset=+2]
+include::topics/proc_deploying-an-existing-wildflyswarm-application-to-openshift.adoc[leveloffset=+2]
 
 include::topics/wildfly-swarm/docs/reference/maven-plugin.adoc[leveloffset=+2]
 
@@ -356,7 +356,7 @@ This section contains information about monitoring your {WildFlySwarm}{ndash}bas
 
 === Accessing JVM metrics for your application on OpenShift
 
-include::topics/proc_accessing-jolokia-using-hawtio-on-openshift.adoc[leveloffset=+3]
+include::topics/proc_accessing-jvm-metrics-using-jolokia-on-openshift.adoc[leveloffset=+3]
 
 
 [appendix]

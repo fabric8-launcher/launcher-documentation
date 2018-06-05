@@ -19,15 +19,15 @@ This guide takes you through cloud-native development on OpenShift. It shows you
 
 include::topics/con_introduction-to-productname.adoc[leveloffset=+1]
 
-include::topics/proc-getting-started-create-booster.adoc[leveloffset=+1]
+include::topics/proc_deploying-a-booster-to-openshiftonline.adoc[leveloffset=+1]
 
-include::topics/proc-getting-started-cd-osl.adoc[leveloffset=+1]
+include::topics/proc_creating-and-deploying-a-booster-using-your-openshiftlocal.adoc[leveloffset=+1]
 
-include::topics/proc-ocp-deploy-booster.adoc[leveloffset=+1]
+include::topics/proc_deploying-a-booster-to-openshiftcontainerplatform.adoc[leveloffset=+1]
 
-include::topics/proc-getting-started-update-booster.adoc[leveloffset=+1]
+include::topics/proc_updating-your-booster-and-deploying-the-changes.adoc[leveloffset=+1]
 
-include::topics/proc-getting-started-use-devstudio.adoc[leveloffset=+1]
+include::topics/proc_using-red-hat-jboss-developer-studio-with-a-booster-project.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/appendix-glossary.adoc[leveloffset=+1]

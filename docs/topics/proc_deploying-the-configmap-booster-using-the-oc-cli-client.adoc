@@ -5,7 +5,7 @@
 // Rationale: This procedure is identical in all deployments.
 
 
-[#deploying-the-configmap-booster-using-the-oc-cli-client_{context}]
+[id='deploying-the-configmap-booster-using-the-oc-cli-client_{context}']
 = Deploying the {name-mission-configmap} Booster using the `oc` CLI Client
 
 .Prerequisites
@@ -13,7 +13,7 @@
 * The booster application created using {parameter-deployment}.
 ifndef::parameter-openshiftlocal[For more information, see xref:deploying-the-booster-using-launcher-oso_{context}[].]
 ifdef::parameter-openshiftlocal[]
-For more information, see xref:deploying-the-booster-using-launcher-osl_{context}[].
+For more information, see xref:deploying-the-booster-using-the-launcher-tool_{context}[].
 * Your {launcher} tool URL.
 endif::[]
 

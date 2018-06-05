@@ -96,6 +96,6 @@ myApp
 [discrete]
 == Next steps
 
-ifdef::product[* xref:deploying-an-application-to-openshift[Deploy the application to Openshift]]
+ifdef::product[* xref:deploying-an-application-to-openshift_{context}[Deploy the application to Openshift]]
 * Package the application in an xref:creating-an-uberjar[uberjar].
 

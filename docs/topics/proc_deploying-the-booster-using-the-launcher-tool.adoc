@@ -1,0 +1,21 @@
+// This is a parameterized module. Parameters used:
+//
+//   parameter-openshiftlocal: A local OpenShift installation is used, so a URL is required for proceeding.
+//   parameter-deployment: A string containing the deployment to use, possibly in the form of a link
+//   context: context of usage, e.g. "osl", "oso", "ocp", "rest-api", etc. This can also be a composite, e.g. "rest-api-oso"
+//   runtime: runtime used.
+//
+// Rationale: This procedure is identical in all deployments
+
+[id='deploying-the-booster-using-the-launcher-tool_{context}']
+= Deploying the Booster Using the {launcher} Tool
+
+.Prerequisites
+
+* The URL of your running {launcher} instance and the user credentials of your {OpenShiftLocal}.
+For more information, see xref:getting-the-launcher-tool-url-and-credentials_{context}[].
+
+.Procedure
+
+. Navigate to the {parameter-deployment} URL in a browser.
+. Follow on-screen instructions to create and launch your booster in {runtime}.
