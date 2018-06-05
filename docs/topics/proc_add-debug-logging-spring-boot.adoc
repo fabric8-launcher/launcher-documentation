@@ -1,4 +1,4 @@
-= Add Debug Logging
+= Add Debug Logging on {SpringBoot}
 
 Add debug logging to your application.
 

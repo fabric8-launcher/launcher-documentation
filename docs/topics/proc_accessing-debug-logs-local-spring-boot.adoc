@@ -1,5 +1,5 @@
 [#accessing-debug-logs-on-localhost]
-= Accessing Debug Logs on Localhost
+= Accessing Debug Logs on Localhost on {SpringBoot}
 
 Start your application and interact with it to see the debugging statements.
 
