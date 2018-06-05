@@ -9,6 +9,8 @@ include::topics/templates/document-attributes.adoc[]
 //var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
 :docs-topic:
 
+:context: vertx
+
 This guide covers concepts as well as practical details needed by developers to use the {VertX} runtime.
 
 include::topics/vertx-runtime-overview.adoc[leveloffset=+1]
@@ -48,7 +50,7 @@ include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-design-tradeoffs.adoc[leveloffset=+3]
 
-:parameter-mission: rest-api
+:parameter-mission: http-api
 :parameter-mission-name: {name-mission-http-api}
 
 :context: {parameter-mission}-oso
@@ -301,14 +303,12 @@ include::topics/assembly_creating-a-basic-vertx-application.adoc[leveloffset=+2]
 
 include::topics/proc_deploying-an-existing-application-to-openshift.adoc[leveloffset=+2]
 :parameter-runtime!:
-:context!:
 
 == Debugging
 
 This sections contains information about debugging your {VertX}{ndash}based application both in local and remote deployments.
 
 === Remote Debugging
-:context:
 
 To remotely debug an application, you must first configure it to start in a debugging mode, and then attach a debugger to it.
 
@@ -348,8 +348,6 @@ include::topics/proc_configure-netty-logging-vertx.adoc[leveloffset=+3]
 
 :context: vertx
 include::topics/proc_accessing-debug-logs-on-openshift.adoc[leveloffset=+3]
-:context!:
-
 
 
 // Troubleshooting? TBD

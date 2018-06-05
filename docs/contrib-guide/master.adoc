@@ -4,6 +4,7 @@ include::topics/templates/document-attributes.adoc[]
 
 = {contrib-guide-name}
 
+:context: contributing
 
 == {launcher} Development
 

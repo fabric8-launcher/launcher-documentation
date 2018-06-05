@@ -7,6 +7,8 @@ include::topics/templates/document-attributes.adoc[]
 :sectnums!:
 = {getting-started-guide-name}
 
+:context: getting-started
+
 [.lead]
 With the emergence of Linux containerization and container platforms, the barrier to entry for using a polyglot, or multiple application runtime, architecture has been reduced. This allows you to embrace different ecosystems, languages, and runtimes at the same time for solving business problems. Moreover container platforms such as OpenShift manage, secure, and automate the deployments and monitoring of your applications. This enables you to decompose your business problems into smaller microservices while letting OpenShift help with managing some of the inherent complexity that comes with deploying, monitoring, and maintaining microservices.
 
