@@ -280,6 +280,11 @@ include::topics/proc_deploy-existing-nodejs-app.adoc[leveloffset=+2]
 [appendix]
 include::topics/appendix-nodeshift.adoc[leveloffset=+1]
 
+:context: nodejs
+[appendix]
+include::topics/proc_updating-the-deployment-configuration-of-a-booster.adoc[leveloffset=+1]
+:context!:
+
 [appendix]
 include::topics/http-api-nodejs-package-json.adoc[leveloffset=+1]
 
