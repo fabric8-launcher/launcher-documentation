@@ -338,6 +338,10 @@ include::topics/proc_accessing-jvm-metrics-using-jolokia-on-openshift.adoc[level
 include::topics/appendix-s2i-build-process.adoc[leveloffset=+1]
 
 [appendix]
+include::topics/proc_updating-the-deployment-configuration-of-a-booster.adoc[leveloffset=+1]
+
+
+[appendix]
 include::topics/proc_deploying-a-springboot-application-using-war-files.adoc[leveloffset=+1]
 
 //[appendix]

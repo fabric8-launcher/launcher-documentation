@@ -363,6 +363,11 @@ include::topics/proc_accessing-jvm-metrics-using-jolokia-on-openshift.adoc[level
 [appendix]
 include::topics/appendix-s2i-build-process.adoc[leveloffset=+1]
 
+:context: vertx
+[appendix]
+include::topics/proc_updating-the-deployment-configuration-of-a-booster.adoc[leveloffset=+1]
+:context!:
+
 //[appendix]
 //include::topics/http-api-vertx-pom.adoc[leveloffset=+1]
 
