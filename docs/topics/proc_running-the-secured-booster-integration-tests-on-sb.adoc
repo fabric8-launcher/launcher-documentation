@@ -5,7 +5,7 @@
 // Rationale: This parameter displays the correct runtime name (`sb` or `vx`) in the module ID that is visible when linking to this section.
 
 [#running-the-secured-booster-integration-tests_sb]
-= Running the {name-mission-secured} Booster Integration Tests
+= Running the {name-mission-secured} Booster Integration Tests on {SpringBoot}
 //[#running-the-secured-booster-integration-tests-on-{parameter-runtime}]
 //= Running the {name-mission-secured} Booster Integration Tests on {runtime}
 

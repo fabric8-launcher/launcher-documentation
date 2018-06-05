@@ -1,5 +1,5 @@
 [id='creating-an-application_{context}']
-= Creating an application
+= Creating a {VertX} application
 
 Create a simple `Greeting` application to run on OpenShift using {Vertx}.
 The following procedure shows you how to:

@@ -1,5 +1,5 @@
 [#running-the-secured-booster-integration-tests_vertx]
-= Running the {name-mission-secured} Booster Integration Tests
+= Running the {name-mission-secured} Booster Integration Tests on {VertX}
 
 .Prerequisites
 

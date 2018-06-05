@@ -7,7 +7,7 @@
 // 
 
 [#authenticating-http-requests-using-the-web-interface]
-== Authenticating HTTP requests using the Web Interface
+= Authenticating HTTP requests using the Web Interface
 
 In addition to the HTTP API, the secured endpoint also contains a web interface to interact with.
 
