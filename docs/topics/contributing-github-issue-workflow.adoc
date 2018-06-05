@@ -15,7 +15,7 @@ Team Member:: Ensure the issue has correct labels. For more information, see xre
 . A team member or a contributor assigns the issue.
 +
 --
-Assignee:: Label the issue _In Progress_, add it to the _Current Development_ milestone, address the issue. For more information, see xref:_making_changes[].
+Assignee:: Label the issue _In Progress_, add it to the _Current Development_ milestone, address the issue. For more information, see xref:git-workflow-for-making-changes_{context}[].
 --
 
 . The assignee files a pull request that addresses the issue.

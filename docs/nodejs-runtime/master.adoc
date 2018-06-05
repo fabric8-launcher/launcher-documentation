@@ -8,6 +8,8 @@ include::topics/templates/document-attributes.adoc[]
 //var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
 :docs-topic:
 
+:context: nodejs
+
 This guide covers concepts as well as practical details needed by developers to use the {NodeJS} runtime.
 
 include::topics/nodejs-runtime-overview.adoc[leveloffset=+1]
@@ -31,7 +33,7 @@ include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-design-tradeoffs.adoc[leveloffset=+3]
 
-:parameter-mission: rest-api
+:parameter-mission: http-api
 :parameter-mission-name: {name-mission-http-api}
 
 :context: {parameter-mission}-oso

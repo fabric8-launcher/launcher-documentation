@@ -39,7 +39,7 @@ include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-design-tradeoffs.adoc[leveloffset=+3]
 
-:parameter-mission: rest-api
+:parameter-mission: http-api
 :parameter-mission-name: {name-mission-http-api}
 
 :context: {parameter-mission}-oso

@@ -16,4 +16,3 @@ include::proc_deploying-the-secured-booster-using-the-oc-cli-client.adoc[levelof
 :parameter-ocp!:
 :parameter-deployment!:
 
-:context!:
