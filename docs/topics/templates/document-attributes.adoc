@@ -199,11 +199,11 @@
 :repo-docs-name: launcher-documentation
 :link-repo-docs: https://github.com/fabric8-launcher/launcher-documentation
 
-:docs-name: appdev.openshift.io
-:link-docs: https://appdev.openshift.io
+:docs-name: launcher.fabric8.io
+:link-docs: https://launcher.fabric8.io
 
 // stage environment URLs for Docs and Launcher
-:link-docs-stage: https://appdev.prod-preview.openshift.io/
+:link-docs-stage: https://launcher-preview.fabric8.io/
 :link-launcher-stage: https://launch.prod-preview.openshift.io/
 
 // WildFly Swarm repository (mostly for the Contribution Guide)

@@ -1,7 +1,7 @@
 Mission proficiency level:
 //special case since topic is used by front end.
 ifdef::docs-topic[xref:proficiency_foundational[*{proficiency-foundational}*].]
-ifndef::docs-topic[link:https://appdev.openshift.io/docs/wf-swarm-runtime.html#proficiency_levels[*{proficiency-foundational}*^].]
+ifndef::docs-topic[link:https://launcher.fabric8.io/docs/wf-swarm-runtime.html#proficiency_levels[*{proficiency-foundational}*^].]
 
 .What the {name-mission-crud} Booster Does
 The {name-mission-crud} booster expands on the {name-mission-http-api} booster to provide a basic example of performing _create_, _read_, _update_ and _delete_ (_CRUD_) operations on a PostgreSQL database using a simple HTTP API. _CRUD_ operations are the four basic functions of persistent storage, widely used when developing an HTTP API dealing with a database.

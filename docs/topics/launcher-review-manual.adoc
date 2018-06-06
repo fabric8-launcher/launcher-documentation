@@ -1,20 +1,20 @@
 ifeval::["{runtime}" == "Spring Boot"]
-:guideURL: http://appdev.openshift.io/docs/spring-boot-runtime.html
+:guideURL: http://launcher.fabric8.io/docs/spring-boot-runtime.html
 :guideName: Spring Boot Runtime Guide
 endif::[]
 
 ifeval::["{runtime}" == "Eclipse Vert.x"]
-:guideURL: http://appdev.openshift.io/docs/vertx-runtime.html
+:guideURL: http://launcher.fabric8.io/docs/vertx-runtime.html
 :guideName: Eclipse Vert.x Runtime Guide
 endif::[]
 
 ifeval::["{runtime}" == "WildFly Swarm"]
-:guideURL: http://appdev.openshift.io/docs/wf-swarm-runtime.html
+:guideURL: http://launcher.fabric8.io/docs/wf-swarm-runtime.html
 :guideName: WildFly Swarm Runtime Guide
 endif::[]
 
 ifeval::["{runtime}" == "Node.js"]
-:guideURL: http://appdev.openshift.io/docs/nodejs-runtime.html
+:guideURL: http://launcher.fabric8.io/docs/nodejs-runtime.html
 :guideName: Node.js Runtime Guide
 endif::[]
 

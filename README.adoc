@@ -1,6 +1,6 @@
-= appdev.openshift.io Documentation
+= launcher.fabric8.io Documentation
 
-This repository holds the documentation for link:https://appdev.openshift.io[appdev.openshift.io]. The source language is AsciiDoc.
+This repository holds the documentation for link:https://launcher.fabric8.io[launcher.fabric8.io]. The source language is AsciiDoc.
 
 == Building and Health
 
@@ -19,11 +19,11 @@ Run the `scripts/preview-server.sh` script. Because it requires Docker, you need
 
 == Contributing
 
-For information about contributing to this repository, its contents and processes, see the link:https://appdev.openshift.io/docs/contrib-guide.html#_documentation[Documentation] chapter of the __Contribution Guide.__
+For information about contributing to this repository, its contents and processes, see the link:https://launcher.fabric8.io/docs/contrib-guide.html#_documentation[Documentation] chapter of the __Contribution Guide.__
 
-For general information about missions and boosters, see the link:https://appdev.openshift.io/docs/getting-started.html[Getting Started Guide]. For information about their development, see the link:https://github.com/fabric8-launch/appdev-documentation/wiki[Wiki].
+For general information about missions and boosters, see the link:https://launcher.fabric8.io/docs/getting-started.html[Getting Started Guide]. For information about their development, see the link:https://github.com/fabric8-launcher/launcher-documentation/wiki[Wiki].
 
 == Publishing
 
-Basic information about publishing a release is described in the link:https://appdev.openshift.io/docs/contrib-guide.html#releasing_new_version[Releasing New Version] chapter of the __Contribution Guide.__
+Basic information about publishing a release is described in the link:https://launcher.fabric8.io/docs/contrib-guide.html#releasing_new_version[Releasing New Version] chapter of the __Contribution Guide.__
 

@@ -1,7 +1,7 @@
 
 = Before You Start
 
-To contribute to the AppDev documentation, you need to configure the following tools and accounts:
+To contribute to the Fabric8 Launcher documentation, you need to configure the following tools and accounts:
 
 == Tools _(required)_
 
