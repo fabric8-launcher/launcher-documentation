@@ -1,3 +1,4 @@
+[id='guide-structure_{context}']
 = Guide Structure
 
 Each guide is stored in a separate directory. The main file for the guide is `$REPO_HOME/docs/GUIDE_NAME/master.adoc`.
