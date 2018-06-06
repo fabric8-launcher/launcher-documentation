@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-HEADING_REGEX='^[=#] [A-Z].*'
+HEADING_REGEX='^[=#] [A-Z{].*'
 
 
 function get_anchor_id {
@@ -40,14 +40,21 @@ function replace_anchor_id {
 
 # Main
 
-pushd docs
-for file in $(grep -rl '^\(=\+ *\|.\)Procedure' --exclude-dir=wildfly-swarm); do
+if [ $# -lt 2 ]; then
+    echo 'Usage: ./convert.sh FILENAME_PREFIX FILE1 [FILE2] [FILE3] [...]'
+    exit 1
+fi
+
+file_prefix="$1"
+shift
+
+for file in $@; do
     echo === Processing $file ===
 
     heading=$(grep "$HEADING_REGEX" $file | head -1 | sed -e 's|^[=# ]*||')
-    name_base=$(echo $heading | tr [:upper:] [:lower:] | sed -e 's|[^a-z0-9]|-|g' | sed -e 's|-\+|-|g' -e s'|-$||' -e 's/name-mission-//' -e 's/parameter-\(mission\|runtime\)-name-//')
+    name_base=$(echo $heading | tr [:upper:] [:lower:] | sed -e 's|[^a-z0-9]|-|g' | sed -e 's|-\+|-|g' -e s'|-$||' -e s'|^-\+||' -e 's/name-mission-//' -e 's/parameter-\(mission\|runtime\)-name-//')
     anchor_id="${name_base}_{context}"
-    file_name="proc_${name_base}.adoc"
+    file_name="${file_prefix}${name_base}.adoc"
 
     echo "  Heading: $heading" 1>&2
     echo "  New anchor ID: $anchor_id" 1>&2
@@ -75,4 +82,3 @@ for file in $(grep -rl '^\(=\+ *\|.\)Procedure' --exclude-dir=wildfly-swarm); do
     echo "  == Replacing include statements =="
     find -name \*.adoc -exec sed -i "s|include::\(.\+/\)\?$(basename $file)\[|include::\1${file_name}[|" '{}' ';'
 done
-popd
