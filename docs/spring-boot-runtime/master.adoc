@@ -8,9 +8,11 @@ include::topics/templates/document-attributes.adoc[]
 //var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
 :docs-topic:
 
+:context: spring-boot
+
 This guide covers concepts as well as practical details needed by developers to use the {SpringBoot} runtime. It provides information governing the design of a {SpringBoot} application deployed as a Linux container on OpenShift.
 
-include::topics/sb-runtime-overview.adoc[leveloffset=+1]
+include::topics/con_springboot-runtime-details.adoc[leveloffset=+1]
 
 include::topics/sb-product-versions.adoc[leveloffset=+2]
 

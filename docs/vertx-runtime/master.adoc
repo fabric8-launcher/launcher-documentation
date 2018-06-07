@@ -13,7 +13,7 @@ include::topics/templates/document-attributes.adoc[]
 
 This guide covers concepts as well as practical details needed by developers to use the {VertX} runtime.
 
-include::topics/vertx-runtime-overview.adoc[leveloffset=+1]
+include::topics/con_vertx-runtime-details.adoc[leveloffset=+1]
 
 // include::topics/runtime-info-product-version.adoc[leveloffset=+1]
 // include::topics/runtime-info-community-version.adoc[leveloffset=+1]
