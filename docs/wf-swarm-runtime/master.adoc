@@ -37,7 +37,7 @@ include::topics/rest-level-0-mission-intro.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
-include::topics/rest-level-0-mission-design-tradeoffs.adoc[leveloffset=+3]
+include::topics/con_http-api-design-tradeoffs.adoc[leveloffset=+3]
 
 :parameter-mission: http-api
 :parameter-mission-name: {name-mission-http-api}
@@ -69,7 +69,7 @@ include::topics/configmap-mission-intro.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
-include::topics/configmap-mission-design-tradeoffs.adoc[leveloffset=+3]
+include::topics/con_configmap-design-tradeoffs.adoc[leveloffset=+3]
 
 :parameter-mission: configmap
 :parameter-mission-name: {name-mission-configmap}
@@ -110,7 +110,7 @@ include::topics/crud-mission-intro.adoc[leveloffset=+3]
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 // design tradeoffs
-include::topics/crud-mission-design-tradeoffs.adoc[leveloffset=+3]
+include::topics/con_crud-design-tradeoffs.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-oso
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
@@ -173,7 +173,7 @@ include::topics/circuit-breaker-mission-intro.adoc[leveloffset=+3]
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 // CB design tradeoffs
-include::topics/circuit-breaker-mission-design-tradeoffs.adoc[leveloffset=+3]
+include::topics/con_circuit-breaker-design-tradeoffs.adoc[leveloffset=+3]
 
 :parameter-mission: circuit-breaker
 :parameter-mission-name: {name-mission-circuit-breaker}
