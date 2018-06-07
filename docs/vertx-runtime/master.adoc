@@ -19,7 +19,7 @@ include::topics/con_vertx-runtime-details.adoc[leveloffset=+1]
 // include::topics/runtime-info-community-version.adoc[leveloffset=+1]
 
 //runtime information modules
-include::topics/vertx-key-concepts.adoc[leveloffset=+2]
+include::topics/con_key-vertx-concepts.adoc[leveloffset=+2]
 
 //include::topics/vertx-community-and-product-versions.adoc[leveloffset=+2]
 
