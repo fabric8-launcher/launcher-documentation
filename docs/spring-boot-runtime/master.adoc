@@ -19,7 +19,7 @@ include::topics/sb-product-versions.adoc[leveloffset=+2]
 include::topics/sb-features-and-frameworks-summary.adoc[leveloffset=+2]
 
 // Missions
-include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
+include::topics/con_missions-and-cloud-native-development-on-openshift.adoc[leveloffset=+1]
 
 [[spring-boot-available-missions-and-boosters]]
 == Available Missions and Boosters for {SpringBoot}

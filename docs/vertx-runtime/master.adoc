@@ -32,7 +32,7 @@ include::topics/configuring-vertx.adoc[leveloffset=+2]
 include::topics/proc_configuring-your-vertx-application-to-use-agroal.adoc[leveloffset=+2]
 
 // MISSIONS
-include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
+include::topics/con_missions-and-cloud-native-development-on-openshift.adoc[leveloffset=+1]
 
 [[vertx-available-missions-and-boosters]]
 == Available Missions and Boosters for {Vertx}
