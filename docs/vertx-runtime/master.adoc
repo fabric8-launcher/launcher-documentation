@@ -181,8 +181,12 @@ include::topics/health-check-mission-resources.adoc[leveloffset=+3]
 include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
 // circuit breaker intro
-include::topics/circuit-breaker-mission-intro.adoc[leveloffset=+3]
-//TODO
+include::topics/circuit-breaker-mission-intro-paragraph.adoc[leveloffset=+3]
+
+This mission shows you how to implement a Circuit Breaker and Fallback pattern in your services.
+
+include::topics/con_about-circuit-breaker.adoc[leveloffset=+3]
+
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 

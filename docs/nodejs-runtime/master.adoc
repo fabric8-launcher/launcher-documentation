@@ -139,14 +139,17 @@ include::topics/health-check-mission-resources.adoc[leveloffset=+3]
 include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
 // circuit breaker intro
-include::topics/circuit-breaker-mission-intro.adoc[leveloffset=+3]
+include::topics/circuit-breaker-mission-intro-paragraph.adoc[leveloffset=+3]
+
+This mission shows you how to implement a Circuit Breaker and Fallback pattern in your services.
+
+include::topics/con_about-circuit-breaker.adoc[leveloffset=+3]
 
 // CB design tradeoffs
 include::topics/con_circuit-breaker-design-tradeoffs.adoc[leveloffset=+3]
 
 :parameter-mission: circuit-breaker
 :parameter-mission-name: {name-mission-circuit-breaker}
-
 :context: {parameter-mission}-oso
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
 
