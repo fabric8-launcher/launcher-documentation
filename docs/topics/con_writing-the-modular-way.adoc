@@ -1,5 +1,5 @@
 
-[#writing-the-modular-way]
+[id='writing-the-modular-way_{context}']
 = Writing the Modular Way
 
 When authoring new content, do not write a monolithic piece of text, but write the information is smaller, self-contained pieces called modules.
