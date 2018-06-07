@@ -104,8 +104,8 @@
 :SpringBootMvnPluginVersion: 1.5.10.RELEASE
 
 // used in the BOM file example and in the Vert.x Runtime developer Guide
-:VertXVersion: 3.4.2.redhat-009
-:VertXMvnPluginVersion: 1.0.13
+:VertXVersion: 3.5.1.redhat-004
+:VertXMvnPluginVersion: 1.0.15
 
 :nodeshiftNodeVersion: --dockerImage=registry.access.redhat.com/rhoar-nodejs/nodejs-8
 
