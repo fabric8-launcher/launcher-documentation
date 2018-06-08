@@ -65,7 +65,15 @@ include::topics/rest-level-0-mission-resources.adoc[leveloffset=+3]
 === {mission-configmap-wf-swarm-guide-name}
 :configmap-wf-swarm:
 
-include::topics/configmap-mission-intro.adoc[leveloffset=+3]
+include::topics/configmap-mission-intro-paragraph.adoc[leveloffset=+3]
+
+This mission shows you how to:
+
+* Set up and configure a `ConfigMap`.
+* Use the configuration provided by the `ConfigMap` within an application.
+* Deploy changes to the `ConfigMap` configuration of running applications.
+
+include::topics/con_about-externalized-configuration.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
