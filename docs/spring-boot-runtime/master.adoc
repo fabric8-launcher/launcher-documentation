@@ -16,7 +16,7 @@ include::topics/con_springboot-runtime-details.adoc[leveloffset=+1]
 
 include::topics/sb-product-versions.adoc[leveloffset=+2]
 
-include::topics/sb-features-and-frameworks-summary.adoc[leveloffset=+2]
+include::topics/con_springboot-features-and-frameworks-summary.adoc[leveloffset=+2]
 
 // Missions
 include::topics/con_missions-and-cloud-native-development-on-openshift.adoc[leveloffset=+1]
