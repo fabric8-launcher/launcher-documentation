@@ -227,7 +227,16 @@ include::topics/secured-mission-resources.adoc[leveloffset=+3]
 
 include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
-include::topics/cache-mission-intro.adoc[leveloffset=+3]
+Mission proficiency level: xref:proficiency_advanced[*{proficiency-advanced}*].
+
+The {name-mission-cache} mission demonstrates how to use a cache to increase the response time of applications.
+
+This mission shows you how to:
+
+* Deploy a cache to OpenShift.
+* Use a cache within an application.
+
+include::topics/con_about-caching.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
