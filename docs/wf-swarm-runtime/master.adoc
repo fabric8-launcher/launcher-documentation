@@ -355,9 +355,9 @@ include::topics/proc_accessing-debug-logs-on-openshift.adoc[leveloffset=+3]
 This section contains information about monitoring your {WildFlySwarm}{ndash}based application running on OpenShift.
 
 === Accessing JVM metrics for your application on OpenShift
-
+:context: wf-swarm
 include::topics/proc_accessing-jvm-metrics-using-jolokia-on-openshift.adoc[leveloffset=+3]
-
+:context!:
 
 [appendix]
 include::topics/appendix-s2i-build-process.adoc[leveloffset=+1]
