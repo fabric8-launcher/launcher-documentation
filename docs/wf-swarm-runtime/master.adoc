@@ -13,6 +13,8 @@ include::topics/templates/document-attributes.adoc[]
 //var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
 :docs-topic:
 
+:context: wf-swarm
+
 This guide covers concepts as well as practical details needed by developers to use the {WildFlySwarm} runtime.
 
 include::topics/con_wildflyswarm-runtime-details.adoc[leveloffset=+1]
@@ -378,7 +380,6 @@ include::topics/proc_attaching-a-remote-debugger-to-the-application.adoc[levelof
 include::topics/con_local-debug-logging.adoc[leveloffset=+3]
 
 include::topics/proc_accessing-debug-logs-on-openshift.adoc[leveloffset=+3]
-:context!:
 
 == Monitoring
 
