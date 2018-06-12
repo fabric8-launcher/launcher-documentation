@@ -1,3 +1,4 @@
+[id='vertx-runtime-information_{context}']
 = {Vertx} Runtime Information
 
 .Certified {Vertx} Version

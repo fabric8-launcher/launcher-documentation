@@ -1,4 +1,4 @@
-[[about_configmap]]
+[id='configmap-resources_{context}']
 = {name-mission-configmap} Resources
 
 More background and related information on {name-mission-configmap} and ConfigMap can be found here:

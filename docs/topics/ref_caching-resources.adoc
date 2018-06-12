@@ -1,5 +1,5 @@
-[[cache_resources]]
-= Cache Resources
+[id='caching-resources_{context}']
+= Caching Resources
 
 More background and related information on caching can be found here:
 

@@ -1,5 +1,5 @@
-[[breakdown_pom]]
-= Breakdown of POM Components
+[id='breakdown-of-springboot-pom-components_{context}']
+= Breakdown of {SpringBoot} POM Components
 
 .link:https://github.com/snowdrop/spring-boot-http-booster/blob/master/pom.xml[spring-boot-http-booster/pom.xml]
 [source,xml,options="nowrap",subs="attributes+"]

@@ -1,4 +1,4 @@
-[[vertx-community-and-product-versions]]
+[id='community-and-product-versions-of-vertx_{context}']
 = Community and Product Versions of {Vertx}
 
 .Supported {Vertx} Version

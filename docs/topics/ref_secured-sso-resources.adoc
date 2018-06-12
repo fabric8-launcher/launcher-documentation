@@ -1,4 +1,4 @@
-[[secured_resources]]
+[id='secured-sso-resources_{context}']
 = Secured SSO Resources
 
 Follow the links below for additional information on the principles behind the OAuth2 specification and on securing your applications using {RHSSO} and Keycloak:

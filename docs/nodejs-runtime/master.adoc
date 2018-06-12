@@ -45,9 +45,10 @@ include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.ad
 :context: {parameter-mission}-ocp
 include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
+:context: rest-api
 include::topics/rest-level-0-mission-basic-interaction-nodejs.adoc[leveloffset=+3]
 
-include::topics/rest-level-0-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_rest-resources.adoc[leveloffset=+3]
 
 [[mission-configmap-nodejs]]
 === {mission-configmap-nodejs-guide-name}
@@ -82,7 +83,7 @@ include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[le
 
 include::topics/configmap-mission-basic-interaction-nodejs.adoc[leveloffset=+3]
 
-include::topics/configmap-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_configmap-resources.adoc[leveloffset=+3]
 
 [[mission-crud-nodejs]]
 === {mission-crud-nodejs-guide-name}
@@ -113,7 +114,7 @@ include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[le
 include::topics/crud-mission-database-interaction.adoc[leveloffset=+3]
 
 // include additional resources
-include::topics/crud-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_relational-database-resources.adoc[leveloffset=+3]
 
 [[mission-health-check-nodejs]]
 === {mission-health-check-nodejs-guide-name}
@@ -146,7 +147,7 @@ include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[le
 
 include::topics/health-check-mission-basic-interaction-nodejs.adoc[leveloffset=+3]
 
-include::topics/health-check-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_health-check-resources.adoc[leveloffset=+3]
 
 [[mission-circuit-breaker-nodejs]]
 === {mission-circuit-breaker-nodejs-guide-name}
@@ -188,7 +189,7 @@ include::topics/proc_interacting-with-the-circuit-breaker-booster.adoc[leveloffs
 // include::topics/circuit-breaker-mission-access-hystrix-dashboard-wf-swarm.adoc[leveloffset=+3]
 
 // CB resources
-include::topics/circuit-breaker-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_circuit-breaker-resources.adoc[leveloffset=+3]
 
 
 [[mission-rest-http-secured-nodejs]]
@@ -218,7 +219,7 @@ include::topics/assembly_building-and-deploying-the-secured-booster-to-openshift
 include::topics/assembly_interacting-with-the-secured-booster.adoc[leveloffset=+3]
 :parameter-runtime!:
 
-include::topics/secured-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_secured-sso-resources.adoc[leveloffset=+3]
 
 
 [[mission-cache-nodejs]]
@@ -262,7 +263,7 @@ include::topics/cache-mission-basic-interaction.adoc[leveloffset=+3]
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 ////
 
-include::topics/cache-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_caching-resources.adoc[leveloffset=+3]
 
 
 == Debugging
@@ -311,10 +312,9 @@ include::topics/ref_about-nodeshift.adoc[leveloffset=+1]
 :context: nodejs
 [appendix]
 include::topics/proc_updating-the-deployment-configuration-of-a-booster.adoc[leveloffset=+1]
-:context!:
 
 [appendix]
-include::topics/http-api-nodejs-package-json.adoc[leveloffset=+1]
+include::topics/ref_breakdown-of-package-json-properties.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/nodejs-dev-guide-additional-resources.adoc[leveloffset=+1]

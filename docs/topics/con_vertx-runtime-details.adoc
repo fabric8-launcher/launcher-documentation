@@ -6,7 +6,7 @@
 {VertX} provides an unopinionated and flexible way to write polyglot applications that are fast and lightweight.
 {VertX} is also designed to be truly cloud-native by efficiently allowing many processes to switch between one or very few threads.
 This allows {VertX} applications and services to more effectively use their CPU quotas in cloud environments and avoids the unnecessary overhead caused when creating new threads.
-Check out xref:vertx-additional-resources[Additional Resources] for further reading on {VertX}.
+Check out xref:additional-vertx-resources_{context}[Additional Resources] for further reading on {VertX}.
 
 Using the {VertX} runtime in OpenShift makes it simpler and easier to build reactive systems with {VertX}.
 The {VertX} runtime enables you to run {VertX} applications and services in OpenShift while providing all the advantages and conveniences of the OpenShift platform such as rolling updates, service discovery, and canary deployments.

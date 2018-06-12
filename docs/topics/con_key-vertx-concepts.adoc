@@ -29,4 +29,4 @@ In reactive applicatios, the code reacts to events or messages.
 There are several implementations of reactive programming, from the simplest ones using callbacks, to more complex ones, such as the Reactive Extensions (Rx), and coroutines.
 The Reactive Extensions (Rx) is the most well-known form of reactive programming in Java, thanks to the frequently-used _RxJava_ library.
 
-For further reading on reactive systems, reactive programming, and reactive extensions, see the xref:vertx-additional-resources[Additional Resources] section.
+For further reading on reactive systems, reactive programming, and reactive extensions, see the xref:additional-vertx-resources_{context}[Additional Resources] section.

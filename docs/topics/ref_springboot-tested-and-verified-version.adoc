@@ -1,5 +1,5 @@
 
-[[sb-product-versions]]
+[id='springboot-tested-and-verified-version_{context}']
 = {SpringBoot} Tested and Verified Version
 
 

@@ -1,5 +1,5 @@
-[[breakdown_pom]]
-= Breakdown of POM Components
+[id='breakdown-of-vertx-pom-components_{context}']
+= Breakdown of {VertX} POM Components
 
 .link:https://github.com/openshiftio-vertx-boosters/vertx-http-booster/blob/master/pom.xml[vertx-http-booster/pom.xml]
 [source,xml,options="nowrap",subs="attributes+"]

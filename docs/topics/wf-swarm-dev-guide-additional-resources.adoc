@@ -1,5 +1,5 @@
 [[wf-swarm-additional-resources]]
-= Additional Resources
+= Additional {WildFlySwarm} Resources
 
 * link:https://docs.wildfly-swarm.io/{WildFlySwarmVersion}/[{WildFlySwarm} Community Documentation]
 * link:https://github.com/wildfly-swarm/wildfly-swarm-presentations[{WildFlySwarm} Presentations]
