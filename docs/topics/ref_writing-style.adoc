@@ -1,5 +1,5 @@
 
-[#writing-new-content]
+[id='writing-style_{context}']
 = Writing Style
 
 Follow the rules of technical writing as described in the following guides; your pull requests will be evaluated against the requirements described in them.

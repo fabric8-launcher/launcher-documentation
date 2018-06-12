@@ -11,6 +11,6 @@ To launch using continuous deployment, click the _Open in OpenShift_ button. Thi
 * Deploy a continuous deployment pod to your {OpenShiftLocal} to deploy your runtime project framework's code.
 * The continuous deployment pod will then build and deploy your runtime project framework's code to your {OpenShiftLocal}.
  
-You can find a full list of runtime project frameworks in xref:available-runtime-project-frameworks[].
+You can find a full list of runtime project frameworks in xref:available-runtime-project-frameworks_{context}[].
 
 == Launching Manually

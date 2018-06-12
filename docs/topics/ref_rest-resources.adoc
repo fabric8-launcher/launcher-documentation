@@ -1,4 +1,4 @@
-[[about_rest]]
+[id='rest-resources_{context}']
 = REST Resources
 
 More background and related information on REST can be found here:

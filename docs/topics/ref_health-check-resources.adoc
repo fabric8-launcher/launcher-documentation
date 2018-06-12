@@ -1,4 +1,4 @@
-[[about_health_check]]
+[id='health-check-resources_{context}']
 = Health Check Resources
 
 More background and related information on health checking can be found here:

@@ -34,7 +34,7 @@ If you are unsure, ask someone from the team for help.
 . Create a pull request against the branch you based your contribution off. Ensure you also:
 +
 --
-.. Label the pull request appropriately. For more information about labels, see xref:_using_github_labels[].
+.. Label the pull request appropriately. For more information about labels, see xref:using-github-labels_{context}[].
 .. Reference the issue that your pull request resolves in the description, using the formulation `resolves $ID`, where `$ID` is the numerical ID of the issue. Doing this automatically closes the issue when the pull request is accepted.
 
 A team member (a reviewer) will review your changes for factual and stylistic correctness. If the changes are acceptable, the reviewer merges them and closes the pull request. The reviewer may ask you to make further modifications if necessary, or file a pull request against your branch with their suggested modifications.

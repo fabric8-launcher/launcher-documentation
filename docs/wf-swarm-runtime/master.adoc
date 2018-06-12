@@ -60,7 +60,8 @@ include::topics/rest-level-0-mission-basic-interaction-wf-swarm.adoc[leveloffset
 :context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
-include::topics/rest-level-0-mission-resources.adoc[leveloffset=+3]
+:context: rest-api
+include::topics/ref_rest-resources.adoc[leveloffset=+3]
 
 
 [[mission-configmap-wf-swarm]]
@@ -100,7 +101,7 @@ include::topics/configmap-mission-basic-interaction-wf-swarm.adoc[leveloffset=+3
 :context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
-include::topics/configmap-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_configmap-resources.adoc[leveloffset=+3]
 
 [[mission-crud-wf-swarm]]
 === {mission-crud-wf-swarm-guide-name}
@@ -138,7 +139,7 @@ include::topics/crud-mission-database-interaction.adoc[leveloffset=+3]
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
 // include additional resources
-include::topics/crud-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_relational-database-resources.adoc[leveloffset=+3]
 
 
 [[mission-health-check-wf-swarm]]
@@ -177,7 +178,7 @@ include::topics/health-check-mission-basic-interaction-wf-swarm.adoc[leveloffset
 :context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
-include::topics/health-check-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_health-check-resources.adoc[leveloffset=+3]
 
 [[mission-circuit-breaker-wf-swarm]]
 === {mission-circuit-breaker-wf-swarm-guide-name}
@@ -225,7 +226,7 @@ include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 include::topics/circuit-breaker-mission-access-hystrix-dashboard-wf-swarm.adoc[leveloffset=+3]
 
 // CB resources
-include::topics/circuit-breaker-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_circuit-breaker-resources.adoc[leveloffset=+3]
 
 
 [[mission-rest-http-secured-wf-swarm]]
@@ -258,7 +259,7 @@ include::topics/assembly_interacting-with-the-secured-booster.adoc[leveloffset=+
 // integration tests in a separate topic
 include::topics/proc_running-the-secured-booster-integration-tests.adoc[leveloffset=+3]
 
-include::topics/secured-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_secured-sso-resources.adoc[leveloffset=+3]
 
 
 [[mission-cache-wf-swarm]]
@@ -300,7 +301,7 @@ include::topics/cache-mission-basic-interaction.adoc[leveloffset=+3]
 :context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
-include::topics/cache-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_caching-resources.adoc[leveloffset=+3]
 
 
 //== Creating an Application from Scratch
@@ -396,10 +397,9 @@ include::topics/ref_the-source-to-image-s2i-build-process.adoc[leveloffset=+1]
 :context: wf-swarm
 [appendix]
 include::topics/proc_updating-the-deployment-configuration-of-a-booster.adoc[leveloffset=+1]
-:context!:
 
 //[appendix]
-//include::topics/http-api-wf-swarm-pom.adoc[leveloffset=+1]
+//include::topics/ref_breakdown-of-wildflyswarm-pom-components.adoc[leveloffset=+1]
 
 [appendix]
 == {WildFlySwarm} Fractions Reference

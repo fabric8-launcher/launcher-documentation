@@ -1,5 +1,5 @@
 include::rest-level-0-mission-intro-paragraph.adoc[]
-For more information on REST, see xref:about_rest[].
+For more information on REST, see xref:rest-resources_{context}[].
 
 This booster introduces the mechanics of interacting with a remote service using the HTTP protocol. It allows you to:
 

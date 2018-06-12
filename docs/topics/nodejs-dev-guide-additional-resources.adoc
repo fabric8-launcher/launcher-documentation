@@ -1,5 +1,5 @@
 [[nodejs-additional-resources]]
-= Additional Resources
+= Additional {NodeJS} Resources
 
 * link:https://nodejs.org/[{NodeJS} Home Page]
 * link:https://www.npmjs.com/[npm Home Page]

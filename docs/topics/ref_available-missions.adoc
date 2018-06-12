@@ -1,4 +1,4 @@
-[[available-missions]]
+[id='available-missions_{context}']
 = Available Missions
 
 * link:{link-mission-http-api-spring-boot}[{mission-http-api-spring-boot-guide-name}]

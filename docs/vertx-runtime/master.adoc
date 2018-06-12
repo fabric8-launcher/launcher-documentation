@@ -21,10 +21,10 @@ include::topics/con_vertx-runtime-details.adoc[leveloffset=+1]
 //runtime information modules
 include::topics/con_key-vertx-concepts.adoc[leveloffset=+2]
 
-//include::topics/vertx-community-and-product-versions.adoc[leveloffset=+2]
+//include::topics/ref_community-and-product-versions-of-vertx.adoc[leveloffset=+2]
 
 // duplicates the release notes
-// include::topics/vertx-tech-preview-components.adoc[leveloffset=+2]
+// include::topics/ref_vertx-components-available-as-a-technology-preview.adoc[leveloffset=+2]
 
 include::topics/configuring-vertx.adoc[leveloffset=+2]
 
@@ -69,7 +69,8 @@ include::topics/rest-level-0-mission-basic-interaction-vertx.adoc[leveloffset=+3
 :context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
-include::topics/rest-level-0-mission-resources.adoc[leveloffset=+3]
+:context: rest-api
+include::topics/ref_rest-resources.adoc[leveloffset=+3]
 
 
 [[mission-configmap-vertx]]
@@ -109,7 +110,7 @@ include::topics/configmap-mission-basic-interaction-vertx.adoc[leveloffset=+3]
 :context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
-include::topics/configmap-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_configmap-resources.adoc[leveloffset=+3]
 
 :configmap-vertx!:
 
@@ -149,7 +150,7 @@ include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
 
 // include additional resources
-include::topics/crud-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_relational-database-resources.adoc[leveloffset=+3]
 
 
 [[mission-health-check-vertx]]
@@ -188,7 +189,7 @@ include::topics/health-check-mission-basic-interaction-vertx.adoc[leveloffset=+3
 :context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
-include::topics/health-check-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_health-check-resources.adoc[leveloffset=+3]
 
 [[mission-circuit-breaker-vertx]]
 === {mission-circuit-breaker-vertx-guide-name}
@@ -235,7 +236,7 @@ include::topics/circuit-breaker-mission-access-hystrix-dashboard-vertx.adoc[leve
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
 // CB resources
-include::topics/circuit-breaker-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_circuit-breaker-resources.adoc[leveloffset=+3]
 
 
 
@@ -270,7 +271,7 @@ include::topics/assembly_interacting-with-the-secured-booster.adoc[leveloffset=+
 include::topics/proc_running-the-secured-booster-integration-tests-on-vertx.adoc[leveloffset=+3]
 :parameter-runtime!:
 
-include::topics/secured-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_secured-sso-resources.adoc[leveloffset=+3]
 
 
 [[mission-cache-vertx]]
@@ -312,7 +313,7 @@ include::topics/cache-mission-basic-interaction.adoc[leveloffset=+3]
 :context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
-include::topics/cache-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_caching-resources.adoc[leveloffset=+3]
 
 
 == Application Development
@@ -395,13 +396,12 @@ include::topics/ref_the-source-to-image-s2i-build-process.adoc[leveloffset=+1]
 :context: vertx
 [appendix]
 include::topics/proc_updating-the-deployment-configuration-of-a-booster.adoc[leveloffset=+1]
-:context!:
 
 //[appendix]
-//include::topics/http-api-vertx-pom.adoc[leveloffset=+1]
+//include::topics/ref_breakdown-of-vertx-pom-components.adoc[leveloffset=+1]
 
 [appendix]
-include::topics/vertx-dev-guide-additional-resources.adoc[leveloffset=+1]
+include::topics/ref_additional-vertx-resources.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/ref_application-development-resources.adoc[leveloffset=+1]

@@ -10,7 +10,7 @@ Each issue in the _{repo-docs-name}_ repository goes through the following life 
 --
 Reporter:: Describe the problem briefly, but in sufficient detail.
 
-Team Member:: Ensure the issue has correct labels. For more information, see xref:_using_github_labels[].
+Team Member:: Ensure the issue has correct labels. For more information, see xref:using-github-labels_{context}[].
 --
 
 . A team member or a contributor assigns the issue.

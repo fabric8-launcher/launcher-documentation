@@ -14,7 +14,7 @@ This guide covers concepts as well as practical details needed by developers to 
 
 include::topics/con_springboot-runtime-details.adoc[leveloffset=+1]
 
-include::topics/sb-product-versions.adoc[leveloffset=+2]
+include::topics/ref_springboot-tested-and-verified-version.adoc[leveloffset=+2]
 
 include::topics/con_springboot-features-and-frameworks-summary.adoc[leveloffset=+2]
 
@@ -56,7 +56,8 @@ include::topics/rest-level-0-mission-basic-interaction-spring-boot.adoc[leveloff
 :context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
-include::topics/rest-level-0-mission-resources.adoc[leveloffset=+3]
+:context: rest-api
+include::topics/ref_rest-resources.adoc[leveloffset=+3]
 
 
 [[mission-configmap-spring-boot]]
@@ -96,7 +97,7 @@ include::topics/configmap-mission-basic-interaction-spring-boot.adoc[leveloffset
 :context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
-include::topics/configmap-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_configmap-resources.adoc[leveloffset=+3]
 
 :configmap-spring-boot!:
 
@@ -136,7 +137,7 @@ include::topics/crud-mission-database-interaction.adoc[leveloffset=+3]
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
 // include additional resources
-include::topics/crud-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_relational-database-resources.adoc[leveloffset=+3]
 
 
 [[mission-health-check-spring-boot]]
@@ -175,7 +176,7 @@ include::topics/health-check-mission-basic-interaction-spring-boot.adoc[leveloff
 :context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
-include::topics/health-check-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_health-check-resources.adoc[leveloffset=+3]
 
 [[mission-circuit-breaker-spring-boot]]
 === {mission-circuit-breaker-spring-boot-guide-name}
@@ -223,7 +224,7 @@ include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 include::topics/circuit-breaker-mission-access-hystrix-dashboard-spring-boot.adoc[leveloffset=+3]
 
 // CB resources
-include::topics/circuit-breaker-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_circuit-breaker-resources.adoc[leveloffset=+3]
 
 [[mission-rest-http-secured-spring-boot]]
 === {mission-secured-spring-boot-guide-name}
@@ -259,7 +260,7 @@ include::topics/proc_running-the-secured-booster-integration-tests-on-springboot
 
 :parameter-runtime!:
 
-include::topics/secured-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_secured-sso-resources.adoc[leveloffset=+3]
 
 
 
@@ -302,7 +303,7 @@ include::topics/cache-mission-basic-interaction.adoc[leveloffset=+3]
 :context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
-include::topics/cache-mission-resources.adoc[leveloffset=+3]
+include::topics/ref_caching-resources.adoc[leveloffset=+3]
 
 
 == Application Development
@@ -376,10 +377,10 @@ include::topics/proc_updating-the-deployment-configuration-of-a-booster.adoc[lev
 include::topics/proc_deploying-a-springboot-application-using-war-files.adoc[leveloffset=+1]
 
 //[appendix]
-//include::topics/http-api-spring-boot-pom.adoc[leveloffset=+1]
+//include::topics/ref_breakdown-of-springboot-pom-components.adoc[leveloffset=+1]
 
 [appendix]
-include::topics/sb-dev-guide-additional-resources.adoc[leveloffset=+1]
+include::topics/ref_additional-springboot-resources.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/ref_application-development-resources.adoc[leveloffset=+1]
