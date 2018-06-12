@@ -26,5 +26,5 @@ include::topics/proc_installing-launcher-tool.adoc[leveloffset=+1]
 include::topics/minishift-install-nexus-setup.adoc[leveloffset=+1]
 
 [appendix]
-include::topics/appendix-glossary.adoc[leveloffset=+1]
+include::topics/ref_glossary.adoc[leveloffset=+1]
 

@@ -1,0 +1,8 @@
+[id='about-nodeshift']
+= About Nodeshift 
+
+link:https://github.com/bucharest-gold/nodeshift[Nodeshift] is a module for running OpenShift deployments with {NodeJS} projects.
+
+IMPORTANT: Nodeshift assumes you have the `oc` CLI client installed, and you are logged into your OpenShift cluster. Nodeshift also uses the current project the `oc` CLI client is using.
+
+Nodeshift uses resource files in the `.nodeshift` folder located at the root of the project to handle creating OpenShift Routes, Services and DeploymentConfigs. More details on Nodeshift are available on the link:https://github.com/bucharest-gold/nodeshift[Nodeshift project page].

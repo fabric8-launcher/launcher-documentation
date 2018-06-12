@@ -1,4 +1,4 @@
-[[application-development-resources]]
+[id='application-development-resources']
 = Application Development Resources
 
 For additional information on application development with OpenShift see:

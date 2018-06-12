@@ -1,5 +1,5 @@
 
-[[glossary]]
+[id='glossary']
 = Glossary
 
 == Product and Project Names

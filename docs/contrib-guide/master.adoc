@@ -83,5 +83,5 @@ include::topics/contributing-labels.adoc[leveloffset=+3]
 _TBD_
 
 [appendix]
-include::topics/appendix-glossary.adoc[leveloffset=+1]
+include::topics/ref_glossary.adoc[leveloffset=+1]
 
