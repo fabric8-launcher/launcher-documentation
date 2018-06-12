@@ -13,14 +13,16 @@ include::topics/templates/document-attributes.adoc[]
 //var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
 :docs-topic:
 
+:context: wf-swarm
+
 This guide covers concepts as well as practical details needed by developers to use the {WildFlySwarm} runtime.
 
-include::topics/wf-swarm-runtime-overview.adoc[leveloffset=+1]
+include::topics/con_wildflyswarm-runtime-details.adoc[leveloffset=+1]
 
 include::topics/runtime-info-product-version.adoc[leveloffset=+1]
 
 // MISSIONS
-include::topics/dev-guide-mission-intro.adoc[leveloffset=+1]
+include::topics/con_missions-and-cloud-native-development-on-openshift.adoc[leveloffset=+1]
 
 
 [[wf-swarm-available-missions-and-boosters]]
@@ -37,7 +39,7 @@ include::topics/rest-level-0-mission-intro.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
-include::topics/rest-level-0-mission-design-tradeoffs.adoc[leveloffset=+3]
+include::topics/con_http-api-design-tradeoffs.adoc[leveloffset=+3]
 
 :parameter-mission: http-api
 :parameter-mission-name: {name-mission-http-api}
@@ -65,11 +67,19 @@ include::topics/rest-level-0-mission-resources.adoc[leveloffset=+3]
 === {mission-configmap-wf-swarm-guide-name}
 :configmap-wf-swarm:
 
-include::topics/configmap-mission-intro.adoc[leveloffset=+3]
+include::topics/configmap-mission-intro-paragraph.adoc[leveloffset=+3]
+
+This mission shows you how to:
+
+* Set up and configure a `ConfigMap`.
+* Use the configuration provided by the `ConfigMap` within an application.
+* Deploy changes to the `ConfigMap` configuration of running applications.
+
+include::topics/con_about-externalized-configuration.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
-include::topics/configmap-mission-design-tradeoffs.adoc[leveloffset=+3]
+include::topics/con_configmap-design-tradeoffs.adoc[leveloffset=+3]
 
 :parameter-mission: configmap
 :parameter-mission-name: {name-mission-configmap}
@@ -110,7 +120,7 @@ include::topics/crud-mission-intro.adoc[leveloffset=+3]
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 // design tradeoffs
-include::topics/crud-mission-design-tradeoffs.adoc[leveloffset=+3]
+include::topics/con_crud-design-tradeoffs.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-oso
 include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
@@ -135,7 +145,15 @@ include::topics/crud-mission-resources.adoc[leveloffset=+3]
 === {mission-health-check-wf-swarm-guide-name}
 :health-check-wf-swarm:
 
-include::topics/health-check-mission-intro.adoc[leveloffset=+3]
+include::topics/health-check-mission-intro-paragraph.adoc[leveloffset=+3]
+
+NOTE: If you are not familiar with the health check terminology, see the xref:health-check-concepts_{context}[] section first.
+
+The purpose of this use case is to demonstrate the health check pattern through the use of probing. Probing is used to report the liveness and readiness of an application. In this use case, you configure an application which exposes an HTTP `health` endpoint to issue HTTP requests. If the container is alive, according to the liveness probe on the `health` HTTP endpoint, the management platform receives `200` as return code and no further action is required. If the `health` HTTP endpoint does not return a response, for example if the thread is blocked, then the application is not considered alive according to the liveness probe. In that case, the platform kills the pod corresponding to that application and recreates a new pod to restart the application.
+
+This use case also allows you to demonstrate and use a readiness probe. In cases where the application is running but is unable to handle requests, such as when the application returns an HTTP `503` response code during restart, this application is not considered ready according to the readiness probe. If the application is not considered ready by the readiness probe, requests are not routed to that application until it is considered ready according to the readiness probe.
+
+include::topics/con_health-check-concepts.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
@@ -168,12 +186,17 @@ include::topics/health-check-mission-resources.adoc[leveloffset=+3]
 include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
 // circuit breaker intro
-include::topics/circuit-breaker-mission-intro.adoc[leveloffset=+3]
+include::topics/circuit-breaker-mission-intro-paragraph.adoc[leveloffset=+3]
+
+This mission shows you how to implement a Circuit Breaker and Fallback pattern in your services.
+
+include::topics/con_about-circuit-breaker.adoc[leveloffset=+3]
+
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 // CB design tradeoffs
-include::topics/circuit-breaker-mission-design-tradeoffs.adoc[leveloffset=+3]
+include::topics/con_circuit-breaker-design-tradeoffs.adoc[leveloffset=+3]
 
 :parameter-mission: circuit-breaker
 :parameter-mission-name: {name-mission-circuit-breaker}
@@ -244,7 +267,16 @@ include::topics/secured-mission-resources.adoc[leveloffset=+3]
 
 include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
-include::topics/cache-mission-intro.adoc[leveloffset=+3]
+Mission proficiency level: xref:proficiency_advanced[*{proficiency-advanced}*].
+
+The {name-mission-cache} mission demonstrates how to use a cache to increase the response time of applications.
+
+This mission shows you how to:
+
+* Deploy a cache to OpenShift.
+* Use a cache within an application.
+
+include::topics/con_about-caching.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
@@ -348,7 +380,6 @@ include::topics/proc_attaching-a-remote-debugger-to-the-application.adoc[levelof
 include::topics/con_local-debug-logging.adoc[leveloffset=+3]
 
 include::topics/proc_accessing-debug-logs-on-openshift.adoc[leveloffset=+3]
-:context!:
 
 == Monitoring
 

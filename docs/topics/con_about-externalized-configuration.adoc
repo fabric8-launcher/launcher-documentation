@@ -1,12 +1,7 @@
-include::configmap-mission-intro-paragraph.adoc[]
+[id='about-externalized-configuration_{context}']
 
-This mission shows you how to:
+= About Externalized Configuration
 
-* Set up and configure a `ConfigMap`.
-* Use the configuration provided by the `ConfigMap` within an application.
-* Deploy changes to the `ConfigMap` configuration of running applications.
-
-.About Externalized Configuration
 It is important for the application configuration to be externalized and separated from its code. This allows the application configuration to change as it moves through different environments while leaving the code unchanged. This also keeps sensitive or internal information out of your code base and version control. Many languages and application servers provide environment variables to support externalizing an application's configuration.
 Microservices architectures and polyglot environments add a layer of complexity to managing an application's configuration. Applications are comprised of independent, distributed services, each potentially with its own configuration.
 This creates a maintenance challenge to keep the configuration synchronized and accessible from all services.
@@ -14,3 +9,4 @@ This creates a maintenance challenge to keep the configuration synchronized and 
 ConfigMaps enable the application configuration to be externalized and used in individual Linux containers and pods on OpenShift. You can create a ConfigMap object in a variety of ways, including using a YAML file, and inject it into the Linux container.
 ConfigMaps also allow sets of configuration data to be easily grouped and scaled. This lets you configure an arbitrarily large number of environments beyond the basic _Development_, _Stage_, and _Production_.
 You can find more information about ConfigMaps in the link:https://docs.openshift.org/latest/dev_guide/configmaps.html[OpenShift documentation].
+

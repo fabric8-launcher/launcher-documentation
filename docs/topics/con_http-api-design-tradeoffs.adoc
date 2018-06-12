@@ -1,3 +1,7 @@
+[id='http-api-design-tradeoffs_{context}']
+
+= {name-mission-http-api} design tradeoffs
+
 .Design Tradeoffs
 [width="100%",options="header"]
 |====================================================================

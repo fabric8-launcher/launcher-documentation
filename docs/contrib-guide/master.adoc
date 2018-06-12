@@ -28,7 +28,7 @@ include::topics/contributing-before-you-start.adoc[leveloffset=+2]
 
 include::topics/contributing-repository-location.adoc[leveloffset=+3]
 
-include::topics/contributing-repository-filesystem-layout.adoc[leveloffset=+3]
+include::topics/con_repository-filesystem-layout.adoc[leveloffset=+3]
 
 include::topics/contributing-branches.adoc[leveloffset=+3]
 
@@ -54,7 +54,7 @@ This chapter contains the requirements your contributions must meet in order to 
 
 include::topics/contributing-writing-new-content.adoc[leveloffset=+3]
 
-include::topics/contributing-writing-the-modular-way.adoc[leveloffset=+3]
+include::topics/con_writing-the-modular-way.adoc[leveloffset=+3]
 
 === Administration
 
@@ -68,7 +68,7 @@ include::topics/proc_releasing-new-version.adoc[leveloffset=+3]
 
 === Issues
 
-include::topics/contributing-github-issue-workflow.adoc[leveloffset=+3]
+include::topics/con_github-issue-workflow.adoc[leveloffset=+3]
 
 include::topics/contributing-labels.adoc[leveloffset=+3]
 

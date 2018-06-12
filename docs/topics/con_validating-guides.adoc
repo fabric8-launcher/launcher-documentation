@@ -1,5 +1,5 @@
 
-[#validating-guides]
+[id='validating-guides_{context}']
 = Validating Guides
 
 To ensure that all books can be built, validate them using the automatic script provided in the repository.

@@ -1,3 +1,4 @@
+[id='guide-structure_{context}']
 = Guide Structure
 
 Each guide is stored in a separate directory. The main file for the guide is `$REPO_HOME/docs/GUIDE_NAME/master.adoc`.
@@ -36,6 +37,6 @@ document-attributes file::
 partitioning content::
   Sections of content in each guide are separated into smaller files. This allows for content to be easily refactored within a guide as well as reused across different guides. The `include` directive is used to include these files in a piece of content.
 modular documentation::
-  An individual piece of content, called a module, is formatted in xref:writing-the-modular-way[a specific way], which allows for better reuse across guides.
+  An individual piece of content, called a module, is formatted in xref:writing-the-modular-way_{context}[a specific way], which allows for better reuse across guides.
 common topics directory::
   All of the smaller content files and modules are located in the `$REPO_HOME/docs/topics/` directory. This is a common directory that contains all shared files across all guides. To help the build process, the `$REPO_HOME/docs/topics/` directory is symlinked in each guide's directory.

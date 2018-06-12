@@ -1,3 +1,4 @@
+[id='github-issue-workflow_{context}']
 
 = GitHub Issue Workflow
 

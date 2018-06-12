@@ -1,5 +1,5 @@
 
-[#introduction-to-productname]
+[id='introduction-to-productname_{context}']
 = Introduction to {ProductName}
 This section provides a brief overview of the foundational concepts behind {ProductName}.
 

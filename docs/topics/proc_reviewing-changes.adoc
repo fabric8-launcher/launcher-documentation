@@ -39,6 +39,6 @@ If you are unsure if the changes render correctly, build the contribution locall
 * The Jenkins build configuration file is in the link:https://github.com/almighty/almighty-jobs/blob/master/devtools-ci-index.yaml#L11[devtools-ci-index.adoc] file in the _almighty/almighty-jobs_ repository.
 +
 You can find the list of administrators under the `admin_list_defaults` -> `admin-list` element.
-* xref:_repository_filesystem_layout[]
+* xref:repository-filesystem-layout_{context}[]
 * xref:starting-preview-server_{context}[]
 
