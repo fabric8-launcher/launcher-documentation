@@ -366,7 +366,7 @@ include::topics/proc_accessing-jvm-metrics-using-jolokia-on-openshift.adoc[level
 //Building your app
 
 [appendix]
-include::topics/appendix-s2i-build-process.adoc[leveloffset=+1]
+include::topics/ref_the-source-to-image-s2i-build-process.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/proc_updating-the-deployment-configuration-of-a-booster.adoc[leveloffset=+1]
@@ -382,10 +382,10 @@ include::topics/proc_deploying-a-springboot-application-using-war-files.adoc[lev
 include::topics/sb-dev-guide-additional-resources.adoc[leveloffset=+1]
 
 [appendix]
-include::topics/appendix-application-development-resources.adoc[leveloffset=+1]
+include::topics/ref_application-development-resources.adoc[leveloffset=+1]
 
 [appendix]
-include::topics/appendix-proficiency-levels.adoc[leveloffset=+1]
+include::topics/ref_proficiency-levels.adoc[leveloffset=+1]
 
 [appendix]
-include::topics/appendix-glossary.adoc[leveloffset=+1]
+include::topics/ref_glossary.adoc[leveloffset=+1]

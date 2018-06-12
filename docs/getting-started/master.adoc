@@ -32,4 +32,4 @@ include::topics/proc_updating-your-booster-and-deploying-the-changes.adoc[levelo
 include::topics/proc_using-red-hat-jboss-developer-studio-with-a-booster-project.adoc[leveloffset=+1]
 
 [appendix]
-include::topics/appendix-glossary.adoc[leveloffset=+1]
+include::topics/ref_glossary.adoc[leveloffset=+1]

@@ -1,5 +1,5 @@
 
-[[proficiency_levels]]
+[id='proficiency-levels']
 = Proficiency Levels
 
 Each mission available on {launcher} teaches you about certain topics, but requires certain minimum knowledge, which varies by mission. For clarity, the minimum requirements and concepts are organized in several proficiency levels. In addition to the levels described in this chapter, there can be additional requirements with each mission, specific to its aim or the technologies it uses.

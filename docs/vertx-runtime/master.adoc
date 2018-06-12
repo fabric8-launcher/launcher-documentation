@@ -390,7 +390,7 @@ This section contains information about monitoring your {VertX}{ndash}based appl
 include::topics/proc_accessing-jvm-metrics-using-jolokia-on-openshift.adoc[leveloffset=+3]
 
 [appendix]
-include::topics/appendix-s2i-build-process.adoc[leveloffset=+1]
+include::topics/ref_the-source-to-image-s2i-build-process.adoc[leveloffset=+1]
 
 :context: vertx
 [appendix]
@@ -404,10 +404,10 @@ include::topics/proc_updating-the-deployment-configuration-of-a-booster.adoc[lev
 include::topics/vertx-dev-guide-additional-resources.adoc[leveloffset=+1]
 
 [appendix]
-include::topics/appendix-application-development-resources.adoc[leveloffset=+1]
+include::topics/ref_application-development-resources.adoc[leveloffset=+1]
 
 [appendix]
-include::topics/appendix-proficiency-levels.adoc[leveloffset=+1]
+include::topics/ref_proficiency-levels.adoc[leveloffset=+1]
 
 [appendix]
-include::topics/appendix-glossary.adoc[leveloffset=+1]
+include::topics/ref_glossary.adoc[leveloffset=+1]
