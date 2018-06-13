@@ -6,9 +6,11 @@
 //
 // Rationale: This procedure is identical in all deployments.
 
-
 [id='deploying-the-booster-to-openshiftonline_{context}']
 = Deploying the {parameter-mission-name} Booster to {OpenShiftOnline}
+
+:parent-context: {context}
+:context: {parent-context}-oso
 
 Use one of the following options to execute the {parameter-mission-name} booster on {OpenShiftOnline}.
 
@@ -26,3 +28,6 @@ include::proc_authenticating-the-oc-cli-client.adoc[leveloffset=+1]
 :parameter-deployment: link:{link-launcher-oso}[{launcher-oso}]
 include::proc_deploying-the-{parameter-mission}-booster-using-the-oc-cli-client.adoc[leveloffset=+1]
 :parameter-deployment!:
+
+:context: {parent-context}
+

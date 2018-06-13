@@ -2,6 +2,8 @@
 [id='creating-a-basic-vertx-application_{context}']
 = Creating a Basic {VertX} Application
 
+:parent-context: {context}
+
 In addition to xref:mission-rest-http-vertx[using a booster], you can create new {runtime} applications from scratch and deploy them to OpenShift.
 
 :parameter-runtime: vertx
@@ -15,3 +17,6 @@ include::proc_deploying-an-application-to-openshift.adoc[leveloffset=+1]
 :parameter-response:
 :parameter-maven-command:
 :parameter-runtime:
+
+:context: {parent-context}
+

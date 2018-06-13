@@ -1,6 +1,8 @@
 
 [id='creating-a-basic-wildfly-swarm-application_{context}']
-= Creating a Basic {WildFly Swarm} Application
+= Creating a Basic {WildFlySwarm} Application
+
+:parent-context: {context}
 
 In addition to xref:mission-rest-http-wf-swarm[using a booster], you can create new {runtime} applications from scratch and deploy them to OpenShift.
 
@@ -13,4 +15,7 @@ include::proc_deploying-an-application-to-openshift.adoc[leveloffset=+1]
 :parameter-maven-command!:
 :parameter-response:
 :parameter-url:
+
+
+:context: {parent-context}
 

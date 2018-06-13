@@ -1,6 +1,5 @@
 // This is a parameterized module. Parameters used:
 //
-//  parameter-mission: id of the mission. This is used in anchors file imports.
 //  parameter-mission-name: human-readable name of the mission. This is used in readable text
 //
 // Rationale: This procedure is identical in all deployments.

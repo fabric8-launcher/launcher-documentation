@@ -1,8 +1,5 @@
 // This is a parameterized module. Parameters used:
 //
-//  parameter-runtime: the id of the runtime used in the {context} attribute
-//  parameter-mission: id of the mission. This is used in anchors file imports and in the {context} attribute
-//  parameter-runtime-name: human-readable name of the runtime. This is used in readable text
 //  parameter-mission-name: used to display the mission name in the readable title
 //
 // Rationale: This procedure is highly similar for all boosters and mission except the Secured booster.
