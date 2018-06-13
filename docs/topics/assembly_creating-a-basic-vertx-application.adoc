@@ -1,6 +1,6 @@
 
 [id="creating-a-basic-application_{context}"]
-= Creating a Basic {runtime} Application
+= Creating a Basic {VertX} Application
 
 In addition to xref:mission-rest-http-vertx[using a booster], you can create new {runtime} applications from scratch and deploy them to OpenShift.
 
