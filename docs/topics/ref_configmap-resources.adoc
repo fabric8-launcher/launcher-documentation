@@ -6,30 +6,11 @@ More background and related information on {name-mission-configmap} and ConfigMa
 * link:https://docs.openshift.org/latest/dev_guide/configmaps.html[OpenShift ConfigMap Documentation]
 * link:https://blog.openshift.com/configuring-your-application-part-1/[Blog Post about ConfigMap in OpenShift]
 
-ifdef::configmap-spring-boot[]
-* link:http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config[Externalized Configuration with {SpringBoot}]
-endif::configmap-spring-boot[]
+ifdef::spring-boot[* link:http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config[Externalized Configuration with {SpringBoot}]]
+ifdef::vert-x[* link:http://vertx.io/docs/vertx-config/js/[Externalized Configuration with {VertX}]]
+ifdef::wf-swarm[* link:https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-guide/content/v/eee1f5ba4dd4f13855cbe98addd365ba29033810/configuration/index.html[Externalized Configuration with {WildFlySwarm}]]
+ifndef::spring-boot[* link:{link-mission-configmap-spring-boot}[Externalized Configuration - {SpringBoot} Booster]]
+ifndef::vert-x[* link:{link-mission-configmap-vertx}[Externalized Configuration - {VertX} Booster]]
+ifndef::wf-swarm[* link:{link-mission-configmap-wf-swarm}[Externalized Configuration - {WildFlySwarm} Booster]]
+ifndef::node-js[* link:{link-mission-configmap-nodejs}[Externalized Configuration - {NodeJS} Booster]]
 
-ifdef::configmap-vertx[]
-* link:http://vertx.io/docs/vertx-config/js/[Externalized Configuration with {VertX}]
-endif::configmap-vertx[]
-
-ifdef::configmap-wf-swarm[]
-* link:https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-guide/content/v/eee1f5ba4dd4f13855cbe98addd365ba29033810/configuration/index.html[Externalized Configuration with {WildFlySwarm}]
-endif::configmap-wf-swarm[]
-
-ifndef::configmap-spring-boot[]
-* link:{link-mission-configmap-spring-boot}[Externalized Configuration - {SpringBoot} Booster]
-endif::configmap-spring-boot[]
-
-ifndef::configmap-vertx[]
-* link:{link-mission-configmap-vertx}[Externalized Configuration - {VertX} Booster]
-endif::configmap-vertx[]
-
-ifndef::configmap-wf-swarm[]
-* link:{link-mission-configmap-wf-swarm}[Externalized Configuration - {WildFlySwarm} Booster]
-endif::configmap-wf-swarm[]
-
-ifndef::configmap-nodejs[]
-* link:{link-mission-configmap-nodejs}[Externalized Configuration - {NodeJS} Booster]
-endif::configmap-nodejs[]
