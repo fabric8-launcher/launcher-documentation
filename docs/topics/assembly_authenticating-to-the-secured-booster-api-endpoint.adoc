@@ -4,7 +4,7 @@
 //
 // Rationale: The API endpoint procedure is identical on all runtimes
 
-[#authenticating-to-the-secured-booster-api-endpoint]
+[id='authenticating-to-the-secured-booster-api-endpoint_{context}']
 = Authenticating to the {name-mission-secured} Booster API Endpoint
 
 The {name-mission-secured} booster provides a default HTTP endpoint that accepts `GET` requests if the caller is authenticated and authorized.

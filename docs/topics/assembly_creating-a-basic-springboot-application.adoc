@@ -1,5 +1,5 @@
 
-[id="creating-a-basic-application_{context}"]
+[id='creating-a-basic-springboot-application_{context}']
 = Creating a Basic {SpringBoot} Application
 
 In addition to xref:mission-rest-http-spring-boot[using a booster], you can create new {runtime} applications from scratch and deploy them to OpenShift.

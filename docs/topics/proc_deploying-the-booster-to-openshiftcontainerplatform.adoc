@@ -12,8 +12,8 @@ The process of creating and deploying boosters to {OpenshiftContainerPlatform} i
 
 .Prerequisites
 
-* The booster created on either xref:deploying-the-{parameter-mission}-booster-to-openshiftlocal[{OpenShiftLocal}] or xref:deploying-the-{parameter-mission}-booster-to-openshiftonline[{OpenShiftOnline}].
+* The booster created on either xref:deploying-the-booster-to-openshiftlocal_{context}[{OpenShiftLocal}] or xref:deploying-the-booster-to-openshiftonline_{context}[{OpenShiftOnline}].
 
 .Procedure
 
-* Follow the instructions in xref:deploying-the-{parameter-mission}-booster-to-openshiftonline[], only use the URL and user credentials from the {OpenShiftContainerPlatform} Web Console.
+* Follow the instructions in xref:deploying-the-booster-to-openshiftonline_{context}[], only use the URL and user credentials from the {OpenShiftContainerPlatform} Web Console.
