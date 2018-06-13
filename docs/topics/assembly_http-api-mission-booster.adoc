@@ -1,0 +1,31 @@
+
+// Do not change the anchor ID, it is set to this for URL routing reasons
+[id='mission-rest-http-{parameter-runtime}']
+= {name-mission-http-api} Mission - {runtime} Booster
+
+// TODO rework the introduction into modules
+
+include::rest-level-0-mission-intro.adoc[leveloffset=+1]
+
+include::note-preview-booster-source.adoc[leveloffset=+1]
+
+include::con_http-api-design-tradeoffs.adoc[leveloffset=+1]
+
+:parameter-mission-name: {name-mission-http-api}
+:parameter-mission: http-api
+include::assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+1]
+
+include::assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+1]
+:parameter-mission!:
+
+include::proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+1]
+
+ifndef::node-js[]
+include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]
+endif::[]
+:parameter-mission-name!:
+
+include::rest-level-0-mission-basic-interaction-{parameter-runtime}.adoc[leveloffset=+1]
+
+include::ref_rest-resources.adoc[leveloffset=+1]
+
