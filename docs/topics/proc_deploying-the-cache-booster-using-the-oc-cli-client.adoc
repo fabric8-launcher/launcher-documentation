@@ -67,7 +67,7 @@ endif::cache-nodejs[]
 ----
 $ oc get pods -w
 NAME                             READY     STATUS      RESTARTS   AGE
-cache-server-123456789-aaaaa             1/1       Running     0          8m
+cache-server-123456789-UID             1/1       Running     0          8m
 {app-name}-cutename-1-bbbbb       1/1       Running     0          4m
 {app-name}-cutename-s2i-1-build   0/1       Completed   0          7m
 {app-name}-greeting-1-ccccc       1/1       Running     0          3m

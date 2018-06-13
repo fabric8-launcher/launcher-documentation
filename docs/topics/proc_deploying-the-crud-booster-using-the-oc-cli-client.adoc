@@ -58,11 +58,11 @@ $ oc new-app -e POSTGRESQL_USER=luke -ePOSTGRESQL_PASSWORD=secret -ePOSTGRESQL_D
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc get pods -w
-my-database-1-aaaaa   1/1       Running   0         45s
+my-database-1-UID   1/1       Running   0         45s
 my-database-1-deploy   0/1       Completed   0         53s
 ----
 +
-The `my-database-1-aaaaa` pod should have a status of `Running` and should be indicated as ready once it is fully deployed and started.
+The `my-database-1-UID` pod should have a status of `Running` and should be indicated as ready once it is fully deployed and started.
 Your specific pod name will vary.
 The number in the middle will increase with each new build.
 The letters at the end are generated when the pod is created.
@@ -96,11 +96,11 @@ endif::crud-nodejs-mission[]
 ----
 $ oc get pods -w
 NAME                             READY     STATUS      RESTARTS   AGE
-{app-name}-1-aaaaa       1/1       Running     0          58s
+{app-name}-1-UID       1/1       Running     0          58s
 {app-name}-s2i-1-build   0/1       Completed   0          2m
 ----
 +
-Your `{app-name}-1-aaaaa` pod should have a status of `Running` and should be indicated as ready once it is fully deployed and started.
+Your `{app-name}-1-UID` pod should have a status of `Running` and should be indicated as ready once it is fully deployed and started.
 
 . Once your booster is deployed and started, determine its route.
 +
