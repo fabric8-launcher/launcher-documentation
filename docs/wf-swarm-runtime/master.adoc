@@ -30,6 +30,8 @@ include::topics/con_missions-and-cloud-native-development-on-openshift.adoc[leve
 
 The following boosters are available for {WildFlySwarm}.
 
+
+// REST API
 [[mission-rest-http-wf-swarm]]
 === {mission-http-api-wf-swarm-guide-name}
 :http-api-wf-swarm:
@@ -41,32 +43,30 @@ include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 include::topics/con_http-api-design-tradeoffs.adoc[leveloffset=+3]
 
-:parameter-mission: http-api
 :parameter-mission-name: {name-mission-http-api}
-
-:context: {parameter-mission}-oso
+:parameter-mission: http-api
 include::topics/assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
 
-:context: {parameter-mission}-osl
 include::topics/assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
+:parameter-mission!:
 
-:context: {parameter-mission}-ocp
 include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-basic-interaction-wf-swarm.adoc[leveloffset=+3]
 
-:parameter-runtime: wf-swarm
-:parameter-runtime-name: {WildFlySwarm}
-:context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
+:parameter-mission-name!:
 
-:context: rest-api
 include::topics/ref_rest-resources.adoc[leveloffset=+3]
 
+:http-api-wf-swarm!:
 
+
+// CONFIGMAP
 [[mission-configmap-wf-swarm]]
 === {mission-configmap-wf-swarm-guide-name}
 :configmap-wf-swarm:
+:context: configmap
 
 include::topics/configmap-mission-intro-paragraph.adoc[leveloffset=+3]
 
@@ -82,69 +82,62 @@ include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 include::topics/con_configmap-design-tradeoffs.adoc[leveloffset=+3]
 
-:parameter-mission: configmap
 :parameter-mission-name: {name-mission-configmap}
-
-:context: {parameter-mission}-oso
+:parameter-mission: configmap
 include::topics/assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
 
-:context: {parameter-mission}-osl
 include::topics/assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
+:parameter-mission!:
 
-:context: {parameter-mission}-ocp
 include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 include::topics/configmap-mission-basic-interaction-wf-swarm.adoc[leveloffset=+3]
 
-:parameter-runtime: wf-swarm
-:parameter-runtime-name: {WildFlySwarm}
-:context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
+:parameter-mission-name!:
 
 include::topics/ref_configmap-resources.adoc[leveloffset=+3]
 
+:configmap-wf-swarm!:
+
+// CRUD
 [[mission-crud-wf-swarm]]
 === {mission-crud-wf-swarm-guide-name}
-//redefine this
 :crud-wf-swarm-mission:
-//{crud-wf-swarm-rest-booster-guide-name}
+:context: crud
 
 include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
-:parameter-runtime: wf-swarm
-:parameter-runtime-name: {WildFlySwarm}
-:parameter-mission: crud
-:parameter-mission-name: {name-mission-crud}
-:context: {parameter-mission}-{parameter-runtime}
 include::topics/crud-mission-intro.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
-// design tradeoffs
 include::topics/con_crud-design-tradeoffs.adoc[leveloffset=+3]
 
-:context: {parameter-mission}-oso
+:parameter-mission-name: {name-mission-crud}
+:parameter-mission: crud
 include::topics/assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
 
-:context: {parameter-mission}-osl
 include::topics/assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
+:parameter-mission!:
 
-:context: {parameter-mission}-ocp
 include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
-//Interacting with the database
 include::topics/crud-mission-database-interaction.adoc[leveloffset=+3]
 
-:context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
+:parameter-mission-name!:
 
-// include additional resources
 include::topics/ref_relational-database-resources.adoc[leveloffset=+3]
 
+:crud-wf-swarm-mission!:
 
+
+// HEALTH CHECK
 [[mission-health-check-wf-swarm]]
 === {mission-health-check-wf-swarm-guide-name}
 :health-check-wf-swarm:
+:context: health-check
 
 include::topics/health-check-mission-intro-paragraph.adoc[leveloffset=+3]
 
@@ -158,81 +151,68 @@ include::topics/con_health-check-concepts.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
-:parameter-mission: health-check
 :parameter-mission-name: {name-mission-health-check}
-
-:context: {parameter-mission}-oso
+:parameter-mission: health-check
 include::topics/assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
 
-:context: {parameter-mission}-osl
 include::topics/assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
+:parameter-mission!:
 
-:context: {parameter-mission}-ocp
 include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
-
 
 include::topics/health-check-mission-basic-interaction-wf-swarm.adoc[leveloffset=+3]
 
-:parameter-runtime: wf-swarm
-:parameter-runtime-name: {WildFlySwarm}
-:context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
+:parameter-mission-name!:
 
 include::topics/ref_health-check-resources.adoc[leveloffset=+3]
 
+:health-check-wf-swarm!:
+
+
+// CIRCUIT BREAKER
 [[mission-circuit-breaker-wf-swarm]]
 === {mission-circuit-breaker-wf-swarm-guide-name}
 :circuit-breaker-wf-swarm:
+:context: circuit-breaker
 
 include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
-// circuit breaker intro
 include::topics/circuit-breaker-mission-intro-paragraph.adoc[leveloffset=+3]
 
 This mission shows you how to implement a Circuit Breaker and Fallback pattern in your services.
 
 include::topics/con_about-circuit-breaker.adoc[leveloffset=+3]
 
-
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
-// CB design tradeoffs
 include::topics/con_circuit-breaker-design-tradeoffs.adoc[leveloffset=+3]
 
-:parameter-mission: circuit-breaker
 :parameter-mission-name: {name-mission-circuit-breaker}
-
-:context: {parameter-mission}-oso
+:parameter-mission: circuit-breaker
 include::topics/assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
 
-:context: {parameter-mission}-osl
 include::topics/assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
+:parameter-mission!:
 
-:context: {parameter-mission}-ocp
 include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
-
-// CB basic interaction
-:parameter-runtime-name: {WildFlySwarm}
-:context: {parameter-mission}-wf-swarm
 include::topics/proc_interacting-with-the-circuit-breaker-booster.adoc[leveloffset=+3]
 
-
-:parameter-runtime: wf-swarm
-:context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
+:parameter-mission-name!:
 
-//Hystrix Dashboard
 include::topics/circuit-breaker-mission-access-hystrix-dashboard-wf-swarm.adoc[leveloffset=+3]
 
-// CB resources
 include::topics/ref_circuit-breaker-resources.adoc[leveloffset=+3]
 
+:circuit-breaker-wf-swarm!:
 
+
+// SECURED
 [[mission-rest-http-secured-wf-swarm]]
 === {mission-secured-wf-swarm-guide-name}
 :secured-wf-swarm-mission:
-:runtime-name: {WildFlySwarm}
 :context: secured
 
 include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
@@ -243,28 +223,26 @@ include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 include::topics/secured-mission-intro.adoc[leveloffset=+3]
 
-//this needs to be a level lower due to secured-mission-intro.adoc
 include::topics/secured-mission-wf-swarm-adapter.adoc[leveloffset=+4]
 
-:context: secured-osl
 include::topics/assembly_deploying-the-secured-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
-:context: secured-ocp
 include::topics/assembly_deploying-the-secured-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
-:parameter-runtime: wfswarm
 include::topics/assembly_authenticating-to-the-secured-booster-api-endpoint.adoc[leveloffset=+3]
-:parameter-runtime!:
 
-// integration tests in a separate topic
 include::topics/proc_running-the-secured-booster-integration-tests.adoc[leveloffset=+3]
 
 include::topics/ref_secured-sso-resources.adoc[leveloffset=+3]
 
+:secured-wf-swarm-mission!:
 
+
+// CACHING
 [[mission-cache-wf-swarm]]
 === {mission-cache-wf-swarm-guide-name}
 :cache-wf-swarm:
+:context: cache
 
 include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
@@ -281,35 +259,23 @@ include::topics/con_about-caching.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
-:parameter-mission: cache
 :parameter-mission-name: {name-mission-cache}
-
-:context: {parameter-mission}-oso
+:parameter-mission: cache
 include::topics/assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
 
-:context: {parameter-mission}-osl
 include::topics/assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
+:parameter-mission!:
 
-:context: {parameter-mission}-ocp
 include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
-
 
 include::topics/cache-mission-basic-interaction.adoc[leveloffset=+3]
 
-:parameter-runtime: wf-swarm
-:parameter-runtime-name: {WildFlySwarm}
-:context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
+:parameter-mission-name!:
 
 include::topics/ref_caching-resources.adoc[leveloffset=+3]
 
-
-//== Creating an Application from Scratch
-//todo
-//Building blocks
-//Minimum Viable App
-//Add-ons
-//Building your app
+:cache-wf-swarm!:
 
 == Building your application
 :context: building-app

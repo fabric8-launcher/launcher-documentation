@@ -2,6 +2,9 @@
 [id='deploying-the-secured-booster-to-openshiftlocal_{context}']
 = Deploying the {name-mission-secured} booster to {OpenShiftLocal}
 
+:parent-context: {context}
+:context: {parent-context}-osl
+
 include::proc_getting-the-launcher-tool-url-and-credentials.adoc[leveloffset=+1]
 
 include::proc_creating-the-secured-booster-using-launcher.adoc[leveloffset=+1]
@@ -13,3 +16,6 @@ include::proc_authenticating-the-oc-cli-client.adoc[leveloffset=+1]
 
 include::proc_deploying-the-secured-booster-using-the-oc-cli-client.adoc[leveloffset=+1]
 :parameter-deployment!:
+
+:context: {parent-context}
+

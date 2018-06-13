@@ -2,11 +2,14 @@
 [id='deploying-the-secured-booster-to-openshiftcontainerplatform_{context}']
 = Deploying the {name-mission-secured} Booster to {OpenShiftContainerPlatform}
 
+:parent-context: {context}
+:context: {parent-context}-ocp
+
 In addition to the {OpenShiftLocal}, you can create and deploy the booster on {OpenShiftContainerPlatform} with only minor differences. The most important difference is that you need to create the booster application on {OpenShiftLocal} before you can deploy it with {OpenShiftContainerPlatform}.
 
 .Prerequisites
 
-* The booster created using xref:deploying-the-secured-booster-to-openshiftlocal_{context}[{OpenShiftLocal}].
+* The booster created using xref:deploying-the-secured-booster-to-openshiftlocal_{parent-context}[{OpenShiftLocal}].
 
 :parameter-deployment: {OpenShiftContainerPlatform}
 include::proc_authenticating-the-oc-cli-client.adoc[leveloffset=+1]
@@ -15,4 +18,7 @@ include::proc_authenticating-the-oc-cli-client.adoc[leveloffset=+1]
 include::proc_deploying-the-secured-booster-using-the-oc-cli-client.adoc[leveloffset=+1]
 :parameter-ocp!:
 :parameter-deployment!:
+
+
+:context: {parent-context}
 

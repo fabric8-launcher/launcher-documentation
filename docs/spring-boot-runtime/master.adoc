@@ -26,6 +26,8 @@ include::topics/con_missions-and-cloud-native-development-on-openshift.adoc[leve
 
 The following boosters are available for {SpringBoot}.
 
+
+// REST API
 [[mission-rest-http-spring-boot]]
 === {mission-http-api-spring-boot-guide-name}
 :http-api-spring-boot:
@@ -37,32 +39,30 @@ include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 include::topics/con_http-api-design-tradeoffs.adoc[leveloffset=+3]
 
-:parameter-mission: http-api
 :parameter-mission-name: {name-mission-http-api}
-
-:context: {parameter-mission}-oso
+:parameter-mission: http-api
 include::topics/assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
 
-:context: {parameter-mission}-osl
 include::topics/assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
-:context: {parameter-mission}-ocp
 include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 include::topics/rest-level-0-mission-basic-interaction-spring-boot.adoc[leveloffset=+3]
+:parameter-mission!:
 
-:parameter-runtime: spring-boot
-:parameter-runtime-name: {SpringBoot}
-:context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
+:parameter-mission-name!:
 
-:context: rest-api
 include::topics/ref_rest-resources.adoc[leveloffset=+3]
 
+:http-api-spring-boot!:
 
+
+// CONFIGMAP
 [[mission-configmap-spring-boot]]
 === {mission-configmap-spring-boot-guide-name}
 :configmap-spring-boot:
+:context: configmap
 
 include::topics/configmap-mission-intro-paragraph.adoc[leveloffset=+3]
 
@@ -78,71 +78,61 @@ include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 include::topics/con_configmap-design-tradeoffs.adoc[leveloffset=+3]
 
-:parameter-mission: configmap
 :parameter-mission-name: {name-mission-configmap}
-
-:context: {parameter-mission}-oso
+:parameter-mission: configmap
 include::topics/assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
 
-:context: {parameter-mission}-osl
 include::topics/assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
-:context: {parameter-mission}-ocp
 include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 include::topics/configmap-mission-basic-interaction-spring-boot.adoc[leveloffset=+3]
+:parameter-mission: configmap
 
-:parameter-runtime: spring-boot
-:parameter-runtime-name: {SpringBoot}
-:context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
+:parameter-mission-name: {name-mission-configmap}
 
 include::topics/ref_configmap-resources.adoc[leveloffset=+3]
 
 :configmap-spring-boot!:
 
+
+// CRUD
 [[mission-crud-spring-boot]]
 === {mission-crud-spring-boot-guide-name}
-//redefine this for spring boot
 :crud-spring-boot-mission:
+:context: crud
 
 include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
-
-:parameter-runtime: spring-boot
-:parameter-runtime-name: {SpringBoot}
-:parameter-mission: crud
 :parameter-mission-name: {name-mission-crud}
-:context: {parameter-mission}-{parameter-runtime}
 include::topics/crud-mission-intro.adoc[leveloffset=+3]
+:parameter-mission-name!:
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
-// design tradeoffs
 include::topics/con_crud-design-tradeoffs.adoc[leveloffset=+3]
 
-:context: {parameter-mission}-oso
 include::topics/assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
 
-:context: {parameter-mission}-osl
 include::topics/assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
-:context: {parameter-mission}-ocp
 include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
-//Interacting with the database
 include::topics/crud-mission-database-interaction.adoc[leveloffset=+3]
 
-:context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
-// include additional resources
 include::topics/ref_relational-database-resources.adoc[leveloffset=+3]
 
+:crud-spring-boot-mission!:
 
+
+// HEALTH CHECK
 [[mission-health-check-spring-boot]]
 === {mission-health-check-spring-boot-guide-name}
 :health-check-spring-boot:
+:context: health-check
 
 include::topics/health-check-mission-intro-paragraph.adoc[leveloffset=+3]
 
@@ -156,35 +146,34 @@ include::topics/con_health-check-concepts.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
-:parameter-mission: health-check
 :parameter-mission-name: {name-mission-health-check}
+:parameter-mission: health-check
 
-:context: {parameter-mission}-oso
 include::topics/assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
 
-:context: {parameter-mission}-osl
 include::topics/assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
-:context: {parameter-mission}-ocp
 include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
-
+:parameter-mission!:
 
 include::topics/health-check-mission-basic-interaction-spring-boot.adoc[leveloffset=+3]
+:parameter-mission-name: {name-mission-health-check}
 
-:parameter-runtime: spring-boot
-:parameter-runtime-name: {SpringBoot}
-:context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
 include::topics/ref_health-check-resources.adoc[leveloffset=+3]
 
+:health-check-spring-boot!:
+
+
+// CIRCUIT BREAKER
 [[mission-circuit-breaker-spring-boot]]
 === {mission-circuit-breaker-spring-boot-guide-name}
 :circuit-breaker-spring-boot:
+:context: circuit-breaker
 
 include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
-// circuit breaker intro
 include::topics/circuit-breaker-mission-intro-paragraph.adoc[leveloffset=+3]
 
 This mission shows you how to implement a Circuit Breaker and Fallback pattern in your services.
@@ -193,39 +182,30 @@ include::topics/con_about-circuit-breaker.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
-// CB design tradeoffs
 include::topics/con_circuit-breaker-design-tradeoffs.adoc[leveloffset=+3]
 
-:parameter-mission: circuit-breaker
 :parameter-mission-name: {name-mission-circuit-breaker}
-
-:context: {parameter-mission}-oso
+:parameter-mission: circuit-breaker
 include::topics/assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
 
-:context: {parameter-mission}-osl
 include::topics/assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
-:context: {parameter-mission}-ocp
 include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+:parameter-mission!:
 
-
-// CB basic interaction
-:parameter-runtime-name: {SpringBoot}
-:context: {parameter-mission}-spring-boot
 include::topics/proc_interacting-with-the-circuit-breaker-booster.adoc[leveloffset=+3]
+:parameter-mission-name!:
 
-//TODO
-
-:parameter-runtime: spring-boot
-:context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
 
-//Hystrix Dashboard
 include::topics/circuit-breaker-mission-access-hystrix-dashboard-spring-boot.adoc[leveloffset=+3]
 
-// CB resources
 include::topics/ref_circuit-breaker-resources.adoc[leveloffset=+3]
 
+:circuit-breaker-spring-boot!:
+
+
+// SECURED
 [[mission-rest-http-secured-spring-boot]]
 === {mission-secured-spring-boot-guide-name}
 :secured-spring-boot-mission:
@@ -240,33 +220,28 @@ include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
 include::topics/secured-mission-intro.adoc[leveloffset=+3]
 
-//this needs to be a level lower due to secured-mission-intro.adoc
 include::topics/secured-mission-springboot-adapter.adoc[leveloffset=+4]
 
-:parameter-mission: secured
-:parameter-mission-name: {name-mission-secured}
-
-:context: {parameter-mission}-osl
 include::topics/assembly_deploying-the-secured-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
-:context: {parameter-mission}-ocp
 include::topics/assembly_deploying-the-secured-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 :parameter-runtime: spring-boot
 include::topics/assembly_authenticating-to-the-secured-booster-api-endpoint.adoc[leveloffset=+3]
 
-// integration tests in a separate topic
 include::topics/proc_running-the-secured-booster-integration-tests-on-springboot.adoc[leveloffset=+3]
-
 :parameter-runtime!:
 
 include::topics/ref_secured-sso-resources.adoc[leveloffset=+3]
 
+:secured-spring-boot-mission!:
 
 
+// CACHING
 [[mission-cache-spring-boot]]
 === {mission-cache-spring-boot-guide-name}
 :cache-spring-boot:
+:context: cache
 
 include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
 
@@ -283,28 +258,23 @@ include::topics/con_about-caching.adoc[leveloffset=+3]
 
 include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 
-:parameter-mission: cache
 :parameter-mission-name: {name-mission-cache}
-
-:context: {parameter-mission}-oso
+:parameter-mission: cache
 include::topics/assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
 
-:context: {parameter-mission}-osl
 include::topics/assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
+:parameter-mission!:
 
-:context: {parameter-mission}-ocp
 include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
-
 
 include::topics/cache-mission-basic-interaction.adoc[leveloffset=+3]
 
-:parameter-runtime: spring-boot
-:parameter-runtime-name: {SpringBoot}
-:context: {parameter-mission}-{parameter-runtime}
 include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
+:parameter-mission-name!:
 
 include::topics/ref_caching-resources.adoc[leveloffset=+3]
 
+:cache-spring-boot!:
 
 == Application Development
 The recommended approach for specifying and using supported and tested maven artifacts in a {SpringBoot} application is to use the OpenShift Application Runtimes {SpringBoot} BOM.

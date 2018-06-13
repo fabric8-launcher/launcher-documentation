@@ -2,6 +2,8 @@
 
 = Updating Booster Catalog for Local {OpenShiftLocal} Testing
 
+:parent-context: {context}
+
 One of important life cycle stages of a booster is testing it in a booster catalog.
 Create a custom booster catalog that links to the repository with your booster on GitHub, and test your booster by following the instructions below:
 
@@ -10,4 +12,7 @@ include::proc_creating-custom-booster-catalog.adoc[leveloffset=+1]
 :parameter-custom-catalog:
 include::proc_installing-launcher-tool.adoc[leveloffset=+1]
 :parameter-custom-catalog!:
+
+
+:context: {parent-context}
 
