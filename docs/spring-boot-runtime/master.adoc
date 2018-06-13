@@ -28,34 +28,9 @@ The following boosters are available for {SpringBoot}.
 
 
 // REST API
-[[mission-rest-http-spring-boot]]
-=== {mission-http-api-spring-boot-guide-name}
-:http-api-spring-boot:
 :context: rest-api
-
-include::topics/rest-level-0-mission-intro.adoc[leveloffset=+3]
-
-include::topics/note-preview-booster-source.adoc[leveloffset=+3]
-
-include::topics/con_http-api-design-tradeoffs.adoc[leveloffset=+3]
-
-:parameter-mission-name: {name-mission-http-api}
-:parameter-mission: http-api
-include::topics/assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
-
-include::topics/assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
-
-include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
-
-include::topics/rest-level-0-mission-basic-interaction-spring-boot.adoc[leveloffset=+3]
-:parameter-mission!:
-
-include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
-:parameter-mission-name!:
-
-include::topics/ref_rest-resources.adoc[leveloffset=+3]
-
-:http-api-spring-boot!:
+:parameter-runtime: spring-boot
+include::topics/assembly_http-api-mission-booster.adoc[leveloffset=+2]
 
 
 // CONFIGMAP

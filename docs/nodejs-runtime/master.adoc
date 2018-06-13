@@ -7,6 +7,7 @@ include::topics/templates/document-attributes.adoc[]
 :runtime: {NodeJS}
 //var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
 :docs-topic:
+:node-js:
 
 :context: nodejs
 
@@ -24,32 +25,9 @@ The following boosters are available for {NodeJS}.
 
 
 // REST API
-[[mission-rest-http-nodejs]]
-=== {mission-http-api-nodejs-guide-name}
-:http-api-nodejs:
 :context: rest-api
-
-include::topics/rest-level-0-mission-intro.adoc[leveloffset=+3]
-
-include::topics/note-preview-booster-source.adoc[leveloffset=+3]
-
-include::topics/con_http-api-design-tradeoffs.adoc[leveloffset=+3]
-
-:parameter-mission-name: {name-mission-http-api}
-:parameter-mission: http-api
-include::topics/assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
-
-include::topics/assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
-:parameter-mission!:
-
-include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
-:parameter-mission-name!:
-
-include::topics/rest-level-0-mission-basic-interaction-nodejs.adoc[leveloffset=+3]
-
-include::topics/ref_rest-resources.adoc[leveloffset=+3]
-
-:http-api-nodejs!:
+:parameter-runtime: nodejs
+include::topics/assembly_http-api-mission-booster.adoc[leveloffset=+2]
 
 
 // CONFIGMAP
