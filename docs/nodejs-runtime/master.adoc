@@ -37,10 +37,10 @@ include::topics/con_http-api-design-tradeoffs.adoc[leveloffset=+3]
 :parameter-mission-name: {name-mission-http-api}
 
 :context: {parameter-mission}-oso
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
+include::topics/assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-osl
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
+include::topics/assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
 include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
@@ -72,10 +72,10 @@ include::topics/con_configmap-design-tradeoffs.adoc[leveloffset=+3]
 :parameter-mission-name: {name-mission-configmap}
 
 :context: {parameter-mission}-oso
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
+include::topics/assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-osl
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
+include::topics/assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
 include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
@@ -103,10 +103,10 @@ include::topics/con_crud-design-tradeoffs.adoc[leveloffset=+3]
 :parameter-mission-name: {name-mission-crud}
 
 :context: {parameter-mission}-oso
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
+include::topics/assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-osl
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
+include::topics/assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
 include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
@@ -136,10 +136,10 @@ include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 :parameter-mission-name: {name-mission-health-check}
 
 :context: {parameter-mission}-oso
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
+include::topics/assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-osl
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
+include::topics/assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
 include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
@@ -168,10 +168,10 @@ include::topics/con_circuit-breaker-design-tradeoffs.adoc[leveloffset=+3]
 :parameter-mission: circuit-breaker
 :parameter-mission-name: {name-mission-circuit-breaker}
 :context: {parameter-mission}-oso
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
+include::topics/assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-osl
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
+include::topics/assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
 include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
@@ -209,14 +209,14 @@ include::topics/secured-mission-intro.adoc[leveloffset=+3]
 include::topics/secured-mission-nodejs-adapter.adoc[leveloffset=+4]
 
 :context: secured-osl
-include::topics/assembly_building-and-deploying-the-secured-booster-to-openshiftlocal.adoc[leveloffset=+3]
+include::topics/assembly_deploying-the-secured-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: secured-ocp
-include::topics/assembly_building-and-deploying-the-secured-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
+include::topics/assembly_deploying-the-secured-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
 
 :parameter-runtime: nodejs
 :node-js-sso-temp-workaround:
-include::topics/assembly_interacting-with-the-secured-booster.adoc[leveloffset=+3]
+include::topics/assembly_authenticating-to-the-secured-booster-api-endpoint.adoc[leveloffset=+3]
 :parameter-runtime!:
 
 include::topics/ref_secured-sso-resources.adoc[leveloffset=+3]
@@ -245,10 +245,10 @@ include::topics/note-preview-booster-source.adoc[leveloffset=+3]
 :parameter-mission-name: {name-mission-cache}
 
 :context: {parameter-mission}-oso
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
+include::topics/assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-osl
-include::topics/assembly_building-and-deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
+include::topics/assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
 
 :context: {parameter-mission}-ocp
 include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]

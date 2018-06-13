@@ -17,7 +17,7 @@ include::topics/templates/document-attributes.adoc[] <1>
 
 This chapter contains information about developing your own runtimes or boosters, contributing changes to existing ones, and improving {launcher}.
 
-include::topics/assembly-updating-booster-catalog-for-local-minishift-testing.adoc[leveloffset=+2] <5>
+include::topics/assembly_updating-booster-catalog-for-local-openshiftlocal-testing.adoc[leveloffset=+2] <5>
 
 You can preview the latest state of {launcher} by navigating to the link:{launcher-stage}[stage build] of {launcher}.
 
