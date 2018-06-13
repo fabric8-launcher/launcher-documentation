@@ -41,18 +41,18 @@ $ unzip {project-name}.zip
 $ oc new-project {project-name}
 ----
 
-ifdef::configmap-vertx,configmap-spring-boot,configmap-nodejs[]
+ifdef::vert-x,spring-boot,node-js[]
 . Assign view access rights to the service account before deploying your booster, so that the booster can access the OpenShift API in order to read the contents of the ConfigMap.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc policy add-role-to-user view -n $(oc project -q) -z default
 ----
-endif::configmap-vertx,configmap-spring-boot,configmap-nodejs[]
+endif::vert-x,spring-boot,node-js[]
 
 . Navigate to the root directory of your booster.
 
-ifdef::configmap-vertx,configmap-nodejs[]
+ifdef::vert-x,node-js[]
 . Deploy your ConfigMap configuration to OpenShift using `app-config.yml`.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -73,8 +73,8 @@ data:
       level : INFO
 ...
 ----
-endif::configmap-vertx,configmap-nodejs[]
-ifdef::configmap-wf-swarm[]
+endif::vert-x,node-js[]
+ifdef::wf-swarm[]
 . Deploy your ConfigMap configuration to OpenShift using `app-config.yml` in the root of the booster.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -95,8 +95,8 @@ data:
       message: Hello %s from a ConfigMap!
 ...
 ----
-endif::configmap-wf-swarm[]
-ifdef::configmap-spring-boot[]
+endif::wf-swarm[]
+ifdef::spring-boot[]
 . Deploy your ConfigMap configuration to OpenShift using `application.yml`.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -118,28 +118,28 @@ data:
        message: "Hello %s from a ConfigMap!"
 ...
 ----
-endif::configmap-spring-boot[]
+endif::spring-boot[]
 
-ifndef::configmap-nodejs[]
+ifndef::node-js[]
 . Use Maven to start the deployment to OpenShift.
 +
-ifdef::configmap-vertx,configmap-spring-boot[]
+ifdef::vert-x,spring-boot[]
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ mvn clean fabric8:deploy -Popenshift
 ----
-endif::configmap-vertx,configmap-spring-boot[]
-ifdef::configmap-wf-swarm[]
+endif::vert-x,spring-boot[]
+ifdef::wf-swarm[]
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ mvn clean fabric8:deploy -Popenshift -DskipTests
 ----
-endif::configmap-wf-swarm[]
+endif::wf-swarm[]
 +
 This command uses the Fabric8 Maven Plugin to launch the link:{link-s2i-process}[S2I process] on OpenShift and to start the pod.
-endif::configmap-nodejs[]
+endif::node-js[]
 
-ifdef::configmap-nodejs[]
+ifdef::node-js[]
 . Use `npm` to start the deployment to OpenShift.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -148,7 +148,7 @@ $ npm install && npm run openshift
 ----
 +
 These commands install any missing module dependencies, then using the xref:about-nodeshift[Nodeshift] module, deploy the booster on OpenShift.
-endif::configmap-nodejs[]
+endif::node-js[]
 
 . Check the status of your booster and ensure your pod is running.
 +
@@ -161,9 +161,9 @@ NAME                                       READY     STATUS      RESTARTS   AGE
 ----
 +
 The `{app-name}-1-aaaaa` pod should have a status of `Running` once its fully deployed and started.
-ifdef::configmap-vertx[]
+ifdef::vert-x[]
 You should also wait for your pod to be _ready_ before proceeding, which is shown in the `READY` column. For example, `{app-name}-1-aaaaa` is _ready_ when the `READY` column is `1/1`.
-endif::configmap-vertx[]
+endif::vert-x[]
 Your specific pod name will vary.
 The number in the middle will increase with each new build.
 The letters at the end are generated when the pod is created.
