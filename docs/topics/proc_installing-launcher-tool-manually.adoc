@@ -5,9 +5,8 @@
 // Rationale: This module is useful both when setting up minishift as is and when testing a local
 // booster catalog.
 
-[id='installing-launcher-tool_{context}']
-= Installing {launcher} Tool
-Install a local customized instance of the {launcher} tool, which allows you to test the functionality or make modifications to the service using a web interface.
+[id='installing-launcher-tool-manually_{context}']
+= Installing {launcher} Tool Manually
 
 .Prerequisites
 * xref:starting-and-configuring-the-openshiftlocal-for-the-launcher-tool_{context}[{OpenShiftLocal} running].
@@ -30,8 +29,6 @@ image::minishift_projectconfig.png[New Project Config]
 image::minishift_yamljson.png[Import YAML/JSON]
 
 . Copy the contents of link:{link-launcher-yaml}[the current {launcher} template from the GitHub repository^] and paste it into the text box provided.
-+
-NOTE: We are working on removing this step entirely, but for now it is required. The full details and a current status are available link:https://github.com/openshiftio/launchpad-templates/issues/2[on GitHub].
 
 . Click _Create_, ensure that only the _Process the template_ option is selected, and click _Continue_.
 +
@@ -57,10 +54,13 @@ ifdef::parameter-custom-catalog[** Set _Catalog Git Repository_ to the repositor
 +
 image::minishift_launcher_booting.png[{launcher} booting]
 
-. When all pods are running, click the link at the top of all pods, which typically ends in `nip.io`. A new browser tab opens with the {launcher} tool. This is the same service as `{link-launcher-oso}` but running in a {OpenShiftLocal}.
+. When all pods are running, click the link at the top of all pods, which typically ends in `nip.io`. 
++
+A new browser tab opens with the {launcher} tool. This is the same service as `{link-launcher-oso}` but running in a {OpenShiftLocal}.
+
+. Start using your {launcher} tool to launch booster applications.
 
 .Additional Resources
-* Start using your {launcher} tool to launch booster applications.
 * See the link:{link-getting-started-guide}[{getting-started-guide-name}] for a walk-through of running a booster application.
 * Read the runtime guides for an overview of the runtimes and their boosters:
 ** link:{link-spring-boot-runtime-guide}[{spring-boot-runtime-guide-name}]
