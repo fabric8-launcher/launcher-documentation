@@ -10,7 +10,7 @@ Create a custom booster catalog that links to the repository with your booster o
 include::proc_creating-custom-booster-catalog.adoc[leveloffset=+1]
 
 :parameter-custom-catalog:
-include::proc_installing-launcher-tool.adoc[leveloffset=+1]
+include::proc_installing-launcher-tool-manually.adoc[leveloffset=+1]
 :parameter-custom-catalog!:
 
 
