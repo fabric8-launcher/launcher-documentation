@@ -33,7 +33,7 @@ $ oc get pods
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc logs -f pod/MY_APP_NAME-2-aaaaa
+$ oc logs -f pod/MY_APP_NAME-2-UID
 ----
 +
 Keep the terminal window displaying the log output open so that you can watch the log output.
