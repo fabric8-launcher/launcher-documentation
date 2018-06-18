@@ -59,40 +59,9 @@ include::topics/assembly_crud-mission-booster.adoc[leveloffset=+2]
 
 
 // HEALTH CHECK
-[[mission-health-check-vertx]]
-=== {mission-health-check-vertx-guide-name}
-:health-check-vertx:
 :context: health-check
-
-include::topics/health-check-mission-intro-paragraph.adoc[leveloffset=+3]
-
-NOTE: If you are not familiar with the health check terminology, see the xref:health-check-concepts_{context}[] section first.
-
-The purpose of this use case is to demonstrate the health check pattern through the use of probing. Probing is used to report the liveness and readiness of an application. In this use case, you configure an application which exposes an HTTP `health` endpoint to issue HTTP requests. If the container is alive, according to the liveness probe on the `health` HTTP endpoint, the management platform receives `200` as return code and no further action is required. If the `health` HTTP endpoint does not return a response, for example if the thread is blocked, then the application is not considered alive according to the liveness probe. In that case, the platform kills the pod corresponding to that application and recreates a new pod to restart the application.
-
-This use case also allows you to demonstrate and use a readiness probe. In cases where the application is running but is unable to handle requests, such as when the application returns an HTTP `503` response code during restart, this application is not considered ready according to the readiness probe. If the application is not considered ready by the readiness probe, requests are not routed to that application until it is considered ready according to the readiness probe.
-
-include::topics/con_health-check-concepts.adoc[leveloffset=+3]
-
-include::topics/note-preview-booster-source.adoc[leveloffset=+3]
-
-:parameter-mission-name: {name-mission-health-check}
-:parameter-mission: health-check
-include::topics/assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
-
-include::topics/assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
-:parameter-mission!:
-
-include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
-
-include::topics/health-check-mission-basic-interaction-vertx.adoc[leveloffset=+3]
-
-include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
-:parameter-mission-name!:
-
-include::topics/ref_health-check-resources.adoc[leveloffset=+3]
-
-:health-check-vertx!:
+:parameter-runtime: vertx
+include::topics/assembly_health-check-mission-booster.adoc[leveloffset=+2]
 
 
 // CIRCUIT BREAKER
