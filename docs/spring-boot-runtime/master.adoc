@@ -58,35 +58,9 @@ include::topics/assembly_circuit-breaker-mission-booster.adoc[leveloffset=+2]
 
 
 // SECURED
-[[mission-rest-http-secured-spring-boot]]
-=== {mission-secured-spring-boot-guide-name}
-:secured-spring-boot-mission:
-:runtime-name: {SpringBoot}
 :context: secured
-
-include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
-
-include::topics/secured-mission-intro-paragraph-missions.adoc[leveloffset=+3]
-
-include::topics/note-preview-booster-source.adoc[leveloffset=+3]
-
-include::topics/secured-mission-intro.adoc[leveloffset=+3]
-
-include::topics/secured-mission-springboot-adapter.adoc[leveloffset=+4]
-
-include::topics/assembly_deploying-the-secured-booster-to-openshiftlocal.adoc[leveloffset=+3]
-
-include::topics/assembly_deploying-the-secured-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
-
 :parameter-runtime: spring-boot
-include::topics/assembly_authenticating-to-the-secured-booster-api-endpoint.adoc[leveloffset=+3]
-
-include::topics/proc_running-the-secured-booster-integration-tests-on-springboot.adoc[leveloffset=+3]
-:parameter-runtime!:
-
-include::topics/ref_secured-sso-resources.adoc[leveloffset=+3]
-
-:secured-spring-boot-mission!:
+include::topics/assembly_secured-mission-booster.adoc[leveloffset=+2]
 
 
 // CACHING

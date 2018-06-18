@@ -28,7 +28,7 @@ oc create -f service.sso.yaml
 --
 +
 . Wait until the {RHSSO} server is ready. Go to the Web console or view the output of `oc get pods` to check if the pod running the {RHSSO} server is ready.
-ifdef::secured-vertx-mission[]
+ifdef::vert-x[]
 +
 . Deploy the Secured HTTP API application:
 +
@@ -38,7 +38,7 @@ mvn fabric8:deploy -Popenshift
 --
 +
 . Wait until the Secured HTTP API is ready. Go to the Web console or view the output of `oc get pods` to check if the pod running the HTTP API endpoint is ready.
-endif::secured-vertx-mission[]
+endif::vert-x[]
 +
 // ifdef::secured-spring-boot-mission[]
 // +

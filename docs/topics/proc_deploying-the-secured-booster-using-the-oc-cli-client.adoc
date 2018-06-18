@@ -46,7 +46,7 @@ $ oc new-project {project-name}
 $ oc create -f service.sso.yaml
 ----
 
-ifndef::secured-nodejs-mission[]
+ifndef::node-js[]
 . Use Maven to start the deployment to {parameter-deployment}.
 +
 --
@@ -60,9 +60,9 @@ This command uses the Fabric8 Maven Plugin to launch the link:{link-s2i-process}
 --
 
 This process generates the uberjar file as well as the OpenShift resources and deploys them to the current project on your {parameter-deployment} server.
-endif::secured-nodejs-mission[]
+endif::node-js[]
 
-ifdef::secured-nodejs-mission[]
+ifdef::node-js[]
 . Use `npm` to start the deployment to {parameter-deployment}.
 +
 --
@@ -74,4 +74,4 @@ $ npm install && npm run openshift -- \
 
 These commands install any missing module dependencies, then using the xref:about-nodeshift[Nodeshift] module, deploy the booster on OpenShift.
 --
-endif::secured-nodejs-mission[]
+endif::node-js[]
