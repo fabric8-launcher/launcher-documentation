@@ -42,7 +42,7 @@ $ oc new-project {project-name}
 
 . Navigate to the root directory of your booster.
 
-ifndef::circuit-breaker-nodejs[]
+ifndef::node-js[]
 . Use Maven to start the deployment to OpenShift.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -51,9 +51,9 @@ $ mvn clean fabric8:deploy -Popenshift
 ----
 +
 This command uses the Fabric8 Maven Plugin to launch the link:{link-s2i-process}[S2I process] on OpenShift and to start the pod.
-endif::circuit-breaker-nodejs[]
+endif::node-js[]
 
-ifdef::circuit-breaker-nodejs[]
+ifdef::node-js[]
 . Use the provided `start-openshift.sh` script to start the deployment to OpenShift.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -63,7 +63,7 @@ $ ./start-openshift.sh
 ----
 +
 These commands use the xref:about-nodeshift[Nodeshift] `npm` module to install your dependencies, launch the S2I build process on OpenShift, and start the services.
-endif::circuit-breaker-nodejs[]
+endif::node-js[]
 
 
 . Check the status of your booster and ensure your pod is running.
