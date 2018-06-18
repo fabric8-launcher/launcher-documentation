@@ -7,18 +7,18 @@ Follow the links below for more background information on the design principles 
 
 * link:https://martinfowler.com/bliki/CircuitBreaker.html[Martin Fowler: CircuitBreaker]
 
-ifndef::circuit-breaker-spring-boot[]
+ifndef::spring-boot[]
 * link:{link-mission-circuit-breaker-spring-boot}[{mission-circuit-breaker-spring-boot-guide-name}]
-endif::circuit-breaker-spring-boot[]
+endif::spring-boot[]
 
-ifndef::circuit-breaker-vertx[]
+ifndef::vert-x[]
 * link:{link-mission-circuit-breaker-vertx}[{mission-circuit-breaker-vertx-guide-name}]
-endif::circuit-breaker-vertx[]
+endif::vert-x[]
 
-ifndef::circuit-breaker-wf-swarm[]
+ifndef::wf-swarm[]
 * link:{link-mission-circuit-breaker-wf-swarm}[{mission-circuit-breaker-wf-swarm-guide-name}]
-endif::circuit-breaker-wf-swarm[]
+endif::wf-swarm[]
 
-ifndef::circuit-breaker-nodejs[]
+ifndef::node-js[]
 * link:{link-mission-circuit-breaker-nodejs}[{mission-circuit-breaker-nodejs-guide-name}]
-endif::circuit-breaker-nodejs[]
+endif::node-js[]
