@@ -41,7 +41,7 @@ $ oc new-project {project-name}
 
 . Navigate to the root directory of your booster.
 
-ifndef::health-check-nodejs[]
+ifndef::node-js[]
 . Use Maven to start the deployment to OpenShift.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -50,9 +50,9 @@ $ mvn clean fabric8:deploy -Popenshift
 ----
 +
 This command uses the Fabric8 Maven Plugin to launch the link:{link-s2i-process}[S2I process] on OpenShift and to start the pod.
-endif::health-check-nodejs[]
+endif::node-js[]
 
-ifdef::health-check-nodejs[]
+ifdef::node-js[]
 . Use `npm` to start the deployment to OpenShift.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -61,7 +61,7 @@ $ npm install && npm run openshift
 ----
 +
 These commands install any missing module dependencies, then using the xref:about-nodeshift[Nodeshift] module, deploy the booster on OpenShift.
-endif::health-check-nodejs[]
+endif::node-js[]
 
 . Check the status of your booster and ensure your pod is running.
 +
