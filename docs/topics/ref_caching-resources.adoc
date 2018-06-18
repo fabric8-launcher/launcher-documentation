@@ -1,20 +1,14 @@
+
 [id='caching-resources_{context}']
 = Caching Resources
 
 More background and related information on caching can be found here:
 
-ifndef::cache-spring-boot[]
-* link:{link-mission-cache-spring-boot}[{name-mission-cache} Mission - {SpringBoot} Booster]
-endif::cache-spring-boot[]
+ifndef::spring-boot[* link:{link-mission-cache-spring-boot}[{name-mission-cache} Mission - {SpringBoot} Booster]]
 
-ifndef::cache-vertx[]
-  * link:{link-mission-cache-vertx}[{name-mission-cache} Mission - {VertX} Booster]
-endif::cache-vertx[]
+ifndef::vert-x[* link:{link-mission-cache-vertx}[{name-mission-cache} Mission - {VertX} Booster]]
 
-ifndef::cache-wf-swarm[]
-* link:{link-mission-cache-wf-swarm}[{name-mission-cache} Mission - {WildFlySwarm} Booster]
-endif::cache-wf-swarm[]
+ifndef::wf-swarm[* link:{link-mission-cache-wf-swarm}[{name-mission-cache} Mission - {WildFlySwarm} Booster]]
 
-ifndef::cache-nodejs[]
-  * link:{link-mission-cache-nodejs}[{name-mission-cache} Mission - {NodeJS} Booster]
-endif::cache-nodejs[]
+ifndef::node-js[* link:{link-mission-cache-nodejs}[{name-mission-cache} Mission - {NodeJS} Booster]]
+
