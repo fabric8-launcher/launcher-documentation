@@ -29,7 +29,7 @@ Alternatively, you can make requests directly on the `api/fruits/*` endpoint usi
 $ curl http://{app-name}-{project-name}.{os-route-hostname}/api/fruits
 --
 +
-ifdef::crud-nodejs-mission[]
+ifdef::node-js[]
 ----
 [ {
   "id" : 1,
@@ -45,8 +45,8 @@ ifdef::crud-nodejs-mission[]
   "stock" : "10"
 } ]
 ----
-endif::crud-nodejs-mission[]
-ifndef::crud-nodejs-mission[]
+endif::node-js[]
+ifndef::node-js[]
 ----
 [ {
   "id" : 1,
@@ -59,7 +59,7 @@ ifndef::crud-nodejs-mission[]
   "name" : "Banana",
 } ]
 ----
-endif::crud-nodejs-mission[]
+endif::node-js[]
 +
 .Retrieve an entry with a specific ID
 [source,bash,options="nowrap",subs="attributes+"]
@@ -67,7 +67,7 @@ endif::crud-nodejs-mission[]
 $ curl http://{app-name}-{project-name}.{os-route-hostname}/api/fruits/3
 --
 +
-ifdef::crud-nodejs-mission[]
+ifdef::node-js[]
 ----
 {
   "id" : 3,
@@ -75,18 +75,18 @@ ifdef::crud-nodejs-mission[]
   "stock" : "10"
 }
 ----
-endif::crud-nodejs-mission[]
-ifndef::crud-nodejs-mission[]
+endif::node-js[]
+ifndef::node-js[]
 ----
 {
   "id" : 3,
   "name" : "Banana",
 }
 ----
-endif::crud-nodejs-mission[]
+endif::node-js[]
 +
 .Create a new entry:
-ifdef::crud-nodejs-mission[]
+ifdef::node-js[]
 [source,bash,options="nowrap",subs="attributes+"]
 --
 $ curl -H "Content-Type: application/json" -X POST -d '{"name":"peach","stock":"1"}'  http://{app-name}-{project-name}.{os-route-hostname}/api/fruits
@@ -99,8 +99,8 @@ $ curl -H "Content-Type: application/json" -X POST -d '{"name":"peach","stock":"
   "stock" : "1"
 }
 ----
-endif::crud-nodejs-mission[]
-ifndef::crud-nodejs-mission[]
+endif::node-js[]
+ifndef::node-js[]
 [source,bash,options="nowrap",subs="attributes+"]
 --
 $ curl -H "Content-Type: application/json" -X POST -d '{"name":"pear"}'  http://{app-name}-{project-name}.{os-route-hostname}/api/fruits
@@ -112,10 +112,10 @@ $ curl -H "Content-Type: application/json" -X POST -d '{"name":"pear"}'  http://
   "name" : "pear",
 }
 ----
-endif::crud-nodejs-mission[]
+endif::node-js[]
 +
 .Update an Entry
-ifdef::crud-nodejs-mission[]
+ifdef::node-js[]
 [source,bash,options="nowrap",subs="attributes+"]
 --
 $ curl -H "Content-Type: application/json" -X PUT -d '{"name":"pineapple","stock":"100"}'  http://{app-name}-{project-name}.{os-route-hostname}/api/fruits/1
@@ -128,8 +128,8 @@ $ curl -H "Content-Type: application/json" -X PUT -d '{"name":"pineapple","stock
   "stock" : "100"
 }
 ----
-endif::crud-nodejs-mission[]
-ifndef::crud-nodejs-mission[]
+endif::node-js[]
+ifndef::node-js[]
 [source,bash,options="nowrap",subs="attributes+"]
 --
 $ curl -H "Content-Type: application/json" -X PUT -d '{"name":"pineapple"}'  http://{app-name}-{project-name}.{os-route-hostname}/api/fruits/1
@@ -141,7 +141,7 @@ $ curl -H "Content-Type: application/json" -X PUT -d '{"name":"pineapple"}'  htt
   "name" : "pineapple",
 }
 ----
-endif::crud-nodejs-mission[]
+endif::node-js[]
 +
 .Delete an Entry:
 [source,bash,options="nowrap",subs="attributes+"]

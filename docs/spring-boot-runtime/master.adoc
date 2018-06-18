@@ -40,38 +40,9 @@ include::topics/assembly_configmap-mission-booster.adoc[leveloffset=+2]
 
 
 // CRUD
-[[mission-crud-spring-boot]]
-=== {mission-crud-spring-boot-guide-name}
-:crud-spring-boot-mission:
 :context: crud
-
-include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
-
-:parameter-mission-name: {name-mission-crud}
-include::topics/crud-mission-intro.adoc[leveloffset=+3]
-:parameter-mission-name!:
-
-include::topics/note-preview-booster-source.adoc[leveloffset=+3]
-
-include::topics/con_crud-design-tradeoffs.adoc[leveloffset=+3]
-
-:parameter-mission-name: {name-mission-configmap}
-:parameter-mission: crud
-include::topics/assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
-
-include::topics/assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
-:parameter-mission!:
-
-include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
-
-include::topics/crud-mission-database-interaction.adoc[leveloffset=+3]
-
-include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
-:parameter-mission-name!:
-
-include::topics/ref_relational-database-resources.adoc[leveloffset=+3]
-
-:crud-spring-boot-mission!:
+:parameter-runtime: spring-boot
+include::topics/assembly_crud-mission-booster.adoc[leveloffset=+2]
 
 
 // HEALTH CHECK
