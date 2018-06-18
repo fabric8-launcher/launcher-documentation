@@ -1,3 +1,4 @@
+
 [id='relational-database-resources_{context}']
 = Relational Database Resources
 
@@ -10,39 +11,24 @@ the Design of Network-based Software Architectures - Representational State Tran
 * link:http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven[REST APIs must be Hypertext driven]
 * link:https://martinfowler.com/articles/richardsonMaturityModel.html[Richardson Maturity Model]
 
-ifndef::crud-nodejs-mission[]
-  * link:https://www.jcp.org/en/jsr/detail?id=311[JSR 311: JAX-RS: The JavaTM API for RESTful Web Services]
-endif::crud-nodejs-mission[]
+ifndef::node-js[* link:https://www.jcp.org/en/jsr/detail?id=311[JSR 311: JAX-RS: The JavaTM API for RESTful Web Services]]
 
-ifdef::crud-nodejs-mission[]
-  * link:https://expressjs.com/[Express Web Framework]
-endif::crud-nodejs-mission[]
+ifdef::node-js[* link:https://expressjs.com/[Express Web Framework]]
 
-ifdef::crud-spring-boot-mission[]
-* link:https://spring.io/guides/gs/rest-service/[Building a RESTful Service with Spring]
-endif::crud-spring-boot-mission[]
+ifdef::spring-boot[* link:https://spring.io/guides/gs/rest-service/[Building a RESTful Service with Spring]]
 
-ifdef::crud-vertx-mission[]
+ifdef::vert-x[]
 * link:http://vertx.io/blog/some-rest-with-vert-x/[Some Rest with {VertX}]
 * link:http://vertx.io/blog/using-the-asynchronous-sql-client/[Using the {VertX} asynchronous SQL client]
-endif::crud-vertx-mission[]
+endif::vert-x[]
 
-ifdef::crud-wf-swarm-mission[]
-* link:http://resteasy.jboss.org/docs.html[RESTEasy Documentation]
-endif::crud-wf-swarm-mission[]
+ifdef::wf-swarm[* link:http://resteasy.jboss.org/docs.html[RESTEasy Documentation]]
 
-ifndef::crud-spring-boot-mission[]
-* link:{link-mission-crud-spring-boot}[{mission-crud-spring-boot-guide-name}]
-endif::crud-spring-boot-mission[]
+ifndef::spring-boot[* link:{link-mission-crud-spring-boot}[{mission-crud-spring-boot-guide-name}]]
 
-ifndef::crud-vertx-mission[]
-* link:{link-mission-crud-vertx}[{mission-crud-vertx-guide-name}]
-endif::crud-vertx-mission[]
+ifndef::vert-x[* link:{link-mission-crud-vertx}[{mission-crud-vertx-guide-name}]]
 
-ifndef::crud-wf-swarm-mission[]
-* link:{link-mission-crud-wf-swarm}[{mission-crud-wf-swarm-guide-name}]
-endif::crud-wf-swarm-mission[]
+ifndef::wf-swarm[* link:{link-mission-crud-wf-swarm}[{mission-crud-wf-swarm-guide-name}]]
 
-ifndef::crud-nodejs-mission[]
-  * link:{link-mission-crud-nodejs}[{mission-crud-nodejs-guide-name}]
-endif::crud-nodejs-mission[]
+ifndef::node-js[* link:{link-mission-crud-nodejs}[{mission-crud-nodejs-guide-name}]]
+
