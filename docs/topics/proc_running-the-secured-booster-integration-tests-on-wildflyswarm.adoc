@@ -1,13 +1,10 @@
-[id='running-the-secured-booster-integration-tests_{context}']
-= Running the {name-mission-secured} Booster Integration Tests
+[id='running-the-secured-booster-integration-tests-on-wildflyswarm_{context}']
+= Running the {name-mission-secured} Booster Integration Tests on {WildFlySwarm}
 
-ifdef::secured-wf-swarm-mission[]
 [IMPORTANT]
 --
 The `keycloak-authz-client` library for {WildFlySwarm} is provided as a link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview].
 --
-
-endif::secured-wf-swarm-mission[]
 
 .Prerequisites
 
@@ -18,7 +15,7 @@ endif::secured-wf-swarm-mission[]
 include::note-integration-tests-app-deletion-warning.adoc[]
 
 . In a terminal application, navigate to the directory with your project.
-ifdef::secured-wf-swarm-mission,secured-spring-boot-mission[]
+
 . Deploy the {RHSSO} server:
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -38,3 +35,4 @@ $ mvn clean verify -Popenshift,openshift-it -DSSO_AUTH_SERVER_URL=$(oc get route
 --
 oc delete -f service.sso.yaml
 --
+

@@ -1,3 +1,4 @@
+
 [id='secured-sso-resources_{context}']
 = Secured SSO Resources
 
@@ -9,18 +10,11 @@ Follow the links below for additional information on the principles behind the O
 
 * link:http://www.keycloak.org/archive/documentation-3.2.html[Keycloak 3.2 Documentation]
 
-ifndef::secured-spring-boot-mission[]
-* link:{link-mission-secured-spring-boot}[{mission-secured-spring-boot-guide-name}]
-endif::secured-spring-boot-mission[]
+ifndef::spring-boot[* link:{link-mission-secured-spring-boot}[{mission-secured-spring-boot-guide-name}]]
 
-ifndef::secured-vertx-mission[]
-* link:{link-mission-secured-vertx}[{mission-secured-vertx-guide-name}]
-endif::secured-vertx-mission[]
+ifndef::vert-x[* link:{link-mission-secured-vertx}[{mission-secured-vertx-guide-name}]]
 
-ifndef::secured-wf-swarm-mission[]
-* link:{link-mission-secured-wf-swarm}[{mission-secured-wf-swarm-guide-name}]
-endif::secured-wf-swarm-mission[]
+ifndef::wf-swarm[* link:{link-mission-secured-wf-swarm}[{mission-secured-wf-swarm-guide-name}]]
 
-ifndef::secured-nodejs-mission[]
-* link:{link-mission-secured-nodejs}[{mission-secured-nodejs-guide-name}]
-endif::secured-nodejs-mission[]
+ifndef::node-js[* link:{link-mission-secured-nodejs}[{mission-secured-nodejs-guide-name}]]
+

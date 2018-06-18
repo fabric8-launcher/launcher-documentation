@@ -11,7 +11,9 @@ include::proc_getting-the-secured-booster-api-endpoint.adoc[leveloffset=+1]
 
 include::proc_authenticating-http-requests-using-the-command-line.adoc[leveloffset=+1]
 
+ifdef::node-js[:node-js-sso-temp-workaround:]
 include::proc_authenticating-http-requests-using-the-web-interface.adoc[leveloffset=+1]
+ifdef::node-js[:node-js-sso-temp-workaround!:]
 
 :context: {parent-context}
 
