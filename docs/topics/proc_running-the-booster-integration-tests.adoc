@@ -1,5 +1,6 @@
 // This is a parameterized module. Parameters used:
 //
+//  parameter-configmap: define to display ConfigMap-only content
 //  parameter-mission-name: used to display the mission name in the readable title
 //
 // Rationale: This procedure is highly similar for all boosters and mission except the Secured booster.
@@ -21,6 +22,7 @@ include::note-integration-tests-app-deletion-warning.adoc[]
 * the `oc` client authenticated
 * an empty project in your OpenShift namespace
 
+ifdef::parameter-configmap[]
 ifdef::vert-x,spring-boot[]
 * view access permission assigned to the service account of your booster application. This allows your application to read the configuration from the ConfigMap:
 +
@@ -29,6 +31,7 @@ ifdef::vert-x,spring-boot[]
 $ oc policy add-role-to-user view -n $(oc project -q) -z default
 ----
 endif::vert-x,spring-boot[]
+endif::parameter-configmap[]
 
 .Procedure
 
