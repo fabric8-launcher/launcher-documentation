@@ -43,23 +43,23 @@ $ oc new-project {project-name}
 $ oc apply -f service.cache.yml
 ----
 
-ifdef::cache-nodejs[]
+ifdef::node-js[]
 . Use `start-openshift.sh` to start the deployment to OpenShift.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ ./start-openshift.sh
 ----
-endif::cache-nodejs[]
+endif::node-js[]
 
-ifndef::cache-nodejs[]
+ifndef::node-js[]
 . Use Maven to start the deployment to OpenShift.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ mvn clean fabric8:deploy -Popenshift
 ----
-endif::cache-nodejs[]
+endif::node-js[]
 
 . Check the status of your booster and ensure your pod is running.
 +

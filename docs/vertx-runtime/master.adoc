@@ -77,43 +77,10 @@ include::topics/assembly_secured-mission-booster.adoc[leveloffset=+2]
 
 
 // CACHING
-[[mission-cache-vertx]]
-=== {mission-cache-vertx-guide-name}
-:cache-vertx:
 :context: cache
+:parameter-runtime: vertx
+include::topics/assembly_cache-mission-booster.adoc[leveloffset=+2]
 
-include::topics/note-booster-unvailable-oso.adoc[leveloffset=+3]
-
-Mission proficiency level: xref:proficiency_advanced[*{proficiency-advanced}*].
-
-The {name-mission-cache} mission demonstrates how to use a cache to increase the response time of applications.
-
-This mission shows you how to:
-
-* Deploy a cache to OpenShift.
-* Use a cache within an application.
-
-include::topics/con_about-caching.adoc[leveloffset=+3]
-
-include::topics/note-preview-booster-source.adoc[leveloffset=+3]
-
-:parameter-mission-name: {name-mission-cache}
-:parameter-mission: cache
-include::topics/assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+3]
-
-include::topics/assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+3]
-:parameter-mission!:
-
-include::topics/proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+3]
-
-include::topics/cache-mission-basic-interaction.adoc[leveloffset=+3]
-
-include::topics/proc_running-the-booster-integration-tests.adoc[leveloffset=+3]
-:parameter-mission-name!:
-
-include::topics/ref_caching-resources.adoc[leveloffset=+3]
-
-:cache-vertx!:
 
 == Application Development
 //creating an app from scratch
