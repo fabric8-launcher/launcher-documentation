@@ -1,5 +1,5 @@
 [id='accessing-debug-logs-on-localhost-on-springboot_{context}']
-= Accessing Debug Logs on Localhost on {SpringBoot}
+= Accessing {SpringBoot} Debug Logs on Localhost
 
 Start your application and interact with it to see the debugging statements.
 
