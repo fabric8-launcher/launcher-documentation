@@ -1,0 +1,168 @@
+[id='using_a_configmap_{context}']
+= Using a ConfigMap
+//ustory: injecting configuration data into your application using a configmap
+
+:deploymentPlatform: Kubernetes
+
+//openshift docs on configmaps
+//https://docs.openshift.org/latest/dev_guide/configmaps.html
+//https://goo.gl/cQTA2B
+//https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#create-configmaps-from-files
+
+{deploymentPlatform} provides a resource named link:http://kubernetes.io/docs/user-guide/configmap/[`ConfigMap`] that allows you to externalize the configuration parameters that you pass to your application in the form of key-value pairs or embedded `application.properties` or `application.yaml` templates.
+The `ConfigMapPropertySource` provided by Spring Cloud Kubernetes searches the deployment configuration of your application for a ConfigMap object in which the `metadata.name` property matches the name of your {SpringBoot} application and applies the values to the deployment configuration of your application.
+The application name is set by the `spring.application.name` property.
+
+Alternatively, you can specify a custom name for your ConfigMap.
+Set the value of the `spring.cloud.kubernetes.config.name` property in the `bootstrap.properties` file of your application project to the name of your ConfigMap.
+This enables the externalized configuration to be recognized and processed by your application.
+
+The examples below demonstrate different ways that configuration data is structured within your ConfigMap YAML template.
+The example below uses the following properties:
+
+* `pool.size.core`
+* `pool.size.maximum`
+
+You can inject configuration settings into your application in different ways depending on how you structure the data within the ConfigMap:
+
+
+// make this a prerequisite:
+// already documented in the Configmap booster doc
+[NOTE]
+====
+Ensure that you have view permissions assigned to the service account of your application.
+Without these permissions, your application will not be able to access the ConfigMap.
+
+[source,bash,options="nowrap",subs="attributes+"]
+--
+oc policy add-role-to-user view system:serviceaccount:$(oc project -q):{app-name} -n $(oc project -q)
+--
+====
+
+* Specify values of individual configuration properties directly in key-value format.
+{deploymentPlatform} processes the ConfigMap and maps the values to your application.
+This structure is suitable for updating specific properties within an otherwise static configuration.
++
+[source,yaml,options="nowrap"]
+----
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: demo
+data:
+  pool.size.core: 1
+  pool.size.max: 16
+----
+
+* If your configuration template contains a property named `application.yaml`, {deploymentPlatform} processes the configuration template and creates the ConfigMap.
+On application startup, {deploymentPlatform} checks if the ConfigMap contains a key with one of the following names:
++
+--
+** `application.yaml`,
+** `application.yml`,
+** `application.properties`.
+--
++
+If the key is found, {deploymentPlatform} processes and applies the content of that property as an embedded YAML configuration template.
+This allows you to update complex sets of application properties at once, while helping you to keep your template readable.
++
+[source,yaml,options="nowrap"]
+----
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: demo
+data:
+  application.yaml: |-
+    pool:
+      size:
+        core: 1
+        max:16
+----
+
+// not sure if multiple profiles are supported
+* If your ConfigMap contains a property named `application.properties`, the content of that property is treated as an embedded `application.properties` file.
+Note that loading application properties from YAML files link:https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html#boot-features-external-config-yaml-shortcomings[using the `@PropertySource` annotation] is not possible.
++
+[source,yaml,options="nowrap"]
+----
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: demo
+data:
+  application.properties: |-
+    spring.application.name=spring-demo-app
+    spring.profiles.active=development,production
+    spring.main.web-application-type=none
+    spring.main.banner-mode=off
+----
++
+This approach is useful for applications that use multiple profiles, where the configurations differ depending on the active profile.
+This structure allows you to maintain multiple parallel configurations in a manner similar to maintaining multiple property files.
+In the example below, alternate configurations are separated by the `---` sequence of characters.
++
+[source,yaml,options="nowrap"]
+----
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: demo
+data:
+  application.yml: |-
+    greeting:
+      message: Say Hello to the World
+    ---
+    spring:
+      profiles: development
+    greeting:
+      message: Say Hello to the Developers
+    ---
+    spring:
+      profiles: production
+    greeting:
+      message: Say Hello to the Ops
+----
+
+** Use a system property to select which profile to enable when you run your application.
++
+. Store the system property in the `JAVA_OPTIONS` environment variable in the deployment configuration of your application.
+//`DeploymentConfig` or Kubernetes `ReplicationConfig` resource file as follows:
++
+[source,yaml,options="nowrap"]
+----
+apiVersion: v1
+kind: DeploymentConfig
+spec:
+  replicas: 1
+  ...
+    spec:
+      containers:
+      - env:
+        - name: JAVA_APP_DIR
+          value: /deployments
+        - name: JAVA_OPTIONS
+          value: -Dspring.profiles.active=developer
+----
++
+. Pass in the system property when starting your application to determine what profile is used.
+To use the `developer` profile, for example:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+java -jar {app-name}.jar -Dspring.profiles.active=developer
+----
+
+.Additional information
+
+The table below lists the configuration properties provided by Spring Cloud Kubernetes:
+
+[options="header"]
+|===
+| Name                                     | Type    | Default                    | Description
+| spring.cloud.kubernetes.config.enabled   | Boolean | true                       | Enable Secrets PropertySource
+| spring.cloud.kubernetes.config.name      | String  | ${spring.application.name} | Sets the name of ConfigMap to lookup
+| spring.cloud.kubernetes.config.namespace | String  | Client namespace           | Sets the Kubernetes namespace where to lookup
+| spring.cloud.kubernetes.config.paths     | List    | null                       | Sets the paths where ConfigMaps are mounted
+| spring.cloud.kubernetes.config.enableApi | Boolean | true                       | Enable/Disable consuming ConfigMaps via APIs
+|===
