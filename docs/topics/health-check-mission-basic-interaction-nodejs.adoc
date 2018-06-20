@@ -1,6 +1,6 @@
-= Interacting with the Unmodified {NodeJS} Booster
+= Interacting with the Unmodified {Node} Booster
 
-Once you have the {NodeJS} booster deployed, you will have a service called `{app-name}` running that exposes the following REST endpoints:
+Once you have the {Node} booster deployed, you will have a service called `{app-name}` running that exposes the following REST endpoints:
 
 /api/greeting::
 This endpoint returns a JSON containing greeting of `name` parameter (or World as default value).

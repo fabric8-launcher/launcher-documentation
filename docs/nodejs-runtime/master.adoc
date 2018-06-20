@@ -4,14 +4,14 @@ include::topics/templates/document-attributes.adoc[]
 :toclevels: 2
 
 = {nodejs-runtime-guide-name}
-:runtime: {NodeJS}
+:runtime: {Node}
 //var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
 :docs-topic:
 :node-js:
 
 :context: nodejs
 
-This guide covers concepts as well as practical details needed by developers to use the {NodeJS} runtime.
+This guide covers concepts as well as practical details needed by developers to use the {Node} runtime.
 
 include::topics/con_nodejs-runtime-details.adoc[leveloffset=+1]
 
@@ -19,9 +19,9 @@ include::topics/con_missions-and-cloud-native-development-on-openshift.adoc[leve
 
 
 [[nodejs-available-missions-and-boosters]]
-== Available Missions and Boosters for {NodeJS}
+== Available Missions and Boosters for {Node}
 
-The following boosters are available for {NodeJS}.
+The following boosters are available for {Node}.
 
 
 // REST API
@@ -66,7 +66,7 @@ include::topics/assembly_cache-mission-booster.adoc[leveloffset=+2]
 
 
 == Debugging
-This section contains information about debugging your {NodeJS}{ndash}based application and using debug logging in both local and remote deployments.
+This section contains information about debugging your {Node}{ndash}based application and using debug logging in both local and remote deployments.
 
 
 [#remote-debugging]
@@ -96,7 +96,7 @@ include::topics/proc_accessing-debug-logs-on-localhost.adoc[leveloffset=+3]
 include::topics/proc_accessing-debug-logs-on-openshift-on-nodejs.adoc[leveloffset=+3]
 
 
-== Developing an Application for the {NodeJS} Runtime
+== Developing an Application for the {Node} Runtime
 
 include::topics/con_nodejs-runtime-api.adoc[leveloffset=+2]
 

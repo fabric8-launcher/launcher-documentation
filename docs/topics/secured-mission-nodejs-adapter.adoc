@@ -3,7 +3,7 @@
 The SSO adapter is the _client side_, or client to the SSO server, component that enforces security on the web resources. In this specific case, it is the Greeting service.
 
 
-.Enacting Security Example {NodeJS} Code
+.Enacting Security Example {Node} Code
 [source,javascript,options="nowrap",subs="attributes+"]
 ----
 const express = require(‘express’);
@@ -44,7 +44,7 @@ app.use(‘/api/greeting’, kc.protect('booster-admin'), callback);  <4>
 <4> The address of the {RHSSO} server (Interpolation at build time).
 <5> If enabled the adapter will not attempt to authenticate users, but only verify bearer tokens.
 
-The example {NodeJS} code enables Keycloak and enforces protection of the Greeting service web resource endpoint. The `keycloak.json` configures the security adapter to interact with {RHSSO}.
+The example {Node} code enables Keycloak and enforces protection of the Greeting service web resource endpoint. The `keycloak.json` configures the security adapter to interact with {RHSSO}.
 
 
-Information on the {NodeJS} Keycloak adapter is available in the link:http://www.keycloak.org/docs/latest/securing_apps/topics/oidc/nodejs-adapter.html[Keycloak documentation].
+Information on the {Node} Keycloak adapter is available in the link:http://www.keycloak.org/docs/latest/securing_apps/topics/oidc/nodejs-adapter.html[Keycloak documentation].
