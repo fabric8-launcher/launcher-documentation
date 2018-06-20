@@ -90,7 +90,7 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>io.fabric8</groupId>
+        <groupId>io.reactiverse</groupId>
         <artifactId>vertx-maven-plugin</artifactId> <7>
         <version>${vertx-maven-plugin.version}</version>
         <executions>
@@ -119,7 +119,7 @@
               <pluginExecutions>
                 <pluginExecution>
                   <pluginExecutionFilter>
-                    <groupId>io.fabric8</groupId>
+                    <groupId>io.reactiverse</groupId>
                     <artifactId>vertx-maven-plugin</artifactId>
                     <versionRange>[1.0.6,)</versionRange>
                     <goals>
