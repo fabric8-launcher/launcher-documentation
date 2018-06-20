@@ -1,0 +1,55 @@
+[id='mission-messaging-work-queue-{parameter-runtime}']
+= {name-mission-messaging-work-queue} Mission - {runtime} Booster
+
+include::messaging-work-queue-mission-intro-paragraph.adoc[leveloffset=+1]
+
+//NOTE: If you are not familiar with the health check terminology, see the xref:health-check-concepts_{context}[] section first.
+
+//include a messaging concepts section?
+
+The Shared Work Queue mission demonstrates how to dispatch tasks to a scalable set of worker processes using a shared messaging queue.
+This example uses the AMQP 1.0 messaging protocol.
+The workers are implemented in a variety of different languages and application runtimes to demonstrate the polyglot nature of the messaging service.
+
+The broker is the central component of the messaging application.
+It serves to store and forward messages between individual workers.
+It acts as the frontend of the application and is entirely decoupled from the workers.
+This allows you to independently scale the number of workers according to the needs of your application.
+It also allows workers written in different languages to interoperate as long as they all use the same standard messaging protocol.
+
+////
+The mission covers:
+
+Sending work requests to a common work queue
+
+Receiving and processing work requests as they come in
+
+Sending the processed result back to the requesting process
+
+Adding new workers as demand increases or removing workers as it dies down
+
+Monitoring the status of the worker processes
+
+
+include::con_health-check-concepts.adoc[leveloffset=+1]
+
+include::note-preview-booster-source.adoc[leveloffset=+1]
+
+:parameter-mission-name: {name-mission-health-check}
+:parameter-mission: health-check
+include::assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+1]
+
+include::assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+1]
+:parameter-mission!:
+
+include::proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+1]
+
+include::health-check-mission-basic-interaction-{parameter-runtime}.adoc[leveloffset=+1]
+
+ifndef::node-js[]
+include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]
+endif::node-js[]
+:parameter-mission-name!:
+
+include::ref_health-check-resources.adoc[leveloffset=+1]
+////
