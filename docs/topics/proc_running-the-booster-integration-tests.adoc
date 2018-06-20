@@ -20,7 +20,7 @@ include::note-integration-tests-app-deletion-warning.adoc[]
 .Prerequisites
 
 * the `oc` client authenticated
-* an empty project in your OpenShift namespace
+* an empty OpenShift project
 
 ifdef::parameter-configmap[]
 ifdef::vert-x,spring-boot[]
