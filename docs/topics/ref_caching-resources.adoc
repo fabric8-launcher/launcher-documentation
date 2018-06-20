@@ -10,5 +10,5 @@ ifndef::vert-x[* link:{link-mission-cache-vertx}[{name-mission-cache} Mission - 
 
 ifndef::wf-swarm[* link:{link-mission-cache-wf-swarm}[{name-mission-cache} Mission - {WildFlySwarm} Booster]]
 
-ifndef::node-js[* link:{link-mission-cache-nodejs}[{name-mission-cache} Mission - {NodeJS} Booster]]
+ifndef::node-js[* link:{link-mission-cache-nodejs}[{name-mission-cache} Mission - {Node} Booster]]
 

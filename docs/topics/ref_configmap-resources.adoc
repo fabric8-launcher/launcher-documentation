@@ -12,5 +12,5 @@ ifdef::wf-swarm[* link:https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-gui
 ifndef::spring-boot[* link:{link-mission-configmap-spring-boot}[Externalized Configuration - {SpringBoot} Booster]]
 ifndef::vert-x[* link:{link-mission-configmap-vertx}[Externalized Configuration - {VertX} Booster]]
 ifndef::wf-swarm[* link:{link-mission-configmap-wf-swarm}[Externalized Configuration - {WildFlySwarm} Booster]]
-ifndef::node-js[* link:{link-mission-configmap-nodejs}[Externalized Configuration - {NodeJS} Booster]]
+ifndef::node-js[* link:{link-mission-configmap-nodejs}[Externalized Configuration - {Node} Booster]]
 

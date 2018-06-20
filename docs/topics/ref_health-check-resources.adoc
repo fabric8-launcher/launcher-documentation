@@ -21,5 +21,5 @@ ifndef::wf-swarm[]
 endif::wf-swarm[]
 
 ifndef::node-js[]
-  * link:{link-mission-health-check-nodejs}[Health Check - {NodeJS} Booster]
+  * link:{link-mission-health-check-nodejs}[Health Check - {Node} Booster]
 endif::node-js[]

@@ -1,6 +1,6 @@
 [id='starting-your-application-locally-and-attaching-the-native-debugger_{context}']
 = Starting your Application Locally and Attaching the Native Debugger
-The native debugger enables you to debug your {NodeJS}{ndash}based application using the built-in debugging client.
+The native debugger enables you to debug your {Node}{ndash}based application using the built-in debugging client.
 
 .Prerequisites 
 * An application you want to debug.

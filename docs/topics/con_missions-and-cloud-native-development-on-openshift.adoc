@@ -23,7 +23,7 @@ Each mission is implemented in one or more runtimes. Both the specific implement
 
 For example, the {name-mission-http-api} mission is implemented for these runtimes:
 
-* link:{link-mission-http-api-nodejs}[{NodeJS} booster]
+* link:{link-mission-http-api-nodejs}[{Node} booster]
 * link:{link-mission-http-api-spring-boot}[{SpringBoot} booster]
 * link:{link-mission-http-api-vertx}[{VertX} booster]
 * link:{link-mission-http-api-wf-swarm}[{WildFlySwarm} booster]
