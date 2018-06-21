@@ -20,6 +20,8 @@ Securing an application with SSO enables you to add security to your application
 IMPORTANT:  This mission comes with {RHSSO} pre-configured for demonstration purposes, it does not explain its principles, usage, or configuration.
 Before using this mission, ensure that you are familiar with the basic concepts related to link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.1/html-single/getting_started_guide/[{RHSSO}^].
 
+include::con_the-secured-project-structure.adoc[leveloffset=+1]
+
 include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
 include::secured-mission-intro.adoc[leveloffset=+1]

@@ -1,13 +1,6 @@
 
-= Project Structure
-
-The SSO booster project contains:
-
-* the sources for the Greeting service, which is the one which we are going to to secure
-* a template file (`service.sso.yaml`) to stand up the SSO server
-* the Keycloak adapter configuration to secure the service
-
 = Standing up {RHSSO}
+
 The `service.sso.yaml` file contains all OpenShift configuration items to stand up a pre-configured {RHSSO} server. 
 The SSO server configuration has been simplified for the sake of this exercise and does provide an out-of-the-box configuration, with pre-configured users and security settings.
 The `service.sso.yaml` file also contains very long lines, and some text editors, such as link:https://wiki.gnome.org/Apps/Gedit[gedit], may have issues reading this file.
