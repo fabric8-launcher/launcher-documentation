@@ -65,7 +65,8 @@ include::topics/assembly_circuit-breaker-mission-booster.adoc[leveloffset=+2]
 
 // SECURED
 :context: secured
-:parameter-runtime: wf-swarm
+:parameter-runtime: wildflyswarm
+:parameter-runtime-anchor: wf-swarm
 include::topics/assembly_secured-mission-booster.adoc[leveloffset=+2]
 
 

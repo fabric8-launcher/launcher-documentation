@@ -1,11 +1,13 @@
-= SSO Adapter Configuration
+[id='springboot-sso-adapter-configuration_{context}']
+[id='sso-springboot-adapter-configuration_{context}']
+= {SpringBoot} SSO Adapter Configuration
 
-The SSO adapter is the _client side_, or client to the SSO server, component that enforces security on the web resources. In this specific case, it is the Greeting service.
+The SSO adapter is the _client side_, or client to the SSO server, component that enforces security on the web resources.
+In this specific case, it is the Greeting service.
 
 Both the SSO adapter and endpoint security are configured in `src/main/resources/application.properties`.
 
 .Example application.properties file
-
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ # Adapter configuration
@@ -31,3 +33,4 @@ keycloak.securityConstraints[0].securityCollections[0].patterns[0]=/api/greeting
 <7> A simple name for the security constraint.
 <8> A roles needed to access a secured endpoint.
 <9> A secured endpoints path pattern.
+

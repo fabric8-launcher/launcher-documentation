@@ -1,6 +1,8 @@
-= SSO Adapter Configuration
+[id='vertx-sso-adapter-configuration_{context}']
+= {VertX} SSO Adapter Configuration
 
-The SSO adapter is the _client side_, or client to the SSO server, component that enforces security on the web resources. In this specific case, it is the greeting service.
+The SSO adapter is the _client side_, or client to the SSO server, component that enforces security on the web resources.
+In this specific case, it is the greeting service.
 
 .Enacting security
 [source,java,options="nowrap",subs="attributes+"]
@@ -42,3 +44,4 @@ JsonObject keycloakJson = new JsonObject()
 <1> The security realm to be used.
 <2> The actual keycloak _client_ configuration.
 <3> The address of the {RHSSO} server (Interpolation at build time)
+

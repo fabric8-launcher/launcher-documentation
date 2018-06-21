@@ -1,5 +1,12 @@
+// This is a parameterized assembly. Parameters used:
+//
+//  parameter-runtime-anchor: Which runtime this assembly is built for. different from parameter-runtime for routing reasons
+//  parameter-runtime: Which runtime to include files for.
+//
+// Rationale: This assembly is nearly identical for all runtimes.
 
-[id='mission-rest-http-secured-{parameter-runtime}']
+// Do not change the anchor ID, it is set to this for URL routing reasons
+[id='mission-rest-http-secured-{parameter-runtime-anchor}']
 = {name-mission-secured} Mission - {runtime} Booster
 
 include::note-booster-unvailable-oso.adoc[leveloffset=+1]
@@ -28,7 +35,7 @@ include::ref_rhsso-deployment-configuration.adoc[leveloffset=+1]
 
 include::con_rhsso-realm-model.adoc[leveloffset=+1]
 
-include::secured-mission-{parameter-runtime}-adapter.adoc[leveloffset=+1]
+include::con_{parameter-runtime}-sso-adapter-configuration.adoc[leveloffset=+1]
 
 include::assembly_deploying-the-secured-booster-to-openshiftlocal.adoc[leveloffset=+1]
 

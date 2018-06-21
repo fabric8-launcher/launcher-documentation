@@ -57,7 +57,8 @@ include::topics/assembly_circuit-breaker-mission-booster.adoc[leveloffset=+2]
 
 // SECURED
 :context: secured
-:parameter-runtime: nodejs
+:parameter-runtime: node
+:parameter-runtime-anchor: nodejs
 include::topics/assembly_secured-mission-booster.adoc[leveloffset=+2]
 
 
