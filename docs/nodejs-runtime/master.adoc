@@ -43,6 +43,7 @@ include::topics/assembly_configmap-mission-booster.adoc[leveloffset=+2]
 :parameter-runtime: nodejs
 include::topics/assembly_crud-mission-booster.adoc[leveloffset=+2]
 
+
 // HEALTH CHECK
 :context: health-check
 :parameter-runtime: nodejs
