@@ -120,7 +120,7 @@ include::topics/proc_updating-the-deployment-configuration-of-a-booster.adoc[lev
 include::topics/ref_breakdown-of-package-json-properties.adoc[leveloffset=+1]
 
 [appendix]
-include::topics/nodejs-dev-guide-additional-resources.adoc[leveloffset=+1]
+include::topics/ref_additional-node-resources.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/ref_application-development-resources.adoc[leveloffset=+1]
