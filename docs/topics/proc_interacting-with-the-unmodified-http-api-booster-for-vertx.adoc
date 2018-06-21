@@ -1,7 +1,16 @@
-[[interact]]
-= Interacting with the Unmodified {VertX} Booster
+[id='interacting-with-the-unmodified-http-api-booster-for-vertx_{context}']
+= Interacting with the Unmodified {name-mission-http-api} Booster for {VertX}
 
 The booster provides a default HTTP endpoint that accepts GET requests.
+
+[discrete]
+== Prerequisites
+
+* Your application running
+* The `curl` binary or a web browser
+
+[discrete]
+== Procedure
 
 . Use `curl` to execute a `GET` request against the booster. You can also use a browser to do this.
 +
@@ -23,4 +32,5 @@ $ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting?name=Sa
 }
 ----
 
-include::rest-level-0-mission-form-note.adoc[leveloffset=+1]
+include::note-web-form-rest-api.adoc[leveloffset=+1]
+

@@ -33,7 +33,8 @@ The following boosters are available for {WildFlySwarm}.
 
 // REST API
 :context: http-api
-:parameter-runtime: wf-swarm
+:parameter-runtime: wildflyswarm
+:parameter-runtime-anchor: wf-swarm
 include::topics/assembly_http-api-mission-booster.adoc[leveloffset=+2]
 
 
