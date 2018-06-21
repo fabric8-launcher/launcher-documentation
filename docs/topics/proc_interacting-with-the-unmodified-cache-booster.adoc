@@ -1,15 +1,25 @@
-= Interacting with the Unmodified Booster
+[id='interacting-with-the-unmodified-cache-booster_{context}']
+= Interacting with the Unmodified {name-mission-cache} Booster
+
+[discrete]
+== Prerequisites
+
+* Your application deployed
+
+[discrete]
+== Procedure
 
 . Navigate to the `greeting` service using your browser.
 
 . Click _Invoke the service_ once.
 +
-Notice the `duration` value is above `2000`. Also notice the cache state has changed form `No cached value` to `A value is cached`.
+Notice the `duration` value is above `2000`.
+Also notice the cache state has changed form `No cached value` to `A value is cached`.
 
 . Wait 5 seconds and notice cache state has changed back to `No cached value`.
 +
 The TTL for the cached value is set to 5 seconds.
-Once the TTL expires, the value is no longer cached.
+When the TTL expires, the value is no longer cached.
 
 . Click _Invoke the service_ once more to cache the value.
 
@@ -17,3 +27,4 @@ Once the TTL expires, the value is no longer cached.
 +
 Notice a significantly lower `duration` value since it is using a cached value.
 If you click _Clear the cache_, the cache is emptied.
+
