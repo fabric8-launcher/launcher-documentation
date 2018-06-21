@@ -1,6 +1,16 @@
-= Interacting with the Unmodified {WildFlySwarm} Booster
+[id='interacting-with-the-unmodified-configmap-booster-for-wildflyswarm_{context}']
+= Interacting with the Unmodified {name-mission-configmap} Booster for {WildFlySwarm}
 
 The booster provides a default HTTP endpoint that accepts GET requests.
+
+[discrete]
+== Prerequisites
+
+* Your application running
+* The `curl` binary or a web browser
+
+[discrete]
+== Procedure
 
 . Use `curl` to execute a `GET` request against the booster. You can also use a browser to do this.
 +
@@ -17,7 +27,8 @@ $ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting
 $ oc edit configmap app-config
 ----
 +
-Change the value for the `greeting.message` key to `Bonjour %s from a ConfigMap!` and save the file. After you save this, the changes will be propagated to your OpenShift instance.
+Change the value for the `greeting.message` key to `Bonjour %s from a ConfigMap!` and save the file.
+After you save this, the changes will be propagated to your OpenShift instance.
 
 . Rollout the new version of your application so the ConfigMap configuration changes are picked up.
 +
@@ -41,7 +52,6 @@ Your specific pod name will vary.
 The number in the middle will increase with each new build.
 The letters at the end are generated when the pod is created.
 
-
 . Execute a `GET` request using `curl` against the booster with the updated ConfigMap configuration to see your updated greeting.
 You can also do this from your browser using the web form provided by the application.
 +
@@ -50,3 +60,4 @@ You can also do this from your browser using the web form provided by the applic
 $ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting
 {"content":"Bonjour World from a ConfigMap!"}
 ----
+

@@ -1,8 +1,19 @@
-= Interacting with the Unmodified {SpringBoot} Booster
+[id='interacting-with-the-unmodified-configmap-booster-for-springboot_{context}']
+= Interacting with the Unmodified {name-mission-configmap} Booster for {SpringBoot}
 
 The booster provides a default HTTP endpoint that accepts GET requests.
 
-. Use `curl` to execute a `GET` request against the booster. You can also use a browser to do this.
+[discrete]
+== Prerequisites
+
+* Your application running
+* The `curl` binary or a web browser
+
+[discrete]
+== Procedure
+
+. Use `curl` to execute a `GET` request against the booster.
+You can also use a browser to do this.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -36,7 +47,7 @@ NAME                             READY     STATUS      RESTARTS   AGE
 {app-name}-s2i-1-build   0/1       Completed   0          2m
 ----
 +
-The `{app-name}-1-aaaaa` pod should have a status of `Running` once it's fully deployed and started. 
+The `{app-name}-1-aaaaa` pod should have a status of `Running` once it's fully deployed and started.
 Your specific pod name will vary.
 The number in the middle will increase with each new build.
 The letters at the end are generated when the pod is created.
@@ -49,3 +60,4 @@ You can also do this from your browser using the web form provided by the applic
 $ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting
 {"content":"Bonjour!"}
 ----
+

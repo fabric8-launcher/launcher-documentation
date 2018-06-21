@@ -1,8 +1,19 @@
-= Interacting with the Unmodified {VertX} Booster
+[id='interacting-with-the-unmodified-configmap-booster-for-vertx_{context}']
+= Interacting with the Unmodified {name-mission-configmap} Booster for {VertX}
 
 The booster provides a default HTTP endpoint that accepts GET requests.
 
-. Use `curl` to execute a `GET` request against the booster. You can also use a browser to do this.
+[discrete]
+== Prerequisites
+
+* Your application running
+* The `curl` binary or a web browser
+
+[discrete]
+== Procedure
+
+. Use `curl` to execute a `GET` request against the booster.
+You can also use a browser to do this.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -20,6 +31,7 @@ Change the value for the `message` key to `Bonjour, %s from a ConfigMap !` and s
 
 
 . Update of the ConfigMap should be read by the application within an acceptable time (a few seconds) without requiring a restart of the application.
+
 . Execute a `GET` request using `curl` against the booster with the updated ConfigMap configuration to see your updated greeting.
 You can also do this from your browser using the web form provided by the application.
 +
@@ -28,3 +40,4 @@ You can also do this from your browser using the web form provided by the applic
 $ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting
 {"content":"Bonjour, World from a ConfigMap !"}
 ----
+

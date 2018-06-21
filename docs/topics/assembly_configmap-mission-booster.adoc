@@ -24,7 +24,7 @@ include::assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+1]
 
 include::proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+1]
 
-include::configmap-mission-basic-interaction-{parameter-runtime}.adoc[leveloffset=+1]
+include::proc_interacting-with-the-unmodified-configmap-booster-for-{parameter-runtime}.adoc[leveloffset=+1]
 :parameter-mission!:
 
 ifndef::node-js[]
