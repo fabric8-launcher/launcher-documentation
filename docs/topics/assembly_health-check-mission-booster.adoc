@@ -1,4 +1,11 @@
+// This is a parameterized assembly. Parameters used:
+//
+//  parameter-runtime-anchor: Which runtime this assembly is built for. Different from parameter-runtime for routing reasons
+//  parameter-runtime: Which runtime to include files for.
+//
+// Rationale: This assembly is nearly identical for all runtimes.
 
+// Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-health-check-{parameter-runtime}']
 = {name-mission-health-check} Mission - {runtime} Booster
 
@@ -6,9 +13,16 @@ include::health-check-mission-intro-paragraph.adoc[leveloffset=+1]
 
 NOTE: If you are not familiar with the health check terminology, see the xref:health-check-concepts_{context}[] section first.
 
-The purpose of this use case is to demonstrate the health check pattern through the use of probing. Probing is used to report the liveness and readiness of an application. In this use case, you configure an application which exposes an HTTP `health` endpoint to issue HTTP requests. If the container is alive, according to the liveness probe on the `health` HTTP endpoint, the management platform receives `200` as return code and no further action is required. If the `health` HTTP endpoint does not return a response, for example if the thread is blocked, then the application is not considered alive according to the liveness probe. In that case, the platform kills the pod corresponding to that application and recreates a new pod to restart the application.
+The purpose of this use case is to demonstrate the health check pattern through the use of probing.
+Probing is used to report the liveness and readiness of an application.
+In this use case, you configure an application which exposes an HTTP `health` endpoint to issue HTTP requests.
+If the container is alive, according to the liveness probe on the `health` HTTP endpoint, the management platform receives `200` as return code and no further action is required.
+If the `health` HTTP endpoint does not return a response, for example if the thread is blocked, then the application is not considered alive according to the liveness probe.
+In that case, the platform kills the pod corresponding to that application and recreates a new pod to restart the application.
 
-This use case also allows you to demonstrate and use a readiness probe. In cases where the application is running but is unable to handle requests, such as when the application returns an HTTP `503` response code during restart, this application is not considered ready according to the readiness probe. If the application is not considered ready by the readiness probe, requests are not routed to that application until it is considered ready according to the readiness probe.
+This use case also allows you to demonstrate and use a readiness probe.
+In cases where the application is running but is unable to handle requests, such as when the application returns an HTTP `503` response code during restart, this application is not considered ready according to the readiness probe.
+If the application is not considered ready by the readiness probe, requests are not routed to that application until it is considered ready according to the readiness probe.
 
 include::con_health-check-concepts.adoc[leveloffset=+1]
 

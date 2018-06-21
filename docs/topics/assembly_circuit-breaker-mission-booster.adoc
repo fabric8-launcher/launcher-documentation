@@ -1,4 +1,11 @@
+// This is a parameterized assembly. Parameters used:
+//
+//  parameter-runtime-anchor: Which runtime this assembly is built for. different from parameter-runtime for routing reasons
+//  parameter-runtime: Which runtime to include files for.
+//
+// Rationale: This assembly is nearly identical for all runtimes.
 
+// Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-circuit-breaker-{parameter-runtime}']
 = {name-mission-circuit-breaker} Mission - {runtime} Booster
 
@@ -10,9 +17,9 @@ This mission shows you how to implement a Circuit Breaker and Fallback pattern i
 
 include::con_about-circuit-breaker.adoc[leveloffset=+1]
 
-include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
-
 include::con_circuit-breaker-design-tradeoffs.adoc[leveloffset=+1]
+
+include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
 :parameter-mission-name: {name-mission-circuit-breaker}
 :parameter-mission: circuit-breaker
