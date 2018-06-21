@@ -43,7 +43,7 @@ endif::node-js-sso-temp-workaround[]
 
 . Perform an authenticated request as a user:
 .. Click the _Login_ button to authenticate against {RHSSO}. You will be redirected to the SSO server.
-.. Log in as xref:sso-users[the _Alice_ user]. You will be redirected back to the web interface.
+.. Log in as xref:rhsso-realm-model_{context}[the _Alice_ user]. You will be redirected back to the web interface.
 +
 --
 NOTE: You can see the access (bearer) token in the command line output at the bottom of the page.
@@ -66,7 +66,7 @@ image::sso-invoke-alice.png[]
 .. Click the _Invoke_ button.
 +
 Confirm that this sends an unauthenticated request to the Greeting service.
-.. Click the _Login_ button and log in as xref:sso-users[the _admin_ user].
+.. Click the _Login_ button and log in as xref:rhsso-realm-model_{context}[the _admin_ user].
 +
 .Authenticated {name-mission-secured} Booster Web Interface (as admin)
 image::sso-admin.png[]

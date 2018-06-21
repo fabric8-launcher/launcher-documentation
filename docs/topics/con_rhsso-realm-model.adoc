@@ -1,0 +1,85 @@
+[id='rhsso-realm-model_{context}']
+
+= {RHSSO} Realm Model
+
+The `master` realm is used to secure this booster.
+There are two pre-configured application client definitions that provide a model for command line clients and the secured REST endpoint.
+
+There are also two pre-configured users in the {RHSSO} `master` realm that can be used to validate various authentication and authorization outcomes:  `admin` and `alice`.
+
+== {RHSSO} Users
+The realm model for the secured boosters includes two users:
+
+admin::
+The `admin` user has a password of `admin` and is the realm administrator.
+This user has full access to the {RHSSO} administration console, but none of the role mappings that are required to access the secured endpoints.
+You can use this user to illustrate the behavior of an authenticated, but unauthorized user.
+
+alice::
+The `alice` user has a password of `password` and is the canonical application user.
+This user will demonstrate successful authenticated and authorized access to the secured endpoints.
+An example representation of the role mappings is provided in this decoded JWT bearer token:
++
+[source,json,options="nowrap",subs="attributes+"]
+----
+{
+  "jti": "0073cfaa-7ed6-4326-ac07-c108d34b4f82",
+  "exp": 1510162193,
+  "nbf": 0,
+  "iat": 1510161593,
+  "iss": "https://secure-sso-sso.{osl-route-hostname}/auth/realms/master", <1>
+  "aud": "demoapp",
+  "sub": "c0175ccb-0892-4b31-829f-dda873815fe8",
+  "typ": "Bearer",
+  "azp": "demoapp",
+  "nonce": "90ff5d1a-ba44-45ae-a413-50b08bf4a242",
+  "auth_time": 1510161591,
+  "session_state": "98efb95a-b355-43d1-996b-0abcb1304352",
+  "acr": "1",
+  "client_session": "5962112c-2b19-461e-8aac-84ab512d2a01",
+  "allowed-origins": [
+    "*"
+  ],
+  "realm_access": {
+    "roles": [ <2>
+      "booster-admin"
+    ]
+  },
+  "resource_access": { <3>
+    "secured-booster-endpoint": {
+      "roles": [
+        "booster-admin" <4>
+      ]
+    },
+    "account": {
+      "roles": [
+        "manage-account",
+        "view-profile"
+      ]
+    }
+  },
+  "name": "Alice InChains",
+  "preferred_username": "alice", <5>
+  "given_name": "Alice",
+  "family_name": "InChains",
+  "email": "alice@keycloak.org"
+}
+----
++
+<1> The `iss` field corresponds to the {RHSSO} realm instance URL that issues the token. This must be configured in the secured endpoint deployments in order for the token to be verified.
+<2> The `roles` object provides the roles that have been granted to the user at the global realm level. In this case
+`alice` has been granted the `booster-admin` role. We will see that the secured endpoint will look to the realm level for authorized roles.
+<3> The `resource_access` object contains resource specific role grants. Under this object you will find an object
+for each of the secured endpoints.
+<4> The `resource_access.secured-booster-endpoint.roles` object contains the roles granted to `alice` for the `secured-booster-endpoint` resource.
+<5> The `preferred_username` field provides the username that was used to generate the access token.
+
+== The Application Clients
+The OAuth 2.0 specification allows you to define a role for application clients that access secured resources on behalf of resource owners. The `master` realm has the following application clients defined:
+
+demoapp::
+This is a `confidential` type client with a client secret that is used to obtain an access token that contains grants for the `alice` user which enable `alice` to access the {WildFlySwarm}, {VertX}, {Node} and {SpringBoot} based REST booster deployments.
+
+secured-booster-endpoint::
+The `secured-booster-endpoint` is a bearer-only type of client that requires a `booster-admin` role for accessing the associated resources, specifically the Greeting service.
+
