@@ -5,12 +5,18 @@
 //
 // Rationale: This assembly is nearly identical for all runtimes.
 
-
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-rest-http-{parameter-runtime-anchor}']
 = {name-mission-http-api} Mission - {runtime} Booster
 
-include::mission-intro-rest-api.adoc[leveloffset=+1]
+include::rest-level-0-mission-intro-paragraph.adoc[]
+
+This booster introduces the mechanics of interacting with a remote service using the HTTP protocol. It allows you to:
+
+* Execute an HTTP `GET` request on the `api/greeting` endpoint.
+* Receive a response in JSON format with a payload consisting of the `Hello, World!` String.
+* Execute an HTTP `GET` request on the `api/greeting` endpoint while passing in a String argument. This uses the `name` request parameter in the query string.
+* Receive a response in JSON format with a payload of `Hello, $name!` with `$name` replaced by the value of the `name` parameter passed into the request.
 
 include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
