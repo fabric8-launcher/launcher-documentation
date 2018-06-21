@@ -12,9 +12,9 @@ This mission shows you how to:
 
 include::con_about-externalized-configuration.adoc[leveloffset=+1]
 
-include::note-preview-booster-source.adoc[leveloffset=+1]
-
 include::con_configmap-design-tradeoffs.adoc[leveloffset=+1]
+
+include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
 :parameter-mission-name: {name-mission-configmap}
 :parameter-mission: configmap

@@ -1,4 +1,0 @@
-.Viewing the Booster source code and README
-To view the source code and README file of this booster, use link:{link-launcher-oso}[{launcher-oso}] or the {launcher} tool on a {OpenShiftLocal} to generate your own version of the booster. From there you can view the generated GitHub repository or download and extract the ZIP file containing the booster code.
-
-You can find more details on link:{link-getting-started-guide}#deploying-a-booster-to-oso[using {launcher-oso}] or link:{link-getting-started-guide}#osl-create-booster[using the {launcher} tool on a {OpenShiftLocal}] in link:{link-getting-started-guide}[{getting-started-guide-name}].

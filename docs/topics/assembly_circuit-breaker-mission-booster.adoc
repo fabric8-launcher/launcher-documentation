@@ -10,7 +10,7 @@ This mission shows you how to implement a Circuit Breaker and Fallback pattern i
 
 include::con_about-circuit-breaker.adoc[leveloffset=+1]
 
-include::note-preview-booster-source.adoc[leveloffset=+1]
+include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
 include::con_circuit-breaker-design-tradeoffs.adoc[leveloffset=+1]
 

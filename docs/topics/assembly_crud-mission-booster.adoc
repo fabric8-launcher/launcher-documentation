@@ -6,7 +6,7 @@ include::note-booster-unvailable-oso.adoc[leveloffset=+1]
 
 include::crud-mission-intro.adoc[leveloffset=+1]
 
-include::note-preview-booster-source.adoc[leveloffset=+1]
+include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
 include::con_crud-design-tradeoffs.adoc[leveloffset=+1]
 

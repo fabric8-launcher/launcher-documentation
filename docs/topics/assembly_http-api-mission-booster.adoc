@@ -12,7 +12,7 @@
 
 include::mission-intro-rest-api.adoc[leveloffset=+1]
 
-include::note-preview-booster-source.adoc[leveloffset=+1]
+include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
 include::con_http-api-design-tradeoffs.adoc[leveloffset=+1]
 
