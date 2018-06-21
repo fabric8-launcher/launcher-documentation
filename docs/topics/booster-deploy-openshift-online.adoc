@@ -1,5 +1,0 @@
-= Deploying your Booster to {OpenShiftOnline}
-
-Navigate to link:{link-launcher-oso}[{launcher}] and use it to create and launch your booster. 
-
-You can also use the `oc` CLI Client to deploy a booster to {OpenShiftOnline}. To use the `oc` CLI Client with {OpenShiftOnline}, follow the same steps as with your {OpenShiftLocal} but use the authentication token and URL from the {OpenShiftOnline} Web Console.

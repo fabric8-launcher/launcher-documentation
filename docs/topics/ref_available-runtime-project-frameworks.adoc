@@ -1,8 +1,0 @@
-[id='available-runtime-project-frameworks_{context}']
-= Available Runtime Project Frameworks
-
-{SpringBoot}:: Testing
-
-{VertX}:: Testing
-
-{WildFlySwarm}:: Testing
