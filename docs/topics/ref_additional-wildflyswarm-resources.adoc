@@ -1,4 +1,4 @@
-[[wf-swarm-additional-resources]]
+[id='additional-wildflyswarm-resources_{context}']
 = Additional {WildFlySwarm} Resources
 
 * link:https://docs.wildfly-swarm.io/{WildFlySwarmVersion}/[{WildFlySwarm} Community Documentation]
