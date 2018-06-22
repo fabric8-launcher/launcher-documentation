@@ -1,137 +1,157 @@
 // name variable defined locally, because it is only used in this topic
 :nexus-project-name: NEXUS_PROJECT_NAME
-// e.g. https://github.com/path/to/source.git
+// e.g.  https://github.com/path/to/source.git
 :scm-repo-url: SCM_REPOSITORY_URL
-[#using-a-nexus-repository-server-on-a-openshiftlocal]
+
+[id='using-a-nexus-repository-server-on-a-openshiftlocal_{context}']
 = Using a Nexus Repository Server on a {OpenShiftLocal}
 
 While developing your cloud-native applications with Java and Maven you may be required to build them repeatedly.
 You can deploy a Nexus Repository server alongside the {launcher} tool on your {OpenShiftLocal} and use it to fetch artifacts from the Maven Central Repository and cache them locally.
 This helps you speed up your builds and rolling updates and alleviates network load during build time.
 
-== Prerequisites for Deploying Nexus on {OpenShiftLocal}.
+[discrete]
+== Prerequisites
 
-
-* Set up your {OpenShiftLocal}. For detailed steps on how to do this, follow the instructions in link:{link-launcher-openshift-local-install-guide}[{minishift-installation-guide-name}].
-
-////
-* Set up your project for use with Maven. For more information on how to do this see the link:https://maven.apache.org/guides/getting-started/index.html[Maven Getting Started Guide^]
-////
+* Your {OpenShiftLocal} set up.
+Follow the instructions in link:{link-launcher-openshift-local-install-guide}[{minishift-installation-guide-name}].
 
 ////
-* Verify that your application image has a `MAVEN_MIRROR_URL` environment variable. If it does not have this environmental variable, follow the link:https://books.sonatype.com/nexus-book/reference/config.html[Nexus documentation^] to configure your build.
+* Set up your project for use with Maven.
+For more information on how to do this see the link:https://maven.apache.org/guides/getting-started/index.html[Maven Getting Started Guide^]
 ////
 
 ////
-* Ensure that you give each pod enough resources to function. You may have to edit the link:https://docs.openshift.com/container-platform/latest/dev_guide/deployments/how_deployments_work.html#creating-a-deployment-configuration[pod template] in the Nexus deployment configuration to request more resources.
+* Verify that your application image has a `MAVEN_MIRROR_URL` environment variable.
+If it does not have this environmental variable, follow the link:https://books.sonatype.com/nexus-book/reference/config.html[Nexus documentation^] to configure your build.
 ////
 
-* Configure your {OpenShiftLocal} to use at least 4096 MiB of RAM and use the required `oc` CLI tool version.
+////
+* Ensure that you give each pod enough resources to function.
+You may have to edit the link:https://docs.openshift.com/container-platform/latest/dev_guide/deployments/how_deployments_work.html#creating-a-deployment-configuration[pod template] in the Nexus deployment configuration to request more resources.
+////
+
+* Your {OpenShiftLocal} configured to use at least 4096 MiB of RAM and use the required `oc` CLI tool version.
 +
-[source,bash,subs="attributes+"]
 --
+[source,bash,subs="attributes+"]
+----
 minishift delete # Delete the previous instance of {OpenShiftLocal}
 minishift config set memory 4096
 minishift config set openshift-version v3.6.0
 minishift start
---
-+
+----
+
 [WARNING]
---
+====
 The procedure described below works with {Minishift}.
 It has not been tested for use with CDK.
 You must use `oc` version `3.6.0` or later.
+====
 --
 
-* Deploy the {launcher} tool to your {OpenShiftLocal}.
+* The {launcher} tool deployed to your {OpenShiftLocal}.
 
-* Deploy a booster application to your {OpenShiftLocal}.
+* A booster application deployed to your {OpenShiftLocal}.
 
-== Configuring your {OpenShiftLocal} to Use Nexus.
+
+[discrete]
+== Procedure
 
 . Log in to your {OpenShiftLocal} instance.
 +
-[source,bash,subs="attributes+"]
 --
+[source,bash,subs="attributes+"]
+----
 oc login https://{osl-login-url} -u developer -p developer
---
-+
-. You can reuse the Docker daemon instance used by {OpenShiftLocal} to download the latest versions of the Nexus Docker container image.
-+
+----
+
+You can reuse the Docker daemon instance used by {OpenShiftLocal} to download the latest versions of the Nexus Docker container image.
+
 [source,bash,subs="attributes+"]
---
+----
 eval $(minishift docker-env)
 docker pull openshift/jenkins-2-centos7
 docker pull openshiftio/launchpad-jenkins-slave
 docker pull sonatype/nexus
+----
 --
 
-== Setting up the Nexus Application
-
-.  Create a new project to contain the Nexus server. You can also use the _New Project_ button on the Web console to do this.
+.  Create a new project to contain the Nexus server.
+You can also use the _New Project_ button on the Web console to do this.
 +
 [source,bash,subs="attributes+"]
---
+----
 oc new-project {nexus-project-name}
---
-+
+----
+
 . Deploy the Nexus container image.
 +
 [source,bash,subs="attributes+"]
---
+----
 oc new-app sonatype/nexus
---
-+
+----
+
 . Expose the service route URL of the Nexus server.
 +
 [source,bash,subs="attributes+"]
---
+----
 oc expose svc/nexus
---
-+
+----
+
 . Attach a persistent volume claim with a minimum size of 10 GiB to the pod running your Nexus application.
 +
+--
 // NOTE: seems that minishift (with oc v 3.6.0alpha1) is fine with USING '1G'  for volume size, while openshift Online requires the syntax '1Gi'.
-+
+
 [source,bash,subs="attributes+"]
---
+----
 oc volumes dc/nexus --add --name 'nexus-volume-1' --type 'pvc' --mount-path '/sonatype-work/' --claim-name 'nexus-pv' --claim-size '10Gi' --overwrite
+----
 --
-+
+
 .  Navigate to the project containing your booster application.
 +
 [source,bash,subs="attributes+"]
---
+----
 oc project {project-name}
+----
+
+. Define and start a new build.
++
 --
-+
-. Define and start a new build. Pass in a parameter to set the value of the `MAVEN_MIRROR_URL` to match the service URL of your Nexus application:
-+
+Pass in a parameter to set the value of the `MAVEN_MIRROR_URL` to match the service URL of your Nexus application:
+
 [NOTE]
---
+====
 Ensure that the YAML template of the builder image you are using for your application has the `MAVEN_MIRROR_URL` environmental variable defined.
 If it does not, see the Nexus documentation for instructions on link:https://help.sonatype.com/display/NXRM2/Maven+and+Other+Build+Tools[configuring your build manually^] before proceeding.
---
-+
+====
+
 [source,bash,subs="attributes+"]
---
+----
 $ oc new-build {app-name}:latest~{scm-repo-url} \
 -e MAVEN_MIRROR_URL='http://nexus.{nexus-project-name}:8081/nexus/content/groups/public'
---
-+
-[NOTE]
---
-Nexus comes pre-configured for the Maven Central Repository, but you may need other repositories for your application. To access images provided by Red Hat, add the link:https://maven.repository.redhat.com/[Red Hat JBoss Middleware Early Access Maven Repository] to your Nexus instance.
---
-+
-. To ensure that your new build is using Nexus to retrieve artifacts, you can:
+----
 
+Nexus comes pre-configured for the Maven Central Repository, but you may need other repositories for your application.
+To access images provided by Red Hat, add the link:https://maven.repository.redhat.com/[Red Hat JBoss Middleware Early Access Maven Repository] to your Nexus instance.
+--
+
+. Ensure that your new build is using Nexus to retrieve artifacts. Do one of the following:
++
+--
 * Navigate to `\http://nexus-{nexus-project-name}.{osl-route-hostname}/nexus/content/groups/public` to view the list of artifacts stored in your local repository.
 * Check the log output of the build:
 +
 [source,bash,subs="attributes+"]
---
+----
 $ oc logs build/{app-name}-1 --follow
---
-+
+----
+
 If your build uses Nexus to retrieve artifacts, the build log output should reference the path `\http://nexus.{nexus-project-name}:8081/`.
+--
+
+:nexus-project-name!:
+:scm-repo-url!:
+
