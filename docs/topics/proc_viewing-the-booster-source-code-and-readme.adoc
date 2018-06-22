@@ -16,7 +16,7 @@ One of the following:
 . View the generated GitHub repository or download and extract the ZIP file that contains the booster source code.
 
 [discrete]
-== Additional Resources
+== Additional resources
 
 * link:{link-getting-started-guide}#deploying-a-booster-to-oso[Using {launcher-oso}] 
 * link:{link-getting-started-guide}#osl-create-booster[Using the {launcher} tool on a {OpenShiftLocal}]

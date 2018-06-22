@@ -76,6 +76,6 @@ endif::[]
 --
 
 [discrete]
-== Additional Resources
+== Additional resources
 
 * The Hystrix Dashboard link:https://github.com/Netflix/Hystrix/wiki/Dashboard[wiki page]

@@ -30,7 +30,7 @@ NOTE: We do not recommend adding the regular user to the `docker` group. For mor
 .. Press `Ctrl + C`.
 
 [discrete]
-== Related Information
+== Additional resources
 
 * Official link:https://www.docker.com/get-docker[Docker installation documentation].
 * Docker group security:

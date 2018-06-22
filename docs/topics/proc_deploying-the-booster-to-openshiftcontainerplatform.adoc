@@ -9,10 +9,12 @@
 
 The process of creating and deploying boosters to {OpenshiftContainerPlatform} is similar to {OpenShiftOnline}:
 
-.Prerequisites
+[discrete]
+== Prerequisites
 
 * The booster created using link:{link-launcher-oso}[{launcher-oso}] or link:{link-openshift-local-guide}[the {launcher} tool].
 
-.Procedure
+[discrete]
+== Procedure
 
 * Follow the instructions in xref:deploying-the-booster-to-openshiftonline_{context}[], only use the URL and user credentials from the {OpenShiftContainerPlatform} Web Console.

@@ -4,10 +4,12 @@
 
 Use the `DEBUG` environment variable when starting your application to enable debug logging.
 
-.Prerequisites 
+[discrete]
+== Prerequisites
 * An application with debug logging.
 
-.Procedure
+[discrete]
+== Procedure
 . Set the `DEBUG` environment variable when starting your application to enable debug logging.
 +
 [source,bash,options="nowrap",subs="attributes+"]

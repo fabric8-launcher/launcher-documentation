@@ -4,11 +4,13 @@
 
 To use the {launcher} tool on a local cloud, you must have a {OpenShiftLocal} installed and configured. You can use either {Minishift} or {CDK}.
 
-.Prerequisites
+[discrete]
+== Prerequisites
 
 * link:https://developers.redhat.com[Have a Red Hat Developers account]
 
-.Procedure
+[discrete]
+== Procedure
 
 . Follow the instructions for installing the {OpenShiftLocal}:
 +

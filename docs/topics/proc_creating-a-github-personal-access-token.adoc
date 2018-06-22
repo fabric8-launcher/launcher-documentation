@@ -3,12 +3,14 @@
 
 To install the {launcher} tool on a {OpenShiftLocal}, you must provide the {launcher} tool with a GitHub personal access token. This enables the {launcher} tool to create booster applications and save them as Git repositories in your GitHub namespace.
 
-.Prerequisites
+[discrete]
+== Prerequisites
 --
 * A link:http://github.com[GitHub account].
 --
 
-.Procedure
+[discrete]
+== Procedure
 . Using a web browser, navigate to `https://github.com/settings/tokens`.
 . Select _Generate new token._
 . Add a token description, for example `{launcher} tool on a {OpenShiftLocal}`.
