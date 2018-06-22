@@ -1,5 +1,5 @@
 
-= The {name-mission-secured} Project Structure
+= The {name-mission-secured} project structure
 
 The SSO booster project contains:
 

@@ -1,5 +1,5 @@
 [id='deploying-a-booster-to-openshiftcontainerplatform_{context}']
-= Deploying a Booster to {OpenShiftContainerPlatform}
+= Deploying a booster to {OpenShiftContainerPlatform}
 
 [discrete]
 == Prerequisites

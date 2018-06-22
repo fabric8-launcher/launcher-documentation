@@ -1,5 +1,5 @@
 [id='wildflyswarm-sso-adapter-configuration_{context}']
-= {WildFlySwarm} SSO Adapter Configuration
+= {WildFlySwarm} SSO adapter configuration
 
 The SSO adapter is the _client side_, or client to the SSO server, component that enforces security on the web resources.
 In this specific case, it is the greeting service.

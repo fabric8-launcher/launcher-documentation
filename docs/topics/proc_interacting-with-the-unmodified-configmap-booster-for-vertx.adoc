@@ -1,5 +1,5 @@
 [id='interacting-with-the-unmodified-configmap-booster-for-vertx_{context}']
-= Interacting with the Unmodified {name-mission-configmap} Booster for {VertX}
+= Interacting with the unmodified {name-mission-configmap} booster for {VertX}
 
 The booster provides a default HTTP endpoint that accepts GET requests.
 

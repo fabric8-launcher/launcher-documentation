@@ -1,5 +1,5 @@
 [id='updating-your-booster-and-deploying-the-changes_{context}']
-= Updating Your Booster and Deploying the Changes
+= Updating your booster and deploying the changes
 
 To push changes to this booster running in {OpenShiftOnline} or your {OpenShiftLocal}, you can push a new commit to the GitHub repository and start a new build.
 

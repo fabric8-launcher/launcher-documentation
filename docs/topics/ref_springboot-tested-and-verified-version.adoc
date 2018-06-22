@@ -1,6 +1,6 @@
 
 [id='springboot-tested-and-verified-version_{context}']
-= {SpringBoot} Tested and Verified Version
+= {SpringBoot} tested and verified version
 
 
 //.{SpringBoot} Tested and Verified Version

@@ -1,6 +1,6 @@
 [id='github-issue-workflow_{context}']
 
-= GitHub Issue Workflow
+= GitHub issue workflow
 
 Each issue in the _{repo-docs-name}_ repository goes through the following life cycle. In each stage, the descriptions list the actions the following people must take:
 

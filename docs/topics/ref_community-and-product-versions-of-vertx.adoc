@@ -1,5 +1,5 @@
 [id='community-and-product-versions-of-vertx_{context}']
-= Community and Product Versions of {Vertx}
+= Community and product versions of {Vertx}
 
 .Supported {Vertx} Version
 

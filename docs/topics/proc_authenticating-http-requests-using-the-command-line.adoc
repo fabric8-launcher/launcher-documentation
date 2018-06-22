@@ -1,6 +1,6 @@
 
 [id='authenticating-http-requests-using-the-command-line_{context}']
-= Authenticating HTTP requests using the Command Line
+= Authenticating HTTP requests using the command line
 
 Request a token by sending a HTTP POST request to the {RHSSO} server.
 In the following example, the link:https://stedolan.github.io/jq/[jq CLI tool] is used to extract the token value from the JSON response.

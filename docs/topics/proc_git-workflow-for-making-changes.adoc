@@ -1,6 +1,6 @@
 
 [id='git-workflow-for-making-changes_{context}']
-= Git Workflow for Making Changes
+= Git workflow for making changes
 
 When making contributions, follow the standard link:https://guides.github.com/introduction/flow/[GitHub flow]. Below, you will find more details about the steps that are required in the _{repo-docs-name}_ repository.
 

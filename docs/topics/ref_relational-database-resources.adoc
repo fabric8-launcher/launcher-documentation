@@ -1,6 +1,6 @@
 
 [id='relational-database-resources_{context}']
-= Relational Database Resources
+= Relational database resources
 
 More background and related information on running relational databases in OpenShift, CRUD, HTTP API and REST can be found here:
 

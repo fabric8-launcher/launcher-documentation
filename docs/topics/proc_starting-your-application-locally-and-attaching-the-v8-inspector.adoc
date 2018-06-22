@@ -1,5 +1,5 @@
 [id='starting-your-application-locally-and-attaching-the-v8-inspector_{context}']
-= Starting your Application Locally and Attaching the V8 Inspector
+= Starting your application locally and attaching the V8 inspector
 The V8 inspector enables you to debug your {Node}{ndash}based application using other tools, such as link:https://developers.google.com/web/tools/chrome-devtools/[Chrome DevTools], that use the link:https://chromedevtools.github.io/debugger-protocol-viewer/1-2/[Chrome Debugging Protocol].
 
 [discrete]

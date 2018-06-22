@@ -1,6 +1,6 @@
 [id='about-externalized-configuration_{context}']
 
-= About Externalized Configuration
+= About externalized configuration
 
 It is important for the application configuration to be externalized and separated from its code. This allows the application configuration to change as it moves through different environments while leaving the code unchanged. This also keeps sensitive or internal information out of your code base and version control. Many languages and application servers provide environment variables to support externalizing an application's configuration.
 Microservices architectures and polyglot environments add a layer of complexity to managing an application's configuration. Applications are comprised of independent, distributed services, each potentially with its own configuration.

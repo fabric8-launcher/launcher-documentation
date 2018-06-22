@@ -6,7 +6,7 @@
 
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-cache-{parameter-runtime-anchor}']
-= {name-mission-cache} Mission - {runtime} Booster
+= {name-mission-cache} mission - {runtime} booster
 
 include::note-booster-unvailable-oso.adoc[leveloffset=+1]
 

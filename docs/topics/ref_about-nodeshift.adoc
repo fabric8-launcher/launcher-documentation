@@ -1,5 +1,5 @@
 [id='about-nodeshift']
-= About Nodeshift 
+= About Nodeshift
 
 link:https://github.com/bucharest-gold/nodeshift[Nodeshift] is a module for running OpenShift deployments with {Node} projects.
 

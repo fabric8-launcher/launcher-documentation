@@ -1,6 +1,6 @@
 
 [id='reviewing-changes_{context}']
-= Reviewing Changes
+= Reviewing changes
 
 Ensure you perform all the following actions when reviewing a pull request:
 

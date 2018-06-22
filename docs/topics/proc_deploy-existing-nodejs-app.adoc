@@ -1,4 +1,4 @@
-= Deploying an Existing {Node} Application to OpenShift
+= Deploying an existing {Node} application to OpenShift
 
 You can deploy an existing {Node} application to OpenShift using the steps in xref:proc_deploy-new-nodejs-app-openshift[].
 

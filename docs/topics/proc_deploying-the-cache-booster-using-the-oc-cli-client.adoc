@@ -1,5 +1,5 @@
 [id='deploying-the-cache-booster-using-the-oc-cli-client_{context}']
-= Deploying the {name-mission-cache} Booster using the `oc` CLI Client
+= Deploying the {name-mission-cache} booster using the `oc` CLI client
 
 [discrete]
 == Prerequisites

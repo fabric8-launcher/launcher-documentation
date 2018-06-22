@@ -8,7 +8,7 @@
 // Rationale: This procedure is identical in all deployments
 
 [id='deploying-the-booster-using-the-launcher-tool_{context}']
-= Deploying the Booster Using the {launcher} Tool
+= Deploying the booster using the {launcher} tool
 
 [discrete]
 == Prerequisites

@@ -1,6 +1,6 @@
 
 [id='creating-the-secured-booster-using-launcher_{context}']
-= Creating the {name-mission-secured} Booster Using {launcher}
+= Creating the {name-mission-secured} booster using {launcher}
 
 [discrete]
 == Prerequisites

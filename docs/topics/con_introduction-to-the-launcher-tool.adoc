@@ -1,5 +1,5 @@
 [id='introduction-to-the-launcher-tool_{context}']
-= Introduction to the {launcher} Tool
+= Introduction to the {launcher} tool
 
 The {launcher} tool runs on OpenShift and provides a hassle-free way of creating functional example applications called missions. The {launcher} tool walks you through:
 

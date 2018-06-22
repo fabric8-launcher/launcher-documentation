@@ -1,6 +1,6 @@
 
 [id='releasing-new-version_{context}']
-= Releasing New Version
+= Releasing new version
 
 This section contains all information you need to release a new version of the documentation set to production. This update can happen anytime after the catalog has been updated, including after the release train has been completed.
 

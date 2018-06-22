@@ -1,5 +1,5 @@
 [id='about-circuit-breaker_{context}']
-= About Circuit Breaker
+= About circuit breaker
 
 // TODO: maybe break this down into a briefer, list-like section
 The Circuit Breaker is a pattern intended to mitigate the impact of network failure and high latency on service architectures where services synchronously invoke other services.
@@ -11,7 +11,7 @@ Once the failures reach a certain threshold, the circuit breaker trips, and all 
 The Circuit Breaker usually also contain an error reporting mechanism that notifies you when the Circuit Breaker trips.
 
 [discrete]
-== Why Circuit Breaker is Important
+== Why circuit breaker is important
 
 In an architecture where multiple services depend on each other for functionality, a failure in one service can rapidly propagate to its dependent services, causing the entire architecture to collapse.
 Implementing a Circuit Breaker pattern helps prevent this.

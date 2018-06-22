@@ -1,13 +1,13 @@
 [id='rhsso-realm-model_{context}']
 
-= {RHSSO} Realm Model
+= {RHSSO} realm model
 
 The `master` realm is used to secure this booster.
 There are two pre-configured application client definitions that provide a model for command line clients and the secured REST endpoint.
 
 There are also two pre-configured users in the {RHSSO} `master` realm that can be used to validate various authentication and authorization outcomes:  `admin` and `alice`.
 
-== {RHSSO} Users
+== {RHSSO} users
 The realm model for the secured boosters includes two users:
 
 admin::
@@ -74,7 +74,7 @@ for each of the secured endpoints.
 <4> The `resource_access.secured-booster-endpoint.roles` object contains the roles granted to `alice` for the `secured-booster-endpoint` resource.
 <5> The `preferred_username` field provides the username that was used to generate the access token.
 
-== The Application Clients
+== The application clients
 The OAuth 2.0 specification allows you to define a role for application clients that access secured resources on behalf of resource owners. The `master` realm has the following application clients defined:
 
 demoapp::

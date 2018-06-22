@@ -1,5 +1,5 @@
 [id='configuring-your-application-to-use-vertx_{context}']
-= Configuring Your Application to Use {Vertx}
+= Configuring your application to use {Vertx}
 
 To configure your application to use {Vertx}:
 

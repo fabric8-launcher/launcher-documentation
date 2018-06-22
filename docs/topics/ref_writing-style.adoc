@@ -1,6 +1,6 @@
 
 [id='writing-style_{context}']
-= Writing Style
+= Writing style
 
 Follow the rules of technical writing as described in the following guides; your pull requests will be evaluated against the requirements described in them.
 If you do not have access to some of them, use the guides that are available to you:
@@ -14,7 +14,7 @@ link:https://redhat-documentation.github.io/asciidoc-markup-conventions/[Red Hat
 link:https://mojo.redhat.com/groups/minimalism-quality-initiative[Minimalism in Red Hat Documentation]:: A Red Hat internal document about applying minimalism to documentation.
 
 [#writing-rules-specific-to-this-repository]
-== Writing Rules Specific to This Repository
+== Writing rules specific to this repository
 
 When writing new content, adhere to the following rules:
 

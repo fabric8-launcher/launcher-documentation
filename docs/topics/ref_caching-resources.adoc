@@ -1,6 +1,6 @@
 
 [id='caching-resources_{context}']
-= Caching Resources
+= Caching resources
 
 More background and related information on caching can be found here:
 

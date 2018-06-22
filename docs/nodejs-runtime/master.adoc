@@ -19,7 +19,7 @@ include::topics/con_missions-and-cloud-native-development-on-openshift.adoc[leve
 
 
 [[nodejs-available-missions-and-boosters]]
-== Available Missions and Boosters for {Node}
+== Available missions and boosters for {Node}
 
 The following boosters are available for {Node}.
 
@@ -86,7 +86,7 @@ This section contains information about debugging your {Node}{ndash}based applic
 
 
 [#remote-debugging]
-=== Remote Debugging
+=== Remote debugging
 To remotely debug an application, you need to start it in a debugging mode and attach a debugger to it.
 
 include::topics/proc_starting-your-application-locally-and-attaching-the-native-debugger.adoc[leveloffset=+3]
@@ -101,7 +101,7 @@ include::topics/proc_starting-your-application-locally-and-attaching-the-v8-insp
 include::topics/proc_starting-your-application-on-openshift-in-debugging-mode.adoc[leveloffset=+3]
 
 [#debug-logging]
-=== Debug Logging
+=== Debug logging
 
 Debug logging is a way to add granular logging to an application that can be explicitly enabled only when performing debugging. This allows you to keep the logging capability in your application and only enable it when needed.
 
@@ -112,7 +112,7 @@ include::topics/proc_accessing-debug-logs-on-localhost.adoc[leveloffset=+3]
 include::topics/proc_accessing-node-debug-logs-on-openshift.adoc[leveloffset=+3]
 
 
-== Developing an Application for the {Node} Runtime
+== Developing an application for the {Node} runtime
 
 include::topics/con_nodejs-runtime-api.adoc[leveloffset=+2]
 

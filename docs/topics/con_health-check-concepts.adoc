@@ -1,5 +1,5 @@
 [id='health-check-concepts_{context}']
-= Health Check Concepts
+= Health check concepts
 
 In order to understand the health check pattern, you need to first understand the following concepts:
 

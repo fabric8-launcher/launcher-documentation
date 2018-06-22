@@ -1,6 +1,6 @@
 
 [id='using-red-hat-jboss-developer-studio-with-a-booster-project_{context}']
-= Using Red Hat JBoss Developer Studio with a Booster Project
+= Using Red Hat JBoss Developer Studio with a booster project
 
 Red Hat JBoss Developer Studio is an integrated development environment, or IDE, that provides tooling for writing software.
 You can use it to make changes to your booster's code.

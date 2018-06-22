@@ -7,7 +7,7 @@
 
 
 [id='starting-your-application-locally-in-debugging-mode_{context}']
-= Starting Your Application Locally in Debugging Mode
+= Starting your application locally in debugging mode
 
 One of the ways of debugging a Maven-based project is manually launching the application while specifying a debugging port, and subsequently connecting a remote debugger to that port.
 This method is applicable at least to the following deployments of the application:

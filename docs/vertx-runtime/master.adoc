@@ -35,7 +35,7 @@ include::topics/proc_configuring-your-vertx-application-to-use-agroal.adoc[level
 include::topics/con_missions-and-cloud-native-development-on-openshift.adoc[leveloffset=+1]
 
 [[vertx-available-missions-and-boosters]]
-== Available Missions and Boosters for {Vertx}
+== Available missions and boosters for {Vertx}
 
 The following boosters are available for {Vertx}.
 
@@ -97,7 +97,7 @@ include::topics/assembly_cache-mission-booster.adoc[leveloffset=+2]
 
 :context: vertx
 
-== Application Development
+== Application development
 
 include::topics/assembly_creating-a-basic-vertx-application.adoc[leveloffset=+2]
 
@@ -109,7 +109,7 @@ include::topics/proc_deploying-an-existing-application-to-openshift.adoc[levelof
 
 This sections contains information about debugging your {VertX}{ndash}based application both in local and remote deployments.
 
-=== Remote Debugging
+=== Remote debugging
 
 To remotely debug an application, you must first configure it to start in a debugging mode, and then attach a debugger to it.
 
@@ -132,7 +132,7 @@ include::topics/proc_starting-your-application-on-openshift-in-debugging-mode.ad
 
 include::topics/proc_attaching-a-remote-debugger-to-the-application.adoc[leveloffset=+3]
 
-=== Debug Logging
+=== Debug logging
 
 {VertX} provides a built-in logging API.
 The default logging implementation for {VertX} uses the `java.util.logging` library that is link:https://docs.oracle.com/javase/8/docs/api/java/util/logging/package-summary.html[provided with the Java JDK^].

@@ -1,6 +1,6 @@
 
 [id='authenticating-to-the-secured-booster-api-endpoint_{context}']
-= Authenticating to the {name-mission-secured} Booster API Endpoint
+= Authenticating to the {name-mission-secured} booster API endpoint
 
 :parent-context: {context}
 

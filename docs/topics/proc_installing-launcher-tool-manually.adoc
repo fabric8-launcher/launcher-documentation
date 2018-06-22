@@ -6,7 +6,9 @@
 // booster catalog.
 
 [id='installing-launcher-tool-manually_{context}']
-= Installing {launcher} Tool Manually
+= Installing {launcher} tool manually
+
+Install a local customized instance of the {launcher} tool, which allows you to test the functionality or make modifications to the service using a web interface.
 
 [discrete]
 == Prerequisites

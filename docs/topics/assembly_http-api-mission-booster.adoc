@@ -7,7 +7,7 @@
 
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-rest-http-{parameter-runtime-anchor}']
-= {name-mission-http-api} Mission - {runtime} Booster
+= {name-mission-http-api} mission - {runtime} booster
 
 include::rest-level-0-mission-intro-paragraph.adoc[]
 

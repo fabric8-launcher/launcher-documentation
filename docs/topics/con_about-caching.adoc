@@ -1,5 +1,5 @@
 [id='about-caching_{context}']
-= About Caching
+= About caching
 
 Caching allows you to store information and access it for a given period of time.
 An advantage of caching is that a cache can provide access to information faster or more reliably than repeatedly calling the original service.

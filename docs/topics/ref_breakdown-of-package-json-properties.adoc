@@ -1,5 +1,5 @@
 [id='breakdown-of-package-json-properties_{context}']
-= Breakdown of Package.json Properties
+= Breakdown of package.json properties
 
 .link:https://github.com/bucharest-gold/nodejs-rest-http/blob/master/package.json[nodejs-rest-http/package.json]
 [source,json,options="nowrap",subs="attributes+"]

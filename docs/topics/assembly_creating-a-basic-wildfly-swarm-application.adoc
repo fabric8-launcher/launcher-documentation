@@ -1,6 +1,6 @@
 
 [id='creating-a-basic-wildfly-swarm-application_{context}']
-= Creating a Basic {WildFlySwarm} Application
+= Creating a basic {WildFlySwarm} application
 
 :parent-context: {context}
 

@@ -1,5 +1,5 @@
 [id='circuit-breaker-resources_{context}']
-= Circuit Breaker Resources
+= Circuit breaker resources
 
 Follow the links below for more background information on the design principles behind the Circuit Breaker pattern
 

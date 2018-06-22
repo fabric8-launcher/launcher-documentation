@@ -1,5 +1,5 @@
 [id='interacting-with-the-unmodified-cache-booster_{context}']
-= Interacting with the Unmodified {name-mission-cache} Booster
+= Interacting with the unmodified {name-mission-cache} booster
 
 [discrete]
 == Prerequisites

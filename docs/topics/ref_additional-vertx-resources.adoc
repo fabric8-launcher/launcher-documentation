@@ -1,5 +1,5 @@
 [id='additional-vertx-resources_{context}']
-= Additional {VertX} Resources
+= Additional {VertX} resources
 
 * link:https://www.reactivemanifesto.org/[The Reactive Manifesto]
 * link:http://vertx.io[{VertX} project]

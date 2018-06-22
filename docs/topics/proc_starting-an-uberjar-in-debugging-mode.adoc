@@ -5,7 +5,7 @@
 // Rationale: This procedure is identical in multiple Java-based deployments.
 
 [id='starting-an-uberjar-in-debugging-mode_{context}']
-= Starting an Uberjar in Debugging Mode
+= Starting an uberjar in debugging mode
 
 If you chose to package your application as a {runtime} uberjar, debug it by executing it with the following parameters.
 

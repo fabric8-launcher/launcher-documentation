@@ -1,12 +1,12 @@
 [id='using-github-labels_{context}']
 
-= Using GitHub Labels
+= Using GitHub labels
 
 In the link:{link-repo-docs}[{repo-docs-name}] repository, labels are an important way of communicating the status of issues and pull requests. Please use them accordingly to help maintain efficient work environment.
 
 There are several groups of labels based on their meaning:
 
-== Issue Status
+== Issue status
 
 Use the following labels to indicate what stage of its life cycle an issue or pull request is in.
 
@@ -23,7 +23,7 @@ Use the following labels to indicate what stage of its life cycle an issue or pu
 | `Status \| Waiting for Peer` | The issue or pull request is waiting for a peer to start review.
 |===
 
-== Issue Type
+== Issue type
 
 Use the following labels to describe what the content of the issue is.
 
@@ -37,7 +37,7 @@ Use the following labels to describe what the content of the issue is.
 | `Type \| Enhancement` | Documentation can be improved or its scope can be enlarged.
 |===
 
-== Issue Priority
+== Issue priority
 
 In addition to the default priority, which is denoted by the lack of a priority label, use the following labels to assign priority to issues:
 
@@ -51,7 +51,7 @@ In addition to the default priority, which is denoted by the lack of a priority 
 | `Priority \| Low` | The issue has low priority.
 |===
 
-== Issue Relations
+== Issue relations
 
 The following labels describe the relation between issues and pull requests:
 
@@ -64,7 +64,7 @@ The following labels describe the relation between issues and pull requests:
 | `Issue \| Has PR` | A pull request resolving the issue exists and is linked.
 |===
 
-== Expected Effort
+== Expected effort
 
 In addition to the default expected effort, which is denoted by the lack of an effort label, use the following labels to describe what level of effort you expect an issue or pull request needs to be resolved:
 
@@ -78,7 +78,7 @@ In addition to the default expected effort, which is denoted by the lack of an e
 | `Effort \| Easyfix` | The issue is trivial, and will take less than a few minutes to be fixed.
 |===
 
-== Pull Request Type
+== Pull request type
 
 Use the following labels to describe how the pull request should be dealth with:
 
@@ -93,7 +93,7 @@ Use the following labels to describe how the pull request should be dealth with:
 WARNING: The contribution must be reviewed before merging to ensure the changes are factually correct.
 |===
 
-== Runtime, Mission, and Component Labels
+== Runtime, Mission, and component labels
 
 Use the following labels to describe what runtimes, mission, or components an issue or pull request concerns. To indicate that an issue is related to a certain booster, combine a runtime and a mission label.
 
