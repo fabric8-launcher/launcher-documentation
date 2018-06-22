@@ -1,18 +1,17 @@
 [id='creating-and-deploying-a-booster-using-your-openshiftlocal_{context}']
 = Creating and Deploying a Booster Using your {OpenShiftLocal}
+
 You can quickly create, build, and deploy a booster to a {OpenShiftLocal} using the {launcher} tool. The {launcher} tool creates a new repository in your GitHub account containing the booster's code and deploys it to your {OpenShiftLocal}. It can also create a ZIP of the booster for you to download and run on your localhost.
 
-
-[sidebar]
 .Prerequisites
---
+
 * link:https://developers.redhat.com[Have a Red Hat Developers account]
 * link:https://github.com[Have a GitHub account]
 * link:{link-launcher-openshift-local-install-guide}[Have a {OpenShiftLocal} installed]
 * link:{link-launcher-openshift-local-install-guide}#install-launcher-app[Have the {launcher} tool installed to your {OpenShiftLocal}].
---
 
 .Procedure
+
 . Navigate to the {launcher} tool on your {OpenShiftLocal} using your browser.
 ** Optionally, use the following command to open the Web Console of your {OpenShiftLocal} in your browser in order to navigate to your {launcher} tool:
 +
@@ -26,6 +25,7 @@ $ minishift console
 . Open the `README.adoc` file in your booster project for more details about interacting with your booster.
 
 .Related Information
+
 Take a look the different runtime guides to learn more about runtimes as well as their boosters:
 
 * link:{link-spring-boot-runtime-guide}[{spring-boot-runtime-guide-name}]

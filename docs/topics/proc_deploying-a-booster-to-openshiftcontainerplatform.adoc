@@ -1,15 +1,14 @@
 [id='deploying-a-booster-to-openshiftcontainerplatform_{context}']
 = Deploying a Booster to {OpenShiftContainerPlatform}
 
-[sidebar]
 .Prerequisites
---
+
 * Have a booster created using link:{link-launcher-oso}[{launcher-oso}] or the {launcher} tool in xref:creating-and-deploying-a-booster-using-your-openshiftlocal_{context}[a {OpenShiftLocal}].
 * Have access to an {OpenShiftContainerPlatform} Web console.
 * Have the `oc` CLI client installed.
---
 
 .Procedure
+
 . Clone your booster Github repository, or download and extract the booster ZIP archive.
 . Get the command containing your authentication token for using the `oc` CLI client with your {OpenShiftContainerPlatform} Web Console:
 .. Login to your {OpenShiftContainerPlatform} Web console.

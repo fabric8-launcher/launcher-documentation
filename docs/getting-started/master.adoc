@@ -4,20 +4,24 @@ include::topics/templates/document-attributes.adoc[]
 //var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
 :docs-topic:
 
+:context: getting-started
+
 :sectnums!:
 = {getting-started-guide-name}
 
-:context: getting-started
+This guide covers basic information to get started using {ProductName}.
 
-[.lead]
-With the emergence of Linux containerization and container platforms, the barrier to entry for using a polyglot, or multiple application runtime, architecture has been reduced. This allows you to embrace different ecosystems, languages, and runtimes at the same time for solving business problems. Moreover container platforms such as OpenShift manage, secure, and automate the deployments and monitoring of your applications. This enables you to decompose your business problems into smaller microservices while letting OpenShift help with managing some of the inherent complexity that comes with deploying, monitoring, and maintaining microservices.
+With the emergence of Linux containerization and container platforms, the barrier to entry for using a polyglot, or multiple application runtime, architecture has been reduced.
+This allows you to embrace different ecosystems, languages, and runtimes at the same time for solving business problems.
+Moreover container platforms such as OpenShift manage, secure, and automate the deployments and monitoring of your applications.
+This enables you to decompose your business problems into smaller microservices while letting OpenShift help with managing some of the inherent complexity that comes with deploying, monitoring, and maintaining microservices.
 
-[.lead]
-{ProductName} provides you with cloud-native runtimes and prescribes opinionated, cloud-native development approaches to developing, building, and deploying applications that use those cloud-native runtimes on OpenShift. These cloud-native development approaches take advantage of the capabilities provided by OpenShift and enable you to use patterns such as Circuit Breaker, Health Check, and Service Discovery.
+{ProductName} provides you with cloud-native runtimes and prescribes opinionated, cloud-native development approaches to developing, building, and deploying applications that use those cloud-native runtimes on OpenShift.
+These cloud-native development approaches take advantage of the capabilities provided by OpenShift and enable you to use patterns such as Circuit Breaker, Health Check, and Service Discovery.
 
-[.lead]
-This guide takes you through cloud-native development on OpenShift. It shows you how to create and deploy example cloud-native applications called boosters to OpenShift using {launcher-oso} or the {launcher} tool. These example applications can serve as the foundation for your actual cloud-native microservices since they can be updated and redeployed using the same deployment process detailed in this guide.
-
+This guide takes you through cloud-native development on OpenShift.
+It shows you how to create and deploy example cloud-native applications called boosters to OpenShift using {launcher-oso} or the {launcher} tool.
+These example applications can serve as the foundation for your actual cloud-native microservices since they can be updated and redeployed using the same deployment process detailed in this guide.
 
 include::topics/con_introduction-to-productname.adoc[leveloffset=+1]
 
@@ -29,7 +33,8 @@ include::topics/proc_deploying-a-booster-to-openshiftcontainerplatform.adoc[leve
 
 include::topics/proc_updating-your-booster-and-deploying-the-changes.adoc[leveloffset=+1]
 
-include::topics/proc_using-red-hat-jboss-developer-studio-with-a-booster-project.adoc[leveloffset=+1]
+include::topics/assembly_using-red-hat-jboss-developer-studio-with-a-booster-project.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/ref_glossary.adoc[leveloffset=+1]
+
