@@ -7,7 +7,7 @@
 
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-configmap-{parameter-runtime-anchor}']
-= {name-mission-configmap} Mission - {runtime} Booster
+= {name-mission-configmap} mission - {runtime} booster
 
 include::configmap-mission-intro-paragraph.adoc[leveloffset=+1]
 

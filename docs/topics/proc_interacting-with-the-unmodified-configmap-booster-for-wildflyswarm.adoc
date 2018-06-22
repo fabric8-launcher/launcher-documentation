@@ -1,5 +1,5 @@
 [id='interacting-with-the-unmodified-configmap-booster-for-wildflyswarm_{context}']
-= Interacting with the Unmodified {name-mission-configmap} Booster for {WildFlySwarm}
+= Interacting with the unmodified {name-mission-configmap} booster for {WildFlySwarm}
 
 The booster provides a default HTTP endpoint that accepts GET requests.
 

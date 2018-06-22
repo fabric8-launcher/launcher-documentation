@@ -1,6 +1,6 @@
 [id='merging-contributions_{context}']
 
-= Merging Contributions
+= Merging contributions
 
 When you or someone else has xref:reviewing-changes_{context}[reviewed the changes] in a pull request, you can merge them into `upstream/master`.
 

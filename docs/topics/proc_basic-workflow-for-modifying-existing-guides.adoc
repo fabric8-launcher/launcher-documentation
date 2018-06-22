@@ -1,5 +1,5 @@
 [id='basic-workflow-for-modifying-existing-guides_{context}']
-= Basic Workflow for Modifying Existing Guides
+= Basic workflow for modifying existing guides
 
 [discrete]
 == Prerequisites

@@ -1,6 +1,6 @@
 [id='building-locally_{context}']
 
-= Building Locally
+= Building locally
 
 When you are making a contribution, you should preview your changes before you commit or push them. This section describes the most typical procedure of doing so.
 

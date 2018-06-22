@@ -1,9 +1,9 @@
 [id='creating-a-nodejs-application_{context}']
-= Creating a {Node} Application
+= Creating a {Node} application
 
 In addition to xref:mission-rest-http-nodejs[using a booster], you can also create new {Node} applications from scratch and deploy them to OpenShift.
 
-== Creating an Application
+== Creating an application
 
 [discrete]
 == Prerequisites
@@ -69,7 +69,7 @@ $ curl http://localhost:8080
 ----
 
 [#proc_deploy-new-nodejs-app-openshift]
-== Deploying an Application to OpenShift
+== Deploying an application to OpenShift
 
 [discrete]
 == Prerequisites

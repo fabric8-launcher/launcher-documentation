@@ -1,5 +1,5 @@
 [id='deploying-a-springboot-application-using-war-files_{context}']
-= Deploying a {SpringBoot} Application using WAR Files
+= Deploying a {SpringBoot} application using WAR files
 // Consider placing this in the Spring Boot runtime documentation instead?
 // You can Package and deploy your application as a war file
 [IMPORTANT]

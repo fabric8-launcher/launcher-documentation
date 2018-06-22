@@ -6,7 +6,7 @@
 
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-health-check-{parameter-runtime-anchor}']
-= {name-mission-health-check} Mission - {runtime} Booster
+= {name-mission-health-check} mission - {runtime} booster
 
 include::health-check-mission-intro-paragraph.adoc[leveloffset=+1]
 

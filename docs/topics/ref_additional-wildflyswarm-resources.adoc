@@ -1,5 +1,5 @@
 [id='additional-wildflyswarm-resources_{context}']
-= Additional {WildFlySwarm} Resources
+= Additional {WildFlySwarm} resources
 
 * link:https://docs.wildfly-swarm.io/{WildFlySwarmVersion}/[{WildFlySwarm} Community Documentation]
 * link:https://github.com/wildfly-swarm/wildfly-swarm-presentations[{WildFlySwarm} Presentations]

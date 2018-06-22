@@ -6,7 +6,7 @@
 
 
 [id='deploying-the-crud-booster-using-the-oc-cli-client_{context}']
-= Deploying the {name-mission-crud} Booster using the `oc` CLI Client
+= Deploying the {name-mission-crud} booster using the `oc` CLI client
 
 [discrete]
 == Prerequisites

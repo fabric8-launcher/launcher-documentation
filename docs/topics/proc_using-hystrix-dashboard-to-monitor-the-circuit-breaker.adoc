@@ -1,5 +1,5 @@
 [id='using-hystrix-dashboard-to-monitor-the-circuit-breaker_{context}']
-= Using Hystrix Dashboard to Monitor the Circuit Breaker
+= Using Hystrix Dashboard to monitor the circuit breaker
 
 Hystrix Dashboard lets you easily monitor the health of your services in real time by aggregating Hystrix metrics data from an event stream and displaying them on one screen.
 

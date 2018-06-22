@@ -1,5 +1,5 @@
 [id='starting-your-application-locally-and-attaching-the-native-debugger_{context}']
-= Starting your Application Locally and Attaching the Native Debugger
+= Starting your application locally and attaching the native debugger
 The native debugger enables you to debug your {Node}{ndash}based application using the built-in debugging client.
 
 [discrete]

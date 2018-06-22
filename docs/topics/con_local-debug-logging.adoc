@@ -1,6 +1,6 @@
 
 [id='local-debug-logging_{context}']
-= Local Debug Logging
+= Local debug logging
 
 To enable debug logging locally, see the xref:enabling-logging_{context}[] section and use the `DEBUG` log level.
 

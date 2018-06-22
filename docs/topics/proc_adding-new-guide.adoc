@@ -1,5 +1,5 @@
 [id='adding-new-guide_{context}']
-= Adding New Guide
+= Adding new guide
 
 To add a new guide to the existing documentation set, perform the following steps:
 

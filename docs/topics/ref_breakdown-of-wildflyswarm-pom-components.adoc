@@ -1,5 +1,5 @@
 [id='breakdown-of-wildflyswarm-pom-components_{context}']
-= Breakdown of {WildFlySwarm} POM Components
+= Breakdown of {WildFlySwarm} POM components
 
 .link:https://github.com/wildfly-swarm-openshiftio-boosters/wfswarm-rest-http/blob/master/pom.xml[wfswarm-rest-http/pom.xml]
 [source,xml,options="nowrap",subs="attributes+"]

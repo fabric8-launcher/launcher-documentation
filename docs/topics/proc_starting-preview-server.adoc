@@ -1,6 +1,6 @@
 [id='starting-preview-server_{context}']
 
-= Starting Preview Server
+= Starting preview server
 
 You can preview the documentation site locally by building and deploying the Docker containers with the documentation site on your machine.
 

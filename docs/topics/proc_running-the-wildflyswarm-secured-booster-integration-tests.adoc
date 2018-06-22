@@ -1,5 +1,5 @@
 [id='running-the-wildflyswarm-secured-booster-integration-tests_{context}']
-= Running the {WildFlySwarm} {name-mission-secured} Booster Integration Tests
+= Running the {WildFlySwarm} {name-mission-secured} booster integration tests
 
 [IMPORTANT]
 --

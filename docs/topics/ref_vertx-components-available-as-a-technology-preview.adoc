@@ -1,5 +1,5 @@
 [id='vertx-components-available-as-a-technology-preview_{context}']
-= {Vertx} Components Available as a Technology Preview
+= {Vertx} components available as a technology preview
 // module to be re-used in the RN
 Red Hat provides link:https://access.redhat.com/support/offerings/techpreview/[limited support^] for the following {Vertx} Components in this release.
 

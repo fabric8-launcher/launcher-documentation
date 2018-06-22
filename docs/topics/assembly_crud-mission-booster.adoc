@@ -6,7 +6,7 @@
 
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-crud-{parameter-runtime-anchor}']
-= {name-mission-crud} Mission - {runtime} Booster
+= {name-mission-crud} mission - {runtime} booster
 
 include::note-booster-unvailable-oso.adoc[leveloffset=+1]
 

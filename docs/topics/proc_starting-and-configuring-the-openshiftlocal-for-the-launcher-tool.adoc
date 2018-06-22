@@ -1,5 +1,5 @@
 [id='starting-and-configuring-the-openshiftlocal-for-the-launcher-tool_{context}']
-= Starting and Configuring the {OpenShiftLocal} for the {launcher} Tool
+= Starting and configuring the {OpenShiftLocal} for the {launcher} tool
 
 This chapter contains instructions for starting the {OpenShiftLocal} and configuring it to execute the {launcher} tool.
 

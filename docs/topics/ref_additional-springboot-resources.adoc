@@ -1,5 +1,5 @@
 [id='additional-springboot-resources_{context}']
-= Additional {SpringBoot} Resources
+= Additional {SpringBoot} resources
 
 * link:https://docs.openshift.org/latest/architecture/[OpenShift Architecture Overview]
 * link:https://access.redhat.com/documentation/en-us/reference_architectures/2017/html/spring_boot_microservices_on_red_hat_openshift_container_platform_3/[Spring Boot Microservices On Red Hat OpenShift Container Platform 3]

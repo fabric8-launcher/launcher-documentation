@@ -1,5 +1,5 @@
 [id='configmap-resources_{context}']
-= {name-mission-configmap} Resources
+= {name-mission-configmap} resources
 
 More background and related information on {name-mission-configmap} and ConfigMap can be found here:
 

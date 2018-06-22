@@ -1,6 +1,6 @@
 [id='branches-and-tags_{context}']
 
-= Branches and Tags
+= Branches and tags
 
 The following branches and tags are used in the _{repo-docs-name}_ repository:
 

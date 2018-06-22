@@ -1,6 +1,6 @@
 
 [id='accessing-debug-logs-on-openshift_{context}']
-= Accessing Debug Logs on OpenShift
+= Accessing debug logs on OpenShift
 
 Start your application and interact with it to see the debugging statements in OpenShift.
 

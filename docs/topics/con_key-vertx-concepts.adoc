@@ -1,5 +1,5 @@
 [id='key-vertx-concepts_{context}']
-= Key {Vertx} Concepts
+= Key {Vertx} concepts
 
 .Cloud- and Container-Native Applications
 

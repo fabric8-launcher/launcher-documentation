@@ -1,5 +1,5 @@
 [id='wildflyswarm-runtime-details_{context}']
-= {WildFlySwarm} Runtime Details
+= {WildFlySwarm} runtime details
 
 {WildFlySwarm} deconstructs the features in
 ifndef::product[link:https://wildfly.org/[the {WildFly} Java application server]]

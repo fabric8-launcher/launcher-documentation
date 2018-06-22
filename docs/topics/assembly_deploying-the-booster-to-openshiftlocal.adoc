@@ -7,7 +7,7 @@
 // Rationale: This procedure is identical in all deployments.
 
 [id='deploying-the-booster-to-openshiftlocal_{context}']
-= Deploying the {parameter-mission-name} Booster to {OpenShiftLocal}
+= Deploying the {parameter-mission-name} booster to {OpenShiftLocal}
 
 :parent-context: {context}
 :context: {parent-context}-osl

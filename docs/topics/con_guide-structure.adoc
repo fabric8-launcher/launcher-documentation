@@ -1,5 +1,5 @@
 [id='guide-structure_{context}']
-= Guide Structure
+= Guide structure
 
 Each guide is stored in a separate directory. The main file for the guide is `$REPO_HOME/docs/GUIDE_NAME/master.adoc`.
 
@@ -21,7 +21,7 @@ include::topics/assembly_updating-booster-catalog-for-local-openshiftlocal-testi
 
 You can preview the latest state of {launcher} by navigating to the link:{launcher-stage}[stage build] of {launcher}.
 
-== Filing a Code Issue
+== Filing a code issue
 ...
 ----
 <1> Includes a file that sets common attributes across all guides.

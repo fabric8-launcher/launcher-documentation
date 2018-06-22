@@ -1,5 +1,5 @@
 [id='health-check-resources_{context}']
-= Health Check Resources
+= Health check resources
 
 More background and related information on health checking can be found here:
 

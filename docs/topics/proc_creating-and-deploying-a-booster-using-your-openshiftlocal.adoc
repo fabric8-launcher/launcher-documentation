@@ -1,5 +1,5 @@
 [id='creating-and-deploying-a-booster-using-your-openshiftlocal_{context}']
-= Creating and Deploying a Booster Using your {OpenShiftLocal}
+= Creating and deploying a booster using your {OpenShiftLocal}
 
 You can quickly create, build, and deploy a booster to a {OpenShiftLocal} using the {launcher} tool. The {launcher} tool creates a new repository in your GitHub account containing the booster's code and deploys it to your {OpenShiftLocal}. It can also create a ZIP of the booster for you to download and run on your localhost.
 

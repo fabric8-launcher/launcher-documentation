@@ -1,6 +1,6 @@
 [id='repository-location_{context}']
 
-= Repository Location
+= Repository location
 
 The repository for the mission and booster documentation, the Launchpad front page, and this contributor guide is hosted on GitHub in the link:{link-repo-docs}[{repo-docs-name}] repository.
 

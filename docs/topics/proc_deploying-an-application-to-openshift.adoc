@@ -8,7 +8,7 @@
 
 
 [id='deploying-an-application-to-openshift_{context}']
-= Deploying an Application to OpenShift
+= Deploying an application to OpenShift
 
 This procedure shows you how to:
 

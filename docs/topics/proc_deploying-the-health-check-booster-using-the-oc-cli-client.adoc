@@ -5,7 +5,7 @@
 // Rationale: This procedure is identical in all deployments.
 
 [id='deploying-the-health-check-booster-using-the-oc-cli-client_{context}']
-= Deploying the {name-mission-health-check} Booster using the `oc` CLI Client
+= Deploying the {name-mission-health-check} booster using the `oc` CLI client
 
 [discrete]
 == Prerequisites

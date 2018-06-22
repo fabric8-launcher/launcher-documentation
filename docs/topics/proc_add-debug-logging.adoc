@@ -1,5 +1,5 @@
 [id='add-debug-logging_{context}']
-= Add Debug Logging
+= Add debug logging
 This example uses the link:https://www.npmjs.com/package/debug[debug package], but there are also link:https://www.npmjs.com/search?q=log[other packages available] that can handle debug logging.
 
 

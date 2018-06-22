@@ -1,5 +1,5 @@
 [id='springboot-features-and-frameworks-summary_{context}']
-= {SpringBoot} Features and Frameworks Summary
+= {SpringBoot} features and frameworks summary
 
 
 This guide covers the design of modern applications using link:https://projects.spring.io/spring-boot/[Spring Boot]. These concepts support developing Web or Websocket applications using either a HTTP connector or non-blocking HTTP connector.

@@ -1,6 +1,6 @@
 [id='repository-filesystem-layout_{context}']
 
-= Repository Filesystem Layout
+= Repository filesystem layout
 
 The following diagram describes the filesystem layout of the _{repo-docs-name}_ repository:
 

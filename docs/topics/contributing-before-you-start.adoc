@@ -1,5 +1,5 @@
 
-= Before You Start
+= Before you start
 
 To contribute to the Fabric8 Launcher documentation, you need to configure the following tools and accounts:
 
@@ -62,7 +62,7 @@ For more information, see link:https://help.github.com/articles/signing-commits-
 $ git config --global gpg.program gpg2
 ----
 
-== Setting Up Git Hooks _(recommended)_
+== Setting up Git hooks _(recommended)_
 
 To make a contribution to the {repo-docs-name} repository, you need to set up the Git hooks directory. These hooks automatically make sure at commit time that your contribution does not break important parts of the repository.
 

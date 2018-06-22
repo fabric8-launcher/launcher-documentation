@@ -2,7 +2,7 @@
 [id='glossary']
 = Glossary
 
-== Product and Project Names
+== Product and project names
 
 {launcher-oso}:: link:{link-launcher-oso}[{launcher-oso}] is a standalone getting started experience offered by Red Hat for jumpstarting cloud-native application development on OpenShift. It provides a hassle-free way of creating functional example applications, called missions, as well as an easy way to build and deploy those missions to OpenShift. 
 
@@ -11,7 +11,7 @@
 {OpenShiftLocal}:: An OpenShift cluster running on your machine using Minishift.
 
 
-== Terms Specific to {launcher}
+== Terms specific to {launcher}
 
 [[glossary_booster]]
 Booster:: A language-specific implementation of a particular xref:glossary_mission[mission] on a particular xref:glossary_runtime[runtime]. Boosters are listed in a xref:glossary_booster_catalog[booster catalog].

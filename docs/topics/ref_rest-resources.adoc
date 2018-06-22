@@ -1,5 +1,5 @@
 [id='rest-resources_{context}']
-= REST Resources
+= REST resources
 
 More background and related information on REST can be found here:
 

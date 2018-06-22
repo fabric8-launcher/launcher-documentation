@@ -1,5 +1,5 @@
 [id='springboot-runtime-details_{context}']
-= {SpringBoot} Runtime Details
+= {SpringBoot} runtime details
 
 {SpringBoot} lets you create opinionated Spring-based stand-alone applications. See xref:additional-springboot-resources_{context}[Additional Resources] for a list of documents about {SpringBoot}.
 

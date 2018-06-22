@@ -7,7 +7,7 @@
 
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-rest-http-secured-{parameter-runtime-anchor}']
-= {name-mission-secured} Mission - {runtime} Booster
+= {name-mission-secured} mission - {runtime} booster
 
 include::note-booster-unvailable-oso.adoc[leveloffset=+1]
 

@@ -1,6 +1,6 @@
 
 [id='creating-a-basic-vertx-application_{context}']
-= Creating a Basic {VertX} Application
+= Creating a basic {VertX} application
 
 :parent-context: {context}
 

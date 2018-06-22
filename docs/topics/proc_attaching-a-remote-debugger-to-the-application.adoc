@@ -1,6 +1,6 @@
 
 [id='attaching-a-remote-debugger-to-the-application_{context}']
-= Attaching a Remote Debugger to the Application
+= Attaching a remote debugger to the application
 
 When your application is configured for debugging, attach a remote debugger of your choice to it.
 In this guide, link:https://www.redhat.com/en/technologies/jboss-middleware/developer-studio[Red Hat JBoss Developer Studio] is covered, but the procedure is similar when using other programs.

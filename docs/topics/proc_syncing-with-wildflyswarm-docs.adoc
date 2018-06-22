@@ -1,6 +1,6 @@
 
 [id='syncing-with-wildflyswarm-docs_{context}']
-= Syncing with {WildFlySwarm} Docs
+= Syncing with {WildFlySwarm} docs
 
 Some documentation files for the {WildFlySwarm} runtime are sourced directly from the {WildFlySwarm} repository.
 These files are stored in the `$REPO_HOME/docs/topics/wildfly-swarm` directory.

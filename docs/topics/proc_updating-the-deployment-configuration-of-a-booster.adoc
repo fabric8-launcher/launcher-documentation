@@ -1,5 +1,5 @@
 [id='updating-the-deployment-configuration-of-a-booster_{context}']
-= Updating the Deployment Configuration of a Booster
+= Updating the deployment configuration of a booster
 
 The deployment configuration for a booster contains information related to deploying and running the booster in OpenShift, such as route information or readiness probe location. 
 The deployment configuration of a booster is stored in a set of YAML files. 

@@ -1,10 +1,10 @@
 
 [id='validating-guides_{context}']
-= Validating Guides
+= Validating guides
 
 To ensure that all books can be built, validate them using the automatic script provided in the repository.
 
-== Validating All Guides
+== Validating all guides
 
 The validation is performed on DocBook XML files generated from the AsciiDoc sources because it is very dificult to perform validations on AsciiDoc sources.
 
@@ -15,7 +15,7 @@ To perform the validation, execute the `scripts/validate_guides.sh` script:
 $ scripts/validate_guides.sh
 ----
 
-== Excluding Books from Validation
+== Excluding books from validation
 
 In case a failed validation is an expected behavior--for example if there is a bug in the XML generation--you can remove the book from validation by adding a file named `.ci-ignore` to the main directory of the book, for example:
 

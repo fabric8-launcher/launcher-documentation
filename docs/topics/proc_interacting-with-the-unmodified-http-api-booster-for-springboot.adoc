@@ -1,5 +1,5 @@
 [id='interacting-with-the-unmodified-http-api-booster-for-springboot_{context}']
-= Interacting with the Unmodified {name-mission-http-api} Booster for {SpringBoot}
+= Interacting with the unmodified {name-mission-http-api} booster for {SpringBoot}
 
 The booster provides a default HTTP endpoint that accepts GET requests.
 
