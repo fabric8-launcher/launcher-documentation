@@ -26,7 +26,7 @@ include::topics/con_key-vertx-concepts.adoc[leveloffset=+2]
 // duplicates the release notes
 // include::topics/ref_vertx-components-available-as-a-technology-preview.adoc[leveloffset=+2]
 
-include::topics/configuring-vertx.adoc[leveloffset=+2]
+include::topics/proc_configuring-your-application-to-use-vertx.adoc[leveloffset=+2]
 
 // agroal bit goes here
 include::topics/proc_configuring-your-vertx-application-to-use-agroal.adoc[leveloffset=+2]

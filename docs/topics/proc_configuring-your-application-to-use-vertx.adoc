@@ -1,12 +1,22 @@
-[[configuring-vertx]]
+[id='configuring-your-application-to-use-vertx_{context}']
 = Configuring Your Application to Use {Vertx}
 
 To configure your application to use {Vertx}:
 
-. Reference the {Vertx} BOM (Bill of Materials) artifact in the `<dependencyManagement>` section of the `pom.xml` file of your application. Specify the `<type>pom</type>` and `<scope>import</scope>`:
+[discrete]
+== Prerequisites
+
+* A Maven-based application
+
+[discrete]
+== Procedure
+
+. Reference the {Vertx} BOM (Bill of Materials) artifact in the `<dependencyManagement>` section of the `pom.xml` file of your application.
+Specify the `<type>pom</type>` and `<scope>import</scope>`:
 +
-[source,xml]
 --
+[source,xml]
+----
 <project>
   ...
   <dependencyManagement>
@@ -22,12 +32,12 @@ To configure your application to use {Vertx}:
   </dependencyManagement>
   ...
 </project>
---
-+
+----
+
 Include the following properties in your `pom.xml` file to track the version of {Vertx} and the Vert.x Maven Plugin you are using:
-+
+
 [source,xml,subs="attributes+"]
---
+----
 <project>
   ...
   <properties>
@@ -36,11 +46,13 @@ Include the following properties in your `pom.xml` file to track the version of 
   </properties>
   ...
 </project>
+----
 --
+
 . Reference `vertx-maven-plugin` as the plugin used to package your application:
 +
 [source,xml]
---
+----
 <project>
   ...
   <build>
@@ -68,6 +80,10 @@ Include the following properties in your `pom.xml` file to track the version of 
   </build>
   ...
 </project>
---
+----
 
-For more information on packaging your {Vertx} application, see the link:https://vmp.fabric8.io/#packaging[Vert.x Maven Plugin] documentation.
+[discrete]
+== Additional Resources
+
+* For more information about packaging your {Vertx} application, see the link:https://vmp.fabric8.io/#packaging[Vert.x Maven Plugin] documentation.
+
