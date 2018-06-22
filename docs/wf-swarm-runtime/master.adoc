@@ -184,7 +184,7 @@ include::topics/wildfly-swarm/docs/reference/index.adoc[leveloffset=+2]
 endif::[]
 
 [appendix]
-include::topics/wf-swarm-dev-guide-additional-resources.adoc[leveloffset=+1]
+include::topics/ref_additional-wildflyswarm-resources.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/ref_application-development-resources.adoc[leveloffset=+1]

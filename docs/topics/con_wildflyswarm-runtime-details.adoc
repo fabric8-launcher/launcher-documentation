@@ -6,7 +6,7 @@ ifndef::product[link:https://wildfly.org/[the {WildFly} Java application server]
 ifdef::product[link:https://developers.redhat.com/products/eap/overview/[{WildFly}]]
 and allows them to be selectively reconstructed based on the needs of your application.
 This allows you to create microservices that run on a _just-enough-appserver_ that supports the exact subset of APIs you need.
-See xref:wf-swarm-additional-resources[Additional Resources] for further information about {WildFlySwarm}.
+See xref:additional-wildflyswarm-resources_{context}[Additional Resources] for further information about {WildFlySwarm}.
 
 The {WildFlySwarm} runtime enables you to run {WildFlySwarm} applications and services in OpenShift while providing all the advantages and conveniences of the OpenShift platform such as rolling updates, service discovery, and canary deployments.
 OpenShift also makes it easier for your applications to implement common microservice patterns such as externalized configuration, health check, circuit breaker, and failover.
