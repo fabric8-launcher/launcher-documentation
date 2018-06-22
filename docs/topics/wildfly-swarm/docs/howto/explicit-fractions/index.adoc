@@ -3,11 +3,13 @@
 
 When writing your application from scratch, ensure it compiles correctly and uses the correct version of APIs by explicitly selecting which fractions are packaged with it.
 
-.Prerequisites
+[discrete]
+== Prerequisites
 
 * A Maven-based application with a `pom.xml` file.
 
-.Procedure
+[discrete]
+== Procedure
 
 . Add the BOM to your `pom.xml`. For more information, see xref:using-a-bom[].
 
@@ -36,7 +38,8 @@ $ mvn package
 $ java -jar ./target/myapp-swarm.jar
 ----
 
-.Related Information
+[discrete]
+== Additional resources
 
 * xref:fractions[]
 * xref:auto-detecting-fractions[]

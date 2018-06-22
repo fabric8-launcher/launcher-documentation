@@ -15,7 +15,8 @@ For Java-based applications, the OpenShift Web console provides the integrated l
 * a Java-based application container running in a project on OpenShift
 * latest link:https://github.com/jboss-container-images/redhat-openjdk-18-openshift-image/blob/openjdk18-dev/image.yaml[JDK 1.8.0 image^]
 
-.Procedure
+[discrete]
+== Procedure
 
 . List the deployment configurations of the pods inside your project and select the one that corresponds to your application.
 +

@@ -18,12 +18,14 @@ The following procedure shows you how to:
 * Start your application on localhost and verify that it works.
 
 
-.Prerequisites
+[discrete]
+== Prerequisites
 
 * Maven installed.
 * JDK 8 or later installed.
 
-.Procedure
+[discrete]
+== Procedure
 
 . Create the application directory and navigate to it.
 +

@@ -10,12 +10,14 @@ Red Hat does not support packaging and deploying {SpringBoot} applications using
 As an alternative to the supported application packaging and deployment workflow using fat JAR files, you can package and deploy a {SpringBoot} application as a WAR (Web Application Archive) file.
 You must configure your build and deployment settings to ensure that your application builds and deploys correctly on OpenShift.
 
-.Prerequisites
+[discrete]
+== Prerequisites
 
 * Fabric8 Maven Plugin used to deploy your application to OpenShift.
 * Spring Boot Maven Plugin used to package your application.
 
-.Procedure
+[discrete]
+== Procedure
 // JSP pages, JSP Standard Tag Library (JSTL), ...
 
 . Define the `repackage` Maven goal for the Spring Boot Maven plugin in the `pom.xml` file of your project:

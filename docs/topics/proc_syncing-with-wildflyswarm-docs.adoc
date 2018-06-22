@@ -13,11 +13,13 @@ The variables are documented in the script.
 
 Some files are not present in the upstream repository because they are generated. The script automatically builds the upstream project with Maven, ensuring these files are not missing.
 
-.Prerequisites
+[discrete]
+== Prerequisites
 
 * Maven installed
 
-.Procedure
+[discrete]
+== Procedure
 
 . Execute the `$REPO_HOME/scripts/sync_with_wildfly_swarm.sh` script:
 +

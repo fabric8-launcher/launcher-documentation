@@ -2,12 +2,14 @@
 [#configuring-a-datasource]
 = Configuring a datasource
 
-.Prerequisites
+[discrete]
+== Prerequisites
 
 * A Maven-based application.
 * A JDBC Driver configured.
 
-.Procedure
+[discrete]
+== Procedure
 . Edit the `project-defaults.yml` file to configure one or more datasources
 using the JDBC driver of your choice. The configuration is stored under `swarm`
 -> `datasources` -> `data-sources`:

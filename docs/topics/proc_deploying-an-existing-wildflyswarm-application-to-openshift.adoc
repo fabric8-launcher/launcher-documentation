@@ -4,11 +4,13 @@
 
 You can easily deploy your existing application to OpenShift using the Fabric8 Maven plugin.
 
-.Prerequisites
+[discrete]
+== Prerequisites
 
 * A {WildFlySwarm}{ndash}based application
 
-.Procedure
+[discrete]
+== Procedure
 
 . Add the following profile to the `pom.xml` file in the root directory of your application:
 +

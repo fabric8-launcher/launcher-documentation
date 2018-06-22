@@ -9,11 +9,13 @@
 
 If you chose to package your application as a {runtime} uberjar, debug it by executing it with the following parameters.
 
-.Prerequisites
+[discrete]
+== Prerequisites
 
 * An uberjar with your application
 
-.Procedure
+[discrete]
+== Procedure
 
 . In a console, navigate to the directory with the uberjar.
 . Execute the uberjar with the following parameters.
@@ -30,7 +32,8 @@ Remember this number for the remote debugger configuration.
 If you want the JVM to pause and wait for remote debugger connection before it starts the application, change `suspend` to `y`.
 
 ifdef::parameter-uberjar-documented[]
-.Related Information
+[discrete]
+== Additional resources
 
 * xref:creating-an-uberjar[]
 endif::[]

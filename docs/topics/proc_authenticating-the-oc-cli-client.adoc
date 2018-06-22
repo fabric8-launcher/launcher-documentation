@@ -12,7 +12,8 @@
 
 To work with boosters on {parameter-deployment} using the `oc` command-line client, you need to authenticate the client using the token provided by the {parameter-deployment} web interface.
 
-.Prerequisites
+[discrete]
+== Prerequisites
 
 ifdef::parameter-openshiftlocal[]
 * The URL of your running {launcher} instance and the user credentials of your {OpenShiftLocal}. For more information, see xref:getting-the-launcher-tool-url-and-credentials_{context}[].
@@ -21,7 +22,8 @@ ifndef::parameter-openshiftlocal[]
 * An account at {parameter-deployment}.
 endif::[]
 
-.Procedure
+[discrete]
+== Procedure
 . Navigate to the {parameter-deployment} URL in a browser.
 . Click on the question mark icon in the top right-hand corner of the Web console, next to your user name.
 . Select _Command Line Tools_ in the drop-down menu.

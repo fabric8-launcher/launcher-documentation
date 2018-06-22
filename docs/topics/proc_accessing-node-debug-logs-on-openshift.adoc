@@ -4,12 +4,14 @@
 
 Use the the `DEBUG` environment variable in your application pod in OpenShift to enable debug logging.
 
-.Prerequisites 
+[discrete]
+== Prerequisites
 * An application with debug logging.
 * The `oc` CLI client installed.
 
 
-.Procedure
+[discrete]
+== Procedure
 
 . Use the `oc` CLI client to log into your OpenShift instance.
 +
@@ -99,5 +101,6 @@ To disable debug logging, remove the `DEBUG` environment variable from the pod:
 $ oc set env dc DC_NAME DEBUG-
 ----
 
-.Related Information
+[discrete]
+== Additional resources
 More details on environment variables are available in the link:https://docs.openshift.com/online/dev_guide/environment_variables.html[OpenShift documentation].

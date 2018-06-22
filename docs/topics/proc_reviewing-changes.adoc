@@ -34,7 +34,7 @@ If you are unsure if the changes render correctly, build the contribution locall
 
 [discrete]
 [[reviewing_changes_related_information]]
-== Related Information
+== Additional resources
 
 * The Jenkins build configuration file is in the link:https://github.com/almighty/almighty-jobs/blob/master/devtools-ci-index.yaml#L11[devtools-ci-index.adoc] file in the _almighty/almighty-jobs_ repository.
 +

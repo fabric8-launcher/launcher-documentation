@@ -7,7 +7,8 @@
 [id='deploying-the-health-check-booster-using-the-oc-cli-client_{context}']
 = Deploying the {name-mission-health-check} Booster using the `oc` CLI Client
 
-.Prerequisites
+[discrete]
+== Prerequisites
 
 * The booster application created using {parameter-deployment}.
 ifndef::parameter-openshiftlocal[For more information, see xref:deploying-the-booster-using-launcher-oso_{context}[].]
@@ -18,7 +19,8 @@ endif::[]
 
 * The `oc` client authenticated. For more information, see xref:authenticating-the-oc-cli-client_{context}[].
 
-.Procedure
+[discrete]
+== Procedure
 . Clone your project from GitHub.
 +
 [source,bash,options="nowrap",subs="attributes+"]

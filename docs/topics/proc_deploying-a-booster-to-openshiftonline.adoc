@@ -5,14 +5,16 @@ link:{link-launcher-oso}[{launcher-oso}] creates a new repository in your GitHub
 It can also create a ZIP of the booster for you to download and run on your localhost.
 
 
-.Prerequisites
+[discrete]
+== Prerequisites
 * link:https://www.openshift.com[Have an {OpenShiftOnline} account]
 * Check which {OpenShiftOnline} cluster you belong to using link:https://manage.openshift.com[https://manage.openshift.com^].
 * link:https://developers.redhat.com[Have a Red Hat Developers account]
 * link:https://github.com[Have a GitHub account]
 * link:https://developers.redhat.com[Login to your Red Hat Developers account]
 
-.Procedure
+[discrete]
+== Procedure
 . Navigate to link:{link-launcher-oso}[{launcher-oso}] using your browser.
 . Select _Launch your Project_.
 ** You may be prompted to log in to your Red Hat Developers account. If you are, click _Log in or register_ and complete the authentication steps.
@@ -41,7 +43,8 @@ You have link:https://docs.openshift.com/online/dev_guide/compute_resources.html
 --
 
 [#oso-create-booster-related-info]
-.Related Information
+[discrete]
+== Additional resources
 See the runtime guides to learn more about runtimes and boosters that are available for them:
 
 * link:{link-spring-boot-runtime-guide}[{spring-boot-runtime-guide-name}]

@@ -11,10 +11,12 @@
 [id='deploying-the-booster-using-launcher-oso_{context}']
 = Deploying the Booster Using {launcher-oso}
 
-.Prerequisites
+[discrete]
+== Prerequisites
 * An account at {parameter-deployment}.
 
-.Procedure
+[discrete]
+== Procedure
 
 * Navigate to the {parameter-launcher} URL in a browser and log in.
 * Follow on-screen instructions to create and launch your booster in {runtime}.

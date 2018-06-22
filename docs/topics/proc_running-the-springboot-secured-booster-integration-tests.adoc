@@ -9,12 +9,14 @@
 //[#running-the-secured-booster-integration-tests-on-{parameter-runtime}]
 //= Running the {name-mission-secured} Booster Integration Tests on {runtime}
 
-.Prerequisites
+[discrete]
+== Prerequisites
 
 * The `oc` client authenticated.
 // * An empty OpenShift project in which to run the tests.
 
-.Procedure
+[discrete]
+== Procedure
 // space here to prevent the section title and admonition from sticking together in the rendered version
 {nbsp}
 include::note-integration-tests-app-deletion-warning.adoc[]
