@@ -79,12 +79,14 @@ include::topics/assembly_cache-mission-booster.adoc[leveloffset=+2]
 :parameter-runtime-anchor!:
 
 
+:context: nodejs
+
 == Debugging
 This section contains information about debugging your {Node}{ndash}based application and using debug logging in both local and remote deployments.
 
 
 [#remote-debugging]
-=== Remote Debugging 
+=== Remote Debugging
 To remotely debug an application, you need to start it in a debugging mode and attach a debugger to it.
 
 include::topics/proc_starting-your-application-locally-and-attaching-the-native-debugger.adoc[leveloffset=+3]
@@ -122,7 +124,6 @@ include::topics/proc_deploy-existing-nodejs-app.adoc[leveloffset=+2]
 [appendix]
 include::topics/ref_about-nodeshift.adoc[leveloffset=+1]
 
-:context: nodejs
 [appendix]
 include::topics/proc_updating-the-deployment-configuration-of-a-booster.adoc[leveloffset=+1]
 
