@@ -1,12 +1,12 @@
 // This is a parameterized assembly. Parameters used:
 //
-//  parameter-runtime-anchor: Which runtime this assembly is built for. different from parameter-runtime for routing reasons
+//  parameter-runtime-anchor: Which runtime this assembly is built for. Different from parameter-runtime for routing reasons
 //  parameter-runtime: Which runtime to include files for.
 //
 // Rationale: This assembly is nearly identical for all runtimes.
 
 // Do not change the anchor ID, it is set to this for URL routing reasons
-[id='mission-configmap-{parameter-runtime}']
+[id='mission-configmap-{parameter-runtime-anchor}']
 = {name-mission-configmap} Mission - {runtime} Booster
 
 include::configmap-mission-intro-paragraph.adoc[leveloffset=+1]
@@ -35,7 +35,9 @@ include::proc_interacting-with-the-unmodified-configmap-booster-for-{parameter-r
 :parameter-mission!:
 
 ifndef::node-js[]
+:parameter-configmap:
 include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]
+:parameter-configmap!:
 endif::[]
 :parameter-mission-name!:
 

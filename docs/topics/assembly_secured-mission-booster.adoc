@@ -1,6 +1,6 @@
 // This is a parameterized assembly. Parameters used:
 //
-//  parameter-runtime-anchor: Which runtime this assembly is built for. different from parameter-runtime for routing reasons
+//  parameter-runtime-anchor: Which runtime this assembly is built for. Different from parameter-runtime for routing reasons
 //  parameter-runtime: Which runtime to include files for.
 //
 // Rationale: This assembly is nearly identical for all runtimes.

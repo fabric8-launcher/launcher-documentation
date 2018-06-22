@@ -32,33 +32,38 @@ The following boosters are available for {SpringBoot}.
 :parameter-runtime: springboot
 :parameter-runtime-anchor: spring-boot
 include::topics/assembly_http-api-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
+:parameter-runtime!:
 
 
 // CONFIGMAP
 :context: configmap
 :parameter-runtime: springboot
 :parameter-runtime-anchor: spring-boot
-:parameter-configmap:
 include::topics/assembly_configmap-mission-booster.adoc[leveloffset=+2]
-:parameter-configmap!:
+:parameter-runtime-anchor!:
+:parameter-runtime!:
 
 
 // CRUD
 :context: crud
-:parameter-runtime: spring-boot
+:parameter-runtime-anchor: spring-boot
 include::topics/assembly_crud-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
 
 
 // HEALTH CHECK
 :context: health-check
-:parameter-runtime: spring-boot
+:parameter-runtime-anchor: spring-boot
 include::topics/assembly_health-check-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
 
 
 // CIRCUIT BREAKER
 :context: circuit-breaker
-:parameter-runtime: spring-boot
+:parameter-runtime-anchor: spring-boot
 include::topics/assembly_circuit-breaker-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
 
 
 // SECURED
@@ -66,12 +71,15 @@ include::topics/assembly_circuit-breaker-mission-booster.adoc[leveloffset=+2]
 :parameter-runtime: springboot
 :parameter-runtime-anchor: spring-boot
 include::topics/assembly_secured-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
+:parameter-runtime!:
 
 
 // CACHING
 :context: cache
-:parameter-runtime: spring-boot
+:parameter-runtime-anchor: spring-boot
 include::topics/assembly_cache-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
 
 
 == Application Development

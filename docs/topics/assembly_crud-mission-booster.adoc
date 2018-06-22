@@ -1,12 +1,11 @@
 // This is a parameterized assembly. Parameters used:
 //
-//  parameter-runtime-anchor: Which runtime this assembly is built for. different from parameter-runtime for routing reasons
-//  parameter-runtime: Which runtime to include files for.
+//  parameter-runtime-anchor: Which runtime this assembly is built for.
 //
 // Rationale: This assembly is nearly identical for all runtimes.
 
 // Do not change the anchor ID, it is set to this for URL routing reasons
-[id='mission-crud-{parameter-runtime}']
+[id='mission-crud-{parameter-runtime-anchor}']
 = {name-mission-crud} Mission - {runtime} Booster
 
 include::note-booster-unvailable-oso.adoc[leveloffset=+1]

@@ -36,6 +36,8 @@ The following boosters are available for {WildFlySwarm}.
 :parameter-runtime: wildflyswarm
 :parameter-runtime-anchor: wf-swarm
 include::topics/assembly_http-api-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
+:parameter-runtime!:
 
 
 // CONFIGMAP
@@ -43,24 +45,29 @@ include::topics/assembly_http-api-mission-booster.adoc[leveloffset=+2]
 :parameter-runtime: wildflyswarm
 :parameter-runtime-anchor: wf-swarm
 include::topics/assembly_configmap-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
+:parameter-runtime!:
 
 
 // CRUD
 :context: crud
-:parameter-runtime: wf-swarm
+:parameter-runtime-anchor: wf-swarm
 include::topics/assembly_crud-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
 
 
 // HEALTH CHECK
 :context: health-check
-:parameter-runtime: wf-swarm
+:parameter-runtime-anchor: wf-swarm
 include::topics/assembly_health-check-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
 
 
 // CIRCUIT BREAKER
 :context: circuit-breaker
-:parameter-runtime: wf-swarm
+:parameter-runtime-anchor: wf-swarm
 include::topics/assembly_circuit-breaker-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
 
 
 // SECURED
@@ -68,12 +75,15 @@ include::topics/assembly_circuit-breaker-mission-booster.adoc[leveloffset=+2]
 :parameter-runtime: wildflyswarm
 :parameter-runtime-anchor: wf-swarm
 include::topics/assembly_secured-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
+:parameter-runtime!:
 
 
 // CACHING
 :context: cache
-:parameter-runtime: wf-swarm
+:parameter-runtime-anchor: wf-swarm
 include::topics/assembly_cache-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
 
 
 == Building your application
