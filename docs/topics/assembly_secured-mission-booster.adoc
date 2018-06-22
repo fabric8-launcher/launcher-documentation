@@ -44,15 +44,15 @@ include::assembly_deploying-the-secured-booster-to-openshiftcontainerplatform.ad
 include::assembly_authenticating-to-the-secured-booster-api-endpoint.adoc[leveloffset=+1]
 
 ifdef::vert-x[]
-include::proc_running-the-secured-booster-integration-tests-on-vertx.adoc[leveloffset=+1]
+include::proc_running-the-vertx-secured-booster-integration-tests.adoc[leveloffset=+1]
 endif::[]
 
 ifdef::spring-boot[]
-include::proc_running-the-secured-booster-integration-tests-on-springboot.adoc[leveloffset=+1]
+include::proc_running-the-springboot-secured-booster-integration-tests.adoc[leveloffset=+1]
 endif::[]
 
 ifdef::wf-swarm[]
-include::proc_running-the-secured-booster-integration-tests-on-wildflyswarm.adoc[leveloffset=+1]
+include::proc_running-the-wildflyswarm-secured-booster-integration-tests.adoc[leveloffset=+1]
 endif::[]
 
 include::ref_secured-sso-resources.adoc[leveloffset=+1]

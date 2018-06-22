@@ -1,4 +1,4 @@
-[id='add-debug-logging-on-springboot_{context}']
+[id='add-springboot-debug-logging_{context}']
 = Add {SpringBoot} Debug Logging
 
 Add debug logging to your application.
