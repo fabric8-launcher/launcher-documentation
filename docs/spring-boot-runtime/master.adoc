@@ -29,67 +29,77 @@ The following boosters are available for {SpringBoot}.
 
 // REST API
 :context: http-api
-:parameter-runtime: spring-boot
+:parameter-runtime: springboot
+:parameter-runtime-anchor: spring-boot
 include::topics/assembly_http-api-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
+:parameter-runtime!:
 
 
 // CONFIGMAP
 :context: configmap
-:parameter-runtime: spring-boot
-:parameter-configmap:
+:parameter-runtime: springboot
+:parameter-runtime-anchor: spring-boot
 include::topics/assembly_configmap-mission-booster.adoc[leveloffset=+2]
-:parameter-configmap!:
+:parameter-runtime-anchor!:
+:parameter-runtime!:
 
 
 // CRUD
 :context: crud
-:parameter-runtime: spring-boot
+:parameter-runtime-anchor: spring-boot
 include::topics/assembly_crud-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
 
 
 // HEALTH CHECK
 :context: health-check
-:parameter-runtime: spring-boot
+:parameter-runtime-anchor: spring-boot
 include::topics/assembly_health-check-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
 
 
 // CIRCUIT BREAKER
 :context: circuit-breaker
-:parameter-runtime: spring-boot
+:parameter-runtime-anchor: spring-boot
 include::topics/assembly_circuit-breaker-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
 
 
 // SECURED
 :context: secured
-:parameter-runtime: spring-boot
+:parameter-runtime: springboot
+:parameter-runtime-anchor: spring-boot
 include::topics/assembly_secured-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
+:parameter-runtime!:
 
 
 // CACHING
 :context: cache
-:parameter-runtime: spring-boot
+:parameter-runtime-anchor: spring-boot
 include::topics/assembly_cache-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
 
+
+:context: spring-boot
 
 == Application Development
 The recommended approach for specifying and using supported and tested maven artifacts in a {SpringBoot} application is to use the OpenShift Application Runtimes {SpringBoot} BOM.
 
 //creating an app from scratch
 // workaround to resolve ID conflicts:
-:context: spring-boot
-:parameter-runtime: spring-boot
-:parameter-runtime-name: {SpringBoot}
 include::topics/assembly_creating-a-basic-springboot-application.adoc[leveloffset=+2]
+
+:parameter-runtime-name: {SpringBoot}
 include::topics/proc_deploying-an-existing-application-to-openshift.adoc[leveloffset=+2]
 :parameter-runtime-name!:
-:parameter-runtime!:
 
 == Debugging
 
 This sections contains information about debugging your {SpringBoot}{ndash}based application both in local and remote deployments.
 
 === Remote Debugging
-:context: remote-debugging
 
 To remotely debug an application, you must first configure it to start in a debugging mode, and then attach a debugger to it.
 
@@ -108,11 +118,10 @@ include::topics/proc_attaching-a-remote-debugger-to-the-application.adoc[levelof
 
 === Debug Logging
 
-include::topics/proc_add-debug-logging-on-springboot.adoc[leveloffset=+3]
+include::topics/proc_add-springboot-debug-logging.adoc[leveloffset=+3]
 
-include::topics/proc_accessing-debug-logs-on-localhost-on-springboot.adoc[leveloffset=+3]
+include::topics/proc_accessing-springboot-debug-logs-on-localhost.adoc[leveloffset=+3]
 
-:context: spring-boot
 include::topics/proc_accessing-debug-logs-on-openshift.adoc[leveloffset=+3]
 
 == Monitoring
@@ -124,13 +133,6 @@ This section contains information about monitoring your {SpringBoot}{ndash}based
 include::topics/proc_accessing-jvm-metrics-using-jolokia-on-openshift.adoc[leveloffset=+3]
 
 
-
-//== Creating an Application from Scratch
-//todo
-//Building blocks
-//Minimum Viable App
-//Add-ons
-//Building your app
 
 [appendix]
 include::topics/ref_the-source-to-image-s2i-build-process.adoc[leveloffset=+1]

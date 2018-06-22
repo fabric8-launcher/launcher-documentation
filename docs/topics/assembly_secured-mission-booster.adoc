@@ -1,16 +1,41 @@
+// This is a parameterized assembly. Parameters used:
+//
+//  parameter-runtime-anchor: Which runtime this assembly is built for. Different from parameter-runtime for routing reasons
+//  parameter-runtime: Which runtime to include files for.
+//
+// Rationale: This assembly is nearly identical for all runtimes.
 
-[id='mission-rest-http-secured-{parameter-runtime}']
+// Do not change the anchor ID, it is set to this for URL routing reasons
+[id='mission-rest-http-secured-{parameter-runtime-anchor}']
 = {name-mission-secured} Mission - {runtime} Booster
 
 include::note-booster-unvailable-oso.adoc[leveloffset=+1]
 
-include::secured-mission-intro-paragraph-missions.adoc[leveloffset=+1]
+// When changing this introduction, change also the secured-mission-intro-paragraph.adoc file (used by the front-end).
+Mission proficiency level:
+xref:proficiency_advanced[*{proficiency-advanced}*].
 
-include::note-preview-booster-source.adoc[leveloffset=+1]
+The {name-mission-secured} booster secures a REST endpoint using link:https://access.redhat.com/products/red-hat-single-sign-on[{RHSSO}^]. (This booster expands on the {name-mission-http-api} booster).
 
-include::secured-mission-intro.adoc[leveloffset=+1]
+{RHSSO}:
 
-include::secured-mission-{parameter-runtime}-adapter.adoc[leveloffset=+1]
+* Implements the link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.1/html/securing_applications_and_services_guide/openid_connect_3[Open ID Connect] protocol which is an extension of the OAuth 2.0 specification.
+* Issues access tokens to provide clients with various access rights to secured resources.
+
+Securing an application with SSO enables you to add security to your applications while centralizing the security configuration.
+
+IMPORTANT:  This mission comes with {RHSSO} pre-configured for demonstration purposes, it does not explain its principles, usage, or configuration.
+Before using this mission, ensure that you are familiar with the basic concepts related to link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.1/html-single/getting_started_guide/[{RHSSO}^].
+
+include::con_the-secured-project-structure.adoc[leveloffset=+1]
+
+include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
+
+include::ref_rhsso-deployment-configuration.adoc[leveloffset=+1]
+
+include::con_rhsso-realm-model.adoc[leveloffset=+1]
+
+include::con_{parameter-runtime}-sso-adapter-configuration.adoc[leveloffset=+1]
 
 include::assembly_deploying-the-secured-booster-to-openshiftlocal.adoc[leveloffset=+1]
 
@@ -19,15 +44,15 @@ include::assembly_deploying-the-secured-booster-to-openshiftcontainerplatform.ad
 include::assembly_authenticating-to-the-secured-booster-api-endpoint.adoc[leveloffset=+1]
 
 ifdef::vert-x[]
-include::proc_running-the-secured-booster-integration-tests-on-vertx.adoc[leveloffset=+1]
+include::proc_running-the-vertx-secured-booster-integration-tests.adoc[leveloffset=+1]
 endif::[]
 
 ifdef::spring-boot[]
-include::proc_running-the-secured-booster-integration-tests-on-springboot.adoc[leveloffset=+1]
+include::proc_running-the-springboot-secured-booster-integration-tests.adoc[leveloffset=+1]
 endif::[]
 
 ifdef::wf-swarm[]
-include::proc_running-the-secured-booster-integration-tests-on-wildflyswarm.adoc[leveloffset=+1]
+include::proc_running-the-wildflyswarm-secured-booster-integration-tests.adoc[leveloffset=+1]
 endif::[]
 
 include::ref_secured-sso-resources.adoc[leveloffset=+1]

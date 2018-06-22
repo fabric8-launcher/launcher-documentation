@@ -1,0 +1,36 @@
+[id='springboot-sso-adapter-configuration_{context}']
+[id='sso-springboot-adapter-configuration_{context}']
+= {SpringBoot} SSO Adapter Configuration
+
+The SSO adapter is the _client side_, or client to the SSO server, component that enforces security on the web resources.
+In this specific case, it is the Greeting service.
+
+Both the SSO adapter and endpoint security are configured in `src/main/resources/application.properties`.
+
+.Example application.properties file
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ # Adapter configuration
+keycloak.realm=${realm:master} <1>
+keycloak.realm-key=...
+keycloak.auth-server-url=${sso.auth.server.url} <2>
+keycloak.resource=${client.id:secured-booster-endpoint} <3>
+keycloak.credentials.secret=${secret:1daa57a2-b60e-468b-a3ac-25bd2dc2eadc} <4>
+keycloak.use-resource-role-mappings=true <5>
+keycloak.bearer-only=true <6>
+# Endpoint security configuration
+keycloak.securityConstraints[0].securityCollections[0].name=admin stuff <7>
+keycloak.securityConstraints[0].securityCollections[0].authRoles[0]=booster-admin <8>
+keycloak.securityConstraints[0].securityCollections[0].patterns[0]=/api/greeting <9>
+----
+
+<1> The security realm to be used.
+<2> The address of the {RHSSO} server (Interpolation at build time).
+<3> The actual keycloak _client_ configuration.
+<4> Secret to access authentication server.
+<5> Check the token for application level role mappings for the user.
+<6> If enabled the adapter will not attempt to authenticate users, but only verify bearer tokens.
+<7> A simple name for the security constraint.
+<8> A roles needed to access a secured endpoint.
+<9> A secured endpoints path pattern.
+

@@ -26,51 +26,67 @@ The following boosters are available for {Node}.
 
 // REST API
 :context: http-api
-:parameter-runtime: nodejs
+:parameter-runtime: node
+:parameter-runtime-anchor: nodejs
 include::topics/assembly_http-api-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
+:parameter-runtime!:
 
 
 // CONFIGMAP
 :context: configmap
-:parameter-runtime: nodejs
+:parameter-runtime: node
+:parameter-runtime-anchor: nodejs
 include::topics/assembly_configmap-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
+:parameter-runtime!:
 
 
 // CRUD
 :context: crud
-:parameter-runtime: nodejs
+:parameter-runtime-anchor: nodejs
 include::topics/assembly_crud-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
+
 
 // HEALTH CHECK
 :context: health-check
-:parameter-runtime: nodejs
+:parameter-runtime-anchor: nodejs
 include::topics/assembly_health-check-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
 
 
 // CIRCUIT BREAKER
 :context: circuit-breaker
-:parameter-runtime: nodejs
+:parameter-runtime-anchor: nodejs
 include::topics/assembly_circuit-breaker-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
 
 
 // SECURED
 :context: secured
-:parameter-runtime: nodejs
+:parameter-runtime: node
+:parameter-runtime-anchor: nodejs
 include::topics/assembly_secured-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
+:parameter-runtime!:
 
 
 // CACHING
 :context: cache
-:parameter-runtime: nodejs
+:parameter-runtime-anchor: nodejs
 include::topics/assembly_cache-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
 
+
+:context: nodejs
 
 == Debugging
 This section contains information about debugging your {Node}{ndash}based application and using debug logging in both local and remote deployments.
 
 
 [#remote-debugging]
-=== Remote Debugging 
+=== Remote Debugging
 To remotely debug an application, you need to start it in a debugging mode and attach a debugger to it.
 
 include::topics/proc_starting-your-application-locally-and-attaching-the-native-debugger.adoc[leveloffset=+3]
@@ -93,7 +109,7 @@ include::topics/proc_add-debug-logging.adoc[leveloffset=+3]
 
 include::topics/proc_accessing-debug-logs-on-localhost.adoc[leveloffset=+3]
 
-include::topics/proc_accessing-debug-logs-on-openshift-on-nodejs.adoc[leveloffset=+3]
+include::topics/proc_accessing-node-debug-logs-on-openshift.adoc[leveloffset=+3]
 
 
 == Developing an Application for the {Node} Runtime
@@ -108,7 +124,6 @@ include::topics/proc_deploy-existing-nodejs-app.adoc[leveloffset=+2]
 [appendix]
 include::topics/ref_about-nodeshift.adoc[leveloffset=+1]
 
-:context: nodejs
 [appendix]
 include::topics/proc_updating-the-deployment-configuration-of-a-booster.adoc[leveloffset=+1]
 
@@ -116,7 +131,7 @@ include::topics/proc_updating-the-deployment-configuration-of-a-booster.adoc[lev
 include::topics/ref_breakdown-of-package-json-properties.adoc[leveloffset=+1]
 
 [appendix]
-include::topics/nodejs-dev-guide-additional-resources.adoc[leveloffset=+1]
+include::topics/ref_additional-node-resources.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/ref_application-development-resources.adoc[leveloffset=+1]

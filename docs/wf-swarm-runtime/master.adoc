@@ -33,48 +33,62 @@ The following boosters are available for {WildFlySwarm}.
 
 // REST API
 :context: http-api
-:parameter-runtime: wf-swarm
+:parameter-runtime: wildflyswarm
+:parameter-runtime-anchor: wf-swarm
 include::topics/assembly_http-api-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
+:parameter-runtime!:
 
 
 // CONFIGMAP
 :context: configmap
-:parameter-runtime: wf-swarm
+:parameter-runtime: wildflyswarm
+:parameter-runtime-anchor: wf-swarm
 include::topics/assembly_configmap-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
+:parameter-runtime!:
 
 
 // CRUD
 :context: crud
-:parameter-runtime: wf-swarm
+:parameter-runtime-anchor: wf-swarm
 include::topics/assembly_crud-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
 
 
 // HEALTH CHECK
 :context: health-check
-:parameter-runtime: wf-swarm
+:parameter-runtime-anchor: wf-swarm
 include::topics/assembly_health-check-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
 
 
 // CIRCUIT BREAKER
 :context: circuit-breaker
-:parameter-runtime: wf-swarm
+:parameter-runtime-anchor: wf-swarm
 include::topics/assembly_circuit-breaker-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
 
 
 // SECURED
 :context: secured
-:parameter-runtime: wf-swarm
+:parameter-runtime: wildflyswarm
+:parameter-runtime-anchor: wf-swarm
 include::topics/assembly_secured-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
+:parameter-runtime!:
 
 
 // CACHING
 :context: cache
-:parameter-runtime: wf-swarm
+:parameter-runtime-anchor: wf-swarm
 include::topics/assembly_cache-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
 
+
+:context: wf-swarm
 
 == Building your application
-:context: building-app
 
 This sections contains information about creating your application and configuring the {WildFlySwarm} runtime for it.
 
@@ -92,7 +106,6 @@ include::topics/wildfly-swarm/docs/howto/explicit-fractions/index.adoc[leveloffs
 include::topics/wildfly-swarm/docs/howto/use-a-bom/index.adoc[leveloffset=+2]
 
 === Logging
-:context: wf-swarm
 
 include::topics/wildfly-swarm/docs/howto/enabling-logging/index.adoc[leveloffset=+3]
 include::topics/wildfly-swarm/docs/howto/logging-to-a-file/index.adoc[leveloffset=+3]
@@ -122,7 +135,7 @@ To remotely debug an application, you must first configure it to start in a debu
 :parameter-debug-property: swarm.debug.port
 :parameter-maven-goal: wildfly-swarm:run
 include::topics/proc_starting-your-application-locally-in-debugging-mode.adoc[leveloffset=+3]
-:parameter-debug-property!: 
+:parameter-debug-property!:
 :parameter-maven-goal!:
 
 :parameter-uberjar-documented:
@@ -139,7 +152,6 @@ include::topics/proc_attaching-a-remote-debugger-to-the-application.adoc[levelof
 
 === Debug Logging
 
-:context: wf-swarm
 include::topics/con_local-debug-logging.adoc[leveloffset=+3]
 
 include::topics/proc_accessing-debug-logs-on-openshift.adoc[leveloffset=+3]
@@ -156,7 +168,6 @@ include::topics/proc_accessing-jvm-metrics-using-jolokia-on-openshift.adoc[level
 [appendix]
 include::topics/ref_the-source-to-image-s2i-build-process.adoc[leveloffset=+1]
 
-:context: wf-swarm
 [appendix]
 include::topics/proc_updating-the-deployment-configuration-of-a-booster.adoc[leveloffset=+1]
 

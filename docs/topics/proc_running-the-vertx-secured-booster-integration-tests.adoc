@@ -1,0 +1,32 @@
+[id='running-the-vertx-secured-booster-integration-tests_{context}']
+= Running the {VertX} {name-mission-secured} Booster Integration Tests
+
+.Prerequisites
+
+* The `oc` client authenticated.
+// * An empty OpenShift project in which to run the tests.
+
+.Procedure
+// space here to prevent the section title and admonition from sticking together in the rendered version
+{nbsp}
+include::note-integration-tests-app-deletion-warning.adoc[]
+
+By default, the SSO server is deployed (and destroyed) as part of testing. The steps for executing integration tests are as follows:
+
+. In a terminal application, navigate to the directory with your project.
+. Execute the integration tests:
++
+[source,bash,options="nowrap",subs="attributes+"]
+--
+mvn clean verify -Popenshift,openshift-it
+--
+
+If you deployed an SSO server beforehand, e.g. by executing `oc create -f service.sso.yaml`, set the system property `skip.sso.init` to `true` when running the tests:
+
+[source,bash,options="nowrap",subs="attributes+"]
+--
+mvn clean verify -Popenshift,openshift-it -Dskip.sso.init=true
+--
+
+When executed like this, the tests will use the existing SSO server.
+The tests will not deploy their own SSO server, nor will they destroy the existing one.

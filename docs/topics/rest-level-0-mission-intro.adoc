@@ -1,9 +1,0 @@
-include::rest-level-0-mission-intro-paragraph.adoc[]
-For more information on REST, see xref:rest-resources_{context}[].
-
-This booster introduces the mechanics of interacting with a remote service using the HTTP protocol. It allows you to:
-
-* Execute an HTTP `GET` request on the `api/greeting` endpoint.
-* Receive a response in JSON format with a payload consisting of the `Hello, World!` String.
-* Execute an HTTP `GET` request on the `api/greeting` endpoint while passing in a String argument. This uses the `name` request parameter in the query string.
-* Receive a response in JSON format with a payload of `Hello, $name!` with `$name` replaced by the value of the `name` parameter passed into the request.

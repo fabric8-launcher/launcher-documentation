@@ -1,0 +1,6 @@
+[id='additional-node-resources']
+= Additional {Node} Resources
+
+* link:https://nodejs.org/[{Node} Home Page]
+* link:https://www.npmjs.com/[npm Home Page]
+

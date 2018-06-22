@@ -1,5 +1,11 @@
+// This is a parameterized assembly. Parameters used:
+//
+//  parameter-runtime-anchor: Which runtime this assembly is built for.
+//
+// Rationale: This assembly is nearly identical for all runtimes.
 
-[id='mission-circuit-breaker-{parameter-runtime}']
+// Do not change the anchor ID, it is set to this for URL routing reasons
+[id='mission-circuit-breaker-{parameter-runtime-anchor}']
 = {name-mission-circuit-breaker} Mission - {runtime} Booster
 
 include::note-booster-unvailable-oso.adoc[leveloffset=+1]
@@ -10,9 +16,9 @@ This mission shows you how to implement a Circuit Breaker and Fallback pattern i
 
 include::con_about-circuit-breaker.adoc[leveloffset=+1]
 
-include::note-preview-booster-source.adoc[leveloffset=+1]
-
 include::con_circuit-breaker-design-tradeoffs.adoc[leveloffset=+1]
+
+include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
 :parameter-mission-name: {name-mission-circuit-breaker}
 :parameter-mission: circuit-breaker
@@ -28,7 +34,7 @@ include::proc_interacting-with-the-circuit-breaker-booster.adoc[leveloffset=+1]
 ifndef::node-js[]
 include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]
 
-include::circuit-breaker-mission-access-hystrix-dashboard-{parameter-runtime}.adoc[leveloffset=+1]
+include::proc_using-hystrix-dashboard-to-monitor-the-circuit-breaker.adoc[leveloffset=+1]
 endif::[]
 :parameter-mission-name!:
 

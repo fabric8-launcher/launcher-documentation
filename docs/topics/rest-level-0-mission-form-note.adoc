@@ -1,1 +1,0 @@
-NOTE: From a browser you can also use a form provided by the booster to perform these same interactions. The form is located at the root of the project `\http://{app-name}-{project-name}.{os-route-hostname}`.

@@ -1,5 +1,12 @@
+// This is a parameterized assembly. Parameters used:
+//
+//  parameter-runtime-anchor: Which runtime this assembly is built for. Different from parameter-runtime for routing reasons
+//  parameter-runtime: Which runtime to include files for.
+//
+// Rationale: This assembly is nearly identical for all runtimes.
 
-[id='mission-configmap-{parameter-runtime}']
+// Do not change the anchor ID, it is set to this for URL routing reasons
+[id='mission-configmap-{parameter-runtime-anchor}']
 = {name-mission-configmap} Mission - {runtime} Booster
 
 include::configmap-mission-intro-paragraph.adoc[leveloffset=+1]
@@ -12,9 +19,9 @@ This mission shows you how to:
 
 include::con_about-externalized-configuration.adoc[leveloffset=+1]
 
-include::note-preview-booster-source.adoc[leveloffset=+1]
-
 include::con_configmap-design-tradeoffs.adoc[leveloffset=+1]
+
+include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
 :parameter-mission-name: {name-mission-configmap}
 :parameter-mission: configmap
@@ -24,11 +31,13 @@ include::assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+1]
 
 include::proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+1]
 
-include::configmap-mission-basic-interaction-{parameter-runtime}.adoc[leveloffset=+1]
+include::proc_interacting-with-the-unmodified-configmap-booster-for-{parameter-runtime}.adoc[leveloffset=+1]
 :parameter-mission!:
 
 ifndef::node-js[]
+:parameter-configmap:
 include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]
+:parameter-configmap!:
 endif::[]
 :parameter-mission-name!:
 

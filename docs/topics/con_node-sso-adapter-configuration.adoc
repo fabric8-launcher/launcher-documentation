@@ -1,0 +1,53 @@
+[id='node-sso-adapter-configuration_{context}']
+= {Node} SSO Adapter Configuration
+
+The SSO adapter is the _client side_, or client to the SSO server, component that enforces security on the web resources.
+In this specific case, it is the Greeting service.
+
+.Enacting Security Example {Node} Code
+[source,javascript,options="nowrap",subs="attributes+"]
+----
+const express = require(‘express’);
+const Keycloak = require(‘keycloak-connect’); <1>
+const kc = new Keycloak({});  <2>
+
+const app = express();
+
+app.use(kc.middleware());  <3>
+
+app.use(‘/api/greeting’, kc.protect('booster-admin'), callback);  <4>
+----
+
+<1> `npm` module link:https://www.npmjs.com/package/keycloak-connect[keycloak-connect] must be installed and `required`. The keycloak-connect module acts as link:https://github.com/senchalabs/connect[connect middleware], which provides integration with `express`.
+<2> Instantiate a new `Keycloak` object and pass in an empty configuration object.
+<3> Tells `express` to use Keycloak as middleware.
+<4> Enforces that a user must be authenticated and part of the booster-admin role before accessing a resource.
+
+.Enacting Security in Keycloak Adapter using `keycloak.json`
+[source,json,options="nowrap",subs="attributes+"]
+----
+{
+  "realm": "master", <1>
+  "resource": "secured-booster-endpoint", <2>
+  "realm-public-key": "...", <3>
+  "auth-server-url": "${env.SSO_AUTH_SERVER_URL}", <4>
+  "ssl-required": "external",
+  "disable-trust-manager": true,
+  "bearer-only": true, <5>
+  "use-resource-role-mappings": true
+}
+----
+
+<1> The security realm to be used.
+<2> The actual Keycloak _client_ configuration.
+<3> PEM format of the realm public key. You can obtain this from the administration console.
+<4> The address of the {RHSSO} server (Interpolation at build time).
+<5> If enabled the adapter will not attempt to authenticate users, but only verify bearer tokens.
+
+The example {Node} code enables Keycloak and enforces protection of the Greeting service web resource endpoint. The `keycloak.json` configures the security adapter to interact with {RHSSO}.
+
+[discrete]
+== Additional Resources
+
+* For more information about the {Node} Keycloak adapter, see the link:http://www.keycloak.org/docs/latest/securing_apps/topics/oidc/nodejs-adapter.html[Keycloak documentation].
+

@@ -1,0 +1,113 @@
+[id='interacting-with-the-crud-api_{context}']
+= Interacting with the {name-mission-crud} API
+
+When you have finished creating your application booster, you can interact with it the following way:
+
+[discrete]
+== Prerequisites
+
+* Your application running
+* The `crud` binary or a web browser
+
+[discrete]
+== Procedure
+
+. Obtain the URL of your application by executing the following command:
++
+--
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get route {app-name}
+----
+
+[source,option="nowrap",subs="attributes+"]
+----
+NAME                 HOST/PORT                                         PATH      SERVICES             PORT      TERMINATION
+{app-name}           {app-name}-{project-name}.{os-route-hostname}              {app-name}           8080
+----
+--
+
+. To access the web interface of the database application, navigate to the _application URL_ in your browser:
++
+--
+[source,bash,subs="attributes+"]
+----
+http://{app-name}-{project-name}.{os-route-hostname}
+----
+
+Alternatively, you can make requests directly on the `api/fruits/*` endpoint using `curl`:
+
+.List all entries in the database:
+[source,bash,subs="attributes+"]
+----
+$ curl http://{app-name}-{project-name}.{os-route-hostname}/api/fruits
+----
+
+[source,json,subs="attributes+"]
+----
+[ {
+  "id" : 1,
+  "name" : "Cherry",
+}, {
+  "id" : 2,
+  "name" : "Apple",
+}, {
+  "id" : 3,
+  "name" : "Banana",
+} ]
+----
+
+.Retrieve an entry with a specific ID
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl http://{app-name}-{project-name}.{os-route-hostname}/api/fruits/3
+----
+
+[source,json,options="nowrap",subs="attributes+"]
+----
+{
+  "id" : 3,
+  "name" : "Banana",
+}
+----
+
+.Create a new entry:
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl -H "Content-Type: application/json" -X POST -d '{"name":"pear"}'  http://{app-name}-{project-name}.{os-route-hostname}/api/fruits
+----
+
+[source,json,options="nowrap",subs="attributes+"]
+----
+{
+  "id" : 4,
+  "name" : "pear",
+}
+----
+
+.Update an Entry
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl -H "Content-Type: application/json" -X PUT -d '{"name":"pineapple"}'  http://{app-name}-{project-name}.{os-route-hostname}/api/fruits/1
+----
+
+[source,json,options="nowrap",subs="attributes+"]
+----
+{
+  "id" : 1,
+  "name" : "pineapple",
+}
+----
+
+.Delete an Entry:
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl -X DELETE http://{app-name}-{project-name}.{os-route-hostname}/api/fruits/1
+----
+--
+
+[discrete]
+== Troubleshooting
+
+* If you receive an HTTP Error code `503` as a response after executing these commands, it means that the application is not ready yet.
+

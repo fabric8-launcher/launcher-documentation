@@ -1,0 +1,61 @@
+[id='wildflyswarm-sso-adapter-configuration_{context}']
+= {WildFlySwarm} SSO Adapter Configuration
+
+The SSO adapter is the _client side_, or client to the SSO server, component that enforces security on the web resources.
+In this specific case, it is the greeting service.
+
+In {WildFlySwarm}, the security configuration breaks down into two notable assets:
+
+* The `web.xml` configuration to enact the security for the service
+* The `keycloak.json` configuration for the keycloak adapter.
+
+.Enacting Security using `web.xml`
+[source,xml,options="nowrap",subs="attributes+"]
+----
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
+  <security-constraint>
+    <web-resource-collection>
+      <url-pattern>/api/greeting</url-pattern> <1>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>booster-admin</role-name> <2>
+    </auth-constraint>
+  </security-constraint>
+
+  <login-config>
+    <auth-method>KEYCLOAK</auth-method> <3>
+  </login-config>
+
+  <security-role>
+    <role-name>booster-admin</role-name>
+  </security-role>
+</web-app>
+----
+
+<1> The web context that is to be secured.
+<2> The role needed to access the endpoint.
+<3> Using keycloak as the security provider.
+
+.Enacting Security in Keycloak Adapter using `keycloak.json`
+[source,json,options="nowrap",subs="attributes+"]
+----
+{
+  "realm": "master", <1>
+  "resource": "secured-booster-endpoint", <2>
+  "realm-public-key": "...", <3>
+  "auth-server-url": "${sso.auth.server.url}", <4>
+  "ssl-required": "external",
+  "disable-trust-manager": true,
+  "bearer-only": true, <5>
+  "use-resource-role-mappings": true
+}
+----
+
+<1> The security realm to be used.
+<2> The actual keycloak _client_ configuration.
+<3> PEM format of the realm public key. You can obtain this from the administration console.
+<4> The address of the {RHSSO} server (Interpolation at build time).
+<5> If enabled the adapter will not attempt to authenticate users, but only verify bearer tokens.
+
+The `web.xml` enables keycloak and enforces protection of the Greeting service web resource endpoint. The `keycloak.json` configures the security adapter to interact with {RHSSO}.
+

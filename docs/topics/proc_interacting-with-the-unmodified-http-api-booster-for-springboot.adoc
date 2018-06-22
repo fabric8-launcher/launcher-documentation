@@ -1,0 +1,32 @@
+[id='interacting-with-the-unmodified-http-api-booster-for-springboot_{context}']
+= Interacting with the Unmodified {name-mission-http-api} Booster for {SpringBoot}
+
+The booster provides a default HTTP endpoint that accepts GET requests.
+
+[discrete]
+== Prerequisites
+
+* Your application running
+* The `curl` binary or a web browser
+
+[discrete]
+== Procedure
+
+. Use `curl` to execute a `GET` request against the booster. You can also use a browser to do this.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting
+{"content":"Hello, World!"}
+----
+
+. Use `curl` to execute a `GET` request with the `name` URL parameter against the booster. You can also use a browser to do this.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting?name=Sarah
+{"content":"Hello, Sarah!"}
+----
+
+include::note-web-form-rest-api.adoc[leveloffset=+1]
+
