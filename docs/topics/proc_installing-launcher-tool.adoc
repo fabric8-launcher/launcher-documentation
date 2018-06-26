@@ -11,7 +11,7 @@ Install a local customized instance of the {launcher} tool, which allows you to 
 
 .Prerequisites
 * xref:starting-and-configuring-the-openshiftlocal-for-the-launcher-tool_{context}[{OpenShiftLocal} running].
-* A link:{link-launcher-openshift-local-install-guide}#creating-a-github-personal-access-token[GitHub personal access token].
+* A link:{link-launcher-openshift-local-install-guide}#creating-a-github-personal-access-token_minishift[GitHub personal access token].
 
 .Procedure
 . Open the {OpenShiftLocal} Web console and log in.
