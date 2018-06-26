@@ -1,0 +1,17 @@
+[id='con_shared-messaging-work-queue-design-tradeoffs_{context}']
+
+= {name-mission-shared-messaging-work-queue} design tradeoffs
+
+.Design Tradeoffs
+[width="100%",options="header"]
+|====================================================================
+|Pros           |Cons
+a|
+* Modularity: due to the decoupling between the workers and the central component of your messaging infrastructure, you can swap out the central component depending on which functionalities you need it to provide.
+For example, using an interconnect router instead of the broker sacrifices message persistence while allowing faster processing time per message.
+* Reliability: Using a broker with persistent storage prevents loss of messages in case a target worker module becomes unavailable. The router persists the message and forwards it to a different available worker.
+a|
+* In order to remain decoupled and properly scalable, a messaging infrastructure typically requires a central component, such as a broker or a router.
+Depending on the type, the central components provide different functionalities, but also increase the resource requirements of your messaging service infrastructure to varying degrees.
+* Adding persistent storage to your central component also increases the processing time of each message.
+|====================================================================
