@@ -79,6 +79,13 @@ include::topics/assembly_cache-mission-booster.adoc[leveloffset=+2]
 :parameter-runtime-anchor!:
 
 
+// MESSAGING WORK QUEUE
+:context: messaging-work-queue
+:parameter-runtime-anchor: nodejs
+include::topics/assembly_messaging-work-queue-mission-booster.adoc[leveloffset=+2]
+:parameter-runtime-anchor!:
+
+
 :context: nodejs
 
 == Debugging
