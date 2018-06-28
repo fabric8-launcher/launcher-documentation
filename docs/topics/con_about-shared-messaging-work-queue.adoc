@@ -1,5 +1,5 @@
 [id='about-circuit-breaker_{context}']
-= About Shared Messagning Work Queue
+= About Shared Messaging Work Queue
 
 The Shared Work Queue mission demonstrates how you can use AMQ to dispatch tasks to a scalable set of worker processes using a shared messaging queue.
 This example uses the link:http://docs.oasis-open.org/amqp/core/v1.0/amqp-core-messaging-v1.0.html[AMQP 1.0 messaging protocol^].
