@@ -1,0 +1,14 @@
+[id='about-messaging-work-queue_{context}']
+= About Shared Messaging Work Queue
+
+The Shared Work Queue mission demonstrates how you can use AMQ to dispatch tasks to a scalable set of worker processes using a shared messaging queue.
+This example uses the link:http://docs.oasis-open.org/amqp/core/v1.0/amqp-core-messaging-v1.0.html[AMQP 1.0 messaging protocol^].
+The workers are implemented in a variety of different languages and application runtimes to demonstrate the polyglot nature of the messaging service.
+The broker is the central component of the messaging application that serves to store and forward messages between individual workers and is entirely decoupled from the workers.
+This allows you to independently scale the number of workers to meet the requirements of your application.
+It also allows workers written in different languages to interoperate, as long as they all use the same standard messaging protocol.
+
+//[discrete]
+//== Customizable messaging services
+
+//section TBD

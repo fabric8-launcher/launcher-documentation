@@ -20,7 +20,7 @@ This booster shows you how to:
 include::con_messaging-work-queue-design-tradeoffs.adoc[leveloffset=+1]
 
 // keep or throw away? keep, probably
-include::note-preview-booster-source.adoc[leveloffset=+1]
+include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
 // define these properly, where necesary
 :parameter-mission-name: {name-mission-messaging-work-queue}
