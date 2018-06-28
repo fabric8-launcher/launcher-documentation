@@ -9,4 +9,6 @@ This allows you to independently scale the number of workers to meet the require
 It also allows workers written in different languages to interoperate, as long as they all use the same standard messaging protocol.
 
 [discrete]
-== Customizable messaging service
+== Customizable messaging services
+
+//section TBD
