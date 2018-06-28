@@ -1,4 +1,4 @@
-[id='shared-messaging-work-queue-resources_{context}']
+[id='messaging-work-queue-resources_{context}']
 = Shared Messaging Work Queue Resources
 
 To learn more about messaging patterns and Red{nbsp}Hat JBoss AMQ for OpenShift, follow the links below:

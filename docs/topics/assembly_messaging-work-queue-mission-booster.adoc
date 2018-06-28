@@ -1,9 +1,9 @@
-[id='mission-shared-messaging-work-queue-{parameter-runtime}']
-= {name-mission-shared-messaging-work-queue} Mission - {runtime} Booster
+[id='mission-messaging-work-queue-{parameter-runtime}']
+= {name-mission-messaging-work-queue} Mission - {runtime} Booster
 
-include::shared-messaging-work-queue-mission-intro-paragraph.adoc[leveloffset=+1]
+include::messaging-work-queue-mission-intro-paragraph.adoc[leveloffset=+1]
 
-include::con_about-shared-messaging-work-queue.adoc[leveloffset=+1]
+include::con_about-messaging-work-queue.adoc[leveloffset=+1]
 
 This booster shows you how to:
 
@@ -14,17 +14,17 @@ This booster shows you how to:
 * Monitor the status of the worker processes.
 
 // see if necessary, if so, create
-//include::con_shared-messaging-work-queue-concepts.adoc[leveloffset=+1]
+//include::con_messaging-work-queue-concepts.adoc[leveloffset=+1]
 
 //adapt for this mission
-include::con_shared-messaging-work-queue-design-tradeoffs.adoc[leveloffset=+1]
+include::con_messaging-work-queue-design-tradeoffs.adoc[leveloffset=+1]
 
 // keep or throw away? keep, probably
 include::note-preview-booster-source.adoc[leveloffset=+1]
 
 // define these properly, where necesary
-:parameter-mission-name: {name-mission-shared-messaging-work-queue}
-:parameter-mission: shared-messaging-work-queue
+:parameter-mission-name: {name-mission-messaging-work-queue}
+:parameter-mission: messaging-work-queue
 
 //is this going to be configured to use FMP? it should if it is to be in the launcher?
 include::assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+1]
@@ -43,4 +43,4 @@ endif::node-js[]
 :parameter-mission-name!:
 
 // adapt this for this booster
-include::ref_shared-messaging-work-queue-resources.adoc[leveloffset=+1]
+include::ref_messaging-work-queue-resources.adoc[leveloffset=+1]

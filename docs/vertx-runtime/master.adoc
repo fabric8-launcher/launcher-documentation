@@ -94,6 +94,8 @@ include::topics/assembly_secured-mission-booster.adoc[leveloffset=+2]
 include::topics/assembly_cache-mission-booster.adoc[leveloffset=+2]
 :parameter-runtime-anchor!:
 
+// MESSAGING WORK QUEUE
+
 
 :context: vertx
 

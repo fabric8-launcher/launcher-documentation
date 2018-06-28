@@ -1,6 +1,6 @@
-[id='con_shared-messaging-work-queue-design-tradeoffs_{context}']
+[id='con_messaging-work-queue-design-tradeoffs_{context}']
 
-= {name-mission-shared-messaging-work-queue} design tradeoffs
+= {name-mission-messaging-work-queue} design tradeoffs
 
 .Design Tradeoffs
 [width="100%",options="header"]

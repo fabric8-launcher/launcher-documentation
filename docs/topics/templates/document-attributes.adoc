@@ -52,7 +52,7 @@ endif::[]
 :name-mission-crud: Relational Database Backend
 :name-mission-secured: Secured
 :name-mission-cache: Cache
-:name-mission-shared-messaging-work-queue: Shared Messaging Work Queue
+:name-mission-messaging-work-queue: Messaging Work Queue
 
 :name-guide-minishift-installation: Install and Configure the {name-launcher} Tool
 :name-guide-getting-started: Getting Started with {ProductName}

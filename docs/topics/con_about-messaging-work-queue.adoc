@@ -1,4 +1,4 @@
-[id='about-shared-messaging-work-queue_{context}']
+[id='about-messaging-work-queue_{context}']
 = About Shared Messaging Work Queue
 
 The Shared Work Queue mission demonstrates how you can use AMQ to dispatch tasks to a scalable set of worker processes using a shared messaging queue.

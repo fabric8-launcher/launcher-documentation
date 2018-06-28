@@ -5,4 +5,4 @@ ifndef::docs-topic[link:https://launcher.fabric8.io/docs/wf-swarm-runtime.html#p
 
 
 // The {name-mission-configmap} mission provides a basic example of using a ConfigMap to externalize configuration. _ConfigMap_ is an object used by OpenShift to inject configuration data as simple key and value pairs into one or more Linux containers while keeping the containers independent of OpenShift.
-The {name-mission-shared-messaging-work-queue} mission showcases a messaging infrastructure built around a central broker component with multiple decoupled worker components sharing a common work queue.
+The {name-mission-messaging-work-queue} mission showcases a messaging infrastructure built around a central broker component with multiple decoupled worker components sharing a common work queue.
