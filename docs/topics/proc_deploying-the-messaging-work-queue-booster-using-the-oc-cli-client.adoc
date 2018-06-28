@@ -1,0 +1,91 @@
+// Section TBD
+[id='deploying-the-messaging-work-queue-booster-using-the-oc-cli-client_{context}']
+= Deploying the {name-mission-messaging-work-queue} Booster using the `oc` CLI Client
+
+.Prerequisites
+
+* The booster application created using {parameter-deployment}.
+ifndef::parameter-openshiftlocal[For more information, see xref:deploying-the-booster-using-launcher-oso_{context}[].]
+ifdef::parameter-openshiftlocal[]
+For more information, see xref:deploying-the-booster-using-the-launcher-tool_{context}[].
+* Your {launcher} tool URL.
+endif::[]
+
+* The `oc` client authenticated. For more information, see xref:authenticating-the-oc-cli-client_{context}[].
+
+.Procedure
+. Clone your project from GitHub.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git clone git@github.com:USERNAME/{project-name}.git
+----
++
+Alternatively, if you downloaded a ZIP file of your project, extract it.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ unzip {project-name}.zip
+----
+
+. Create a new project.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc new-project {project-name}
+----
+
+. Navigate to the root directory of your booster.
+
+. Deploy the cache service.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc apply -f service.cache.yml
+----
+
+ifdef::node-js[]
+. Use `start-openshift.sh` to start the deployment to OpenShift.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ ./start-openshift.sh
+----
+endif::node-js[]
+
+ifndef::node-js[]
+. Use Maven to start the deployment to OpenShift.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn clean fabric8:deploy -Popenshift
+----
+endif::node-js[]
+
+. Check the status of your booster and ensure your pod is running.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get pods -w
+NAME                             READY     STATUS      RESTARTS   AGE
+cache-server-123456789-aaaaa             1/1       Running     0          8m
+{app-name}-cutename-1-bbbbb       1/1       Running     0          4m
+{app-name}-cutename-s2i-1-build   0/1       Completed   0          7m
+{app-name}-greeting-1-ccccc       1/1       Running     0          3m
+{app-name}-greeting-s2i-1-build   0/1       Completed   0          3m
+----
++
+Your 3 pods should have a status of `Running` once they are fully deployed and started.
+
+. Once your booster is deployed and started, determine its route.
++
+.Example Route Information
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get routes
+NAME                 HOST/PORT                                                     PATH      SERVICES        PORT      TERMINATION
+{app-name}-cutename   {app-name}-cutename-{project-name}.{os-route-hostname}             {app-name}-cutename   8080                    None
+{app-name}-greeting   {app-name}-greeting-{project-name}.{os-route-hostname}             {app-name}-greeting   8080                    None
+----
++
+The route information of a pod gives you the base URL which you use to access it. In the example above, you would use `\http://{app-name}-greeting-{project-name}.{os-route-hostname}` as the base URL to access the greeting service.
