@@ -1,10 +1,12 @@
 [id='shared-messaging-work-queue-resources_{context}']
 = Shared Messaging Work Queue Resources
 
-To learn more about messaging patterns and Red{nbsp}Hat JBoss A-MQ for OpenShift, follow the links below:
+To learn more about messaging patterns and Red{nbsp}Hat JBoss AMQ for OpenShift, follow the links below:
 
 * link:http://www.enterpriseintegrationpatterns.com/patterns/messaging/Introduction.html[Enterprise Integration Patterns: An overview of messaging service concepts^]
 
 * link:http://docs.oasis-open.org/amqp/core/v1.0/amqp-core-messaging-v1.0.html[AMQP 1.0 Messaging Protocol specifications^]
 
-* link:https://access.redhat.com/documentation/en-us/red_hat_jboss_a-mq/6.3/html-single/red_hat_jboss_a-mq_for_openshift/index[Documentation on Red{nbsp}Hat JBoss A-MQ 6.3 for OpenShift^]
+* link:https://access.redhat.com/documentation/en-us/red_hat_jboss_a-mq/6.3/html-single/red_hat_jboss_a-mq_for_openshift/index[Documentation on Red{nbsp}Hat JBoss AMQ 6.3 for OpenShift^]
+
+* link:https://qpid.apache.org/components/index.html#messaging-servers[Messaging server types and implementations for message-oriented middleware^]
