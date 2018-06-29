@@ -97,7 +97,7 @@ include::topics/assembly_cache-mission-booster.adoc[leveloffset=+2]
 
 :context: vertx
 
-== Application development
+== Developing an application for the {VertX} runtime
 
 include::topics/assembly_creating-a-basic-vertx-application.adoc[leveloffset=+2]
 

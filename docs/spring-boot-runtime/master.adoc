@@ -84,7 +84,8 @@ include::topics/assembly_cache-mission-booster.adoc[leveloffset=+2]
 
 :context: spring-boot
 
-== Application development
+== Developing an application for the {SpringBoot} runtime
+
 The recommended approach for specifying and using supported and tested maven artifacts in a {SpringBoot} application is to use the OpenShift Application Runtimes {SpringBoot} BOM.
 
 //creating an app from scratch
