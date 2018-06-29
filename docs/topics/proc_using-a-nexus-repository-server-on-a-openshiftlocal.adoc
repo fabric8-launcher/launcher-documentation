@@ -7,7 +7,7 @@
 = Using a Nexus repository server on a {OpenShiftLocal}
 
 While developing your cloud-native applications with Java and Maven you may be required to build them repeatedly.
-You can deploy a Nexus Repository server alongside the {launcher} tool on your {OpenShiftLocal} and use it to fetch artifacts from the Maven Central Repository and cache them locally.
+You can deploy a Nexus Repository server alongside the {launcher} tool on your {OpenShiftLocal} and use it to fetch artifacts from the Maven Central repository and cache them locally.
 This helps you speed up your builds and rolling updates and alleviates network load during build time.
 
 [discrete]
@@ -23,7 +23,7 @@ For more information on how to do this see the link:https://maven.apache.org/gui
 
 ////
 * Verify that your application image has a `MAVEN_MIRROR_URL` environment variable.
-If it does not have this environmental variable, follow the link:https://books.sonatype.com/nexus-book/reference/config.html[Nexus documentation^] to configure your build.
+If it does not have this environment variable, follow the link:https://books.sonatype.com/nexus-book/reference/config.html[Nexus documentation^] to configure your build.
 ////
 
 ////
@@ -124,7 +124,7 @@ Pass in a parameter to set the value of the `MAVEN_MIRROR_URL` to match the serv
 
 [NOTE]
 ====
-Ensure that the YAML template of the builder image you are using for your application has the `MAVEN_MIRROR_URL` environmental variable defined.
+Ensure that the YAML template of the builder image you are using for your application has the `MAVEN_MIRROR_URL` environment variable defined.
 If it does not, see the Nexus documentation for instructions on link:https://help.sonatype.com/display/NXRM2/Maven+and+Other+Build+Tools[configuring your build manually^] before proceeding.
 ====
 
@@ -134,7 +134,7 @@ $ oc new-build {app-name}:latest~{scm-repo-url} \
 -e MAVEN_MIRROR_URL='http://nexus.{nexus-project-name}:8081/nexus/content/groups/public'
 ----
 
-Nexus comes pre-configured for the Maven Central Repository, but you may need other repositories for your application.
+Nexus comes pre-configured for the Maven Central repository, but you may need other repositories for your application.
 To access images provided by Red Hat, add the link:https://maven.repository.redhat.com/[Red Hat JBoss Middleware Early Access Maven Repository] to your Nexus instance.
 --
 
