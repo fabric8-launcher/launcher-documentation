@@ -37,13 +37,43 @@ $ oc new-project {project-name}
 
 . Navigate to the root directory of your booster.
 
-. Deploy the cache service.
+. Import the templates for the messaging broker, worker, and frontend components.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc apply -f service.cache.yml
+$ oc apply -f templates
 ----
 
+. Deploy the messaging broker.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+oc new-app --template=amq63-basic \
+  -p APPLICATION_NAME=work-queue-broker \
+  -p IMAGE_STREAM_NAMESPACE=$(oc project -q) \
+  -p MQ_PROTOCOL=amqp \
+  -p MQ_QUEUES=work-queue/requests \
+  -p MQ_TOPICS=work-queue/worker-updates \
+  -p MQ_USERNAME=work-queue \
+  -p MQ_PASSWORD=work-queue
+----
+
+. Deploy the messaging service frontend that serves the web interface of the messaging service and communicates with the workers.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+oc new-app --template=nodejs-messaging-work-queue-frontend
+----
+
+. Deploy a messaging worker that serves as the backend of the messaging service.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+oc new-app --template=nodejs-messaging-work-queue-worker
+----
+
+////
+// does this apply?
 ifdef::node-js[]
 . Use `start-openshift.sh` to start the deployment to OpenShift.
 +
@@ -61,18 +91,20 @@ ifndef::node-js[]
 $ mvn clean fabric8:deploy -Popenshift
 ----
 endif::node-js[]
+////
 
-. Check the status of your booster and ensure your pod is running.
+. Check the status of your booster and ensure all of your pods are running.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc get pods -w
 NAME                             READY     STATUS      RESTARTS   AGE
-cache-server-123456789-aaaaa             1/1       Running     0          8m
-{app-name}-cutename-1-bbbbb       1/1       Running     0          4m
-{app-name}-cutename-s2i-1-build   0/1       Completed   0          7m
-{app-name}-greeting-1-ccccc       1/1       Running     0          3m
-{app-name}-greeting-s2i-1-build   0/1       Completed   0          3m
+work-queue-broker-amq-1-7jwwx     1/1       Running     0          8m
+work-queue-broker-amq-1-deploy    1/1       Running     0          5m
+{app-name}-worker-1-build         0/1       Completed   0          5m
+{app-name}-frontend-1-build       0/1       Completed   0          7m
+{app-name}-worker-1-8t2hs         1/1       Running     0          3m
+{app-name}-frontend-1-cjnd6       1/1       Running     0          3m
 ----
 +
 Your 3 pods should have a status of `Running` once they are fully deployed and started.
@@ -83,9 +115,8 @@ Your 3 pods should have a status of `Running` once they are fully deployed and s
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc get routes
-NAME                 HOST/PORT                                                     PATH      SERVICES        PORT      TERMINATION
-{app-name}-cutename   {app-name}-cutename-{project-name}.{os-route-hostname}             {app-name}-cutename   8080                    None
-{app-name}-greeting   {app-name}-greeting-{project-name}.{os-route-hostname}             {app-name}-greeting   8080                    None
+NAME                 HOST/PORT                                                     PATH      SERVICES              PORT      TERMINATION   WILDCARD
+frontend             frontend-{app-name}.{os-route-hostname}                                 {app-name}-frontend   8080                    None
 ----
 +
-The route information of a pod gives you the base URL which you use to access it. In the example above, you would use `\http://{app-name}-greeting-{project-name}.{os-route-hostname}` as the base URL to access the greeting service.
+The route information of a pod gives you the base URL which you use to access it. In the example above, you would use `\http://frontend-{app-name}.{os-route-hostname}` as the base URL to access the messaging service interface.
