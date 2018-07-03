@@ -35,13 +35,13 @@ include::assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+1]
 include::proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+1]
 
 // create a new interaction section for this booster
-//include::health-check-mission-basic-interaction-{parameter-runtime}.adoc[leveloffset=+1]
+include::proc_interacting-with-the-messaging-work-queue-booster.adoc[leveloffset=+1]
 
 // verify if this works
-ifndef::node-js[]
-include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]
-endif::node-js[]
-:parameter-mission-name!:
+//ifndef::node-js[]
+//include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]
+//endif::node-js[]
+//:parameter-mission-name!:
 
 // adapt this for this booster
 include::ref_messaging-work-queue-resources.adoc[leveloffset=+1]

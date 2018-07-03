@@ -1,0 +1,56 @@
+[id='interacting-with-the-unmodified-messaging-work-queue-booster_{context}']
+= Interacting with the Unmodified {name-mission-messaging-work-queue} Booster
+
+Once you have the booster deployed, the `frontend` service is running and exposes the following endpoints:
+
+`/api/send-request`::
+Accepts HTTP `POST` requests with data in JSON format.
+This endpoint does not return the processed result.
+
+`/api/data`::
+Returns a JSON object containing all the processed data previously submitted to the `/api/send-request` endpoint.
+//really?
+If you provide no data to the `/api/send-request` endpoint prior to calling this endpoint, it returns an empty JSON object.
+
+Alternatively, you can use the web interface to perform these steps.
+
+. Use `curl` to execute a `POST` request against the `frontend` service.
+The example below uses `abc` as the message payload to be processed.
+You can also use a browser to do this.
+Note that while sending the request from the command line does not automatically return the processed message, you can see the processed result immediately upon checking the output window in the web interface of the `frontend` service.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl -d '{"text":"abc"}' -H "Content-Type: application/json" -X POST http://frontend-{app-name}.{os-route-hostname}/api/send-request
+----
+
+. Execute a HTTP `GET` request against the `/api/data` data endpoint to obtain a JSON object with the processed message.
+In the example below, the messaging service has processed the message by changing the text to uppercase.
+Note that the output also contains the ID of the worker that processed the message.
++
+....
+{"responses":[{"workerId":"worker-{parameter-runtime}-1750","text":"ABC"}],"workers":{"worker-{parameter-runtime}-1750":{"timestamp":1530636651622,"requestsProcessed":28}}}
+....
+
+. Scale up the number of worker pods from 1 to 2.
+// can you do this using oc scale? or just the web console?
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc scale pod {app-name}-worker-1-aaaaa --replicas=2
+----
+
+. Wait until both pods are scaled up and in a READY state.
++
+....
+$ oc get pods
+NAME                          READY     STATUS      RESTARTS   AGE
+...
+{app-name}-worker-1-aaaaa     2/2       Running     0          10m
+...
+....
+
+. Send multiple HTTP `POST` requests with different message payloads to the `/api/send-request` endpoint.
+
+. Execute a HTTP `GET` request on the `/api/data` to obtain a JSON object with all of the processed messages.
+Note that the worker ID next to each of the messages now differs based on which of the workers processed the message.
