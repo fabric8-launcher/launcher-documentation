@@ -171,6 +171,9 @@ include::topics/ref_the-source-to-image-s2i-build-process.adoc[leveloffset=+1]
 [appendix]
 include::topics/proc_updating-the-deployment-configuration-of-a-booster.adoc[leveloffset=+1]
 
+[appendix]
+include::topics/proc_configuring-jenkins-freestyle-project-to-deploy-an-application-with-fmp.adoc[leveloffset=+1]
+
 //[appendix]
 //include::topics/ref_breakdown-of-wildflyswarm-pom-components.adoc[leveloffset=+1]
 

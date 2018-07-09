@@ -1,0 +1,52 @@
+// This is a parameterized module. Parameters used:
+//
+// runtime: The runtime name.
+//
+// Rationale: This module is nearly identical for all java-based runtimes.
+[id='configuring-a-jenkins-freestyle-project-to-deploy-your-application-with-the-fabric8-maven-plugin_{context}']
+= Configuring a Jenkins freestyle project to deploy your application with the Fabric8 Maven Plugin
+
+Similar to using Maven and the Fabric8 Maven Plugin from your local host to deploy an application, you can configure Jenkins to use Maven and the Fabric8 Maven Plugin to deploy an application.
+
+[discrete]
+== Prerequisites
+* Access to an OpenShift cluster.
+* link:https://docs.openshift.org/latest/using_images/other_images/jenkins.html[The Jenkins container image] running on same OpenShift cluster.
+* A JDK and Maven installed and configured on your Jenkins server.
+* An application available in GitHub and configured to use Maven, the Fabric8 Maven Plugin, and the OpenShift Application Runtimes {runtime} BOM.
+
+[discrete]
+== Procedure 
+. Create a new OpenShift project for your application:
+.. Open the OpenShift Web console and log in.
+.. Click _Create Project_ to create a new OpenShift project.
+.. Enter the project information and click _Create_.
+
+. Ensure Jenkins has access to that project.
++
+For example, if you configured a service account for Jenkins, ensure that account has `edit` access to the project of your application.
+
+. Create a new link:https://wiki.jenkins.io/display/JENKINS/Building+a+software+project#Buildingasoftwareproject-Settinguptheproject[freestyle Jenkins project] on your Jenkins server:
+.. Click _New Item_.
+.. Enter a name, choose _Freestyle project_, and click _OK_.
+.. Under _Source Code Management_, choose _Git_ and add the GitHub url of your application.
+.. Under _Build_, choose _Add build step_ and select `Invoke top-level Maven targets`.
+.. Add the following to _Goals_:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+clean fabric8:deploy -Popenshift -Dfabric8.namespace=MY_PROJECT
+----
++
+Substitute `MY_PROJECT` with the name of the OpenShift project for your application.
+.. Click _Save_.
+
+. Click _Build Now_ from the main page of the Jenkins project to verify your application builds and deploys to the OpenShift project for your application.
++
+You can also verify that your application is deployed by opening the route in the OpenShift project of the application.
+
+
+[discrete]
+== Next steps
+* Consider adding link:https://wiki.jenkins.io/display/JENKINS/Github+Plugin#GitHubPlugin-GitHubhooktriggerforGITScmpolling[GITSCM polling] or using link:https://wiki.jenkins.io/display/JENKINS/Building+a+software+project#Buildingasoftwareproject-Buildsbysourcechanges[the `Poll SCM` build trigger]. These options enable builds to run every time a new commit is pushed to the GitHub repository.
+* Consider adding a build step that executes tests before deploying.
