@@ -128,6 +128,9 @@ include::topics/ref_about-nodeshift.adoc[leveloffset=+1]
 include::topics/proc_updating-the-deployment-configuration-of-a-booster.adoc[leveloffset=+1]
 
 [appendix]
+include::topics/proc_configuring-jenkins-freestyle-project-to-deploy-nodejs-application-with-nodeshift.adoc[leveloffset=+1]
+
+[appendix]
 include::topics/ref_breakdown-of-package-json-properties.adoc[leveloffset=+1]
 
 [appendix]
