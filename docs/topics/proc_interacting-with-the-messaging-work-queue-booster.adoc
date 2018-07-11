@@ -82,18 +82,13 @@ You can specify a different message payload in each request, for example, `XYZ`
 You receive the ID of each request as it is processed by an available worker.
 
 . Execute a HTTP `GET` request on the `/api/data` to obtain a JSON containing all of the messages processed by he messaging service.
-Note that the JSON response also contains information on the current status of the workers.
-You can also see up-to-date information on the current status of the workers in the web interface of the booster application.
-//use callouts to describe parts of the JSON
-//figure out how to replace the "nodejs" example.
 +
 [source,json,options="nowrap",subs="attributes+"]
-....
+----
 {
-  {
     "requestIds": ["{context}-frontend-aaaa/1", "{context}-frontend-aaaa/2"],
     "responses": {
-      "context-frontend-aaaa/1": {
+      "{context}-frontend-aaaa/1": {
         "requestId": "context-frontend-aaaa/1",
         "workerId": "{context}-worker-nnnn",
         "text": "ABC"
@@ -103,26 +98,36 @@ You can also see up-to-date information on the current status of the workers in 
           "workerId": "nodejs-worker-mmmm",
           "text": "XYZ"
         }
-        },
+      },
         "workers": {}
-          },
-          {
-            "requestIds: [],
-            "responses": {},
-              "workers": {
-                "{context}-worker-nnnn": {
-                  "workerId": "{context}-worker-nnnn",
-                  "timestamp": 1529684986,
-                  "requestsProcessed": 100,
-                  "processingErrors": 0
-                  },
-                  "nodejs-worker-mmmm": {
-                    "workerId": "nodejs-worker-mmmm",
-                    "timestamp": 1529684986,
-                    "requestsProcessed": 99,
-                    "processingErrors": 1
-                  }
-                }
-              }
-            }
-....
+}
+----
++
+Note that the JSON response also contains information on the current status of the workers.
+You can also see up-to-date information on the current status of the workers in the web interface of the booster application.
+//use callouts to describe parts of the JSON
+//figure out how to replace the "nodejs" example.
++
+[source,json,options="nowrap",subs="attributes+"]
+----
+...
+{
+  "requestIds: [],
+  "responses": {},
+  "workers": {
+    "{context}-worker-mmmm": {
+      "workerId": "{context}-worker-mmmm",
+      "timestamp": 1529684986,
+      "requestsProcessed": 100,
+      "processingErrors": 0
+    },
+    "nodejs-worker-nnnn": {
+      "workerId": "nodejs-worker-nnnn",
+      "timestamp": 1529684986,
+      "requestsProcessed": 99,
+      "processingErrors": 1
+    }
+  }
+}
+...
+----
