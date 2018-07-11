@@ -5,32 +5,58 @@ Once you have the booster deployed, the `frontend` service is running and expose
 
 `/api/send-request`::
 Accepts HTTP `POST` requests with data in JSON format.
+If the endpoint processes your request successfully, it responds with a HTTP status code `202`.
 This endpoint does not return the processed result.
+Instead, it provides a request ID that allows you to get the processed result form the `/api/receive-response` endpoint.
+Calling this endpoint while it is busy processing a request results in and HTTP status code `404`.
 
 `/api/data`::
-Returns a JSON object containing all the processed data previously submitted to the `/api/send-request` endpoint.
-//really?
+Returns a JSON object containing all the processed messages previously submitted to the `/api/send-request` endpoint.
 If you provide no data to the `/api/send-request` endpoint prior to calling this endpoint, it returns an empty JSON object.
 
-Alternatively, you can use the web interface to perform these steps.
+`/api/receive-response`::
+Returns a JSON response to a specific request based on the request ID returned by the `/api/send-request` endpoint.
+
+Alternatively, you can use the web interface to perform the following steps.
 
 . Use `curl` to execute a `POST` request against the `frontend` service.
 The example below uses `abc` as the message payload to be processed.
-You can also use a browser to do this.
+Set the value of the `uppercase` key to `true` to obtain a processed result where the text of the message is rendered in uppercase.
+Set the value of the `reverse` key to `true` to obtain a processed result where the text of the message is reversed.
+
 Note that while sending the request from the command line does not automatically return the processed message, you can see the processed result immediately upon checking the output window in the web interface of the `frontend` service.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ curl -d '{"text":"abc"}' -H "Content-Type: application/json" -X POST http://frontend-{app-name}.{os-route-hostname}/api/send-request
+$ curl -d '{"text":"abc", "uppercase": true, "reverse": false}' -H "Content-Type: application/json" -X POST http://frontend-{app-name}.{os-route-hostname}/api/send-request
+----
++
+Executing the request returns a HTTP status code `202` and a unique request ID:
++
+[source,subs="attributes+"]
+----
+{context}-frontend-00aa/1
 ----
 
-. Execute a HTTP `GET` request against the `/api/data` data endpoint to obtain a JSON object with the processed message.
-In the example below, the messaging service has processed the message by changing the text to uppercase.
-Note that the output also contains the ID of the worker that processed the message.
+. Execute a HTTP `GET` request against the `/api/receive-response` endpoint passing in the request ID provided by the `/api/send-request` endpoint:
 +
-....
-{"responses":[{"workerId":"worker-{parameter-runtime}-1750","text":"ABC"}],"workers":{"worker-{parameter-runtime}-1750":{"timestamp":1530636651622,"requestsProcessed":28}}}
-....
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl -X GET http://frontend-{app-name}.{os-route-hostname}/api/receive-response?request={context}-frontend-00aa/1
+----
++
+Executing the request returns a HTTP status code `200` and a JSON object containing the processed message.
+In the example below, the messaging service has processed the message by changing the text to uppercase.
+Note that the output also contains the worker ID and request ID.
++
+[source,json,options="nowrap",subs="attributes+"]
+----
+{
+  "requestId": "{context}-frontend-00aa/1",
+  "workerId": "{context}-worker-nnnn",
+  "text": "ABC"
+}
+----
 
 . Scale up the number of worker pods from 1 to 2.
 // can you do this using oc scale? or just the web console?
@@ -46,11 +72,57 @@ $ oc scale pod {app-name}-worker-1-aaaaa --replicas=2
 $ oc get pods
 NAME                          READY     STATUS      RESTARTS   AGE
 ...
-{app-name}-worker-1-aaaaa     2/2       Running     0          10m
+{app-name}-worker-1-aaaaa     1/1       Running     0          10m
+{app-name}-worker-1-bbbbb     1/1       Running     0          2m
 ...
 ....
 
 . Send multiple HTTP `POST` requests with different message payloads to the `/api/send-request` endpoint.
+You can specify a different message payload in each request, for example, `XYZ`
+You receive the ID of each request as it is processed by an available worker.
 
-. Execute a HTTP `GET` request on the `/api/data` to obtain a JSON object with all of the processed messages.
-Note that the worker ID next to each of the messages now differs based on which of the workers processed the message.
+. Execute a HTTP `GET` request on the `/api/data` to obtain a JSON containing all of the messages processed by he messaging service.
+Note that the JSON response also contains information on the current status of the workers.
+You can also see up-to-date information on the current status of the workers in the web interface of the booster application.
+//use callouts to describe parts of the JSON
+//figure out how to replace the "nodejs" example.
++
+[source,json,options="nowrap",subs="attributes+"]
+....
+{
+  {
+    "requestIds": ["{context}-frontend-aaaa/1", "{context}-frontend-aaaa/2"],
+    "responses": {
+      "context-frontend-aaaa/1": {
+        "requestId": "context-frontend-aaaa/1",
+        "workerId": "{context}-worker-nnnn",
+        "text": "ABC"
+        },
+        "{context}-frontend-78c3/2": {
+          "requestId": "{context}-frontend-aaaa/2",
+          "workerId": "nodejs-worker-mmmm",
+          "text": "XYZ"
+        }
+        },
+        "workers": {}
+          },
+          {
+            "requestIds: [],
+            "responses": {},
+              "workers": {
+                "{context}-worker-nnnn": {
+                  "workerId": "{context}-worker-nnnn",
+                  "timestamp": 1529684986,
+                  "requestsProcessed": 100,
+                  "processingErrors": 0
+                  },
+                  "nodejs-worker-mmmm": {
+                    "workerId": "nodejs-worker-mmmm",
+                    "timestamp": 1529684986,
+                    "requestsProcessed": 99,
+                    "processingErrors": 1
+                  }
+                }
+              }
+            }
+....
