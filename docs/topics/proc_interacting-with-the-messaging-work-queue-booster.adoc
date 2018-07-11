@@ -1,4 +1,4 @@
-[id='interacting-with-the-unmodified-messaging-work-queue-booster_{context}']
+[id='interacting-with-the-unmodified-messaging-work-queue-booster_{parameter-runtime-anchor}']
 = Interacting with the Unmodified {name-mission-messaging-work-queue} Booster
 
 Once you have the booster deployed, the `frontend` service is running and exposes the following endpoints:
@@ -23,7 +23,7 @@ Alternatively, you can use the web interface to perform the following steps.
 The example below uses `abc` as the message payload to be processed.
 Set the value of the `uppercase` key to `true` to obtain a processed result where the text of the message is rendered in uppercase.
 Set the value of the `reverse` key to `true` to obtain a processed result where the text of the message is reversed.
-
++
 Note that while sending the request from the command line does not automatically return the processed message, you can see the processed result immediately upon checking the output window in the web interface of the `frontend` service.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -31,18 +31,18 @@ Note that while sending the request from the command line does not automatically
 $ curl -d '{"text":"abc", "uppercase": true, "reverse": false}' -H "Content-Type: application/json" -X POST http://frontend-{app-name}.{os-route-hostname}/api/send-request
 ----
 +
-Executing the request returns a HTTP status code `202` and a unique request ID:
+Executing the request returns a HTTP status code `202` and a unique request ID.
 +
 [source,subs="attributes+"]
 ----
-{context}-frontend-00aa/1
+{parameter-runtime-anchor}-frontend-aaaa/1
 ----
 
 . Execute a HTTP `GET` request against the `/api/receive-response` endpoint passing in the request ID provided by the `/api/send-request` endpoint:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ curl -X GET http://frontend-{app-name}.{os-route-hostname}/api/receive-response?request={context}-frontend-00aa/1
+$ curl -X GET http://frontend-{app-name}.{os-route-hostname}/api/receive-response?request={parameter-runtime-anchor}-frontend-00aa/1
 ----
 +
 Executing the request returns a HTTP status code `200` and a JSON object containing the processed message.
@@ -52,8 +52,8 @@ Note that the output also contains the worker ID and request ID.
 [source,json,options="nowrap",subs="attributes+"]
 ----
 {
-  "requestId": "{context}-frontend-00aa/1",
-  "workerId": "{context}-worker-nnnn",
+  "requestId": "{parameter-runtime-anchor}-frontend-aaaa/1",
+  "workerId": "{parameter-runtime-anchor}-worker-nnnn",
   "text": "ABC"
 }
 ----
@@ -86,15 +86,15 @@ You receive the ID of each request as it is processed by an available worker.
 [source,json,options="nowrap",subs="attributes+"]
 ----
 {
-    "requestIds": ["{context}-frontend-aaaa/1", "{context}-frontend-aaaa/2"],
+    "requestIds": ["{parameter-runtime-anchor}-frontend-aaaa/1", "{parameter-runtime-anchor}-frontend-aaaa/2"],
     "responses": {
-      "{context}-frontend-aaaa/1": {
-        "requestId": "context-frontend-aaaa/1",
-        "workerId": "{context}-worker-nnnn",
+      "{parameter-runtime-anchor}-frontend-aaaa/1": {
+        "requestId": "{parameter-runtime-anchor}-frontend-aaaa/1",
+        "workerId": "{parameter-runtime-anchor}-worker-nnnn",
         "text": "ABC"
         },
-        "{context}-frontend-78c3/2": {
-          "requestId": "{context}-frontend-aaaa/2",
+        "{parameter-runtime-anchor}-frontend-78c3/2": {
+          "requestId": "{parameter-runtime-anchor}-frontend-aaaa/2",
           "workerId": "nodejs-worker-mmmm",
           "text": "XYZ"
         }
@@ -115,8 +115,8 @@ You can also see up-to-date information on the current status of the workers in 
   "requestIds: [],
   "responses": {},
   "workers": {
-    "{context}-worker-mmmm": {
-      "workerId": "{context}-worker-mmmm",
+    "{parameter-runtime-anchor}-worker-mmmm": {
+      "workerId": "{parameter-runtime-anchor}-worker-mmmm",
       "timestamp": 1529684986,
       "requestsProcessed": 100,
       "processingErrors": 0
