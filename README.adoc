@@ -2,7 +2,7 @@
 
 This repository holds the documentation for link:https://launcher.fabric8.io[launcher.fabric8.io]. The source language is AsciiDoc.
 
-== Building and Health
+== Building Health and Strength
 
 link:https://ci.centos.org/job/devtools-launcher-documentation-generator-build-master/[image:https://ci.centos.org/buildStatus/icon?job=devtools-launcher-documentation-generator-build-master[]]
 
@@ -26,4 +26,3 @@ For general information about missions and boosters, see the link:https://launch
 == Publishing
 
 Basic information about publishing a release is described in the link:https://launcher.fabric8.io/docs/contrib-guide.html#releasing_new_version[Releasing New Version] chapter of the __Contribution Guide.__
-
