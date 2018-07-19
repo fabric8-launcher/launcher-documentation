@@ -18,6 +18,6 @@ One of the following:
 [discrete]
 == Additional resources
 
-* link:{link-getting-started-guide}#deploying-a-booster-to-oso[Using {launcher-oso}] 
-* link:{link-getting-started-guide}#osl-create-booster[Using the {launcher} tool on a {OpenShiftLocal}]
+* link:{link-getting-started-guide}#deploying-a-booster-to-openshiftonline_getting-started[Using {launcher-oso}] 
+* link:{link-getting-started-guide}#creating-and-deploying-a-booster-using-your-openshiftlocal_getting-started[Using the {launcher} tool on a {OpenShiftLocal}]
 
