@@ -67,7 +67,7 @@ A sample output is shown in the following table:
 
 In the above example, the booster endpoint would be `\http://${app-name}-myproject.LOCAL_OPENSHIFT_HOSTNAME`.
 
-You can interact with the booster using the form at the secured endpoint URL and the link:${guideURL}#sso-users[provided users].
+You can interact with the booster using the form at the secured endpoint URL and the link:${guideURL}#rhsso-realm-model_secured[provided users].
 
 You can also interact with the booster using from the CLI with `curl` and link:https://stedolan.github.io/jq/[`jq`]:
 

@@ -11,7 +11,7 @@ link:https://docs.openshift.org/latest/minishift/using/addons.html[Add-ons] enab
 
 .Prerequisites
 * xref:starting-and-configuring-the-openshiftlocal-for-the-launcher-tool_{context}[{OpenShiftLocal} running].
-* A link:{link-launcher-openshift-local-install-guide}#creating-a-github-personal-access-token[GitHub personal access token].
+* A link:{link-launcher-openshift-local-install-guide}#creating-a-github-personal-access-token_minishift[GitHub personal access token].
 
 .Procedure
 
