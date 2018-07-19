@@ -13,7 +13,17 @@ Similar to using Maven and the Fabric8 Maven Plugin from your local host to depl
 * Access to an OpenShift cluster.
 * link:https://docs.openshift.org/latest/using_images/other_images/jenkins.html[The Jenkins container image] running on same OpenShift cluster.
 * A JDK and Maven installed and configured on your Jenkins server.
-* An application available in GitHub and configured to use Maven, the Fabric8 Maven Plugin, and the OpenShift Application Runtimes {runtime} BOM.
+* An application configured to use Maven, the Fabric8 Maven Plugin, and the Red Hat base image in the `pom.xml`. 
++
+.Example `pom.xml`
+[source,xml,options="nowrap",subs="attributes+"]
+----
+<properties>
+  ...
+  <fabric8.generator.from>registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift</fabric8.generator.from>
+</properties>
+----
+* The source of the application available in GitHub.
 
 [discrete]
 == Procedure 
