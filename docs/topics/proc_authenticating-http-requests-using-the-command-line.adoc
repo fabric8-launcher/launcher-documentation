@@ -37,13 +37,15 @@ If you do not want to use `jq` to extract the token, you can run just the `curl`
 NOTE: The `-sk` option tells curl to ignore failures resulting from self-signed certificates. Do not use this option in a production environment. On macOS, you must have `curl` version `7.56.1` or greater installed. It must also be built with OpenSSL.
 --
 
+:service-path: api/greeting
+ifdef::vert-x[:service-path: greeting]
 
 . Invoke the {name-mission-secured} service. Attach the access (bearer) token to the HTTP headers:
 +
 --
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ curl -v -H "Authorization: Bearer <TOKEN>" http://<SERVICE_HOST>/api/greeting
+$ curl -v -H "Authorization: Bearer <TOKEN>" http://<SERVICE_HOST>/{service-path}
 
 {
     "content": "Hello, World!",
@@ -55,7 +57,7 @@ $ curl -v -H "Authorization: Bearer <TOKEN>" http://<SERVICE_HOST>/api/greeting
 ====
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-> GET /api/greeting HTTP/1.1
+> GET /{service-path} HTTP/1.1
 > Host: <SERVICE_HOST>
 > User-Agent: curl/7.51.0
 > Accept: */*
