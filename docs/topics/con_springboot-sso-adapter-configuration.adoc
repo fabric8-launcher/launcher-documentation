@@ -1,5 +1,4 @@
 [id='springboot-sso-adapter-configuration_{context}']
-[id='sso-springboot-adapter-configuration_{context}']
 = {SpringBoot} SSO adapter configuration
 
 The SSO adapter is the _client side_, or client to the SSO server, component that enforces security on the web resources.
@@ -33,4 +32,3 @@ keycloak.securityConstraints[0].securityCollections[0].patterns[0]=/api/greeting
 <7> A simple name for the security constraint.
 <8> A roles needed to access a secured endpoint.
 <9> A secured endpoints path pattern.
-
