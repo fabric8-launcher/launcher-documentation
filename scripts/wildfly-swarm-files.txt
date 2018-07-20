@@ -3,3 +3,4 @@
 docs/howto
 docs/concepts
 docs/reference
+docs/commit.hash
