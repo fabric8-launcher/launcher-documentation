@@ -35,6 +35,9 @@ include::topics/proc_updating-your-booster-and-deploying-the-changes.adoc[levelo
 
 include::topics/assembly_using-red-hat-jboss-developer-studio-with-a-booster-project.adoc[leveloffset=+1]
 
+include::topics/assembly_using-visual-studio-code-with-a-booster-project.adoc[leveloffset=+1]
+
+
 [appendix]
 include::topics/ref_glossary.adoc[leveloffset=+1]
 

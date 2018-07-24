@@ -16,6 +16,6 @@ Red Hat JBoss Developer Studio provides tooling for committing and pushing code 
 . Choose _Team_ -> _Commit..._.
 . Drag all the changes you want to commit from the _Unstaged Changes_ section to the _Staged Changes_ section.
 . Enter your commit message and click _Commit and Push_.
-. Click _OK_ in the _Push Results_ window when prompted.
+. Click _Close_ in the _Push Results_ window when prompted.
 . Observe your changes are now available in your GitHub repository.
 
