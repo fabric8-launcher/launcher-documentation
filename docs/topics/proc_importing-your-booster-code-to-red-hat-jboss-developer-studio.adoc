@@ -7,15 +7,20 @@ Importing your booster's code creates a project in Red Hat JBoss Developer Studi
 [discrete]
 == Prerequisites
 
-* Your booster created
-* Red Hat JBoss Developer Studio running
+* Your booster created and downloaded from link:{link-launcher-oso}[{launcher-oso}].
+* Red Hat JBoss Developer Studio running.
 
 [discrete]
 == Procedure
 
 . In Developer Studio, Click _File_ -> _Import_.
-. Choose _Maven_ -> _Existing Maven Projects_.
-. Click _Browse_, navigate to the root of your booster project, and click _Open_.
-. Ensure the `pom.xml` file is selected and click _Finish_.
+. Choose _Git_ -> _Projects from Git_ and click _Next_.
+. Choose _Existing local repository_ and click _Next_.
+. Click _Add_.
+. Click _Browse_.
+. Navigate to the project folder of your booster and click _Open_.
+. Click the check box next to your booster project and click _Finish_.
+. Make sure your booster project is selected and click _Next_.
+. Select _Import as general project_ and click _Next_.
+. Click _Finish_.
 . Start editing your project after your import is complete.
-
