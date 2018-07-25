@@ -37,7 +37,7 @@ To install Meld on Fedora, CentOS, or RHEL, run the following command (in Fedora
 
 To contribute, you must have a link:https://github.com/join[GitHub account] with GPG configured. To configure GPG:
 
-WARNING: On RHEL, CentOS, or Fedora, use the `gpg2` binary everywhere instead of `gpg`.
+WARNING: On RHEL, CentOS, or Fedora, use the `gpg2` binary everywhere instead of `gpg`. On MacOS, use `gpg`.
 
 .Configuring GPG
 . link:https://help.github.com/articles/generating-a-new-gpg-key/[Generate a new GPG key].
@@ -55,7 +55,7 @@ $ git config commit.gpgsign true
 
 For more information, see link:https://help.github.com/articles/signing-commits-using-gpg/[Signing commits using GPG].
 --
-. On RHEL, CentOS, or Fedora, set the commit signing program to `gpg2`:
+. On RHEL, CentOS, or Fedora, set the commit signing program to `gpg2`. On MacOS, set the commit signing program to `gpg`.
 +
 [source,bash,options="nowrap"]
 ----
@@ -77,4 +77,3 @@ To make a contribution to the {repo-docs-name} repository, you need to set up th
 ----
 $ git config core.hooksPath .githooks
 ----
-
