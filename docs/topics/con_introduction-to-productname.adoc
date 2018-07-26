@@ -23,7 +23,7 @@ link:{link-launcher-oso}[{launcher-oso}] is a project generator offered by Red H
 
 * Navigate to link:{link-launcher-oso}[{launcher-oso}].
 * Choose the details for your example application.
-* Deploy application OpenShift automatically or manually.
+* Deploy application to OpenShift automatically or manually.
 
 You can find more details on using {launcher-oso} in the xref:deploying-a-booster-to-openshiftonline_{context}[] section.
 
