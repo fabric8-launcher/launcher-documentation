@@ -1,5 +1,6 @@
 // This is a parameterized module. Parameters used:
 //
+//
 //  parameter-mission: id of the mission. This is used in anchors file imports.
 //  parameter-mission-name: used in the mission title
 //
@@ -45,6 +46,7 @@ The state can be:
 ifdef::vert-x[]
 ** _half-open_: the circuit breaker is allowing a request to reach the service. If the request succeeds, the state of the service is reset to closed. If the request fails, the timer is restarted.
 endif::[]
+
 The following steps demonstrate how to verify the availability of the service, simulate a failure and receive a fallback response.
 
 //TODO: add a warning not to use `http` as it may contain cached responses from the remote endpoint.
