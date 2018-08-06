@@ -3,17 +3,17 @@
 = Syncing with {WildFlySwarm} docs
 
 Some documentation files for the {WildFlySwarm} runtime are sourced directly from the {WildFlySwarm} repository.
-These files are stored in the `$REPO_HOME/docs/topics/wildfly-swarm` directory.
+These files are stored in the `$REPO_HOME/docs/topics/thorntail` directory.
 Do not edit these files directly; always submit a pull request to the link:{link-repo-wildfly-swarm}[{WildFlySwarm} repository].
 When the pull request is accepted and synchronized to the {WildFlySwarm} product repository, follow the procedure below.
 
-The synchronization script deletes the existing `$REPO_HOME/docs/topics/wildfly-swarm` directory and replaces it with the latest version of the `master` branch from the upstream repository.
-Edit the variables in the `$REPO_HOME/scripts/sync_with_wildfly_swarm.sh` script to customize it.
+The synchronization script deletes the existing `$REPO_HOME/docs/topics/thorntail` directory and replaces it with the latest version of the `master` branch from the upstream repository.
+Edit the variables in the `$REPO_HOME/scripts/sync-with-thorntail/sync.sh` script to customize it.
 The variables are documented in the script.
 
 Some files are not present in the upstream repository because they are generated. The script automatically builds the upstream project with Maven, ensuring these files are not missing.
 
-The hash of the synced upstream commit is stored in the `docs/topics/wildfly-swarm/docs/commit.hash` file.
+The hash of the synced upstream commit is stored in the `docs/topics/thorntail/docs/commit.hash` file.
 
 .Prerequisites
 
@@ -21,9 +21,9 @@ The hash of the synced upstream commit is stored in the `docs/topics/wildfly-swa
 
 .Procedure
 
-. Execute the `$REPO_HOME/scripts/sync_with_wildfly_swarm.sh` script:
+. Execute the `$REPO_HOME/scripts/sync-with-thorntail/sync.sh` script:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ ./scripts/sync_with_wildfly_swarm.sh
+$ ./scripts/sync-with-thorntail/sync.sh
 ----

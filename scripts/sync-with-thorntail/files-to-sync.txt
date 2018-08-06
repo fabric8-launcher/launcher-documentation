@@ -1,0 +1,7 @@
+# List with files and/or directories to synchronize from the WildFly Swarm repository
+
+docs/howto
+docs/assemblies
+docs/modules
+docs/reference
+docs/commit.hash

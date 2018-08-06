@@ -16,7 +16,7 @@ NOTE: The triple-dot indicates there are more files or directories in the partic
 │   │   ├── templates/ <5>
 │   │   │   ├── document-attributes.adoc <6>
 │   │   │   ├── ...
-│   │   │   ├── wildfly-swarm <7>
+│   │   │   ├── thorntail <7>
 │   │   ├── circuit-breaker-mission-design-tradeoffs.adoc
 │   │   ├── ...
 │   ├── $GUIDE_NAME/ <8>
@@ -49,7 +49,7 @@ NOTE: The triple-dot indicates there are more files or directories in the partic
 <15> The script to start local server and to publish to production. For more information, see xref:starting-preview-server_{context}[].
 <16> The file with changes made in each release.
 
-WARNING: Do not edit files in the `$REPO_HOME/docs/topics/wildfly-swarm` directory, always submit a pull request to the link:{link-repo-wildfly-swarm}[{WildFlySwarm} repository] and synchronize the files afterwards.
+WARNING: Do not edit files in the `$REPO_HOME/docs/topics/thorntail` directory, always submit a pull request to the link:{link-repo-wildfly-swarm}[{WildFlySwarm} repository] and synchronize the files afterwards.
 
 .Additional resources
 

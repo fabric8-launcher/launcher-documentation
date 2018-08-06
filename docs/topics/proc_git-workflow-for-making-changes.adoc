@@ -4,7 +4,7 @@
 
 When making contributions, follow the standard link:https://guides.github.com/introduction/flow/[GitHub flow]. Below, you will find more details about the steps that are required in the _{repo-docs-name}_ repository.
 
-WARNING: Do not edit files in the `$REPO_HOME/docs/topics/wildfly-swarm` directory, always submit a pull request to the link:{link-repo-wildfly-swarm}[{WildFlySwarm} repository] and synchronize the files afterwards.
+WARNING: Do not edit files in the `$REPO_HOME/docs/topics/thorntail` directory, always submit a pull request to the link:{link-repo-wildfly-swarm}[{WildFlySwarm} repository] and synchronize the files afterwards.
 
 .Prerequisites
 
