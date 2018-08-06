@@ -27,8 +27,8 @@
 :Minishift: Minishift
 :CDK: Red Hat Container Development Kit
 :OpenShiftContainerPlatform: OpenShift Container Platform
-:WildFlySwarm: WildFly Swarm
-:Thorntail: WildFly Swarm
+:WildFlySwarm: Thorntail
+:Thorntail: Thorntail
 :SpringBoot: Spring Boot
 :VertX: Eclipse Vert.x
 :Node: Node.js
@@ -207,7 +207,7 @@
 :link-launcher-stage: https://launch.prod-preview.openshift.io/
 
 // WildFly Swarm repository (mostly for the Contribution Guide)
-:link-repo-wildfly-swarm: https://github.com/wildfly-swarm/wildfly-swarm/
+:link-repo-wildfly-swarm: https://github.com/thorntail/thorntail/
 
 // Link S2I process (primarily for guides mission interaction sections)
 :link-s2i-process: https://docs.openshift.com/container-platform/latest/architecture/core_concepts/builds_and_image_streams.html#source-build
