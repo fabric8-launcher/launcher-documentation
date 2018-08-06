@@ -8,8 +8,8 @@ In addition to xref:mission-rest-http-wf-swarm[using a booster], you can create 
 
 include::thorntail/docs/howto/writing-an-application-from-scratch/index.adoc[leveloffset=+1]
 
-:parameter-maven-command: $ mvn wildfly-swarm:run
-:parameter-response: Hello from WildFly Swarm!
+:parameter-maven-command: $ mvn thorntail:run
+:parameter-response: Hello from Thorntail!
 :parameter-url: http://{app-name}-{project-name}.{os-route-hostname}/rest/hello
 include::proc_deploying-an-application-to-openshift.adoc[leveloffset=+1]
 :parameter-maven-command!:
