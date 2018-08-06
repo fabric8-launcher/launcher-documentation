@@ -5,15 +5,15 @@ TEMP_DIR="$(mktemp -d)"                                                     # Te
 
 REPO_NAME="wildfly-swarm"                                                   # Repository base name, and the directory name on the disk
 REPO_URL="git@github.com:wildfly-swarm-prod/${REPO_NAME}.git"               # Repo Git URL
-REPO_BRANCH="7.1.x"                                                         # Branch to be synchronized
+REPO_BRANCH="2.x"                                                         # Branch to be synchronized
 MAVEN_SETTINGS_URL="https://github.com/wildfly-swarm-prod/wildfly-swarm-repository/blob/master/debug-utils/settingsForLocalM2.xml" # Maven settings to use when building
 
-FILES_LIST="${SCRIPT_SRC}/wildfly-swarm-files.txt"                          # File with file- or directory names to synchronize
-FILES_DESTINATION="$(realpath ${SCRIPT_SRC}/../docs/topics/wildfly-swarm)"  # Destination directory in this repository where to sync
+FILES_LIST="${SCRIPT_SRC}/files-to-sync.txt"                          # File with file- or directory names to synchronize
+FILES_DESTINATION="$(realpath ${SCRIPT_SRC}/../../docs/topics/thorntail)"  # Destination directory in this repository where to sync
 
 # Testing whether the Maven config file was provided
 if [ $# -lt 1 ]; then
-    echo "Usage: sync_with_wildfly_swarmsh PATH_TO_MAVEN_SETTINGS
+    echo "Usage: sync.sh PATH_TO_MAVEN_SETTINGS
 
 Please provide the path to the Maven settings file.
 The file can be downloaded from $MAVEN_SETTINGS_URL."
@@ -40,7 +40,7 @@ done
 
 git rm -r $FILES_DESTINATION
 
-echo "Cloning the WildFly Swarm repository..." >&2
+echo "Cloning the Thorntail repository..." >&2
 
 set -e
 
@@ -77,7 +77,7 @@ done < $FILES_LIST
 echo "Committing changes..." >&2
 
 git add $FILES_DESTINATION
-git commit $FILES_DESTINATION -m "Synced WildFly Swarm sources"
+git commit $FILES_DESTINATION -m "Synced Thorntail sources"
 
 echo "Cleaning up..." >&2
 
