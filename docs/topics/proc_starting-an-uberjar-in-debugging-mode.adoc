@@ -32,5 +32,5 @@ If you want the JVM to pause and wait for remote debugger connection before it s
 ifdef::parameter-uberjar-documented[]
 .Additional resources
 
-* xref:creating-an-uberjar[]
+* xref:creating-an-uberjar_{context}[]
 endif::[]
