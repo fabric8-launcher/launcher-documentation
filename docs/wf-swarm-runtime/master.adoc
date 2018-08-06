@@ -1,7 +1,7 @@
 include::topics/templates/document-attributes.adoc[]
 
 // Used for specifying this is product docs in the modules sourced from the
-// WildFly Swarm repository (anything stored in docs/wildfly-swarm).
+// WildFly Swarm repository (anything stored in docs/topics/thorntail).
 :product:
 :built-for-thorntail:
 
@@ -97,32 +97,32 @@ include::topics/assembly_creating-a-basic-wildfly-swarm-application.adoc[levelof
 
 include::topics/proc_deploying-an-existing-wildflyswarm-application-to-openshift.adoc[leveloffset=+2]
 
-include::topics/wildfly-swarm/docs/reference/maven-plugin.adoc[leveloffset=+2]
+include::topics/thorntail/docs/assemblies/assembly_using-thorntail-maven-plugin.adoc[leveloffset=+2]
 
-include::topics/wildfly-swarm/docs/concepts/fractions.adoc[leveloffset=+2]
-include::topics/wildfly-swarm/docs/howto/autodetect-fractions/index.adoc[leveloffset=+3]
-include::topics/wildfly-swarm/docs/howto/explicit-fractions/index.adoc[leveloffset=+3]
+include::topics/thorntail/docs/modules/con_fractions.adoc[leveloffset=+2]
+include::topics/thorntail/docs/howto/autodetect-fractions/index.adoc[leveloffset=+3]
+include::topics/thorntail/docs/howto/explicit-fractions/index.adoc[leveloffset=+3]
 
-include::topics/wildfly-swarm/docs/howto/use-a-bom/index.adoc[leveloffset=+2]
+include::topics/thorntail/docs/howto/use-a-bom/index.adoc[leveloffset=+2]
 
 === Logging
 
-include::topics/wildfly-swarm/docs/howto/enabling-logging/index.adoc[leveloffset=+3]
-include::topics/wildfly-swarm/docs/howto/logging-to-a-file/index.adoc[leveloffset=+3]
+include::topics/thorntail/docs/howto/enabling-logging/index.adoc[leveloffset=+3]
+include::topics/thorntail/docs/howto/logging-to-a-file/index.adoc[leveloffset=+3]
 :version!:
 
-include::topics/wildfly-swarm/docs/reference/configuration.adoc[leveloffset=+2]
+include::topics/thorntail/docs/assemblies/assembly_configuring-a-thorntail-application.adoc[leveloffset=+2]
 
 == Packaging your application
 
 This sections contains information about packaging your {WildFlySwarm}{ndash}based application for deployment and execution.
 
-include::topics/wildfly-swarm/docs/concepts/packaging-types.adoc[leveloffset=+2]
-include::topics/wildfly-swarm/docs/howto/create-an-uberjar/index.adoc[leveloffset=+2]
+include::topics/thorntail/docs/assemblies/assembly_packaging-types.adoc[leveloffset=+2]
+include::topics/thorntail/docs/howto/create-an-uberjar/index.adoc[leveloffset=+2]
 
 == Testing
 
-include::topics/wildfly-swarm/docs/howto/test-in-container/index.adoc[leveloffset=+2]
+include::topics/thorntail/docs/howto/test-in-container/index.adoc[leveloffset=+2]
 
 == Debugging
 
@@ -183,7 +183,7 @@ include::topics/proc_configuring-jenkins-freestyle-project-to-deploy-an-applicat
 For information about using the configuration properties provided in {WildFlySwarm} fractions, see xref:configuring-a-wildfly-swarm-application[].
 
 ifdef::product[]
-include::topics/wildfly-swarm/docs/reference/index.adoc[leveloffset=+2]
+include::topics/thorntail/docs/reference/index.adoc[leveloffset=+2]
 endif::[]
 
 [appendix]
