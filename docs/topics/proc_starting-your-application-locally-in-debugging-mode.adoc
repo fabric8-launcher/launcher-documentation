@@ -15,7 +15,7 @@ This method is applicable at least to the following deployments of the applicati
 ifdef::built-for-vertx[* When launching the application manually using the `mvn {parameter-maven-goal}` goal. This starts the application with debugging enabled.]
 ifdef::built-for-thorntail[]
 * When launching the application manually using the `mvn {parameter-maven-goal}` goal.
-* When starting the application without waiting for it to exit using the `mvn wildfly-swarm:start` goal.
+* When starting the application without waiting for it to exit using the `mvn thorntail:start` goal.
 This is useful especially when performing integration testing.
 * When using the Arquillian adapter for {runtime}.
 endif::[]
