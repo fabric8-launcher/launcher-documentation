@@ -180,7 +180,7 @@ include::topics/proc_configuring-jenkins-freestyle-project-to-deploy-an-applicat
 [appendix]
 == {WildFlySwarm} fractions reference
 
-For information about using the configuration properties provided in {WildFlySwarm} fractions, see xref:configuring-a-wildfly-swarm-application[].
+For information about using the configuration properties provided in {WildFlySwarm} fractions, see xref:configuring-a-thorntail-application_{context}[].
 
 ifdef::product[]
 include::topics/thorntail/docs/reference/index.adoc[leveloffset=+2]
