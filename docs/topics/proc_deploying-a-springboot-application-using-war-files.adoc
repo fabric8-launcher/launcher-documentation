@@ -13,20 +13,34 @@ You must configure your build and deployment settings to ensure that your applic
 [discrete]
 == Prerequisites
 
+* A {SpringBoot} application, such as xref:spring-boot-available-missions-and-boosters[a booster].
 * Fabric8 Maven Plugin used to deploy your application to OpenShift.
 * Spring Boot Maven Plugin used to package your application.
 
 [discrete]
 == Procedure
-// JSP pages, JSP Standard Tag Library (JSTL), ...
 
-. Define the `repackage` Maven goal for the Spring Boot Maven plugin in the `pom.xml` file of your project:
+. Add `war` packaging to the `pom.xml` file of your project.
 +
-[source,xml]
---
+.Example `pom.xml`
+[source,xml,options="nowrap",subs="attributes+"]
+----
+<project ...>
+  ...
+  <packaging>war</packaging>
+  ...
+----
+
+. Ensure the the `repackage` Maven goal for the Spring Boot Maven plugin is defined in the `pom.xml` file.
++
+.Example `pom.xml`
+[source,xml,options="nowrap",subs="attributes+"]
+----
 ...
   <build>
+    ...
     <plugins>
+      ...
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
@@ -41,47 +55,62 @@ You must configure your build and deployment settings to ensure that your applic
     </plugins>
   </build>
 ...
---
-//Configure your build and deployment settings to ensure that your application builds and deploys correctly on OpenShift:
+----
 +
 This ensures that the Spring Boot classes used to launch the application are included in the WAR file, and that the corresponding properties for these classes are defined in the `MANIFEST.mf` file of the WAR file:
-
-  * `Main-Class: org.springframework.boot.loader.WarLauncher`
-  * `Spring-Boot-Classes: WEB-INF/classes/`
-  * `Spring-Boot-Lib: WEB-INF/lib/`
-  * `Spring-Boot-Version: {SpringBootVersion}`
-
-
-. Add the `ARTIFACT_COPY_ARGS` environment variable to the `pom.xml` file of your project.
-The Fabric8 Maven Plugin consumes this variable during the build process, and ensures that the _Build and Deploy_ tool uses the WAR file (rather than the default fat JAR file) to create the application container image:
 +
-[source,xml,options="nowrap"]
---
-...
-     <configuration>
-         <images>
-             <image>
-                 <name>${project.artifactId}:%t</name>
-                 <alias>spring-boot-mvc-jsp</alias>
-                 <build>
-                     <from>redhat-openjdk-18/openjdk18-openshift</from>
-                     <assembly>
-                         <basedir>/deployments</basedir>
-                         <descriptorRef>artifact</descriptorRef>
-                     </assembly>
-                     <env>
-                         <ARTIFACT_COPY_ARGS>*.war</ARTIFACT_COPY_ARGS>
-                         <JAVA_APP_DIR>/deployments</JAVA_APP_DIR>
-                     </env>
-                     <ports>
-                         <port>8080</port>
-                     </ports>
-                 </build>
-             </image>
-         </images>
-     </configuration>
-...
---
+** `Main-Class: org.springframework.boot.loader.WarLauncher`
+** `Spring-Boot-Classes: WEB-INF/classes/`
+** `Spring-Boot-Lib: WEB-INF/lib/`
+** `Spring-Boot-Version: {SpringBootVersion}`
+
+
+. Add the `ARTIFACT_COPY_ARGS` environment variable to the `pom.xml` file.
++
+The Fabric8 Maven Plugin consumes this variable during the build process and ensures that the _Build and Deploy_ tool uses the WAR file (rather than the default fat JAR file) to create the application container image:
++
+.Example `pom.xml`
+[source,xml,options="nowrap",subs="attributes+"]
+----
+    ...
+    <profile>
+      <id>openshift</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>io.fabric8</groupId>
+            <artifactId>fabric8-maven-plugin</artifactId>
+            <executions>
+              ...
+            </executions>
+            <configuration>
+                <images>
+                    <image>
+                        <name>${project.artifactId}:%t</name>
+                        <alias>${project.artifactId}</alias>
+                        <build>
+                            <from>registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift:${openjdk18-openshift.version}</from>
+                            <assembly>
+                                <basedir>/deployments</basedir>
+                                <descriptorRef>artifact</descriptorRef>
+                            </assembly>
+                            <env>
+                                <ARTIFACT_COPY_ARGS>*.war</ARTIFACT_COPY_ARGS>
+                                <JAVA_APP_DIR>/deployments</JAVA_APP_DIR>
+                            </env>
+                            <ports>
+                                <port>8080</port>
+                            </ports>
+                        </build>
+                    </image>
+                </images>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    ...
+----
 // add link to Build and Deploy section in GSG
 // not sure if  correct build tool name
 //capitalize DOCKER?
@@ -89,27 +118,30 @@ The Fabric8 Maven Plugin consumes this variable during the build process, and en
 //and that the environment Variable will be used by OpenShift during the S2I Build Process with the WAR binary content pushed.
 //Such information should be defined using the `Fabric8 Maven Plugin` by adding within the `<configuration>` xml tag, the definition of the Docker
 //image to be created with the env var.
+
+
+. Add the `JAVA_APP_JAR` environment variable to the `src/main/fabric8/deployment.yml` file.
 +
-. Add the `JAVA_APP_JAR` environment variable to the `DeploymentConfig` resource section in the `src/main/fabric8/deployment.yml` file.
 This variable instructs the Fabric8 Maven Plugin to launch your application using the WAR file included with the container.
+If `src/main/fabric8/deployment.yml` does not exist, you can create it.
 // do we explicitly tell what the variable value should be?
 //You can also make this modification by editing the  can be done by specifying an env var within the  under the specification of the container to be created.
 //DeploymentConfig file
 //JAVA_APP_JAR=mvc-jsp-0.0.1-SNAPSHOT.war
 +
-[source,yaml]
---
-...
+.Example `deployment.yml`
+[source,yaml,options="nowrap",subs="attributes+"]
+----
+spec:
+  template:
     spec:
-      template:
-        spec:
-          containers:
-          - env:
-            - name: JAVA_APP_JAR
-              value: ${project.artifactId}-${project.version}.war
-...
---
-+
+      containers:
+        ...
+          env:
+          - name: JAVA_APP_JAR
+            value: ${project.artifactId}-${project.version}.war
+----
+
 . Build and deploy your application:
 +
 [source,bash]
