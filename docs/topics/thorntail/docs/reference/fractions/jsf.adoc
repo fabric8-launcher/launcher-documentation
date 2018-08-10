@@ -1,0 +1,20 @@
+= JSF
+
+Provides support for JavaServer Faces according to JSR-344.
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>jsf</artifactId>
+</dependency>
+----
+
+.Configuration
+
+swarm.jsf.default-jsf-impl-slot:: 
+Default JSF implementation slot
+
+

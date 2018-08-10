@@ -1,0 +1,41 @@
+= Naming
+
+Provides support for JNDI.
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>naming</artifactId>
+</dependency>
+----
+
+.Configuration
+
+swarm.naming.bindings._KEY_.attribute-class:: 
+The object factory class name for object factory bindings
+
+swarm.naming.bindings._KEY_.binding-type:: 
+The type of binding to create, may be simple, lookup, external-context or object-factory
+
+swarm.naming.bindings._KEY_.cache:: 
+If the external context should be cached
+
+swarm.naming.bindings._KEY_.environment:: 
+The environment to use on object factory instance retrieval
+
+swarm.naming.bindings._KEY_.lookup:: 
+The entry to lookup in JNDI for lookup bindings
+
+swarm.naming.bindings._KEY_.module:: 
+The module to load the object factory from for object factory bindings
+
+swarm.naming.bindings._KEY_.type:: 
+The type of the value to bind for simple bindings, this must be a primitive type
+
+swarm.naming.bindings._KEY_.value:: 
+The value to bind for simple bindings
+
+

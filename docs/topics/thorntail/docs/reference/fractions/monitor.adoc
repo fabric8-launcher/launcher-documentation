@@ -1,0 +1,22 @@
+= Monitor
+
+WARNING: This fraction is deprecated.
+Use the `io.thorntail:microprofile-health` fraction instead.
+
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>monitor</artifactId>
+</dependency>
+----
+
+.Configuration
+
+swarm.monitor.security-realm:: 
+(not yet documented)
+
+

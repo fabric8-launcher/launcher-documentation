@@ -1,0 +1,21 @@
+= Topology UI
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>topology-webapp</artifactId>
+</dependency>
+----
+
+.Configuration
+
+swarm.topology.web-app.expose-topology-endpoint:: 
+Flag to enable or disable the topology web endpoint
+
+swarm.topology.web-app.proxied-service-mappings:: 
+Service name to URL path proxy mappings
+
+

@@ -1,0 +1,13 @@
+= Guava
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>netflix-guava</artifactId>
+</dependency>
+----
+
+

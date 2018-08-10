@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2015 Red Hat, Inc. and/or its affiliates.
+  ~
+  ~ Licensed under the Apache License version 2.0, available at http://www.apache.org/licenses/LICENSE-2.0
+  -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>howto-fractions</artifactId>
+
+  <parent>
+    <groupId>io.thorntail.howto</groupId>
+    <artifactId>howto-parent</artifactId>
+    <version>2.2.0.Final</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <name>Thorntail HOWTO: Create a Fraction</name>
+  <description>Thorntail HOWTO: Create a Fraction</description>
+  <packaging>pom</packaging>
+
+</project>

@@ -1,0 +1,18 @@
+= MicroProfile Health
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>microprofile-health</artifactId>
+</dependency>
+----
+
+.Configuration
+
+swarm.microprofile.health.security-realm:: 
+Security realm configuration
+
+

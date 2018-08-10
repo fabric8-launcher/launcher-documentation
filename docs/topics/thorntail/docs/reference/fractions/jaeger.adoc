@@ -1,0 +1,54 @@
+= Jaeger
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>jaeger</artifactId>
+</dependency>
+----
+
+.Configuration
+
+swarm.jaeger.agent-host:: 
+The hostname for communicating with agent via UDP
+
+swarm.jaeger.agent-port:: 
+The port for communicating with agent via UDP
+
+swarm.jaeger.enable-b3-header-propagation:: 
+Whether to enable propagation of B3 headers in the configured Tracer. By default this is false.
+
+swarm.jaeger.password:: 
+Password to send as part of "Basic" authentication to the endpoint
+
+swarm.jaeger.remote-reporter-http-endpoint:: 
+Remote Reporter HTTP endpoint for Jaeger collector, such as http://jaeger-collector.istio-system:14268/api/traces
+
+swarm.jaeger.reporter-flush-interval:: 
+The reporter's flush interval (ms)
+
+swarm.jaeger.reporter-log-spans:: 
+Whether the reporter should also log the spans
+
+swarm.jaeger.reporter-max-queue-size:: 
+The reporter's maximum queue size
+
+swarm.jaeger.sampler-manager-host:: 
+The host name and port when using the remote controlled sampler
+
+swarm.jaeger.sampler-parameter:: 
+The sampler parameter (number). Ex.: `1`
+
+swarm.jaeger.sampler-type:: 
+The sampler type. Ex.: `const`
+
+swarm.jaeger.service-name:: 
+The service name. Required (via this parameter, system property or env var). Ex.: `order-manager`
+
+swarm.jaeger.user:: 
+Username to send as part of "Basic" authentication to the endpoint
+
+

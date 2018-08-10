@@ -1,0 +1,16 @@
+= JAX-RS + Validator
+
+Provides integration and support between JAX-RS applications and
+Hibernate Validator.
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>jaxrs-validator</artifactId>
+</dependency>
+----
+
+

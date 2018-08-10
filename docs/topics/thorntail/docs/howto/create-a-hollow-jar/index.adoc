@@ -1,0 +1,49 @@
+
+[id='creating-a-hollow-jar_{context}']
+= Creating a hollow JAR
+
+The xref:hollow-jar_{context}[hollow JAR] is one method of packaging an application for execution with {Thorntail}.
+
+[discrete]
+== Prerequisites
+
+* A Maven-based application with a `pom.xml` file.
+
+[discrete]
+== Procedure
+
+. Add the `thorntail-maven-plugin` to your `pom.xml` in a `<plugin>` block, with an `<execution>` specifying the `package` goal.
+In addition to that, put `true` in the `hollow` property of the `<configuration>` element:
++
+--
+[source,xml]
+----
+<plugins>
+include::pom.xml[tag=plugin,indent=2]
+</plugins>
+----
+
+You can also execute the Maven binary with the system property `-Dswarm.hollow=true` instead. For more information, see the xref:thorntail-maven-plugin-configuration-options_{context}[Maven plugin configuration reference].
+--
+
+. Perform a normal Maven build:
++
+[source]
+----
+$ mvn package
+----
+
+. Execute the hollow JAR:
++
+Execute the resulting `-hollow-thorntail.jar` file using the Java binary and pass the `.war` file with your application as the first argument:
++
+[source]
+----
+$ java -jar ./target/myapp-hollow-thorntail.jar ./target/myapp.war
+----
+
+[discrete]
+== Related information
+
+* For more information about hollow JARs and their limitations, see xref:hollow-jar_{context}[].
+

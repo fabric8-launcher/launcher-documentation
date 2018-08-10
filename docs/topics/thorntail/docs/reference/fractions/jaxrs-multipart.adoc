@@ -1,0 +1,16 @@
+= JAX-RS + Multipart
+
+Provides support within JAX-RS application for MIME multipart
+form processing. 
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>jaxrs-multipart</artifactId>
+</dependency>
+----
+
+

@@ -1,0 +1,13 @@
+= OpenTracing TracerResolver
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>opentracing-tracerresolver</artifactId>
+</dependency>
+----
+
+

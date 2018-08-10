@@ -1,0 +1,21 @@
+
+// This is an assembly
+[id='using-a-bom_{context}']
+= Using a BOM
+
+:parent-context: {context}
+
+To explicitly specify the {Thorntail} fractions your application uses, instead of relying on auto-detection, {Thorntail} includes a set of BOMs (bill of materials) which you can use instead of having to track and update Maven artifact versions in several places.
+
+ifndef::product[]
+include::ref_thorntail-community-bom-types.adoc[leveloffset=+1]
+endif::[]
+
+ifdef::product[]
+include::ref_thorntail-product-bom-types.adoc[leveloffset=+1]
+endif::[]
+
+include::proc_specifying-a-bom-in-your-application.adoc[leveloffset=+1]
+
+:context: {parent-context}
+
