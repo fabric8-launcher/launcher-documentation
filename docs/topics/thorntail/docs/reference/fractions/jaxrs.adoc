@@ -1,0 +1,20 @@
+= JAX-RS
+
+Provides support for building RESTful web services according to JSR-311.
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>jaxrs</artifactId>
+</dependency>
+----
+
+.Configuration
+
+swarm.deployment._KEY_.jaxrs.application-path:: 
+Set the JAX-RS application path. If set, Thorntail will automatically generate a JAX-RS Application class and use this value as the @ApplicationPath
+
+

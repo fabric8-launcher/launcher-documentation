@@ -1,0 +1,15 @@
+= Bean Validation
+
+Provides class-level constraint and validation according to JSR 303.
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>bean-validation</artifactId>
+</dependency>
+----
+
+

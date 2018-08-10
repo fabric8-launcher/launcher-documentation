@@ -1,0 +1,13 @@
+= RX-Java
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>netflix-rxjava</artifactId>
+</dependency>
+----
+
+

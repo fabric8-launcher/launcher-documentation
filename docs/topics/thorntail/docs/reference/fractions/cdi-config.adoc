@@ -1,0 +1,13 @@
+= CDI Configuration
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>cdi-config</artifactId>
+</dependency>
+----
+
+

@@ -1,0 +1,180 @@
+= Security
+
+Provides underlying security infrastructure to support JAAS
+and other security APIs.
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>security</artifactId>
+</dependency>
+----
+
+.Configuration
+
+swarm.security.classic-vault.code:: 
+Fully Qualified Name of the Security Vault Implementation.
+
+swarm.security.classic-vault.vault-options:: 
+Security Vault options.
+
+swarm.security.deep-copy-subject-mode:: 
+Sets the copy mode of subjects done by the security managers to be deep copies that makes copies of the subject principals and credentials if they are cloneable. It should be set to true if subject include mutable content that can be corrupted when multiple threads have the same identity and cache flushes/logout clearing the subject in one thread results in subject references affecting other threads.
+
+swarm.security.elytron-key-managers._KEY_.legacy-jsse-config:: 
+The name of the legacy security domain that contains a JSSE configuration that can be used to export the key manager.
+
+swarm.security.elytron-key-stores._KEY_.legacy-jsse-config:: 
+The name of the legacy security domain that contains a JSSE configuration that can be used to export the key store.
+
+swarm.security.elytron-realms._KEY_.apply-role-mappers:: 
+Indicates to the realm if it should apply the role mappers defined in the legacy domain to the roles obtained from authenticated Subjects or not.
+
+swarm.security.elytron-realms._KEY_.legacy-jaas-config:: 
+The name of the legacy security domain to which authentication will be delegated.
+
+swarm.security.elytron-trust-managers._KEY_.legacy-jsse-config:: 
+The name of the legacy security domain that contains a JSSE configuration that can be used to export the trust manager.
+
+swarm.security.elytron-trust-stores._KEY_.legacy-jsse-config:: 
+The name of the legacy security domain that contains a JSSE configuration that can be used to export the trust store.
+
+swarm.security.initialize-jacc:: 
+Indicates if this subsystem should be in charge of initializing JACC related services.
+
+swarm.security.security-domains._KEY_.cache-type:: 
+Adds a cache to speed up authentication checks. Allowed values are 'default' to use simple map as the cache and 'infinispan' to use an Infinispan cache.
+
+swarm.security.security-domains._KEY_.classic-acl.acl-modules._KEY_.code:: 
+Class name of the module to be instantiated.
+
+swarm.security.security-domains._KEY_.classic-acl.acl-modules._KEY_.flag:: 
+The flag controls how the module participates in the overall procedure. Allowed values are requisite, required, sufficient or optional.
+
+swarm.security.security-domains._KEY_.classic-acl.acl-modules._KEY_.module:: 
+Name of JBoss Module where the login module is located.
+
+swarm.security.security-domains._KEY_.classic-acl.acl-modules._KEY_.module-options:: 
+List of module options containing a name/value pair.
+
+swarm.security.security-domains._KEY_.classic-audit.provider-modules._KEY_.code:: 
+Class name of the module to be instantiated.
+
+swarm.security.security-domains._KEY_.classic-audit.provider-modules._KEY_.module:: 
+Name of JBoss Module where the mapping module code is located.
+
+swarm.security.security-domains._KEY_.classic-audit.provider-modules._KEY_.module-options:: 
+List of module options containing a name/value pair.
+
+swarm.security.security-domains._KEY_.classic-authentication.login-modules._KEY_.code:: 
+Class name of the module to be instantiated.
+
+swarm.security.security-domains._KEY_.classic-authentication.login-modules._KEY_.flag:: 
+The flag controls how the module participates in the overall procedure. Allowed values are requisite, required, sufficient or optional.
+
+swarm.security.security-domains._KEY_.classic-authentication.login-modules._KEY_.module:: 
+Name of JBoss Module where the login module is located.
+
+swarm.security.security-domains._KEY_.classic-authentication.login-modules._KEY_.module-options:: 
+List of module options containing a name/value pair.
+
+swarm.security.security-domains._KEY_.classic-authorization.policy-modules._KEY_.code:: 
+Class name of the module to be instantiated.
+
+swarm.security.security-domains._KEY_.classic-authorization.policy-modules._KEY_.flag:: 
+The flag controls how the module participates in the overall procedure. Allowed values are requisite, required, sufficient or optional.
+
+swarm.security.security-domains._KEY_.classic-authorization.policy-modules._KEY_.module:: 
+Name of JBoss Module where the login module is located.
+
+swarm.security.security-domains._KEY_.classic-authorization.policy-modules._KEY_.module-options:: 
+List of module options containing a name/value pair.
+
+swarm.security.security-domains._KEY_.classic-identity-trust.trust-modules._KEY_.code:: 
+Class name of the module to be instantiated.
+
+swarm.security.security-domains._KEY_.classic-identity-trust.trust-modules._KEY_.flag:: 
+The flag controls how the module participates in the overall procedure. Allowed values are requisite, required, sufficient or optional.
+
+swarm.security.security-domains._KEY_.classic-identity-trust.trust-modules._KEY_.module:: 
+Name of JBoss Module where the login module is located.
+
+swarm.security.security-domains._KEY_.classic-identity-trust.trust-modules._KEY_.module-options:: 
+List of module options containing a name/value pair.
+
+swarm.security.security-domains._KEY_.classic-jsse.additional-properties:: 
+Additional properties that may be necessary to configure JSSE.
+
+swarm.security.security-domains._KEY_.classic-jsse.cipher-suites:: 
+Comma separated list of cipher suites to enable on SSLSockets.
+
+swarm.security.security-domains._KEY_.classic-jsse.client-alias:: 
+Preferred alias to use when the KeyManager chooses the client alias.
+
+swarm.security.security-domains._KEY_.classic-jsse.client-auth:: 
+Boolean attribute to indicate if client's certificates should also be authenticated on the server side.
+
+swarm.security.security-domains._KEY_.classic-jsse.key-manager:: 
+JSEE Key Manager factory
+
+swarm.security.security-domains._KEY_.classic-jsse.keystore:: 
+Configures a JSSE key store
+
+swarm.security.security-domains._KEY_.classic-jsse.protocols:: 
+Comma separated list of protocols to enable on SSLSockets.
+
+swarm.security.security-domains._KEY_.classic-jsse.server-alias:: 
+Preferred alias to use when the KeyManager chooses the server alias.
+
+swarm.security.security-domains._KEY_.classic-jsse.service-auth-token:: 
+Token to retrieve PrivateKeys from the KeyStore.
+
+swarm.security.security-domains._KEY_.classic-jsse.trust-manager:: 
+JSEE Trust Manager factory
+
+swarm.security.security-domains._KEY_.classic-jsse.truststore:: 
+Configures a JSSE trust store
+
+swarm.security.security-domains._KEY_.classic-mapping.mapping-modules._KEY_.code:: 
+Class name of the module to be instantiated.
+
+swarm.security.security-domains._KEY_.classic-mapping.mapping-modules._KEY_.module:: 
+Name of JBoss Module where the mapping module code is located.
+
+swarm.security.security-domains._KEY_.classic-mapping.mapping-modules._KEY_.module-options:: 
+List of module options containing a name/value pair.
+
+swarm.security.security-domains._KEY_.classic-mapping.mapping-modules._KEY_.type:: 
+Type of mapping this module performs. Allowed values are principal, role, attribute or credential..
+
+swarm.security.security-domains._KEY_.jaspi-authentication.auth-modules._KEY_.code:: 
+Class name of the module to be instantiated.
+
+swarm.security.security-domains._KEY_.jaspi-authentication.auth-modules._KEY_.flag:: 
+The flag controls how the module participates in the overall procedure. Allowed values are requisite, required, sufficient or optional.
+
+swarm.security.security-domains._KEY_.jaspi-authentication.auth-modules._KEY_.login-module-stack-ref:: 
+Reference to a login module stack name previously configured in the same security domain.
+
+swarm.security.security-domains._KEY_.jaspi-authentication.auth-modules._KEY_.module:: 
+Name of JBoss Module where the mapping module code is located.
+
+swarm.security.security-domains._KEY_.jaspi-authentication.auth-modules._KEY_.module-options:: 
+List of module options containing a name/value pair.
+
+swarm.security.security-domains._KEY_.jaspi-authentication.login-module-stacks._KEY_.login-modules._KEY_.code:: 
+Class name of the module to be instantiated.
+
+swarm.security.security-domains._KEY_.jaspi-authentication.login-module-stacks._KEY_.login-modules._KEY_.flag:: 
+The flag controls how the module participates in the overall procedure. Allowed values are requisite, required, sufficient or optional.
+
+swarm.security.security-domains._KEY_.jaspi-authentication.login-module-stacks._KEY_.login-modules._KEY_.module:: 
+Name of JBoss Module where the login module is located.
+
+swarm.security.security-domains._KEY_.jaspi-authentication.login-module-stacks._KEY_.login-modules._KEY_.module-options:: 
+List of module options containing a name/value pair.
+
+

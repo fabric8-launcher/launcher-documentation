@@ -1,0 +1,15 @@
+= Hibernate Validator
+
+Provides support and integration for applications using Hibernate Validator.
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>hibernate-validator</artifactId>
+</dependency>
+----
+
+

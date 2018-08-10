@@ -1,0 +1,44 @@
+
+[id='using-explicit-fractions_{context}']
+= Using explicit fractions
+
+When writing your application from scratch, ensure it compiles correctly and uses the correct version of APIs by explicitly selecting which fractions are packaged with it.
+
+.Prerequisites
+
+* A Maven-based application with a `pom.xml` file.
+
+.Procedure
+
+. Add the BOM to your `pom.xml`. For more information, see xref:using-a-bom_{context}[].
+
+. Add the {Thorntail} Maven plugin to your `pom.xml`. For more information, see xref:creating-an-uberjar_{context}[].
+
+. Add one or more dependencies on {Thorntail} fractions to the `pom.xml` file:
++
+[source,xml]
+----
+<dependencies>
+include::pom.xml[tag=jaxrs,indent=2]
+</dependencies>
+----
+
+. Perform a normal Maven build:
++
+[source]
+----
+$ mvn package
+----
+
+. Execute the resulting uberjar:
++
+[source]
+----
+$ java -jar ./target/myapp-thorntail.jar
+----
+
+.Related Information
+
+* xref:fractions_{context}[]
+* xref:auto-detecting-fractions_{context}[]
+

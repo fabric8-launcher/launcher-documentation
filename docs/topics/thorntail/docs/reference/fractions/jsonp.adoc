@@ -1,0 +1,15 @@
+= JSON-P
+
+Provides support for JSON Processing according to JSR-353.
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>jsonp</artifactId>
+</dependency>
+----
+
+

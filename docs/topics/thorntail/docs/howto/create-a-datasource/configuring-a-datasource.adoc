@@ -1,0 +1,25 @@
+
+[id='configuring-a-datasource_{context}']
+= Configuring a datasource
+
+[discrete]
+== Prerequisites
+
+* A Maven-based application.
+* A JDBC Driver configured.
+
+[discrete]
+== Procedure
+
+. Edit the `project-defaults.yml` file to configure one or more datasources
+using the JDBC driver of your choice. The configuration is stored under `swarm`
+-> `datasources` -> `data-sources`:
++
+[source,yaml]
+----
+swarm:
+  datasources:
+    data-sources:
+include::src/main/resources/project-defaults.yml[tag=datasource,indent=6]
+----
+

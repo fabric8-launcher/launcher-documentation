@@ -1,0 +1,46 @@
+= JMX
+
+Provides support for Java Management Extensions (JMX)
+according to JSR-3.
+
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>jmx</artifactId>
+</dependency>
+----
+
+.Configuration
+
+swarm.jmx.audit-log-configuration.enabled:: 
+Whether audit logging is enabled.
+
+swarm.jmx.audit-log-configuration.log-boot:: 
+Whether operations should be logged on server boot.
+
+swarm.jmx.audit-log-configuration.log-read-only:: 
+Whether operations that do not modify the configuration or any runtime services should be logged.
+
+swarm.jmx.expression-expose-model.domain-name:: 
+The domain name to use for the 'expression' model controller JMX facade in the MBeanServer.
+
+swarm.jmx.jmx-remoting-connector.use-management-endpoint:: 
+If true the connector will use the management endpoint, otherwise it will use the remoting subsystem one
+
+swarm.jmx.non-core-mbean-sensitivity:: 
+Whether or not core MBeans, i.e. mbeans not coming from the model controller, should be considered sensitive.
+
+swarm.jmx.resolved-expose-model.domain-name:: 
+The domain name to use for the 'resolved' model controller JMX facade in the MBeanServer.
+
+swarm.jmx.resolved-expose-model.proper-property-format:: 
+If false, PROPERTY type attributes are represented as a DMR string, this is the legacy behaviour. If true, PROPERTY type attributes are represented by a composite type where the key is a string, and the value has the same type as the property in the underlying model.
+
+swarm.jmx.show-model:: 
+Alias for the existence of the 'resolved' model controller jmx facade. When writing, if set to 'true' it will add the 'resolved' model controller jmx facade resource with the default domain name.
+
+
