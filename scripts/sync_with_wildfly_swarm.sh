@@ -52,9 +52,10 @@ cd $REPO_NAME
 git rev-parse HEAD > docs/commit.hash
 
 # Generate product fractions reference
-mvn clean install -DskipTests -Denforcer.skip -Dswarm.product.build -s $maven_settings_file
+# WORKAROUND for ENTSWM-458: -Dswarm.docs.skip
+mvn clean install -DskipTests -Denforcer.skip -Dswarm.docs.skip -Dswarm.product.build -s $maven_settings_file
 cd docs
-mvn generate-resources -DskipTests -Denforcer.skip -Dswarm.product.build -s $maven_settings_file
+mvn generate-resources -DskipTests -Denforcer.skip -Dswarm.docs.skip -Dswarm.product.build -s $maven_settings_file
 
 # Remove unwanted files
 rm reference/.gitignore # Prevents the reference directory from being included in the RHOAR build
