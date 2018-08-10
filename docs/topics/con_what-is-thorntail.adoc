@@ -1,6 +1,8 @@
 [id='what-is-thorntail_{context}']
 = What is {Thorntail}
 
+NOTE: Thorntail was formerly known as WildFly Swarm.
+
 {Thorntail} deconstructs the features in
 ifndef::product[link:https://wildfly.org/[the {WildFly} Java application server]]
 ifdef::product[link:https://developers.redhat.com/products/eap/overview/[{WildFly}]]
