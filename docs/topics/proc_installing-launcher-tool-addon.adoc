@@ -15,6 +15,14 @@ link:https://docs.openshift.org/latest/minishift/using/addons.html[Add-ons] enab
 
 .Procedure
 
+. Ensure you are running a minishift instance which has at least 4 GB memory to run launcher
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ minishift config set memory 8192
+$ minishift start
+----
+
 . Download and install the {launcher} add-on.
 +
 [source,bash,options="nowrap",subs="attributes+"]
