@@ -1,4 +1,4 @@
-GUIDE_HTML_NAME=wf-swarm-runtime.html
+GUIDE_HTML_NAME=thorntail-runtime.html
 OUTPUT_DIR=../../html/docs
 
 rm -r $OUTPUT_DIR/images/

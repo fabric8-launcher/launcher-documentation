@@ -9,8 +9,8 @@ ifeval::["{runtime}" == "Eclipse Vert.x"]
 endif::[]
 
 ifeval::["{runtime}" == "WildFly Swarm"]
-:guideURL: http://launcher.fabric8.io/docs/wf-swarm-runtime.html
-:guideName: WildFly Swarm Runtime Guide
+:guideURL: http://launcher.fabric8.io/docs/thorntail-runtime.html
+:guideName: Thorntail Runtime Guide
 endif::[]
 
 ifeval::["{runtime}" == "Node.js"]

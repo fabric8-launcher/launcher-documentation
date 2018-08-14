@@ -88,9 +88,9 @@ include::topics/templates/document-attributes.adoc[]
       <div class="col-sm-3 runtime">
         <div class="fa icon swarm"></div>
         <p>
-          Learn how to use Wildfly Swarm.
+          Learn how to use Thorntail.
         </p>
-        <a href="/docs/wf-swarm-runtime.html" class="btn btn-default" role="button">
+        <a href="/docs/thorntail-runtime.html" class="btn btn-default" role="button">
           Learn more
         </a>
       </div>
