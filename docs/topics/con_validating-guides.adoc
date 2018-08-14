@@ -21,21 +21,21 @@ In case a failed validation is an expected behavior--for example if there is a b
 
 [source,bash]
 ----
-$ touch docs/wf-swarm-runtime/.ci-ignore
+$ touch docs/thorntail-runtime/.ci-ignore
 ----
 
 To remove the book from validation permanently, commit this file to Git, for example:
 
 [source,bash]
 ----
-$ git add docs/wf-swarm-runtime/.ci-ignore
-$ git commit docs/wf-swarm-runtime/.ci-ignore -m "Removed WildFly Swarm Guide from validation"
+$ git add docs/thorntail-runtime/.ci-ignore
+$ git commit docs/thorntail-runtime/.ci-ignore -m "Removed Thorntail Guide from validation"
 ----
 
 To re-enable validation of the book, remove the `.ci-ignore` file, for example:
 
 [source,bash]
 ----
-$ rm docs/wf-swarm-runtime/.ci-ignore
+$ rm docs/thorntail-runtime/.ci-ignore
 ----
 
