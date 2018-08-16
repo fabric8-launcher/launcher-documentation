@@ -38,7 +38,6 @@ You may have to edit the link:https://docs.openshift.com/container-platform/late
 ----
 minishift delete # Delete the previous instance of {OpenShiftLocal}
 minishift config set memory 4096
-minishift config set openshift-version v3.6.0
 minishift start
 ----
 
@@ -46,7 +45,6 @@ minishift start
 ====
 The procedure described below works with {Minishift}.
 It has not been tested for use with CDK.
-You must use `oc` version `3.6.0` or later.
 ====
 --
 

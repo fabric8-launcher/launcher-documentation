@@ -5,8 +5,8 @@
 // Rationale: This module is useful both when setting up minishift as is and when testing a local
 // booster catalog.
 
-[id='installing-launcher-tool-addon_{context}']
-= Installing {launcher} Tool as an Add-on
+[id='installing-launcher-tool-as-a-osl-addon_{context}']
+= Installing {launcher} Tool as a {OpenShiftLocal} add-on
 link:https://docs.openshift.org/latest/minishift/using/addons.html[Add-ons] enable you to extend the behavior of {OpenShiftLocal}, and the {launcher} tool link:https://github.com/minishift/minishift-addons/tree/master/add-ons/fabric8-launcher[provides an add-on] as an installation option.
 
 .Prerequisites
@@ -19,7 +19,7 @@ link:https://docs.openshift.org/latest/minishift/using/addons.html[Add-ons] enab
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ minishift config set memory 8192
+$ minishift config set memory 4096
 $ minishift start
 ----
 
