@@ -173,7 +173,7 @@ include::topics/proc_updating-the-deployment-configuration-of-a-booster.adoc[lev
 
 [appendix]
 include::topics/proc_configuring-jenkins-freestyle-project-to-deploy-an-application-with-fmp.adoc[leveloffset=+1]
-
+:context!:
 //[appendix]
 //include::topics/ref_breakdown-of-wildflyswarm-pom-components.adoc[leveloffset=+1]
 
@@ -185,7 +185,7 @@ For information about using the configuration properties provided in {WildFlySwa
 ifdef::product[]
 include::topics/wildfly-swarm/docs/reference/index.adoc[leveloffset=+2]
 endif::[]
-
+:context: wf-swarm
 [appendix]
 include::topics/ref_additional-wildflyswarm-resources.adoc[leveloffset=+1]
 
@@ -197,3 +197,4 @@ include::topics/ref_proficiency-levels.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/ref_glossary.adoc[leveloffset=+1]
+:context!:
