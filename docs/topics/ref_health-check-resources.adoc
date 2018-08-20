@@ -20,6 +20,6 @@ ifndef::wf-swarm[]
 * link:{link-mission-health-check-wf-swarm}[Health Check - {WildFlySwarm} Booster]
 endif::wf-swarm[]
 
-ifndef::node-js[]
+ifndef::built-for-nodejs[]
   * link:{link-mission-health-check-nodejs}[Health Check - {Node} Booster]
-endif::node-js[]
+endif::built-for-nodejs[]

@@ -38,9 +38,9 @@ include::proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffs
 
 include::proc_interacting-with-the-unmodified-health-check-booster.adoc[leveloffset=+1]
 
-ifndef::node-js[]
+ifndef::built-for-nodejs[]
 include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]
-endif::node-js[]
+endif::built-for-nodejs[]
 :parameter-mission-name!:
 
 include::ref_health-check-resources.adoc[leveloffset=+1]

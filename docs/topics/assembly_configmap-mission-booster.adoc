@@ -34,7 +34,7 @@ include::proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffs
 include::proc_interacting-with-the-unmodified-configmap-booster-for-{parameter-runtime}.adoc[leveloffset=+1]
 :parameter-mission!:
 
-ifndef::node-js[]
+ifndef::built-for-nodejs[]
 :parameter-configmap:
 include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]
 :parameter-configmap!:

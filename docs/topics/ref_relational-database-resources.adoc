@@ -11,9 +11,9 @@ the Design of Network-based Software Architectures - Representational State Tran
 * link:http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven[REST APIs must be Hypertext driven]
 * link:https://martinfowler.com/articles/richardsonMaturityModel.html[Richardson Maturity Model]
 
-ifndef::node-js[* link:https://www.jcp.org/en/jsr/detail?id=311[JSR 311: JAX-RS: The JavaTM API for RESTful Web Services]]
+ifndef::built-for-nodejs[* link:https://www.jcp.org/en/jsr/detail?id=311[JSR 311: JAX-RS: The JavaTM API for RESTful Web Services]]
 
-ifdef::node-js[* link:https://expressjs.com/[Express Web Framework]]
+ifdef::built-for-nodejs[* link:https://expressjs.com/[Express Web Framework]]
 
 ifdef::spring-boot[* link:https://spring.io/guides/gs/rest-service/[Building a RESTful Service with Spring]]
 
@@ -30,5 +30,5 @@ ifndef::vert-x[* link:{link-mission-crud-vertx}[{mission-crud-vertx-guide-name}]
 
 ifndef::wf-swarm[* link:{link-mission-crud-wf-swarm}[{mission-crud-wf-swarm-guide-name}]]
 
-ifndef::node-js[* link:{link-mission-crud-nodejs}[{mission-crud-nodejs-guide-name}]]
+ifndef::built-for-nodejs[* link:{link-mission-crud-nodejs}[{mission-crud-nodejs-guide-name}]]
 

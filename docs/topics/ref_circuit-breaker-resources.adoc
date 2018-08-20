@@ -19,6 +19,6 @@ ifndef::wf-swarm[]
 * link:{link-mission-circuit-breaker-wf-swarm}[{mission-circuit-breaker-wf-swarm-guide-name}]
 endif::wf-swarm[]
 
-ifndef::node-js[]
+ifndef::built-for-nodejs[]
 * link:{link-mission-circuit-breaker-nodejs}[{mission-circuit-breaker-nodejs-guide-name}]
-endif::node-js[]
+endif::built-for-nodejs[]

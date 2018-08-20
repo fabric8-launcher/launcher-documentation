@@ -16,5 +16,5 @@ ifndef::vert-x[* link:{link-mission-secured-vertx}[{mission-secured-vertx-guide-
 
 ifndef::wf-swarm[* link:{link-mission-secured-wf-swarm}[{mission-secured-wf-swarm-guide-name}]]
 
-ifndef::node-js[* link:{link-mission-secured-nodejs}[{mission-secured-nodejs-guide-name}]]
+ifndef::built-for-nodejs[* link:{link-mission-secured-nodejs}[{mission-secured-nodejs-guide-name}]]
 
