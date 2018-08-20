@@ -64,7 +64,7 @@ $ curl $APPLICATION_ROUTE/api/greeting?name=Sarah
 . Return to the window with your pod logs and inspect debug logging messages in the logs.
 +
 --
-ifdef::spring-boot[]
+ifdef::built-for-spring-boot[]
 [source,options="nowrap",subs="attributes+"]
 ----
 i.o.booster.service.GreetingEndpoint     : Message: Hello, Sarah!
@@ -89,7 +89,7 @@ ifdef::wf-swarm[]
 endif::[]
 --
 
-ifdef::spring-boot[]
+ifdef::built-for-spring-boot[]
 . To disable debug logging, remove `logging.level.fully.qualified.name.of.TheClass=DEBUG` from `src/main/resources/application.properties` and redeploy your application.
 endif::[]
 ifdef::vert-x[]

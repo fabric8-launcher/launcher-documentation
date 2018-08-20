@@ -10,7 +10,7 @@ Follow the links below for additional information on the principles behind the O
 
 * link:http://www.keycloak.org/archive/documentation-3.2.html[Keycloak 3.2 Documentation]
 
-ifndef::spring-boot[* link:{link-mission-secured-spring-boot}[{mission-secured-spring-boot-guide-name}]]
+ifndef::built-for-spring-boot[* link:{link-mission-secured-spring-boot}[{mission-secured-spring-boot-guide-name}]]
 
 ifndef::vert-x[* link:{link-mission-secured-vertx}[{mission-secured-vertx-guide-name}]]
 

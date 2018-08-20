@@ -7,9 +7,9 @@ Follow the links below for more background information on the design principles 
 
 * link:https://martinfowler.com/bliki/CircuitBreaker.html[Martin Fowler: CircuitBreaker]
 
-ifndef::spring-boot[]
+ifndef::built-for-spring-boot[]
 * link:{link-mission-circuit-breaker-spring-boot}[{mission-circuit-breaker-spring-boot-guide-name}]
-endif::spring-boot[]
+endif::built-for-spring-boot[]
 
 ifndef::vert-x[]
 * link:{link-mission-circuit-breaker-vertx}[{mission-circuit-breaker-vertx-guide-name}]

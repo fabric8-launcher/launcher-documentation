@@ -8,9 +8,9 @@ More background and related information on health checking can be found here:
 * link:https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/[Kubernetes Liveness and Readiness Probes]
 * link:https://kubernetes.io/docs/api-reference/v1/definitions/#_v1_probe[Kubernetes Probes]
 
-ifndef::spring-boot[]
+ifndef::built-for-spring-boot[]
 * link:{link-mission-health-check-spring-boot}[Health Check - {SpringBoot} Booster]
-endif::spring-boot[]
+endif::built-for-spring-boot[]
 
 ifndef::vert-x[]
 * link:{link-mission-health-check-vertx}[Health Check - {VertX} Booster]

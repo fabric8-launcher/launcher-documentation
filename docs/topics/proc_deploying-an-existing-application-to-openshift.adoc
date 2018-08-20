@@ -26,7 +26,7 @@ ifdef::vert-x[]
 include::resources/vert-x/vertx-openshift-pom-config-example.xml[]
 ----
 endif::[]
-ifdef::spring-boot[]
+ifdef::built-for-spring-boot[]
 [source,xml,options="nowrap",subs="attributes+"]
 ----
 include::resources/spring-boot/spring-boot-openshift-pom-config-example.xml[]

@@ -15,7 +15,7 @@ ifndef::built-for-nodejs[* link:https://www.jcp.org/en/jsr/detail?id=311[JSR 311
 
 ifdef::built-for-nodejs[* link:https://expressjs.com/[Express Web Framework]]
 
-ifdef::spring-boot[* link:https://spring.io/guides/gs/rest-service/[Building a RESTful Service with Spring]]
+ifdef::built-for-spring-boot[* link:https://spring.io/guides/gs/rest-service/[Building a RESTful Service with Spring]]
 
 ifdef::vert-x[]
 * link:http://vertx.io/blog/some-rest-with-vert-x/[Some Rest with {VertX}]
@@ -24,7 +24,7 @@ endif::vert-x[]
 
 ifdef::wf-swarm[* link:http://resteasy.jboss.org/docs.html[RESTEasy Documentation]]
 
-ifndef::spring-boot[* link:{link-mission-crud-spring-boot}[{mission-crud-spring-boot-guide-name}]]
+ifndef::built-for-spring-boot[* link:{link-mission-crud-spring-boot}[{mission-crud-spring-boot-guide-name}]]
 
 ifndef::vert-x[* link:{link-mission-crud-vertx}[{mission-crud-vertx-guide-name}]]
 

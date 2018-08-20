@@ -47,7 +47,7 @@ ifdef::vert-x[]
 include::proc_running-the-vertx-secured-booster-integration-tests.adoc[leveloffset=+1]
 endif::[]
 
-ifdef::spring-boot[]
+ifdef::built-for-spring-boot[]
 include::proc_running-the-springboot-secured-booster-integration-tests.adoc[leveloffset=+1]
 endif::[]
 
