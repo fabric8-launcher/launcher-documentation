@@ -43,7 +43,7 @@ include::assembly_deploying-the-secured-booster-to-openshiftcontainerplatform.ad
 
 include::assembly_authenticating-to-the-secured-booster-api-endpoint.adoc[leveloffset=+1]
 
-ifdef::vert-x[]
+ifdef::built-for-vertx[]
 include::proc_running-the-vertx-secured-booster-integration-tests.adoc[leveloffset=+1]
 endif::[]
 

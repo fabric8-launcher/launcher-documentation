@@ -12,9 +12,9 @@ ifndef::built-for-spring-boot[]
 * link:{link-mission-health-check-spring-boot}[Health Check - {SpringBoot} Booster]
 endif::built-for-spring-boot[]
 
-ifndef::vert-x[]
+ifndef::built-for-vertx[]
 * link:{link-mission-health-check-vertx}[Health Check - {VertX} Booster]
-endif::vert-x[]
+endif::built-for-vertx[]
 
 ifndef::wf-swarm[]
 * link:{link-mission-health-check-wf-swarm}[Health Check - {WildFlySwarm} Booster]

@@ -4,7 +4,7 @@
 Once you have the booster deployed, you will have a service called `{app-name}` running that exposes the following REST endpoints:
 
 /api/greeting::
-ifdef::vert-x,built-for-nodejs[Returns a JSON containing greeting of `name` parameter (or World as default value).]
+ifdef::built-for-vertx,built-for-nodejs[Returns a JSON containing greeting of `name` parameter (or World as default value).]
 ifdef::built-for-spring-boot,wf-swarm[Returns a name as a String.]
 
 /api/stop::
@@ -43,7 +43,7 @@ ifdef::built-for-spring-boot[an `Application is not available` page.]
 $ curl http://{app-name}-{project-name}.{os-route-hostname}/api/stop
 ----
 
-ifdef::vert-x,built-for-nodejs[]
+ifdef::built-for-vertx,built-for-nodejs[]
 [source,option="nowrap",subs="attributes+"]
 ----
 Stopping HTTP server, Bye bye world !
@@ -58,7 +58,7 @@ $ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting
 ----
 
 // Responses vary wildly among runtimes
-ifdef::vert-x,built-for-nodejs[]
+ifdef::built-for-vertx,built-for-nodejs[]
 [source,option="nowrap",subs="attributes+"]
 ----
 Not online

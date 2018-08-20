@@ -24,14 +24,14 @@ include::note-integration-tests-app-deletion-warning.adoc[]
 * an empty OpenShift project
 
 ifdef::parameter-configmap[]
-ifdef::vert-x,built-for-spring-boot[]
+ifdef::built-for-vertx,built-for-spring-boot[]
 * view access permission assigned to the service account of your booster application. This allows your application to read the configuration from the ConfigMap:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc policy add-role-to-user view -n $(oc project -q) -z default
 ----
-endif::vert-x,built-for-spring-boot[]
+endif::built-for-vertx,built-for-spring-boot[]
 endif::parameter-configmap[]
 
 [discrete]

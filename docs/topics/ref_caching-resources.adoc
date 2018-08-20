@@ -6,7 +6,7 @@ More background and related information on caching can be found here:
 
 ifndef::built-for-spring-boot[* link:{link-mission-cache-spring-boot}[{name-mission-cache} Mission - {SpringBoot} Booster]]
 
-ifndef::vert-x[* link:{link-mission-cache-vertx}[{name-mission-cache} Mission - {VertX} Booster]]
+ifndef::built-for-vertx[* link:{link-mission-cache-vertx}[{name-mission-cache} Mission - {VertX} Booster]]
 
 ifndef::wf-swarm[* link:{link-mission-cache-wf-swarm}[{name-mission-cache} Mission - {WildFlySwarm} Booster]]
 

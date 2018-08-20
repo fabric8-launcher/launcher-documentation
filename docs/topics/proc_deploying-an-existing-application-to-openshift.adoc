@@ -20,7 +20,7 @@ You can easily deploy your existing application to OpenShift using the Fabric8 M
 
 . Add the following profile to the `pom.xml` file in the root directory of your application:
 +
-ifdef::vert-x[]
+ifdef::built-for-vertx[]
 [source,xml,options="nowrap",subs="attributes+"]
 ----
 include::resources/vert-x/vertx-openshift-pom-config-example.xml[]

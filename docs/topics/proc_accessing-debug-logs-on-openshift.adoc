@@ -70,7 +70,7 @@ ifdef::built-for-spring-boot[]
 i.o.booster.service.GreetingEndpoint     : Message: Hello, Sarah!
 ----
 endif::[]
-ifdef::vert-x[]
+ifdef::built-for-vertx[]
 [source,options="nowrap",subs="attributes+"]
 ----
 ...
@@ -92,7 +92,7 @@ endif::[]
 ifdef::built-for-spring-boot[]
 . To disable debug logging, remove `logging.level.fully.qualified.name.of.TheClass=DEBUG` from `src/main/resources/application.properties` and redeploy your application.
 endif::[]
-ifdef::vert-x[]
+ifdef::built-for-vertx[]
 . To disable debug logging, update your logging configuration file, for example `src/main/resources/vertx-default-jul-logging.properties`, remove the logging configuration for your class and redeploy your application.
 endif::[]
 ifdef::wf-swarm[]

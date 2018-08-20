@@ -12,7 +12,7 @@ Follow the links below for additional information on the principles behind the O
 
 ifndef::built-for-spring-boot[* link:{link-mission-secured-spring-boot}[{mission-secured-spring-boot-guide-name}]]
 
-ifndef::vert-x[* link:{link-mission-secured-vertx}[{mission-secured-vertx-guide-name}]]
+ifndef::built-for-vertx[* link:{link-mission-secured-vertx}[{mission-secured-vertx-guide-name}]]
 
 ifndef::wf-swarm[* link:{link-mission-secured-wf-swarm}[{mission-secured-wf-swarm-guide-name}]]
 

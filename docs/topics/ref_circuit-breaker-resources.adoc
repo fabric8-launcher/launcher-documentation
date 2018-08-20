@@ -11,9 +11,9 @@ ifndef::built-for-spring-boot[]
 * link:{link-mission-circuit-breaker-spring-boot}[{mission-circuit-breaker-spring-boot-guide-name}]
 endif::built-for-spring-boot[]
 
-ifndef::vert-x[]
+ifndef::built-for-vertx[]
 * link:{link-mission-circuit-breaker-vertx}[{mission-circuit-breaker-vertx-guide-name}]
-endif::vert-x[]
+endif::built-for-vertx[]
 
 ifndef::wf-swarm[]
 * link:{link-mission-circuit-breaker-wf-swarm}[{mission-circuit-breaker-wf-swarm-guide-name}]

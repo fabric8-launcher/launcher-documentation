@@ -37,7 +37,7 @@ $ cd myApp
 
 . Create a `pom.xml` file.
 +
-ifdef::vert-x[]
+ifdef::built-for-vertx[]
 [source,xml,options="nowrap",subs="attributes+"]
 ----
 include::resources/vert-x/vertx-starter-example-pom.xml[]
@@ -57,7 +57,7 @@ For example, for `<groupId>my.awesome.project</groupId>`, the location of the cl
 +
 .Example `src/main/java/com/example/MyApp.java`
 +
-ifdef::vert-x[]
+ifdef::built-for-vertx[]
 [source,java,options="nowrap",subs="attributes+"]
 ----
 include::resources/vert-x/vertxGreetingApp.java[]

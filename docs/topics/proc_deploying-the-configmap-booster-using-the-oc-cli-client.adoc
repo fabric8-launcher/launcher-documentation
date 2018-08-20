@@ -43,18 +43,18 @@ $ unzip {project-name}.zip
 $ oc new-project {project-name}
 ----
 
-ifdef::vert-x,built-for-spring-boot,built-for-nodejs[]
+ifdef::built-for-vertx,built-for-spring-boot,built-for-nodejs[]
 . Assign view access rights to the service account before deploying your booster, so that the booster can access the OpenShift API in order to read the contents of the ConfigMap.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc policy add-role-to-user view -n $(oc project -q) -z default
 ----
-endif::vert-x,built-for-spring-boot,built-for-nodejs[]
+endif::built-for-vertx,built-for-spring-boot,built-for-nodejs[]
 
 . Navigate to the root directory of your booster.
 
-ifdef::vert-x,built-for-nodejs[]
+ifdef::built-for-vertx,built-for-nodejs[]
 . Deploy your ConfigMap configuration to OpenShift using `app-config.yml`.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -75,7 +75,7 @@ data:
       level : INFO
 ...
 ----
-endif::vert-x,built-for-nodejs[]
+endif::built-for-vertx,built-for-nodejs[]
 ifdef::wf-swarm[]
 . Deploy your ConfigMap configuration to OpenShift using `app-config.yml` in the root of the booster.
 +
@@ -125,12 +125,12 @@ endif::built-for-spring-boot[]
 ifndef::built-for-nodejs[]
 . Use Maven to start the deployment to OpenShift.
 +
-ifdef::vert-x,built-for-spring-boot[]
+ifdef::built-for-vertx,built-for-spring-boot[]
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ mvn clean fabric8:deploy -Popenshift
 ----
-endif::vert-x,built-for-spring-boot[]
+endif::built-for-vertx,built-for-spring-boot[]
 ifdef::wf-swarm[]
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -163,9 +163,9 @@ NAME                                       READY     STATUS      RESTARTS   AGE
 ----
 +
 The `{app-name}-1-aaaaa` pod should have a status of `Running` once its fully deployed and started.
-ifdef::vert-x[]
+ifdef::built-for-vertx[]
 You should also wait for your pod to be _ready_ before proceeding, which is shown in the `READY` column. For example, `{app-name}-1-aaaaa` is _ready_ when the `READY` column is `1/1`.
-endif::vert-x[]
+endif::built-for-vertx[]
 Your specific pod name will vary.
 The number in the middle will increase with each new build.
 The letters at the end are generated when the pod is created.
