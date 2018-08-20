@@ -16,9 +16,9 @@ ifndef::built-for-vertx[]
 * link:{link-mission-health-check-vertx}[Health Check - {VertX} Booster]
 endif::built-for-vertx[]
 
-ifndef::wf-swarm[]
+ifndef::built-for-thorntail[]
 * link:{link-mission-health-check-wf-swarm}[Health Check - {WildFlySwarm} Booster]
-endif::wf-swarm[]
+endif::built-for-thorntail[]
 
 ifndef::built-for-nodejs[]
   * link:{link-mission-health-check-nodejs}[Health Check - {Node} Booster]

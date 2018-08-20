@@ -3,7 +3,7 @@ include::topics/templates/document-attributes.adoc[]
 // Used for specifying this is product docs in the modules sourced from the
 // WildFly Swarm repository (anything stored in docs/wildfly-swarm).
 :product:
-:wf-swarm:
+:built-for-thorntail:
 
 //override for a cleaner TOC
 :toclevels: 2

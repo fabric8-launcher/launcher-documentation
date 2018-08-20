@@ -76,7 +76,7 @@ data:
 ...
 ----
 endif::built-for-vertx,built-for-nodejs[]
-ifdef::wf-swarm[]
+ifdef::built-for-thorntail[]
 . Deploy your ConfigMap configuration to OpenShift using `app-config.yml` in the root of the booster.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -97,7 +97,7 @@ data:
       message: Hello %s from a ConfigMap!
 ...
 ----
-endif::wf-swarm[]
+endif::built-for-thorntail[]
 ifdef::built-for-spring-boot[]
 . Deploy your ConfigMap configuration to OpenShift using `application.yml`.
 +
@@ -131,12 +131,12 @@ ifdef::built-for-vertx,built-for-spring-boot[]
 $ mvn clean fabric8:deploy -Popenshift
 ----
 endif::built-for-vertx,built-for-spring-boot[]
-ifdef::wf-swarm[]
+ifdef::built-for-thorntail[]
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ mvn clean fabric8:deploy -Popenshift -DskipTests
 ----
-endif::wf-swarm[]
+endif::built-for-thorntail[]
 +
 This command uses the Fabric8 Maven Plugin to launch the link:{link-s2i-process}[S2I process] on OpenShift and to start the pod.
 endif::built-for-nodejs[]

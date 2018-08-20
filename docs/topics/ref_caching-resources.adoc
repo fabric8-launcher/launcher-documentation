@@ -8,7 +8,7 @@ ifndef::built-for-spring-boot[* link:{link-mission-cache-spring-boot}[{name-miss
 
 ifndef::built-for-vertx[* link:{link-mission-cache-vertx}[{name-mission-cache} Mission - {VertX} Booster]]
 
-ifndef::wf-swarm[* link:{link-mission-cache-wf-swarm}[{name-mission-cache} Mission - {WildFlySwarm} Booster]]
+ifndef::built-for-thorntail[* link:{link-mission-cache-wf-swarm}[{name-mission-cache} Mission - {WildFlySwarm} Booster]]
 
 ifndef::built-for-nodejs[* link:{link-mission-cache-nodejs}[{name-mission-cache} Mission - {Node} Booster]]
 

@@ -51,7 +51,7 @@ ifdef::built-for-spring-boot[]
 include::proc_running-the-springboot-secured-booster-integration-tests.adoc[leveloffset=+1]
 endif::[]
 
-ifdef::wf-swarm[]
+ifdef::built-for-thorntail[]
 include::proc_running-the-wildflyswarm-secured-booster-integration-tests.adoc[leveloffset=+1]
 endif::[]
 

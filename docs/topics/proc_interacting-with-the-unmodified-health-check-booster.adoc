@@ -5,7 +5,7 @@ Once you have the booster deployed, you will have a service called `{app-name}` 
 
 /api/greeting::
 ifdef::built-for-vertx,built-for-nodejs[Returns a JSON containing greeting of `name` parameter (or World as default value).]
-ifdef::built-for-spring-boot,wf-swarm[Returns a name as a String.]
+ifdef::built-for-spring-boot,built-for-thorntail[Returns a name as a String.]
 
 /api/stop::
 Forces the service to become unresponsive as means to simulate a failure.
@@ -81,7 +81,7 @@ ifdef::built-for-spring-boot[]
 ----
 endif::[]
 
-ifdef::wf-swarm[]
+ifdef::built-for-thorntail[]
 ----
 <html>
   <head><title>Error</title></head>

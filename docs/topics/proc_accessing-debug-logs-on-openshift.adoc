@@ -79,7 +79,7 @@ INFO: Greeting: Hello, Sarah
 ...
 ----
 endif::[]
-ifdef::wf-swarm[]
+ifdef::built-for-thorntail[]
 [source,options="nowrap",subs="attributes+"]
 ----
 ...
@@ -95,11 +95,11 @@ endif::[]
 ifdef::built-for-vertx[]
 . To disable debug logging, update your logging configuration file, for example `src/main/resources/vertx-default-jul-logging.properties`, remove the logging configuration for your class and redeploy your application.
 endif::[]
-ifdef::wf-swarm[]
+ifdef::built-for-thorntail[]
 . To disable debug logging, remove the `logging` key from the `project-defaults.yml` file and redeploy the appliation.
 endif::[]
 
-ifdef::wf-swarm[]
+ifdef::built-for-thorntail[]
 [discrete]
 == Additional resources
 
