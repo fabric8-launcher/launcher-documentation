@@ -6,7 +6,7 @@
 // booster catalog.
 
 [id='installing-launcher-tool-as-a-osl-addon_{context}']
-= Installing {launcher} Tool as a {OpenShiftLocal} add-on
+= Installing {launcher} Tool as a {Minishift} add-on
 link:https://docs.openshift.org/latest/minishift/using/addons.html[Add-ons] enable you to extend the behavior of {OpenShiftLocal}, and the {launcher} tool link:https://github.com/minishift/minishift-addons/tree/master/add-ons/fabric8-launcher[provides an add-on] as an installation option.
 
 .Prerequisites
