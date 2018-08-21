@@ -7,7 +7,7 @@ When you have finished creating your application booster, you can interact with 
 == Prerequisites
 
 * Your application running
-* The `crud` binary or a web browser
+* The `curl` binary or a web browser
 
 [discrete]
 == Procedure
@@ -110,4 +110,3 @@ $ curl -X DELETE http://{app-name}-{project-name}.{os-route-hostname}/api/fruits
 == Troubleshooting
 
 * If you receive an HTTP Error code `503` as a response after executing these commands, it means that the application is not ready yet.
-
