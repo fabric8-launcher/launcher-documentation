@@ -38,7 +38,7 @@ NOTE: The `-sk` option tells curl to ignore failures resulting from self-signed 
 --
 
 :service-path: api/greeting
-ifdef::vert-x[:service-path: greeting]
+ifdef::built-for-vertx[:service-path: greeting]
 
 . Invoke the {name-mission-secured} service. Attach the access (bearer) token to the HTTP headers:
 +

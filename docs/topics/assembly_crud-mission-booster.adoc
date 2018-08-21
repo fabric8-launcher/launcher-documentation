@@ -36,9 +36,9 @@ This updates the name of the item with the given ID to match the name specified 
 This removes the item with the specified ID from the database and returns an HTTP code `204` (No Content) as a response.
 If you pass in an invalid ID, the call results in an HTTP error `404`.
 
-ifndef::node-js[]
+ifndef::built-for-nodejs[]
 This booster also contains a set of automated xref:running-the-booster-integration-tests_{context}[integration tests] that can be used to verify that the application is fully integrated with the database.
-endif::node-js[]
+endif::built-for-nodejs[]
 
 This booster does not showcase a fully matured RESTful model (level 3), but it does use compatible HTTP verbs and status, following the recommended HTTP API practices.
 
@@ -55,11 +55,11 @@ include::assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+1]
 
 include::proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+1]
 
-ifdef::node-js[]
+ifdef::built-for-nodejs[]
 include::proc_interacting-with-the-crud-api-on-node.adoc[leveloffset=+1]
 endif::[]
 
-ifndef::node-js[]
+ifndef::built-for-nodejs[]
 include::proc_interacting-with-the-crud-api.adoc[leveloffset=+1]
 
 include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]

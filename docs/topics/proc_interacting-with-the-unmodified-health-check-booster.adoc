@@ -4,8 +4,8 @@
 Once you have the booster deployed, you will have a service called `{app-name}` running that exposes the following REST endpoints:
 
 /api/greeting::
-ifdef::vert-x,node-js[Returns a JSON containing greeting of `name` parameter (or World as default value).]
-ifdef::spring-boot,wf-swarm[Returns a name as a String.]
+ifdef::built-for-vertx,built-for-nodejs[Returns a JSON containing greeting of `name` parameter (or World as default value).]
+ifdef::built-for-spring-boot,built-for-thorntail[Returns a name as a String.]
 
 /api/stop::
 Forces the service to become unresponsive as means to simulate a failure.
@@ -35,15 +35,15 @@ $ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting
 --
 Invoking the `/api/stop` endpoint simulates an internal service failure and triggers the OpenShift self-healing capabilities.
 When invoking `/api/greeting` after simulating the failure, the service should return
-ifndef::spring-boot[a HTTP status `503`.]
-ifdef::spring-boot[an `Application is not available` page.]
+ifndef::built-for-spring-boot[a HTTP status `503`.]
+ifdef::built-for-spring-boot[an `Application is not available` page.]
 
 [source,bash,option="nowrap",subs="attributes+"]
 ----
 $ curl http://{app-name}-{project-name}.{os-route-hostname}/api/stop
 ----
 
-ifdef::vert-x,node-js[]
+ifdef::built-for-vertx,built-for-nodejs[]
 [source,option="nowrap",subs="attributes+"]
 ----
 Stopping HTTP server, Bye bye world !
@@ -58,14 +58,14 @@ $ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting
 ----
 
 // Responses vary wildly among runtimes
-ifdef::vert-x,node-js[]
+ifdef::built-for-vertx,built-for-nodejs[]
 [source,option="nowrap",subs="attributes+"]
 ----
 Not online
 ----
 endif::[]
 
-ifdef::spring-boot[]
+ifdef::built-for-spring-boot[]
 ----
 <html>
   <head>
@@ -81,7 +81,7 @@ ifdef::spring-boot[]
 ----
 endif::[]
 
-ifdef::wf-swarm[]
+ifdef::built-for-thorntail[]
 ----
 <html>
   <head><title>Error</title></head>
@@ -90,7 +90,7 @@ ifdef::wf-swarm[]
 ----
 endif::[]
 
-ifdef::spring-boot[]
+ifdef::built-for-spring-boot[]
 [NOTE]
 ====
 Depending on when OpenShift removes the pod after you invoke the `/api/stop` endpoint, you might initially see a 404 error code.

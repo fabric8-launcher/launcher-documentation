@@ -7,7 +7,7 @@ include::topics/templates/document-attributes.adoc[]
 :runtime: {Node}
 //var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
 :docs-topic:
-:node-js:
+:built-for-nodejs:
 
 :context: nodejs
 

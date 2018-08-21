@@ -11,24 +11,24 @@ the Design of Network-based Software Architectures - Representational State Tran
 * link:http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven[REST APIs must be Hypertext driven]
 * link:https://martinfowler.com/articles/richardsonMaturityModel.html[Richardson Maturity Model]
 
-ifndef::node-js[* link:https://www.jcp.org/en/jsr/detail?id=311[JSR 311: JAX-RS: The JavaTM API for RESTful Web Services]]
+ifndef::built-for-nodejs[* link:https://www.jcp.org/en/jsr/detail?id=311[JSR 311: JAX-RS: The JavaTM API for RESTful Web Services]]
 
-ifdef::node-js[* link:https://expressjs.com/[Express Web Framework]]
+ifdef::built-for-nodejs[* link:https://expressjs.com/[Express Web Framework]]
 
-ifdef::spring-boot[* link:https://spring.io/guides/gs/rest-service/[Building a RESTful Service with Spring]]
+ifdef::built-for-spring-boot[* link:https://spring.io/guides/gs/rest-service/[Building a RESTful Service with Spring]]
 
-ifdef::vert-x[]
+ifdef::built-for-vertx[]
 * link:http://vertx.io/blog/some-rest-with-vert-x/[Some Rest with {VertX}]
 * link:http://vertx.io/blog/using-the-asynchronous-sql-client/[Using the {VertX} asynchronous SQL client]
-endif::vert-x[]
+endif::built-for-vertx[]
 
-ifdef::wf-swarm[* link:http://resteasy.jboss.org/docs.html[RESTEasy Documentation]]
+ifdef::built-for-thorntail[* link:http://resteasy.jboss.org/docs.html[RESTEasy Documentation]]
 
-ifndef::spring-boot[* link:{link-mission-crud-spring-boot}[{mission-crud-spring-boot-guide-name}]]
+ifndef::built-for-spring-boot[* link:{link-mission-crud-spring-boot}[{mission-crud-spring-boot-guide-name}]]
 
-ifndef::vert-x[* link:{link-mission-crud-vertx}[{mission-crud-vertx-guide-name}]]
+ifndef::built-for-vertx[* link:{link-mission-crud-vertx}[{mission-crud-vertx-guide-name}]]
 
-ifndef::wf-swarm[* link:{link-mission-crud-wf-swarm}[{mission-crud-wf-swarm-guide-name}]]
+ifndef::built-for-thorntail[* link:{link-mission-crud-wf-swarm}[{mission-crud-wf-swarm-guide-name}]]
 
-ifndef::node-js[* link:{link-mission-crud-nodejs}[{mission-crud-nodejs-guide-name}]]
+ifndef::built-for-nodejs[* link:{link-mission-crud-nodejs}[{mission-crud-nodejs-guide-name}]]
 

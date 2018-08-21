@@ -12,8 +12,8 @@
 One of the ways of debugging a Maven-based project is manually launching the application while specifying a debugging port, and subsequently connecting a remote debugger to that port.
 This method is applicable at least to the following deployments of the application:
 
-ifdef::vert-x[* When launching the application manually using the `mvn {parameter-maven-goal}` goal. This starts the application with debugging enabled.]
-ifdef::wf-swarm[]
+ifdef::built-for-vertx[* When launching the application manually using the `mvn {parameter-maven-goal}` goal. This starts the application with debugging enabled.]
+ifdef::built-for-thorntail[]
 * When launching the application manually using the `mvn {parameter-maven-goal}` goal.
 * When starting the application without waiting for it to exit using the `mvn wildfly-swarm:start` goal.
 This is useful especially when performing integration testing.
@@ -40,6 +40,6 @@ $ mvn {parameter-maven-goal} -D{parameter-debug-property}=$PORT_NUMBER
 Here, `$PORT_NUMBER` is an unused port number of your choice.
 Remember this number for the remote debugger configuration.
 
-ifdef::vert-x[Use the `-Ddebug.suspend=true` argument to make the application wait until a debugger is attached to start.]
+ifdef::built-for-vertx[Use the `-Ddebug.suspend=true` argument to make the application wait until a debugger is attached to start.]
 --
 

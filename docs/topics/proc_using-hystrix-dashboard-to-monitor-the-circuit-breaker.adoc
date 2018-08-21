@@ -61,13 +61,13 @@ Alternatively, you can navigate to the _Overview_ screen in the Web console and 
 . To use the Dashboard to monitor the `{app-name}-greeting` service, replace the default event stream address with the following address and click the _Monitor Stream_ button.
 +
 --
-ifdef::spring-boot[]
+ifdef::built-for-spring-boot[]
 [source,subs="attributes+",options="nowrap"]
 ----
 http://{app-name}-greeting-{project-name}.{osl-route-hostname}/hystrix.stream
 ----
 endif::[]
-ifndef::spring-boot[]
+ifndef::built-for-spring-boot[]
 [source,subs="attributes+",options="nowrap"]
 ----
 http://{app-name}-greeting/hystrix.stream

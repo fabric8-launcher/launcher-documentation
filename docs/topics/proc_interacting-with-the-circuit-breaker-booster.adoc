@@ -43,7 +43,7 @@ If the remote endpoint is unavailable, the `name` service responds with an HTTP 
 The state can be:
 ** _open_ : the circuit breaker is preventing requests from reaching the failed service,
 ** _closed_: the circuit breaker is allowing requests to reach the service.
-ifdef::vert-x[]
+ifdef::built-for-vertx[]
 ** _half-open_: the circuit breaker is allowing a request to reach the service. If the request succeeds, the state of the service is reset to closed. If the request fails, the timer is restarted.
 endif::[]
 

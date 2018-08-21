@@ -37,13 +37,13 @@ $ cd myApp
 
 . Create a `pom.xml` file.
 +
-ifdef::vert-x[]
+ifdef::built-for-vertx[]
 [source,xml,options="nowrap",subs="attributes+"]
 ----
 include::resources/vert-x/vertx-starter-example-pom.xml[]
 ----
 endif::[]
-ifdef::spring-boot[]
+ifdef::built-for-spring-boot[]
 [source,xml,options="nowrap",subs="attributes+"]
 ----
 include::resources/spring-boot/spring-boot-starter-example-pom.xml[]
@@ -57,13 +57,13 @@ For example, for `<groupId>my.awesome.project</groupId>`, the location of the cl
 +
 .Example `src/main/java/com/example/MyApp.java`
 +
-ifdef::vert-x[]
+ifdef::built-for-vertx[]
 [source,java,options="nowrap",subs="attributes+"]
 ----
 include::resources/vert-x/vertxGreetingApp.java[]
 ----
 endif::[]
-ifdef::spring-boot[]
+ifdef::built-for-spring-boot[]
 [source,java,options="nowrap",subs="attributes+"]
 ----
 include::resources/spring-boot/springBootGreetingApp.java[]
