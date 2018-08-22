@@ -7,12 +7,12 @@
 |====================================================================
 |Pros           |Cons
 a|
-* Modularity: due to the decoupling between the worker processes and the messaging server of your messaging infrastructure, you can swap out the messaging server depending on the functionalities you need it to provide.
+* Modularity: due to the use of a standard messaging protocol, you can choose a different messaging service implementation depending on the functionalities you need it to provide.
 For example, using a message router instead of a broker sacrifices the guarantee of message persistence while allowing faster processing time per message.
-* Reliability: Using a broker with persistent storage prevents loss of messages in case a target worker process becomes unavailable.
+* Reliability: Using a broker with persistent storage prevents loss of messages in case a target worker service becomes unavailable.
 The broker stores the message and forwards it to another available worker.
 a|
-* In order to remain decoupled and properly scalable, a messaging infrastructure typically requires a messaging server, such as a broker or a router.
-Depending on the type, the messaging servers provide different functionalities, but also increase the resource requirements of your messaging service infrastructure.
-* Adding storage capabilities to your messaging server guarantees message persistence, but also increases the processing time for each message.
+* In order to remain decoupled and properly scalable, a messaging infrastructure typically requires a messaging service, such as a broker or a router.
+Depending on the type, the messaging service provides different functionalities, but also increase the resource requirements of your messaging infrastructure.
+* Adding storage capabilities to your messaging service guarantees message persistence, but also increases the processing time for each message.
 |====================================================================

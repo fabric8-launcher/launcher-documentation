@@ -7,11 +7,11 @@ include::con_about-messaging-work-queue.adoc[leveloffset=+1]
 
 This booster shows you how to:
 
-* Send work requests to a work queue shared by multiple worker processes.
-* Use the broker to receive and process incoming work requests.
-* Send the processed result back to the original process.
+* Send work requests to a work queue shared by multiple worker services.
+* Use the messaging service to receive and process incoming work requests.
+* Send the processed result back to the frontend service.
 * Scale the number of workers according to the current requirements of your application.
-* Monitor the status of the worker processes.
+* Monitor the status of the worker services.
 
 // see if necessary, if so, create
 //include::con_messaging-work-queue-concepts.adoc[leveloffset=+1]

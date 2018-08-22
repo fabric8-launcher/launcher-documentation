@@ -3,4 +3,4 @@ Mission proficiency level:
 ifdef::docs-topic[xref:proficiency_advanced[*{proficiency-advanced}*].]
 ifndef::docs-topic[link:https://launcher.fabric8.io/docs/wf-swarm-runtime.html#proficiency_levels[*{proficiency-advanced}*^].]
 
-The {name-mission-messaging-work-queue} mission showcases a messaging infrastructure built around a message broker with multiple decoupled worker components sharing a common work queue.
+The {name-mission-messaging-work-queue} mission showcases a messaging infrastructure built around a messaging service with multiple decoupled worker components sharing a common work queue.
