@@ -1,7 +1,7 @@
 [id='deploying-a-booster-to-openshiftonline_{context}']
 = Deploying a booster to {OpenShiftOnline}
-You can quickly create, build, and deploy a booster to {OpenShiftOnline} using link:{link-launcher-oso}[{launcher-oso}]. 
-link:{link-launcher-oso}[{launcher-oso}] creates a new repository in your GitHub account containing the booster's code and deploys it to your {OpenShiftOnline} account. 
+You can quickly create, build, and deploy a booster to {OpenShiftOnline} using link:{link-launcher-oso}[{launcher-oso}].
+link:{link-launcher-oso}[{launcher-oso}] creates a new repository in your GitHub account containing the booster's code and deploys it to your {OpenShiftOnline} account.
 It can also create a ZIP of the booster for you to download and run on your localhost.
 
 
@@ -42,7 +42,7 @@ When you are done interacting with and xref:updating-your-booster-and-deploying-
 You have link:https://docs.openshift.com/online/dev_guide/compute_resources.html#dev-quotas[quotas^] for your {OpenShiftOnline} account. If you exceed your account quota, you will not be able to launch new boosters using link:{link-launcher-oso}[{launcher-oso}]. The quota for your account varies depending on your subscription.
 --
 
-[#oso-create-booster-related-info]
+[id='oso-create-booster-related-info']
 [discrete]
 == Additional resources
 See the runtime guides to learn more about runtimes and boosters that are available for them:
