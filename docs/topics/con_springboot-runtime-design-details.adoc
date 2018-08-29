@@ -1,0 +1,14 @@
+[id='springboot-runtime-design-details_{context}']
+= {SpringBoot} runtime design details
+
+{SpringBoot} lets you create opinionated Spring-based stand-alone applications.
+See
+link:{link-spring-boot-guide}#additional-springboot-resources_spring-boot[Additional Resources] for a list of documents about {SpringBoot}.
+
+The {SpringBoot} runtime gives you the advantages and convenience of the OpenShift platform:
+
+* rolling updates
+* service discovery
+* canary deployments
+* ways to implement common microservice patterns: externalized configuration, health check, circuit breaker, and failover
+
