@@ -1,0 +1,19 @@
+
+[id='the-externalized-configuration-design-pattern_{context}']
+= The externalized configuration design pattern
+
+Whenever possible, externalize the application configuration and separate it from the application code.
+This allows the application configuration to change as it moves through different environments, but leaves the code unchanged.
+Externalizing the configuration also keeps sensitive or internal information out of your code base and version control.
+Many languages and application servers provide environment variables to support externalizing an application's configuration.
+
+Microservices architectures and polyglot environments add a layer of complexity to managing an application's configuration.
+Applications consist of independent, distributed services, and each can have its own configuration.
+Keeping all configuration data synchronized and accessible creates a maintenance challenge.
+
+ConfigMaps enable the application configuration to be externalized and used in individual Linux containers and pods on OpenShift.
+You can create a ConfigMap object in a variety of ways, including using a YAML file, and inject it into the Linux container.
+ConfigMaps also allow you to group and scale sets of configuration data.
+This lets you configure a large number of environments beyond the basic _Development_, _Stage_, and _Production_.
+You can find more information about ConfigMaps in the link:https://docs.openshift.org/latest/dev_guide/configmaps.html[OpenShift documentation].
+
