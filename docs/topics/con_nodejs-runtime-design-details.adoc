@@ -1,5 +1,5 @@
-[id='nodejs-runtime-details_{context}']
-= {Node} runtime details
+[id='nodejs-runtime-design-details_{context}']
+= {Node} runtime design details
 
 {Node} is based on the link:https://developers.google.com/v8/[V8 JavaScript engine] from Google and allows you to write server-side JavaScript applications.
 It provides an I/O model based on events and non-blocking operations that enables you to write applications that are both lightweight and efficient.
