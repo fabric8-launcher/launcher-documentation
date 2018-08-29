@@ -5,15 +5,13 @@
 When your application is configured for debugging, attach a remote debugger of your choice to it.
 In this guide, link:https://www.redhat.com/en/technologies/jboss-middleware/developer-studio[Red Hat JBoss Developer Studio] is covered, but the procedure is similar when using other programs.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * The application running either locally or on OpenShift, and configured for debugging.
 * The port number that your application is listening on for debugging.
 * Red Hat JBoss Developer Studio installed on your machine. You can download it from the link:https://developers.redhat.com/products/devstudio/download/[Red Hat JBoss Developer Studio download page].
 
-[discrete]
-== Procedure
+.Procedure
 
 . Start Red Hat JBoss Developer Studio.
 . Create a new debug configuration for your application:
@@ -29,8 +27,7 @@ This creates a new remote debugging configuration.
 +
 To quickly launch your debug configuration after the first time, click *Run->Debug History* and select the configuration from the list.
 
-[discrete]
-== Additional resources
+.Additional resources
 
 * link:https://access.redhat.com/articles/1290703[Debug an OpenShift Java Application with JBoss Developer Studio] on Red Hat Knowledgebase.
 * A https://blog.openshift.com/debugging-java-applications-on-openshift-kubernetes/[Debugging Java Applications On OpenShift and Kubernetes] article on OpenShift Blog.

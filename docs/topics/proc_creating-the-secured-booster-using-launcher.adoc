@@ -2,14 +2,12 @@
 [id='creating-the-secured-booster-using-launcher_{context}']
 = Creating the {name-mission-secured} booster using {launcher}
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * The URL and user credentials of your running {launcher} instance.
 For more information, see xref:getting-the-launcher-tool-url-and-credentials_{context}[].
 
-[discrete]
-== Procedure
+.Procedure
 
 * Navigate to the {launcher} URL in a browser and log in.
 * Follow the on-screen instructions to create your booster in {runtime}.

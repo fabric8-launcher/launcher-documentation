@@ -10,14 +10,12 @@
 [id='deploying-the-booster-using-the-launcher-tool_{context}']
 = Deploying the booster using the {launcher} tool
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * The URL of your running {launcher} instance and the user credentials of your {OpenShiftLocal}.
 For more information, see xref:getting-the-launcher-tool-url-and-credentials_{context}[].
 
-[discrete]
-== Procedure
+.Procedure
 
 . Navigate to the {parameter-deployment} URL in a browser.
 . Follow on-screen instructions to create and launch your booster in {runtime}.

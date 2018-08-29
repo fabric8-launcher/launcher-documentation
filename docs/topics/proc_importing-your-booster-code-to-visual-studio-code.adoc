@@ -4,14 +4,12 @@
 
 You can add the project folder of your booster code to an existing workspace in Visual Studio Code. This enables you to start making changes.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * Your booster created and downloaded from link:{link-launcher-oso}[{launcher-oso}].
 * Visual Studio Code running.
 
-[discrete]
-== Procedure
+.Procedure
 
 . In Visual Studio Code, click _File_ -> _Add Folder to Workspace_.
 . Choose your booster project folder and click _Add_.

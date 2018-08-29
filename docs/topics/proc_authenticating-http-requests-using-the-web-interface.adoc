@@ -13,13 +13,11 @@ In addition to the HTTP API, the secured endpoint also contains a web interface 
 
 The following procedure is an exercise for you to see how security is enforced, how you authenticate, and how you work with the authentication token.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * The secured endpoint URL. For more information, see xref:getting-the-secured-booster-api-endpoint_{context}[].
 
-[discrete]
-== Procedure
+.Procedure
 
 . In a web browser, navigate to the endpoint URL.
 . Perform an unauthenticated request:

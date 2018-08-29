@@ -1,13 +1,11 @@
 [id='interacting-with-the-unmodified-cache-booster_{context}']
 = Interacting with the unmodified {name-mission-cache} booster
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * Your application deployed
 
-[discrete]
-== Procedure
+.Procedure
 
 . Navigate to the `greeting` service using your browser.
 

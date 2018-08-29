@@ -6,13 +6,11 @@
 The `keycloak-authz-client` library for {WildFlySwarm} is provided as a link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview].
 --
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * The `oc` client authenticated.
 
-[discrete]
-== Procedure
+.Procedure
 
 include::note-integration-tests-app-deletion-warning.adoc[]
 

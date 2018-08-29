@@ -4,13 +4,11 @@
 
 Red Hat JBoss Developer Studio provides tooling for committing and pushing code through Git directly in the IDE. Alternatively, you can use Red Hat JBoss Developer Studio to make changes and push those changes with the Git CLI.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 . All files with changes that you intend to commit are saved.
 
-[discrete]
-== Procedure
+.Procedure
 
 . In Developer Studio, right click on the root of the project _Project Explorer_ or _Package Explorer_ view.
 . Choose _Team_ -> _Commit..._.

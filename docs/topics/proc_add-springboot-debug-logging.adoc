@@ -3,12 +3,10 @@
 
 Add debug logging to your application.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 * An application you want to debug. For example, the xref:mission-rest-http-spring-boot[{name-mission-http-api} booster].
 
-[discrete]
-== Procedure
+.Procedure
 
 . Declare a `org.apache.commons.logging.Log` object using the `org.apache.commons.logging.LogFactory` for the class you want to add logging.
 +

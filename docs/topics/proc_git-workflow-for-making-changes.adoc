@@ -6,14 +6,12 @@ When making contributions, follow the standard link:https://guides.github.com/in
 
 WARNING: Do not edit files in the `$REPO_HOME/docs/topics/wildfly-swarm` directory, always submit a pull request to the link:{link-repo-wildfly-swarm}[{WildFlySwarm} repository] and synchronize the files afterwards.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * A GitHub account with GPG. For more information, see xref:_accounts[].
 * The {repo-docs-name} repository cloned and xref:_setting_up_git_hooks[Git hooks set up].
 
-[discrete]
-== Procedure
+.Procedure
 
 .Contributor Workflow
 . Create a topic branch in your personal fork of the _{repo-docs-name}_ repository. If you want to resolve a particular issue with your changes, name the branch `issue-$ID`, where `$ID` is the numerical ID of the issue.

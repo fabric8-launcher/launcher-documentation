@@ -46,13 +46,11 @@ bom-certified:: All _community_ fractions that have been certified against the
 product. Any fraction used from `bom-certified` is unsupported.
 endif::[]
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * Your application as a Maven-based project with a `pom.xml` file.
 
-[discrete]
-== Procedure
+.Procedure
 
 . Include a `bom` artifact in your `pom.xml`.
 +
@@ -158,8 +156,7 @@ include::pom.xml[tag=plugin,indent=4]
 </plugins>
 ----
 
-[discrete]
-== Additional resources
+.Additional resources
 
 * xref:creating-an-uberjar[]
 

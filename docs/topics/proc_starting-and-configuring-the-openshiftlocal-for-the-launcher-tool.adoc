@@ -12,13 +12,11 @@ Because a {OpenShiftLocal} is intended for development purposes, it uses HTTPS f
 image::minishift_sslwarning.png[SSL warning]
 ====
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * xref:installing-a-openshiftlocal[{OpenShiftLocal} installed].
 
-[discrete]
-== Procedure
+.Procedure
 
 . Start the {OpenShiftLocal} with the default virtual machine driver:
 +

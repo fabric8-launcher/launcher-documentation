@@ -3,14 +3,12 @@
 
 The booster provides a default HTTP endpoint that accepts `GET` requests.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * Your application running
 * The `curl` binary or a web browser
 
-[discrete]
-== Procedure
+.Procedure
 
 . Use `curl` to execute a `GET` request against the booster.
 You can also use a browser to do this.

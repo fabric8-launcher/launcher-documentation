@@ -5,13 +5,11 @@
 By default, the {launcher} tool uses a booster catalog from the link:https://github.com/openshiftio/booster-catalog[openshiftio/booster-catalog] repository.
 If you do not want to use the default catalog, you can create one from scratch, or fork the default catalog and make changes to it. This chapter describes the procedure for modifying the default catalog.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * A GitHub account
 
-[discrete]
-== Procedure
+.Procedure
 
 .Creating Custom Booster Catalog
 . Navigate to the link:https://github.com/openshiftio/booster-catalog[openshiftio/booster-catalog] repository, which hosts the default booster catalog.

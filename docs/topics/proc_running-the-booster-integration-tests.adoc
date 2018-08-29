@@ -17,8 +17,7 @@ When run inside an OpenShift project, the tests:
 
 include::note-integration-tests-app-deletion-warning.adoc[]
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * the `oc` client authenticated
 * an empty OpenShift project
@@ -34,8 +33,7 @@ $ oc policy add-role-to-user view -n $(oc project -q) -z default
 endif::built-for-vertx,built-for-spring-boot[]
 endif::parameter-configmap[]
 
-[discrete]
-== Procedure
+.Procedure
 
 Execute the following command to run the integration tests:
 

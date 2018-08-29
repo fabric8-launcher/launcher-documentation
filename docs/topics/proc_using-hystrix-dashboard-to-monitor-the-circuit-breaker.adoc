@@ -3,13 +3,11 @@
 
 Hystrix Dashboard lets you easily monitor the health of your services in real time by aggregating Hystrix metrics data from an event stream and displaying them on one screen.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * The application deployed
 
-[discrete]
-== Procedure
+.Procedure
 
 . Log in to your {OpenShiftLocal} cluster.
 +
@@ -75,7 +73,6 @@ http://{app-name}-greeting/hystrix.stream
 endif::[]
 --
 
-[discrete]
-== Additional resources
+.Additional resources
 
 * The Hystrix Dashboard link:https://github.com/Netflix/Hystrix/wiki/Dashboard[wiki page]

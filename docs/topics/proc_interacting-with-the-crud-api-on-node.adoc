@@ -3,14 +3,12 @@
 
 When you have finished creating your application booster, you can interact with it the following way:
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * Your application running
 * The `curl` binary or a web browser
 
-[discrete]
-== Procedure
+.Procedure
 
 . Obtain the URL of your application by executing the following command:
 +

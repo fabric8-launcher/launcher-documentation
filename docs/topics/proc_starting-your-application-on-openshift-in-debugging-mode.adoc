@@ -12,15 +12,13 @@
 
 To debug your {runtime}-based application on OpenShift remotely, you must set the `{env-var-name}` environment variable inside the container to `{env-var-val}` and configure port forwarding so that you can connect to your application from a remote debugger.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * Your application running on OpenShift.
 * The `oc` binary installed on your machine.
 * The ability to execute the `oc port-forward` command in your target OpenShift environment.
 
-[discrete]
-== Procedure
+.Procedure
 
 . Using the `oc` command, list the available deployment configurations:
 +
@@ -93,8 +91,7 @@ $ oc set env dc/{app-name} {env-var-name}-
 ----
 
 ifndef::nodejs[]
-[discrete]
-== Additional resources
+.Additional resources
 
 You can also set the `{env-var-name}_PORT` environment variable if you want to change the debug port from the default, which is `{port}`.
 endif::nodejs[]

@@ -10,13 +10,11 @@
 
 Install a local customized instance of the {launcher} tool, which allows you to test the functionality or make modifications to the service using a web interface.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 * xref:starting-and-configuring-the-openshiftlocal-for-the-launcher-tool_{context}[{OpenShiftLocal} running].
 * A link:{link-launcher-openshift-local-install-guide}#creating-a-github-personal-access-token_minishift[GitHub personal access token].
 
-[discrete]
-== Procedure
+.Procedure
 . Open the {OpenShiftLocal} Web console and log in.
 . Click _New Project_ to create a new OpenShift project to house the {launcher} tool.
 +
@@ -64,8 +62,7 @@ A new browser tab opens with the {launcher} tool. This is the same service as `{
 
 . Start using your {launcher} tool to launch booster applications.
 
-[discrete]
-== Additional resources
+.Additional resources
 * See the link:{link-getting-started-guide}[{getting-started-guide-name}] for a walk-through of running a booster application.
 * Read the runtime guides for an overview of the runtimes and their boosters:
 ** link:{link-spring-boot-runtime-guide}[{spring-boot-runtime-guide-name}]

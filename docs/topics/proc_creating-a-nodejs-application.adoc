@@ -5,12 +5,10 @@ In addition to xref:mission-rest-http-nodejs[using a booster], you can also crea
 
 == Creating an application
 
-[discrete]
-== Prerequisites
+.Prerequisites
 * `npm` installed.
 
-[discrete]
-== Procedure
+.Procedure
 
 . Create the application folder.
 +
@@ -71,14 +69,12 @@ $ curl http://localhost:8080
 [#proc_deploy-new-nodejs-app-openshift]
 == Deploying an application to OpenShift
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * The `oc` CLI client installed.
 * `npm` installed.
 
-[discrete]
-== Procedure
+.Procedure
 
 . Add `nodeshift` to your application.
 +

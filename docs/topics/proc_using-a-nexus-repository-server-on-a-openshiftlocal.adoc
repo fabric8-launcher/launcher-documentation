@@ -10,8 +10,7 @@ While developing your cloud-native applications with Java and Maven you may be r
 You can deploy a Nexus Repository server alongside the {launcher} tool on your {OpenShiftLocal} and use it to fetch artifacts from the Maven Central repository and cache them locally.
 This helps you speed up your builds and rolling updates and alleviates network load during build time.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * Your {OpenShiftLocal} set up.
 Follow the instructions in link:{link-launcher-openshift-local-install-guide}[{minishift-installation-guide-name}].
@@ -53,8 +52,7 @@ It has not been tested for use with CDK.
 * A booster application deployed to your {OpenShiftLocal}.
 
 
-[discrete]
-== Procedure
+.Procedure
 
 . Log in to your {OpenShiftLocal} instance.
 +

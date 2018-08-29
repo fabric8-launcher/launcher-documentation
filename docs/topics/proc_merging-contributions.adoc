@@ -6,13 +6,11 @@ When you or someone else has xref:reviewing-changes_{context}[reviewed the chang
 
 IMPORTANT: Do not merge your own pull requests unless absolutely necessary. You are accountable for any errors, merge conflicts, or bugs resulting from incorrect merging. Let another contributor with the appropriate repository access privileges do it.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * GitHub account with merge access to the _{repo-docs-name}_ repository and GPG configured.
 
-[discrete]
-== Procedure
+.Procedure
 
 .Merging a Pull Request
 . Ensure that you have the contributor's fork of the _{repo-docs-name}_ repository in your list of remotes:

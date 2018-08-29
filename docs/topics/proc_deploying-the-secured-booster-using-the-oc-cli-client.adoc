@@ -7,8 +7,7 @@
 [id='deploying-the-secured-booster-using-the-oc-cli-client_{context}']
 = Deploying the {name-mission-secured} booster using the `oc` CLI client
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * The booster application created using the {launcher} tool on a {OpenShiftLocal}.
 ifndef::parameter-ocp[For more information, see xref:creating-the-secured-booster-using-launcher_{context}[].]
@@ -16,8 +15,7 @@ ifndef::parameter-ocp[For more information, see xref:creating-the-secured-booste
 ifndef::parameter-ocp[* Your {launcher} URL.]
 * The `oc` client authenticated. For more information, see xref:authenticating-the-oc-cli-client_{context}[].
 
-[discrete]
-== Procedure
+.Procedure
 . Clone your project from GitHub.
 +
 [source,bash,options="nowrap",subs="attributes+"]

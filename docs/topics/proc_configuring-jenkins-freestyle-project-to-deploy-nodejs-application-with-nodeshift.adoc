@@ -3,8 +3,7 @@
 
 Similar to using nodeshift from your local host to deploy a {Node} application, you can configure Jenkins to use nodeshift to deploy a {Node} application.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 * Access to an OpenShift cluster.
 * link:https://docs.openshift.org/latest/using_images/other_images/jenkins.html[The Jenkins container image] running on same OpenShift cluster.
 * link:https://plugins.jenkins.io/nodejs[The {Node} plugin] installed on your Jenkins server.
@@ -17,8 +16,7 @@ $ nodeshift --dockerImage=registry.access.redhat.com/rhoar-nodejs/nodejs-8 ...
 ----
 * The source of the application available in GitHub.
 
-[discrete]
-== Procedure 
+.Procedure 
 . Create a new OpenShift project for your application:
 .. Open the OpenShift Web console and log in.
 .. Click _Create Project_ to create a new OpenShift project.

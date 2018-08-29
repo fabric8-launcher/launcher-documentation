@@ -1,14 +1,12 @@
 [id='running-the-vertx-secured-booster-integration-tests_{context}']
 = Running the {VertX} {name-mission-secured} booster integration tests
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * The `oc` client authenticated.
 // * An empty OpenShift project in which to run the tests.
 
-[discrete]
-== Procedure
+.Procedure
 // space here to prevent the section title and admonition from sticking together in the rendered version
 {nbsp}
 include::note-integration-tests-app-deletion-warning.adoc[]

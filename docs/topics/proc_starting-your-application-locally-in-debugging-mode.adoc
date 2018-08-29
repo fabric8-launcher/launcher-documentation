@@ -20,13 +20,11 @@ This is useful especially when performing integration testing.
 * When using the Arquillian adapter for {runtime}.
 endif::[]
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * A Maven-based application
 
-[discrete]
-== Procedure
+.Procedure
 
 . In a console, navigate to the directory with your application.
 . Launch your application and specify the debug port using the `-D{parameter-debug-property}` argument:

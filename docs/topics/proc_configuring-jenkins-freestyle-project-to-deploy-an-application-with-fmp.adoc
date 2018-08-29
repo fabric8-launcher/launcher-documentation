@@ -8,8 +8,7 @@
 
 Similar to using Maven and the Fabric8 Maven Plugin from your local host to deploy an application, you can configure Jenkins to use Maven and the Fabric8 Maven Plugin to deploy an application.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 * Access to an OpenShift cluster.
 * link:https://docs.openshift.org/latest/using_images/other_images/jenkins.html[The Jenkins container image] running on same OpenShift cluster.
 * A JDK and Maven installed and configured on your Jenkins server.
@@ -25,8 +24,7 @@ Similar to using Maven and the Fabric8 Maven Plugin from your local host to depl
 ----
 * The source of the application available in GitHub.
 
-[discrete]
-== Procedure 
+.Procedure 
 . Create a new OpenShift project for your application:
 .. Open the OpenShift Web console and log in.
 .. Click _Create Project_ to create a new OpenShift project.

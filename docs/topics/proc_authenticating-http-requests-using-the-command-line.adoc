@@ -5,14 +5,12 @@
 Request a token by sending a HTTP POST request to the {RHSSO} server.
 In the following example, the link:https://stedolan.github.io/jq/[jq CLI tool] is used to extract the token value from the JSON response.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * The secured booster endpoint URL. For more information, see xref:getting-the-secured-booster-api-endpoint_{context}[].
 * The `jq` command-line tool (optional). To download the tool and for more information, see https://stedolan.github.io/jq/.
 
-[discrete]
-== Procedure
+.Procedure
 . Request an access token with `curl`, the credentials, and `<SSO_AUTH_SERVER_URL>` and extract the token from the response with the `jq` command:
 +
 --
