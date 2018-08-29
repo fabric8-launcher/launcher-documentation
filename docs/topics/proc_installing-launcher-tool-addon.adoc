@@ -29,8 +29,9 @@ $ minishift start
 ----
 $ git clone git@github.com:minishift/minishift-addons.git
 $ minishift addon install minishift-addons/add-ons/fabric8-launcher/
-$ minishift addons apply fabric8-launcher \ 
-      --addon-env GITHUB_USERNAME=GH_USERNAME --addon-env GITHUB_TOKEN=TOKEN <1>
+$ minishift addons apply fabric8-launcher \
+       --addon-env GITHUB_USERNAME=GH_USERNAME \
+       --addon-env GITHUB_TOKEN=TOKEN <1>
 ----
 <1> Use your GitHub username and personal access token
 +
