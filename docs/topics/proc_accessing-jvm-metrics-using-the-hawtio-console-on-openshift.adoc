@@ -2,10 +2,9 @@
 = Accessing JVM metrics using Jolokia on OpenShift
 
 link:https://jolokia.org/documentation.html[Jolokia^] is a built-in lightweight solution for accessing JMX (Java Management Extension) metrics over HTTP on OpenShift.
-It allows you to access CPU, storage, and memory usage data collected by JMX over an HTTP bridge using a REST interface and JSON-formatted message payloads, making it suitable for monitoring cloud applications, due to its comparably high speed and low resource-requirements.
-
-[#accessing-jvm-metrics-using-hawtio-console]
-== Accessing Jolokia metrics using the hawt.io console
+Jolokia allows you to access CPU, storage, and memory usage data collected by JMX over an HTTP bridge.
+Jolokia uses a REST interface and JSON-formatted message payloads.
+It is suitable for monitoring cloud applications thanks to its comparably high speed and low resource requirements.
 
 For Java-based applications, the OpenShift Web console provides the integrated link:https://docs.openshift.com/container-platform/3.6/architecture/infrastructure_components/web_console.html#jvm-console[_hawt.io_ console^] that collects and displays all relevant metrics output by the JVM running your application.
 
@@ -15,8 +14,7 @@ For Java-based applications, the OpenShift Web console provides the integrated l
 * a Java-based application container running in a project on OpenShift
 * latest link:https://github.com/jboss-container-images/redhat-openjdk-18-openshift-image/blob/openjdk18-dev/image.yaml[JDK 1.8.0 image^]
 
-[discrete]
-== Procedure
+.Procedure
 
 . List the deployment configurations of the pods inside your project and select the one that corresponds to your application.
 +
@@ -70,6 +68,7 @@ The pod is redeployed with the updated deployment configuration and exposes the 
 +
 . In the pod details screen, click _Open Java Console_ to access the hawt.io console.
 
-.Additional information
+.Additional resources
 
 * link:http://hawt.io/docs/index.html[hawt.io documentation]
+
