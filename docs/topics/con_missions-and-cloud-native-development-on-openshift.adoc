@@ -1,14 +1,18 @@
 [id='missions-and-cloud-native-development-on-openshift_{context}']
-= Missions and Cloud-Native development on OpenShift
+= Missions and cloud-native development on OpenShift
 
-.What are Missions?
+When developing applications on OpenShift, you can use missions and boosters to kickstart your development.
+
+[discrete]
+== Missions
+
 Missions are working applications that showcase different fundamental pieces of building cloud native applications and services.
 
 A mission implements a link:http://microservices.io/patterns/microservices.html[Microservice pattern] such as:
 
- * Creating REST APIs
- * Interoperating with a database
- * Implementing the Health Check pattern
+* Creating REST APIs
+* Interoperating with a database
+* Implementing the Health Check pattern
 
 You can use missions for a variety of purposes:
 
@@ -16,7 +20,9 @@ You can use missions for a variety of purposes:
 * A teaching tool, or a sandbox for understanding how to develop applications for your project
 * They can also be updated or extended for your own use case
 
-.What is a Booster?
+[discrete]
+== Boosters
+
 A booster is the implementation of a mission in a specific runtime. Boosters are preconfigured, functioning applications that demonstrate a fundamental aspect of modern application development and run in an environment similar to production.
 
 Each mission is implemented in one or more runtimes. Both the specific implementation and the actual project that contains your code are called a booster.
