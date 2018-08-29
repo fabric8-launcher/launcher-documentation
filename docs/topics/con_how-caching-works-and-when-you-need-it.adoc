@@ -1,0 +1,33 @@
+[id='how-caching-works-and-when-you-need-it_{context}']
+= How caching works and when you need it
+
+Caching allows you to store information and access it for a given period of time.
+Caching can provide access to information faster or more reliably than repeatedly calling the original service.
+A disadvantage of caching is that the cached information is not up to date.
+However, that problem can be reduced by setting an _expiration_ or TTL (time to live) on each value stored in the cache.
+
+.Caching example
+====
+Assume you have two applications: _service1_ and _service2_:
+
+* _Service1_ depends on a value from _service2_.
+** If the value from _service2_ infrequently changes, _service1_ could cache the value from _service2_ for a period of time.
+** Using cached values can also reduce the number of times _service2_ is called.
+* If it takes _service1_ 500 ms to retrieve the value directly from _service2_, but 100 ms to retrieve the cached value, _service1_ would save 400 ms by using the cached value for each cached call.
+* If _service1_ would make uncached calls to _service2_ 5 times per second, over 10 seconds, that would be 50 calls.
+* If _service1_ started using a cached value with a TTL of 1 second instead, that would be reduced to 10 calls over 10 seconds.
+====
+
+.How the {name-mission-cache} mission works
+
+. The _cache_, _cute name_, and _greeting_ services are deployed and exposed.
+. User accesses the web frontend of the _greeting_ service.
+. User invokes the _greeting_ HTTP API using a button on the web frontend.
+. The _greeting_ service depends on a value from the _cute name_ service.
+** The _greeting_ service first checks if that value is stored in the _cache_ service. If it is, then the cached value is returned.
+** If the value is not cached, the _greeting_ service calls the _cute name_ service, returns the value, and stores the value in the _cache_ service with a TTL of 5 seconds.
+. The web front end displays the response from the _greeting_ services as well as the total time of the operation.
+. User invokes the service multiple times to see the difference between cached and uncached operations.
+** Cached operations are significantly faster than uncached operations.
+** User can force the cache to be cleared before the TTL expires.
+
