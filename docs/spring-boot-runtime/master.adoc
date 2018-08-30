@@ -12,7 +12,7 @@ include::topics/templates/document-attributes.adoc[]
 
 This guide covers concepts as well as practical details needed by developers to use the {SpringBoot} runtime. It provides information governing the design of a {SpringBoot} application deployed as a Linux container on OpenShift.
 
-include::topics/con_springboot-runtime-design-details.adoc[leveloffset=+1]
+include::topics/con_what-is-springboot.adoc[leveloffset=+1]
 
 include::topics/ref_springboot-tested-and-verified-version.adoc[leveloffset=+2]
 
