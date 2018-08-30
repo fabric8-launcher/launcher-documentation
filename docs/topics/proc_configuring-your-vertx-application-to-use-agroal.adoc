@@ -8,8 +8,7 @@ Update the property names in the configuration of your JDBC connection pool to a
 
 NOTE: To continue using C3P0 as the JDBC connection pool for your application, set the value of the `provider_class` property in your JDBC connection pool configuration to `io.vertx.ext.jdbc.spi.impl.C3P0DataSourceProvider`.
 
-[discrete]
-== Procedure
+.Procedure
 
 . Update the following property names within your JDBC connection pool configuration to match the connection pool you use:
 

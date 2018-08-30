@@ -4,14 +4,12 @@
 
 You can preview the documentation site locally by building and deploying the Docker containers with the documentation site on your machine.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * Docker installed.
 * Docker daemon running.
 
-[discrete]
-== Procedure
+.Procedure
 
 .Running Preview Server Locally
 . Execute the `scripts/preview_server.sh` script.
@@ -29,8 +27,7 @@ NOTE: We do not recommend adding the regular user to the `docker` group. For mor
 .. Go back to the terminal where the script is running.
 .. Press `Ctrl + C`.
 
-[discrete]
-== Additional resources
+.Additional resources
 
 * Official link:https://www.docker.com/get-docker[Docker installation documentation].
 * Docker group security:

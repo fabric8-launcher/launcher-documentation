@@ -3,14 +3,12 @@
 
 To push changes to this booster running in {OpenShiftOnline} or your {OpenShiftLocal}, you can push a new commit to the GitHub repository and start a new build.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * Have a booster deployed to xref:deploying-a-booster-to-openshiftonline_{context}[{OpenShiftOnline}] or xref:creating-and-deploying-a-booster-using-your-openshiftlocal_{context}[{OpenShiftLocal}] using the _Deploy in OpenShift Online_ option.
 
 
-[discrete]
-== Procedure
+.Procedure
 . Clone your project from GitHub:
 +
 [source,bash,options="nowrap",subs="attributes+"]

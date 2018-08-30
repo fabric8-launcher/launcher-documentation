@@ -15,13 +15,11 @@ Some files are not present in the upstream repository because they are generated
 
 The hash of the synced upstream commit is stored in the `docs/topics/wildfly-swarm/docs/commit.hash` file.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * Maven installed
 
-[discrete]
-== Procedure
+.Procedure
 
 . Execute the `$REPO_HOME/scripts/sync_with_wildfly_swarm.sh` script:
 +

@@ -46,8 +46,7 @@ app.use(‘/api/greeting’, kc.protect('booster-admin'), callback);  <4>
 
 The example {Node} code enables Keycloak and enforces protection of the Greeting service web resource endpoint. The `keycloak.json` configures the security adapter to interact with {RHSSO}.
 
-[discrete]
-== Additional resources
+.Additional resources
 
 * For more information about the {Node} Keycloak adapter, see the link:http://www.keycloak.org/docs/latest/securing_apps/topics/oidc/nodejs-adapter.html[Keycloak documentation].
 

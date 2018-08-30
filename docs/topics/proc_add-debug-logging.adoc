@@ -3,12 +3,10 @@
 This example uses the link:https://www.npmjs.com/package/debug[debug package], but there are also link:https://www.npmjs.com/search?q=log[other packages available] that can handle debug logging.
 
 
-[discrete]
-== Prerequisites
+.Prerequisites
 * An application you want to debug. For example, xref:mission-rest-http-nodejs[a booster].
 
-[discrete]
-== Procedure
+.Procedure
 
 . Add the `debug` logging definition.
 +

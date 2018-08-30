@@ -12,7 +12,7 @@ include::topics/templates/document-attributes.adoc[]
 
 This guide covers concepts as well as practical details needed by developers to use the {SpringBoot} runtime. It provides information governing the design of a {SpringBoot} application deployed as a Linux container on OpenShift.
 
-include::topics/con_springboot-runtime-details.adoc[leveloffset=+1]
+include::topics/con_springboot-runtime-design-details.adoc[leveloffset=+1]
 
 include::topics/ref_springboot-tested-and-verified-version.adoc[leveloffset=+2]
 
@@ -131,7 +131,7 @@ This section contains information about monitoring your {SpringBoot}{ndash}based
 
 === Accessing JVM metrics for your application on OpenShift
 
-include::topics/proc_accessing-jvm-metrics-using-jolokia-on-openshift.adoc[leveloffset=+3]
+include::topics/proc_accessing-jvm-metrics-using-the-hawtio-console-on-openshift.adoc[leveloffset=+3]
 
 
 

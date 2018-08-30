@@ -4,13 +4,11 @@
 
 Visual Studio Code provides tooling for committing and pushing code through Git directly in the IDE. Alternatively, you can use Visual Studio Code to make changes and push those changes with the Git CLI.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 . All files with changes that you intend to commit are saved.
 
-[discrete]
-== Procedure
+.Procedure
 
 . In Visual Studio Code, on the left side, click the _Source Control_ icon.
 . Under _Changes_ click the _+_ icon for each file you want to stage. Alternatively, you can click on the _+_ icon next to _Changes_ to stage all files.

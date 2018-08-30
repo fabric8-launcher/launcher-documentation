@@ -4,13 +4,11 @@
 
 When you are making a contribution, you should preview your changes before you commit or push them. This section describes the most typical procedure of doing so.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * Asciidoctor
 
-[discrete]
-== Procedure
+.Procedure
 
 .Building a Single Guide
 . In a console application, navigate to the directory of the book you want to build.

@@ -3,13 +3,11 @@
 
 To configure your application to use {Vertx}:
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * A Maven-based application
 
-[discrete]
-== Procedure
+.Procedure
 
 . Reference the {Vertx} BOM (Bill of Materials) artifact in the `<dependencyManagement>` section of the `pom.xml` file of your application.
 Specify the `<type>pom</type>` and `<scope>import</scope>`:
@@ -82,8 +80,7 @@ Include the following properties in your `pom.xml` file to track the version of 
 </project>
 ----
 
-[discrete]
-== Additional resources
+.Additional resources
 
 * For more information about packaging your {Vertx} application, see the link:https://vmp.fabric8.io/#packaging[Vert.x Maven Plugin] documentation.
 

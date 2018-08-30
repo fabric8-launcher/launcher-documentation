@@ -1,13 +1,11 @@
 [id='basic-workflow-for-modifying-existing-guides_{context}']
 = Basic workflow for modifying existing guides
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * A text editor for editing AsciiDoc, such as link:https://atom.io[the Atom editor].
 
-[discrete]
-== Procedure
+.Procedure
 
 . Find the guide you want to modify and open the `master.adoc` file in the director of the guide.
 . Find the section that you want to modify and open the appropriate file. 

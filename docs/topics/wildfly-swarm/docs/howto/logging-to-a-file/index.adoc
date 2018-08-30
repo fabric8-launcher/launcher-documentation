@@ -8,14 +8,12 @@ Typically, deployments use rotating logs to save disk space.
 In {Thorntail}, logging is configured using system properties.
 Even though it is possible to use the `-Dproperty=value` syntax when launching your application, it is strongly recommended to configure file logging using the YAML profile files.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * A Maven-based application with the logging fraction enabled. For more information, see xref:enabling-logging_{context}[].
 * A writable directory on your file system.
 
-[discrete]
-== Procedure
+.Procedure
 
 . Open a YAML profile file of your choice.
 If you do not know which one to use, open `project-defaults.yml` in the `src/main/resources` directory in your application sources.

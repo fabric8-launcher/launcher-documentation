@@ -66,8 +66,7 @@ $ git config --global gpg.program gpg2
 
 To make a contribution to the {repo-docs-name} repository, you need to set up the Git hooks directory. These hooks automatically make sure at commit time that your contribution does not break important parts of the repository.
 
-[discrete]
-=== Procedure
+.Procedure
 
 .Setting up Git Hooks in {repo-docs-name} Repository
 . In a terminal application, navigate to the directory with the {repo-docs-name} repository.

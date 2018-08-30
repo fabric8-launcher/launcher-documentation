@@ -4,14 +4,12 @@
 
 Importing your booster's code creates a project in Red Hat JBoss Developer Studio and enables you to start making changes.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * Your booster created and downloaded from link:{link-launcher-oso}[{launcher-oso}].
 * Red Hat JBoss Developer Studio running.
 
-[discrete]
-== Procedure
+.Procedure
 
 . In Developer Studio, Click _File_ -> _Import_.
 . Choose _Git_ -> _Projects from Git_ and click _Next_.

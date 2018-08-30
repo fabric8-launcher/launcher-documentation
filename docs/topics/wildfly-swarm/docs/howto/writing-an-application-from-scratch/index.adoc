@@ -4,14 +4,12 @@
 
 Creating a simple {Thorntail}{ndash}based application with a REST endpoint from scratch.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * JDK 8 or newer installed
 * Maven 3.3.x or newer installed
 
-[discrete]
-== Procedure
+.Procedure
 
 . Create a directory for the application and navigate to it:
 +

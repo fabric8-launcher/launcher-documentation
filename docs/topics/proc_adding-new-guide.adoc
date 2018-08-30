@@ -3,8 +3,7 @@
 
 To add a new guide to the existing documentation set, perform the following steps:
 
-[discrete]
-== Procedure
+.Procedure
 
 .Adding New Guide
 . Create a new directory for the guide under `docs/`, for example `docs/my-new-guide`.

@@ -19,7 +19,7 @@ This mission shows you how to:
 * Deploy a cache to OpenShift.
 * Use a cache within an application.
 
-include::con_about-caching.adoc[leveloffset=+1]
+include::con_how-caching-works-and-when-you-need-it.adoc[leveloffset=+1]
 
 include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 

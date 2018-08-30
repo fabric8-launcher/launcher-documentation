@@ -3,12 +3,10 @@
 
 Start your application and interact with it to see the debugging statements.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 * An application with debug logging enabled.
 
-[discrete]
-== Procedure
+.Procedure
 . Start your application.
 +
 [source,bash,options="nowrap",subs="attributes+"]

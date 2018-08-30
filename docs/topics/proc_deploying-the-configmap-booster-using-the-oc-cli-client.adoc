@@ -8,8 +8,7 @@
 [id='deploying-the-configmap-booster-using-the-oc-cli-client_{context}']
 = Deploying the {name-mission-configmap} booster using the `oc` CLI client
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * The booster application created using {parameter-deployment}.
 ifndef::parameter-openshiftlocal[For more information, see xref:deploying-the-booster-using-launcher-oso_{context}[].]
@@ -20,8 +19,7 @@ endif::[]
 
 * The `oc` client authenticated. For more information, see xref:authenticating-the-oc-cli-client_{context}[].
 
-[discrete]
-== Procedure
+.Procedure
 . Clone your project from GitHub.
 +
 [source,bash,options="nowrap",subs="attributes+"]

@@ -5,8 +5,7 @@
 Red Hat JBoss Developer Studio is an integrated development environment, or IDE, that provides tooling for writing software.
 You can use it to make changes to your booster's code.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * Have a booster deployed to xref:deploying-a-booster-to-openshiftonline_{context}[{OpenShiftOnline}] or xref:creating-and-deploying-a-booster-using-your-openshiftlocal_{context}[{OpenShiftLocal}] using the _Deploy in OpenShift Online_ option.
 * Have Red Hat JBoss Developer Studio link:https://developers.redhat.com/products/devstudio/download/[downloaded from the Red Hat Developer Portal] and installed.

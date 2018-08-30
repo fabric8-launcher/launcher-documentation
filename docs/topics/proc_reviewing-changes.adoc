@@ -4,13 +4,11 @@
 
 Ensure you perform all the following actions when reviewing a pull request:
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * GitHub account with administration privileges to Jenkins builds. For more information, see xref:reviewing_changes_related_information[] in this chapter.
 
-[discrete]
-== Procedure
+.Procedure
 
 .Reviewing Pull Request
 . Approve the test build if there is a comment from the `centos-ci` user asking "Can one of the admins verify this patch?". That means the pull request comes from an external contributor. To approve the build, reply `[test]` in comments.
@@ -32,8 +30,7 @@ If you are unsure if the changes render correctly, build the contribution locall
 . Run the preview server locally and review the built documentation.
 --
 
-[discrete]
-[[reviewing_changes_related_information]]
+.eviewing_changes_related_information]]
 == Additional resources
 
 * The Jenkins build configuration file is in the link:https://github.com/almighty/almighty-jobs/blob/master/devtools-ci-index.yaml#L11[devtools-ci-index.adoc] file in the _almighty/almighty-jobs_ repository.

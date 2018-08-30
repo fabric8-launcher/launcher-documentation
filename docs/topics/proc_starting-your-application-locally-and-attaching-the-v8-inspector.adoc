@@ -2,14 +2,12 @@
 = Starting your application locally and attaching the V8 inspector
 The V8 inspector enables you to debug your {Node}{ndash}based application using other tools, such as link:https://developers.google.com/web/tools/chrome-devtools/[Chrome DevTools], that use the link:https://chromedevtools.github.io/debugger-protocol-viewer/1-2/[Chrome Debugging Protocol].
 
-[discrete]
-== Prerequisites
+.Prerequisites
 * An application you want to debug.
 * The V8 inspector installed, such as the one provided in link:https://www.google.com/chrome/index.html[the Google Chrome Browser].
 
 
-[discrete]
-== Procedure
+.Procedure
 . Start your application with the link:https://nodejs.org/api/debugger.html#debugger_v8_inspector_integration_for_node_js[V8 inspector integration enabled].
 +
 [source,bash,options="nowrap",subs="attributes+"]

@@ -17,7 +17,7 @@ This mission shows you how to:
 * Use the configuration provided by the `ConfigMap` within an application.
 * Deploy changes to the `ConfigMap` configuration of running applications.
 
-include::con_about-externalized-configuration.adoc[leveloffset=+1]
+include::con_the-externalized-configuration-design-pattern.adoc[leveloffset=+1]
 
 include::con_configmap-design-tradeoffs.adoc[leveloffset=+1]
 

@@ -4,15 +4,13 @@
 
 Start your application and interact with it to see the debugging statements in OpenShift.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * A Maven-based application with debug logging enabled.
 * The `oc` CLI client installed and authenticated.
 
 
-[discrete]
-== Procedure
+.Procedure
 
 . Deploy your application to OpenShift:
 +
@@ -100,8 +98,7 @@ ifdef::built-for-thorntail[]
 endif::[]
 
 ifdef::built-for-thorntail[]
-[discrete]
-== Additional resources
+.Additional resources
 
 * xref:_logging[]
 endif::[]

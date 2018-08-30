@@ -2,12 +2,10 @@
 = Starting your application locally and attaching the native debugger
 The native debugger enables you to debug your {Node}{ndash}based application using the built-in debugging client.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 * An application you want to debug.
 
-[discrete]
-== Procedure
+.Procedure
 . Start the application with the debugger enabled.
 +
 The native debugger is automatically attached and provides a debugging prompt.

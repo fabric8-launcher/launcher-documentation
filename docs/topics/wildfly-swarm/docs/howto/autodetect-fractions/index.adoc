@@ -17,13 +17,11 @@ include::pom.xml[tag=jaxrs,index=2]
 
 {Thorntail} then includes the `jaxrs` fraction during the build automatically.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * An existing Maven-based application with a `pom.xml` file.
 
-[discrete]
-== Procedure
+.Procedure
 
 . Add the `wildfly-swarm-plugin` to your `pom.xml` in a `<plugin>` block,
   with an `<execution>` specifying the `package` goal.
@@ -49,8 +47,7 @@ $ mvn package
 $ java -jar ./target/myapp-swarm.jar
 ----
 
-[discrete]
-== Additional resources
+.Additional resources
 
 * xref:fractions[]
 * xref:creating-an-uberjar[]

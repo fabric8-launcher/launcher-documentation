@@ -5,8 +5,7 @@
 link:https://code.visualstudio.com[Visual Studio Code] is an integrated development environment, or IDE, that provides tooling for writing software.
 You can use it to make changes to the code of your booster.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * Have a booster deployed to xref:deploying-a-booster-to-openshiftonline_{context}[{OpenShiftOnline}] or xref:creating-and-deploying-a-booster-using-your-openshiftlocal_{context}[{OpenShiftLocal}] using the _Deploy in OpenShift Online_ option.
 * Have link:https://code.visualstudio.com[Visual Studio Code] downloaded and installed.

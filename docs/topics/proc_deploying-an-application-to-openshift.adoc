@@ -15,15 +15,13 @@ This procedure shows you how to:
 * Build your application and deploy it to OpenShift using the Fabric8 Maven Plugin.
 * Use the command line to interact with your application running on OpenShift.
 
-[discrete]
-== Prerequisites
+.Prerequisites
 
 * The `oc` CLI client installed.
 * Maven installed.
 * A Maven-based application.
 
-[discrete]
-== Procedure
+.Procedure
 
 . Log in to your OpenShift instance with the `oc` client.
 +
