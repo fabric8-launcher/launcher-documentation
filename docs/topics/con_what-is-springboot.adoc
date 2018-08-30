@@ -1,9 +1,8 @@
-[id='springboot-runtime-design-details_{context}']
-= {SpringBoot} runtime design details
+[id='what-is-springboot_{context}']
+= What is {SpringBoot}
 
 {SpringBoot} lets you create opinionated Spring-based stand-alone applications.
-See
-link:{link-spring-boot-guide}#additional-springboot-resources_spring-boot[Additional Resources] for a list of documents about {SpringBoot}.
+See link:{link-spring-boot-guide}#additional-springboot-resources_spring-boot[Additional Resources] for a list of documents about {SpringBoot}.
 
 The {SpringBoot} runtime gives you the advantages and convenience of the OpenShift platform:
 

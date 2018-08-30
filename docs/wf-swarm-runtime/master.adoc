@@ -17,7 +17,7 @@ include::topics/templates/document-attributes.adoc[]
 
 This guide covers concepts as well as practical details needed by developers to use the {WildFlySwarm} runtime.
 
-include::topics/con_wildflyswarm-runtime-details.adoc[leveloffset=+1]
+include::topics/con_what-is-thorntail.adoc[leveloffset=+1]
 
 include::topics/runtime-info-product-version.adoc[leveloffset=+1]
 

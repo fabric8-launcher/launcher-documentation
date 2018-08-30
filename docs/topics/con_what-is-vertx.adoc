@@ -1,6 +1,5 @@
-[id='vertx-runtime-details_{context}']
-
-= {VertX} runtime details
+[id='what-is-vertx_{context}']
+= What is {VertX}
 
 {VertX} is a toolkit for writing reactive, non-blocking, asynchronous applications that run on the JVM (Java Virtual Machine).
 {VertX} provides an unopinionated and flexible way to write polyglot applications that are fast and lightweight.
