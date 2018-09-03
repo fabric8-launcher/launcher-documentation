@@ -115,8 +115,6 @@
 :red-hat-ga-repo-name: Red Hat GA Repository
 :red-hat-ga-repo-url: https://maven.repository.redhat.com/ga/
 
-:link-spring-boot-guide: https://launcher.fabric8.io/docs/spring-boot-runtime.html
-
 :link-http-api-level-0-spring-boot-booster: https://github.com/snowdrop/rest_springboot
 :link-http-api-level-0-vertx-booster: https://github.com/openshiftio-vertx-boosters/vertx-http-booster
 :link-http-api-level-0-wf-swarm-booster: https://github.com/wildfly-swarm-openshiftio-boosters/rest-http
