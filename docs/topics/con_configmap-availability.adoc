@@ -1,5 +1,5 @@
-[id='using_a_configmap_{context}']
-= Using a ConfigMap
+[id='using_a_configmap_to_configure_you_spring_boot_application']
+= Using a ConfigMap to configure your {SpringBoot} application
 //ustory: injecting configuration data into your application using a configmap
 
 :deploymentPlatform: Kubernetes
@@ -9,7 +9,7 @@
 //https://goo.gl/cQTA2B
 //https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#create-configmaps-from-files
 
-{deploymentPlatform} provides a resource named link:http://kubernetes.io/docs/user-guide/configmap/[`ConfigMap`] that allows you to externalize the configuration parameters that you pass to your application in the form of key-value pairs or embedded `application.properties` or `application.yaml` templates.
+link:http://kubernetes.io/docs/user-guide/configmap/[`ConfigMap`] is a {deploymentPlatform} resource type that allows you to externalize the configuration parameters that you pass to your application in the form of key-value pairs or embedded `application.properties` or `application.yaml` templates.
 The `ConfigMapPropertySource` provided by Spring Cloud Kubernetes searches the deployment configuration of your application for a ConfigMap object in which the `metadata.name` property matches the name of your {SpringBoot} application and applies the values to the deployment configuration of your application.
 The application name is set by the `spring.application.name` property.
 
