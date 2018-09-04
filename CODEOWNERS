@@ -1,25 +1,15 @@
 #fallback
-**/** @rhoads-zach
+**/** @tradej
 
 #specific files
 docs/contrib-guide/master.adoc @tradej
 openshift/* @gastaldi
-**/*.build_guide.sh @rhoads-zach
-scripts/build_guides.sh @rhoads-zach
-scripts/add_guide.sh @rhoads-zach
-scripts/deploy_launchpad_mission.sh @rhoads-zach
-scripts/Dockerfile @rhoads-zach
+**/*.build_guide.sh @tradej
+scripts/** @tradej
 scripts/entrypoint.sh @gastaldi
-scripts/generate_changelog.sh @tradej
-scripts/tag_release.sh @tradej
-scripts/validate_guides.sh @tradej
 
-docs/topics/readme/** @rhoads-zach
-docs/topics/templates/** @rhoads-zach
-docs/topics/getting-started* @rhoads-zach
-docs/topics/crud-mission* @inoxx03
-docs/topics/circuit-breaker-mission* @inoxx03  
-docs/topics/contributing* @tradej
+docs/topics/readme/** @tradej
+docs/topics/templates/** @tradej
 
 CHANGELOG.adoc @inoxx03
 cico_build_deploy.sh @tradej
@@ -27,3 +17,4 @@ Dockerfile.build @gastaldi
 Dockerfile.deploy @gastaldi
 nginx.conf @gastaldi
 README.adoc @tradej
+
