@@ -11,7 +11,7 @@
 Install a local customized instance of the {launcher} tool, which allows you to test the functionality or make modifications to the service using a web interface.
 
 .Prerequisites
-* xref:starting-and-configuring-the-openshiftlocal-for-the-launcher-tool_{context}[{OpenShiftLocal} running].
+* {OpenShiftLocal} installed and running.
 * A link:{link-launcher-openshift-local-install-guide}#creating-a-github-personal-access-token_minishift[GitHub personal access token].
 
 .Procedure
