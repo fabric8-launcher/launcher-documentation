@@ -29,7 +29,7 @@ a|
 The configured **clients accept any callback url**.
 
 a|
-To avoid having a custom configuration per runtime we avoid the verification of the callback as mandated by the OAuth2 specification.
+To avoid having a custom configuration per runtime we avoid the verification of the callback as required by the OAuth2 specification.
 
 a|
 An application-specific callback URL should be provided with a valid domain name.

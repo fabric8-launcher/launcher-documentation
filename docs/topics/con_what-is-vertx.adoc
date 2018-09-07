@@ -2,7 +2,7 @@
 = What is {VertX}
 
 {VertX} is a toolkit for writing reactive, non-blocking, asynchronous applications that run on the JVM (Java Virtual Machine).
-{VertX} provides an unopinionated and flexible way to write polyglot applications that are fast and lightweight.
+{VertX} provides a non-prescriptive and flexible way to write efficient, multiple-language (polyglot) applications.
 {VertX} is also designed to be truly cloud-native by efficiently allowing many processes to switch between one or very few threads.
 This allows {VertX} applications and services to more effectively use their CPU quotas in cloud environments and avoids the unnecessary overhead caused when creating new threads.
 Check out xref:additional-vertx-resources_{context}[Additional Resources] for further reading on {VertX}.

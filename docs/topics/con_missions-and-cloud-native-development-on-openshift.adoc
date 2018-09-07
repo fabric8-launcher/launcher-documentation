@@ -23,7 +23,7 @@ You can use missions for a variety of purposes:
 [discrete]
 == Boosters
 
-A booster is the implementation of a mission in a specific runtime. Boosters are preconfigured, functioning applications that demonstrate a fundamental aspect of modern application development and run in an environment similar to production.
+A booster is the implementation of a mission in a specific runtime. Boosters are preconfigured, functioning applications that demonstrate core principles of modern application development and run in an environment similar to production.
 
 Each mission is implemented in one or more runtimes. Both the specific implementation and the actual project that contains your code are called a booster.
 

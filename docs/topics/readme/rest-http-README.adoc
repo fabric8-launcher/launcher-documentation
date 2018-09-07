@@ -40,7 +40,7 @@ NOTE: To stop your running booster in a Linux or macOS terminal, use `CTRL+C`. I
 
 . Make your change (e.g. edit `${fileLocation}`).
 . Restart your booster.
-. Confirm your change appears.
+. Verify the change took effect.
 
 
 == Running the Booster on a Single-node OpenShift Cluster
