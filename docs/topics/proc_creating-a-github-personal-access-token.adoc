@@ -19,5 +19,5 @@ To install the {launcher} tool on a {OpenShiftLocal}, you must provide the {laun
 . Click  _Generate token_.
 . Save the hex code of the personal access token. You need this to complete the installation of the {launcher} tool on your {OpenShiftLocal}.
 +
-IMPORTANT: This hex code only appears once and cannot be retrieved after you leave the page. If you lose the code, you will need to create a new personal access token to install the {launcher} tool on a {OpenShiftLocal} again.
+IMPORTANT: This hex code is displayed only once and cannot be retrieved after you leave the page. If you lose the code, you will need to create a new personal access token to install the {launcher} tool on a {OpenShiftLocal} again.
 

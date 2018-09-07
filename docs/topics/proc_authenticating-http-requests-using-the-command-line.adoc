@@ -90,5 +90,5 @@ NOTE: This is the master realm public key from the {RHSSO} server deployment of 
 
 .. Paste the `token` output from the client output into the _Encoded_ box.
 +
-The _Signature Verified_ sign appears on the debugger page.
+The _Signature Verified_ sign is displayed on the debugger page.
 --
