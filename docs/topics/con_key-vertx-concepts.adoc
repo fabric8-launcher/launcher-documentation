@@ -11,7 +11,7 @@ A reactive system, as defined in the link:http://reactivemanifesto.org[reactive 
 
 Elastic:: The system remains responsive under varying workload, with individual components scaled and load-balanced as necessary to accommodate the differences in workload. Elastic application deliver the same quality of service regardless of the number of requests they receive at the same time.
 
-Resilient:: The system remains responsive in case any of its individual components fails. Components are isolated from each other, with each individual component being able to quickly recover after failure occurs. Failure of a single component should never prevent other components from functioning properly for a longer time. This prevents cascading failure, where the failure of an isolated components causes other components to become blocked and gradually fail.
+Resilient:: The system remains responsive when any of its individual components fails. Components are isolated from each other, with each individual component able to quickly recover after failure occurs. Failure of a single component should never prevent other components from functioning properly for a longer time. This prevents cascading failure, where the failure of an isolated component causes other components to become blocked and gradually fail.
 
 Responsive:: Responsive systems are designed to always respond to requests in a reasonable amount of time to ensure a consistent quality of service. To maintain responsiveness, the communication channel between the applications must never be blocked.
 
