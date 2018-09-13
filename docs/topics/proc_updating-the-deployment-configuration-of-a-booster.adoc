@@ -40,7 +40,7 @@ spec:
 
 . Deploy the updated version of your booster using Maven or npm.
 
-. Verify your configuration updates show in the deployed version of your booster.
+. Verify that your configuration updates show in the deployed version of your booster.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----

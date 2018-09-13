@@ -7,7 +7,7 @@ This allows the application configuration to change as it moves through differen
 Externalizing the configuration also keeps sensitive or internal information out of your code base and version control.
 Many languages and application servers provide environment variables to support externalizing an application's configuration.
 
-Microservices architectures and multiple-language (polyglot) environments add a layer of complexity to managing an application's configuration.
+Microservices architectures and multi-language (polyglot) environments add a layer of complexity to managing an application's configuration.
 Applications consist of independent, distributed services, and each can have its own configuration.
 Keeping all configuration data synchronized and accessible creates a maintenance challenge.
 

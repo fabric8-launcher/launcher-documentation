@@ -11,8 +11,8 @@ include::topics/templates/document-attributes.adoc[]
 
 This guide covers basic information to get started using {ProductName}.
 
-Linux containerization allows you to use different ecosystems, languages, and runtimes at the same time for solving business problems.
-Container platforms such as OpenShift manage, secure, and automate the deployments and monitoring of your applications.
+Linux containers allow you to use different ecosystems, languages, and runtimes at the same time for solving business problems.
+Container platforms such as OpenShift manage, secure, and automate the deployment and monitoring of your applications.
 This enables you to break your business problems into smaller microservices while letting OpenShift provide a simpler way to deploy, monitor, and maintain microservices.
 
 {ProductName} provides you with cloud-native runtimes and prescribes approaches to developing, building, and deploying applications that use those cloud-native runtimes on OpenShift.
