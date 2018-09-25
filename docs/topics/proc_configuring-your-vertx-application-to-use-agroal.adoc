@@ -2,8 +2,7 @@
 = Configuring your {VertX} application to use Agroal
 
 // hard-coded version, beacuse it does not change
-Starting with {VertX} release `3.5.1.redhat-003`, Agroal is the default JDBC connection pool, replacing C3P0 used as the default option in previous releases.
-Due to differences in property names between C3P0 and Agroal, upgrading to a newer release of {VertX} might break the JDBC connection pool configuration of your existing {VertX} applications.
+Starting with {VertX} release `3.5.1.redhat-003`, Agroal replaced C3PO as the default JDBC connection pool. C3PO and Agroal use different property names and upgrading to a newer release of {VertX} might break the JDBC connection pool configuration of your {VertX} applications.
 Update the property names in the configuration of your JDBC connection pool to avoid this issue.
 
 NOTE: To continue using C3P0 as the JDBC connection pool for your application, set the value of the `provider_class` property in your JDBC connection pool configuration to `io.vertx.ext.jdbc.spi.impl.C3P0DataSourceProvider`.
