@@ -16,6 +16,5 @@
 
 .Procedure
 
-* Navigate to the {parameter-launcher} URL in a browser and log in.
-* Follow on-screen instructions to create and launch your booster in {runtime}.
-
+. Navigate to the {parameter-launcher} URL in a browser and log in.
+. Follow on-screen instructions to create and launch your booster in {runtime}.
