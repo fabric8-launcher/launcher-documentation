@@ -11,20 +11,20 @@
 This booster includes a self-contained set of integration tests.
 When run inside an OpenShift project, the tests:
 
-* deploy a test instance of the application to the project,
-* execute the individual tests on that instance,
-* remove all instances of the application from the project when the testing is done.
+* Deploy a test instance of the application to the project.
+* Execute the individual tests on that instance.
+* Remove all instances of the application from the project when the testing is done.
 
 include::note-integration-tests-app-deletion-warning.adoc[]
 
 .Prerequisites
 
-* the `oc` client authenticated
-* an empty OpenShift project
+* The `oc` client authenticated
+* An empty OpenShift project
 
 ifdef::parameter-configmap[]
 ifdef::built-for-vertx,built-for-spring-boot[]
-* view access permission assigned to the service account of your booster application. This allows your application to read the configuration from the ConfigMap:
+* View access permission assigned to the service account of your booster application. This allows your application to read the configuration from the ConfigMap:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
