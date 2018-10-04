@@ -34,7 +34,7 @@ You can easily deploy your existing application to OpenShift using the Fabric8 M
         <configuration>
           <generator>
             <includes>
-              <include>wildfly-swarm</include>
+              <include>thorntail-v2</include>
             </includes>
             <excludes>
               <exclude>webapp</exclude>
@@ -42,9 +42,9 @@ You can easily deploy your existing application to OpenShift using the Fabric8 M
           </generator>
           <enricher>
             <config>
-              <wildfly-swarm-health-check>
+              <thorntail-v2-health-check>
                 <path>/</path>
-              </wildfly-swarm-health-check>
+              </thorntail-v2-health-check>
             </config>
           </enricher>
         </configuration>
