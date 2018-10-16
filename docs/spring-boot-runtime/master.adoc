@@ -96,6 +96,11 @@ include::topics/assembly_creating-a-basic-springboot-application.adoc[leveloffse
 include::topics/proc_deploying-an-existing-application-to-openshift.adoc[leveloffset=+2]
 :parameter-runtime-name!:
 
+// titles are temporary
+== Managing the configuration of your {SpringBoot} application
+
+include::topics/con_configmap-availability.adoc[leveloffset="+2"]
+
 == Debugging
 
 This sections contains information about debugging your {SpringBoot}{ndash}based application both in local and remote deployments.
