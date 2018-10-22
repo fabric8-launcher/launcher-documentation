@@ -1,0 +1,175 @@
+
+[id='exposing-metrics-using-prometheus-with-spring-boot_{context}']
+= Exposing application metrics using Prometheus with {SpringBoot}
+
+In this example, you:
+
+* Configure your application to expose metrics.
+* Collect and view the data using Prometheus.
+
+Prometheus actively connects to a monitored application to collect data; the application does not actively send metrics to a server.
+
+.Prerequisites
+
+* Prometheus configured to collect metrics from the application:
++
+--
+. Download and extract the link:https://prometheus.io/download/[archive^] with the latest Prometheus release:
++
+[source,bash,options="nowrap"]
+----
+$ wget https://github.com/prometheus/prometheus/releases/download/v2.4.3/prometheus-2.4.3.linux-amd64.tar.gz
+$ tar -xvf  prometheus-2.4.3.linux-amd64.tar.gz
+----
+
+. Navigate to the directory with Prometheus:
++
+[source,bash,options="nowrap"]
+----
+$ cd  prometheus-2.4.3.linux-amd64
+----
+
+. Append the following snippet to the `prometheus.yml` file to specify the port where your application exposes the metrics endpoint.
++
+The `scrape_interval` setting is optional and sets Prometheus to collect metrics every 5 seconds.
++
+[source,yaml,options="nowrap"]
+----
+  - job_name: 'spring-actuator'
+    metrics_path: '/prometheus'
+    scrape_interval: 5s
+    static_configs:
+    - targets: ['localhost:8080']
+----
++
+If you have the `spring-boot-starter-actuator` dependency in your `pom.xml` file, {SpringBoot}-based applications expose metrics at the `/prometheus` endpoint by default.
+You can change the endpoint at which your application exposes the metrics by setting the `endpoints.prometheus.id` property to a different path, for example: `endpoints.prometheus.id=micrometheus`.
++
+The endpoint is secured by default.
+To ensure that metrics collection works in your application, you must:
+
+* include authentication in your Prometheus metrics collection endpoint, or
+* make the endpoint unsecured by setting a property, such as `management.security.enabled=false`.
+--
+
+* The Prometheus server started on `localhost`:
++
+--
+Start Prometheus and wait until the `Server is ready to receive web requests` message is displayed in the console.
+
+[source,bash,options="nowrap"]
+----
+$ ./prometheus
+----
+--
+
+.Procedure
+
+. Include the `spring-boot-starter-actuator`, `micrometer-registry-prometheus` and `micrometer-spring-legacy` dependencies in your `pom.xml`.
+The `micrometer-spring-legacy` dependency is required to provide Micrometer support for {SpringBoot} 1.5 applications.
++
+.pom.xml
+[source,xml]
+----
+<dependencies>
+  ...
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-actuator</artifactId>
+  </dependency>
+  <dependency>
+    <groupId>io.micrometer</groupId>
+    <artifactId>micrometer-spring-legacy</artifactId>
+    <version>1.1.0</version>
+  </dependency>
+  <dependency>
+    <groupId>io.micrometer</groupId>
+    <artifactId>micrometer-registry-prometheus</artifactId>
+    <version>1.1.0</version>
+  </dependency>
+  ...
+</dependencies>
+----
+
+. Collect metrics from your application:
+** By default, `spring-boot-starter-actuator` automatically records a `Timer` metric on each endpoint exposed your application.
+The default name for the `Timer` metric is set to `http.server.requests`.
+You can set a custom name for the metric:
++
+--
+[source,properties,options="nowrap"]
+----
+management.metrics.web.server.requests-metric-name=custom.timer.metric.name
+----
+
+The name is `http.server.requests` by default.
+
+The `Timer` metric contains a set of dimensions recorded for every request.
+By default, these dimensions are:
+
+`method`:: The HTTP method for calling the endpoint, for example, `GET` or `PUT`.
+`status`:: The numeric HTTP status code returned in response to the request, for example, `200`, `201`, `500`.
+`uri`:: The URI template before the variable substitution, for example, `/api/person/{id}`.
+`exception`:: If an exception is thrown by your application upon receiving a request, this dimension records the simple name of the exception class.
+--
+
+** Alternatively, only record the `Timer` metric for specific endpoints:
++
+--
+. Disable the `auto-time-requests` property in the `spring-boot-starter-actuator` configuration for your application:
++
+[source,properties,options="nowrap"]
+----
+management.metrics.web.server.auto-time-requests=false
+----
++
+The property is set to `true` by default.
+
+. Annotate methods or classes with the `@io.micrometer.core.annotation.Timed` annotation, for example:
++
+[source,java,options="nowrap"]
+----
+@RestController
+public class GreetingController {
+
+    @RequestMapping("/greeting")
+    @Timed
+    public String get() {
+        return "Hello from a timed endpoint";
+    }
+}
+----
++
+The `@Timed` annotation is used to keep track of the time it takes to invoke the metered endpoint.
+--
+
+. Launch your application:
++
+[source,bash,opts="nowrap"]
+----
+$ mvn spring-boot:run
+----
+
+. Invoke the traced endpoint several times:
++
+[source,bash,opts="nowrap"]
+----
+$ curl http://localhost:8080/greeting
+Hello from a timed endpoint
+----
+
+. Wait at least 15 seconds for the collection to happen, and see the metrics in Prometheus UI:
++
+--
+. Open the Prometheus UI at link:http://localhost:9090/[http://localhost:9090/^] and type `requests` into the _Expression_ box.
+. From the suggestions, select for example `http.server.requests` and click _Execute_.
+. In the table that is displayed, you can see how long it takes to invoke the metered endpoint.
+
+Note that all metrics you created are prefixed with `application:`.
+There are other metrics, automatically exposed by {SpringBoot}.
+Those metrics are prefixed with `base:` and `vendor:` and expose information about the JVM in which the application runs.
+--
+
+.Additional resources
+
+* For additional information on using Micrometer metrics with Spring Boot, see the link:https://micrometer.io/docs/ref/spring/1.5[Micrometer reference documentation for Spring 1.5.x^].
