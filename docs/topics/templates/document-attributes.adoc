@@ -97,11 +97,11 @@
 :WildFlySwarmVersion: 2.2.0.Final
 
 // spring boot version for rt guide
-:SpringBootVersion: 1.5.15.RELEASE
+:SpringBootVersion: 1.5.16.RELEASE
 
 //used in BOM file example
-:SpringBootBOMVersion: 1.5.15.Final-redhat-00002
-:SpringBootMvnPluginVersion: 1.5.15.RELEASE
+:SpringBootBOMVersion: 1.5.16.Final-redhat-00001
+:SpringBootMvnPluginVersion: 1.5.16.RELEASE
 
 // used in the BOM file example and in the Vert.x Runtime developer Guide
 :VertXVersion: 3.5.3.redhat-00001
