@@ -1,0 +1,127 @@
+
+[id='exposing-application-metrics-using-prometheus-on-node-js']
+= Exposing application metrics using Prometheus on {Node}
+
+In this example, you:
+
+* Configure your application to expose metrics.
+* Collect and view the data using Prometheus.
+
+Note that Prometheus actively connects to a monitored application to collect data; the application does not actively send metrics to a server.
+
+.Prerequisites
+
+* Prometheus configured to collect metrics from the application:
++
+--
+. Get the default Prometheus configuration using the following command:
++
+[source,bash,opts="nowrap"]
+----
+# docker run -it --rm --entrypoint /bin/sh prom/prometheus -c 'cat /etc/prometheus/prometheus.yml'
+----
++
+Store the output in the `prometheus.yml` file in the directory with your application.
+
+. Append the following snippet to the `prometheus.yml` file to make Prometheus automatically collect metrics from your application:
++
+[source,yaml]
+----
+  - job_name: nodejs
+     static_configs:
+     - targets: ['localhost:8888']
+----
++
+The default behavior of {Node}-based applications is to expose metrics at the `/metrics` endpoint.
+This is also what Prometheus expects.
+--
+
+* The Prometheus server running on `localhost` using Docker:
++
+--
+[source,bash,opts="nowrap"]
+----
+# docker run -it --rm --network host -p 9090:9090 -v $PWD/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
+----
+
+Wait until the `Server is ready to receive web requests` message is displayed in the console.
+
+Include the the `--network host` option to allow Prometheus to connect to your application.
+--
+
+.Procedure
+
+. Install the `prom_client` npm package.
++
+.pom.xml
+[source,bash]
+----
+$ npm install prom-client express body-parser --save
+----
+
+. Create an example {NodeJS} application and save it in a file with the file name `app.js` .
++
+--
+[source,javascript]
+----
+'use strict';
+const path = require('path');
+const express = require('express');
+const bodyParser = require('body-parser');
+const client = require('prom-client');
+const histogram = new client.Histogram({
+  name: 'hello',
+  help: 'Duration of HTTP requests in ms',
+  labelNames: ['status_code'],
+  buckets: [0.1, 5, 15, 50, 100, 500]
+});
+const app = express();
+const port = 8888;
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use('/api/greeting', (request, response) => {
+  const end = histogram.startTimer();
+  const name = request.query ? request.query.name : undefined;
+  response.send({content: `Hello, ${name || 'World!'}`});
+  end();
+});
+
+app.get('/metrics', (req, res) => {
+  res.set('Content-Type', client.register.contentType);
+  res.end(client.register.metrics());
+})
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+----
+--
+
+. Launch your application:
++
+[source,bash,opts="nowrap"]
+----
+$ node app.js
+----
+
+. Invoke the traced endpoint several times:
++
+[source,bash,opts="nowrap"]
+----
+$ curl http://localhost:8888/api/greeting
+{"content":"Hello, World!"}
+----
+
+. Wait at least 15 seconds for the collection to happen, and view the metrics in the Prometheus web UI:
++
+--
+. Open the Prometheus UI at link:http://localhost:9090/[http://localhost:9090/^] and type `hello` into the _Expression_ box.
+. From the suggestions, select for example `application:hello_count` and click _Execute_.
+. In the table that is displayed, you can see how many times the resource method was invoked.
+. Alternatively, select `application:hello_time_mean_seconds` to see the mean time of all the invocations.
+
+Note that all metrics you created are prefixed with `application:`.
+--
+
+.Additional resources
+
+* For additional types of metrics, see the link:https://github.com/siimon/prom-client#api[see the documentation for the `prom_client` package^].
