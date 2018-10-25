@@ -9,7 +9,7 @@ WARNING: Do not edit files in the `$REPO_HOME/docs/topics/thorntail` directory, 
 .Prerequisites
 
 * A GitHub account with GPG. For more information, see xref:_accounts[].
-* The {repo-docs-name} repository cloned and xref:_setting_up_git_hooks[Git hooks set up].
+* The {repo-docs-name} repository cloned and xref:_before_you_start[Git hooks set up].
 
 .Procedure
 
