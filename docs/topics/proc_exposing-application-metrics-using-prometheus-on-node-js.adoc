@@ -115,11 +115,12 @@ $ curl http://localhost:8888/api/greeting
 +
 --
 . Open the Prometheus UI at link:http://localhost:9090/[http://localhost:9090/^] and type `hello` into the _Expression_ box.
-. From the suggestions, select for example `application:hello_count` and click _Execute_.
-. In the table that is displayed, you can see how many times the resource method was invoked.
-. Alternatively, select `application:hello_time_mean_seconds` to see the mean time of all the invocations.
+. From the suggestions, select for example `application:hello_count` and click the _Execute_ button.
+. In the table below, you can see the number of times you invoked the resource method.
+// this metric seems to be unavailable for the node app.
+//. Alternatively, select `application:hello_time_mean_seconds` to see the mean time of all the invocations.
 
-Note that all metrics you created are prefixed with `application:`.
+//Note that all metrics you created are prefixed with `application:`.
 --
 
 .Additional resources

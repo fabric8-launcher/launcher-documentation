@@ -115,7 +115,7 @@ include::topics/proc_accessing-debug-logs-on-localhost.adoc[leveloffset=+3]
 
 include::topics/proc_accessing-node-debug-logs-on-openshift.adoc[leveloffset=+3]
 
-== Monitoring
+== Monitoring your application
 
 === Exposing {Node} application metrics
 
