@@ -120,7 +120,8 @@ $ curl http://localhost:8888/api/greeting
 // this metric seems to be unavailable for the node app.
 //. Alternatively, select `application:hello_time_mean_seconds` to see the mean time of all the invocations.
 
-//Note that all metrics you created are prefixed with `application:`.
+//all user-defined metrics should have this
+Note that all metrics you created are prefixed with `application:`.
 --
 
 .Additional resources
