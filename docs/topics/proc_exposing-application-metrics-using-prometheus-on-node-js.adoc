@@ -69,8 +69,15 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const client = require('prom-client');
+
+// enable prom-client to expose default application metrics
+const collectDefaultMetrics = client.collectDefaultMetrics;
+
+// define a custom prefix string for application metrics
+collectDefaultMetrics({ prefix: 'application:' });
+
 const histogram = new client.Histogram({
-  name: 'hello',
+  name: 'application:hello',
   help: 'Duration of HTTP requests in ms',
   labelNames: ['status_code'],
   buckets: [0.1, 5, 15, 50, 100, 500]
@@ -92,7 +99,6 @@ app.get('/metrics', (req, res) => {
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
-
 ----
 --
 
@@ -116,12 +122,9 @@ $ curl http://localhost:8888/api/greeting
 --
 . Open the Prometheus UI at link:http://localhost:9090/[http://localhost:9090/^] and type `hello` into the _Expression_ box.
 . From the suggestions, select for example `application:hello_count` and click the _Execute_ button.
-. In the table below, you can see the number of times you invoked the resource method.
-// this metric seems to be unavailable for the node app.
-//. Alternatively, select `application:hello_time_mean_seconds` to see the mean time of all the invocations.
-
-//all user-defined metrics should have this
 Note that all metrics you created are prefixed with `application:`.
+. In the table below, you can see the number of times you invoked the resource method.
+. Alternatively, select `application:hello_time_mean_seconds` to see the mean time of all the invocations.
 --
 
 .Additional resources
