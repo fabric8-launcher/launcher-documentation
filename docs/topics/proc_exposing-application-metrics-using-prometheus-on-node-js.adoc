@@ -1,4 +1,3 @@
-
 [id='exposing-application-metrics-using-prometheus-on-node-js']
 = Exposing application metrics using Prometheus on {Node}
 
@@ -46,12 +45,15 @@ This is also what Prometheus expects.
 
 Wait until the `Server is ready to receive web requests` message is displayed in the console.
 
-Include the the `--network host` option to allow Prometheus to connect to your application.
+When running your application in a Linux environment, include the the `--network host` option to allow Prometheus to connect to your application.
+
+NOTE: The `--network host` option is available only in Linux environments.
+It is not supported on Windows or MacOS. 
 --
 
 .Procedure
 
-. Install the `prom_client` npm package.
+. Install the `prom-client` npm package.
 +
 .pom.xml
 [source,bash]
@@ -129,4 +131,4 @@ Note that all metrics you created are prefixed with `application:`.
 
 .Additional resources
 
-* For additional types of metrics, see the link:https://github.com/siimon/prom-client#api[see the documentation for the `prom_client` package^].
+* For additional types of metrics, see the link:https://github.com/siimon/prom-client#api[see the documentation for the `prom-client` package^].
