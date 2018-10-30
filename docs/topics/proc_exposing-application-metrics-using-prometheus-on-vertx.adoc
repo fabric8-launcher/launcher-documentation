@@ -1,0 +1,157 @@
+[id='exposing-metrics_{context}']
+= Exposing application metrics using Prometheus in a {VertX} application.
+
+* Configure your application to expose metrics.
+* Collect and view the data using Prometheus.
+
+// Based on: https://vertx.io/docs/vertx-micrometer-metrics/java/#_prometheus
+// NOT FOR PRODUCTION USE
+
+Prometheus actively connects to a monitored application to collect data; the application does not actively send metrics to a server.
+
+.Prerequisites
+
+* Prometheus configured to collect metrics from the application:
++
+--
+. Get the default Prometheus configuration using the following command:
++
+[source,bash,opts="nowrap"]
+----
+# docker run -it --rm --entrypoint /bin/sh prom/prometheus -c 'cat /etc/prometheus/prometheus.yml'
+----
++
+Store the output in the `prometheus.yml` file in the directory with your application.
+
+. Enable metrics collection in your {VertX} application.
++
+[source,java,options="nowrap"]
+--
+Vertx vertx = Vertx.vertx(new VertxOptions().setMetricsOptions(
+new MicrometerMetricsOptions()
+.setPrometheusOptions(new VertxPrometheusOptions().setEnabled(true))
+.setEnabled(true)));
+--
+
+. Append the following snippet to the `prometheus.yml` file to make Prometheus automatically collect metrics from your application:
++
+[source,yaml]
+----
+  scrape_configs:
+    - job_name: 'spring'
+      metrics_path: '/prometheus'
+      static_configs:
+        - targets: ['localhost:8080']
+----
++
+By default, {VertX}-based applications expose metrics at the `/metrics` endpoint.
+You can also set a custom metrics collection endpoint by adding the following ton your application code:
++
+[source,java,options="nowrap"]
+--
+Vertx vertx = Vertx.vertx(new VertxOptions().setMetricsOptions(
+  new MicrometerMetricsOptions()
+    .setPrometheusOptions(new VertxPrometheusOptions().setEnabled(true)
+      .setStartEmbeddedServer(true)
+      .setEmbeddedServerOptions(new HttpServerOptions().setPort(8080))
+      .setEmbeddedServerEndpoint("/metrics/vertx"))
+    .setEnabled(true)));
+--
++
+This sets `/metrics/vertx` to be your custom metrics collection endpoint.
+//The endpoint for exposing metrics can be changed by setting the `endpoints.prometheus.id` property to a different path.
+//+
+//The endpoint is secured by default.
+//To ensure that metrics collection works in your application, you must:
+//* include authentication in your Prometheus metrics collection endpoint, or
+//* make the endpoint unsecured by setting a property, such as `management.security.enabled=false`
+--
+
+* The Prometheus server running on `localhost` using Docker:
++
+--
+[source,bash,opts="nowrap"]
+----
+# docker run -it --rm --network host -p 9090:9090 -v $PWD/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
+----
+
+Include the `--network host` option to allow Prometheus to connect to your application.
+Wait until the `Server is ready to receive web requests` message is displayed in the console.
+--
+
+.Procedure
+
+// Which spring Boot starter provides metrics collection functionalities
+. Include the `spring-boot-starter-actuator`, `micrometer-registry-prometheus` and `micrometer-spring-legacy` dependencies in your `pom.xml`.
+The `micrometer-spring-legacy` dependency is required to provide Micrometer support for {VertX} 1.5 applications.
+
+.pom.xml
+[source,xml]
+----
+<dependencies>
+  ...
+  <dependency>
+    <groupId>io.vertx</groupId>
+    <artifactId>vertx-micrometer-metrics</artifactId>
+    <version>3.5.4</version>
+  </dependency>
+  <dependency>
+    <groupId>io.micrometer</groupId>
+    <artifactId>micrometer-registry-prometheus</artifactId>
+    <version>1.0.0</version>
+  </dependency>
+  <dependency>
+    <groupId>io.vertx</groupId>
+    <artifactId>vertx-web</artifactId>
+    <version>3.5.4</version>
+  </dependency>
+  ...
+</dependencies>
+----
+
+. Annotate methods or classes with the metrics annotations, for example:
++
+--
+[source,java]
+----
+// TBD
+include::src/main/java/org/wildfly/swarm/howto/metrics/MyResource.java[tag=metrics-resource-method,indent=0]
+----
+
+Here, the `@Counted(monotonic = true)` annotation is used to keep track of how many times this method was invoked.
+The `@Timed` annotation is used to keep track of how long the invocations took.
+
+In this example, a JAX-RS resource method was annotated directly, but you can annotate any CDI bean in your application as well.
+--
+
+. Launch your application:
++
+[source,bash,opts="nowrap"]
+----
+$ mvn vertx:run
+----
+
+. Invoke the traced endpoint several times:
++
+[source,bash,opts="nowrap"]
+----
+$ curl http://localhost:8080/
+Hello from counted and timed endpoint
+----
+
+. Wait at least 15 seconds for the collection to happen, and see the metrics in Prometheus UI:
++
+--
+. Open the Prometheus UI at link:http://localhost:9090/[http://localhost:9090/^] and type `hello` into the _Expression_ box.
+. From the suggestions, select for example `application:hello_count` and click _Execute_.
+. In the table that is displayed, you can see how many times the resource method was invoked.
+. Alternatively, select `application:hello_time_mean_seconds` to see the mean time of all the invocations.
+
+Note that all metrics you created are prefixed with `application:`.
+There are other metrics, automatically exposed by {VertX}.
+Those metrics are prefixed with `base:` and `vendor:` and expose information about the JVM in which the application runs.
+--
+
+.Additional resources
+
+* For more details on metrics provided by {VertX}, see the link:https://prometheus.io/docs/instrumenting/exposition_formats/#text-based-format[OpenMetrics documentation^].
