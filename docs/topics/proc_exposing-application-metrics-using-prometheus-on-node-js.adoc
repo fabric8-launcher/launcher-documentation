@@ -48,7 +48,8 @@ Wait until the `Server is ready to receive web requests` message is displayed in
 When running your application in a Linux environment, include the the `--network host` option to allow Prometheus to connect to your application.
 
 NOTE: The `--network host` option is available only in Linux environments.
-It is not supported on Windows or MacOS. 
+It is not supported on Windows or MacOS.
+
 --
 
 .Procedure
