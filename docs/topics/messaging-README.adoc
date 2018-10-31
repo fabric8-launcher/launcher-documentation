@@ -1,0 +1,97 @@
+= ${mission} - ${runtime} Booster
+
+${prerequisite}
+
+${cicdSection}
+
+== Running the Booster on a Single-node OpenShift Cluster
+If you have a single-node OpenShift cluster, such as Minishift or Red Hat Container Development Kit, link:http://launcher.fabric8.io/docs/minishift-installation.html[installed and running], you can also deploy your booster there. A single-node OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
+
+To deploy your booster to a running single-node OpenShift cluster:
+
+. Navigate to the root directory of your booster.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ ${gitCMD}
+
+$ cd ${targetRepository}
+----
+
+. Log in and create your project.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc login -u developer -p developer
+
+$ oc new-project MY_PROJECT_NAME
+----
+
+. Create the messaging service.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc create -f service.amqp.yaml
+----
+
+. Deploy your booster.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ ${OSORunCMD}
+----
+
+== Interacting with the Booster on a Single-node OpenShift Cluster
+
+. Determine the URL of the `frontend` service.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get route ${app-name} -o jsonpath={$.spec.host}
+
+${app-name}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME
+----
+
+. Navigate to the `frontend` service using your browser to access the messaging service UI.
+
+. To interact with the messaging service, type a message string into the _Requests_ text box and click _Send request_.
++
+You can see the processed message appear in the _Responses_ table along with the ID of the worker that processed it.
+
+. Scale up the number of workers to 2 using the Web console.
++
+--
+. Navigate to the project containing your messaging service application.
+. Use the arrows next to the pod counter to scale up the number of pods for the `worker` service form 1 to 2.
+. Wait until both worker pods are ready:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get pods
+NAME                              READY     STATUS      RESTARTS   AGE
+...
+${app-name}-worker-1-aaaaa        1/1       Running     0          6m
+${app-name}-worker-1-bbbbb        1/1       Running     0          4m
+...
+----
+--
++
+When the second worker is ready, it appears in the _Workers_ table in the bottom section of the messaging service web UI.
+The entry for each worker also lists the total number of messages processed by each worker, and also the number of processing errors.
+
+. Send several more requests to the messaging service.
++
+Your messages appear in the _Responses_ table.
+Note that the worker ID changes based on which of the 2 workers processed each message.
+
+. Tick the _Uppercase_ check box and send a request to the messaging service.
++
+Your message appears under _Responses_ and is rendered in uppercase.
+
+. Alternatively, tick the _Reverse_ check box and send a request to the messaging service.
++
+Your message appears under _Responses_ and is rendered in reverse.
+
+You can learn more about this booster and the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].
+
+//${integrationTestSection}
