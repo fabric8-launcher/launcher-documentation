@@ -13,23 +13,35 @@ Note that Prometheus actively connects to a monitored application to collect dat
 * Prometheus configured to collect metrics from the application:
 +
 --
-. Get the default Prometheus configuration using the following command:
+. Download the link:https://prometheus.io/download/[ZIP file^] with the latest Prometheus release.
 +
-[source,bash,opts="nowrap"]
-----
-# docker run -it --rm --entrypoint /bin/sh prom/prometheus -c 'cat /etc/prometheus/prometheus.yml'
-----
-+
-Store the output in the `prometheus.yml` file in the directory with your application.
+[source,bash,options="nowrap"]
+--
+$ wget https://github.com/prometheus/prometheus/releases/download/v2.4.3/prometheus-2.4.3.linux-amd64.tar.gz
+--
 
-. Append the following snippet to the `prometheus.yml` file to make Prometheus automatically collect metrics from your application:
+. Extract the Promethus ZIP file
 +
-[source,yaml]
-----
+[source,bash,options="nowrap"]
+--
+$ tar -xvf  prometheus-2.4.3.linux-amd64.tar.gz
+--
+
+. Navigate to the target directory
++
+[source,bash,options="nowrap"]
+--
+$ cd  prometheus-2.4.3.linux-amd64
+--
+
+. Append the following snippet to `prometheus.yml` to point Prometheus the port where your application exposes the metrics endpoint.
++
+[source,yaml,options="nowrap"]
+--
   - job_name: nodejs
      static_configs:
      - targets: ['localhost:8888']
-----
+--
 +
 The default behavior of {Node}-based applications is to expose metrics at the `/metrics` endpoint.
 This is also what Prometheus expects.
@@ -38,11 +50,13 @@ This is also what Prometheus expects.
 * The Prometheus server running on `localhost` using Docker:
 +
 --
-[source,bash,opts="nowrap"]
-----
-# docker run -it --rm --network host -p 9090:9090 -v $PWD/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
-----
-
+. Execute `prometheus.sh` to launch Prometheus
++
+[source,bash,options="nowrap"]
+--
+$ bash ./prometheus
+--
++
 Wait until the `Server is ready to receive web requests` message is displayed in the console.
 --
 
