@@ -1,0 +1,11 @@
+
+[id='quality-control_{context}']
+= Quality control
+
+:parent-context: {context}
+
+include::con_quality-control-requirements-for-documentation.adoc[leveloffset=+1]
+
+include::proc_verifying-pull-requests.adoc[leveloffset=+1]
+
+:context: {parent-context}

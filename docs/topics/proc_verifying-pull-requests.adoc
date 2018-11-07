@@ -1,0 +1,44 @@
+
+[id='verifying-pull-requests_{context}']
+= Verifying pull requests
+
+Technical writers and members of the QE team must verify pull requests in the link:{link-repo-docs}[{repo-docs-name}^] repository before they are merged to ensure high quality of the documentation.
+Reviews from other stakeholders and the community are welcome.
+
+.Prerequisites
+
+* A GitHub account.
+* You account subscribed to the link:{link-repo-docs}[{repo-docs-name}^] repository.
++
+--
+To subscribe to the repository:
+
+.. In your browser, navigate to link:{link-repo-docs}[^].
+.. In the upper right corner, click the *Watch* button.
+If the button says *Unwatch*, you are already subscribed.
+--
+
+.Procedure
+
+. When you see a notification of a new pull request, navigate to it and review the contents according to the  description in the pull request and the issue it resolves.
++
+NOTE: If there is no reference to an open issue and the change is not trivial, request that an issue be created.
++
+.. If you are a writer, focus mainly on the requirements described in the xref:_requirements[] section.
+.. If you are a member of the QE team, focus mainly on the technical accuracy of the document.
+You can also check the writing style or errors, but it is not required.
+
+. Request changes if the document is not correct by doing one of the following:
++
+--
+** Open the *Files changed* tab in the pull request and click *Review changes* -> *Request changes*.
++
+Fill in the general description of the changes you require.
+Comment on individual problems directly in the code using the comment functionality in GitHub.
+** Open a separate pull request against the private branch of the original submitter.
+
+Repeat the process as necessary.
+--
+
+. When your requested changes are addressed, approve the pull request.
+

@@ -72,6 +72,8 @@ include::topics/ref_rhoardoc-jira-workflow.adoc[leveloffset=+3]
 
 include::topics/ref_rhoardoc-jira-fields.adoc[leveloffset=+3]
 
+include::topics/assembly_quality-control.adoc[leveloffset=+2]
+
 [appendix]
 == Upstream runtime project development resources
 
