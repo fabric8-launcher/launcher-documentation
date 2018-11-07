@@ -16,6 +16,9 @@
 //:stylesheet: asciidoc-default.css
 :stylesheet: foundation.css
 
+//filter community-only content
+:launcher-docs-only:
+
 :launcher: Fabric8 Launcher
 :launcher-oso: developers.redhat.com/launch
 :OpenShiftAppDev: Application Development on OpenShift
