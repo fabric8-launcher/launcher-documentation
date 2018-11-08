@@ -118,8 +118,7 @@ include::topics/proc_accessing-node-debug-logs-on-openshift.adoc[leveloffset=+3]
 ifdef::launcher-docs-only[]
 == Monitoring your application
 
-=== Exposing application metrics
-
+=== Application metrics
 
 include::topics/proc_exposing-application-metrics-using-prometheus-on-node-js.adoc[leveloffset=+3]
 endif::[]
