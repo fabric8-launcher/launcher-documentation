@@ -64,7 +64,7 @@ include::topics/proc_merging-contributions.adoc[leveloffset=+3]
 
 include::topics/proc_syncing-with-wildflyswarm-docs.adoc[leveloffset=+3]
 
-include::topics/proc_releasing-new-version.adoc[leveloffset=+3]
+include::topics/proc_releasing-launcher-docs.adoc[leveloffset=+3]
 
 === Issues
 

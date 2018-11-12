@@ -1,14 +1,12 @@
 
-[id='releasing-new-version_{context}']
-= Releasing new version
+[id='releasing-launcher-docs_{context}']
+= Releasing {docs-name} docs
 
 This section contains all information you need to release a new version of the documentation set to production. This update can happen anytime after the catalog has been updated, including after the release train has been completed.
 
 .Procedure
 
 .Releasing New Version to Production
-. Ensure the catalog has been updated. Contact the development team for this information.
-
 . Synchronize the {WildFlySwarm} sources. For more information, see xref:syncing-with-wildflyswarm-docs_{context}[].
 
 . Tag the release:
@@ -49,3 +47,48 @@ Replace `$REMOTE` with the name of the upstream remote.
 --
 $ git branch -d $TOPIC_BRANCH_NAME
 --
+
+. Announce the publication:
++
+--
+Send an e-mail containing a link to the new version and the diff from the live version to the following mailing lists:
+
+* obsidian-pm-list@redhat.com
+* obsidian-team-list@redhat.com
+* rhoar-docs-team@redhat.com
+* rhoar-qe-team@redhat.com
+
+Send the e-mail also to the following mailing lists if the publication concerns the respective runtime specifically:
+
+* Node.js: node-devel@redhat.com
+* Spring Boot: rh-spring-engineering@redhat.com
+* Thorntail: thorntail-internal@redhat.com
+* Vert.x: vertx-devel@redhat.com
+
+.Sample e-mail content
+====
+You can use the following template for the e-mail:
+
+WARNING: Replace the placeholders with real data before sending.
+
+----
+Hello,
+
+We have released the upstream documentation today.
+
+Docs link: https://launcher.fabric8.io/docs/
+Tag: https://github.com/fabric8-launcher/launcher-documentation/releases/tag/$NEW_TAG
+Diff: https://github.com/fabric8-launcher/launcher-documentation/compare/$PREVIOUS_TAG...$NEW_TAG
+
+The following issues were fixed:
+
+...
+
+We plan to do a downstream docs sync on $RELEASE_DATE.
+
+Please reach out to rhoar-docs-team@redhat.com if you have any questions.
+----
+====
+
+--
+
