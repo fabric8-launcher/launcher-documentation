@@ -25,5 +25,5 @@ For general information about missions and boosters, see the link:https://launch
 
 == Publishing
 
-Basic information about publishing a release is described in the link:https://launcher.fabric8.io/docs/contrib-guide.html#releasing-new-version_contributing[Releasing New Version] chapter of the __Contribution Guide.__
+Basic information about publishing a release is described in the link:https://launcher.fabric8.io/docs/contrib-guide.html#releasing-launcher-docs_contributing[Releasing New Version] chapter of the __Contribution Guide.__
 
