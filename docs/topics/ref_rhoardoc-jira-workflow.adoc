@@ -1,0 +1,30 @@
+
+[id='rhoardoc-jira-workflow_{context}']
+= RHOARDOC JIRA workflow
+
+The issues in the link:https://issues.jboss.org/browse/RHOARDOC[RHOARDOC^] JIRA project have the following lifecycle:
+
+.Standard RHOARDOC JIRA lifecycle
+NEW:: The issue is new.
++
+When the Assignee is set to _Unassigned_ or the DPM, it can denote an issue that might not have been triaged yet.
+
+OPEN:: The assignee accepts ownership of the issue.
+
+CODING IN PROGRESS:: The assignee is actively working on addressing the issue.
+
+PULL REQUEST SENT:: The assignee has submitted a draft of the new or updated content for review in a pull request.
+
+RESOLVED:: The issue is fixed from the documentation team's perspective.
+
+READY FOR QA:: The issue is ready for review by the QE team on the Customer Portal stage.
+
+QA IN PROGRESS:: The QE team is in the process of testing the new or updated content.
+
+VERIFIED:: The new or updated content has passed QE.
+
+CLOSED:: The issue has been addressed.
+
+.Other statuses
+REOPENED:: The issue was closed, but further updates or changes are required.
+

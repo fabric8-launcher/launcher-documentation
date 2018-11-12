@@ -68,14 +68,9 @@ include::topics/proc_releasing-new-version.adoc[leveloffset=+3]
 
 === Issues
 
-include::topics/con_github-issue-workflow.adoc[leveloffset=+3]
+include::topics/ref_rhoardoc-jira-workflow.adoc[leveloffset=+3]
 
-include::topics/ref_using-github-labels.adoc[leveloffset=+3]
-
-// TODO: INTERNAL: JIRA Issue Workflow
-
-// TODO: Publishing
-
+include::topics/ref_rhoardoc-jira-fields.adoc[leveloffset=+3]
 
 [appendix]
 == Upstream runtime project development resources

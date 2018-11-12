@@ -1,0 +1,64 @@
+
+[id='rhoardoc-jira-fields_{context}']
+= RHOARDOC JIRA fields
+
+The following fields are used in the link:https://issues.jboss.org/browse/RHOARDOC[RHOARDOC^] JIRA project:
+
+.RHOARDOC JIRA fields
+Issue Type:: The type of the issue.
++
+--
+The following types are used:
+
+* *Bug:* An error in the documentation.
+* *Enhancement:* An improvement or a missing part of the documentation.
+* *Epic:* A large requirement.
+Multiple JIRAs that track individual work items are linked to it.
+* *Task:* A task to be done.
+--
+
+Priority:: The importance of the issue.
++
+--
+The following priorities are used:
+
+* *Blocker:* The release of the documentation can not proceed until the issue is fixed.
+* *Critical:* The issue must be resolved quickly, but is not blocking.
+* *Major:* The default importance of an issue.
+* *Minor:* The issue is of low importance can be deferred to a later date.
+--
+
+Summary:: A brief description of the issue.
++
+This is the displayed name of the issue.
+Include important information about the issue like its nature and where it occurs, but be brief.
+
+Description:: A complete description of the issue.
+
+Sprint:: Which sprint the issue belongs to.
++
+Only put an issue in a sprint if you are reasonably confident you can finish it within the sprint.
+
+Story Points:: The estimated amount of effort the issue requires.
++
+Numbers from the Fibonacci sequence are used, each denoting an increasing workload: *1, 2, 3, 5, 8, 13.*
+If you believe an issue requires more than 13 points, it is likely an Epic and should be separated into sub-tasks.
++
+The recommended number of story points _per person per sprint_ is 13 in total.
+
+Assignee:: The person selected to address the issue.
++
+The issue is unassigned if set to _Unassigned,_ or if it is assigned to the DPM and has the NEW status.
+
+Epic Link:: The epic that the issue is part of.
++
+Only valid for _Bugs, Enhancements_ and _Tasks._
+
+Due Date:: A specific date before which the issue should be resolved.
++
+If not set, check the linked epic or parent issue if any.
+They might have a Due Date set.
+
+Resolution:: How the issue was resolved.
++
+By default, it is set to _Unresolved._
