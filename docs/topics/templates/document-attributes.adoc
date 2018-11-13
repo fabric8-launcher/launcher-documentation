@@ -214,3 +214,6 @@
 
 // Link S2I process (primarily for guides mission interaction sections)
 :link-s2i-process: https://docs.openshift.com/container-platform/latest/architecture/core_concepts/builds_and_image_streams.html#source-build
+
+include::document-attributes-portal.adoc[]
+
