@@ -1,7 +1,7 @@
 [id='breakdown-of-package-json-properties_{context}']
 = Breakdown of package.json properties
 
-.link:https://github.com/bucharest-gold/nodejs-rest-http/blob/master/package.json[nodejs-rest-http/package.json]
+.link:https://github.com/nodeshift-starters/nodejs-rest-http/blob/master/package.json[nodejs-rest-http/package.json]
 [source,json,options="nowrap",subs="attributes+"]
 ----
 {
@@ -25,7 +25,7 @@
   "main": "./bin/www", <4>
   "repository": {
     "type": "git",
-    "url": "git://github.com/bucharest-gold/nodejs-rest-http.git"
+    "url": "git://github.com/nodeshift-starters/nodejs-rest-http.git"
   },
   "files": [ <5>
     "package.json",
@@ -36,9 +36,9 @@
     "licenses"
   ],
   "bugs": {
-    "url": "https://github.com/bucharest-gold/nodejs-rest-http/issues"
+    "url": "https://github.com/nodeshift-starters/nodejs-rest-http/issues"
   },
-  "homepage": "https://github.com/bucharest-gold/nodejs-rest-http",
+  "homepage": "https://github.com/nodeshift-starters/nodejs-rest-http",
   "devDependencies": { <6>
     "coveralls": "^3.0.0",
     "nodeshift": "^1.3.0",

@@ -121,11 +121,11 @@
 :link-http-api-level-0-spring-boot-booster: https://github.com/snowdrop/rest_springboot
 :link-http-api-level-0-vertx-booster: https://github.com/openshiftio-vertx-boosters/vertx-http-booster
 :link-http-api-level-0-wf-swarm-booster: https://github.com/wildfly-swarm-openshiftio-boosters/rest-http
-:link-http-api-level-0-nodejs-booster: https://github.com/bucharest-gold/nodejs-rest-http
+:link-http-api-level-0-nodejs-booster: https://github.com/nodeshift-starters/nodejs-rest-http
 
 :link-configmap-spring-boot-booster: https://github.com/snowdrop/rest_configmap_springboot
 :link-configmap-vertx-booster: https://github.com/openshiftio-vertx-boosters/vertx-configmap-booster
-:link-configmap-nodejs-booster: https://github.com/bucharest-gold/nodejs-configmap
+:link-configmap-nodejs-booster: https://github.com/nodeshift-starters/nodejs-configmap
 :link-configmap-wf-swarm-booster: https://github.com/wildfly-swarm-openshiftio-boosters/configmap
 
 :link-openshift-local-guide: /docs/minishift-installation.html

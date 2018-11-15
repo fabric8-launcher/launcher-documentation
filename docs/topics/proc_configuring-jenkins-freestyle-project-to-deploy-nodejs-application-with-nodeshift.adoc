@@ -7,7 +7,7 @@ Similar to using nodeshift from your local host to deploy a {Node} application, 
 * Access to an OpenShift cluster.
 * link:https://docs.openshift.org/latest/using_images/other_images/jenkins.html[The Jenkins container image] running on same OpenShift cluster.
 * link:https://plugins.jenkins.io/nodejs[The {Node} plugin] installed on your Jenkins server.
-* A {Node} application configured to use link:https://github.com/bucharest-gold/nodeshift[nodeshift] and the Red Hat base image.
+* A {Node} application configured to use link:https://github.com/nodeshift/nodeshift[nodeshift] and the Red Hat base image.
 +
 .Example using the Red Hat base image with nodeshift
 [source,bash,options="nowrap",subs="attributes+"]
@@ -16,7 +16,7 @@ $ nodeshift --dockerImage=registry.access.redhat.com/rhoar-nodejs/nodejs-8 ...
 ----
 * The source of the application available in GitHub.
 
-.Procedure 
+.Procedure
 . Create a new OpenShift project for your application:
 .. Open the OpenShift Web console and log in.
 .. Click _Create Project_ to create a new OpenShift project.
