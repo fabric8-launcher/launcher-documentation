@@ -18,7 +18,7 @@ When you have finished creating your application booster, you can interact with 
 $ oc get route {app-name}
 ----
 
-[source,bash,option="nowrap",subs="attributes+"]
+[source,option="nowrap",subs="attributes+"]
 ----
 NAME                 HOST/PORT                                         PATH      SERVICES             PORT      TERMINATION
 {app-name}           {app-name}-{project-name}.{os-route-hostname}              {app-name}           8080
@@ -46,15 +46,15 @@ $ curl http://{app-name}-{project-name}.{os-route-hostname}/api/fruits
 [ {
   "id" : 1,
   "name" : "Apple",
-  "stock" : "10"
+  "stock" : 10
 }, {
   "id" : 2,
   "name" : "Orange",
-  "stock" : "10"
+  "stock" : 10
 }, {
   "id" : 3,
   "name" : "Pear",
-  "stock" : "10"
+  "stock" : 10
 } ]
 ----
 
@@ -69,37 +69,37 @@ $ curl http://{app-name}-{project-name}.{os-route-hostname}/api/fruits/3
 {
   "id" : 3,
   "name" : "Pear",
-  "stock" : "10"
+  "stock" : 10
 }
 ----
 
 .Create a new entry:
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ curl -H "Content-Type: application/json" -X POST -d '{"name":"peach","stock":"1"}'  http://{app-name}-{project-name}.{os-route-hostname}/api/fruits
+$ curl -H "Content-Type: application/json" -X POST -d '{"name":"Peach","stock":1}'  http://{app-name}-{project-name}.{os-route-hostname}/api/fruits
 ----
 
 [source,json,options="nowrap",subs="attributes+"]
 ----
 {
   "id" : 4,
-  "name" : "peach",
-  "stock" : "1"
+  "name" : "Peach",
+  "stock" : 1
 }
 ----
 
 .Update an Entry
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ curl -H "Content-Type: application/json" -X PUT -d '{"name":"pineapple","stock":"100"}'  http://{app-name}-{project-name}.{os-route-hostname}/api/fruits/1
+$ curl -H "Content-Type: application/json" -X PUT -d '{"name":"Apple","stock":100}'  http://{app-name}-{project-name}.{os-route-hostname}/api/fruits/1
 ----
 
 [source,json,options="nowrap",subs="attributes+"]
 ----
 {
   "id" : 1,
-  "name" : "pineapple",
-  "stock" : "100"
+  "name" : "Apple",
+  "stock" : 100
 }
 ----
 
@@ -114,4 +114,3 @@ $ curl -X DELETE http://{app-name}-{project-name}.{os-route-hostname}/api/fruits
 == Troubleshooting
 
 * If you receive an HTTP Error code `503` as a response after executing these commands, it means that the application is not ready yet.
-
