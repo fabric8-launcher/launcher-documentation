@@ -4,7 +4,7 @@
 //
 // Rationale: output is slightly different for node due to an issue
 
-// 
+//
 
 [id='authenticating-http-requests-using-the-web-interface_{context}']
 = Authenticating HTTP requests using the web interface
@@ -30,7 +30,7 @@ image::sso-main.png[]
 ifdef::node-js-sso-temp-workaround[]
 The services responds with an `HTTP 403 Forbidden` status code.
 
-NOTE: This is not the correct status code. It should be `HTTP 401 Unauthorized`. This issue link:https://github.com/bucharest-gold/nodejs-rest-http-secured-redhat/issues/21[has been identified] and this booster will be updated as soon as it is resolved.
+NOTE: This is not the correct status code. It should be `HTTP 401 Unauthorized`. This issue link:https://github.com/nodeshift-starters/nodejs-rest-http-secured-redhat/issues/21[has been identified] and this booster will be updated as soon as it is resolved.
 
 endif::node-js-sso-temp-workaround[]
 ifndef::node-js-sso-temp-workaround[]
