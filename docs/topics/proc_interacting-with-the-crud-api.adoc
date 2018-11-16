@@ -45,13 +45,16 @@ $ curl http://{app-name}-{project-name}.{os-route-hostname}/api/fruits
 ----
 [ {
   "id" : 1,
-  "name" : "Cherry",
+  "name" : "Apple",
+  "stock" : 10
 }, {
   "id" : 2,
-  "name" : "Apple",
+  "name" : "Orange",
+  "stock" : 10
 }, {
   "id" : 3,
-  "name" : "Banana",
+  "name" : "Pear",
+  "stock" : 10
 } ]
 ----
 
@@ -65,35 +68,38 @@ $ curl http://{app-name}-{project-name}.{os-route-hostname}/api/fruits/3
 ----
 {
   "id" : 3,
-  "name" : "Banana",
+  "name" : "Pear",
+  "stock" : 10
 }
 ----
 
 .Create a new entry:
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ curl -H "Content-Type: application/json" -X POST -d '{"name":"pear"}'  http://{app-name}-{project-name}.{os-route-hostname}/api/fruits
+$ curl -H "Content-Type: application/json" -X POST -d '{"name":"Peach","stock":1}'  http://{app-name}-{project-name}.{os-route-hostname}/api/fruits
 ----
 
 [source,json,options="nowrap",subs="attributes+"]
 ----
 {
   "id" : 4,
-  "name" : "pear",
+  "name" : "Peach",
+  "stock" : 1
 }
 ----
 
 .Update an Entry
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ curl -H "Content-Type: application/json" -X PUT -d '{"name":"pineapple"}'  http://{app-name}-{project-name}.{os-route-hostname}/api/fruits/1
+$ curl -H "Content-Type: application/json" -X PUT -d '{"name":"Apple","stock":"100"}'  http://{app-name}-{project-name}.{os-route-hostname}/api/fruits/1
 ----
 
 [source,json,options="nowrap",subs="attributes+"]
 ----
 {
   "id" : 1,
-  "name" : "pineapple",
+  "name" : "Apple",
+  "stock" : 100
 }
 ----
 
