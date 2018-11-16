@@ -1,0 +1,21 @@
+
+:imagesdir: topics/images
+
+:ProductName: Red Hat OpenShift Application Runtimes
+:ProductShortName: RHOAR
+:ProductRelease: 1
+:ProductVersion: 1
+:DocInfoProductNumber: 1
+:DocInfoProductName: red-hat-openshift-application-runtimes
+
+:portal-base-url: https://access.redhat.com/documentation/en-us/red_hat_openshift_application_runtimes/{DocInfoProductNumber}/html-single
+:link-launcher-yaml: https://launcher.fabric8.io/latest-launcher-template
+
+:link-launcher-openshift-local-install-guide: {portal-base-url}/install_and_configure_the_developers.redhat.comlaunch_application_on_a_single-node_openshift_cluster/
+:link-openshift-local-guide: {link-launcher-openshift-local-install-guide}
+:link-getting-started-guide: {portal-base-url}/getting_started_guide/
+:link-spring-boot-runtime-guide: {portal-base-url}/spring_boot_tomcat_runtime_guide/
+:link-vertx-runtime-guide: {portal-base-url}/eclipse_vert.x_runtime_guide/
+:link-wf-swarm-runtime-guide: {portal-base-url}/wildfly_swarm_runtime_guide/
+:link-nodejs-runtime-guide: {portal-base-url}/node.js_runtime_guide/
+

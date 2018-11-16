@@ -1,29 +1,14 @@
+include::environment.adoc[]
+
 :toc: left
 :toclevels: 3
 :numbered:
-:docinfodir: topics/styles
-:docinfo1:
 :icons: font
 :source-highlighter: highlightjs
-
-:imagesdir: images
-
-:ndash: &#x2013;
-
-//uncomment to add styles
-:stylesdir: topics/styles
-//:stylesheet: style.css
-//:stylesheet: asciidoc-default.css
-:stylesheet: foundation.css
-
-//filter community-only content
-:launcher-docs-only:
 
 :launcher: Fabric8 Launcher
 :launcher-oso: developers.redhat.com/launch
 :OpenShiftAppDev: Application Development on OpenShift
-:ProductName: {OpenShiftAppDev}
-:ProductShortName: {ProductName}
 
 :OpenShiftOnline: OpenShift Online
 :OpenShiftLocal: Single-node OpenShift Cluster
@@ -38,6 +23,20 @@
 :RHSSO: Red Hat SSO
 // Needs to be set to either "WildFly" or "JBoss EAP"
 :WildFly: JBoss EAP
+
+// Launcher-specific attribute definitions
+ifdef::launcher-docs-only[]
+include::document-attributes-launcher.adoc[]
+endif::[]
+
+// Portal-specific docs attribute definitions
+ifdef::portal-docs-only[]
+include::document-attributes-portal.adoc[]
+endif::[]
+
+
+:ndash: &#x2013;
+
 
 :app-name: MY_APP_NAME
 :project-name: MY_PROJECT_NAME
@@ -79,8 +78,6 @@
 :mission-cache-vertx-guide-name: {name-mission-cache} Mission - {VertX} Booster
 :mission-cache-wf-swarm-guide-name: {name-mission-cache} Mission - {WildFlySwarm} Booster
 :mission-cache-nodejs-guide-name: {name-mission-cache} Mission - {Node} Booster
-
-
 
 :minishift-installation-guide-name: Install and Configure the {launcher} Tool
 :getting-started-guide-name: Getting Started with {ProductName}
@@ -128,15 +125,7 @@
 :link-configmap-nodejs-booster: https://github.com/nodeshift-starters/nodejs-configmap
 :link-configmap-wf-swarm-booster: https://github.com/wildfly-swarm-openshiftio-boosters/configmap
 
-:link-openshift-local-guide: /docs/minishift-installation.html
-:link-launcher-openshift-local-install-guide: /docs/minishift-installation.html
-:link-getting-started-guide: /docs/getting-started.html
-:link-spring-boot-runtime-guide: /docs/spring-boot-runtime.html
-:link-vertx-runtime-guide: /docs/vertx-runtime.html
-:link-wf-swarm-runtime-guide: /docs/thorntail-runtime.html
-:link-nodejs-runtime-guide: /docs/nodejs-runtime.html
-
-
+// SPRING BOOT MISSIONS
 :link-mission-http-api-spring-boot: {link-spring-boot-runtime-guide}#mission-rest-http-spring-boot
 :link-mission-configmap-spring-boot: {link-spring-boot-runtime-guide}#mission-configmap-spring-boot
 :link-mission-crud-spring-boot: {link-spring-boot-runtime-guide}#mission-crud-spring-boot
@@ -145,6 +134,7 @@
 :link-mission-circuit-breaker-spring-boot: {link-spring-boot-runtime-guide}#mission-circuit-breaker-spring-boot
 :link-mission-cache-spring-boot: {link-spring-boot-runtime-guide}#mission-cache-spring-boot
 
+// VERT.X MISSIONS
 :link-mission-http-api-vertx: {link-vertx-runtime-guide}#mission-rest-http-vertx
 :link-mission-configmap-vertx: {link-vertx-runtime-guide}#mission-configmap-vertx
 :link-mission-crud-vertx: {link-vertx-runtime-guide}#mission-crud-vertx
@@ -153,7 +143,7 @@
 :link-mission-circuit-breaker-vertx: {link-vertx-runtime-guide}#mission-circuit-breaker-vertx
 :link-mission-cache-vertx: {link-vertx-runtime-guide}#mission-cache-vertx
 
-
+// THORNTAIL MISSIONS
 :link-mission-http-api-wf-swarm: {link-wf-swarm-runtime-guide}#mission-rest-http-wf-swarm
 :link-mission-configmap-wf-swarm: {link-wf-swarm-runtime-guide}#mission-configmap-wf-swarm
 :link-mission-crud-wf-swarm: {link-wf-swarm-runtime-guide}#mission-crud-wf-swarm
@@ -162,6 +152,7 @@
 :link-mission-circuit-breaker-wf-swarm: {link-wf-swarm-runtime-guide}#mission-circuit-breaker-wf-swarm
 :link-mission-cache-wf-swarm: {link-wf-swarm-runtime-guide}#mission-cache-wf-swarm
 
+// NODE.JS MISSIONS
 :link-mission-http-api-nodejs: {link-nodejs-runtime-guide}#mission-rest-http-nodejs
 :link-mission-configmap-nodejs: {link-nodejs-runtime-guide}#mission-configmap-nodejs
 :link-mission-health-check-nodejs: {link-nodejs-runtime-guide}#mission-health-check-nodejs
@@ -214,6 +205,4 @@
 
 // Link S2I process (primarily for guides mission interaction sections)
 :link-s2i-process: https://docs.openshift.com/container-platform/latest/architecture/core_concepts/builds_and_image_streams.html#source-build
-
-include::document-attributes-portal.adoc[]
 
