@@ -166,7 +166,6 @@ endif::[]
 :link-osl-auth: LOCAL_OPENSHIFT_URL
 
 :link-rhsso: https://github.com/obsidian-toaster-quickstarts/redhat-sso
-:link-launcher-yaml: /latest-launcher-template
 :link-launcher-oso: https://developers.redhat.com/launch
 
 // Minishift route URL e.g: 192.168.42.152.nip.io
