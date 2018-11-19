@@ -19,3 +19,5 @@
 :link-wf-swarm-runtime-guide: {portal-base-url}/wildfly_swarm_runtime_guide/
 :link-nodejs-runtime-guide: {portal-base-url}/node.js_runtime_guide/
 
+:link-launcher-yaml: https://launcher.fabric8.io/latest-launcher-template
+

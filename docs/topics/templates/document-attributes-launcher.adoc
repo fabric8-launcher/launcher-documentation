@@ -18,3 +18,5 @@
 :link-wf-swarm-runtime-guide: /docs/thorntail-runtime.html
 :link-nodejs-runtime-guide: /docs/nodejs-runtime.html
 
+:link-launcher-yaml: /latest-launcher-template
+
