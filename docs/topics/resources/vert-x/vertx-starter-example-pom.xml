@@ -47,6 +47,11 @@
     </dependency>
   </dependencies>
 
+  <!-- Specify the JDK builder image to be used to build your application. -->
+  <properties>
+    <fabric8.generator.from>{open-jdk-builder-image-name}</fabric8.generator.from>
+  </properties>
+
   <!-- Specify the repositories containing RHOAR artifacts. -->
   <repositories>
     <repository>
