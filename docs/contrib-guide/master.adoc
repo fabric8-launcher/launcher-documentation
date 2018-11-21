@@ -58,6 +58,8 @@ include::topics/con_writing-the-modular-way.adoc[leveloffset=+3]
 
 === Administration
 
+include::topics/ref_jenkins-ci-commands.adoc[leveloffset=+3]
+
 include::topics/proc_reviewing-changes.adoc[leveloffset=+3]
 
 include::topics/proc_merging-contributions.adoc[leveloffset=+3]

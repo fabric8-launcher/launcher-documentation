@@ -11,8 +11,12 @@ Ensure you perform all the following actions when reviewing a pull request:
 .Procedure
 
 .Reviewing Pull Request
-. Approve the test build if there is a comment from the `centos-ci` user asking "Can one of the admins verify this patch?". That means the pull request comes from an external contributor. To approve the build, reply `[test]` in comments.
-. Check if the test build passed.
+. If there is a comment from the `centos-ci` user asking _Can one of the admins verify this patch?,_ the pull request comes from an external contributor.
+
+Approve the build or add the author to the list of trusted contributors.
+For more information, see xref:jenkins-ci-commands_{context}[].
+
+. Check if the build passed.
 +
 If it failed, review the build log by clicking *Show all checks* -> *Details* in the box at the bottom of the comment section. In the page that opens, click *Console Output*. Search for the string _Running tests..._ and diagnose the problem.
 . Click the *Files Changed* tab and review the changes. Pay special attention to the following matters:
