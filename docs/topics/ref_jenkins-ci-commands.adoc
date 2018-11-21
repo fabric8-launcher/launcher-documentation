@@ -1,0 +1,33 @@
+
+[id='jenkins-ci-commands_{context}']
+= Jenkins CI commands
+
+As a team member, you can operate the Jenkins continuous integration (CI) system from the comment section of every pull request.
+By default, only pull requests from trusted collaborators are built automatically.
+You can enable building a particular pull request from an untrusted collaborator or add the pull request author to the list of trusted collaborators.
+
+To issue a command, write it into a comment in a pull request in the link:{link-repo-docs}[{repo-docs-name}^] repository.
+Do not write anything else in the comment.
+
+.List of Jenkins commands
+[cols="1a,3",options="header"]
+|====
+| Command
+| Description
+
+| `[test]` or `ok to test`
+| Enable building for the particular pull request and start a build.
+
+Any future pull requests from the author will still need to be approved by team members.
+
+| `add to whitelist`
+| Add the pull request author to the list of trusted collaborators and start a build.
+
+Any future pull requests from the author will be built automatically.
+
+| `retest this please`
+| Rebuild the pull request.
+
+Use this command when a job failed or there is another error.
+|====
+
