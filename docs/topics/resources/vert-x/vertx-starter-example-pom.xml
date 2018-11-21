@@ -15,7 +15,10 @@
     <vertx.version>{version-vertx}</vertx.version>
     <vertx-maven-plugin.version>{version-vertx-maven-plugin}</vertx-maven-plugin.version>
     <vertx.verticle>com.example.MyApp</vertx.verticle>
-    <fabric8.generator.from>registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift:1.2</fabric8.generator.from>
+
+    <!-- Specify the JDK builder image used to build your application. -->
+    <fabric8.generator.from>{open-jdk-builder-image-name}</fabric8.generator.from>
+
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -46,11 +49,6 @@
       <artifactId>vertx-web</artifactId>
     </dependency>
   </dependencies>
-
-  <!-- Specify the JDK builder image to be used to build your application. -->
-  <properties>
-    <fabric8.generator.from>{open-jdk-builder-image-name}</fabric8.generator.from>
-  </properties>
 
   <!-- Specify the repositories containing RHOAR artifacts. -->
   <repositories>

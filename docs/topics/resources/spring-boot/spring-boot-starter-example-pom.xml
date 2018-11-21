@@ -10,7 +10,7 @@
   <name>MyApp</name>
   <description>My Application</description>
 
-  <!-- Specify the JDK builder image to be used to build your application. -->
+  <!-- Specify the JDK builder image used to build your application. -->
   <properties>
     <fabric8.generator.from>{open-jdk-builder-image-name}</fabric8.generator.from>
   </properties>
