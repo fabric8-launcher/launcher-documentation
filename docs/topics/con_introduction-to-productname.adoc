@@ -30,7 +30,7 @@ You can find more details on using {launcher-oso} in the xref:deploying-a-booste
 .The {launcher} Tool
 The {launcher} is the upstream project from which link:{link-launcher-oso}[{launcher-oso}] is based.
 
-You can also install and execute the {launcher} tool on your {OpenShiftLocal} to use the same capabilities within your {OpenShiftLocal}. For more information, see the link:{link-launcher-openshift-local-install-guide}#installing-launcher-tool_minishift[Installing the {launcher} Tool] chapter of the {minishift-installation-guide-name} guide.
+You can also install and execute the {launcher} tool on your {OpenShiftLocal} to use the same capabilities within your {OpenShiftLocal}. For more information, see the link:{link-launcher-openshift-local-install-guide}#installing-launcher-tool_minishift[Installing the {launcher} Tool] chapter of the {name-guide-minishift-installation} guide.
 
 .Missions and Boosters
 A mission implements a link:http://microservices.io/patterns/microservices.html[Microservice pattern] such as:

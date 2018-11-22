@@ -3,7 +3,7 @@ include::topics/templates/document-attributes.adoc[]
 //override for a cleaner TOC
 :toclevels: 2
 
-= {nodejs-runtime-guide-name}
+= {name-guide-nodejs}
 :runtime: {Node}
 //var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
 :docs-topic:

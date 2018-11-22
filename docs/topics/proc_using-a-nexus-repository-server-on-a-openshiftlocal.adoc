@@ -13,7 +13,7 @@ This reduces the network load when building your application, and helps accelera
 .Prerequisites
 
 * Your {OpenShiftLocal} set up.
-Follow the instructions in link:{link-launcher-openshift-local-install-guide}[{minishift-installation-guide-name}].
+Follow the instructions in link:{link-launcher-openshift-local-install-guide}[{name-guide-minishift-installation}].
 
 ////
 * Set up your project for use with Maven.

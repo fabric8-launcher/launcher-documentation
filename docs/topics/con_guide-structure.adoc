@@ -10,7 +10,7 @@ include::topics/templates/document-attributes.adoc[] <1>
 //var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end <2>
 :docs-topic: <3>
 
-= {contrib-guide-name} <4>
+= {name-guide-contrib} <4>
 
 
 == {launcher} Development
