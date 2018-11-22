@@ -1,13 +1,13 @@
 
 [id='importing-your-booster-code-to-red-hat-jboss-developer-studio_{context}']
-= Importing your booster code to Red Hat JBoss Developer Studio
+= Importing your booster code to {DevStudio}
 
-Importing your booster's code creates a project in Red Hat JBoss Developer Studio and enables you to start making changes.
+Importing your booster's code creates a project in {DevStudio} and enables you to start making changes.
 
 .Prerequisites
 
 * Your booster created and downloaded from link:{link-launcher-oso}[{launcher-oso}].
-* Red Hat JBoss Developer Studio running.
+* {DevStudio} running.
 
 .Procedure
 

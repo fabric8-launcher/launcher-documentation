@@ -23,6 +23,7 @@ include::environment.adoc[]
 :RHSSO: Red Hat SSO
 // Needs to be set to either "WildFly" or "JBoss EAP"
 :WildFly: JBoss EAP
+:DevStudio: Red Hat Developer Studio
 
 // Launcher-specific attribute definitions
 ifdef::launcher-docs-only[]
