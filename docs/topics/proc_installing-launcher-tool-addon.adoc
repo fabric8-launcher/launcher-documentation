@@ -58,7 +58,7 @@ launcher-frontend-2-aaaaa      0/1       Running             0         6s
 ----
 $ oc get routes
 NAME       HOST/PORT                                PATH      SERVICES            PORT      TERMINATION   WILDCARD
-launcher   launcher-rhoarpad.{osl-route-hostname}             launcher-frontend   <all>                   None
+launcher   launcher-rhoarpad.{value-route-osl-hostname}             launcher-frontend   <all>                   None
 ----
 
 . Navigate to your {launcher} tool and start using your {launcher} tool to launch booster applications.

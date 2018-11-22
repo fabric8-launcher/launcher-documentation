@@ -15,7 +15,7 @@ You can also use a browser to do this.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting
+$ curl http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}/api/greeting
 {"content":"Hello, World from a ConfigMap !"}
 ----
 . Update the deployed ConfigMap configuration.
@@ -35,7 +35,7 @@ You can also do this from your browser using the web form provided by the applic
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting
+$ curl http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}/api/greeting
 {"content":"Bonjour, World from a ConfigMap !"}
 ----
 

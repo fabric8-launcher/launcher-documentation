@@ -14,7 +14,7 @@ The booster provides a default HTTP endpoint that accepts GET requests.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting
+$ curl http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}/api/greeting
 {"content":"Hello World from a ConfigMap!"}
 ----
 
@@ -32,7 +32,7 @@ After you save this, the changes will be propagated to your OpenShift instance.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc rollout latest dc/{app-name}
+$ oc rollout latest dc/{value-name-app}
 ----
 
 . Check the status of your booster and ensure your new pod is running.
@@ -41,11 +41,11 @@ $ oc rollout latest dc/{app-name}
 ----
 $ oc get pods -w
 NAME                             READY     STATUS      RESTARTS   AGE
-{app-name}-1-aaaaa       1/1       Running     0          58s
-{app-name}-s2i-1-build   0/1       Completed   0          2m
+{value-name-app}-1-aaaaa       1/1       Running     0          58s
+{value-name-app}-s2i-1-build   0/1       Completed   0          2m
 ----
 +
-The `{app-name}-1-aaaaa` pod should have a status of `Running` once its fully deployed and started.
+The `{value-name-app}-1-aaaaa` pod should have a status of `Running` once its fully deployed and started.
 Your specific pod name will vary.
 The number in the middle will increase with each new build.
 The letters at the end are generated when the pod is created.
@@ -55,7 +55,7 @@ You can also do this from your browser using the web form provided by the applic
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting
+$ curl http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}/api/greeting
 {"content":"Bonjour World from a ConfigMap!"}
 ----
 

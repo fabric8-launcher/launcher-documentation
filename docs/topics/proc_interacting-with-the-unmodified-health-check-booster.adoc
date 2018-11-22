@@ -1,7 +1,7 @@
 [id='interacting-with-the-unmodified-health-check-booster_{context}']
 = Interacting with the unmodified {name-mission-health-check} booster
 
-Once you have the booster deployed, you will have a service called `{app-name}` running that exposes the following REST endpoints:
+Once you have the booster deployed, you will have a service called `{value-name-app}` running that exposes the following REST endpoints:
 
 /api/greeting::
 ifdef::built-for-vertx,built-for-nodejs[Returns a JSON containing greeting of `name` parameter (or World as default value).]
@@ -15,13 +15,13 @@ This failure of an available service causes the OpenShift self-healing capabilit
 
 Alternatively, you can use the web interface to perform these steps.
 
-. Use `curl` to execute a `GET` request against the `{app-name}` service.
+. Use `curl` to execute a `GET` request against the `{value-name-app}` service.
 You can also use a browser to do this.
 +
 --
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting
+$ curl http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}/api/greeting
 ----
 
 [source,options="nowrap",subs="attributes+"]
@@ -40,7 +40,7 @@ ifdef::built-for-spring-boot[an `Application is not available` page.]
 
 [source,bash,option="nowrap",subs="attributes+"]
 ----
-$ curl http://{app-name}-{project-name}.{os-route-hostname}/api/stop
+$ curl http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}/api/stop
 ----
 
 ifdef::built-for-vertx,built-for-nodejs[]
@@ -54,7 +54,7 @@ endif::[]
 
 [source,bash,option="nowrap",subs="attributes+"]
 ----
-$ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting
+$ curl http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}/api/greeting
 ----
 
 // Responses vary wildly among runtimes
@@ -110,8 +110,8 @@ In addition to that, the `RESTARTS` count increases every time you you invoke th
 ----
 $ oc get pods -w
 NAME                           READY     STATUS    RESTARTS   AGE
-{app-name}-1-26iy7   0/1       Running   5          18m
-{app-name}-1-26iy7   1/1       Running   5         19m
+{value-name-app}-1-26iy7   0/1       Running   5          18m
+{value-name-app}-1-26iy7   1/1       Running   5         19m
 ----
 --
 
@@ -122,7 +122,7 @@ Alternatively to the interaction using the terminal window, you can use the web 
 
 [source,option="nowrap",subs="attributes+"]
 ----
-http://{app-name}-{project-name}.{os-route-hostname}
+http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}
 ----
 --
 

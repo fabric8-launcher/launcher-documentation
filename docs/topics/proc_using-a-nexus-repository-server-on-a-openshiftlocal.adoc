@@ -59,7 +59,7 @@ It has not been tested for use with CDK.
 --
 [source,bash,subs="attributes+"]
 ----
-oc login https://{osl-login-url} -u developer -p developer
+oc login https://{value-url-osl-auth} -u developer -p developer
 ----
 
 You can reuse the Docker daemon instance used by {OpenShiftLocal} to download the latest versions of the Nexus Docker container image.
@@ -110,7 +110,7 @@ oc volumes dc/nexus --add --name 'nexus-volume-1' --type 'pvc' --mount-path '/so
 +
 [source,bash,subs="attributes+"]
 ----
-oc project {project-name}
+oc project {value-name-project}
 ----
 
 . Define and start a new build.
@@ -126,7 +126,7 @@ If it does not, see the Nexus documentation for instructions on link:https://hel
 
 [source,bash,subs="attributes+"]
 ----
-$ oc new-build {app-name}:latest~{scm-repo-url} \
+$ oc new-build {value-name-app}:latest~{scm-repo-url} \
 -e MAVEN_MIRROR_URL='http://nexus.{nexus-project-name}:8081/nexus/content/groups/public'
 ----
 
@@ -137,12 +137,12 @@ To access images provided by Red Hat, add the link:https://maven.repository.redh
 . Ensure that your new build is using Nexus to retrieve artifacts. Do one of the following:
 +
 --
-* Navigate to `\http://nexus-{nexus-project-name}.{osl-route-hostname}/nexus/content/groups/public` to view the list of artifacts stored in your local repository.
+* Navigate to `\http://nexus-{nexus-project-name}.{value-route-osl-hostname}/nexus/content/groups/public` to view the list of artifacts stored in your local repository.
 * Check the log output of the build:
 +
 [source,bash,subs="attributes+"]
 ----
-$ oc logs build/{app-name}-1 --follow
+$ oc logs build/{value-name-app}-1 --follow
 ----
 
 If your build uses Nexus to retrieve artifacts, the build log output should reference the path `\http://nexus.{nexus-project-name}:8081/`.

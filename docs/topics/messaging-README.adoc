@@ -47,9 +47,9 @@ $ ${OSORunCMD}
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc get route ${app-name} -o jsonpath={$.spec.host}
+$ oc get route ${value-name-app} -o jsonpath={$.spec.host}
 
-${app-name}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME
+${value-name-app}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME
 ----
 
 . Navigate to the `frontend` service using your browser to access the messaging service UI.
@@ -70,8 +70,8 @@ You can see the processed message appear in the _Responses_ table along with the
 $ oc get pods
 NAME                              READY     STATUS      RESTARTS   AGE
 ...
-${app-name}-worker-1-aaaaa        1/1       Running     0          6m
-${app-name}-worker-1-bbbbb        1/1       Running     0          4m
+${value-name-app}-worker-1-aaaaa        1/1       Running     0          6m
+${value-name-app}-worker-1-bbbbb        1/1       Running     0          4m
 ...
 ----
 --

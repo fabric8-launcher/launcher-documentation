@@ -69,19 +69,19 @@ To interact with your booster while it's running on a Single-node OpenShift Clus
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc get route ${app-name} -o jsonpath={$.spec.host}
+$ oc get route ${value-name-app} -o jsonpath={$.spec.host}
 
-${app-name}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME
+${value-name-app}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME
 ----
 
 You can use the form at your application's url or you can use the `curl` command:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ curl http://${app-name}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/greeting
+$ curl http://${value-name-app}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/greeting
 {"content":"Hello World from a ConfigMap!"}
 
-$ curl http://${app-name}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/greeting?name=Sarah
+$ curl http://${value-name-app}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/greeting?name=Sarah
 {"content":"Hello Sarah from a ConfigMap!"}
 ----
 

@@ -34,7 +34,7 @@ $ oc login ...
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc new-project {project-name}
+$ oc new-project {value-name-project}
 ----
 
 . In a terminal application, navigate to the directory containing your application:
@@ -59,11 +59,11 @@ This command uses the Fabric8 Maven Plugin to launch the link:{link-s2i-process}
 ----
 $ oc get pods -w
 NAME                             READY     STATUS      RESTARTS   AGE
-{app-name}-1-aaaaa               1/1       Running     0          58s
-{app-name}-s2i-1-build           0/1       Completed   0          2m
+{value-name-app}-1-aaaaa               1/1       Running     0          58s
+{value-name-app}-s2i-1-build           0/1       Completed   0          2m
 ----
 +
-The `{app-name}-1-aaaaa` pod should have a status of `Running` once it is fully deployed and started.
+The `{value-name-app}-1-aaaaa` pod should have a status of `Running` once it is fully deployed and started.
 Your specific pod name will vary.
 The number in the middle will increase with each new build.
 The letters at the end are generated when the pod is created.
@@ -76,10 +76,10 @@ The letters at the end are generated when the pod is created.
 ----
 $ oc get routes
 NAME                 HOST/PORT                                                     PATH      SERVICES        PORT      TERMINATION
-{app-name}         {app-name}-{project-name}.{os-route-hostname}      {app-name}      8080
+{value-name-app}         {value-name-app}-{value-name-project}.{value-route-openshift-hostname}      {value-name-app}      8080
 ----
 +
-The route information of a pod gives you the base URL which you use to access it. In the example above, you would use `\http://{app-name}-{project-name}.{os-route-hostname}` as the base URL to access the application.
+The route information of a pod gives you the base URL which you use to access it. In the example above, you would use `\http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}` as the base URL to access the application.
 
 . Using `curl` or your browser, verify your application is running in OpenShift.
 +

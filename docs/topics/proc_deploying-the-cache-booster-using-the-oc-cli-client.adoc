@@ -17,21 +17,21 @@ endif::[]
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ git clone git@github.com:USERNAME/{project-name}.git
+$ git clone git@github.com:USERNAME/{value-name-project}.git
 ----
 +
 Alternatively, if you downloaded a ZIP file of your project, extract it.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ unzip {project-name}.zip
+$ unzip {value-name-project}.zip
 ----
 
 . Create a new project.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc new-project {project-name}
+$ oc new-project {value-name-project}
 ----
 
 . Navigate to the root directory of your booster.
@@ -68,10 +68,10 @@ endif::built-for-nodejs[]
 $ oc get pods -w
 NAME                             READY     STATUS      RESTARTS   AGE
 cache-server-123456789-aaaaa             1/1       Running     0          8m
-{app-name}-cutename-1-bbbbb       1/1       Running     0          4m
-{app-name}-cutename-s2i-1-build   0/1       Completed   0          7m
-{app-name}-greeting-1-ccccc       1/1       Running     0          3m
-{app-name}-greeting-s2i-1-build   0/1       Completed   0          3m
+{value-name-app}-cutename-1-bbbbb       1/1       Running     0          4m
+{value-name-app}-cutename-s2i-1-build   0/1       Completed   0          7m
+{value-name-app}-greeting-1-ccccc       1/1       Running     0          3m
+{value-name-app}-greeting-s2i-1-build   0/1       Completed   0          3m
 ----
 +
 Your 3 pods should have a status of `Running` once they are fully deployed and started.
@@ -83,9 +83,9 @@ Your 3 pods should have a status of `Running` once they are fully deployed and s
 ----
 $ oc get routes
 NAME                 HOST/PORT                                                     PATH      SERVICES        PORT      TERMINATION
-{app-name}-cutename   {app-name}-cutename-{project-name}.{os-route-hostname}             {app-name}-cutename   8080                    None
-{app-name}-greeting   {app-name}-greeting-{project-name}.{os-route-hostname}             {app-name}-greeting   8080                    None
+{value-name-app}-cutename   {value-name-app}-cutename-{value-name-project}.{value-route-openshift-hostname}             {value-name-app}-cutename   8080                    None
+{value-name-app}-greeting   {value-name-app}-greeting-{value-name-project}.{value-route-openshift-hostname}             {value-name-app}-greeting   8080                    None
 ----
 +
-The route information of a pod gives you the base URL which you use to access it. In the example above, you would use `\http://{app-name}-greeting-{project-name}.{os-route-hostname}` as the base URL to access the greeting service.
+The route information of a pod gives you the base URL which you use to access it. In the example above, you would use `\http://{value-name-app}-greeting-{value-name-project}.{value-route-openshift-hostname}` as the base URL to access the greeting service.
 

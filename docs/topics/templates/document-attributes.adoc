@@ -38,8 +38,6 @@ endif::[]
 :ndash: &#x2013;
 
 
-:app-name: MY_APP_NAME
-:project-name: MY_PROJECT_NAME
 :revnumber: {localdate}
 
 :name-mission-http-api: REST API Level 0
@@ -78,10 +76,6 @@ endif::[]
 
 // POM file example variables
 
-:red-hat-ga-repo-id: redhat-ga
-:red-hat-ga-repo-name: Red Hat GA Repository
-:red-hat-ga-repo-url: https://maven.repository.redhat.com/ga/
-
 // SPRING BOOT MISSIONS
 :link-mission-http-api-spring-boot: {link-spring-boot-runtime-guide}#mission-rest-http-spring-boot
 :link-mission-configmap-spring-boot: {link-spring-boot-runtime-guide}#mission-configmap-spring-boot
@@ -118,23 +112,25 @@ endif::[]
 :link-mission-secured-nodejs: {link-nodejs-runtime-guide}#mission-rest-http-secured-nodejs
 :link-mission-cache-nodejs: {link-nodejs-runtime-guide}#mission-cache-nodejs
 
-
-:link-oso-auth: OPENSHIFT_URL
-:link-osl-auth: LOCAL_OPENSHIFT_URL
-
 :link-rhsso: https://github.com/obsidian-toaster-quickstarts/redhat-sso
 :link-launcher-oso: https://developers.redhat.com/launch
 
-// Minishift route URL e.g: 192.168.42.152.nip.io
-:osl-route-hostname: LOCAL_OPENSHIFT_HOSTNAME
 
-// Minishift access URL e.g: 192.168.42.152.:8443
-:osl-login-url: LOCAL_OPENSHIFT_URL:PORT
+// Example values
+:value-name-app: MY_APP_NAME
+:value-name-project: MY_PROJECT_NAME
 
-// OSO hostname e.g: 1ab5.starter-us-east-1.openshiftapps.com
-:oso-route-hostname: OPENSHIFT_ONLINE_HOSTNAME
+:value-url-osl-auth: LOCAL_OPENSHIFT_URL:PORT
+:value-url-oso-auth: OPENSHIFT_URL
 
-:os-route-hostname: OPENSHIFT_HOSTNAME
+:value-route-openshift-hostname: OPENSHIFT_HOSTNAME
+:value-route-osl-hostname: LOCAL_OPENSHIFT_HOSTNAME
+:value-route-oso-hostname: OPENSHIFT_ONLINE_HOSTNAME
+
+:red-hat-ga-repo-id: redhat-ga
+:red-hat-ga-repo-name: Red Hat GA Repository
+:red-hat-ga-repo-url: https://maven.repository.redhat.com/ga/
+
 
 // Mission Knowledge Proficiency
 // Usage expects all of these to be capitalized
