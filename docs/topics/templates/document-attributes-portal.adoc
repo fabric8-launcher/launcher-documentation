@@ -9,7 +9,6 @@
 :DocInfoProductName: red-hat-openshift-application-runtimes
 
 :portal-base-url: https://access.redhat.com/documentation/en-us/red_hat_openshift_application_runtimes/{DocInfoProductNumber}/html-single
-:link-launcher-yaml: https://launcher.fabric8.io/latest-launcher-template
 
 :link-launcher-openshift-local-install-guide: {portal-base-url}/install_and_configure_the_developers.redhat.comlaunch_application_on_a_single-node_openshift_cluster/
 :link-openshift-local-guide: {link-launcher-openshift-local-install-guide}
