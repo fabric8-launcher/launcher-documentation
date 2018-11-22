@@ -2,13 +2,13 @@
 [id='verifying-pull-requests_{context}']
 = Verifying pull requests
 
-Technical writers and members of the QE team must verify pull requests in the link:{link-repo-docs}[{repo-docs-name}^] repository before they are merged to ensure high quality of the documentation.
+Technical writers and members of the QE team must verify pull requests in the link:{link-repo-docs}[{name-repo-docs}^] repository before they are merged to ensure high quality of the documentation.
 Reviews from other stakeholders and the community are welcome.
 
 .Prerequisites
 
 * A GitHub account.
-* You account subscribed to the link:{link-repo-docs}[{repo-docs-name}^] repository.
+* You account subscribed to the link:{link-repo-docs}[{name-repo-docs}^] repository.
 +
 --
 To subscribe to the repository:

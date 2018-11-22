@@ -2,7 +2,7 @@
 
 = Repository filesystem layout
 
-The following diagram describes the filesystem layout of the _{repo-docs-name}_ repository:
+The following diagram describes the filesystem layout of the _{name-repo-docs}_ repository:
 
 NOTE: The triple-dot indicates there are more files or directories in the particular directory.
 
@@ -35,7 +35,7 @@ NOTE: The triple-dot indicates there are more files or directories in the partic
 ├── CHANGELOG.adoc <19>
 └── README.adoc
 ----
-<1> The directory with the sources of all the _{docs-name}_ guides, the _launchpad.openshift.io_ page, and the contributor guide.
+<1> The directory with the sources of all the _{name-docs}_ guides, the _launchpad.openshift.io_ page, and the contributor guide.
 <2> The directory with the actual sources in AsciiDoc files. This directory is shared among all guides.
 <3> The directory with all the images used in the sources.
 <4> The directory with all the stylesheets used in the sources.

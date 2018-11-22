@@ -48,4 +48,4 @@ $ firefox html/my-new-guide.html
 
 In the command above, replace `firefox` with the browser of your choice.
 --
-. Write the content of the guide. When you are ready for some initial review and feedback, file a pull request to the `master` branch in the link:{link-repo-docs}[{repo-docs-name}] repository.
+. Write the content of the guide. When you are ready for some initial review and feedback, file a pull request to the `master` branch in the link:{link-repo-docs}[{name-repo-docs}] repository.

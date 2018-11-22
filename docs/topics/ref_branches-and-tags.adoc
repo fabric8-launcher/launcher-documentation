@@ -2,7 +2,7 @@
 
 = Branches and tags
 
-The following branches and tags are used in the _{repo-docs-name}_ repository:
+The following branches and tags are used in the _{name-repo-docs}_ repository:
 
 .Branch Names and Contents
 [options="header",cols="1,3"]

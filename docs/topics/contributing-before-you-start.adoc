@@ -45,7 +45,7 @@ WARNING: On RHEL, CentOS, or Fedora, use the `gpg2` binary everywhere instead of
 . link:https://help.github.com/articles/telling-git-about-your-gpg-key/[Configure GPG with git] on your machine.
 +
 NOTE: On RHEL, CentOS, or Fedora, ensure to also add `gpg2` as the signing program according to the linked instructions.
-. In the _{repo-docs-name}_ repository, set automatic signing with your GPG key:
+. In the _{name-repo-docs}_ repository, set automatic signing with your GPG key:
 +
 --
 [source,bash]
@@ -64,12 +64,12 @@ $ git config --global gpg.program gpg2
 
 == Setting up Git hooks _(recommended)_
 
-To make a contribution to the {repo-docs-name} repository, you need to set up the Git hooks directory. These hooks automatically make sure at commit time that your contribution does not break important parts of the repository.
+To make a contribution to the {name-repo-docs} repository, you need to set up the Git hooks directory. These hooks automatically make sure at commit time that your contribution does not break important parts of the repository.
 
 .Procedure
 
-.Setting up Git Hooks in {repo-docs-name} Repository
-. In a terminal application, navigate to the directory with the {repo-docs-name} repository.
+.Setting up Git Hooks in {name-repo-docs} Repository
+. In a terminal application, navigate to the directory with the {name-repo-docs} repository.
 . Set the Git hook directory to `$REPO_HOME/.githooks`:
 +
 [source,bash,options="nowrap"]
