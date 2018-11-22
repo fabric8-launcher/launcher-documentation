@@ -8,7 +8,6 @@ include::environment.adoc[]
 
 :launcher: Fabric8 Launcher
 :launcher-oso: developers.redhat.com/launch
-:OpenShiftAppDev: Application Development on OpenShift
 
 :OpenShiftOnline: OpenShift Online
 :OpenShiftLocal: Single-node OpenShift Cluster
