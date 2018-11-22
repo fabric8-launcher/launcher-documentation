@@ -101,7 +101,7 @@ app.get('/metrics', (req, res) => {
   res.end(client.register.metrics());
 })
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Example app listening on port ${parameter-port}!`))
 ----
 
 . Start your application:
