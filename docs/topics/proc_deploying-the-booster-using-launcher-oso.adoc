@@ -9,7 +9,7 @@
 // Rationale: This procedure is identical in all deployments
 
 [id='deploying-the-booster-using-launcher-oso_{context}']
-= Deploying the booster using {launcher-oso}
+= Deploying the booster using {name-launcher-oso}
 
 .Prerequisites
 * An account at {parameter-deployment}.

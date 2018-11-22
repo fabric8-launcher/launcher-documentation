@@ -6,7 +6,7 @@ Importing your booster's code creates a project in {DevStudio} and enables you t
 
 .Prerequisites
 
-* Your booster created and downloaded from link:{link-launcher-oso}[{launcher-oso}].
+* Your booster created and downloaded from link:{link-launcher-oso}[{name-launcher-oso}].
 * {DevStudio} running.
 
 .Procedure

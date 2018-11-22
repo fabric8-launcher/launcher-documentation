@@ -41,9 +41,9 @@ NOTE: The triple-dot indicates there are more files or directories in the partic
 <4> The directory with all the stylesheets used in the sources.
 <5> The directory with all the templates used in the sources.
 <6> The file where all the common document attributes are defined.
-<7> The file where {launcher}{ndash}specific document attributes are defined.
+<7> The file where {name-launcher}{ndash}specific document attributes are defined.
 <8> The file where Red Hat Customer Portal{ndash}specific document attributes are defined.
-<9> The file that sets whether the documentation is built on the {launcher} or on the Red Hat Customer Portal.
+<9> The file that sets whether the documentation is built on the {name-launcher} or on the Red Hat Customer Portal.
 <10> The directory with sources synchronized from the {WildFlySwarm} repository.
 <11> The directory with the sources of a guide. Each guide has exactly one directory like this.
 <12> The main AsciiDoc file of the guide. The files from the `topics` directory are included from this file.

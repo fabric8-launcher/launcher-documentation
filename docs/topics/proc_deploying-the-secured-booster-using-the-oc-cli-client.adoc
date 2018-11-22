@@ -9,10 +9,10 @@
 
 .Prerequisites
 
-* The booster application created using the {launcher} tool on a {OpenShiftLocal}.
+* The booster application created using the {name-launcher} tool on a {OpenShiftLocal}.
 ifndef::parameter-ocp[For more information, see xref:creating-the-secured-booster-using-launcher_{context}[].]
 
-ifndef::parameter-ocp[* Your {launcher} URL.]
+ifndef::parameter-ocp[* Your {name-launcher} URL.]
 * The `oc` client authenticated. For more information, see xref:authenticating-the-oc-cli-client_{context}[].
 
 .Procedure

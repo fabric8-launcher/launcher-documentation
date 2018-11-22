@@ -45,4 +45,4 @@ A sample output is shown in the following table:
 --
 +
 In the above example, the booster endpoint would be `\http://PROJECT_ID-myproject.LOCAL_OPENSHIFT_HOSTNAME`.
-`PROJECT_ID` is based on the name you entered when generating your booster using link:{link-launcher-oso}[{launcher-oso}] or the {launcher} tool.
+`PROJECT_ID` is based on the name you entered when generating your booster using link:{link-launcher-oso}[{name-launcher-oso}] or the {name-launcher} tool.

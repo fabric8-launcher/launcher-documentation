@@ -9,7 +9,7 @@ include::topics/templates/document-attributes.adoc[]
 :context: minishift
 
 [.lead]
-This guide walks you through the process of installing the {launcher} tool to run on a local cloud as provisioned by a {OpenShiftLocal}. This includes link:https://www.openshift.org/minishift/[{Minishift}], an all-in-one VM that includes a community version of OpenShift Origin, or link:https://developers.redhat.com/products/cdk/overview/[{CDK}], a VM that includes OpenShift Container Platform.
+This guide walks you through the process of installing the {name-launcher} tool to run on a local cloud as provisioned by a {OpenShiftLocal}. This includes link:https://www.openshift.org/minishift/[{Minishift}], an all-in-one VM that includes a community version of OpenShift Origin, or link:https://developers.redhat.com/products/cdk/overview/[{CDK}], a VM that includes OpenShift Container Platform.
 
 include::topics/con_how-the-launcher-tool-works.adoc[leveloffset=+1]
 
@@ -20,8 +20,8 @@ include::topics/proc_starting-and-configuring-the-openshiftlocal-for-the-launche
 include::topics/proc_creating-a-github-personal-access-token.adoc[leveloffset=+1]
 
 [id='installing-launcher-tool_{context}']
-== Installing {launcher} Tool
-Install a local customized instance of the {launcher} tool, which allows you to test the functionality or make modifications to the service using a web interface.
+== Installing {name-launcher} Tool
+Install a local customized instance of the {name-launcher} tool, which allows you to test the functionality or make modifications to the service using a web interface.
 
 include::topics/proc_installing-launcher-tool-addon.adoc[leveloffset=+2]
 

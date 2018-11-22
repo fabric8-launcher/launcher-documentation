@@ -1,11 +1,11 @@
 [id='how-the-launcher-tool-works_{context}']
-= How the {launcher} tool works
+= How the {name-launcher} tool works
 
-The {launcher} tool runs on OpenShift and lets you create functional example applications called missions. The {launcher} tool walks you through:
+The {name-launcher} tool runs on OpenShift and lets you create functional example applications called missions. The {name-launcher} tool walks you through:
 
 * choosing the mission you want to generate,
 * choosing the runtime you want to use, and
 * choosing how you want to build and execute the mission.
 
-The {launcher} tool uses your choices to generate a custom project, called a booster, and either launches it directly to the same OpenShift instance, or provides a downloadable ZIP version of the project.
+The {name-launcher} tool uses your choices to generate a custom project, called a booster, and either launches it directly to the same OpenShift instance, or provides a downloadable ZIP version of the project.
 

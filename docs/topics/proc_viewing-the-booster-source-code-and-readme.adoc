@@ -5,16 +5,16 @@
 
 One of the following:
 
-* Access to {launcher-oso}
-* {launcher} installed on a {OpenShiftLocal}
+* Access to {name-launcher-oso}
+* {name-launcher} installed on a {OpenShiftLocal}
 
 .Procedure
 
-. Use the {launcher} tool to generate your own version of the booster.
+. Use the {name-launcher} tool to generate your own version of the booster.
 . View the generated GitHub repository or download and extract the ZIP file that contains the booster source code.
 
 .Additional resources
 
-* link:{link-guide-getting-started}#deploying-a-booster-to-openshiftonline_getting-started[Using {launcher-oso}] 
-* link:{link-guide-getting-started}#creating-and-deploying-a-booster-using-your-openshiftlocal_getting-started[Using the {launcher} tool on a {OpenShiftLocal}]
+* link:{link-guide-getting-started}#deploying-a-booster-to-openshiftonline_getting-started[Using {name-launcher-oso}] 
+* link:{link-guide-getting-started}#creating-and-deploying-a-booster-using-your-openshiftlocal_getting-started[Using the {name-launcher} tool on a {OpenShiftLocal}]
 

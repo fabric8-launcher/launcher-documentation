@@ -1,7 +1,7 @@
 [id='starting-and-configuring-the-openshiftlocal-for-the-launcher-tool_{context}']
-= Starting and configuring the {OpenShiftLocal} for the {launcher} tool
+= Starting and configuring the {OpenShiftLocal} for the {name-launcher} tool
 
-This chapter contains instructions for starting the {OpenShiftLocal} and configuring it to execute the {launcher} tool.
+This chapter contains instructions for starting the {OpenShiftLocal} and configuring it to execute the {name-launcher} tool.
 
 NOTE: Starting your {OpenShiftLocal} can trigger a download of large virtual machines or Linux container images. This can take a long time. Subsequent startups are expected to be shorter as long as the virtual machines and Linux container images remain cached.
 

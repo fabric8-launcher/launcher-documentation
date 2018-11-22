@@ -8,11 +8,11 @@
 // Rationale: This procedure is identical in all deployments
 
 [id='deploying-the-booster-using-the-launcher-tool_{context}']
-= Deploying the booster using the {launcher} tool
+= Deploying the booster using the {name-launcher} tool
 
 .Prerequisites
 
-* The URL of your running {launcher} instance and the user credentials of your {OpenShiftLocal}.
+* The URL of your running {name-launcher} instance and the user credentials of your {OpenShiftLocal}.
 For more information, see xref:getting-the-launcher-tool-url-and-credentials_{context}[].
 
 .Procedure

@@ -1,7 +1,7 @@
 [id='creating-a-github-personal-access-token_{context}']
 = Creating a GitHub personal access token
 
-To install the {launcher} tool on a {OpenShiftLocal}, you must provide the {launcher} tool with a GitHub personal access token. This enables the {launcher} tool to create booster applications and save them as Git repositories in your GitHub namespace.
+To install the {name-launcher} tool on a {OpenShiftLocal}, you must provide the {name-launcher} tool with a GitHub personal access token. This enables the {name-launcher} tool to create booster applications and save them as Git repositories in your GitHub namespace.
 
 .Prerequisites
 --
@@ -11,13 +11,13 @@ To install the {launcher} tool on a {OpenShiftLocal}, you must provide the {laun
 .Procedure
 . Using a web browser, navigate to `https://github.com/settings/tokens`.
 . Select _Generate new token._
-. Add a token description, for example `{launcher} tool on a {OpenShiftLocal}`.
+. Add a token description, for example `{name-launcher} tool on a {OpenShiftLocal}`.
 . Select the check boxes of the following parent scopes and all their children:
 ** `public_repo`
 ** `read:org`
 ** `admin:repo_hook`
 . Click  _Generate token_.
-. Save the hex code of the personal access token. You need this to complete the installation of the {launcher} tool on your {OpenShiftLocal}.
+. Save the hex code of the personal access token. You need this to complete the installation of the {name-launcher} tool on your {OpenShiftLocal}.
 +
-IMPORTANT: This hex code is displayed only once and cannot be retrieved after you leave the page. If you lose the code, you will need to create a new personal access token to install the {launcher} tool on a {OpenShiftLocal} again.
+IMPORTANT: This hex code is displayed only once and cannot be retrieved after you leave the page. If you lose the code, you will need to create a new personal access token to install the {name-launcher} tool on a {OpenShiftLocal} again.
 
