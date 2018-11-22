@@ -1,7 +1,7 @@
 [id='deploying-a-booster-to-openshiftonline_{context}']
 = Deploying a booster to {OpenShiftOnline}
-You can quickly create, build, and deploy a booster to {OpenShiftOnline} using link:{link-launcher-oso}[{launcher-oso}]. 
-link:{link-launcher-oso}[{launcher-oso}] creates a new repository in your GitHub account containing the booster's code and deploys it to your {OpenShiftOnline} account. 
+You can quickly create, build, and deploy a booster to {OpenShiftOnline} using link:{link-launcher-oso}[{name-launcher-oso}]. 
+link:{link-launcher-oso}[{name-launcher-oso}] creates a new repository in your GitHub account containing the booster's code and deploys it to your {OpenShiftOnline} account. 
 It can also create a ZIP of the booster for you to download and run on your localhost.
 
 
@@ -13,22 +13,22 @@ It can also create a ZIP of the booster for you to download and run on your loca
 * link:https://developers.redhat.com[Login to your Red Hat Developers account]
 
 .Procedure
-. Navigate to link:{link-launcher-oso}[{launcher-oso}] using your browser.
+. Navigate to link:{link-launcher-oso}[{name-launcher-oso}] using your browser.
 . Select _Launch your Project_.
 ** You may be prompted to log in to your Red Hat Developers account. If you are, click _Log in or register_ and complete the authentication steps.
-. You may be prompted to grant {launcher-oso} access to your GitHub and {OpenShiftOnline} accounts. This is a one-time action.
+. You may be prompted to grant {name-launcher-oso} access to your GitHub and {OpenShiftOnline} accounts. This is a one-time action.
 +
 [IMPORTANT]
 ====
-link:{link-launcher-oso}[{launcher-oso}] uses the link:https://sso.openshift.io/auth/realms/rh-developers-launch/account/identity[`rh-developers-launch` SSO realm] to connect your link:https://developers.redhat.com[Red Hat Developers account], your GitHub account, and your {OpenShiftOnline} account together. When you add these connections, link:{link-launcher-oso}[{launcher-oso}] is granted access to those accounts and is allowed to use those accounts when creating and deploying boosters.
+link:{link-launcher-oso}[{name-launcher-oso}] uses the link:https://sso.openshift.io/auth/realms/rh-developers-launch/account/identity[`rh-developers-launch` SSO realm] to connect your link:https://developers.redhat.com[Red Hat Developers account], your GitHub account, and your {OpenShiftOnline} account together. When you add these connections, link:{link-launcher-oso}[{name-launcher-oso}] is granted access to those accounts and is allowed to use those accounts when creating and deploying boosters.
 
 When connecting these three accounts together in `rh-developers-launch`, they may only be used with each other within the `rh-developers-launch` SSO realm. For example, if your GitHub account is associated with a different Red Hat Developers account within the `rh-developers-launch` SSO realm, you must deauthorize it from the other Red Hat Developers account or add a different GitHub account.
 
-At this time, you cannot use the `us-east-2` OpenShift Starter cluster with link:{link-launcher-oso}[{launcher-oso}]. This cluster is used with OpenShift.io and is configured differently.
+At this time, you cannot use the `us-east-2` OpenShift Starter cluster with link:{link-launcher-oso}[{name-launcher-oso}]. This cluster is used with OpenShift.io and is configured differently.
 ====
 +
 .. Click _Grant Access_.
-.. Click the _Add_ button next to the _GitHub_ field and authorize {launcher-oso} to access your GitHub account.
+.. Click the _Add_ button next to the _GitHub_ field and authorize {name-launcher-oso} to access your GitHub account.
 .. Click the _Add_ button next to the {OpenShiftOnline} cluster you use.
 . Follow the instructions to create a booster based on a mission, runtime, and target environment.
 . Open the `README.adoc` file in your booster's project and follow the instructions for building, deploying, and interacting with your booster.
@@ -37,7 +37,7 @@ At this time, you cannot use the `us-east-2` OpenShift Starter cluster with link
 --
 When you are done interacting with and xref:updating-your-booster-and-deploying-the-changes_{context}[updating] your booster, it is recommended to delete your project because the resources allocated to your {OpenShiftOnline} account are limited. For instructions, see the link:https://docs.openshift.com/online/dev_guide/projects.html#delete-a-project[Deleting a Project^] chapter of the {OpenShiftOnline} documentation. You can redeploy the booster later using the instructions in the relevant xref:oso-create-booster-related-info[runtime guide].
 
-You have link:https://docs.openshift.com/online/dev_guide/compute_resources.html#dev-quotas[quotas^] for your {OpenShiftOnline} account. If you exceed your account quota, you will not be able to launch new boosters using link:{link-launcher-oso}[{launcher-oso}]. The quota for your account varies depending on your subscription.
+You have link:https://docs.openshift.com/online/dev_guide/compute_resources.html#dev-quotas[quotas^] for your {OpenShiftOnline} account. If you exceed your account quota, you will not be able to launch new boosters using link:{link-launcher-oso}[{name-launcher-oso}]. The quota for your account varies depending on your subscription.
 --
 
 [#oso-create-booster-related-info]

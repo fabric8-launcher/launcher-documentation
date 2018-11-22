@@ -6,9 +6,9 @@
 // booster catalog.
 
 [id='installing-launcher-tool-manually_{context}']
-= Installing {launcher} tool manually
+= Installing {name-launcher} tool manually
 
-Install a local customized instance of the {launcher} tool, which allows you to test the functionality or make modifications to the service using a web interface.
+Install a local customized instance of the {name-launcher} tool, which allows you to test the functionality or make modifications to the service using a web interface.
 
 .Prerequisites
 * {OpenShiftLocal} installed and running.
@@ -16,7 +16,7 @@ Install a local customized instance of the {launcher} tool, which allows you to 
 
 .Procedure
 . Open the {OpenShiftLocal} Web console and log in.
-. Click _New Project_ to create a new OpenShift project to house the {launcher} tool.
+. Click _New Project_ to create a new OpenShift project to house the {name-launcher} tool.
 +
 image::minishift_newproject.png[New Project Button]
 
@@ -30,7 +30,7 @@ image::minishift_projectconfig.png[New Project Config]
 +
 image::minishift_yamljson.png[Import YAML/JSON]
 
-. Copy the contents of link:{link-launcher-yaml}[the current {launcher} template from the GitHub repository^] and paste it into the text box provided.
+. Copy the contents of link:{link-launcher-yaml}[the current {name-launcher} template from the GitHub repository^] and paste it into the text box provided.
 
 . Click _Create_, ensure that only the _Process the template_ option is selected, and click _Continue_.
 +
@@ -43,7 +43,7 @@ image::minishift_processtemplate.png[Process Template]
 ** OpenShift username and password from your {OpenShiftLocal}, for example `developer` for the username and password.
 ** _KeyCloak URL_ and _KeyCloak Realm_ **MUST** be cleared out.
 +
-WARNING: You must clear these fields out for the {launcher} tool on your {OpenShiftLocal} to be configured correctly.
+WARNING: You must clear these fields out for the {name-launcher} tool on your {OpenShiftLocal} to be configured correctly.
 
 ifndef::parameter-custom-catalog[** Do not modify _Catalog Git Repository_ and _Catalog Git Reference_ unless you are developing against a specific catalog repository.]
 ifdef::parameter-custom-catalog[** Set _Catalog Git Repository_ to the repository with the catalog that you are testing. Set _Catalog Git Reference_ to the branch in that repository you are testing.]
@@ -52,15 +52,15 @@ ifdef::parameter-custom-catalog[** Set _Catalog Git Repository_ to the repositor
 
 . Click `Create` to complete the setup. You will see a screen confirming that the service has been created. Click _Continue to overview_.
 
-. On the overview page, wait and confirm that the four pods for the {launcher} tool have completed starting up.
+. On the overview page, wait and confirm that the four pods for the {name-launcher} tool have completed starting up.
 +
-image::minishift_launcher_booting.png[{launcher} booting]
+image::minishift_launcher_booting.png[{name-launcher} booting]
 
 . When all pods are running, click the link at the top of all pods, which typically ends in `nip.io`. 
 +
-A new browser tab opens with the {launcher} tool. This is the same service as `{link-launcher-oso}` but running in a {OpenShiftLocal}.
+A new browser tab opens with the {name-launcher} tool. This is the same service as `{link-launcher-oso}` but running in a {OpenShiftLocal}.
 
-. Start using your {launcher} tool to launch booster applications.
+. Start using your {name-launcher} tool to launch booster applications.
 
 .Additional resources
 * See the link:{link-guide-getting-started}[{name-guide-getting-started}] for a walk-through of running a booster application.

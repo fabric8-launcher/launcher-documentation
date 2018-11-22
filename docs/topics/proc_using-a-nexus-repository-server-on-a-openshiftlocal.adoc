@@ -7,7 +7,7 @@
 = Using a Nexus repository server on a {OpenShiftLocal}
 
 While developing your cloud-native applications with Java and Maven, you may be required to build them repeatedly.
-You can deploy a Nexus Repository server alongside the {launcher} tool on your {OpenShiftLocal} and use it to fetch artifacts from the Maven Central repository and cache them locally.
+You can deploy a Nexus Repository server alongside the {name-launcher} tool on your {OpenShiftLocal} and use it to fetch artifacts from the Maven Central repository and cache them locally.
 This reduces the network load when building your application, and helps accelerate the build and rolling updates.
 
 .Prerequisites
@@ -47,7 +47,7 @@ It has not been tested for use with CDK.
 ====
 --
 
-* The {launcher} tool deployed to your {OpenShiftLocal}.
+* The {name-launcher} tool deployed to your {OpenShiftLocal}.
 
 * A booster application deployed to your {OpenShiftLocal}.
 

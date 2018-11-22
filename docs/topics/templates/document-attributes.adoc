@@ -6,8 +6,8 @@ include::environment.adoc[]
 :icons: font
 :source-highlighter: highlightjs
 
-:launcher: Fabric8 Launcher
-:launcher-oso: developers.redhat.com/launch
+:name-launcher: Fabric8 Launcher
+:name-launcher-oso: developers.redhat.com/launch
 
 :OpenShiftOnline: OpenShift Online
 :OpenShiftLocal: Single-node OpenShift Cluster
@@ -48,7 +48,7 @@ endif::[]
 :name-mission-secured: Secured
 :name-mission-cache: Cache
 
-:name-guide-minishift-installation: Install and Configure the {launcher} Tool
+:name-guide-minishift-installation: Install and Configure the {name-launcher} Tool
 :name-guide-getting-started: Getting Started with {ProductName}
 :name-landing-page: Welcome
 :name-guide-contrib: Contribution Guide

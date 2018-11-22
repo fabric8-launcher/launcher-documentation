@@ -6,8 +6,8 @@
 // booster catalog.
 
 [id='installing-launcher-tool-as-a-osl-addon_{context}']
-= Installing {launcher} Tool as a {Minishift} add-on
-link:https://docs.openshift.org/latest/minishift/using/addons.html[Add-ons] enable you to extend the behavior of {OpenShiftLocal}, and the {launcher} tool link:https://github.com/minishift/minishift-addons/tree/master/add-ons/fabric8-launcher[provides an add-on] as an installation option.
+= Installing {name-launcher} Tool as a {Minishift} add-on
+link:https://docs.openshift.org/latest/minishift/using/addons.html[Add-ons] enable you to extend the behavior of {OpenShiftLocal}, and the {name-launcher} tool link:https://github.com/minishift/minishift-addons/tree/master/add-ons/fabric8-launcher[provides an add-on] as an installation option.
 
 .Prerequisites
 * xref:starting-and-configuring-the-openshiftlocal-for-the-launcher-tool_{context}[{OpenShiftLocal} running].
@@ -23,7 +23,7 @@ $ minishift config set memory 4096
 $ minishift start
 ----
 
-. Download and install the {launcher} add-on.
+. Download and install the {name-launcher} add-on.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -35,9 +35,9 @@ $ minishift addons apply fabric8-launcher \
 ----
 <1> Use your GitHub username and personal access token
 +
-Installing the add-on creates a new project called `rhoarpad` where the {launcher} tool runs.
+Installing the add-on creates a new project called `rhoarpad` where the {name-launcher} tool runs.
 
-. Monitor the status of the {launcher} tool until it completes start up.
+. Monitor the status of the {name-launcher} tool until it completes start up.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -52,7 +52,7 @@ launcher-backend-2-aaaaa       0/1       Running             0         5s
 launcher-frontend-2-aaaaa      0/1       Running             0         6s
 ----
 
-. Obtain the route of your {launcher} tool.
+. Obtain the route of your {name-launcher} tool.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -61,7 +61,7 @@ NAME       HOST/PORT                                PATH      SERVICES          
 launcher   launcher-rhoarpad.{value-route-osl-hostname}             launcher-frontend   <all>                   None
 ----
 
-. Navigate to your {launcher} tool and start using your {launcher} tool to launch booster applications.
+. Navigate to your {name-launcher} tool and start using your {name-launcher} tool to launch booster applications.
 +
 This is the same service as `{link-launcher-oso}` but running in a {OpenShiftLocal}.
 

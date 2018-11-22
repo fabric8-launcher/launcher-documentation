@@ -14,18 +14,18 @@
 
 Use one of the following options to execute the {parameter-mission-name} booster on {OpenShiftOnline}.
 
-* xref:deploying-the-booster-using-launcher-oso_{context}[Use {launcher-oso}]
+* xref:deploying-the-booster-using-launcher-oso_{context}[Use {name-launcher-oso}]
 * xref:deploying-the-{parameter-mission}-booster-using-the-oc-cli-client_{context}[Use the `oc` CLI client]
 
-Although each method uses the same `oc` commands to deploy your application, using {launcher-oso} provides an automated booster deployment workflow that executes the `oc` commands for you.
+Although each method uses the same `oc` commands to deploy your application, using {name-launcher-oso} provides an automated booster deployment workflow that executes the `oc` commands for you.
 
 :parameter-deployment: link:https://manage.openshift.com[{OpenShiftOnline}]
-:parameter-launcher: link:{link-launcher-oso}[{launcher-oso}]
+:parameter-launcher: link:{link-launcher-oso}[{name-launcher-oso}]
 include::proc_deploying-the-booster-using-launcher-oso.adoc[leveloffset=+1]
 
 include::proc_authenticating-the-oc-cli-client.adoc[leveloffset=+1]
 
-:parameter-deployment: link:{link-launcher-oso}[{launcher-oso}]
+:parameter-deployment: link:{link-launcher-oso}[{name-launcher-oso}]
 include::proc_deploying-the-{parameter-mission}-booster-using-the-oc-cli-client.adoc[leveloffset=+1]
 :parameter-deployment!:
 

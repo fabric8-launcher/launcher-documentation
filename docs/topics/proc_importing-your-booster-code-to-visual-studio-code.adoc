@@ -6,7 +6,7 @@ You can add the project folder of your booster code to an existing workspace in 
 
 .Prerequisites
 
-* Your booster created and downloaded from link:{link-launcher-oso}[{launcher-oso}].
+* Your booster created and downloaded from link:{link-launcher-oso}[{name-launcher-oso}].
 * Visual Studio Code running.
 
 .Procedure
