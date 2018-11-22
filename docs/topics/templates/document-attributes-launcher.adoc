@@ -2,7 +2,7 @@
 :docinfodir: topics/styles
 :docinfo1:
 
-:ProductName: {OpenShiftAppDev}
+:ProductName: Application Development on OpenShift
 :ProductShortName: {ProductName}
 
 :imagesdir: images
