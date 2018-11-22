@@ -94,7 +94,7 @@ $ npm install nodeshift --save
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "openshift": "nodeshift --strictSSL=false --metadata.out=deployment-metadata.json --build.forcePull=true {nodeshiftNodeVersion}",
+    "openshift": "nodeshift --strictSSL=false --metadata.out=deployment-metadata.json --build.forcePull=true {version-node-nodeshift}",
     "start": "node app.js",
     ...
   }

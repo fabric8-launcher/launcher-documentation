@@ -6,15 +6,15 @@ Red Hat provides link:https://access.redhat.com/support/offerings/techpreview/[l
 [options="header"]
 |===
 |GroupID | ArtifactID | Version
-|io.vertx | vertx-mongo | {VertXVersion}
-|io.vertx | vertx-mongo-service | {VertXVersion}
-|io.vertx | vertx-mongo-client | {VertXVersion}
-|io.vertx | vertx-rx | {VertXVersion}
-|io.vertx | vertx-rx-java | {VertXVersion}
-|io.vertx | vertx-sockjs-service-proxy | {VertXVersion}
-|io.vertx | vertx-redis-client | {VertXVersion}
-|io.vertx | vertx-infinispan | {VertXVersion}
-|io.vertx | vertx-proton | {VertXVersion}
-|io.vertx | vertx-grpc | {VertXVersion}
-|io.vertx | vertx-mqtt-server | {VertXVersion}
+|io.vertx | vertx-mongo | {version-vertx}
+|io.vertx | vertx-mongo-service | {version-vertx}
+|io.vertx | vertx-mongo-client | {version-vertx}
+|io.vertx | vertx-rx | {version-vertx}
+|io.vertx | vertx-rx-java | {version-vertx}
+|io.vertx | vertx-sockjs-service-proxy | {version-vertx}
+|io.vertx | vertx-redis-client | {version-vertx}
+|io.vertx | vertx-infinispan | {version-vertx}
+|io.vertx | vertx-proton | {version-vertx}
+|io.vertx | vertx-grpc | {version-vertx}
+|io.vertx | vertx-mqtt-server | {version-vertx}
 |===

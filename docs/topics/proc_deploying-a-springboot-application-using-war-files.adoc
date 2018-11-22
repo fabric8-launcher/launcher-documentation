@@ -60,7 +60,7 @@ This ensures that the Spring Boot classes used to launch the application are inc
 ** `Main-Class: org.springframework.boot.loader.WarLauncher`
 ** `Spring-Boot-Classes: WEB-INF/classes/`
 ** `Spring-Boot-Lib: WEB-INF/lib/`
-** `Spring-Boot-Version: {SpringBootVersion}`
+** `Spring-Boot-Version: {version-spring-boot}`
 
 
 . Add the `ARTIFACT_COPY_ARGS` environment variable to the `pom.xml` file.

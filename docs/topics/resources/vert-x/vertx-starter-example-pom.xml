@@ -12,8 +12,8 @@
   <description>Example application using RHOAR Vert.x</description>
 
   <properties>
-    <vertx.version>{VertXVersion}</vertx.version>
-    <vertx-maven-plugin.version>{VertXMvnPluginVersion}</vertx-maven-plugin.version>
+    <vertx.version>{version-vertx}</vertx.version>
+    <vertx-maven-plugin.version>{version-vertx-maven-plugin}</vertx-maven-plugin.version>
     <vertx.verticle>com.example.MyApp</vertx.verticle>
     <fabric8.generator.from>registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift:1.2</fabric8.generator.from>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -94,7 +94,7 @@
           <plugin>
             <groupId>io.fabric8</groupId>
             <artifactId>fabric8-maven-plugin</artifactId>
-            <version>{Fabric8MavenPluginVersion}</version>
+            <version>{version-fabric8-maven-plugin}</version>
             <executions>
               <execution>
                 <goals>

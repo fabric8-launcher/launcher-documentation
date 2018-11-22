@@ -5,6 +5,6 @@
 
 //.{SpringBoot} Tested and Verified Version
 
-The {SpringBoot} runtime version {SpringBootVersion} is tested and verified to run with the Embedded Apache Tomcat Container on OpenShift. When used with {SpringBoot}, this embedded container, as well as other components such as the Java container image, are part of a Red Hat subscription.
+The {SpringBoot} runtime version {version-spring-boot} is tested and verified to run with the Embedded Apache Tomcat Container on OpenShift. When used with {SpringBoot}, this embedded container, as well as other components such as the Java container image, are part of a Red Hat subscription.
 
 For a complete list of {SpringBoot} components provided as part of this release, see the link:https://access.redhat.com/documentation/en-us/red_hat_openshift_application_runtimes/1/html-single/red_hat_openshift_application_runtimes_release_notes/index#rn-runtime-components-spring-boot[Release Notes].
