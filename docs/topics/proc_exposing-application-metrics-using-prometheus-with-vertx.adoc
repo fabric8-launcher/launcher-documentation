@@ -1,0 +1,189 @@
+
+[id='exposing-application-metrics-using-prometheus-with-vertx_{context}']
+= Exposing application metrics using Prometheus with {Vertx}
+
+In this example, you:
+
+* Configure your application to expose metrics.
+* Collect and view the data using Prometheus.
+
+Prometheus connects to a monitored application to collect data; the application does not send metrics to a server.
+
+.Prerequisites
+
+* Prometheus configured to collect metrics from the application:
++
+--
+. Download and extract the link:https://prometheus.io/download/[archive^] with the latest Prometheus release:
++
+[source,bash,options="nowrap"]
+----
+$ wget https://github.com/prometheus/prometheus/releases/download/v2.4.3/prometheus-2.4.3.linux-amd64.tar.gz
+$ tar -xvf  prometheus-2.4.3.linux-amd64.tar.gz
+----
+
+. Navigate to the directory with Prometheus:
++
+[source,bash,options="nowrap"]
+----
+$ cd  prometheus-2.4.3.linux-amd64
+----
+
+. Append the following snippet to the `prometheus.yml` file to make Prometheus automatically collect metrics from your application:
++
+[source,yaml,options="nowrap"]
+----
+  scrape_configs:
+    - job_name: 'prometheus'
+      static_configs:
+      - targets: ['localhost:9090']
+    - job_name: 'vertx-app'
+      static_configs:
+      - targets: ['localhost:8081']
+----
++
+The default behavior of {Vertx}-based applications is to expose metrics at the `/metrics` endpoint.
+This is what the MicroProfile Metrics specification requires, and also what Prometheus expects.
+--
+
+* The Prometheus server started on `localhost`:
++
+--
+Start Prometheus and wait until the `Server is ready to receive web requests` message is displayed in the console.
+
+[source,bash,options="nowrap"]
+----
+$ ./prometheus
+----
+--
+
+
+.Procedure
+
+. Include the `vertx-micrometer`, `micrometer-registry-prometheus` and `vertx-web` dependencies in the `pom.xml` file of your application:
++
+.pom.xml
+[source,xml]
+----
+<dependency>
+  <groupId>io.vertx</groupId>
+  <artifactId>vertx-micrometer-metrics</artifactId>
+  <version>3.5.4</version>
+</dependency>
+<dependency>
+  <groupId>io.micrometer</groupId>
+  <artifactId>micrometer-registry-prometheus</artifactId>
+  <version>1.0.0</version>
+</dependency>
+<dependency>
+  <groupId>io.vertx</groupId>
+  <artifactId>vertx-web</artifactId>
+  <version>3.5.4</version>
+</dependency>
+----
+
+. Annotate methods or classes with the metrics annotations, for example:
++
+--
+[source,java]
+----
+package org.acme;
+
+import io.micrometer.core.instrument.Meter;
+import io.micrometer.core.instrument.config.MeterFilter;
+import io.micrometer.core.instrument.distribution.DistributionStatisticConfig;
+import io.micrometer.prometheus.PrometheusMeterRegistry;
+import io.vertx.core.AbstractVerticle;
+import io.vertx.core.Vertx;
+import io.vertx.core.VertxOptions;
+import io.vertx.core.http.HttpServerOptions;
+import io.vertx.micrometer.MicrometerMetricsOptions;
+import io.vertx.micrometer.VertxPrometheusOptions;
+import io.vertx.micrometer.backends.BackendRegistries;
+
+public class MyVertxApp extends AbstractVerticle {
+
+    public static void main(String[] args) {
+        Vertx vertx = Vertx.vertx(new VertxOptions().setMetricsOptions(
+                new MicrometerMetricsOptions()
+                        .setPrometheusOptions(new VertxPrometheusOptions().setEnabled(true)
+                                .setStartEmbeddedServer(true)
+                                .setEmbeddedServerOptions(new HttpServerOptions().setPort(8081))
+                                .setEmbeddedServerEndpoint("/metrics"))
+                        .setEnabled(true)));
+
+        PrometheusMeterRegistry registry = (PrometheusMeterRegistry) BackendRegistries.getDefaultNow();
+        registry.config().meterFilter(
+                new MeterFilter() {
+                    @Override
+                    public DistributionStatisticConfig configure(Meter.Id id, DistributionStatisticConfig config) {
+                        return DistributionStatisticConfig.builder()
+                                .percentilesHistogram(true)
+                                .build()
+                                .merge(config);
+                    }
+
+                });
+        vertx.deployVerticle(MyVertxApp.class.getName());
+    }
+
+    @Override
+    public void start() {
+
+
+        Timer timer = Timer
+          .builder("my.timer")
+          .description("a description of what this timer does")
+          .register(registry);
+
+
+
+        vertx.setPeriodic(1000, l -> {
+          timer.record(() -> {
+            vertx.createHttpServer()
+             .requestHandler(req -> req.response().end("Hello"))
+             .listen(8080);
+
+            });
+          });
+
+    }
+
+}
+----
+--
+
+. Launch your application:
++
+[source,bash,opts="nowrap"]
+----
+$ mvn vertx:run
+----
+
+. Invoke the traced endpoint several times:
++
+[source,bash,opts="nowrap"]
+----
+$ curl http://localhost:8080/
+Hello
+----
+
+. Wait at least 15 seconds for collection to occur, and see the metrics in Prometheus UI:
++
+--
+// Not specific for Vertx, from Thorntail
+// Need custom example for Vertx 
+
+. Open the Prometheus UI at link:http://localhost:9090/[http://localhost:9090/^] and type `hello` into the _Expression_ box.
+. From the suggestions, select for example `application:hello_count` and click _Execute_.
+. In the table that is displayed, you can see how many times the resource method was invoked.
+. Alternatively, select `application:hello_time_mean_seconds` to see the mean time of all the invocations.
+
+Note that all metrics you created are prefixed with `application:`.
+There are other metrics, automatically exposed by {Vertx} as the MicroProfile Metrics specification requires.
+Those metrics are prefixed with `base:` and `vendor:` and expose information about the JVM in which the application runs.
+--
+
+.Additional resources
+
+* For additional types of metrics, see the link:https://github.com/eclipse/microprofile-metrics[MicroProfile Metrics documentation^].
