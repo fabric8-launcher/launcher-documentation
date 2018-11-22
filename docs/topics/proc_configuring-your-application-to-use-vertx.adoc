@@ -39,8 +39,8 @@ Include the following properties in your `pom.xml` file to track the version of 
 <project>
   ...
   <properties>
-    <vertx.version>{VertXVersion}</vertx.version>
-    <vertx-maven-plugin.version>{VertXMvnPluginVersion}</vertx-maven-plugin.version>
+    <vertx.version>{version-vertx}</vertx.version>
+    <vertx-maven-plugin.version>{version-vertx-maven-plugin}</vertx-maven-plugin.version>
   </properties>
   ...
 </project>

@@ -19,7 +19,7 @@
       <dependency>
         <groupId>me.snowdrop</groupId>
         <artifactId>spring-boot-bom</artifactId>
-        <version>{SpringBootBOMVersion}</version>
+        <version>{version-spring-boot-bom}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -50,7 +50,7 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
-        <version>{SpringBootMvnPluginVersion}</version>
+        <version>{version-spring-boot-maven-plugin}</version>
       </plugin>
     </plugins>
   </build>
@@ -80,7 +80,7 @@
           <plugin>
             <groupId>io.fabric8</groupId>
             <artifactId>fabric8-maven-plugin</artifactId>
-            <version>{Fabric8MavenPluginVersion}</version>
+            <version>{version-fabric8-maven-plugin}</version>
             <executions>
               <execution>
                 <goals>

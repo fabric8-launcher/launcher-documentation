@@ -3,7 +3,7 @@
 
 .Supported {Vertx} Version
 
-{Vertx} components version `{VertXVersion}` are supported and provided as part of a Red Hat subscription.
+{Vertx} components version `{version-vertx}` are supported and provided as part of a Red Hat subscription.
 Supported {Vertx} runtime artifacts are available in the link:https://maven.repository.redhat.com/ga/[Red Hat Middleware JBoss General Availability Maven Repository^].
 
 .Technology Preview {Vertx} Components

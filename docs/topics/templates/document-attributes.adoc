@@ -60,26 +60,22 @@ endif::[]
 :name-guide-thorntail: {WildFlySwarm} Runtime Guide
 :name-guide-nodejs: {Node} Runtime Guide
 
-// used in the BOM file example.
-:WildFlySwarmProductVersion: 2.2.0.Final-redhat-00021
-// also used in pom.xml examples for Spring Boot and Vertx
-:Fabric8MavenPluginVersion: 3.5.40
 
-// used in the links to additional upstream Swarm docs.
-:WildFlySwarmVersion: 2.2.0.Final
+// Versions
+:version-fabric8-maven-plugin: 3.5.40
 
-// spring boot version for rt guide
-:SpringBootVersion: 1.5.16.RELEASE
+:version-thorntail-product: 2.2.0.Final-redhat-00021
+:version-thorntail-community: 2.2.0.Final
 
-//used in BOM file example
-:SpringBootBOMVersion: 1.5.16.Final-redhat-00001
-:SpringBootMvnPluginVersion: 1.5.16.RELEASE
+:version-spring-boot: 1.5.16.RELEASE
+:version-spring-boot-bom: 1.5.16.Final-redhat-00001
+:version-spring-boot-maven-plugin: 1.5.16.RELEASE
 
-// used in the BOM file example and in the Vert.x Runtime developer Guide
-:VertXVersion: 3.5.4.redhat-00002
-:VertXMvnPluginVersion: 1.0.17
+:version-vertx: 3.5.4.redhat-00002
+:version-vertx-maven-plugin: 1.0.17
 
-:nodeshiftNodeVersion: --dockerImage=registry.access.redhat.com/rhoar-nodejs/nodejs-8
+:version-node-nodeshift: --dockerImage=registry.access.redhat.com/rhoar-nodejs/nodejs-8
+
 
 // POM file example variables
 
