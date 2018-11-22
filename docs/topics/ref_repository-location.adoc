@@ -2,7 +2,7 @@
 
 = Repository location
 
-The repository for the mission and booster documentation, the Launchpad front page, and this contributor guide is hosted on GitHub in the link:{link-repo-docs}[{repo-docs-name}] repository.
+The repository for the mission and booster documentation, the Launchpad front page, and this contributor guide is hosted on GitHub in the link:{link-repo-docs}[{name-repo-docs}] repository.
 
 The runtime documentation repositories are hosted on the following locations:
 

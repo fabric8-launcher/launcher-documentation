@@ -147,10 +147,10 @@ endif::[]
 // Issue #489
 // externalize `github.com/appdev-documentation` repo references
 // changes NOT applicable to CHANGELOG and booster-specific README files.
-:repo-docs-name: launcher-documentation
+:name-repo-docs: launcher-documentation
 :link-repo-docs: https://github.com/fabric8-launcher/launcher-documentation
 
-:docs-name: launcher.fabric8.io
+:name-docs: launcher.fabric8.io
 :link-docs: https://launcher.fabric8.io
 
 // WildFly Swarm repository (mostly for the Contribution Guide)

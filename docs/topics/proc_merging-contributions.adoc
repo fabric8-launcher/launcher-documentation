@@ -8,12 +8,12 @@ IMPORTANT: Do not merge your own pull requests unless absolutely necessary. You 
 
 .Prerequisites
 
-* GitHub account with merge access to the _{repo-docs-name}_ repository and GPG configured.
+* GitHub account with merge access to the _{name-repo-docs}_ repository and GPG configured.
 
 .Procedure
 
 .Merging a Pull Request
-. Ensure that you have the contributor's fork of the _{repo-docs-name}_ repository in your list of remotes:
+. Ensure that you have the contributor's fork of the _{name-repo-docs}_ repository in your list of remotes:
 +
 [source,bash,options="nowrap"]
 ----
@@ -29,7 +29,7 @@ $ git remote -v
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ git remote add username git@github.com:username/{repo-docs-name}.git
+$ git remote add username git@github.com:username/{name-repo-docs}.git
 ----
 .. Use `git remote -v` to verify that the fork is now listed among your remotes.
 .. Execute `git remote update` to fetch the latest state of the remotes to your working directory.

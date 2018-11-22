@@ -8,5 +8,5 @@ To ensure good quality of the documentation, the following requirements must be 
 ** One member of the documentation team (different from the submitter).
 ** One member of either the engineering team or the QE team.
 
-* When a new version of the documentation is released to {docs-name}, a member of the QE team must review the diff between the live version and the new version.
+* When a new version of the documentation is released to {name-docs}, a member of the QE team must review the diff between the live version and the new version.
 
