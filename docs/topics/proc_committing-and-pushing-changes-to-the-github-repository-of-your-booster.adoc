@@ -2,7 +2,7 @@
 [id='committing-and-pushing-changes-to-the-github-repository-of-your-booster_{context}']
 = Committing and pushing changes to the GitHub repository of your booster
 
-Red Hat JBoss Developer Studio provides tooling for committing and pushing code through Git directly in the IDE. Alternatively, you can use Red Hat JBoss Developer Studio to make changes and push those changes with the Git CLI.
+{DevStudio} provides tooling for committing and pushing code through Git directly in the IDE. Alternatively, you can use {DevStudio} to make changes and push those changes with the Git CLI.
 
 .Prerequisites
 

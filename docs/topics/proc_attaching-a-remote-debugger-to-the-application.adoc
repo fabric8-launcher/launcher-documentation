@@ -3,17 +3,17 @@
 = Attaching a remote debugger to the application
 
 When your application is configured for debugging, attach a remote debugger of your choice to it.
-In this guide, link:https://www.redhat.com/en/technologies/jboss-middleware/developer-studio[Red Hat JBoss Developer Studio] is covered, but the procedure is similar when using other programs.
+In this guide, link:https://www.redhat.com/en/technologies/jboss-middleware/developer-studio[{DevStudio}] is covered, but the procedure is similar when using other programs.
 
 .Prerequisites
 
 * The application running either locally or on OpenShift, and configured for debugging.
 * The port number that your application is listening on for debugging.
-* Red Hat JBoss Developer Studio installed on your machine. You can download it from the link:https://developers.redhat.com/products/devstudio/download/[Red Hat JBoss Developer Studio download page].
+* {DevStudio} installed on your machine. You can download it from the link:https://developers.redhat.com/products/devstudio/download/[{DevStudio} download page].
 
 .Procedure
 
-. Start Red Hat JBoss Developer Studio.
+. Start {DevStudio}.
 . Create a new debug configuration for your application:
 .. Click *Run->Debug Configurations*.
 .. In the list of configurations, double-click *Remote Java application.*
