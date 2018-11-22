@@ -4,22 +4,18 @@
 More background and related information on health checking can be found here:
 
 * link:https://docs.openshift.com/container-platform/latest/dev_guide/application_health.html[Overview of Application Health in OpenShift]
+
 * link:https://kubernetes.io/docs/user-guide/walkthrough/k8s201/#health-checking[Health Checking in Kubernetes]
+
 * link:https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/[Kubernetes Liveness and Readiness Probes]
+
 * link:https://kubernetes.io/docs/api-reference/v1/definitions/#_v1_probe[Kubernetes Probes]
 
-ifndef::built-for-spring-boot[]
-* link:{link-mission-health-check-spring-boot}[Health Check - {SpringBoot} Booster]
-endif::built-for-spring-boot[]
+ifndef::built-for-spring-boot[* link:{link-mission-health-check-spring-boot}[{name-mission-health-check} mission - {SpringBoot} booster]]
 
-ifndef::built-for-vertx[]
-* link:{link-mission-health-check-vertx}[Health Check - {VertX} Booster]
-endif::built-for-vertx[]
+ifndef::built-for-vertx[* link:{link-mission-health-check-vertx}[{name-mission-health-check} mission - {VertX} booster]]
 
-ifndef::built-for-thorntail[]
-* link:{link-mission-health-check-wf-swarm}[Health Check - {WildFlySwarm} Booster]
-endif::built-for-thorntail[]
+ifndef::built-for-thorntail[* link:{link-mission-health-check-wf-swarm}[{name-mission-health-check} mission - {WildFlySwarm} booster]]
 
-ifndef::built-for-nodejs[]
-  * link:{link-mission-health-check-nodejs}[Health Check - {Node} Booster]
-endif::built-for-nodejs[]
+ifndef::built-for-nodejs[* link:{link-mission-health-check-nodejs}[{name-mission-health-check} mission - {Node} booster]]
+

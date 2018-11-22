@@ -5,10 +5,13 @@
 More background and related information on running relational databases in OpenShift, CRUD, HTTP API and REST can be found here:
 
 * link:https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html[HTTP Verbs]
-* link:https://www.ics.uci.edu/~fielding/pubs/dissertation/fielding_dissertation.pdf[Architectural Styles and
-the Design of Network-based Software Architectures - Representational State Transfer (REST)]
+
+* link:https://www.ics.uci.edu/~fielding/pubs/dissertation/fielding_dissertation.pdf[Architectural Styles and the Design of Network-based Software Architectures - Representational State Transfer (REST)]
+
 * link:https://speakerdeck.com/glaforge/the-never-ending-rest-api-design-debate[The never ending REST API design debase]
+
 * link:http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven[REST APIs must be Hypertext driven]
+
 * link:https://martinfowler.com/articles/richardsonMaturityModel.html[Richardson Maturity Model]
 
 ifndef::built-for-nodejs[* link:https://www.jcp.org/en/jsr/detail?id=311[JSR 311: JAX-RS: The JavaTM API for RESTful Web Services]]
@@ -24,11 +27,11 @@ endif::built-for-vertx[]
 
 ifdef::built-for-thorntail[* link:http://resteasy.jboss.org/docs.html[RESTEasy Documentation]]
 
-ifndef::built-for-spring-boot[* link:{link-mission-crud-spring-boot}[{mission-crud-spring-boot-guide-name}]]
+ifndef::built-for-spring-boot[* link:{link-mission-crud-spring-boot}[{name-mission-crud} mission - {SpringBoot} booster]]
 
-ifndef::built-for-vertx[* link:{link-mission-crud-vertx}[{mission-crud-vertx-guide-name}]]
+ifndef::built-for-vertx[* link:{link-mission-crud-vertx}[{name-mission-crud} mission - {VertX} booster]]
 
-ifndef::built-for-thorntail[* link:{link-mission-crud-wf-swarm}[{mission-crud-wf-swarm-guide-name}]]
+ifndef::built-for-thorntail[* link:{link-mission-crud-wf-swarm}[{name-mission-crud} mission - {Thorntail} booster]]
 
-ifndef::built-for-nodejs[* link:{link-mission-crud-nodejs}[{mission-crud-nodejs-guide-name}]]
+ifndef::built-for-nodejs[* link:{link-mission-crud-nodejs}[{name-mission-crud} mission - {Node} booster]]
 
