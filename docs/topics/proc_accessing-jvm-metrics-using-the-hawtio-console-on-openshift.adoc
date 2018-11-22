@@ -26,7 +26,7 @@ oc get dc
 [subs="attributes+"]
 ----
 NAME         REVISION   DESIRED   CURRENT   TRIGGERED BY
-{app-name}   2          1         1         config,image(my-app:6)
+{value-name-app}   2          1         1         config,image(my-app:6)
 ...
 ----
 +
@@ -34,7 +34,7 @@ NAME         REVISION   DESIRED   CURRENT   TRIGGERED BY
 +
 [source,bash,subs="attributes+"]
 --
-oc edit dc/{app-name}
+oc edit dc/{value-name-app}
 --
 +
 . Add the following entry to the `ports` section of the template and save your changes:
@@ -56,7 +56,7 @@ spec:
 +
 [source,bash,subs="attributes+"]
 --
-oc rollout latest dc/{app-name}
+oc rollout latest dc/{value-name-app}
 --
 +
 // The above workflow can also be accomplished using the web console

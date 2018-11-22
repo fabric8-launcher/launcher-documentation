@@ -72,7 +72,7 @@ ifdef::built-for-vertx[]
 [source,options="nowrap",subs="attributes+"]
 ----
 ...
-Feb 11, 2017 10:23:42 AM io.openshift.{app-name}
+Feb 11, 2017 10:23:42 AM io.openshift.{value-name-app}
 INFO: Greeting: Hello, Sarah
 ...
 ----
@@ -81,7 +81,7 @@ ifdef::built-for-thorntail[]
 [source,options="nowrap",subs="attributes+"]
 ----
 ...
-2018-02-11 11:12:31,158 INFO  [io.openshift.{app-name}] (default task-18) Hello, Sarah!
+2018-02-11 11:12:31,158 INFO  [io.openshift.{value-name-app}] (default task-18) Hello, Sarah!
 ...
 ----
 endif::[]

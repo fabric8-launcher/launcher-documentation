@@ -14,7 +14,7 @@ The booster provides a default HTTP endpoint that accepts GET requests.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting
+$ curl http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}/api/greeting
 {
   "content" : "Hello, World!"
 }
@@ -24,7 +24,7 @@ $ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ curl http://{app-name}-{project-name}.{os-route-hostname}/api/greeting?name=Sarah
+$ curl http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}/api/greeting?name=Sarah
 {
   "content" : "Hello, Sarah!"
 }

@@ -10,7 +10,7 @@ include::thorntail/docs/howto/writing-an-application-from-scratch/index.adoc[lev
 
 :parameter-maven-command: $ mvn thorntail:run
 :parameter-response: Hello from Thorntail!
-:parameter-url: http://{app-name}-{project-name}.{os-route-hostname}/rest/hello
+:parameter-url: http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}/rest/hello
 include::proc_deploying-an-application-to-openshift.adoc[leveloffset=+1]
 :parameter-maven-command!:
 :parameter-response:

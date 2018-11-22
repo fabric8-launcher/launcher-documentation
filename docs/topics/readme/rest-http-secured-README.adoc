@@ -28,7 +28,7 @@ $ ${localRunCMD}
 
 == Interacting with the Booster on a Single-node OpenShift Cluster
 
-To interact with your booster while it's running on a Single-node OpenShift Cluster, you first need to obtain the secured booster endpoint URL, which is the _${app-name}_ service:
+To interact with your booster while it's running on a Single-node OpenShift Cluster, you first need to obtain the secured booster endpoint URL, which is the _${value-name-app}_ service:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -49,10 +49,10 @@ A sample output is shown in the following table:
 | <all>
 | passthrough
 
-| ${app-name}
-| ${app-name}-myproject.LOCAL_OPENSHIFT_HOSTNAME
+| ${value-name-app}
+| ${value-name-app}-myproject.LOCAL_OPENSHIFT_HOSTNAME
 |
-| secured-${app-name}-http
+| secured-${value-name-app}-http
 | <all>
 |
 
@@ -65,7 +65,7 @@ A sample output is shown in the following table:
 |===
 ====
 
-In the above example, the booster endpoint would be `\http://${app-name}-myproject.LOCAL_OPENSHIFT_HOSTNAME`.
+In the above example, the booster endpoint would be `\http://${value-name-app}-myproject.LOCAL_OPENSHIFT_HOSTNAME`.
 
 You can interact with the booster using the form at the secured endpoint URL and the link:${guideURL}#rhsso-realm-model_secured[provided users].
 

@@ -54,9 +54,9 @@ $ ${OSORunCMD}
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc get route ${app-name} -o jsonpath={$.spec.host}
+$ oc get route ${value-name-app} -o jsonpath={$.spec.host}
 
-${app-name}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME
+${value-name-app}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME
 ----
 
 . Navigate to the `greeting` service using your browser.

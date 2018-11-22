@@ -37,14 +37,14 @@ For example:
 +
 [source,bash,subs="attributes+"]
 ----
-$ oc set env dc/{app-name} {env-var-name}={env-var-val}
+$ oc set env dc/{value-name-app} {env-var-name}={env-var-val}
 ----
 
 . Redeploy the application if it is not set to redeploy automatically on configuration change. For example:
 +
 [source,bash,subs="attributes+"]
 ----
-$ oc rollout latest dc/{app-name}
+$ oc rollout latest dc/{value-name-app}
 ----
 
 . Configure port forwarding from your local machine to the application pod:
@@ -54,7 +54,7 @@ $ oc rollout latest dc/{app-name}
 ----
 $ oc get pod
 NAME                            READY     STATUS      RESTARTS   AGE
-{app-name}-3-1xrsp          0/1       Running     0          6s
+{value-name-app}-3-1xrsp          0/1       Running     0          6s
 ...
 ----
 
@@ -63,7 +63,7 @@ NAME                            READY     STATUS      RESTARTS   AGE
 --
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc port-forward {app-name}-3-1xrsp $LOCAL_PORT_NUMBER:{port}
+$ oc port-forward {value-name-app}-3-1xrsp $LOCAL_PORT_NUMBER:{port}
 ----
 
 Here, `$LOCAL_PORT_NUMBER` is an unused port number of your choice on your local machine.
@@ -87,7 +87,7 @@ endif::nodejs[]
 +
 [source,bash,subs="attributes+"]
 ----
-$ oc set env dc/{app-name} {env-var-name}-
+$ oc set env dc/{value-name-app} {env-var-name}-
 ----
 
 ifndef::nodejs[]

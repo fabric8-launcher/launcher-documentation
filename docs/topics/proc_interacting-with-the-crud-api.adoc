@@ -15,13 +15,13 @@ When you have finished creating your application booster, you can interact with 
 --
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc get route {app-name}
+$ oc get route {value-name-app}
 ----
 
 [source,option="nowrap",subs="attributes+"]
 ----
 NAME                 HOST/PORT                                         PATH      SERVICES             PORT      TERMINATION
-{app-name}           {app-name}-{project-name}.{os-route-hostname}              {app-name}           8080
+{value-name-app}           {value-name-app}-{value-name-project}.{value-route-openshift-hostname}              {value-name-app}           8080
 ----
 --
 
@@ -30,7 +30,7 @@ NAME                 HOST/PORT                                         PATH     
 --
 [source,bash,subs="attributes+"]
 ----
-http://{app-name}-{project-name}.{os-route-hostname}
+http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}
 ----
 
 Alternatively, you can make requests directly on the `api/fruits/*` endpoint using `curl`:
@@ -38,7 +38,7 @@ Alternatively, you can make requests directly on the `api/fruits/*` endpoint usi
 .List all entries in the database:
 [source,bash,subs="attributes+"]
 ----
-$ curl http://{app-name}-{project-name}.{os-route-hostname}/api/fruits
+$ curl http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}/api/fruits
 ----
 
 [source,json,subs="attributes+"]
@@ -61,7 +61,7 @@ $ curl http://{app-name}-{project-name}.{os-route-hostname}/api/fruits
 .Retrieve an entry with a specific ID
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ curl http://{app-name}-{project-name}.{os-route-hostname}/api/fruits/3
+$ curl http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}/api/fruits/3
 ----
 
 [source,json,options="nowrap",subs="attributes+"]
@@ -76,7 +76,7 @@ $ curl http://{app-name}-{project-name}.{os-route-hostname}/api/fruits/3
 .Create a new entry:
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ curl -H "Content-Type: application/json" -X POST -d '{"name":"Peach","stock":1}'  http://{app-name}-{project-name}.{os-route-hostname}/api/fruits
+$ curl -H "Content-Type: application/json" -X POST -d '{"name":"Peach","stock":1}'  http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}/api/fruits
 ----
 
 [source,json,options="nowrap",subs="attributes+"]
@@ -91,7 +91,7 @@ $ curl -H "Content-Type: application/json" -X POST -d '{"name":"Peach","stock":1
 .Update an Entry
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ curl -H "Content-Type: application/json" -X PUT -d '{"name":"Apple","stock":"100"}'  http://{app-name}-{project-name}.{os-route-hostname}/api/fruits/1
+$ curl -H "Content-Type: application/json" -X PUT -d '{"name":"Apple","stock":"100"}'  http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}/api/fruits/1
 ----
 
 [source,json,options="nowrap",subs="attributes+"]
@@ -106,7 +106,7 @@ $ curl -H "Content-Type: application/json" -X PUT -d '{"name":"Apple","stock":"1
 .Delete an Entry:
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ curl -X DELETE http://{app-name}-{project-name}.{os-route-hostname}/api/fruits/1
+$ curl -X DELETE http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}/api/fruits/1
 ----
 --
 

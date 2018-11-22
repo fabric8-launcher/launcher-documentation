@@ -13,7 +13,7 @@ Hystrix Dashboard lets you easily monitor the health of your services in real ti
 +
 [source,bash,subs="attributes+",options="nowrap"]
 ----
-$ oc login {link-oso-auth} --token=MYTOKEN
+$ oc login {value-url-oso-auth} --token=MYTOKEN
 ----
 
 . To access the Web console, use your browser to navigate to your {OpenShiftLocal} URL.
@@ -22,7 +22,7 @@ $ oc login {link-oso-auth} --token=MYTOKEN
 +
 [source,bash,subs="attributes+",options="nowrap"]
 ----
-$ oc project {project-name}
+$ oc project {value-name-project}
 ----
 
 . Import the link:https://raw.githubusercontent.com/snowdrop/openshift-templates/master/hystrix-dashboard/hystrix-dashboard.yml[YAML template] for the Hystrix Dashboard application.
@@ -50,25 +50,25 @@ $ oc new-app --template=hystrix-dashboard
 ----
 $ oc get route hystrix-dashboard
 NAME                HOST/PORT                                                    PATH      SERVICES            PORT      TERMINATION   WILDCARD
-hystrix-dashboard   hystrix-dashboard-{project-name}.{osl-route-hostname}                 hystrix-dashboard   <all>                   None
+hystrix-dashboard   hystrix-dashboard-{value-name-project}.{value-route-osl-hostname}                 hystrix-dashboard   <all>                   None
 ----
 
 . To access the Dashboard, open the Dashboard application route URL in your browser.
 Alternatively, you can navigate to the _Overview_ screen in the Web console and click the route URL in the header above the pod containing your Hystrix Dashboard application.
 
-. To use the Dashboard to monitor the `{app-name}-greeting` service, replace the default event stream address with the following address and click the _Monitor Stream_ button.
+. To use the Dashboard to monitor the `{value-name-app}-greeting` service, replace the default event stream address with the following address and click the _Monitor Stream_ button.
 +
 --
 ifdef::built-for-spring-boot[]
 [source,subs="attributes+",options="nowrap"]
 ----
-http://{app-name}-greeting-{project-name}.{osl-route-hostname}/hystrix.stream
+http://{value-name-app}-greeting-{value-name-project}.{value-route-osl-hostname}/hystrix.stream
 ----
 endif::[]
 ifndef::built-for-spring-boot[]
 [source,subs="attributes+",options="nowrap"]
 ----
-http://{app-name}-greeting/hystrix.stream
+http://{value-name-app}-greeting/hystrix.stream
 ----
 endif::[]
 --

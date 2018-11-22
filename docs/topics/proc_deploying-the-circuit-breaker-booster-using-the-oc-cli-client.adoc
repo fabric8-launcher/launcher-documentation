@@ -23,21 +23,21 @@ endif::[]
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ git clone git@github.com:USERNAME/{project-name}.git
+$ git clone git@github.com:USERNAME/{value-name-project}.git
 ----
 +
 Alternatively, if you downloaded a ZIP file of your project, extract it.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ unzip {project-name}.zip
+$ unzip {value-name-project}.zip
 ----
 
 . Create a new OpenShift project.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc new-project {project-name}
+$ oc new-project {value-name-project}
 ----
 
 . Navigate to the root directory of your booster.
@@ -72,15 +72,15 @@ endif::built-for-nodejs[]
 ----
 $ oc get pods -w
 NAME                             READY     STATUS      RESTARTS   AGE
-{app-name}-greeting-1-aaaaa     1/1       Running   0           17s
-{app-name}-greeting-1-deploy    0/1       Completed 0           22s
-{app-name}-name-1-aaaaa         1/1       Running   0           14s
-{app-name}-name-1-deploy        0/1       Completed 0           28s
+{value-name-app}-greeting-1-aaaaa     1/1       Running   0           17s
+{value-name-app}-greeting-1-deploy    0/1       Completed 0           22s
+{value-name-app}-name-1-aaaaa         1/1       Running   0           14s
+{value-name-app}-name-1-deploy        0/1       Completed 0           28s
 ----
 +
-Both the `{app-name}-greeting-1-aaaaa` and `{app-name}-name-1-aaaaa` pods should have a status of `Running` once they are fully deployed and started. 
+Both the `{value-name-app}-greeting-1-aaaaa` and `{value-name-app}-name-1-aaaaa` pods should have a status of `Running` once they are fully deployed and started. 
 You should also wait for your pods to be ready before proceeding, which is shown in the `READY` column. 
-For example, `{app-name}-greeting-1-aaaaa` is ready when the `READY` column is `1/1`.
+For example, `{value-name-app}-greeting-1-aaaaa` is ready when the `READY` column is `1/1`.
 Your specific pod names will vary.
 The number in the middle will increase with each new build.
 The letters at the end are generated when the pod is created.
@@ -93,9 +93,9 @@ The letters at the end are generated when the pod is created.
 ----
 $ oc get routes
 NAME                 HOST/PORT                                                     PATH      SERVICES        PORT      TERMINATION
-{app-name}-greeting   {app-name}-greeting-{project-name}.{os-route-hostname}            {app-name}-greeting   8080                    None
-{app-name}-name       {app-name}-name-{project-name}.{os-route-hostname}            {app-name}-name       8080                    None
+{value-name-app}-greeting   {value-name-app}-greeting-{value-name-project}.{value-route-openshift-hostname}            {value-name-app}-greeting   8080                    None
+{value-name-app}-name       {value-name-app}-name-{value-name-project}.{value-route-openshift-hostname}            {value-name-app}-name       8080                    None
 ----
 +
 
-The route information of a pod gives you the base URL which you use to access it. In the example above, you would use `\http://{app-name}-greeting-{project-name}.{os-route-hostname}` as the base URL to access the application.
+The route information of a pod gives you the base URL which you use to access it. In the example above, you would use `\http://{value-name-app}-greeting-{value-name-project}.{value-route-openshift-hostname}` as the base URL to access the application.

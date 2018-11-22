@@ -30,5 +30,5 @@ endif::[]
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc login {link-oso-auth} --token=MYTOKEN
+$ oc login {value-url-oso-auth} --token=MYTOKEN
 ----

@@ -26,7 +26,7 @@ $ oc login OCP_URL --token=MYTOKEN
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc new-project {project-name}
+$ oc new-project {value-name-project}
 ----
 
 . Navigate to the root directory of your booster.

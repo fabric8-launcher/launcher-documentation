@@ -27,7 +27,7 @@ An example representation of the role mappings is provided in this decoded JWT b
   "exp": 1510162193,
   "nbf": 0,
   "iat": 1510161593,
-  "iss": "https://secure-sso-sso.{osl-route-hostname}/auth/realms/master", <1>
+  "iss": "https://secure-sso-sso.{value-route-osl-hostname}/auth/realms/master", <1>
   "aud": "demoapp",
   "sub": "c0175ccb-0892-4b31-829f-dda873815fe8",
   "typ": "Bearer",
