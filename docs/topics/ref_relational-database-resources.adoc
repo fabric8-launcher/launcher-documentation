@@ -31,7 +31,7 @@ ifndef::built-for-spring-boot[* link:{link-mission-crud-spring-boot}[{name-missi
 
 ifndef::built-for-vertx[* link:{link-mission-crud-vertx}[{name-mission-crud} mission - {VertX} booster]]
 
-ifndef::built-for-thorntail[* link:{link-mission-crud-wf-swarm}[{name-mission-crud} mission - {Thorntail} booster]]
+ifndef::built-for-thorntail[* link:{link-mission-crud-thorntail}[{name-mission-crud} mission - {Thorntail} booster]]
 
 ifndef::built-for-nodejs[* link:{link-mission-crud-nodejs}[{name-mission-crud} mission - {Node} booster]]
 

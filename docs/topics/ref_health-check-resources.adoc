@@ -15,7 +15,7 @@ ifndef::built-for-spring-boot[* link:{link-mission-health-check-spring-boot}[{na
 
 ifndef::built-for-vertx[* link:{link-mission-health-check-vertx}[{name-mission-health-check} mission - {VertX} booster]]
 
-ifndef::built-for-thorntail[* link:{link-mission-health-check-wf-swarm}[{name-mission-health-check} mission - {WildFlySwarm} booster]]
+ifndef::built-for-thorntail[* link:{link-mission-health-check-thorntail}[{name-mission-health-check} mission - {WildFlySwarm} booster]]
 
 ifndef::built-for-nodejs[* link:{link-mission-health-check-nodejs}[{name-mission-health-check} mission - {Node} booster]]
 

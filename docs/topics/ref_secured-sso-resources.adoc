@@ -14,7 +14,7 @@ ifndef::built-for-spring-boot[* link:{link-mission-secured-spring-boot}[{name-mi
 
 ifndef::built-for-vertx[* link:{link-mission-secured-vertx}[{name-mission-secured} mission - {VertX} booster]]
 
-ifndef::built-for-thorntail[* link:{link-mission-secured-wf-swarm}[{name-mission-secured} mission - {Thorntail} booster]]
+ifndef::built-for-thorntail[* link:{link-mission-secured-thorntail}[{name-mission-secured} mission - {Thorntail} booster]]
 
 ifndef::built-for-nodejs[* link:{link-mission-secured-nodejs}[{name-mission-secured} mission - {Node} booster]]
 
