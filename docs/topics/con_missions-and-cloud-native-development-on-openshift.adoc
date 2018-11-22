@@ -32,4 +32,4 @@ For example, the {name-mission-http-api} mission is implemented for these runtim
 * link:{link-mission-http-api-nodejs}[{Node} booster]
 * link:{link-mission-http-api-spring-boot}[{SpringBoot} booster]
 * link:{link-mission-http-api-vertx}[{VertX} booster]
-* link:{link-mission-http-api-wf-swarm}[{WildFlySwarm} booster]
+* link:{link-mission-http-api-thorntail}[{WildFlySwarm} booster]

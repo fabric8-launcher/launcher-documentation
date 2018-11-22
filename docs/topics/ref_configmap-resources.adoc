@@ -17,7 +17,7 @@ ifndef::built-for-spring-boot[* link:{link-mission-configmap-spring-boot}[{name-
 
 ifndef::built-for-vertx[* link:{link-mission-configmap-vertx}[{name-mission-configmap} mission - {VertX} booster]]
 
-ifndef::built-for-thorntail[* link:{link-mission-configmap-wf-swarm}[{name-mission-configmap} mission - {WildFlySwarm} booster]]
+ifndef::built-for-thorntail[* link:{link-mission-configmap-thorntail}[{name-mission-configmap} mission - {WildFlySwarm} booster]]
 
 ifndef::built-for-nodejs[* link:{link-mission-configmap-nodejs}[{name-mission-configmap} mission - {Node} booster]]
 
