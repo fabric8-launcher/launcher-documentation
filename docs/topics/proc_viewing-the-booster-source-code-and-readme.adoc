@@ -15,6 +15,6 @@ One of the following:
 
 .Additional resources
 
-* link:{link-getting-started-guide}#deploying-a-booster-to-openshiftonline_getting-started[Using {launcher-oso}] 
-* link:{link-getting-started-guide}#creating-and-deploying-a-booster-using-your-openshiftlocal_getting-started[Using the {launcher} tool on a {OpenShiftLocal}]
+* link:{link-guide-getting-started}#deploying-a-booster-to-openshiftonline_getting-started[Using {launcher-oso}] 
+* link:{link-guide-getting-started}#creating-and-deploying-a-booster-using-your-openshiftlocal_getting-started[Using the {launcher} tool on a {OpenShiftLocal}]
 

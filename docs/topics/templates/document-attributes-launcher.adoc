@@ -10,13 +10,12 @@
 :stylesdir: topics/styles
 :stylesheet: foundation.css
 
-:link-openshift-local-guide: /docs/minishift-installation.html
-:link-launcher-openshift-local-install-guide: /docs/minishift-installation.html
-:link-getting-started-guide: /docs/getting-started.html
-:link-spring-boot-runtime-guide: /docs/spring-boot-runtime.html
-:link-vertx-runtime-guide: /docs/vertx-runtime.html
-:link-wf-swarm-runtime-guide: /docs/thorntail-runtime.html
-:link-nodejs-runtime-guide: /docs/nodejs-runtime.html
+:link-guide-minishift-installation: /docs/minishift-installation.html
+:link-guide-getting-started: /docs/getting-started.html
+:link-guide-spring-boot: /docs/spring-boot-runtime.html
+:link-guide-vertx: /docs/vertx-runtime.html
+:link-guide-thorntail: /docs/thorntail-runtime.html
+:link-guide-nodejs: /docs/nodejs-runtime.html
 
 :link-launcher-yaml: /latest-launcher-template
 

@@ -30,7 +30,7 @@ You can find more details on using {launcher-oso} in the xref:deploying-a-booste
 .The {launcher} Tool
 The {launcher} is the upstream project from which link:{link-launcher-oso}[{launcher-oso}] is based.
 
-You can also install and execute the {launcher} tool on your {OpenShiftLocal} to use the same capabilities within your {OpenShiftLocal}. For more information, see the link:{link-launcher-openshift-local-install-guide}#installing-launcher-tool_minishift[Installing the {launcher} Tool] chapter of the {name-guide-minishift-installation} guide.
+You can also install and execute the {launcher} tool on your {OpenShiftLocal} to use the same capabilities within your {OpenShiftLocal}. For more information, see the link:{link-guide-minishift-installation}#installing-launcher-tool_minishift[Installing the {launcher} Tool] chapter of the {name-guide-minishift-installation} guide.
 
 .Missions and Boosters
 A mission implements a link:http://microservices.io/patterns/microservices.html[Microservice pattern] such as:
@@ -53,7 +53,7 @@ Each mission is implemented in one or more runtimes. Both the specific implement
 [#build-and-deploy-process]
 .Process for Building and Deploying to OpenShift
 
-When using link:{link-launcher-oso}[{launcher-oso}], you can create and deploy a booster to OpenShift using the _Build and Deploy to OpenShift_ build process, which is based on the link:{link-wf-swarm-runtime-guide}#the-source-to-image-s2i-build-process[Source-to-Image (S2I) build process]. _Build and Deploy to OpenShift_ configures OpenShift to pull the code of your booster from your GitHub repository, build the code, and deploy it to OpenShift.
+When using link:{link-launcher-oso}[{launcher-oso}], you can create and deploy a booster to OpenShift using the _Build and Deploy to OpenShift_ build process, which is based on the link:{link-guide-thorntail}#the-source-to-image-s2i-build-process[Source-to-Image (S2I) build process]. _Build and Deploy to OpenShift_ configures OpenShift to pull the code of your booster from your GitHub repository, build the code, and deploy it to OpenShift.
 
 The benefit of this process is that it handles all the configuration, building, and deployment steps needed to get your booster running in OpenShift. It also allows you to quickly deploy code updates and see your changes in OpenShift.
 

@@ -11,7 +11,7 @@ The process of creating and deploying boosters to {OpenshiftContainerPlatform} i
 
 .Prerequisites
 
-* The booster created using link:{link-launcher-oso}[{launcher-oso}] or link:{link-openshift-local-guide}[the {launcher} tool].
+* The booster created using link:{link-launcher-oso}[{launcher-oso}] or link:{link-guide-minishift-installation}[the {launcher} tool].
 
 .Procedure
 

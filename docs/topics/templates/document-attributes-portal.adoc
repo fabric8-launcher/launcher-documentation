@@ -10,13 +10,12 @@
 
 :portal-base-url: https://access.redhat.com/documentation/en-us/red_hat_openshift_application_runtimes/{DocInfoProductNumber}/html-single
 
-:link-launcher-openshift-local-install-guide: {portal-base-url}/install_and_configure_the_developers.redhat.comlaunch_application_on_a_single-node_openshift_cluster/
-:link-openshift-local-guide: {link-launcher-openshift-local-install-guide}
-:link-getting-started-guide: {portal-base-url}/getting_started_guide/
-:link-spring-boot-runtime-guide: {portal-base-url}/spring_boot_tomcat_runtime_guide/
-:link-vertx-runtime-guide: {portal-base-url}/eclipse_vert.x_runtime_guide/
-:link-wf-swarm-runtime-guide: {portal-base-url}/wildfly_swarm_runtime_guide/
-:link-nodejs-runtime-guide: {portal-base-url}/node.js_runtime_guide/
+:link-guide-minishift-installation: {portal-base-url}/install_and_configure_the_developers.redhat.comlaunch_application_on_a_single-node_openshift_cluster/
+:link-guide-getting-started: {portal-base-url}/getting_started_guide/
+:link-guide-spring-boot: {portal-base-url}/spring_boot_tomcat_runtime_guide/
+:link-guide-vertx: {portal-base-url}/eclipse_vert.x_runtime_guide/
+:link-guide-thorntail: {portal-base-url}/wildfly_swarm_runtime_guide/
+:link-guide-nodejs: {portal-base-url}/node.js_runtime_guide/
 
 :link-launcher-yaml: https://launcher.fabric8.io/latest-launcher-template
 
