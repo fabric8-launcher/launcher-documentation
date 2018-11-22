@@ -2,7 +2,7 @@
 = What is {SpringBoot}
 
 {SpringBoot} lets you create stand-alone Spring-based applications.
-See link:{link-spring-boot-runtime-guide}#additional-springboot-resources_spring-boot[Additional Resources] for a list of documents about {SpringBoot}.
+See link:{link-guide-spring-boot}#additional-springboot-resources_spring-boot[Additional Resources] for a list of documents about {SpringBoot}.
 
 The {SpringBoot} runtime gives you the advantages and convenience of the OpenShift platform:
 

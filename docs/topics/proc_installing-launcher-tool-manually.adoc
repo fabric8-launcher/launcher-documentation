@@ -12,7 +12,7 @@ Install a local customized instance of the {launcher} tool, which allows you to 
 
 .Prerequisites
 * {OpenShiftLocal} installed and running.
-* A link:{link-launcher-openshift-local-install-guide}#creating-a-github-personal-access-token_minishift[GitHub personal access token].
+* A link:{link-guide-minishift-installation}#creating-a-github-personal-access-token_minishift[GitHub personal access token].
 
 .Procedure
 . Open the {OpenShiftLocal} Web console and log in.
@@ -63,9 +63,9 @@ A new browser tab opens with the {launcher} tool. This is the same service as `{
 . Start using your {launcher} tool to launch booster applications.
 
 .Additional resources
-* See the link:{link-getting-started-guide}[{name-guide-getting-started}] for a walk-through of running a booster application.
+* See the link:{link-guide-getting-started}[{name-guide-getting-started}] for a walk-through of running a booster application.
 * Read the runtime guides for an overview of the runtimes and their boosters:
-** link:{link-spring-boot-runtime-guide}[{name-guide-spring-boot}]
-** link:{link-vertx-runtime-guide}[{name-guide-vertx}]
-** link:{link-wf-swarm-runtime-guide}[{name-guide-thorntail}]
-** link:{link-nodejs-runtime-guide}[{name-guide-nodejs}]
+** link:{link-guide-spring-boot}[{name-guide-spring-boot}]
+** link:{link-guide-vertx}[{name-guide-vertx}]
+** link:{link-guide-thorntail}[{name-guide-thorntail}]
+** link:{link-guide-nodejs}[{name-guide-nodejs}]

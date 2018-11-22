@@ -11,7 +11,7 @@ link:https://docs.openshift.org/latest/minishift/using/addons.html[Add-ons] enab
 
 .Prerequisites
 * xref:starting-and-configuring-the-openshiftlocal-for-the-launcher-tool_{context}[{OpenShiftLocal} running].
-* A link:{link-launcher-openshift-local-install-guide}#creating-a-github-personal-access-token_minishift[GitHub personal access token].
+* A link:{link-guide-minishift-installation}#creating-a-github-personal-access-token_minishift[GitHub personal access token].
 
 .Procedure
 
@@ -66,9 +66,9 @@ launcher   launcher-rhoarpad.{value-route-osl-hostname}             launcher-fro
 This is the same service as `{link-launcher-oso}` but running in a {OpenShiftLocal}.
 
 .Additional Resources
-* See the link:{link-getting-started-guide}[{name-guide-getting-started}] for a walk-through of running a booster application.
+* See the link:{link-guide-getting-started}[{name-guide-getting-started}] for a walk-through of running a booster application.
 * Read the runtime guides for an overview of the runtimes and their boosters:
-** link:{link-spring-boot-runtime-guide}[{name-guide-spring-boot}]
-** link:{link-vertx-runtime-guide}[{name-guide-vertx}]
-** link:{link-wf-swarm-runtime-guide}[{name-guide-thorntail}]
-** link:{link-nodejs-runtime-guide}[{name-guide-nodejs}]
+** link:{link-guide-spring-boot}[{name-guide-spring-boot}]
+** link:{link-guide-vertx}[{name-guide-vertx}]
+** link:{link-guide-thorntail}[{name-guide-thorntail}]
+** link:{link-guide-nodejs}[{name-guide-nodejs}]
