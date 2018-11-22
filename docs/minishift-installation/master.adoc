@@ -4,7 +4,7 @@ include::topics/templates/document-attributes.adoc[]
 //var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
 :docs-topic:
 
-= {minishift-installation-guide-name}
+= {name-guide-minishift-installation}
 
 :context: minishift
 

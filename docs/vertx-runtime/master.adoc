@@ -4,7 +4,7 @@ include::topics/templates/document-attributes.adoc[]
 :toclevels: 2
 :built-for-vertx:
 
-= {vertx-runtime-guide-name}
+= {name-guide-vertx}
 :runtime: {VertX}
 //var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
 :docs-topic:

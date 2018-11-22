@@ -2,7 +2,7 @@ include::topics/templates/document-attributes.adoc[]
 //var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
 :docs-topic:
 
-= {contrib-guide-name}
+= {name-guide-contrib}
 
 :context: contributing
 

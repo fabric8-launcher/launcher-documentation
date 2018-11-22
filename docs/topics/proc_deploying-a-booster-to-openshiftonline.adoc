@@ -44,7 +44,7 @@ You have link:https://docs.openshift.com/online/dev_guide/compute_resources.html
 .Additional resources
 See the runtime guides to learn more about runtimes and boosters that are available for them:
 
-* link:{link-spring-boot-runtime-guide}[{spring-boot-runtime-guide-name}]
-* link:{link-vertx-runtime-guide}[{vertx-runtime-guide-name}]
-* link:{link-wf-swarm-runtime-guide}[{wf-swarm-runtime-guide-name}]
-* link:{link-nodejs-runtime-guide}[{nodejs-runtime-guide-name}]
+* link:{link-spring-boot-runtime-guide}[{name-guide-spring-boot}]
+* link:{link-vertx-runtime-guide}[{name-guide-vertx}]
+* link:{link-wf-swarm-runtime-guide}[{name-guide-thorntail}]
+* link:{link-nodejs-runtime-guide}[{name-guide-nodejs}]

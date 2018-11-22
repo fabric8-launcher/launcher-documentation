@@ -3,7 +3,7 @@ include::topics/templates/document-attributes.adoc[]
 :toclevels: 2
 :built-for-spring-boot:
 
-= {spring-boot-runtime-guide-name}
+= {name-guide-spring-boot}
 :runtime: {SpringBoot}
 //var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
 :docs-topic:

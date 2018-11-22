@@ -7,7 +7,7 @@ include::topics/templates/document-attributes.adoc[]
 :context: getting-started
 
 :sectnums!:
-= {getting-started-guide-name}
+= {name-guide-getting-started}
 
 This guide covers basic information to get started using {ProductName}.
 

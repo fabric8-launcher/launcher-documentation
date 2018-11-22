@@ -51,14 +51,14 @@ endif::[]
 :name-mission-secured: Secured
 :name-mission-cache: Cache
 
-:minishift-installation-guide-name: Install and Configure the {launcher} Tool
-:getting-started-guide-name: Getting Started with {ProductName}
-:landing-page-name: Welcome
-:contrib-guide-name: Contribution Guide
-:spring-boot-runtime-guide-name: {SpringBoot} Runtime Guide
-:vertx-runtime-guide-name: {VertX} Runtime Guide
-:wf-swarm-runtime-guide-name: {WildFlySwarm} Runtime Guide
-:nodejs-runtime-guide-name: {Node} Runtime Guide
+:name-guide-minishift-installation: Install and Configure the {launcher} Tool
+:name-guide-getting-started: Getting Started with {ProductName}
+:name-landing-page: Welcome
+:name-guide-contrib: Contribution Guide
+:name-guide-spring-boot: {SpringBoot} Runtime Guide
+:name-guide-vertx: {VertX} Runtime Guide
+:name-guide-thorntail: {WildFlySwarm} Runtime Guide
+:name-guide-nodejs: {Node} Runtime Guide
 
 // used in the BOM file example.
 :WildFlySwarmProductVersion: 2.2.0.Final-redhat-00021
