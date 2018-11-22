@@ -1,14 +1,29 @@
 include::environment.adoc[]
 
+// Basic metadata
 :toc: left
 :toclevels: 3
 :numbered:
 :icons: font
 :source-highlighter: highlightjs
+:ndash: &#x2013;
+:revnumber: {localdate}
+:SegmentTrackerToken: ${LAUNCHPAD_TRACKER_SEGMENT_TOKEN}
 
-:name-launcher: Fabric8 Launcher
-:name-launcher-oso: developers.redhat.com/launch
 
+// Launcher-specific attribute definitions
+ifdef::launcher-docs-only[]
+include::document-attributes-launcher.adoc[]
+endif::[]
+
+
+// Portal-specific docs attribute definitions
+ifdef::portal-docs-only[]
+include::document-attributes-portal.adoc[]
+endif::[]
+
+
+// Products
 :OpenShiftOnline: OpenShift Online
 :OpenShiftLocal: Single-node OpenShift Cluster
 :Minishift: Minishift
@@ -20,25 +35,15 @@ include::environment.adoc[]
 :VertX: Eclipse Vert.x
 :Node: Node.js
 :RHSSO: Red Hat SSO
-// Needs to be set to either "WildFly" or "JBoss EAP"
 :WildFly: JBoss EAP
 :DevStudio: Red Hat Developer Studio
 
-// Launcher-specific attribute definitions
-ifdef::launcher-docs-only[]
-include::document-attributes-launcher.adoc[]
-endif::[]
 
-// Portal-specific docs attribute definitions
-ifdef::portal-docs-only[]
-include::document-attributes-portal.adoc[]
-endif::[]
+// Names
+:name-docs: launcher.fabric8.io
 
-
-:ndash: &#x2013;
-
-
-:revnumber: {localdate}
+:name-launcher: Fabric8 Launcher
+:name-launcher-oso: developers.redhat.com/launch
 
 :name-mission-http-api: REST API Level 0
 :name-mission-configmap: Externalized Configuration
@@ -57,6 +62,8 @@ endif::[]
 :name-guide-thorntail: {WildFlySwarm} Runtime Guide
 :name-guide-nodejs: {Node} Runtime Guide
 
+:name-repo-docs: launcher-documentation
+
 
 // Versions
 :version-fabric8-maven-plugin: 3.5.40
@@ -74,46 +81,56 @@ endif::[]
 :version-node-nodeshift: --dockerImage=registry.access.redhat.com/rhoar-nodejs/nodejs-8
 
 
-// POM file example variables
+// Links
+:link-docs: https://launcher.fabric8.io
 
-// SPRING BOOT MISSIONS
-:link-mission-http-api-spring-boot: {link-guide-spring-boot}#mission-rest-http-spring-boot
-:link-mission-configmap-spring-boot: {link-guide-spring-boot}#mission-configmap-spring-boot
-:link-mission-crud-spring-boot: {link-guide-spring-boot}#mission-crud-spring-boot
-:link-mission-health-check-spring-boot: {link-guide-spring-boot}#mission-health-check-spring-boot
-:link-mission-secured-spring-boot: {link-guide-spring-boot}#mission-rest-http-secured-spring-boot
-:link-mission-circuit-breaker-spring-boot: {link-guide-spring-boot}#mission-circuit-breaker-spring-boot
+:link-launcher-oso: https://developers.redhat.com/launch
+
+:link-mission-cache-nodejs: {link-guide-nodejs}#mission-cache-nodejs
 :link-mission-cache-spring-boot: {link-guide-spring-boot}#mission-cache-spring-boot
-
-// VERT.X MISSIONS
-:link-mission-http-api-vertx: {link-guide-vertx}#mission-rest-http-vertx
-:link-mission-configmap-vertx: {link-guide-vertx}#mission-configmap-vertx
-:link-mission-crud-vertx: {link-guide-vertx}#mission-crud-vertx
-:link-mission-health-check-vertx: {link-guide-vertx}#mission-health-check-vertx
-:link-mission-secured-vertx: {link-guide-vertx}#mission-rest-http-secured-vertx
-:link-mission-circuit-breaker-vertx: {link-guide-vertx}#mission-circuit-breaker-vertx
+:link-mission-cache-wf-swarm: {link-guide-thorntail}#mission-cache-wf-swarm
 :link-mission-cache-vertx: {link-guide-vertx}#mission-cache-vertx
 
-// THORNTAIL MISSIONS
-:link-mission-http-api-wf-swarm: {link-guide-thorntail}#mission-rest-http-wf-swarm
-:link-mission-configmap-wf-swarm: {link-guide-thorntail}#mission-configmap-wf-swarm
-:link-mission-crud-wf-swarm: {link-guide-thorntail}#mission-crud-wf-swarm
-:link-mission-health-check-wf-swarm: {link-guide-thorntail}#mission-health-check-wf-swarm
-:link-mission-secured-wf-swarm: {link-guide-thorntail}#mission-rest-http-secured-wf-swarm
-:link-mission-circuit-breaker-wf-swarm: {link-guide-thorntail}#mission-circuit-breaker-wf-swarm
-:link-mission-cache-wf-swarm: {link-guide-thorntail}#mission-cache-wf-swarm
-
-// NODE.JS MISSIONS
-:link-mission-http-api-nodejs: {link-guide-nodejs}#mission-rest-http-nodejs
-:link-mission-configmap-nodejs: {link-guide-nodejs}#mission-configmap-nodejs
-:link-mission-health-check-nodejs: {link-guide-nodejs}#mission-health-check-nodejs
-:link-mission-crud-nodejs: {link-guide-nodejs}#mission-crud-nodejs
 :link-mission-circuit-breaker-nodejs: {link-guide-nodejs}#mission-circuit-breaker-nodejs
-:link-mission-secured-nodejs: {link-guide-nodejs}#mission-rest-http-secured-nodejs
-:link-mission-cache-nodejs: {link-guide-nodejs}#mission-cache-nodejs
+:link-mission-circuit-breaker-spring-boot: {link-guide-spring-boot}#mission-circuit-breaker-spring-boot
+:link-mission-circuit-breaker-wf-swarm: {link-guide-thorntail}#mission-circuit-breaker-wf-swarm
+:link-mission-circuit-breaker-vertx: {link-guide-vertx}#mission-circuit-breaker-vertx
 
-:link-rhsso: https://github.com/obsidian-toaster-quickstarts/redhat-sso
-:link-launcher-oso: https://developers.redhat.com/launch
+:link-mission-configmap-nodejs: {link-guide-nodejs}#mission-configmap-nodejs
+:link-mission-configmap-spring-boot: {link-guide-spring-boot}#mission-configmap-spring-boot
+:link-mission-configmap-wf-swarm: {link-guide-thorntail}#mission-configmap-wf-swarm
+:link-mission-configmap-vertx: {link-guide-vertx}#mission-configmap-vertx
+
+:link-mission-crud-nodejs: {link-guide-nodejs}#mission-crud-nodejs
+:link-mission-crud-spring-boot: {link-guide-spring-boot}#mission-crud-spring-boot
+:link-mission-crud-wf-swarm: {link-guide-thorntail}#mission-crud-wf-swarm
+:link-mission-crud-vertx: {link-guide-vertx}#mission-crud-vertx
+
+:link-mission-health-check-nodejs: {link-guide-nodejs}#mission-health-check-nodejs
+:link-mission-health-check-spring-boot: {link-guide-spring-boot}#mission-health-check-spring-boot
+:link-mission-health-check-wf-swarm: {link-guide-thorntail}#mission-health-check-wf-swarm
+:link-mission-health-check-vertx: {link-guide-vertx}#mission-health-check-vertx
+
+:link-mission-http-api-nodejs: {link-guide-nodejs}#mission-rest-http-nodejs
+:link-mission-http-api-spring-boot: {link-guide-spring-boot}#mission-rest-http-spring-boot
+:link-mission-http-api-wf-swarm: {link-guide-thorntail}#mission-rest-http-wf-swarm
+:link-mission-http-api-vertx: {link-guide-vertx}#mission-rest-http-vertx
+
+:link-mission-secured-nodejs: {link-guide-nodejs}#mission-rest-http-secured-nodejs
+:link-mission-secured-spring-boot: {link-guide-spring-boot}#mission-rest-http-secured-spring-boot
+:link-mission-secured-wf-swarm: {link-guide-thorntail}#mission-rest-http-secured-wf-swarm
+:link-mission-secured-vertx: {link-guide-vertx}#mission-rest-http-secured-vertx
+
+:link-repo-docs: https://github.com/fabric8-launcher/launcher-documentation
+:link-repo-wildfly-swarm: https://github.com/thorntail/thorntail/
+
+:link-s2i-process: https://docs.openshift.com/container-platform/latest/architecture/core_concepts/builds_and_image_streams.html#source-build
+
+
+// Mission Knowledge Proficiency
+:proficiency-foundational: Foundational
+:proficiency-advanced: Advanced
+:proficiency-expert: Expert
 
 
 // Example values
@@ -130,27 +147,4 @@ endif::[]
 :red-hat-ga-repo-id: redhat-ga
 :red-hat-ga-repo-name: Red Hat GA Repository
 :red-hat-ga-repo-url: https://maven.repository.redhat.com/ga/
-
-
-// Mission Knowledge Proficiency
-// Usage expects all of these to be capitalized
-:proficiency-foundational: Foundational
-:proficiency-advanced: Advanced
-:proficiency-expert: Expert
-:SegmentTrackerToken: ${LAUNCHPAD_TRACKER_SEGMENT_TOKEN}
-
-// Issue #489
-// externalize `github.com/appdev-documentation` repo references
-// changes NOT applicable to CHANGELOG and booster-specific README files.
-:name-repo-docs: launcher-documentation
-:link-repo-docs: https://github.com/fabric8-launcher/launcher-documentation
-
-:name-docs: launcher.fabric8.io
-:link-docs: https://launcher.fabric8.io
-
-// WildFly Swarm repository (mostly for the Contribution Guide)
-:link-repo-wildfly-swarm: https://github.com/thorntail/thorntail/
-
-// Link S2I process (primarily for guides mission interaction sections)
-:link-s2i-process: https://docs.openshift.com/container-platform/latest/architecture/core_concepts/builds_and_image_streams.html#source-build
 
