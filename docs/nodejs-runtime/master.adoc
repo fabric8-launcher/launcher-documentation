@@ -93,10 +93,9 @@ include::topics/proc_starting-your-application-locally-and-attaching-the-native-
 
 include::topics/proc_starting-your-application-locally-and-attaching-the-v8-inspector.adoc[leveloffset=+3]
 
-:nodejs:
-:env-var-name: NODE_ENV
-:env-var-val: development
-:port: 5858
+:parameter-env-var-name: NODE_ENV
+:parameter-env-var-value: development
+:parameter-port: 5858
 //include::topics/proc_debug-start-v8-debug-nodejs-openshift.adoc[leveloffset=+3]
 include::topics/proc_starting-your-application-on-openshift-in-debugging-mode.adoc[leveloffset=+3]
 

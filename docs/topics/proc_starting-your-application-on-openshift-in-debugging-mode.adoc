@@ -1,16 +1,16 @@
 // This is a parameterized module. Parameters used:
 //
 //  context: used in anchor IDs to conflicts due to duplicate IDs.
-//  env-var-name: Name of environment variable
-//  env-var-val: value of environment variable
-//  port: debugging port on OpenShift
+//  parameter-env-var-name: Name of environment variable
+//  parameter-env-var-val: value of environment variable
+//  parameter-port: debugging port on OpenShift
 //
 // Rationale: This procedure is the same for 2 or more runtimes.
 
 [id='starting-your-application-on-openshift-in-debugging-mode_{context}']
 = Starting your application on OpenShift in debugging mode
 
-To debug your {runtime}-based application on OpenShift remotely, you must set the `{env-var-name}` environment variable inside the container to `{env-var-val}` and configure port forwarding so that you can connect to your application from a remote debugger.
+To debug your {runtime}-based application on OpenShift remotely, you must set the `{parameter-env-var-name}` environment variable inside the container to `{parameter-env-var-value}` and configure port forwarding so that you can connect to your application from a remote debugger.
 
 .Prerequisites
 
@@ -27,17 +27,17 @@ To debug your {runtime}-based application on OpenShift remotely, you must set th
 $ oc get dc
 ----
 
-ifndef::nodejs[]
-. Set the `{env-var-name}` environment variable in the deployment configuration of your application to `{env-var-val}`, which configures the JVM to open the port number `{port}` for debugging. 
-endif::nodejs[]
-ifdef::nodejs[]
-. Set the `{env-var-name}` environment variable in the deployment configuration of your application to `{env-var-val}` to enable debugging.
-endif::nodejs[]
+ifndef::built-for-nodejs[]
+. Set the `{parameter-env-var-name}` environment variable in the deployment configuration of your application to `{parameter-env-var-value}`, which configures the JVM to open the port number `{parameter-port}` for debugging. 
+endif::built-for-nodejs[]
+ifdef::built-for-nodejs[]
+. Set the `{parameter-env-var-name}` environment variable in the deployment configuration of your application to `{parameter-env-var-value}` to enable debugging.
+endif::built-for-nodejs[]
 For example:
 +
 [source,bash,subs="attributes+"]
 ----
-$ oc set env dc/{value-name-app} {env-var-name}={env-var-val}
+$ oc set env dc/{value-name-app} {parameter-env-var-name}={parameter-env-var-value}
 ----
 
 . Redeploy the application if it is not set to redeploy automatically on configuration change. For example:
@@ -63,14 +63,14 @@ NAME                            READY     STATUS      RESTARTS   AGE
 --
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc port-forward {value-name-app}-3-1xrsp $LOCAL_PORT_NUMBER:{port}
+$ oc port-forward {value-name-app}-3-1xrsp $LOCAL_PORT_NUMBER:{parameter-port}
 ----
 
 Here, `$LOCAL_PORT_NUMBER` is an unused port number of your choice on your local machine.
 Remember this number for the remote debugger configuration.
 --
 
-ifdef::nodejs[]
+ifdef::built-for-nodejs[]
 . Attach the V8 inspector and perform debugging commands. 
 +
 For example, if using Google Chrome:
@@ -81,17 +81,17 @@ For example, if using Google Chrome:
 .. Click _Done_.
 .. Select your application from below _Remote Target_.
 .. You can now see the source of your application and can perform debugging actions.
-endif::nodejs[]
+endif::built-for-nodejs[]
 
-. When you are done debugging, unset the `{env-var-name}` environment variable in your application pod. For example:
+. When you are done debugging, unset the `{parameter-env-var-name}` environment variable in your application pod. For example:
 +
 [source,bash,subs="attributes+"]
 ----
-$ oc set env dc/{value-name-app} {env-var-name}-
+$ oc set env dc/{value-name-app} {parameter-env-var-name}-
 ----
 
-ifndef::nodejs[]
+ifndef::built-for-nodejs[]
 .Additional resources
 
-You can also set the `{env-var-name}_PORT` environment variable if you want to change the debug port from the default, which is `{port}`.
-endif::nodejs[]
+You can also set the `{parameter-env-var-name}_PORT` environment variable if you want to change the debug port from the default, which is `{parameter-port}`.
+endif::built-for-nodejs[]
