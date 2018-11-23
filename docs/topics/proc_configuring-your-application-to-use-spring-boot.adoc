@@ -32,7 +32,7 @@ Specify the `<type>pom</type>` and `<scope>import</scope>`:
 </project>
 ----
 
-Include the following properties in your `pom.xml` file to track the version of {SpringBoot} and the Vert.x Maven Plugin you are using:
+Include the following properties in your `pom.xml` file to track the version of {SpringBoot} and the {SpringBoot} Maven Plugin you are using:
 
 [source,xml,subs="attributes+"]
 ----
