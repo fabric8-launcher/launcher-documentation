@@ -13,7 +13,7 @@ To configure your application to use {SpringBoot}:
 Specify the `<type>pom</type>` and `<scope>import</scope>`:
 +
 --
-[source,xml]
+[source,xml,options="nowrap",subs="attributes+"]
 ----
 <project>
   ...
@@ -49,7 +49,7 @@ Include the following properties in your `pom.xml` file to track the version of 
 
 . Reference `spring-boot-maven-plugin` as the plugin used to package your application:
 +
-[source,xml]
+[source,xml,options="nowrap",subs="attributes+"]
 ----
 <project>
   ...
