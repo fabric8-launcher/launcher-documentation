@@ -21,6 +21,8 @@ include::topics/con_springboot-features-and-frameworks-summary.adoc[leveloffset=
 // Missions
 include::topics/con_missions-and-cloud-native-development-on-openshift.adoc[leveloffset=+1]
 
+include::topics/proc_configuring-your-application-to-use-spring-boot.adoc[leveloffset=+1]
+
 [[spring-boot-available-missions-and-boosters]]
 == Available missions and boosters for {SpringBoot}
 
