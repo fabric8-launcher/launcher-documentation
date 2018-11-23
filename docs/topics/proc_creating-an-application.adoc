@@ -15,6 +15,7 @@ The following procedure shows you how to:
 
 * Write some simple application code that makes use of functionalities provided by {runtime}.
 * Declare dependencies and configure the application build using a `pom.xml` file.
+* Specify a BOM in your application to ensure you are using the correct runtime artifact versions.
 * Start your application on localhost and verify that it works.
 
 
