@@ -70,9 +70,9 @@ endif::[]
 :version-thorntail-product: 2.2.0.Final-redhat-00021
 :version-thorntail-community: 2.2.0.Final
 
-:version-spring-boot: 1.5.16.RELEASE
-:version-spring-boot-bom: 1.5.16.Final-redhat-00001
-:version-spring-boot-maven-plugin: 1.5.16.RELEASE
+:version-spring-boot: 1.5.17.RELEASE
+:version-spring-boot-bom: 1.5.17.SP1-redhat-00002
+:version-spring-boot-maven-plugin: 1.5.17.RELEASE
 
 :version-vertx: 3.5.4.redhat-00002
 :version-vertx-maven-plugin: 1.0.17
