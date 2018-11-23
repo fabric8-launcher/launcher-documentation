@@ -64,7 +64,6 @@ endif::[]
 
 :name-repo-docs: launcher-documentation
 
-
 // Versions
 :version-fabric8-maven-plugin: 3.5.40
 
@@ -148,3 +147,4 @@ endif::[]
 :red-hat-ga-repo-name: Red Hat GA Repository
 :red-hat-ga-repo-url: https://maven.repository.redhat.com/ga/
 
+:name-s2i-image-openjdk: registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift:latest

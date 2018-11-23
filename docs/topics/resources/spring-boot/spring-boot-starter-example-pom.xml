@@ -10,10 +10,12 @@
   <name>MyApp</name>
   <description>My Application</description>
 
+  <!-- Specify the JDK builder image used to build your application. -->
   <properties>
-    <fabric8.generator.from>registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift:1.2</fabric8.generator.from>
+    <fabric8.generator.from>{name-s2i-image-openjdk}</fabric8.generator.from>
   </properties>
 
+  <!-- Import dependencies from the RHOAR Spring Boot BOM. -->
   <dependencyManagement>
     <dependencies>
       <dependency>
