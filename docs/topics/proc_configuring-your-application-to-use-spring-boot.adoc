@@ -1,0 +1,83 @@
+[id='configuring-your-application-to-use-spring-boot_{context}']
+= Configuring your application to use {SpringBoot}
+
+To configure your application to use {SpringBoot}:
+
+.Prerequisites
+
+* A Maven-based application
+
+.Procedure
+
+. Reference the {SpringBoot} BOM (Bill of Materials) artifact in the `<dependencyManagement>` section of the `pom.xml` file of your application.
+Specify the `<type>pom</type>` and `<scope>import</scope>`:
++
+--
+[source,xml]
+----
+<project>
+  ...
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>me.snowdrop</groupId>
+        <artifactId>spring-boot-bom</artifactId>
+        <version>{version-spring-boot-bom}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  ...
+</project>
+----
+
+Include the following properties in your `pom.xml` file to track the version of {SpringBoot} and the Vert.x Maven Plugin you are using:
+
+[source,xml,subs="attributes+"]
+----
+<project>
+  ...
+  <properties>
+    <vertx.version>{version-spring-boot}</vertx.version>
+    <vertx-maven-plugin.version>{version-spring-boot-maven-plugin}</vertx-maven-plugin.version>
+  </properties>
+  ...
+</project>
+----
+--
+
+. Reference `spring-boot-maven-plugin` as the plugin used to package your application:
++
+[source,xml]
+----
+<project>
+  ...
+  <build>
+    <plugins>
+        ...
+        <plugin>
+            <groupId>org.springframework.boot/groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <version>{version-spring-boot-maven-plugin}</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>repackage</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <redeploy>true</redeploy>
+            </configuration>
+        </plugin>
+        ...
+    </plugins>
+  </build>
+  ...
+</project>
+----
+
+.Additional resources
+
+* For more information about packaging your {SpringBoot} application, see the link:https://docs.spring.io/spring-boot/docs/current/maven-plugin/plugin-info.html[Spring Boot Maven Plugin] documentation.
