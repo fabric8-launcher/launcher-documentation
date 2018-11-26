@@ -109,9 +109,9 @@ include::topics/thorntail/docs/howto/use-a-bom/index.adoc[leveloffset=+2]
 
 include::topics/thorntail/docs/howto/enabling-logging/index.adoc[leveloffset=+3]
 include::topics/thorntail/docs/howto/logging-to-a-file/index.adoc[leveloffset=+3]
-:version!:
 
 include::topics/thorntail/docs/assemblies/assembly_configuring-a-thorntail-application.adoc[leveloffset=+2]
+:version!:
 
 == Packaging your application
 
