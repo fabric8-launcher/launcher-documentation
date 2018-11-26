@@ -57,9 +57,9 @@ Include the following properties in your `pom.xml` file to track the version of 
     <plugins>
         ...
         <plugin>
-            <groupId>org.springframework.boot/groupId>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-maven-plugin</artifactId>
-            <version>{version-spring-boot-maven-plugin}</version>
+            <version>${spring-boot-maven-plugin.version}</version>
             <executions>
                 <execution>
                     <goals>
