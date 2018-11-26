@@ -1,7 +1,7 @@
 [id='configuring-your-application-to-use-vertx_{context}']
-= Configuring your application to use {Vertx}
+= Configuring your application to use {VertX}
 
-To configure your application to use {Vertx}:
+To configure your application to use {VertX}:
 
 .Prerequisites
 
@@ -9,11 +9,11 @@ To configure your application to use {Vertx}:
 
 .Procedure
 
-. Reference the {Vertx} BOM (Bill of Materials) artifact in the `<dependencyManagement>` section of the `pom.xml` file of your application.
+. Reference the {VertX} BOM (Bill of Materials) artifact in the `<dependencyManagement>` section of the `pom.xml` file of your application.
 Specify the `<type>pom</type>` and `<scope>import</scope>`:
 +
 --
-[source,xml]
+[source,xml,options="nowrap",subs="attributes+"]
 ----
 <project>
   ...
@@ -32,15 +32,15 @@ Specify the `<type>pom</type>` and `<scope>import</scope>`:
 </project>
 ----
 
-Include the following properties in your `pom.xml` file to track the version of {Vertx} and the Vert.x Maven Plugin you are using:
+Include the following properties in your `pom.xml` file to track the version of {VertX} and the Vert.x Maven Plugin you are using:
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap",subs="attributes+"]
 ----
 <project>
   ...
   <properties>
-    <vertx.version>{version-vertx}</vertx.version>
-    <vertx-maven-plugin.version>{version-vertx-maven-plugin}</vertx-maven-plugin.version>
+    <vertx.version>${vertx.version}</vertx.version>
+    <vertx-maven-plugin.version>${vertx-maven-plugin.version}</vertx-maven-plugin.version>
   </properties>
   ...
 </project>
@@ -49,7 +49,7 @@ Include the following properties in your `pom.xml` file to track the version of 
 
 . Reference `vertx-maven-plugin` as the plugin used to package your application:
 +
-[source,xml]
+[source,xml,options="nowrap",subs="attributes+"]
 ----
 <project>
   ...
@@ -82,5 +82,4 @@ Include the following properties in your `pom.xml` file to track the version of 
 
 .Additional resources
 
-* For more information about packaging your {Vertx} application, see the link:https://vmp.fabric8.io/#packaging[Vert.x Maven Plugin] documentation.
-
+* For more information about packaging your {VertX} application, see the link:https://vmp.fabric8.io/#packaging[Vert.x Maven Plugin] documentation.
