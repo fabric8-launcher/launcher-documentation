@@ -19,7 +19,7 @@ Similar to using Maven and the Fabric8 Maven Plugin from your local host to depl
 ----
 <properties>
   ...
-  <fabric8.generator.from>{open-jdk-builder-image-name}</fabric8.generator.from>
+  <fabric8.generator.from>{name-s2i-image-openjdk}</fabric8.generator.from>
 </properties>
 ----
 * The source of the application available in GitHub.

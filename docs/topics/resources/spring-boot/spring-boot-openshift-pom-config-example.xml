@@ -1,6 +1,6 @@
 <!-- Specify the JDK builder image used to build your application. -->
 <properties>
-  <fabric8.generator.from>{open-jdk-builder-image-name}</fabric8.generator.from>
+  <fabric8.generator.from>{name-s2i-image-openjdk}</fabric8.generator.from>
 </properties>
 
 ...
