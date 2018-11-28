@@ -13,6 +13,7 @@ Prometheus connects to a monitored application to collect data; the application 
 
 * Your application configured to use `vertx-maven-plugin`.
 For more information, see xref:configuring-your-application-to-use-vertx_{context}[].
+
 * Prometheus configured to collect metrics from the application:
 +
 --
@@ -84,10 +85,12 @@ $ ./prometheus
 </dependency>
 ----
 
-. Collect metrics in your application using a custom class, for example:
+. Collect metrics in your application using a custom `launcher` class and override the `beforeStartingVertx` method to setup metrics options.
+Override the `afterStartingVertx` to configure the meter filter.
+For example:
 +
 --
-[source,java,options="nowrap"]
+[source,java]
 ----
 package org.acme;
 
@@ -105,54 +108,43 @@ import io.vertx.micrometer.backends.BackendRegistries;
 
 public class MyVertxApp extends AbstractVerticle {
 
+  public class CustomLauncher extends Launcher {
+
     @Override
-    public void start() {
-        Vertx vertx = Vertx.vertx(new VertxOptions().setMetricsOptions(
-            new MicrometerMetricsOptions()
-                .setPrometheusOptions(new VertxPrometheusOptions().setEnabled(true)
-                    .setStartEmbeddedServer(true)
-                    .setEmbeddedServerOptions(new HttpServerOptions().setPort(8081))
-                    .setEmbeddedServerEndpoint("/metrics"))
-                .setEnabled(true)));
+    public void beforeStartingVertx(VertxOptions options) {
+      options.setMetricsOptions(new MicrometerMetricsOptions()
+        .setPrometheusOptions(new VertxPrometheusOptions().setEnabled(true)
+          .setStartEmbeddedServer(true)
+          .setEmbeddedServerOptions(new HttpServerOptions().setPort(8081))
+          .setEmbeddedServerEndpoint("/metrics"))
+        .setEnabled(true));
+    }
 
-        PrometheusMeterRegistry registry = (PrometheusMeterRegistry) BackendRegistries.getDefaultNow();
-        registry.config().meterFilter(
-            new MeterFilter() {
-                @Override
-                public DistributionStatisticConfig configure(Meter.Id id, DistributionStatisticConfig config) {
-                return DistributionStatisticConfig.builder()
-                    .percentilesHistogram(true)
-                    .build()
-                    .merge(config);
-                }
-            });
-
-        vertx.deployVerticle(MyVertxApp.class.getName());
-
-        Timer timer = Timer
-            .builder("my.timer")
-            .description("a description of what this timer does")
-            .register(registry);
-
-        vertx.setPeriodic(1000, l -> {
-            timer.record(() -> {
-                vertx.createHttpServer()
-                .requestHandler(req -> req.response().end("Hello"))
-                .listen(8080);
-            });
+    @Override
+    public void afterStartingVertx(Vertx vertx) {
+      PrometheusMeterRegistry registry = (PrometheusMeterRegistry) BackendRegistries.getDefaultNow();
+      registry.config().meterFilter(
+        new MeterFilter() {
+          @Override
+          public DistributionStatisticConfig configure(Meter.Id id, DistributionStatisticConfig config) {
+            return DistributionStatisticConfig.builder()
+              .percentilesHistogram(true)
+              .build()
+              .merge(config);
+          }
         });
     }
-}
+  }
 ----
 --
-
-. Set the `<vertx.verticle>` property in the `pom.xml` file of your application to your custom class:
+. Set the `<vertx.verticle>` and `<vertx.launcher>` properties in the `pom.xml` file of your application.
 +
 [source,xml,options="nowrap"]
 ----
 <properties>
   ...
   <vertx.verticle>org.acme.MyVertxApp</vertx.verticle>
+  <vertx.launcher>CustomLauncher</vertx.launcher>
   ...
 </properties>
 ----
@@ -175,11 +167,11 @@ Hello
 . Wait at least 15 seconds for collection to occur, and see the metrics in Prometheus UI:
 +
 --
+
 . Open the Prometheus UI at link:http://localhost:9090/[http://localhost:9090/^] and type `hello` into the _Expression_ box.
 . From the suggestions, select for example `application:hello_count` and click _Execute_.
 . In the table that is displayed, you can see how many times the resource method was invoked.
 . Alternatively, select `application:hello_time_mean_seconds` to see the mean time of all the invocations.
-
 Note that all metrics you created are prefixed with `application:`.
 There are other metrics, automatically exposed by {Vertx} as the MicroProfile Metrics specification requires.
 Those metrics are prefixed with `base:` and `vendor:` and expose information about the JVM in which the application runs.
