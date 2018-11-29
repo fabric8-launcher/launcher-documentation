@@ -165,7 +165,7 @@ public class CustomVertxApp extends AbstractVerticle {
   }
 }
 ----
---
+
 
 . Set the `<vertx.verticle>` and `<vertx.launcher>` properties in the `pom.xml` file of your application to point to your custom classes:
 +
