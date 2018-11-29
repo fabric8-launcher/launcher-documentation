@@ -47,6 +47,50 @@ Include the following properties in your `pom.xml` file to track the version of 
 ----
 --
 
+. Specify the repositories containing the {SpringBoot} Maven plugin and the {SpringBoot} dependencies you are using in your application.
++
+[source,xml,subs="attributes+"]
+----
+<project>
+  ...
+  <!-- Specify the repositories containing {Spring Boot} artifacts. -->
+  <repositories>
+    <repository>
+      <id>redhat-ga</id>
+      <name>Red Hat GA Repository</name>
+      <url>https://maven.repository.redhat.com/ga/</url>
+    </repository>
+  </repositories>
+
+  <!-- Specify the repositories containing the plugins used to execute the build of your application. -->
+  <pluginRepositories>
+    <pluginRepository>
+      <id>redhat-ga</id>
+      <name>Red Hat GA Repository</name>
+      <url>https://maven.repository.redhat.com/ga/</url>
+    </pluginRepository>
+  </pluginRepositories>
+  ...
+</project>
+
+<repositories>
+  <repository>
+    <id>central</id>
+    <name>Central Repository</name>
+    <url>http://repo.maven.apache.org/maven2</url>
+  </repository>
+</repositories>
+
+<pluginRepositories>
+  <pluginRepository>
+    <id>central</id>
+    <name>Central Repository</name>
+    <url>http://repo.maven.apache.org/maven2</url>
+  </pluginRepository>
+</pluginRepositories>
+----
+
+
 . Reference `spring-boot-maven-plugin` as the plugin used to package your application:
 +
 [source,xml,options="nowrap",subs="attributes+"]
