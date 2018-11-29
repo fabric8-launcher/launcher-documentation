@@ -71,26 +71,23 @@ $ ./prometheus
 <dependency>
   <groupId>io.vertx</groupId>
   <artifactId>vertx-micrometer-metrics</artifactId>
-  <version>3.5.4</version>
 </dependency>
 <dependency>
   <groupId>io.micrometer</groupId>
   <artifactId>micrometer-registry-prometheus</artifactId>
-  <version>1.0.0</version>
 </dependency>
 <dependency>
   <groupId>io.vertx</groupId>
   <artifactId>vertx-web</artifactId>
-  <version>3.5.4</version>
 </dependency>
 ----
 
-. Collect metrics in your application using a custom `launcher` class and override the `beforeStartingVertx` method to setup metrics options.
-Override the `afterStartingVertx` to configure the meter filter.
-For example:
+. Starting with version 3.5.4, exposing metrics for Prometheus requires that you configure the {Vertx} options in a custom `Launcher` class.
 +
---
-[source,java]
+In your custom `Launcher` class, override the `beforeStartingVertx` and `afterStartingVertx` methods to configure the metrics, for example:
++
+.Example CustomLauncher.java file
+[source,java,options="nowrap"]
 ----
 package org.acme;
 
@@ -98,7 +95,6 @@ import io.micrometer.core.instrument.Meter;
 import io.micrometer.core.instrument.config.MeterFilter;
 import io.micrometer.core.instrument.distribution.DistributionStatisticConfig;
 import io.micrometer.prometheus.PrometheusMeterRegistry;
-import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Vertx;
 import io.vertx.core.VertxOptions;
 import io.vertx.core.http.HttpServerOptions;
@@ -106,45 +102,79 @@ import io.vertx.micrometer.MicrometerMetricsOptions;
 import io.vertx.micrometer.VertxPrometheusOptions;
 import io.vertx.micrometer.backends.BackendRegistries;
 
-public class MyVertxApp extends AbstractVerticle {
+public class CustomLauncher extends Launcher {
 
-  public class CustomLauncher extends Launcher {
-
-    @Override
-    public void beforeStartingVertx(VertxOptions options) {
-      options.setMetricsOptions(new MicrometerMetricsOptions()
-        .setPrometheusOptions(new VertxPrometheusOptions().setEnabled(true)
-          .setStartEmbeddedServer(true)
-          .setEmbeddedServerOptions(new HttpServerOptions().setPort(8081))
-          .setEmbeddedServerEndpoint("/metrics"))
-        .setEnabled(true));
-    }
-
-    @Override
-    public void afterStartingVertx(Vertx vertx) {
-      PrometheusMeterRegistry registry = (PrometheusMeterRegistry) BackendRegistries.getDefaultNow();
-      registry.config().meterFilter(
-        new MeterFilter() {
-          @Override
-          public DistributionStatisticConfig configure(Meter.Id id, DistributionStatisticConfig config) {
-            return DistributionStatisticConfig.builder()
-              .percentilesHistogram(true)
-              .build()
-              .merge(config);
-          }
-        });
-    }
+  @Override
+  public void beforeStartingVertx(VertxOptions options) {
+    options.setMetricsOptions(new MicrometerMetricsOptions()
+      .setPrometheusOptions(new VertxPrometheusOptions().setEnabled(true)
+        .setStartEmbeddedServer(true)
+        .setEmbeddedServerOptions(new HttpServerOptions().setPort(8081))
+        .setEmbeddedServerEndpoint("/metrics"))
+      .setEnabled(true));
   }
+
+  @Override
+  public void afterStartingVertx(Vertx vertx) {
+    PrometheusMeterRegistry registry = (PrometheusMeterRegistry) BackendRegistries.getDefaultNow();
+    registry.config().meterFilter(
+      new MeterFilter() {
+        @Override
+        public DistributionStatisticConfig configure(Meter.Id id, DistributionStatisticConfig config) {
+          return DistributionStatisticConfig.builder()
+            .percentilesHistogram(true)
+            .build()
+            .merge(config);
+        }
+    });
+}
+----
+
+. Create a custom `AbstractVerticle` class and override the `start` method to collect metrics, for example:
++
+.Example CustomVertxApp.java file
+[source,java,options="nowrap"]
+----
+package org.acme;
+
+import io.micrometer.core.instrument.MeterRegistry;
+import io.micrometer.core.instrument.Timer;
+import io.vertx.core.AbstractVerticle;
+import io.vertx.core.Vertx;
+import io.vertx.core.VertxOptions;
+import io.vertx.core.http.HttpServerOptions;
+import io.vertx.micrometer.backends.BackendRegistries;
+
+public class CustomVertxApp extends AbstractVerticle {
+
+  @Override
+  public void start() {
+    MeterRegistry registry = BackendRegistries.getDefaultNow();
+    Timer timer = Timer
+      .builder("my.timer")
+      .description("a description of what this timer does")
+      .register(registry);
+
+    vertx.setPeriodic(1000, l -> {
+      timer.record(() -> {
+      
+        // Do something
+      
+      });
+    });
+  }
+}
 ----
 --
-. Set the `<vertx.verticle>` and `<vertx.launcher>` properties in the `pom.xml` file of your application.
+
+. Set the `<vertx.verticle>` and `<vertx.launcher>` properties in the `pom.xml` file of your application to point to your custom classes:
 +
 [source,xml,options="nowrap"]
 ----
 <properties>
   ...
-  <vertx.verticle>org.acme.MyVertxApp</vertx.verticle>
-  <vertx.launcher>CustomLauncher</vertx.launcher>
+  <vertx.verticle>org.acme.CustomVertxApp</vertx.verticle>
+  <vertx.launcher>org.acme.CustomLauncher</vertx.launcher>
   ...
 </properties>
 ----
@@ -172,6 +202,7 @@ Hello
 . From the suggestions, select for example `application:hello_count` and click _Execute_.
 . In the table that is displayed, you can see how many times the resource method was invoked.
 . Alternatively, select `application:hello_time_mean_seconds` to see the mean time of all the invocations.
+
 Note that all metrics you created are prefixed with `application:`.
 There are other metrics, automatically exposed by {Vertx} as the MicroProfile Metrics specification requires.
 Those metrics are prefixed with `base:` and `vendor:` and expose information about the JVM in which the application runs.
