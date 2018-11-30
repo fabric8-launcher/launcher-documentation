@@ -85,7 +85,7 @@ $ ./prometheus
 
 . Starting with version 3.5.4, exposing metrics for Prometheus requires that you configure the {Vertx} options in a custom `Launcher` class.
 +
-In your custom `Launcher` class, override the `beforeStartingVertx` and `afterStartingVertx` methods to configure the metrics, for example:
+In your custom `Launcher` class, override the `beforeStartingVertx` and `afterStartingVertx` methods to configure the metrics engine, for example:
 +
 .Example CustomLauncher.java file
 [source,java,options="nowrap"]
