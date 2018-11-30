@@ -131,7 +131,8 @@ public class CustomLauncher extends Launcher {
 }
 ----
 
-. Create a custom `AbstractVerticle` class and override the `start` method to collect metrics, for example:
+. Create a custom `AbstractVerticle` class and override the `start` method to collect metrics.
+For example, measure the execution time using the `Timer` class:
 +
 .Example CustomVertxApp.java file
 [source,java,options="nowrap"]
