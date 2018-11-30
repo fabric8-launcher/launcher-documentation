@@ -13,6 +13,7 @@ Prometheus connects to a monitored application to collect data; the application 
 
 * Your application configured to use `vertx-maven-plugin`.
 For more information, see xref:configuring-your-application-to-use-vertx_{context}[].
+
 * Prometheus configured to collect metrics from the application:
 +
 --
@@ -70,7 +71,6 @@ $ ./prometheus
 <dependency>
   <groupId>io.vertx</groupId>
   <artifactId>vertx-micrometer-metrics</artifactId>
-  <version>3.5.4</version>
 </dependency>
 <dependency>
   <groupId>io.micrometer</groupId>
@@ -80,13 +80,14 @@ $ ./prometheus
 <dependency>
   <groupId>io.vertx</groupId>
   <artifactId>vertx-web</artifactId>
-  <version>3.5.4</version>
 </dependency>
 ----
 
-. Collect metrics in your application using a custom class, for example:
+. Starting with version 3.5.4, exposing metrics for Prometheus requires that you configure the {Vertx} options in a custom `Launcher` class.
 +
---
+In your custom `Launcher` class, override the `beforeStartingVertx` and `afterStartingVertx` methods to configure the metrics engine, for example:
++
+.Example CustomLauncher.java file
 [source,java,options="nowrap"]
 ----
 package org.acme;
@@ -95,7 +96,6 @@ import io.micrometer.core.instrument.Meter;
 import io.micrometer.core.instrument.config.MeterFilter;
 import io.micrometer.core.instrument.distribution.DistributionStatisticConfig;
 import io.micrometer.prometheus.PrometheusMeterRegistry;
-import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Vertx;
 import io.vertx.core.VertxOptions;
 import io.vertx.core.http.HttpServerOptions;
@@ -103,56 +103,80 @@ import io.vertx.micrometer.MicrometerMetricsOptions;
 import io.vertx.micrometer.VertxPrometheusOptions;
 import io.vertx.micrometer.backends.BackendRegistries;
 
-public class MyVertxApp extends AbstractVerticle {
+public class CustomLauncher extends Launcher {
 
-    @Override
-    public void start() {
-        Vertx vertx = Vertx.vertx(new VertxOptions().setMetricsOptions(
-            new MicrometerMetricsOptions()
-                .setPrometheusOptions(new VertxPrometheusOptions().setEnabled(true)
-                    .setStartEmbeddedServer(true)
-                    .setEmbeddedServerOptions(new HttpServerOptions().setPort(8081))
-                    .setEmbeddedServerEndpoint("/metrics"))
-                .setEnabled(true)));
+  @Override
+  public void beforeStartingVertx(VertxOptions options) {
+    options.setMetricsOptions(new MicrometerMetricsOptions()
+      .setPrometheusOptions(new VertxPrometheusOptions().setEnabled(true)
+        .setStartEmbeddedServer(true)
+        .setEmbeddedServerOptions(new HttpServerOptions().setPort(8081))
+        .setEmbeddedServerEndpoint("/metrics"))
+      .setEnabled(true));
+  }
 
-        PrometheusMeterRegistry registry = (PrometheusMeterRegistry) BackendRegistries.getDefaultNow();
-        registry.config().meterFilter(
-            new MeterFilter() {
-                @Override
-                public DistributionStatisticConfig configure(Meter.Id id, DistributionStatisticConfig config) {
-                return DistributionStatisticConfig.builder()
-                    .percentilesHistogram(true)
-                    .build()
-                    .merge(config);
-                }
-            });
-
-        vertx.deployVerticle(MyVertxApp.class.getName());
-
-        Timer timer = Timer
-            .builder("my.timer")
-            .description("a description of what this timer does")
-            .register(registry);
-
-        vertx.setPeriodic(1000, l -> {
-            timer.record(() -> {
-                vertx.createHttpServer()
-                .requestHandler(req -> req.response().end("Hello"))
-                .listen(8080);
-            });
-        });
-    }
+  @Override
+  public void afterStartingVertx(Vertx vertx) {
+    PrometheusMeterRegistry registry = (PrometheusMeterRegistry) BackendRegistries.getDefaultNow();
+    registry.config().meterFilter(
+      new MeterFilter() {
+        @Override
+        public DistributionStatisticConfig configure(Meter.Id id, DistributionStatisticConfig config) {
+          return DistributionStatisticConfig.builder()
+            .percentilesHistogram(true)
+            .build()
+            .merge(config);
+        }
+    });
 }
 ----
---
 
-. Set the `<vertx.verticle>` property in the `pom.xml` file of your application to your custom class:
+. Create a custom `AbstractVerticle` class and override the `start` method to collect metrics.
+For example, measure the execution time using the `Timer` class:
++
+.Example CustomVertxApp.java file
+[source,java,options="nowrap"]
+----
+package org.acme;
+
+import io.micrometer.core.instrument.MeterRegistry;
+import io.micrometer.core.instrument.Timer;
+import io.vertx.core.AbstractVerticle;
+import io.vertx.core.Vertx;
+import io.vertx.core.VertxOptions;
+import io.vertx.core.http.HttpServerOptions;
+import io.vertx.micrometer.backends.BackendRegistries;
+
+public class CustomVertxApp extends AbstractVerticle {
+
+  @Override
+  public void start() {
+    MeterRegistry registry = BackendRegistries.getDefaultNow();
+    Timer timer = Timer
+      .builder("my.timer")
+      .description("a description of what this timer does")
+      .register(registry);
+
+    vertx.setPeriodic(1000, l -> {
+      timer.record(() -> {
+      
+        // Do something
+      
+      });
+    });
+  }
+}
+----
+
+
+. Set the `<vertx.verticle>` and `<vertx.launcher>` properties in the `pom.xml` file of your application to point to your custom classes:
 +
 [source,xml,options="nowrap"]
 ----
 <properties>
   ...
-  <vertx.verticle>org.acme.MyVertxApp</vertx.verticle>
+  <vertx.verticle>org.acme.CustomVertxApp</vertx.verticle>
+  <vertx.launcher>org.acme.CustomLauncher</vertx.launcher>
   ...
 </properties>
 ----
@@ -175,6 +199,7 @@ Hello
 . Wait at least 15 seconds for collection to occur, and see the metrics in Prometheus UI:
 +
 --
+
 . Open the Prometheus UI at link:http://localhost:9090/[http://localhost:9090/^] and type `hello` into the _Expression_ box.
 . From the suggestions, select for example `application:hello_count` and click _Execute_.
 . In the table that is displayed, you can see how many times the resource method was invoked.
