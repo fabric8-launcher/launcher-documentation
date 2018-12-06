@@ -34,7 +34,7 @@ Specify the `<type>pom</type>` and `<scope>import</scope>`:
 
 Include the following properties in your `pom.xml` file to track the version of {SpringBoot} and the {SpringBoot} Maven Plugin you are using:
 
-[source,xml,subs="attributes+"]
+[source,xml,subs="attributes+",options="nowrap"]
 ----
 <project>
   ...
@@ -46,6 +46,29 @@ Include the following properties in your `pom.xml` file to track the version of 
 </project>
 ----
 --
+
+. Specify the repositories containing {ProductShortName} {SpringBoot} Starters and the {SpringBoot} Maven Plugin:
+
+[source,xml,subs="attributes+",options="nowrap"]
+----
+  <!-- Specify the repositories containing RHOAR artifacts. -->
+  <repositories>
+    <repository>
+      <id>redhat-ga</id>
+      <name>Red Hat GA Repository</name>
+      <url>https://maven.repository.redhat.com/ga/</url>
+    </repository>
+  </repositories>
+
+  <!-- Specify the repositories containing the plugins used to execute the build of your application. -->
+  <pluginRepositories>
+    <pluginRepository>
+      <id>redhat-ga</id>
+      <name>Red Hat GA Repository</name>
+      <url>https://maven.repository.redhat.com/ga/</url>
+    </pluginRepository>
+  </pluginRepositories>
+----
 
 . Reference `spring-boot-maven-plugin` as the plugin used to package your application:
 +
