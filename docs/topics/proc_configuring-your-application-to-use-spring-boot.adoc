@@ -47,11 +47,11 @@ Include the following properties in your `pom.xml` file to track the version of 
 ----
 --
 
-. Specify the repositories containing {ProductShortName} {SpringBoot} Starters and the {SpringBoot} Maven Plugin.
+. Specify the repositories containing {ProductShortName} {SpringBoot} Starters and the {SpringBoot} Maven Plugin:
 
 [source,xml,subs="attributes+",options="nowrap"]
 ----
-<!-- Specify the repositories containing RHOAR artifacts. -->
+  <!-- Specify the repositories containing RHOAR artifacts. -->
   <repositories>
     <repository>
       <id>redhat-ga</id>
