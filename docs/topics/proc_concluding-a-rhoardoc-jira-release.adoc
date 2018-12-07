@@ -1,0 +1,54 @@
+
+[id='concluding-a-rhoardoc-jira-release_{context}']
+= Concluding a RHOARDOC JIRA release
+
+When the work is done and the documentation is published, the JIRA release must be concluded.
+
+.Prerequisites
+
+* The _Project Lead_ role for the RHOARDOC project in JIRA.
++
+If you are not the Project Lead at the moment, ask the link:https://issues.jboss.org/projects/RHOARDOC/summary[current Project Lead^] to pass ownership to you.
+* The release to be concluded.
+* You are logged in to JIRA.
+
+.Procedure
+
+. Open the RHOARDOC link:https://issues.jboss.org/projects/RHOARDOC?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased[Releases^] page in your web browser.
+. Click on the name of the release to be concluded.
+. Check the following to ensure that the release is correct:
++
+* All issues from the last sprints are present in the release.
++
+Use the link:https://issues.jboss.org/issues/?filter=12337788[RHOARDOC issues without Release^] filter to view completed issues that do not have the _Fix Version/s_ field set, and so they do not appear in this release.
++
+Assign the _Fix Version/s_ field to these issues:
++
+.. Click the *Tools* button in the top right corner of the page.
+.. From the menu, select *all `$COUNT` issue(s)*, where `$COUNT` is the number of issues in the view.
+.. In the next page, select the issues completed in this release and click *Next*.
+.. Select *Edit Issues* from the list and click *Next*.
+.. Check *Change Fix Version/s*, select _Add to existing_ in the menu on the side if it is not selected already, and select the appropriate release from the empty menu.
+Your release is listed under _Unreleased Versions._
++
+At the bottom of the page, uncheck *Send mail for this update* and click *Next*.
+.. When JIRA finishes making the changes, click *Acknowledge.*
+
+* All issues in the release are in the _Resolved_ or _Verified_ state.
++
+If they are not, work with the assignees to ensure the issues are resolved and verified by the QE team if applicable.
+
+. Close all issues when the documentation is published:
++
+.. On the page with the release, click *Issues done*.
+.. In the top right corner, click *View in Issue Navigator*.
+.. Click the *Tools* button in the top right corner of the page.
+.. From the menu, select *all `$COUNT` issue(s)*, where `$COUNT` is the number of issues in the view.
+.. In the next page, select all issues by clicking the check box in the header of the table and click *Next*.
+.. Select *Transition Issues* from the list and click *Next*.
+.. Select *Close Issue* from the list and click *Next*.
+If there are multiple *Close Issue* options available, select the one that moves all statuses to _CLOSED._
+.. When JIRA finishes making the changes, click *Acknowledge.*
+
+. On the page with the release, click *Release* in the top right corner to conclude the release.
+

@@ -1,0 +1,6 @@
+
+[id='releasing-customer-portal-docs_{context}']
+= Releasing Customer Portal docs
+
+To release Customer Portal docs, follow the instructions in the link:https://url.corp.redhat.com/rhoar-docs-repo[RHOAR docs repository^] (VPN required).
+

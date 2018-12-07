@@ -1,0 +1,17 @@
+
+[id='documentation-release-life-cycle_{context}']
+= Documentation release life cycle
+
+The documentation releases occur periodically, and the work is tracked in JIRA.
+The person responsible is typically the Documentation Product Manager (DPM), but any member of the team with sufficient privileges can perform the respective tasks.
+The prerequisites are included separately with each task.
+
+include::proc_creating-a-rhoardoc-jira-release.adoc[leveloffset=+1]
+
+include::proc_releasing-launcher-docs.adoc[leveloffset=+1]
+
+include::ref_releasing-customer-portal-docs.adoc[leveloffset=+1]
+
+include::proc_concluding-a-rhoardoc-jira-release.adoc[leveloffset=+1]
+
+

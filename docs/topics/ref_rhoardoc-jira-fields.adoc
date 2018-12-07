@@ -57,6 +57,8 @@ Resolution:: How the issue was resolved.
 +
 By default, it is set to _Unresolved._
 
+Fix Version/s:: The release when the resolution of the issue was--or will be--published.
+
 Assignee:: The person selected to address the issue.
 +
 The issue is unassigned if set to _Unassigned,_ or if it is assigned to the DPM and has the NEW status.
