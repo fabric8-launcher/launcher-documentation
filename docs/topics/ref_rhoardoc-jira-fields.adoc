@@ -5,6 +5,11 @@
 The following fields are used in the link:https://issues.jboss.org/browse/RHOARDOC[RHOARDOC^] JIRA project:
 
 .RHOARDOC JIRA fields
+Summary:: A brief description of the issue.
++
+This is the displayed name of the issue.
+Include important information about the issue like its nature and where it occurs, but be brief.
+
 Issue Type:: The type of the issue.
 +
 --
@@ -28,12 +33,9 @@ The following priorities are used:
 * *Minor:* The issue is of low importance can be deferred to a later date.
 --
 
-Summary:: A brief description of the issue.
+Epic Link:: The epic that the issue is part of.
 +
-This is the displayed name of the issue.
-Include important information about the issue like its nature and where it occurs, but be brief.
-
-Description:: A complete description of the issue.
+Only valid for _Bugs, Enhancements_ and _Tasks._
 
 Sprint:: Which sprint the issue belongs to.
 +
@@ -46,19 +48,21 @@ If you believe an issue requires more than 13 points, it is likely an Epic and s
 +
 The recommended number of story points _per person per sprint_ is 13 in total.
 
+Description:: A complete description of the issue.
+
+Status:: The current status of the issue.
+For more information, see xref:rhoardoc-jira-workflow[].
+
+Resolution:: How the issue was resolved.
++
+By default, it is set to _Unresolved._
+
 Assignee:: The person selected to address the issue.
 +
 The issue is unassigned if set to _Unassigned,_ or if it is assigned to the DPM and has the NEW status.
-
-Epic Link:: The epic that the issue is part of.
-+
-Only valid for _Bugs, Enhancements_ and _Tasks._
 
 Due Date:: A specific date before which the issue should be resolved.
 +
 If not set, check the linked epic or parent issue if any.
 They might have a Due Date set.
 
-Resolution:: How the issue was resolved.
-+
-By default, it is set to _Unresolved._
