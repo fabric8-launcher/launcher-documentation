@@ -1,0 +1,29 @@
+
+[id='creating-a-rhoardoc-jira-release_{context}']
+= Creating a RHOARDOC JIRA release
+
+The JIRA _Release_ mechanism is used to track work between publishings of the documentation.
+
+.Prerequisites
+
+* The _Project Lead_ role for the RHOARDOC project in JIRA.
++
+If you are not the Project Lead at the moment, ask the link:https://issues.jboss.org/projects/RHOARDOC/summary[current Project Lead^] to pass ownership to you.
+* You are logged in to JIRA.
+
+
+.Procedure
+
+. Open the RHOARDOC link:https://issues.jboss.org/plugins/servlet/project-config/RHOARDOC/versions[Versions^] page in your web browser.
+. Enter the name for the new release in the *Name* field on the top of the release list.
++
+The name must correspond to the tag of the new release, that is the expected date of the Fabric8 Launcher documentation publishing in the ISO format, for example `2018-12-07` for December 7, 2018.
++
+If the publishing date changes, rename the release.
+Do not rename the release for re-tags, for example `2018-12-07_2`.
+. Enter a suitable description in the *Description* field:
+** For scheduled releases, use _Scheduled release._
+** For runtime or unscheduled releases, describe what is being released, for example _{VertX} 3.6._
+. Enter the expected release date in the *Release date* field.
+. Click *Add* to create the release.
+

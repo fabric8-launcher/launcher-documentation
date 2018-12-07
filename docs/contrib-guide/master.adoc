@@ -66,7 +66,9 @@ include::topics/proc_merging-contributions.adoc[leveloffset=+3]
 
 include::topics/proc_syncing-with-wildflyswarm-docs.adoc[leveloffset=+3]
 
-include::topics/proc_releasing-launcher-docs.adoc[leveloffset=+3]
+
+include::topics/assembly_documentation-release-life-cycle.adoc[leveloffset=+2]
+
 
 === Issues
 

@@ -15,9 +15,17 @@ CODING IN PROGRESS:: The assignee is actively working on addressing the issue.
 
 PULL REQUEST SENT:: The assignee has submitted a draft of the new or updated content for review in a pull request.
 
-RESOLVED:: The issue is fixed from the documentation team's perspective.
+RESOLVED::
++
+WARNING: Specify the current release in the _Fix Version/s_ field when setting the issue to _RESOLVED._
++
+The issue is fixed from the documentation team's perspective.
++
+If the issue has only {name-launcher} impact, this is the final status of the issue before it is closed.
 
 READY FOR QA:: The issue is ready for review by the QE team on the Customer Portal stage.
++
+If the issue affects the Customer Portal in addition to the {name-launcher}, set the issue to this status by clicking the *Hand Over to QA* button.
 
 QA IN PROGRESS:: The QE team is in the process of testing the new or updated content.
 
