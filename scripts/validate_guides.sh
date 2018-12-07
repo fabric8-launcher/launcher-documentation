@@ -9,6 +9,14 @@ failed_builds=""
 failed_validations=""
 exit_status=0
 
+echo "=== Validating Guides ==="
+
+# Check if validation is disabled
+if test -f $SCRIPT_SRC/../.validation-disabled; then
+    echo Validation disabled.
+    exit 0
+fi
+
 # Check for binaries
 for binary in asciidoctor xmllint; do
     if ! $binary --version &>/dev/null; then
@@ -18,7 +26,6 @@ for binary in asciidoctor xmllint; do
 done
 
 # Validate Books
-echo "=== Validating Guides ==="
 for book in $SCRIPT_SRC/../docs/*/master.adoc; do
     dir="$(dirname $book)"
     book_name="$(basename $dir)"

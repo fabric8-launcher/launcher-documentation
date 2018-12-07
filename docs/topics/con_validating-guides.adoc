@@ -15,7 +15,7 @@ To perform the validation, execute the `scripts/validate_guides.sh` script:
 $ scripts/validate_guides.sh
 ----
 
-== Excluding books from validation
+== Excluding individual books from validation
 
 In case a failed validation is an expected behavior--for example if there is a bug in the XML generation--you can remove the book from validation by adding a file named `.ci-ignore` to the main directory of the book, for example:
 
@@ -37,5 +37,14 @@ To re-enable validation of the book, remove the `.ci-ignore` file, for example:
 [source,bash]
 ----
 $ rm docs/thorntail-runtime/.ci-ignore
+----
+
+== Disabling validation
+
+To disable validation of all books at the same time, create an empty `.validation-disabled` file in the root directory of the repository:
+
+[source,bash,options="nowrap"]
+----
+$ touch .validation-disabled
 ----
 
