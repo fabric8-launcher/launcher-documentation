@@ -1,7 +1,7 @@
 [id='configuring-your-application-to-use-spring-boot_{context}']
 = Configuring your application to use {SpringBoot}
 
-To configure your application to use {SpringBoot}:
+Reference the {SpringBoot} BOM (Bill of Materials) artifact in the `pom.xml` file at the root directory of your application.
 
 .Prerequisites
 
@@ -9,8 +9,7 @@ To configure your application to use {SpringBoot}:
 
 .Procedure
 
-. Reference the {SpringBoot} BOM (Bill of Materials) artifact in the `<dependencyManagement>` section of the `pom.xml` file of your application.
-Specify the `<type>pom</type>` and `<scope>import</scope>`:
+. Open the `pom.xml` file, add the `me.snowdrop:spring-boot-bom` artifact to the `<dependencyManagement>` section, and specify the `<type>pom</type>` and `<scope>import</scope>`:
 +
 --
 [source,xml,options="nowrap",subs="attributes+"]
@@ -31,9 +30,11 @@ Specify the `<type>pom</type>` and `<scope>import</scope>`:
   ...
 </project>
 ----
+--
 
-Include the following properties in your `pom.xml` file to track the version of {SpringBoot} and the {SpringBoot} Maven Plugin you are using:
-
+. Include the following properties to track the version of {SpringBoot} and the {SpringBoot} Maven Plugin you are using:
++
+--
 [source,xml,subs="attributes+",options="nowrap"]
 ----
 <project>
@@ -49,6 +50,7 @@ Include the following properties in your `pom.xml` file to track the version of 
 
 . Specify the repositories containing {ProductShortName} {SpringBoot} Starters and the {SpringBoot} Maven Plugin:
 +
+--
 [source,xml,subs="attributes+",options="nowrap"]
 ----
   <!-- Specify the repositories containing RHOAR artifacts. -->
@@ -69,9 +71,11 @@ Include the following properties in your `pom.xml` file to track the version of 
     </pluginRepository>
   </pluginRepositories>
 ----
+--
 
 . Reference `spring-boot-maven-plugin` as the plugin used to package your application:
 +
+--
 [source,xml,options="nowrap",subs="attributes+"]
 ----
 <project>
@@ -100,6 +104,7 @@ Include the following properties in your `pom.xml` file to track the version of 
   ...
 </project>
 ----
+--
 
 .Additional resources
 

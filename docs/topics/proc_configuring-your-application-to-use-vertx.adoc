@@ -1,7 +1,7 @@
 [id='configuring-your-application-to-use-vertx_{context}']
 = Configuring your application to use {VertX}
 
-To configure your application to use {VertX}:
+Reference the {VertX} BOM (Bill of Materials) artifact in the `pom.xml` file at the root directory of your application.
 
 .Prerequisites
 
@@ -9,8 +9,7 @@ To configure your application to use {VertX}:
 
 .Procedure
 
-. Reference the {VertX} BOM (Bill of Materials) artifact in the `<dependencyManagement>` section of the `pom.xml` file of your application.
-Specify the `<type>pom</type>` and `<scope>import</scope>`:
+. Open the `pom.xml` file, add the `io.vertx:vertx-dependencies` artifact to the `<dependencyManagement>` section, and specify the `<type>pom</type>` and `<scope>import</scope>`:
 +
 --
 [source,xml,options="nowrap",subs="attributes+"]
@@ -31,9 +30,10 @@ Specify the `<type>pom</type>` and `<scope>import</scope>`:
   ...
 </project>
 ----
-
-Include the following properties in your `pom.xml` file to track the version of {VertX} and the Vert.x Maven Plugin you are using:
-
+--
+. Include the following properties to track the version of {VertX} and the Vert.x Maven Plugin you are using:
++
+--
 [source,xml,options="nowrap",subs="attributes+"]
 ----
 <project>
@@ -49,6 +49,7 @@ Include the following properties in your `pom.xml` file to track the version of 
 
 . Reference `vertx-maven-plugin` as the plugin used to package your application:
 +
+--
 [source,xml,options="nowrap",subs="attributes+"]
 ----
 <project>
@@ -79,6 +80,33 @@ Include the following properties in your `pom.xml` file to track the version of 
   ...
 </project>
 ----
+--
+
+. Include `repositories` and `pluginRepositories` to specify the repositories that contain the artifacts and plugins to build your application:
++
+--
+[source,xml,options="nowrap",subs="attributes+"]
+----
+<project>
+...
+  <repositories>
+    <repository>
+      <id>{red-hat-ga-repo-id}</id>
+      <name>{red-hat-ga-repo-name}</name>
+      <url>{red-hat-ga-repo-url}</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>{red-hat-ga-repo-id}</id>
+      <name>{red-hat-ga-repo-name}</name>
+      <url>{red-hat-ga-repo-url}</url>
+    </pluginRepository>
+  </pluginRepositories>
+...
+</project>
+----
+--
 
 .Additional resources
 
