@@ -1,0 +1,47 @@
+
+[id='documentation-publication-announcement_{context}']
+= Documentation publication announcement
+
+When the documentation is updated, send an e-mail containing a link to the new version and the diff from the live version to the following mailing lists:
+
+* obsidian-pm-list@redhat.com
+* obsidian-team-list@redhat.com
+* rhoar-docs-team@redhat.com
+* rhoar-qe-team@redhat.com
+
+Send the e-mail also to the following mailing lists if the publication concerns the respective runtime specifically:
+
+* Node.js: node-devel@redhat.com
+* Spring Boot: rh-spring-engineering@redhat.com
+* Thorntail: thorntail-internal@redhat.com
+* Vert.x: vertx-devel@redhat.com
+
+.Sample e-mail content
+====
+You can use the following template for the e-mail:
+
+WARNING: Replace the placeholders with real data before sending.
+
+----
+Hello,
+
+We have released the Fabric8 Launcher documentation today:
+
+Docs link: https://launcher.fabric8.io/docs/
+Tag: https://github.com/fabric8-launcher/launcher-documentation/releases/tag/$NEW_TAG
+Diff: https://github.com/fabric8-launcher/launcher-documentation/compare/$PREVIOUS_TAG...$NEW_TAG
+
+We have also synced the documentation to the Customer Portal stage:
+
+Docs link: https://access.redhat.com/documentation/red-hat-openshift-application-runtimes/
+Tag: $LINK_TO_THE_TAG
+Diff: $LINK_TO_THE_COMPARISON
+
+The following issues were fixed:
+
+https://issues.jboss.org/projects/RHOARDOC/versions/$RELEASE_ID
+
+Please reach out to rhoar-docs-team@redhat.com if you have any questions.
+----
+====
+

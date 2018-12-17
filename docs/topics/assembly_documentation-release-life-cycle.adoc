@@ -12,6 +12,8 @@ include::proc_releasing-launcher-docs.adoc[leveloffset=+1]
 
 include::ref_releasing-customer-portal-docs.adoc[leveloffset=+1]
 
+include::con_documentation-publication-announcement.adoc[leveloffset=+1]
+
 include::proc_concluding-a-rhoardoc-jira-release.adoc[leveloffset=+1]
 
 
