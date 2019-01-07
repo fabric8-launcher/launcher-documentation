@@ -37,6 +37,13 @@ $ minishift addons apply fabric8-launcher \
 +
 Installing the add-on creates a new project called `rhoarpad` where the {name-launcher} tool runs.
 
+. Log in to your {OpenShiftLocal} instance:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+oc login {value-url-osl-auth} -u developer -p developer
+----
+
 . Monitor the status of the {name-launcher} tool until it completes start up.
 +
 [source,bash,options="nowrap",subs="attributes+"]
