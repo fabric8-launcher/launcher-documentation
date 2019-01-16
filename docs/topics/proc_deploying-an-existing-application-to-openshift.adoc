@@ -33,9 +33,9 @@ endif::[]
 
 +
 In this profile, the Fabric8 Maven plugin is invoked for building and deploying the application to OpenShift.
+ifdef::built-for-vertx[]
 . Create a `deployment.yaml` file in the `src/main/fabric8` directory and add the `JAVA_OPTIONS` described in the example.
 +
-ifdef::built-for-vertx[]
 [source,yaml,options="nowrap",subs="attributes+"]
 ----
 include::resources/vert-x/vertx-fmp-deployment.yaml[]
