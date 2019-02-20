@@ -58,6 +58,8 @@ endif::[]
 :name-landing-page: Welcome
 :name-guide-contrib: Contribution Guide
 :name-guide-spring-boot: {SpringBoot} Runtime Guide
+//FIXME: define unique guide name
+//:name-guide-spring-boot-1-5: {SpringBoot} 1.5 Runtime Guide
 :name-guide-vertx: {VertX} Runtime Guide
 :name-guide-thorntail: {WildFlySwarm} Runtime Guide
 :name-guide-nodejs: {Node} Runtime Guide
