@@ -13,10 +13,10 @@ Similar to using Maven and the Fabric8 Maven Plugin from your local host to depl
 * link:https://docs.openshift.org/latest/using_images/other_images/jenkins.html[The Jenkins container image] running on same OpenShift cluster.
 * A JDK and Maven installed and configured on your Jenkins server.
 * An application configured to use Maven, the Fabric8 Maven Plugin, and the Red Hat base image in the `pom.xml`.
-ifndefbuilt-for-spring-boot-1-5[]
+ifndef::built-for-spring-boot-1-5[]
 +
 include::note_spring-boot-2-supported-builder-images.adoc[]
-endifbuilt-for-spring-boot-1-5[]
+endif::built-for-spring-boot-1-5[]
 +
 .Example `pom.xml`
 [source,xml,options="nowrap",subs="attributes+"]

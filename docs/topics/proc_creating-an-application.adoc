@@ -43,10 +43,10 @@ include::resources/vert-x/vertx-starter-example-pom.xml[]
 ----
 endif::[]
 ifdef::built-for-spring-boot[]
-ifndefbuilt-for-spring-boot-1-5[]
+ifndef::built-for-spring-boot-1-5[]
 include::note_spring-boot-2-supported-builder-images.adoc[]
 +
-endifbuilt-for-spring-boot-1-5[]
+endif::built-for-spring-boot-1-5[]
 [source,xml,options="nowrap",subs="attributes+"]
 ----
 include::resources/spring-boot/spring-boot-starter-example-pom.xml[]

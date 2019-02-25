@@ -3,12 +3,12 @@
 // Consider placing this in the Spring Boot runtime documentation instead?
 // You can Package and deploy your application as a war file
 
-ifdefbuilt-for-spring-boot-1-5[]
+ifdef::built-for-spring-boot-1-5[]
 [IMPORTANT]
 --
 Red Hat does not support packaging and deploying {SpringBoot} applications using WAR files in {ProductShortName} {SpringBoot} 1.5.x.
 --
-endifbuilt-for-spring-boot-1-5[]
+endif::built-for-spring-boot-1-5[]
 
 As an alternative to the supported application packaging and deployment workflow using fat JAR files, you can package and deploy a {SpringBoot} application as a WAR (Web Application Archive) file.
 You must configure your build and deployment settings to ensure that your application builds and deploys correctly on OpenShift.
