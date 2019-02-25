@@ -14,7 +14,7 @@ This guide covers concepts as well as practical details needed by developers to 
 
 [IMPORTANT]
 --
-This guide applies to {SpringBoot} {version-spring-boot}.
+This guide applies to {SpringBoot} 2.1.x.
 For releases based on {SpringBoot} 1.5.x, follow the link:{link-guide-spring-boot-1-5}[{name-guide-spring-boot-1-5}].
 --
 

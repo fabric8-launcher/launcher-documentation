@@ -177,4 +177,6 @@ Those metrics are prefixed with `base:` and `vendor:` and expose information abo
 
 .Additional resources
 
-* For additional information on using Micrometer metrics with Spring Boot, see the link:https://micrometer.io/docs/ref/spring/1.5[Micrometer reference documentation for Spring 1.5.x^].
+ifdef::built-for-spring-boot-1-5[* For additional information on using Micrometer metrics with Spring Boot, see the link:https://micrometer.io/docs/ref/spring/1.5[Micrometer reference documentation for Spring 1.5.x^].]
+
+ifndef::built-for-spring-boot-1-5[* For additional information on using Micrometer metrics with Spring Boot, see the link:https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready-metrics[Micrometer reference documentation for Spring 2.1.x^].]
