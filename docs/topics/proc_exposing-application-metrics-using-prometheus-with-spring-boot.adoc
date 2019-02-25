@@ -65,8 +65,11 @@ $ ./prometheus
 
 .Procedure
 
+ifdef::spring-boot-1-5[]
 . Include the `spring-boot-starter-actuator`, `micrometer-registry-prometheus` and `micrometer-spring-legacy` dependencies in your `pom.xml`.
 The `micrometer-spring-legacy` dependency is required to provide Micrometer support for {SpringBoot} 1.5 applications.
+endif::spring-boot-1-5[]
+ifndef::spring-boot-1-5[. Include the `spring-boot-starter-actuator` and `micrometer-registry-prometheus` dependencies in your `pom.xml`.]
 +
 .pom.xml
 [source,xml,options="nowrap"]
