@@ -2,6 +2,8 @@ include::topics/templates/document-attributes.adoc[]
 //override for a cleaner TOC
 :toclevels: 2
 :built-for-spring-boot:
+// consider replacing this with :built-for-spring-boot-1-5:
+:spring-boot-1-5:
 
 //Legacy Spring Boot Version Attributes
 //override latest SB version
@@ -140,9 +142,7 @@ This section contains information about monitoring your {SpringBoot}{ndash}based
 include::topics/proc_accessing-jvm-metrics-using-the-hawtio-console-on-openshift.adoc[leveloffset=+3]
 
 ifdef::launcher-docs-only[]
-:spring-boot-1-5:
 include::topics/proc_exposing-application-metrics-using-prometheus-with-spring-boot.adoc[leveloffset=+2]
-:spring-boot-1-5!:
 endif::[]
 
 [appendix]
@@ -172,6 +172,7 @@ include::topics/ref_proficiency-levels.adoc[leveloffset=+1]
 [appendix]
 include::topics/ref_glossary.adoc[leveloffset=+1]
 
+:spring-boot-1-5!:
 :version-spring-boot!:
 :version-spring-boot-bom!:
 :version-spring-boot-maven-plugin!:
