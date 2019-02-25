@@ -11,7 +11,7 @@ include::topics/templates/document-attributes.adoc[]
 :version-spring-boot-maven-plugin: 1.5.17.RELEASE
 
 
-= {name-guide-spring-boot}
+= {name-guide-spring-boot-1-5}
 :runtime: {SpringBoot}
 //var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
 :docs-topic:
