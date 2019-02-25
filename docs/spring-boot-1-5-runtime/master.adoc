@@ -2,8 +2,7 @@ include::topics/templates/document-attributes.adoc[]
 //override for a cleaner TOC
 :toclevels: 2
 :built-for-spring-boot:
-// consider replacing this with :built-for-spring-boot-1-5:
-:spring-boot-1-5:
+:built-for-spring-boot-1-5:
 
 //Legacy Spring Boot Version Attributes
 //override latest SB version
@@ -172,7 +171,7 @@ include::topics/ref_proficiency-levels.adoc[leveloffset=+1]
 [appendix]
 include::topics/ref_glossary.adoc[leveloffset=+1]
 
-:spring-boot-1-5!:
+:built-for-spring-boot-1-5!:
 :version-spring-boot!:
 :version-spring-boot-bom!:
 :version-spring-boot-maven-plugin!:
