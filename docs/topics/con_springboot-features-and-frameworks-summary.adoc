@@ -13,17 +13,17 @@ Features such as Actuator are available directly in {SpringBoot}.
 |====================================================================
 |Feature |Problem Addressed |Cloud Native |Framework
 
-//a|
-//Circuit Breaker
+a|
+Circuit Breaker
 
-//a|
-//Switches between services and continues to process incoming requests without interruption in case of service failure.
+a|
+Switches between services and continues to process incoming requests without interruption in case of service failure.
 
-//a|
-//Yes
+a|
+Yes
 
-//a|
-//link:https://github.com/spring-cloud/spring-cloud-netflix[Spring Cloud Netflix] - Hystrix
+a|
+link:https://github.com/spring-cloud/spring-cloud-netflix[Spring Cloud Netflix] - Hystrix
 
 
 a|
