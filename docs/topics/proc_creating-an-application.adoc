@@ -49,7 +49,114 @@ include::note_spring-boot-2-supported-builder-images.adoc[]
 endif::built-for-spring-boot-1-5[]
 [source,xml,options="nowrap",subs="attributes+"]
 ----
-include::resources/spring-boot/spring-boot-starter-example-pom.xml[]
+\include::resources/spring-boot/spring-boot-starter-example-pom.xml[]
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.example</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+
+  <name>MyApp</name>
+  <description>My Application</description>
+
+  <!-- Specify the JDK builder image used to build your application. -->
+  <properties>
+    <fabric8.generator.from>{name-s2i-image-openjdk}</fabric8.generator.from>
+  </properties>
+
+  <!-- Import dependencies from the RHOAR Spring Boot BOM. -->
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>me.snowdrop</groupId>
+        <artifactId>spring-boot-bom</artifactId>
+        <version>{version-spring-boot-bom}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-tomcat</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+ifdef::built-for-spring-boot-1-5[]
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-spring-boot-starter-jaxrs</artifactId>
+    </dependency>
+endif::[]
+ifndef::built-for-spring-boot-1-5[]
+    <dependency>
+      <groupId>org.jboss.resteasy</groupId>
+      <artifactId>resteasy-spring-boot-starter</artifactId>
+    </dependency>
+endif::[]
+    <dependency>
+      <groupId>com.fasterxml.jackson.jaxrs</groupId>
+      <artifactId>jackson-jaxrs-json-provider</artifactId>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>{version-spring-boot-maven-plugin}</version>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- Specify the repositories containing RHOAR artifacts -->
+  <repositories>
+    <repository>
+      <id>{red-hat-ga-repo-id}</id>
+      <name>{red-hat-ga-repo-name}</name>
+      <url>{red-hat-ga-repo-url}</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>{red-hat-ga-repo-id}</id>
+      <name>{red-hat-ga-repo-name}</name>
+      <url>{red-hat-ga-repo-url}</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <profiles>
+    <profile>
+      <id>openshift</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>io.fabric8</groupId>
+            <artifactId>fabric8-maven-plugin</artifactId>
+            <version>{version-fabric8-maven-plugin}</version>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>resource</goal>
+                  <goal>build</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>
 ----
 endif::[]
 
