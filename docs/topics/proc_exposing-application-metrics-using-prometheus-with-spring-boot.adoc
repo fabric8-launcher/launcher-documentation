@@ -65,11 +65,14 @@ $ ./prometheus
 
 .Procedure
 
+ifdef::built-for-spring-boot-1-5[]
 . Include the `spring-boot-starter-actuator`, `micrometer-registry-prometheus` and `micrometer-spring-legacy` dependencies in your `pom.xml`.
 The `micrometer-spring-legacy` dependency is required to provide Micrometer support for {SpringBoot} 1.5 applications.
+endif::built-for-spring-boot-1-5[]
+ifndef::built-for-spring-boot-1-5[. Include the `spring-boot-starter-actuator` and `micrometer-registry-prometheus` dependencies in your `pom.xml`.]
 +
 .pom.xml
-[source,xml]
+[source,xml,options="nowrap"]
 ----
 <dependencies>
   ...
@@ -77,11 +80,13 @@ The `micrometer-spring-legacy` dependency is required to provide Micrometer supp
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-actuator</artifactId>
   </dependency>
+ifdef::built-for-spring-boot-1-5[]
   <dependency>
     <groupId>io.micrometer</groupId>
     <artifactId>micrometer-spring-legacy</artifactId>
     <version>1.1.0</version>
   </dependency>
+endif::built-for-spring-boot-1-5[]
   <dependency>
     <groupId>io.micrometer</groupId>
     <artifactId>micrometer-registry-prometheus</artifactId>
@@ -172,4 +177,6 @@ Those metrics are prefixed with `base:` and `vendor:` and expose information abo
 
 .Additional resources
 
-* For additional information on using Micrometer metrics with Spring Boot, see the link:https://micrometer.io/docs/ref/spring/1.5[Micrometer reference documentation for Spring 1.5.x^].
+ifdef::built-for-spring-boot-1-5[* For additional information on using Micrometer metrics with Spring Boot, see the link:https://micrometer.io/docs/ref/spring/1.5[Micrometer reference documentation for Spring 1.5.x^].]
+
+ifndef::built-for-spring-boot-1-5[* For additional information on using Micrometer metrics with Spring Boot, see the link:https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready-metrics[Micrometer reference documentation for Spring 2.1.x^].]

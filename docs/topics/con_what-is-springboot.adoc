@@ -4,10 +4,9 @@
 {SpringBoot} lets you create stand-alone Spring-based applications.
 See link:{link-guide-spring-boot}#additional-springboot-resources_spring-boot[Additional Resources] for a list of documents about {SpringBoot}.
 
-The {SpringBoot} runtime gives you the advantages and convenience of the OpenShift platform:
+{SpringBoot} on OpenShift combines streamlined application development capabilities of {SpringBoot} with the infrastructure and container orchestration functionalities of the OpenShift, such as:
 
 * rolling updates
 * service discovery
 * canary deployments
 * ways to implement common microservice patterns: externalized configuration, health check, circuit breaker, and failover
-

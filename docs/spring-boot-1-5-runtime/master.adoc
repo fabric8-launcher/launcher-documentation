@@ -2,8 +2,16 @@ include::topics/templates/document-attributes.adoc[]
 //override for a cleaner TOC
 :toclevels: 2
 :built-for-spring-boot:
+:built-for-spring-boot-1-5:
 
-= {name-guide-spring-boot}
+//Legacy Spring Boot Version Attributes
+//override latest SB version
+:version-spring-boot: 1.5.17.RELEASE
+:version-spring-boot-bom: 1.5.17.SP1-redhat-00002
+:version-spring-boot-maven-plugin: 1.5.17.RELEASE
+
+
+= {name-guide-spring-boot-1-5}
 :runtime: {SpringBoot}
 //var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
 :docs-topic:
@@ -11,12 +19,6 @@ include::topics/templates/document-attributes.adoc[]
 :context: spring-boot
 
 This guide covers concepts as well as practical details needed by developers to use the {SpringBoot} runtime. It provides information governing the design of a {SpringBoot} application deployed as a Linux container on OpenShift.
-
-[IMPORTANT]
---
-This guide applies to {SpringBoot} 2.1.x.
-For releases based on {SpringBoot} 1.5.x, follow the link:{link-guide-spring-boot-1-5}[{name-guide-spring-boot-1-5}].
---
 
 include::topics/con_what-is-springboot.adoc[leveloffset=+1]
 
@@ -168,3 +170,8 @@ include::topics/ref_proficiency-levels.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/ref_glossary.adoc[leveloffset=+1]
+
+:built-for-spring-boot-1-5!:
+:version-spring-boot!:
+:version-spring-boot-bom!:
+:version-spring-boot-maven-plugin!:

@@ -1,0 +1,5 @@
+[NOTE]
+--
+For building and deploying your applications to OpenShift, {SpringBoot} 2.1.x only supports builder images based on OpenJDK 8 and OpenJDK 11.
+Oracle JDK and OpenJDK 9 builder images are not supported.
+--

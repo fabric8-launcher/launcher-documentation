@@ -64,20 +64,6 @@ Yes - Using internal Kubernetes Load Balancer
 a|
 -
 
-
-a|
-Client Side Load Balancing
-
-a|
-Transparently handle load balancing on the client for better control and load distribution across multiple service instances.
-
-a|
-No
-
-a|
-link:https://github.com/spring-cloud-incubator/spring-cloud-kubernetes[Spring Cloud Kubernetes] - Ribbon
-
-
 a|
 Externalize Parameters
 

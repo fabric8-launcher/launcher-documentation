@@ -13,9 +13,9 @@
 :link-guide-minishift-installation: /docs/minishift-installation.html
 :link-guide-getting-started: /docs/getting-started.html
 :link-guide-spring-boot: /docs/spring-boot-runtime.html
+:link-guide-spring-boot-1-5: /docs/spring-boot-1-5-runtime.html
 :link-guide-vertx: /docs/vertx-runtime.html
 :link-guide-thorntail: /docs/thorntail-runtime.html
 :link-guide-nodejs: /docs/nodejs-runtime.html
 
 :link-launcher-yaml: /latest-launcher-template
-
