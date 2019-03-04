@@ -10,9 +10,7 @@ In addition to xref:mission-rest-http-spring-boot[using a booster], you can crea
 :parameter-maven-command: $ mvn spring-boot:run
 :parameter-response: {"content":"Greetings!"}
 :parameter-url: http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}
-ifdef::built-for-spring-boot-1-5[]
 include::proc_creating-an-application.adoc[leveloffset=+1]
-endif::[]
 
 include::proc_deploying-an-application-to-openshift.adoc[leveloffset=+1]
 :parameter-maven-command:
