@@ -13,7 +13,7 @@ The following procedure shows you how to:
 .Prerequisites
 
 * Maven installed.
-* JDK 8 or later installed.
+* OpenJDK 8 or OpenJDK 11 installed.
 
 .Procedure
 
