@@ -57,7 +57,7 @@ endif::[]
 :name-guide-getting-started: Getting Started with {ProductName}
 :name-landing-page: Welcome
 :name-guide-contrib: Contribution Guide
-:name-guide-spring-boot: {SpringBoot} Runtime Guide
+:name-guide-spring-boot: {SpringBoot} 2.1.x Runtime Guide
 :name-guide-spring-boot-1-5: {SpringBoot} 1.5.x Runtime Guide
 :name-guide-vertx: {VertX} Runtime Guide
 :name-guide-thorntail: {WildFlySwarm} Runtime Guide
