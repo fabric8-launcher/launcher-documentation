@@ -28,14 +28,18 @@ Hello,
 We have released the Fabric8 Launcher documentation today:
 
 Docs link: https://launcher.fabric8.io/docs/
-Tag: https://github.com/fabric8-launcher/launcher-documentation/releases/tag/$NEW_TAG
-Diff: https://github.com/fabric8-launcher/launcher-documentation/compare/$PREVIOUS_TAG...$NEW_TAG
 
 We have also synced the documentation to the Customer Portal stage:
 
-Docs link: https://access.redhat.com/documentation/red-hat-openshift-application-runtimes/
+To access the docs stage:
+1) Log in to Customer Portal
+2) Open https://access.redhat.com/documentation/red-hat-openshift-application-runtimes/?lb_target=stage
+3) Refresh the page if you do not see a red box saying "This is the stage version of this page."
+
 Tag: $LINK_TO_THE_TAG
 Diff: $LINK_TO_THE_COMPARISON
+
+We would like to ask the QE team to verify the content in stage is correct.
 
 The following issues were fixed:
 
