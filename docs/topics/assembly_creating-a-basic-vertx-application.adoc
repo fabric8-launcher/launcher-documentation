@@ -8,9 +8,9 @@
 :parameter-maven-command: $ mvn vertx:run
 :parameter-response: Greetings!
 :parameter-url: http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}
-include::proc_creating-an-application.adoc[leveloffset=+1]
+include::proc_creating-an-application.adoc[]
 
-include::proc_deploying-an-application-to-openshift.adoc[leveloffset=+1]
+include::proc_deploying-an-application-to-openshift.adoc[]
 :parameter-url:
 :parameter-response:
 :parameter-maven-command:
