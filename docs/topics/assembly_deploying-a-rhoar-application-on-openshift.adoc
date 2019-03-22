@@ -1,0 +1,14 @@
+
+[id='deploying-a-rhoar-application-on-openshift_{context}']
+
+= Deploying an application on OpenShift
+
+:parent-context: {context}
+
+:parameter-runtime-name: {VertX}
+include::assembly_deploying-a-rhoar-application-on-openshift.adoc[leveloffset=+1]
+:parameter-runtime-name!:
+
+:parameter-runtime-name: {VertX}
+include::proc_deploying-an-application-to-openshift-using-fabric8-plugin.adoc[leveloffset=+1]
+:parameter-runtime-name!:

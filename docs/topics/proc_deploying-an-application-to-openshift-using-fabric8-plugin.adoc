@@ -1,0 +1,90 @@
+// This is a parameterized module. Parameters used:
+//
+//  parameter-url: URL to query when interacting with the application
+//  parameter-response: Response received from the application
+//  context: used in anchor IDs to conflicts due to duplicate IDs
+//
+// Rationale: This procedure is the same for 2 or more runtimes.
+
+
+[id='deploying-an-application-to-openshift-using-fabric8-plugin_{context}']
+= Deploying an application to OpenShift using Fabric8 Maven plugin
+
+This procedure shows you how to:
+
+* Build your application and deploy it to OpenShift using the Fabric8 Maven Plugin.
+* Use the command line to interact with your application running on OpenShift.
+
+.Prerequisites
+
+* The `oc` CLI client installed.
+* Maven installed.
+* A Maven-based application.
+
+.Procedure
+
+. Log in to your OpenShift instance with the `oc` client.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc login ...
+----
+
+. Create a new project.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc new-project {value-name-project}
+----
+
+. In a terminal application, navigate to the directory containing your application:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ cd myApp
+----
+
+. Use Maven to start the deployment to OpenShift.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn clean fabric8:deploy -Popenshift
+----
++
+This command uses the Fabric8 Maven Plugin to launch the link:{link-s2i-process}[S2I process] on OpenShift and to start the pod.
+
+. Check the status of your booster and ensure your pod is running.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get pods -w
+NAME                             READY     STATUS      RESTARTS   AGE
+{value-name-app}-1-aaaaa               1/1       Running     0          58s
+{value-name-app}-s2i-1-build           0/1       Completed   0          2m
+----
++
+The `{value-name-app}-1-aaaaa` pod should have a status of `Running` once it is fully deployed and started.
+Your specific pod name will vary.
+The number in the middle will increase with each new build.
+The letters at the end are generated when the pod is created.
+
+
+. Once your booster is deployed and started, determine its route.
++
+.Example Route Information
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get routes
+NAME                 HOST/PORT                                                     PATH      SERVICES        PORT      TERMINATION
+{value-name-app}         {value-name-app}-{value-name-project}.{value-route-openshift-hostname}      {value-name-app}      8080
+----
++
+The route information of a pod gives you the base URL which you use to access it. In the example above, you would use `\http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}` as the base URL to access the application.
+
+. Using `curl` or your browser, verify your application is running in OpenShift.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl {parameter-url}
+{parameter-response}
+----
