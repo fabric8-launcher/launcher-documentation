@@ -8,7 +8,9 @@
 // Rationale: This procedure is the same for 2 or more runtimes.
 
 [id='creating-an-application_{context}']
-= Creating an application
+= Creating a {VertX} application
+
+In addition to xref:mission-rest-http-vertx[using a booster], you can create new {runtime} applications from scratch and deploy them to OpenShift or Red Hat Enterprise Linux.
 
 Create a simple `Greeting` application to run on OpenShift using {runtime}.
 The following procedure shows you how to:

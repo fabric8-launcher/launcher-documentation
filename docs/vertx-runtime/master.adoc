@@ -99,6 +99,8 @@ include::topics/assembly_cache-mission-booster.adoc[leveloffset=+2]
 
 == Developing an application for the {VertX} runtime
 
+This sections contains information about creating your application and configuring the {VertX} runtime for it.
+
 include::topics/assembly_creating-a-basic-vertx-application.adoc[leveloffset=+2]
 
 :parameter-runtime-name: {VertX}
