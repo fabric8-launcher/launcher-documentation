@@ -6,7 +6,7 @@
 :parent-context: {context}
 
 :parameter-runtime-name: {VertX}
-include::assembly_deploying-a-rhoar-application-on-openshift.adoc[leveloffset=+1]
+include::proc_preparing-an-application-for-openshift-deployment.adoc[leveloffset=+1]
 :parameter-runtime-name!:
 
 :parameter-runtime-name: {VertX}
