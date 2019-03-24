@@ -111,6 +111,10 @@ include::topics/assembly_creating-a-basic-vertx-application.adoc[leveloffset=+2]
 include::topics/assembly_deploying-a-rhoar-application-on-openshift.adoc[leveloffset=+2]
 :parameter-runtime-name!:
 
+:parameter-runtime-name: {VertX}
+include::topics/proc_deploying-application-to-standalone-rhel.adoc[leveloffset=+2]
+:parameter-runtime-name!:
+
 == Debugging
 
 This sections contains information about debugging your {VertX}{ndash}based application both in local and remote deployments.
