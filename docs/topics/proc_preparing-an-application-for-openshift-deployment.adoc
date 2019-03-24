@@ -8,7 +8,7 @@
 [id='preparing-an-application-for-openshift-deployment_{context}']
 = Preparing an application for OpenShift deployment
 
-You can easily deploy your existing application to OpenShift using the Fabric8 Maven plugin.
+You can easily prepare your existing application to deploy on OpenShift.
 
 .Prerequisites
 
@@ -41,4 +41,4 @@ ifdef::built-for-vertx[]
 include::resources/vert-x/vertx-fmp-deployment.yaml[]
 ----
 endif::[]
-. Deploy the application to OpenShift according to instructions in xref:deploying-an-application-to-openshift_{context}[].
+. Deploy the application to OpenShift according to instructions in xref:deploying-an-application-to-openshift-using-fabric8-plugin_{context}[].

@@ -99,7 +99,7 @@ include::topics/assembly_cache-mission-booster.adoc[leveloffset=+2]
 
 == Developing an application for the {VertX} runtime
 
-This sections contains information about creating your application and configuring the {VertX} runtime for it.
+This sections contains information about creating and configuring a {VertX} application and deploying it to OpenShift or Red Hat Enterprise Linux. 
 
 include::topics/assembly_creating-a-basic-vertx-application.adoc[leveloffset=+2]
 
