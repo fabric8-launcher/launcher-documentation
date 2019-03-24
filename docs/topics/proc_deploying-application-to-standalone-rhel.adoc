@@ -1,4 +1,4 @@
-[ID:'deploying-application-to-standalone-rhel_{context}']
+[id='deploying-application-to-standalone-rhel_{context}']
 = Deploying a {VertX} application to standalone Red Hat Enterprise Linux
 
 This paragraph is the procedure module introduction: a short description of the procedure.
