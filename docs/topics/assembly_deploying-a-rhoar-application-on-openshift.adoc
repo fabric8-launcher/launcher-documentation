@@ -3,6 +3,8 @@
 
 = Deploying an application on OpenShift
 
+Prepare your application to deploy on OpenShift and then use the Fabric8 Maven plugin to deploy your application on OpenShift.
+
 :parent-context: {context}
 
 :parameter-runtime-name: {VertX}
