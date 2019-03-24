@@ -5,7 +5,7 @@
 //
 // Rationale: This procedure is the same for 2 or more runtimes.
 
-[id='preparing-an-application-for-openshift-deployment_{context}'
+[id='preparing-an-application-for-openshift-deployment_{context}']
 = Preparing an application for OpenShift deployment
 
 You can easily deploy your existing application to OpenShift using the Fabric8 Maven plugin.
