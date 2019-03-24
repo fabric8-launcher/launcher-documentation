@@ -1,13 +1,18 @@
 [id='deploying-application-to-standalone-rhel_{context}']
 = Deploying a {VertX} application to standalone Red Hat Enterprise Linux
 
-This paragraph is the procedure module introduction: a short description of the procedure.
+You can deploy a {VertX} application to Red Hat Enterprise Linux.
 
 .Prerequisites
 
-* A bulleted list of conditions that must be satisfied before the user starts following this assembly.
-* You can also link to other modules or assemblies the user must follow before starting this assembly.
-* Delete the section title and bullets if the assembly has no prerequisites.
+* Red Hat Enterprise Linux 7
+ifdef::built-for-vertx,built-for-spring-boot,built-for-thorntail[]
+* OpenJDK 8
+* Maven {version-fabric8-maven-plugin}
+endif::built-for-vertx,built-for-spring-boot,built-for-thorntail[]
+ifdef::built-for-nodejs[]
+* NPM 6.4.1
+endif::built-for-nodejs[]
 
 .Procedure
 
