@@ -6,7 +6,7 @@ USER root
 
 # Install asciidoctor
 RUN yum install -y rubygems libxml2 && \
-    gem install asciidoctor && \
+    gem install asciidoctor -v 1.5.8 && \
     yum clean all
 
 COPY scripts/ scripts/
