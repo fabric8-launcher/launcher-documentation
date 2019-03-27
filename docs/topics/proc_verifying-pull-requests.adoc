@@ -24,7 +24,7 @@ If the button says *Unwatch*, you are already subscribed.
 +
 NOTE: If there is no reference to an open issue and the change is not trivial, request that an issue be created.
 +
-.. Preview the rendered documentation with changes from the pull request by navigating to `Conversation` tab of the pull request, clicking _Show All Checks_ and _Details_ next to the revealed `deploy-netlify` tab.
+.. Preview the rendered documentation with the changes from the pull request by navigating to the `Conversation` tab of the pull request, clicking _Show All Checks_, and _Details_ next to the revealed `deploy/netlify`.
 .. If you are a writer, focus mainly on the requirements described in the xref:_requirements[] section.
 .. If you are a member of the QE team, focus mainly on the technical accuracy of the document.
 You can also check the writing style or errors, but it is not required.
