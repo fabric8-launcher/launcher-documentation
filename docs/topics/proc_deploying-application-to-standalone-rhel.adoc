@@ -1,33 +1,30 @@
 [id='deploying-application-to-standalone-rhel_{context}']
-= Deploying a {VertX} application to standalone Red Hat Enterprise Linux
+= Deploying an application to standalone Red Hat Enterprise Linux
 
 You can deploy a {VertX} application to Red Hat Enterprise Linux.
 
 .Prerequisites
 
 * Red Hat Enterprise Linux 7
-ifdef::built-for-vertx,built-for-spring-boot,built-for-thorntail[]
-* OpenJDK 8
-* Maven {version-fabric8-maven-plugin}
-endif::built-for-vertx,built-for-spring-boot,built-for-thorntail[]
-ifdef::built-for-nodejs[]
-* NPM 6.4.1
-endif::built-for-nodejs[]
+* OpenJDK 8 installed
+* Maven 3.5 or later installed
 
 .Procedure
 
-. Start each step with an active verb.
+. Download the {VertX} runtime from the link:https://maven.repository.redhat.com/[Red Hat Maven repository] to your RHEL 7 system.
 
-. Include one command or action per step.
+. Create a project for your application. Consider packaging your application as a fat jar to include all of the necessary dependencies.
 
-. Use an unnumbered bullet (*) if the procedure includes only one step.
+. Start your application:
++
+ifdef::built-for-vertx[]
+[source,bash,options="nowrap",subs="attributes+"]
+----
+java -jar target/my-app-fat.jar
+----
+endif::built-for-vertx[]
 
-//.Verification steps
-//(Optional) Provide the user with verification method(s) for the procedure, such as expected output or commands that can be used to check for success or failure.
-
-.Additional resources
-
-* A bulleted list of links to other material closely related to the contents of the procedure module.
-* Currently, modules cannot include xrefs, so you cannot include links to other content in your collection. If you need to link to another assembly, add the xref to the assembly that includes this module.
-* For more details on writing procedure modules, see the link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
-* Use a consistent system for file names, IDs, and titles. For tips, see _Anchor Names and File Names_ in link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
+.Verification steps
+ifdef::built-for-vertx[]
+. Use 'curl' or your browser to verify your application is running at http://localhost:8080
+endif::built-for-vertx[]
