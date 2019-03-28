@@ -112,7 +112,7 @@ include::topics/assembly_deploying-a-rhoar-application-on-openshift.adoc[levelof
 :parameter-runtime-name!:
 
 :parameter-runtime-name: {VertX}
-include::topics/proc_deploying-application-to-standalone-rhel.adoc[leveloffset=+2]
+include::topics/proc_deploying-an-application-to-standalone-rhel.adoc[leveloffset=+2]
 :parameter-runtime-name!:
 
 == Debugging

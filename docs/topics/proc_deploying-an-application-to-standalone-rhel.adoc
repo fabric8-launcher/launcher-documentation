@@ -1,0 +1,34 @@
+[id='deploying-an-application-to-standalone-rhel_{context}']
+= Deploying an application to standalone Red Hat Enterprise Linux
+
+You can deploy a {runtime} application to Red Hat Enterprise Linux.
+
+.Prerequisites
+
+* Red Hat Enterprise Linux 7
+* OpenJDK 8 installed
+* Maven 3.5 or later installed
+* Add link:https://maven.repository.redhat.com/[Red Hat Maven repository] to your application `pom.xml` file
+
+.Procedure
+
+. Package your application. Consider packaging your application as a fat jar to include all of the necessary dependencies.
++
+ifdef::built-for-vertx[]
+[source,bash,options="nowrap",subs="attributes+"]
+----
+mvn clean package
+----
+endif::built-for-vertx[]
+
+. Start your application:
++
+ifdef::built-for-vertx[]
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ java -jar target/my-app-fat.jar
+----
+endif::built-for-vertx[]
+
+.Verification steps
+. Use 'curl' or your browser to verify your application is running at http://localhost:8080
