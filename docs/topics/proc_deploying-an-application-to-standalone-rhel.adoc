@@ -5,12 +5,28 @@ You can deploy a {runtime} application to Red Hat Enterprise Linux.
 
 .Prerequisites
 
-* Red Hat Enterprise Linux 7
+* A Maven-based application
+* RHEL 7 installed
 * OpenJDK 8 installed
 * Maven 3.5 or later installed
-* Add link:https://maven.repository.redhat.com/[Red Hat Maven repository] to your application `pom.xml` file
+
 
 .Procedure
+
+. Ensure that you specify the link:https://maven.repository.redhat.com/[Red Hat Maven repository] in the `pom.xml` of your project.
++
+[source,xml,options="nowrap",subs="attributes+"]
+----
+...
+<repositories>
+  <repository>
+    <id>{red-hat-ga-repo-id}</id>
+    <name>{red-hat-ga-repo-name}</name>
+    <url>{red-hat-ga-repo-url}</url>
+  </repository>
+</repositories>
+...
+----
 
 . Package your application. Consider packaging your application as a fat jar to include all of the necessary dependencies.
 +
@@ -31,4 +47,10 @@ $ java -jar target/my-app-fat.jar
 endif::built-for-vertx[]
 
 .Verification steps
-. Use 'curl' or your browser to verify your application is running at http://localhost:8080
+
+. Use 'curl' or your browser to verify your application is running at `http://localhost:8080`
++
+[source,bash,options="nowrap"]
+----
+curl http://localhost:8080
+----
