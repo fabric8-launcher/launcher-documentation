@@ -1,3 +1,13 @@
+// This is a parameterized module. Parameters used:
+//
+// :parameter-jar-file-name: runtime-specific default target Maven build artifact name.
+// :parameter-version-runtime-plugin: runtime-specific name for the runtime version property variable in the POM file.
+// :parameter-artifact-name-runtime-plugin: runtime plugin name in the POM file.
+// :parameter-group-name-runtime-plugin: runtime plugin Maven artifact group name.
+// :parameter-runtime-name: Runtime specific atribute for substituting the approrpiate expanded rumtime name.
+//  context: used in anchor IDs to conflicts due to duplicate IDs.
+//
+// Rationale: This procedure is the same for 2 or more runtimes.
 [id='deploying-an-application-to-standalone-rhel_{context}']
 = Deploying an application to standalone Red Hat Enterprise Linux
 
@@ -13,82 +23,98 @@ You can deploy a {parameter-runtime-name} application to Red Hat Enterprise Linu
 
 .Procedure
 
-// TODO:
-//define parameter: name-runtime
-//define parameter:
 . Ensure that you specify the link:https://maven.repository.redhat.com/[Red Hat Maven repository] in the `pom.xml` of your project.
-Also ensure that the {parameter-runtime-name} plugin is configured:
+Also ensure that the {parameter-runtime-name} Maven plugin is configured:
 +
 [source,xml,options="nowrap",subs="attributes+"]
 ----
-...
-<repositories>
-  <repository>
-    <id>{red-hat-ga-repo-id}</id>
-    <name>{red-hat-ga-repo-name}</name>
-    <url>{red-hat-ga-repo-url}</url>
-  </repository>
-</repositories>
-...
-<pluginRepositories>
-    <pluginRepository>
+<project ... >
+  ...
+ifdef::built-for-spring-boot,built-for-spring-boot-1-5[]
+  <!-- Specify target artifact type for the repackage goal. -->
+  <packaging>jar</packaging>
+endif::[]
+  ...
+  <repositories>
+    <repository>
       <id>{red-hat-ga-repo-id}</id>
       <name>{red-hat-ga-repo-name}</name>
       <url>{red-hat-ga-repo-url}</url>
-    </pluginRepository>
-  </pluginRepositories>
-...
-<build>
-  <plugins>
-    <plugin>
-      <groupId>{parameter-group-name-runtime-plugin}</groupId>
-      <artifactId>{parameter-artifact-name-runtime-plugin}</artifactId>
-      <version>{parameter-version-runtime-plugin}</version>
+    </repository>
+  </repositories>
+  ...
+  <pluginRepositories>
+      <pluginRepository>
+        <id>{red-hat-ga-repo-id}</id>
+        <name>{red-hat-ga-repo-name}</name>
+        <url>{red-hat-ga-repo-url}</url>
+      </pluginRepository>
+    </pluginRepositories>
+  ...
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>{parameter-group-name-runtime-plugin}</groupId>
+        <artifactId>{parameter-artifact-name-runtime-plugin}</artifactId>
+        <version>{parameter-version-runtime-plugin}</version>
 ifdef::built-for-vertx[]
-      <executions>
-        <execution>
-          <id>vmp</id>
-          <goals>
-            <goal>initialize</goal>
-            <goal>package</goal>
-          </goals>
-        </execution>
-      </executions>
+        <executions>
+          <execution>
+            <id>vmp</id>
+            <goals>
+              <goal>initialize</goal>
+              <goal>package</goal>
+            </goals>
+          </execution>
+        </executions>
 endif::[]
 ifdef::built-for-thorntail[]
-      <executions>
-        <execution>
-          <goals>
-            <goal>package</goal>
-          </goals>
-        </execution>
-      </executions>
+        <executions>
+          <execution>
+            <id>package</id>
+            <goals>
+              <goal>package</goal>
+            </goals>
+          </execution>
+        </executions>
 endif::[]
-    </plugin>
-  </plugins>
-</build>
-...
+ifdef::built-for-spring-boot,built-for-spring-boot-1-5[]
+        <executions>
+          <execution>
+              <goals>
+               <goal>repackage</goal>
+             </goals>
+          </execution>
+        </executions>
+endif::[]
+      </plugin>
+    </plugins>
+  </build>
+  ...
+</project>
 ----
 
 . Package your application.
 Consider packaging your application as a fat jar to include all of the necessary dependencies.
 ifdef::built-for-vertx[The Vert.x Maven Plugin packages applications as fat jars link:https://reactiverse.io/vertx-maven-plugin/#introduction[by default].]
+ifdef::built-for-thorntail[The Thorntail Maven Plugin lets you package applications as link:https://docs.thorntail.io/2.3.0.Final/#uberjar_thorntail[_uberjars_] or link:https://docs.thorntail.io/2.3.0.Final/#creating-a-hollow-jar_thorntail[hollow JARs].]
+ifdef::built-for-spring-boot,built-for-spring-boot-1-5[The Spring Boot Maven Plugin repackages the target artifacts as link:https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html#build-tool-plugins-maven-packaging[executable JAR or WAR files].]
 +
+[source,bash,options="nowrap",subs="attributes+"]
 ----
 $ mvn clean package
 ----
 
 . Start your application:
 +
-
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ java -jar target/my-app.jar
+$ java -jar target/{parameter-jar-file-name}
 ----
 
 .Verification steps
 
-. Use 'curl' or your browser to verify your application is running at `http://localhost:8080`
+. Use `curl` or your browser to verify your application is running at `http://localhost:8080`
 +
 [source,bash,options="nowrap"]
 ----

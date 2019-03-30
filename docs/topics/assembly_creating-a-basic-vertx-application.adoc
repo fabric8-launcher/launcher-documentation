@@ -18,7 +18,9 @@ include::proc_deploying-an-application-to-openshift.adoc[leveloffset=+1]
 :parameter-group-name-runtime-plugin: io.reactiverse
 :parameter-artifact-name-runtime-plugin: vertx-maven-plugin
 :parameter-version-runtime-plugin: ${vertx-maven-plugin.version}
+:parameter-jar-file-name: my-app-fat.jar
 include::proc_deploying-an-application-to-standalone-rhel.adoc[leveloffset=+1]
+:parameter-jar-file-name:
 :parameter-version-runtime-plugin:
 :parameter-artifact-name-runtime-plugin:
 :parameter-group-name-runtime-plugin:

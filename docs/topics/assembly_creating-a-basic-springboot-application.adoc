@@ -18,6 +18,19 @@ include::proc_creating-a-spring-boot-2-1-application.adoc[leveloffset=+1]
 endif::[]
 
 
+:parameter-runtime-name: {SpringBoot}
+:parameter-group-name-runtime-plugin: org.springframework.boot
+:parameter-artifact-name-runtime-plugin: spring-boot-maven-plugin
+:parameter-version-runtime-plugin: ${spring-boot-maven-plugin.version}
+:parameter-jar-file-name: my-project-1.0.0.jar
+include::proc_deploying-an-application-to-standalone-rhel.adoc[leveloffset=+1]
+:parameter-jar-file-name:
+:parameter-version-runtime-plugin:
+:parameter-artifact-name-runtime-plugin:
+:parameter-group-name-runtime-plugin:
+:parameter-runtime-name:
+
+
 include::proc_deploying-an-application-to-openshift.adoc[leveloffset=+1]
 :parameter-maven-command:
 :parameter-response:
@@ -25,4 +38,3 @@ include::proc_deploying-an-application-to-openshift.adoc[leveloffset=+1]
 :parameter-runtime:
 
 :context: {parent-context}
-
