@@ -1,7 +1,7 @@
 [id='deploying-an-application-to-standalone-rhel_{context}']
 = Deploying an application to standalone Red Hat Enterprise Linux
 
-You can deploy a {runtime} application to Red Hat Enterprise Linux.
+You can deploy a {parameter-runtime-name} application to Red Hat Enterprise Linux.
 
 .Prerequisites
 
@@ -16,7 +16,8 @@ You can deploy a {runtime} application to Red Hat Enterprise Linux.
 // TODO:
 //define parameter: name-runtime
 //define parameter:
-. Ensure that you specify the link:https://maven.repository.redhat.com/[Red Hat Maven repository] in the `pom.xml` of your project, and that the {parameter-runtime-name} plugin is configured properly:
+. Ensure that you specify the link:https://maven.repository.redhat.com/[Red Hat Maven repository] in the `pom.xml` of your project.
+Also ensure that the {parameter-runtime-name} plugin is configured:
 +
 [source,xml,options="nowrap",subs="attributes+"]
 ----
@@ -40,9 +41,9 @@ You can deploy a {runtime} application to Red Hat Enterprise Linux.
 <build>
   <plugins>
     <plugin>
-      <groupId>{group-name-runtime-plugin}</groupId>
-      <artifactId>{artifact-name-runtime-plugin}</artifactId>
-      <version>{version-runtime-plugin}</version>
+      <groupId>{parameter-group-name-runtime-plugin}</groupId>
+      <artifactId>{parameter-artifact-name-runtime-plugin}</artifactId>
+      <version>{parameter-version-runtime-plugin}</version>
 ifdef::built-for-vertx[]
       <executions>
         <execution>
@@ -69,23 +70,23 @@ endif::[]
 ...
 ----
 
-//:version-runtime-plugin: ${vertx-maven-plugin.version}
-
-. Package your application.
-// fat jar packaging is configured in the runtime plugins by default.
-Consider packaging your application as a fat JAR to include all of the necessary dependencies.
+. Package your application. Consider packaging your application as a fat jar to include all of the necessary dependencies.
 +
+ifdef::built-for-vertx[]
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 mvn clean package
 ----
+endif::built-for-vertx[]
 
 . Start your application:
 +
+ifdef::built-for-vertx[]
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ java -jar target/my-app.jar
+$ java -jar target/my-app-fat.jar
 ----
+endif::built-for-vertx[]
 
 .Verification steps
 
