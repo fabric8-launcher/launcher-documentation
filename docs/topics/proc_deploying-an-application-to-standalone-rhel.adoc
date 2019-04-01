@@ -44,12 +44,12 @@ endif::[]
   </repositories>
   ...
   <pluginRepositories>
-      <pluginRepository>
-        <id>{red-hat-ga-repo-id}</id>
-        <name>{red-hat-ga-repo-name}</name>
-        <url>{red-hat-ga-repo-url}</url>
-      </pluginRepository>
-    </pluginRepositories>
+    <pluginRepository>
+      <id>{red-hat-ga-repo-id}</id>
+      <name>{red-hat-ga-repo-name}</name>
+      <url>{red-hat-ga-repo-url}</url>
+    </pluginRepository>
+  </pluginRepositories>
   ...
   <build>
     <plugins>
@@ -71,7 +71,6 @@ endif::[]
 ifdef::built-for-thorntail[]
         <executions>
           <execution>
-            <id>package</id>
             <goals>
               <goal>package</goal>
             </goals>
@@ -97,8 +96,8 @@ endif::[]
 . Package your application.
 Consider packaging your application as a fat jar to include all of the necessary dependencies.
 ifdef::built-for-vertx[The Vert.x Maven Plugin packages applications as fat jars link:https://reactiverse.io/vertx-maven-plugin/#introduction[by default].]
-ifdef::built-for-thorntail[The Thorntail Maven Plugin lets you package applications as link:https://docs.thorntail.io/2.3.0.Final/#uberjar_thorntail[_uberjars_] or link:https://docs.thorntail.io/2.3.0.Final/#creating-a-hollow-jar_thorntail[hollow JARs].]
-ifdef::built-for-spring-boot,built-for-spring-boot-1-5[The Spring Boot Maven Plugin repackages the target artifacts as link:https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html#build-tool-plugins-maven-packaging[executable JAR or WAR files].]
+ifdef::built-for-thorntail[You can use the Thorntail Maven Plugin to package you application as an link:https://docs.thorntail.io/2.4.0.Final/#uberjar_thorntail[_uberjar_].]
+ifdef::built-for-spring-boot,built-for-spring-boot-1-5[You can use the Spring Boot Maven Plugin to repackage your target artifacts as link:https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html#build-tool-plugins-maven-packaging[executable JAR or WAR files].]
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
