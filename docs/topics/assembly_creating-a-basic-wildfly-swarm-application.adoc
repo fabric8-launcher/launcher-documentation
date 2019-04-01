@@ -14,7 +14,7 @@ include::thorntail/docs/howto/writing-an-application-from-scratch/index.adoc[lev
 :parameter-version-runtime-plugin: ${version.thorntail}
 :parameter-jar-file-name: my-app-thorntail.jar
 include::proc_deploying-an-application-to-standalone-rhel.adoc[leveloffset=+1]
-:parameter-jar-file-name:
+:parameter-jar-file-name!:
 :parameter-version-runtime-plugin:
 :parameter-artifact-name-runtime-plugin:
 :parameter-group-name-runtime-plugin:

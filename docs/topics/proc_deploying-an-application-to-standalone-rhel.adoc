@@ -15,7 +15,7 @@ You can deploy a {parameter-runtime-name} application to Red Hat Enterprise Linu
 
 .Prerequisites
 
-* A Maven-based application.
+* A Maven-based {parameter-runtime-name} application.
 * RHEL 7 installed.
 * OpenJDK 8 installed.
 * Maven 3.5 or later installed.
