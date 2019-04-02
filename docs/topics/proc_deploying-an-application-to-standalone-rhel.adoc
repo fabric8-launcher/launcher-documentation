@@ -32,8 +32,7 @@ Deploy your {parameter-runtime-name} application to Red Hat Enterprise Linux.
 $ cd myApp
 ----
 
-. Ensure that you specify the link:https://maven.repository.redhat.com/[Red Hat Maven repository] in the `pom.xml` of your project.
-Also ensure that the {parameter-runtime-name} Maven plugin is configured:
+Ensure that you properly configure the {parameter-runtime-name} Maven plugin:
 +
 [source,xml,options="nowrap",subs="attributes+"]
 ----
