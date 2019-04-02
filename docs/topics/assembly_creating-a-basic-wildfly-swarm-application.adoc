@@ -13,7 +13,9 @@ include::thorntail/docs/howto/writing-an-application-from-scratch/index.adoc[lev
 :parameter-artifact-name-runtime-plugin: thorntail-maven-plugin
 :parameter-version-runtime-plugin: ${version.thorntail}
 :parameter-jar-file-name: my-app-thorntail.jar
+:parameter-link-appdev-guide: {link-guide-thorntail}#creating-an-application-from-scratch_wf-swarm
 include::proc_deploying-an-application-to-standalone-rhel.adoc[leveloffset=+1]
+:parameter-link-appdev-guide!:
 :parameter-jar-file-name!:
 :parameter-version-runtime-plugin!:
 :parameter-artifact-name-runtime-plugin!:

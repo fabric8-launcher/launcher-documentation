@@ -1,27 +1,36 @@
 // This is a parameterized module. Parameters used:
 //
-// :parameter-jar-file-name: runtime-specific default target Maven build artifact name.
-// :parameter-version-runtime-plugin: runtime-specific name for the runtime version property variable in the POM file.
-// :parameter-artifact-name-runtime-plugin: runtime plugin name in the POM file.
-// :parameter-group-name-runtime-plugin: runtime plugin Maven artifact group name.
-// :parameter-runtime-name: Runtime specific atribute for substituting the approrpiate expanded rumtime name.
+// parameter-jar-file-name: runtime-specific default target Maven build artifact name.
+// parameter-version-runtime-plugin: runtime-specific name for the runtime version property variable in the POM file.
+// parameter-artifact-name-runtime-plugin: runtime plugin name in the POM file.
+// parameter-group-name-runtime-plugin: runtime plugin Maven artifact group name.
+// parameter-runtime-name: Runtime specific atribute for substituting the approrpiate expanded rumtime name.
+// parameter-link-appdev-guide: link to the procedure providing a complete example of the appropriate runtime-specific POM file configuration.
 //  context: used in anchor IDs to conflicts due to duplicate IDs.
 //
 // Rationale: This procedure is the same for 2 or more runtimes.
 [id='deploying-an-application-to-standalone-rhel_{context}']
 = Deploying an application to standalone Red Hat Enterprise Linux
 
-You can deploy your {parameter-runtime-name} application to Red Hat Enterprise Linux.
+Deploy your {parameter-runtime-name} application to Red Hat Enterprise Linux.
 
 .Prerequisites
 
 * A Maven-based {parameter-runtime-name} application.
+* The Red Hat Maven repository link:{parameter-link-appdev-guide}[specified] in the `pom.xml` of your project.
 * RHEL 7 installed.
 * OpenJDK 8 installed.
 * Maven 3.5 or later installed.
 
 
 .Procedure
+
+. Navigate to the directory with your application project:
++
+[source,bash,subs="attributes+",options="nowrap"]
+----
+$ cd myApp
+----
 
 . Ensure that you specify the link:https://maven.repository.redhat.com/[Red Hat Maven repository] in the `pom.xml` of your project.
 Also ensure that the {parameter-runtime-name} Maven plugin is configured:
@@ -34,22 +43,6 @@ ifdef::built-for-spring-boot,built-for-spring-boot-1-5[]
   <!-- Specify target artifact type for the repackage goal. -->
   <packaging>jar</packaging>
 endif::[]
-  ...
-  <repositories>
-    <repository>
-      <id>{red-hat-ga-repo-id}</id>
-      <name>{red-hat-ga-repo-name}</name>
-      <url>{red-hat-ga-repo-url}</url>
-    </repository>
-  </repositories>
-  ...
-  <pluginRepositories>
-    <pluginRepository>
-      <id>{red-hat-ga-repo-id}</id>
-      <name>{red-hat-ga-repo-name}</name>
-      <url>{red-hat-ga-repo-url}</url>
-    </pluginRepository>
-  </pluginRepositories>
   ...
   <build>
     <plugins>

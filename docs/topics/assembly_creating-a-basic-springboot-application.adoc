@@ -23,7 +23,17 @@ endif::[]
 :parameter-artifact-name-runtime-plugin: spring-boot-maven-plugin
 :parameter-version-runtime-plugin: ${spring-boot.version}
 :parameter-jar-file-name: my-project-1.0.0.jar
+
+ifdef::built-for-spring-boot[]
+:parameter-link-appdev-guide: {link-guide-spring-boot}#creating-a-spring-boot-2-1-application_spring-boot
+endif::[]
+
+ifdef::built-for-spring-boot-1-5[]
+:parameter-link-appdev-guide: {link-guide-spring-boot-1-5}#creating-a-basic-springboot-application_spring-boot
+endif::[]
+
 include::proc_deploying-an-application-to-standalone-rhel.adoc[leveloffset=+1]
+:parameter-link-appdev-guide!:
 :parameter-jar-file-name!:
 :parameter-version-runtime-plugin!:
 :parameter-artifact-name-runtime-plugin!:
