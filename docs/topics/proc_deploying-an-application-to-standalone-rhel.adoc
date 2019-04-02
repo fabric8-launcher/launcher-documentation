@@ -11,7 +11,7 @@
 [id='deploying-an-application-to-standalone-rhel_{context}']
 = Deploying an application to standalone Red Hat Enterprise Linux
 
-You can deploy a {parameter-runtime-name} application to Red Hat Enterprise Linux.
+You can deploy your {parameter-runtime-name} application to Red Hat Enterprise Linux.
 
 .Prerequisites
 
@@ -29,8 +29,8 @@ Also ensure that the {parameter-runtime-name} Maven plugin is configured:
 [source,xml,options="nowrap",subs="attributes+"]
 ----
 <project ... >
-  ...
 ifdef::built-for-spring-boot,built-for-spring-boot-1-5[]
+  ...
   <!-- Specify target artifact type for the repackage goal. -->
   <packaging>jar</packaging>
 endif::[]
@@ -93,16 +93,18 @@ endif::[]
 </project>
 ----
 
-. Package your application.
-Consider packaging your application as a fat jar to include all of the necessary dependencies.
-ifdef::built-for-vertx[The Vert.x Maven Plugin packages applications as fat jars link:https://reactiverse.io/vertx-maven-plugin/#introduction[by default].]
-ifdef::built-for-thorntail[You can use the Thorntail Maven Plugin to package you application as an link:https://docs.thorntail.io/2.4.0.Final/#uberjar_thorntail[_uberjar_].]
-ifdef::built-for-spring-boot,built-for-spring-boot-1-5[You can use the Spring Boot Maven Plugin to repackage your target artifacts as link:https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html#build-tool-plugins-maven-packaging[executable JAR or WAR files].]
+. Package your application:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ mvn clean package
 ----
++
+Consider packaging your application as a fat jar to include all of the necessary dependencies.
+ifdef::built-for-vertx[The Vert.x Maven Plugin packages applications as fat jars link:https://reactiverse.io/vertx-maven-plugin/#introduction[by default].]
+ifdef::built-for-thorntail[You can use the Thorntail Maven Plugin to package you application as an link:https://docs.thorntail.io/2.4.0.Final/#uberjar_thorntail[_uberjar_].]
+ifdef::built-for-spring-boot,built-for-spring-boot-1-5[You can use the Spring Boot Maven Plugin to repackage your target artifacts as link:https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html#build-tool-plugins-maven-packaging[fat jars or WAR files].]
+
 
 . Start your application:
 +

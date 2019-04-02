@@ -21,7 +21,7 @@ endif::[]
 :parameter-runtime-name: {SpringBoot}
 :parameter-group-name-runtime-plugin: org.springframework.boot
 :parameter-artifact-name-runtime-plugin: spring-boot-maven-plugin
-:parameter-version-runtime-plugin: ${spring-boot-maven-plugin.version}
+:parameter-version-runtime-plugin: ${spring-boot.version}
 :parameter-jar-file-name: my-project-1.0.0.jar
 include::proc_deploying-an-application-to-standalone-rhel.adoc[leveloffset=+1]
 :parameter-jar-file-name!:
