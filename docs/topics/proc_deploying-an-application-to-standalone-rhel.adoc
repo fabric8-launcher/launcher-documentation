@@ -32,7 +32,7 @@ Deploy your {parameter-runtime-name} application to Red Hat Enterprise Linux.
 $ cd myApp
 ----
 
-Ensure that you properly configure the {parameter-runtime-name} Maven plugin:
+. Ensure that you properly configure the {parameter-runtime-name} Maven plugin:
 +
 [source,xml,options="nowrap",subs="attributes+"]
 ----
