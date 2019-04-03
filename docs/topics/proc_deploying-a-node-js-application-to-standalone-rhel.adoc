@@ -20,6 +20,13 @@ Deploy a {Node} application to Red Hat Enterprise Linux.
 $ cd myApp
 ----
 
+. If you have specified additional dependencies in the `package.json` file of your project, ensure that you install them before running your applications:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ npm install
+----
+
 . Start your application.
 +
 [source,bash,options="nowrap",subs="attributes+"]
