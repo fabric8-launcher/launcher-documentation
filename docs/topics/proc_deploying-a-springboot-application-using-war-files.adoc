@@ -21,7 +21,7 @@ You must configure your build and deployment settings to ensure that your applic
 
 .Procedure
 
-. Add `war` packaging to the `pom.xml` file of your project.
+. Add `war` packaging to the `pom.xml` file of your project:
 +
 .Example `pom.xml`
 [source,xml,options="nowrap",subs="attributes+"]
@@ -30,13 +30,34 @@ You must configure your build and deployment settings to ensure that your applic
   ...
   <packaging>war</packaging>
   ...
+</project>
 ----
 
-. Ensure the the `repackage` Maven goal for the Spring Boot Maven plugin is defined in the `pom.xml` file.
+. Specify `spring-boot-starter-tomcat` as a dependency of your application:
 +
 .Example `pom.xml`
 [source,xml,options="nowrap",subs="attributes+"]
 ----
+<project ...>
+  ...
+  <dependencies>
+    ...
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-tomcat</artifactId>
+    </dependency>
+    ...
+  </dependencies>
+  ...
+</project>
+----
+
+. Ensure the the `repackage` Maven goal for the Spring Boot Maven plugin is defined in the `pom.xml` file:
++
+.Example `pom.xml`
+[source,xml,options="nowrap",subs="attributes+"]
+----
+<project ...>
 ...
   <build>
     ...
@@ -56,6 +77,7 @@ You must configure your build and deployment settings to ensure that your applic
     </plugins>
   </build>
 ...
+</project>
 ----
 +
 This ensures that the Spring Boot classes used to launch the application are included in the WAR file, and that the corresponding properties for these classes are defined in the `MANIFEST.mf` file of the WAR file:
