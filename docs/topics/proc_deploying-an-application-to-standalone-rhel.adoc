@@ -93,7 +93,7 @@ $ mvn clean package
 ----
 +
 ifdef::built-for-vertx[The Vert.x Maven Plugin packages applications as fat jars link:https://reactiverse.io/vertx-maven-plugin/#introduction[by default].]
-ifdef::built-for-thorntail[The Thorntail Maven Plugin packages you application as an link:{link-guide-thorntail}#creating-an-uberjar_wf-swarm[_uberjar_].]
+ifdef::built-for-thorntail[The Thorntail Maven Plugin packages your application as an link:{link-guide-thorntail}#creating-an-uberjar_wf-swarm[_uberjar_].]
 ifdef::built-for-spring-boot,built-for-spring-boot-1-5[You can use the Spring Boot Maven Plugin to repackage your target artifacts as link:https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html#build-tool-plugins-maven-packaging[fat jars or WAR files].]
 
 
