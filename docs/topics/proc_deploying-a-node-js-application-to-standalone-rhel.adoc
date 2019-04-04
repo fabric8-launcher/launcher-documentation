@@ -1,0 +1,45 @@
+[id='deploying-a-node-js-application-to-standalone-rhel_{context}']
+= Deploying a {Node} application to standalone Red Hat Enterprise Linux
+
+Deploy a {Node} application to Red Hat Enterprise Linux.
+
+.Prerequisites
+
+* A {Node} application.
+* npm 6.4.1 installed
+* RHEL 7 installed.
+* {Node} installed
+
+
+.Procedure
+
+. Navigate to the directory with your application project:
++
+[source,bash,subs="attributes+",options="nowrap"]
+----
+$ cd myApp
+----
+
+. If you have specified additional dependencies in the `package.json` file of your project, ensure that you install them before running your applications:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ npm install
+----
+
+. Start your application.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ node app.js
+Server running at http://localhost:8080
+----
+
+.Verification steps
+
+. Use `curl` or your browser to verify your application is running at `http://localhost:8080`
++
+[source,bash,options="nowrap"]
+----
+$ curl http://localhost:8080
+----
