@@ -8,14 +8,27 @@ In addition to xref:mission-rest-http-wf-swarm[using a booster], you can create 
 
 include::thorntail/docs/howto/writing-an-application-from-scratch/index.adoc[leveloffset=+1]
 
+:parameter-runtime-name: {Thorntail}
+:parameter-group-name-runtime-plugin: io.thorntail
+:parameter-artifact-name-runtime-plugin: thorntail-maven-plugin
+:parameter-version-runtime-plugin: ${version.thorntail}
+:parameter-jar-file-name: my-app-thorntail.jar
+:parameter-link-appdev-guide: {link-guide-thorntail}#creating-an-application-from-scratch_wf-swarm
+include::proc_deploying-an-application-to-standalone-rhel.adoc[leveloffset=+1]
+:parameter-link-appdev-guide!:
+:parameter-jar-file-name!:
+:parameter-version-runtime-plugin!:
+:parameter-artifact-name-runtime-plugin!:
+:parameter-group-name-runtime-plugin!:
+:parameter-runtime-name!:
+
 :parameter-maven-command: $ mvn thorntail:run
 :parameter-response: Hello from Thorntail!
 :parameter-url: http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}/rest/hello
 include::proc_deploying-an-application-to-openshift.adoc[leveloffset=+1]
 :parameter-maven-command!:
-:parameter-response:
-:parameter-url:
+:parameter-response!:
+:parameter-url!:
 
 
 :context: {parent-context}
-
