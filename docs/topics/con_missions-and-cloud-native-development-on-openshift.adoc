@@ -21,7 +21,7 @@ You can use the examples for a variety of purposes:
 * They can also be updated or extended for your own use case
 
 Each example application is implemented in one or more runtimes.
-The {name-mission-http-api} example is implemented for these runtimes:
+The {name-example-http-api} example is implemented for these runtimes:
 
 * link:{link-mission-http-api-nodejs}[{Node}]
 * link:{link-mission-http-api-spring-boot}[{SpringBoot}]

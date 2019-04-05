@@ -8,11 +8,11 @@
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-rest-http-{parameter-runtime-anchor}']
 [id='example-rest-http-{parameter-runtime-anchor}']
-= {name-mission-http-api} example for {runtime}
+= {name-example-http-api} example for {runtime}
 
 include::rest-level-0-mission-intro-paragraph.adoc[]
 
-This booster introduces the mechanics of interacting with a remote service using the HTTP protocol. It allows you to:
+This example introduces the mechanics of interacting with a remote service using the HTTP protocol. It allows you to:
 
 * Execute an HTTP `GET` request on the `api/greeting` endpoint.
 * Receive a response in JSON format with a payload consisting of the `Hello, World!` String.
@@ -23,7 +23,7 @@ include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
 include::con_http-api-design-tradeoffs.adoc[leveloffset=+1]
 
-:parameter-mission-name: {name-mission-http-api}
+:parameter-mission-name: {name-example-http-api}
 :parameter-mission: http-api
 include::assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+1]
 
