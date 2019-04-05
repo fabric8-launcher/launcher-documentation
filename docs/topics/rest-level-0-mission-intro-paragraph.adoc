@@ -3,7 +3,7 @@ Mission proficiency level:
 ifdef::docs-topic[xref:proficiency_foundational[*{proficiency-foundational}*].]
 ifndef::docs-topic[link:https://launcher.fabric8.io/docs/thorntail-runtime.html#proficiency_levels[*{proficiency-foundational}*^].]
 
-.What the {name-mission-http-api} Mission Does
+.What the {name-mission-http-api} example does
 
-The {name-mission-http-api} mission shows how to map business operations to a remote procedure call endpoint over HTTP using a REST framework. This corresponds to link:https://martinfowler.com/articles/richardsonMaturityModel.html#level0[Level 0 in the Richardson Maturity Model^].
+The {name-mission-http-api} example shows how to map business operations to a remote procedure call endpoint over HTTP using a REST framework. This corresponds to link:https://martinfowler.com/articles/richardsonMaturityModel.html#level0[Level 0 in the Richardson Maturity Model^].
 Creating an HTTP endpoint using REST and its underlying principles to define your API lets you quickly prototype and design the API flexibly.
