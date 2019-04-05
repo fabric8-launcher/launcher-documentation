@@ -1,5 +1,5 @@
 [id='interacting-with-the-unmodified-http-api-booster-for-node_{context}']
-= Interacting with the unmodified {name-mission-http-api} booster for {Node}
+= Interacting with the unmodified {name-example-http-api} booster for {Node}
 
 The booster provides a default HTTP endpoint that accepts GET requests.
 
