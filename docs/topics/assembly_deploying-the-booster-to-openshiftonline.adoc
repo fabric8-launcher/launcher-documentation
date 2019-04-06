@@ -1,24 +1,24 @@
 // This is a parameterized module. Parameters used:
 //
 //  parameter-mission: id of the mission. This is used in anchors file imports.
-//  parameter-mission-name: human-readable name of the mission. This is used in readable text
+//  parameter-example-name: human-readable name of the mission. This is used in readable text
 //  context: context of usage, e.g. "osl", "oso", "ocp", "rest-api", etc. This can also be a composite, e.g. "rest-api-oso"
 //
 // Rationale: This procedure is identical in all deployments.
 
 [id='deploying-the-booster-to-openshiftonline_{context}']
 [id='deploying-the-example-to-openshiftonline_{context}']
-= Deploying the {parameter-mission-name} booster to {OpenShiftOnline}
+= Deploying the {parameter-example-name} booster to {OpenShiftOnline}
 
 :parent-context: {context}
 :context: {parent-context}-oso
 
-Use one of the following options to execute the {parameter-mission-name} booster on {OpenShiftOnline}.
+Use one of the following options to execute the {parameter-example-name} example on {OpenShiftOnline}.
 
 * xref:deploying-the-booster-using-launcher-oso_{context}[Use {name-launcher-oso}]
 * xref:deploying-the-{parameter-mission}-booster-using-the-oc-cli-client_{context}[Use the `oc` CLI client]
 
-Although each method uses the same `oc` commands to deploy your application, using {name-launcher-oso} provides an automated booster deployment workflow that executes the `oc` commands for you.
+Although each method uses the same `oc` commands to deploy your application, using {name-launcher-oso} provides an automated deployment workflow that executes the `oc` commands for you.
 
 :parameter-deployment: link:https://manage.openshift.com[{OpenShiftOnline}]
 :parameter-launcher: link:{link-launcher-oso}[{name-launcher-oso}]
