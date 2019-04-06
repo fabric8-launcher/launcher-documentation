@@ -1,11 +1,11 @@
 // This is a parameterized module. Parameters used:
 //
-//  parameter-mission-name: human-readable name of the mission. This is used in readable text
+//  parameter-example-name: human-readable name of the mission. This is used in readable text
 //
 // Rationale: This procedure is identical in all deployments.
 
 [id='deploying-the-booster-to-openshiftcontainerplatform_{context}']
-= Deploying the {parameter-mission-name} booster to {OpenShiftContainerPlatform}
+= Deploying the {parameter-example-name} booster to {OpenShiftContainerPlatform}
 
 The process of creating and deploying boosters to {OpenshiftContainerPlatform} is similar to {OpenShiftOnline}:
 

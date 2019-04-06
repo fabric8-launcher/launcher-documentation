@@ -23,7 +23,7 @@ include::con_configmap-design-tradeoffs.adoc[leveloffset=+1]
 
 include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
-:parameter-mission-name: {name-mission-configmap}
+:parameter-example-name: {name-mission-configmap}
 :parameter-mission: configmap
 include::assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+1]
 
@@ -39,7 +39,7 @@ ifndef::built-for-nodejs[]
 include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]
 :parameter-configmap!:
 endif::[]
-:parameter-mission-name!:
+:parameter-example-name!:
 
 include::ref_configmap-resources.adoc[leveloffset=+1]
 
