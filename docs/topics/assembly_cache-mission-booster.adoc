@@ -23,7 +23,7 @@ include::con_how-caching-works-and-when-you-need-it.adoc[leveloffset=+1]
 
 include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
-:parameter-mission-name: {name-mission-cache}
+:parameter-example-name: {name-mission-cache}
 :parameter-mission: cache
 include::assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+1]
 
@@ -37,7 +37,7 @@ include::proc_interacting-with-the-unmodified-cache-booster.adoc[leveloffset=+1]
 ifndef::built-for-nodejs[]
 include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]
 endif::[]
-:parameter-mission-name!:
+:parameter-example-name!:
 
 include::ref_caching-resources.adoc[leveloffset=+1]
 

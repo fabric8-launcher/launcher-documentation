@@ -1,18 +1,18 @@
 // This is a parameterized module. Parameters used:
 //
 //  parameter-mission: id of the mission. This is used in anchors file imports.
-//  parameter-mission-name: human-readable name of the mission. This is used in readable text
+//  parameter-example-name: human-readable name of the mission. This is used in readable text
 //  context: context of usage, e.g. "osl", "oso", "ocp", "rest-api", etc. This can also be a composite, e.g. "rest-api-oso"
 //
 // Rationale: This procedure is identical in all deployments.
 
 [id='deploying-the-booster-to-openshiftlocal_{context}']
-= Deploying the {parameter-mission-name} booster to {OpenShiftLocal}
+= Deploying the {parameter-example-name} booster to {OpenShiftLocal}
 
 :parent-context: {context}
 :context: {parent-context}-osl
 
-Use one of the following options to execute the {parameter-mission-name} booster locally on {OpenShiftLocal}:
+Use one of the following options to execute the {parameter-example-name} booster locally on {OpenShiftLocal}:
 
 * xref:deploying-the-booster-using-the-launcher-tool_{context}[Using {name-launcher}]
 * xref:deploying-the-{parameter-mission}-booster-using-the-oc-cli-client_{context}[Using the `oc` CLI client]

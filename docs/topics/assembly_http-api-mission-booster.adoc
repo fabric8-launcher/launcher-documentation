@@ -23,7 +23,7 @@ include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
 include::con_http-api-design-tradeoffs.adoc[leveloffset=+1]
 
-:parameter-mission-name: {name-example-http-api}
+:parameter-example-name: {name-example-http-api}
 :parameter-mission: http-api
 include::assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+1]
 
@@ -37,6 +37,6 @@ include::proc_interacting-with-the-unmodified-http-api-booster-for-{parameter-ru
 ifndef::built-for-nodejs[]
 include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]
 endif::[]
-:parameter-mission-name!:
+:parameter-example-name!:
 
 include::ref_rest-resources.adoc[leveloffset=+1]

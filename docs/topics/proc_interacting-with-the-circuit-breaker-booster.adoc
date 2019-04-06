@@ -2,13 +2,13 @@
 //
 //
 //  parameter-mission: id of the mission. This is used in anchors file imports.
-//  parameter-mission-name: used in the mission title
+//  parameter-example-name: used in the mission title
 //
 // Rationale: This procedure is identical in all deployments.
 // TODO: Add conditional includes for Node.
 
 [#interacting-with-the-unmodified-booster-{context}]
-= Interacting with the unmodified {runtime} {parameter-mission-name} booster
+= Interacting with the unmodified {runtime} {parameter-example-name} booster
 
 Once you have the {runtime} booster deployed, you have the following services running:
 

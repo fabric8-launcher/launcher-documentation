@@ -7,6 +7,7 @@
 // Rationale: This procedure is identical in all deployments.
 
 [id='deploying-the-booster-to-openshiftonline_{context}']
+[id='deploying-the-example-to-openshiftonline_{context}']
 = Deploying the {parameter-mission-name} booster to {OpenShiftOnline}
 
 :parent-context: {context}
@@ -30,4 +31,3 @@ include::proc_deploying-the-{parameter-mission}-booster-using-the-oc-cli-client.
 :parameter-deployment!:
 
 :context: {parent-context}
-
