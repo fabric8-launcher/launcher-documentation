@@ -20,7 +20,7 @@ include::con_circuit-breaker-design-tradeoffs.adoc[leveloffset=+1]
 
 include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
-:parameter-mission-name: {name-mission-circuit-breaker}
+:parameter-example-name: {name-mission-circuit-breaker}
 :parameter-mission: circuit-breaker
 include::assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+1]
 
@@ -36,7 +36,7 @@ include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]
 
 include::proc_using-hystrix-dashboard-to-monitor-the-circuit-breaker.adoc[leveloffset=+1]
 endif::[]
-:parameter-mission-name!:
+:parameter-example-name!:
 
 include::ref_circuit-breaker-resources.adoc[leveloffset=+1]
 

@@ -19,7 +19,7 @@ The `debug` module can use link:https://www.npmjs.com/package/debug#wildcards[wi
 
 . Test your application to invoke debug logging. 
 +
-For example, when debug logging in the xref:mission-rest-http-nodejs[{name-mission-http-api} booster] is set to log the `name` variable in the `/api/greeting` method:
+For example, when debug logging in the xref:mission-rest-http-nodejs[{name-example-http-api} booster] is set to log the `name` variable in the `/api/greeting` method:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----

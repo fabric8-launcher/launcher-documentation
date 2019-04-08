@@ -46,7 +46,7 @@ include::con_crud-design-tradeoffs.adoc[leveloffset=+1]
 
 include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
-:parameter-mission-name: {name-mission-crud}
+:parameter-example-name: {name-mission-crud}
 :parameter-mission: crud
 include::assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+1]
 
@@ -64,7 +64,7 @@ include::proc_interacting-with-the-crud-api.adoc[leveloffset=+1]
 
 include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]
 endif::[]
-:parameter-mission-name!:
+:parameter-example-name!:
 
 
 include::ref_relational-database-resources.adoc[leveloffset=+1]

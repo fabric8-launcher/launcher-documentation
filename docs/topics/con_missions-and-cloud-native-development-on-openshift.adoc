@@ -1,35 +1,29 @@
 [id='missions-and-cloud-native-development-on-openshift_{context}']
-= Missions and cloud-native development on OpenShift
+= Example applications and cloud-native development on OpenShift
 
-When developing applications on OpenShift, you can use missions and boosters to kickstart your development.
+When developing applications on OpenShift, you can use example applications to kickstart your development.
 
 [discrete]
-== Missions
+== Example applications
 
-Missions are working applications that showcase different fundamental pieces of building cloud native applications and services.
+Examples are working applications that showcase different fundamental pieces of building cloud native applications and services.
 
-A mission implements a link:http://microservices.io/patterns/microservices.html[Microservice pattern] such as:
+The examples implement a link:http://microservices.io/patterns/microservices.html[Microservice pattern] such as:
 
 * Creating REST APIs
 * Interoperating with a database
 * Implementing the Health Check pattern
 
-You can use missions for a variety of purposes:
+You can use the examples for a variety of purposes:
 
 * A proof of technology demonstration
 * A teaching tool, or a sandbox for understanding how to develop applications for your project
 * They can also be updated or extended for your own use case
 
-[discrete]
-== Boosters
+Each example application is implemented in one or more runtimes.
+The {name-example-http-api} example is implemented for these runtimes:
 
-A booster is the implementation of a mission in a specific runtime. Boosters are preconfigured, functioning applications that demonstrate core principles of modern application development and run in an environment similar to production.
-
-Each mission is implemented in one or more runtimes. Both the specific implementation and the actual project that contains your code are called a booster.
-
-For example, the {name-mission-http-api} mission is implemented for these runtimes:
-
-* link:{link-mission-http-api-nodejs}[{Node} booster]
-* link:{link-mission-http-api-spring-boot}[{SpringBoot} booster]
-* link:{link-mission-http-api-vertx}[{VertX} booster]
-* link:{link-mission-http-api-thorntail}[{WildFlySwarm} booster]
+* link:{link-mission-http-api-nodejs}[{Node}]
+* link:{link-mission-http-api-spring-boot}[{SpringBoot}]
+* link:{link-mission-http-api-vertx}[{VertX}]
+* link:{link-mission-http-api-thorntail}[{WildFlySwarm}]

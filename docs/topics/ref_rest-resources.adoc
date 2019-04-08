@@ -18,11 +18,11 @@ ifdef::built-for-vertx[* link:http://vertx.io/blog/some-rest-with-vert-x/[Some R
 
 ifdef::built-for-thorntail[* link:http://resteasy.jboss.org/docs.html[RESTEasy Documentation]]
 
-ifndef::built-for-spring-boot[* link:{link-mission-http-api-spring-boot}[{name-mission-http-api} mission - {SpringBoot} booster]]
+ifndef::built-for-spring-boot[* link:{link-mission-http-api-spring-boot}[{name-example-http-api} mission - {SpringBoot} booster]]
 
-ifndef::built-for-vertx[* link:{link-mission-http-api-vertx}[{name-mission-http-api} mission - {VertX} booster]]
+ifndef::built-for-vertx[* link:{link-mission-http-api-vertx}[{name-example-http-api} mission - {VertX} booster]]
 
-ifndef::built-for-thorntail[* link:{link-mission-http-api-thorntail}[{name-mission-http-api} mission - {Thorntail} booster]]
+ifndef::built-for-thorntail[* link:{link-mission-http-api-thorntail}[{name-example-http-api} mission - {Thorntail} booster]]
 
-ifndef::built-for-nodejs[* link:{link-mission-http-api-nodejs}[{name-mission-http-api} mission - {Node} booster]]
+ifndef::built-for-nodejs[* link:{link-mission-http-api-nodejs}[{name-example-http-api} mission - {Node} booster]]
 

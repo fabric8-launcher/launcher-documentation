@@ -45,7 +45,7 @@ endif::[]
 :name-launcher: Fabric8 Launcher
 :name-launcher-oso: developers.redhat.com/launch
 
-:name-mission-http-api: REST API Level 0
+:name-example-http-api: REST API Level 0
 :name-mission-configmap: Externalized Configuration
 :name-mission-health-check: Health Check
 :name-mission-circuit-breaker: Circuit Breaker

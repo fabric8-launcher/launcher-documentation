@@ -27,7 +27,7 @@ include::con_health-check-concepts.adoc[leveloffset=+1]
 
 include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
-:parameter-mission-name: {name-mission-health-check}
+:parameter-example-name: {name-mission-health-check}
 :parameter-mission: health-check
 include::assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+1]
 
@@ -41,7 +41,7 @@ include::proc_interacting-with-the-unmodified-health-check-booster.adoc[leveloff
 ifndef::built-for-nodejs[]
 include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]
 endif::built-for-nodejs[]
-:parameter-mission-name!:
+:parameter-example-name!:
 
 include::ref_health-check-resources.adoc[leveloffset=+1]
 
