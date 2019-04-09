@@ -5,11 +5,12 @@
 // Rationale: This procedure is identical in all deployments
 
 [id='deploying-the-secured-booster-using-the-oc-cli-client_{context}']
-= Deploying the {name-mission-secured} booster using the `oc` CLI client
+[id='deploying-the-secured-booster-using-the-oc-client_{context}']
+= Deploying the {name-mission-secured} example using the `oc` CLI client
 
 .Prerequisites
 
-* The booster application created using the {name-launcher} tool on a {OpenShiftLocal}.
+* The example application created using the {name-launcher} tool on a {OpenShiftLocal}.
 ifndef::parameter-ocp[For more information, see xref:creating-the-secured-booster-using-launcher_{context}[].]
 
 ifndef::parameter-ocp[* Your {name-launcher} URL.]
@@ -37,9 +38,9 @@ $ unzip {value-name-project}.zip
 $ oc new-project {value-name-project}
 ----
 
-. Navigate to the root directory of your booster.
+. Navigate to the root directory of your project.
 
-. Deploy the {RHSSO} server using the `service.sso.yaml` file from your booster ZIP file:
+. Deploy the {RHSSO} server using the `service.sso.yaml` file from your example ZIP file:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -72,6 +73,6 @@ $ npm install && npm run openshift -- \
       -d SSO_AUTH_SERVER_URL=$(oc get route secure-sso -o jsonpath='{"https://"}{.spec.host}{"/auth\n"}')
 ----
 
-These commands install any missing module dependencies, then using the xref:about-nodeshift[Nodeshift] module, deploy the booster on OpenShift.
+These commands install any missing module dependencies, then using the xref:about-nodeshift[Nodeshift] module, deploy the example on OpenShift.
 --
 endif::built-for-nodejs[]
