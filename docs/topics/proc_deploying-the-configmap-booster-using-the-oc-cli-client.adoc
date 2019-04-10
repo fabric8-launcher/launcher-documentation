@@ -7,7 +7,7 @@
 
 [id='deploying-the-configmap-booster-using-the-oc-cli-client_{context}']
 [id='deploying-the-configmap-example-using-the-oc-client_{context}']
-= Deploying the {name-mission-configmap} example using the `oc` CLI client
+= Deploying the {name-example-configmap} example using the `oc` CLI client
 
 .Prerequisites
 

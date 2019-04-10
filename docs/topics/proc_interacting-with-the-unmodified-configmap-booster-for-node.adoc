@@ -1,6 +1,6 @@
 [id='interacting-with-the-unmodified-configmap-booster-for-node_{context}']
 [id='interacting-with-the-unmodified-configmap-example-for-node_{context}']
-= Interacting with the unmodified {name-mission-configmap} example for {Node}
+= Interacting with the unmodified {name-example-configmap} example for {Node}
 
 The example provides a default HTTP endpoint that accepts `GET` requests.
 

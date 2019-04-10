@@ -46,7 +46,7 @@ endif::[]
 :name-launcher-oso: developers.redhat.com/launch
 
 :name-example-http-api: REST API Level 0
-:name-mission-configmap: Externalized Configuration
+:name-example-configmap: Externalized Configuration
 :name-mission-health-check: Health Check
 :name-mission-circuit-breaker: Circuit Breaker
 :name-mission-crud: Relational Database Backend

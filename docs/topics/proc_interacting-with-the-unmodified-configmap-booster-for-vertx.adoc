@@ -1,6 +1,6 @@
 [id='interacting-with-the-unmodified-configmap-booster-for-vertx_{context}']
 [id='interacting-with-the-unmodified-configmap-example-for-vertx_{context}']
-= Interacting with the unmodified {name-mission-configmap} example for {VertX}
+= Interacting with the unmodified {name-example-configmap} example for {VertX}
 
 The example provides a default HTTP endpoint that accepts GET requests.
 

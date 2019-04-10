@@ -7,7 +7,8 @@
 
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-configmap-{parameter-runtime-anchor}']
-= {name-mission-configmap} mission - {runtime} booster
+[id='example-configmap-{parameter-runtime-anchor}']
+= {name-mission-configmap} example for {runtime}
 
 include::configmap-mission-intro-paragraph.adoc[leveloffset=+1]
 
@@ -42,4 +43,3 @@ endif::[]
 :parameter-example-name!:
 
 include::ref_configmap-resources.adoc[leveloffset=+1]
-

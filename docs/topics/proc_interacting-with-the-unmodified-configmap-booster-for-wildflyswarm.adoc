@@ -1,6 +1,6 @@
 [id='interacting-with-the-unmodified-configmap-booster-for-wildflyswarm_{context}']
 [id='interacting-with-the-unmodified-configmap-example-for-wildflyswarm_{context}']
-= Interacting with the unmodified {name-mission-configmap} example for {WildFlySwarm}
+= Interacting with the unmodified {name-example-configmap} example for {WildFlySwarm}
 
 The example provides a default HTTP endpoint that accepts GET requests.
 
