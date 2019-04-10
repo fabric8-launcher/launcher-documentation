@@ -5,13 +5,14 @@
 // Rationale: This procedure is identical in all deployments.
 
 [id='deploying-the-booster-to-openshiftcontainerplatform_{context}']
-= Deploying the {parameter-example-name} booster to {OpenShiftContainerPlatform}
+[id='deploying-the-booster-to-openshiftcontainerplatform_{context}']
+= Deploying the {parameter-example-name} example to {OpenShiftContainerPlatform}
 
-The process of creating and deploying boosters to {OpenshiftContainerPlatform} is similar to {OpenShiftOnline}:
+The process of creating and deploying example applications to {OpenshiftContainerPlatform} is similar to {OpenShiftOnline}:
 
 .Prerequisites
 
-* The booster created using link:{link-launcher-oso}[{name-launcher-oso}] or link:{link-guide-minishift-installation}[the {name-launcher} tool].
+* The example created using link:{link-launcher-oso}[{name-launcher-oso}] or link:{link-guide-minishift-installation}[the {name-launcher} tool].
 
 .Procedure
 
