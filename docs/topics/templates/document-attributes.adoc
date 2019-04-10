@@ -49,7 +49,7 @@ endif::[]
 :name-example-configmap: Externalized Configuration
 :name-mission-health-check: Health Check
 :name-mission-circuit-breaker: Circuit Breaker
-:name-mission-crud: Relational Database Backend
+:name-example-crud: Relational Database Backend
 :name-mission-secured: Secured
 :name-mission-cache: Cache
 

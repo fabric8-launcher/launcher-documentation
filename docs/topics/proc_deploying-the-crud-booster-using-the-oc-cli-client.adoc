@@ -7,7 +7,7 @@
 
 [id='deploying-the-crud-booster-using-the-oc-cli-client_{context}']
 [id='deploying-the-crud-example-using-the-oc-client_{context}']
-= Deploying the {name-mission-crud} example using the `oc` CLI client
+= Deploying the {name-example-crud} example using the `oc` CLI client
 
 .Prerequisites
 

@@ -1,5 +1,5 @@
 [id='interacting-with-the-crud-api_{context}']
-= Interacting with the {name-mission-crud} API
+= Interacting with the {name-example-crud} API
 
 When you have finished creating your application booster, you can interact with it the following way:
 

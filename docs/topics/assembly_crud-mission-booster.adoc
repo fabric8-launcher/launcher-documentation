@@ -6,7 +6,7 @@
 
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-crud-{parameter-runtime-anchor}']
-= {name-mission-crud} mission - {runtime} booster
+= {name-example-crud} mission - {runtime} booster
 
 include::note-booster-unvailable-oso.adoc[leveloffset=+1]
 
@@ -46,7 +46,7 @@ include::con_crud-design-tradeoffs.adoc[leveloffset=+1]
 
 include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
-:parameter-example-name: {name-mission-crud}
+:parameter-example-name: {name-example-crud}
 :parameter-mission: crud
 include::assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+1]
 
@@ -68,4 +68,3 @@ endif::[]
 
 
 include::ref_relational-database-resources.adoc[leveloffset=+1]
-
