@@ -8,7 +8,7 @@
 
 [id='deploying-the-booster-to-openshiftonline_{context}']
 [id='deploying-the-example-to-openshiftonline_{context}']
-= Deploying the {parameter-example-name} booster to {OpenShiftOnline}
+= Deploying the {parameter-example-name} example to {OpenShiftOnline}
 
 :parent-context: {context}
 :context: {parent-context}-oso

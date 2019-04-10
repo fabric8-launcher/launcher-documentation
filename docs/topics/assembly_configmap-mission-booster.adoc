@@ -8,11 +8,11 @@
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-configmap-{parameter-runtime-anchor}']
 [id='example-configmap-{parameter-runtime-anchor}']
-= {name-mission-configmap} example for {runtime}
+= {name-example-configmap} example for {runtime}
 
 include::configmap-mission-intro-paragraph.adoc[leveloffset=+1]
 
-This mission shows you how to:
+This example shows you how to:
 
 * Set up and configure a `ConfigMap`.
 * Use the configuration provided by the `ConfigMap` within an application.
@@ -24,7 +24,7 @@ include::con_configmap-design-tradeoffs.adoc[leveloffset=+1]
 
 include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
-:parameter-example-name: {name-mission-configmap}
+:parameter-example-name: {name-example-configmap}
 :parameter-mission: configmap
 include::assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+1]
 
