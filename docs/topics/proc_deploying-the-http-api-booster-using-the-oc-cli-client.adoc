@@ -5,7 +5,7 @@
 // Rationale: This procedure is identical in all deployments.
 
 [id='deploying-the-http-api-booster-using-the-oc-cli-client_{context}']
-[id='deploying-the-http-api-booster-using-the-oc-cli-client_{context}']
+[id='deploying-the-http-api-example-using-the-oc-cli-client_{context}']
 = Deploying the {name-example-http-api} example using the `oc` CLI client
 
 .Prerequisites
@@ -62,7 +62,7 @@ ifdef::built-for-nodejs[]
 $ npm install && npm run openshift
 ----
 +
-These commands install any missing module dependencies, then using the xref:about-nodeshift[Nodeshift] module, deploy the booster on OpenShift.
+These commands install any missing module dependencies, then using the xref:about-nodeshift[Nodeshift] module, deploy the example on OpenShift.
 endif::built-for-nodejs[]
 
 . Check the status of your example and ensure your pod is running.

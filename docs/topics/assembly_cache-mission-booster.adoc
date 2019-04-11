@@ -6,13 +6,13 @@
 
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-cache-{parameter-runtime-anchor}']
-= {name-mission-cache} mission - {runtime} booster
+= {name-example-cache} mission - {runtime} booster
 
 include::note-booster-unvailable-oso.adoc[leveloffset=+1]
 
 Mission proficiency level: xref:proficiency_advanced[*{proficiency-advanced}*].
 
-The {name-mission-cache} mission demonstrates how to use a cache to increase the response time of applications.
+The {name-example-cache} mission demonstrates how to use a cache to increase the response time of applications.
 
 This mission shows you how to:
 
@@ -23,7 +23,7 @@ include::con_how-caching-works-and-when-you-need-it.adoc[leveloffset=+1]
 
 include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
-:parameter-example-name: {name-mission-cache}
+:parameter-example-name: {name-example-cache}
 :parameter-example: cache
 include::assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+1]
 

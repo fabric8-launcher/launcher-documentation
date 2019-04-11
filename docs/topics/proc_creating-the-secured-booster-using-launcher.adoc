@@ -1,6 +1,6 @@
 
 [id='creating-the-secured-booster-using-launcher_{context}']
-= Creating the {name-mission-secured} booster using {name-launcher}
+= Creating the {name-example-secured} booster using {name-launcher}
 
 .Prerequisites
 

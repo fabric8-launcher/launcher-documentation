@@ -1,12 +1,12 @@
 
 [id='getting-the-secured-booster-api-endpoint_{context}']
-= Getting the {name-mission-secured} booster API endpoint
+= Getting the {name-example-secured} booster API endpoint
 
-When using a client to interact with the booster, you must specify the {name-mission-secured} booster endpoint, which is the _PROJECT_ID_ service.
+When using a client to interact with the booster, you must specify the {name-example-secured} booster endpoint, which is the _PROJECT_ID_ service.
 
 .Prerequisites
 
-* The {name-mission-secured} booster deployed and running.
+* The {name-example-secured} booster deployed and running.
 * The `oc` client authenticated.
 
 .Procedure
@@ -15,7 +15,7 @@ When using a client to interact with the booster, you must specify the {name-mis
 --
 A sample output is shown in the following table:
 
-.List of {name-mission-secured} endpoints
+.List of {name-example-secured} endpoints
 ====
 [width="100%",options="header"]
 |===

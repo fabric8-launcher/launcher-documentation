@@ -6,7 +6,7 @@
 
 [id='deploying-the-circuit-breaker-booster-using-the-oc-cli-client_{context}']
 [id='deploying-the-circuit-breaker-example-using-the-oc-cli-client_{context}']
-= Deploying the {name-mission-circuit-breaker} example using the `oc` CLI client
+= Deploying the {name-example-circuit-breaker} example using the `oc` CLI client
 
 .Prerequisites
 

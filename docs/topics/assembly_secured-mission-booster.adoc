@@ -7,7 +7,7 @@
 
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-rest-http-secured-{parameter-runtime-anchor}']
-= {name-mission-secured} mission - {runtime} booster
+= {name-example-secured} mission - {runtime} booster
 
 include::note-booster-unvailable-oso.adoc[leveloffset=+1]
 
@@ -15,7 +15,7 @@ include::note-booster-unvailable-oso.adoc[leveloffset=+1]
 Mission proficiency level:
 xref:proficiency_advanced[*{proficiency-advanced}*].
 
-The {name-mission-secured} booster secures a REST endpoint using link:https://access.redhat.com/products/red-hat-single-sign-on[{RHSSO}^]. (This booster expands on the {name-example-http-api} booster).
+The {name-example-secured} booster secures a REST endpoint using link:https://access.redhat.com/products/red-hat-single-sign-on[{RHSSO}^]. (This booster expands on the {name-example-http-api} booster).
 
 {RHSSO}:
 

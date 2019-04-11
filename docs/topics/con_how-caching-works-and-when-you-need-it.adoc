@@ -18,7 +18,7 @@ Assume you have two applications: _service1_ and _service2_:
 * If _service1_ started using a cached value with a TTL of 1 second instead, that would be reduced to 10 calls over 10 seconds.
 ====
 
-.How the {name-mission-cache} mission works
+.How the {name-example-cache} mission works
 
 . The _cache_, _cute name_, and _greeting_ services are deployed and exposed.
 . User accesses the web frontend of the _greeting_ service.

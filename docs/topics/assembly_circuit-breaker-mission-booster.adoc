@@ -6,7 +6,7 @@
 
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-circuit-breaker-{parameter-runtime-anchor}']
-= {name-mission-circuit-breaker} mission - {runtime} booster
+= {name-example-circuit-breaker} mission - {runtime} booster
 
 include::note-booster-unvailable-oso.adoc[leveloffset=+1]
 
@@ -20,7 +20,7 @@ include::con_circuit-breaker-design-tradeoffs.adoc[leveloffset=+1]
 
 include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
-:parameter-example-name: {name-mission-circuit-breaker}
+:parameter-example-name: {name-example-circuit-breaker}
 :parameter-example: circuit-breaker
 include::assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+1]
 
