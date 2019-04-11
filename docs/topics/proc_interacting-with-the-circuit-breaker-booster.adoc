@@ -1,7 +1,7 @@
 // This is a parameterized module. Parameters used:
 //
 //
-//  parameter-mission: id of the mission. This is used in anchors file imports.
+//  parameter-example: id of the mission. This is used in anchors file imports.
 //  parameter-example-name: used in the mission title
 //
 // Rationale: This procedure is identical in all deployments.
