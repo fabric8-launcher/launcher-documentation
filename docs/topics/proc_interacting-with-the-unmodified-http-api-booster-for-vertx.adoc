@@ -1,7 +1,8 @@
 [id='interacting-with-the-unmodified-http-api-booster-for-vertx_{context}']
-= Interacting with the unmodified {name-example-http-api} booster for {VertX}
+[id='interacting-with-the-unmodified-http-api-example-for-vertx_{context}']
+= Interacting with the unmodified {name-example-http-api} example for {VertX}
 
-The booster provides a default HTTP endpoint that accepts GET requests.
+The example provides a default HTTP endpoint that accepts GET requests.
 
 .Prerequisites
 
@@ -10,7 +11,7 @@ The booster provides a default HTTP endpoint that accepts GET requests.
 
 .Procedure
 
-. Use `curl` to execute a `GET` request against the booster. You can also use a browser to do this.
+. Use `curl` to execute a `GET` request against the example. You can also use a browser to do this.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -20,7 +21,7 @@ $ curl http://{value-name-app}-{value-name-project}.{value-route-openshift-hostn
 }
 ----
 
-. Use `curl` to execute a `GET` request with the `name` URL parameter against the booster. You can also use a browser to do this.
+. Use `curl` to execute a `GET` request with the `name` URL parameter against the example. You can also use a browser to do this.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -31,4 +32,3 @@ $ curl http://{value-name-app}-{value-name-project}.{value-route-openshift-hostn
 ----
 
 include::note-web-form-rest-api.adoc[leveloffset=+1]
-
