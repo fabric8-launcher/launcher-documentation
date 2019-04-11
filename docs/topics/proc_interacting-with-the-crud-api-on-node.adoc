@@ -1,7 +1,7 @@
 [id='interacting-with-the-crud-api-on-node_{context}']
 = Interacting with the {name-example-crud} API on {Node}
 
-When you have finished creating your application booster, you can interact with it the following way:
+When you have finished creating your example application, you can interact with it the following way:
 
 .Prerequisites
 

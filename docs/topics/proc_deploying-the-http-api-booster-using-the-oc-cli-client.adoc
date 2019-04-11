@@ -41,7 +41,7 @@ $ unzip {value-name-project}.zip
 $ oc new-project {value-name-project}
 ----
 
-. Navigate to the root directory of your application.
+. Navigate to the root directory of your project.
 
 ifndef::built-for-nodejs[]
 . Use Maven to start the deployment to OpenShift.
