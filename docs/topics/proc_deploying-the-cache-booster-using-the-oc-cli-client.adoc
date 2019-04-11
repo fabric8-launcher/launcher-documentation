@@ -1,6 +1,6 @@
 [id='deploying-the-cache-booster-using-the-oc-cli-client_{context}']
 [id='deploying-the-cache-example-using-the-oc-client_{context}']
-= Deploying the {name-mission-cache} example using the `oc` CLI client
+= Deploying the {name-example-cache} example using the `oc` CLI client
 
 .Prerequisites
 

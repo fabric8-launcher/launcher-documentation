@@ -1,5 +1,5 @@
 [id='interacting-with-the-unmodified-health-check-booster_{context}']
-= Interacting with the unmodified {name-mission-health-check} booster
+= Interacting with the unmodified {name-example-health-check} booster
 
 Once you have the booster deployed, you will have a service called `{value-name-app}` running that exposes the following REST endpoints:
 

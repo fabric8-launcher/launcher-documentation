@@ -38,7 +38,7 @@ NOTE: The `-sk` option tells curl to ignore failures resulting from self-signed 
 :service-path: api/greeting
 ifdef::built-for-vertx[:service-path: greeting]
 
-. Invoke the {name-mission-secured} service. Attach the access (bearer) token to the HTTP headers:
+. Invoke the {name-example-secured} service. Attach the access (bearer) token to the HTTP headers:
 +
 --
 [source,bash,options="nowrap",subs="attributes+"]
@@ -86,7 +86,7 @@ MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoETnPmN55xBJjRzN/cs30OzJ9olkteLVNRjz
 -----END PUBLIC KEY-----
 ----
 +
-NOTE: This is the master realm public key from the {RHSSO} server deployment of the {name-mission-secured} booster.
+NOTE: This is the master realm public key from the {RHSSO} server deployment of the {name-example-secured} booster.
 
 .. Paste the `token` output from the client output into the _Encoded_ box.
 +

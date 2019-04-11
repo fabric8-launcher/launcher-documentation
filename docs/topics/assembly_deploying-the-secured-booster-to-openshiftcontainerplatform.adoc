@@ -1,6 +1,6 @@
 
 [id='deploying-the-secured-booster-to-openshiftcontainerplatform_{context}']
-= Deploying the {name-mission-secured} booster to {OpenShiftContainerPlatform}
+= Deploying the {name-example-secured} booster to {OpenShiftContainerPlatform}
 
 :parent-context: {context}
 :context: {parent-context}-ocp

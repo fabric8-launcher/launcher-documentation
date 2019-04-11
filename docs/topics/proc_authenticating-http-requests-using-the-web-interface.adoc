@@ -24,7 +24,7 @@ The following procedure is an exercise for you to see how security is enforced, 
 .. Click the _Invoke_ button.
 +
 --
-.Unauthenticated {name-mission-secured} Booster Web Interface
+.Unauthenticated {name-example-secured} Booster Web Interface
 image::sso-main.png[]
 
 ifdef::node-js-sso-temp-workaround[]
@@ -48,7 +48,7 @@ endif::node-js-sso-temp-workaround[]
 --
 NOTE: You can see the access (bearer) token in the command line output at the bottom of the page.
 
-.Authenticated {name-mission-secured} Booster Web Interface (as Alice)
+.Authenticated {name-example-secured} Booster Web Interface (as Alice)
 image::sso-alice.png[]
 --
 
@@ -68,7 +68,7 @@ image::sso-invoke-alice.png[]
 Confirm that this sends an unauthenticated request to the Greeting service.
 .. Click the _Login_ button and log in as xref:rhsso-realm-model_{context}[the _admin_ user].
 +
-.Authenticated {name-mission-secured} Booster Web Interface (as admin)
+.Authenticated {name-example-secured} Booster Web Interface (as admin)
 image::sso-admin.png[]
 
 . Click the _Invoke_ button.

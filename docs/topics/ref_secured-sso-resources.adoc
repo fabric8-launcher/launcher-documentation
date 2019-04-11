@@ -10,11 +10,11 @@ Follow the links below for additional information on the principles behind the O
 
 * link:http://www.keycloak.org/archive/documentation-3.2.html[Keycloak 3.2 Documentation]
 
-ifndef::built-for-spring-boot[* link:{link-mission-secured-spring-boot}[{name-mission-secured} mission - {SpringBoot} booster]]
+ifndef::built-for-spring-boot[* link:{link-mission-secured-spring-boot}[{name-example-secured} mission - {SpringBoot} booster]]
 
-ifndef::built-for-vertx[* link:{link-mission-secured-vertx}[{name-mission-secured} mission - {VertX} booster]]
+ifndef::built-for-vertx[* link:{link-mission-secured-vertx}[{name-example-secured} mission - {VertX} booster]]
 
-ifndef::built-for-thorntail[* link:{link-mission-secured-thorntail}[{name-mission-secured} mission - {Thorntail} booster]]
+ifndef::built-for-thorntail[* link:{link-mission-secured-thorntail}[{name-example-secured} mission - {Thorntail} booster]]
 
-ifndef::built-for-nodejs[* link:{link-mission-secured-nodejs}[{name-mission-secured} mission - {Node} booster]]
+ifndef::built-for-nodejs[* link:{link-mission-secured-nodejs}[{name-example-secured} mission - {Node} booster]]
 

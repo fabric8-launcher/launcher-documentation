@@ -1,11 +1,11 @@
 
 [id='authenticating-to-the-secured-booster-api-endpoint_{context}']
-= Authenticating to the {name-mission-secured} booster API endpoint
+= Authenticating to the {name-example-secured} booster API endpoint
 
 :parent-context: {context}
 
-The {name-mission-secured} booster provides a default HTTP endpoint that accepts `GET` requests if the caller is authenticated and authorized.
-The client first authenticates against the {RHSSO} server and then performs a `GET` request against the {name-mission-secured} booster using the access token returned by the authentication step.
+The {name-example-secured} booster provides a default HTTP endpoint that accepts `GET` requests if the caller is authenticated and authorized.
+The client first authenticates against the {RHSSO} server and then performs a `GET` request against the {name-example-secured} booster using the access token returned by the authentication step.
 
 include::proc_getting-the-secured-booster-api-endpoint.adoc[leveloffset=+1]
 

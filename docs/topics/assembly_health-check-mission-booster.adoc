@@ -6,7 +6,7 @@
 
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-health-check-{parameter-runtime-anchor}']
-= {name-mission-health-check} mission - {runtime} booster
+= {name-example-health-check} mission - {runtime} booster
 
 include::health-check-mission-intro-paragraph.adoc[leveloffset=+1]
 
@@ -27,7 +27,7 @@ include::con_health-check-concepts.adoc[leveloffset=+1]
 
 include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
-:parameter-example-name: {name-mission-health-check}
+:parameter-example-name: {name-example-health-check}
 :parameter-example: health-check
 include::assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+1]
 

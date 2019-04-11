@@ -1,6 +1,6 @@
 
 [id='deploying-the-secured-booster-to-openshiftlocal_{context}']
-= Deploying the {name-mission-secured} booster to {OpenShiftLocal}
+= Deploying the {name-example-secured} booster to {OpenShiftLocal}
 
 :parent-context: {context}
 :context: {parent-context}-osl

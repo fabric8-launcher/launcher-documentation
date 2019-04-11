@@ -1,5 +1,5 @@
 [id='running-the-vertx-secured-booster-integration-tests_{context}']
-= Running the {VertX} {name-mission-secured} booster integration tests
+= Running the {VertX} {name-example-secured} booster integration tests
 
 .Prerequisites
 

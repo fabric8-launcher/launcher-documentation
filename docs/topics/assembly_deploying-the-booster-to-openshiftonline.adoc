@@ -1,7 +1,7 @@
 // This is a parameterized module. Parameters used:
 //
-//  parameter-example: id of the mission. This is used in anchors file imports.
-//  parameter-example-name: human-readable name of the mission. This is used in readable text
+//  parameter-example: id of the example. This is used in anchors file imports.
+//  parameter-example-name: human-readable name of the example. This is used in readable text
 //  context: context of usage, e.g. "osl", "oso", "ocp", "rest-api", etc. This can also be a composite, e.g. "rest-api-oso"
 //
 // Rationale: This procedure is identical in all deployments.

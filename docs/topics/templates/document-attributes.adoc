@@ -47,11 +47,11 @@ endif::[]
 
 :name-example-http-api: REST API Level 0
 :name-example-configmap: Externalized Configuration
-:name-mission-health-check: Health Check
-:name-mission-circuit-breaker: Circuit Breaker
+:name-example-health-check: Health Check
+:name-example-circuit-breaker: Circuit Breaker
 :name-example-crud: Relational Database Backend
-:name-mission-secured: Secured
-:name-mission-cache: Cache
+:name-example-secured: Secured
+:name-example-cache: Cache
 
 :name-guide-minishift-installation: Install and Configure the {name-launcher} Tool
 :name-guide-getting-started: Getting Started with {ProductName}
