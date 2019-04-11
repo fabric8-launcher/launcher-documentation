@@ -2,13 +2,13 @@
 
 = {RHSSO} realm model
 
-The `master` realm is used to secure this booster.
+The `master` realm is used to secure this example.
 There are two pre-configured application client definitions that provide a model for command line clients and the secured REST endpoint.
 
 There are also two pre-configured users in the {RHSSO} `master` realm that can be used to validate various authentication and authorization outcomes:  `admin` and `alice`.
 
 == {RHSSO} users
-The realm model for the secured boosters includes two users:
+The realm model for the secured examples includes two users:
 
 admin::
 The `admin` user has a password of `admin` and is the realm administrator.
@@ -78,8 +78,7 @@ for each of the secured endpoints.
 The OAuth 2.0 specification allows you to define a role for application clients that access secured resources on behalf of resource owners. The `master` realm has the following application clients defined:
 
 demoapp::
-This is a `confidential` type client with a client secret that is used to obtain an access token that contains grants for the `alice` user which enable `alice` to access the {WildFlySwarm}, {VertX}, {Node} and {SpringBoot} based REST booster deployments.
+This is a `confidential` type client with a client secret that is used to obtain an access token that contains grants for the `alice` user which enable `alice` to access the {WildFlySwarm}, {VertX}, {Node} and {SpringBoot} based REST example application deployments.
 
-secured-booster-endpoint::
+secured-example-endpoint::
 The `secured-booster-endpoint` is a bearer-only type of client that requires a `booster-admin` role for accessing the associated resources, specifically the Greeting service.
-

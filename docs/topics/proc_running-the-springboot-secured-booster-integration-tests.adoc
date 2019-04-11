@@ -5,7 +5,8 @@
 // Rationale: This parameter displays the correct runtime name (`sb` or `vx`) in the module ID that is visible when linking to this section.
 
 [id='running-the-springboot-secured-booster-integration-tests_{context}']
-= Running the {SpringBoot} {name-example-secured} booster integration tests
+[id='running-the-springboot-secured-example-integration-tests_{context}']
+= Running the {SpringBoot} {name-example-secured} example integration tests
 //[#running-the-secured-booster-integration-tests-on-{parameter-runtime}]
 //= Running the {name-example-secured} Booster Integration Tests on {runtime}
 

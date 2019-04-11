@@ -1,5 +1,6 @@
 
 [id='deploying-the-secured-booster-to-openshiftlocal_{context}']
+[id='deploying-the-secured-example-to-openshiftlocal_{context}']
 = Deploying the {name-example-secured} booster to {OpenShiftLocal}
 
 :parent-context: {context}
@@ -18,4 +19,3 @@ include::proc_deploying-the-secured-booster-using-the-oc-cli-client.adoc[levelof
 :parameter-deployment!:
 
 :context: {parent-context}
-

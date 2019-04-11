@@ -1,5 +1,5 @@
 [WARNING]
 --
-Executing integration tests removes all existing instances of the booster application from the target OpenShift project.
-To avoid accidentally removing your booster application, ensure that you create and select a separate OpenShift project to execute the tests.
+Executing integration tests removes all existing instances of the example application from the target OpenShift project.
+To avoid accidentally removing your example application, ensure that you create and select a separate OpenShift project to execute the tests.
 --

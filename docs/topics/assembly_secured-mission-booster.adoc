@@ -7,15 +7,16 @@
 
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-rest-http-secured-{parameter-runtime-anchor}']
-= {name-example-secured} mission - {runtime} booster
+[id='example-rest-http-secured-{parameter-runtime-anchor}']
+= {name-example-secured} example for {runtime}
 
 include::note-booster-unvailable-oso.adoc[leveloffset=+1]
 
-// When changing this introduction, change also the secured-mission-intro-paragraph.adoc file (used by the front-end).
-Mission proficiency level:
+// When changing this introduction, change also the secured-example-intro-paragraph.adoc file (used by the front-end).
+Example proficiency level:
 xref:proficiency_advanced[*{proficiency-advanced}*].
 
-The {name-example-secured} booster secures a REST endpoint using link:https://access.redhat.com/products/red-hat-single-sign-on[{RHSSO}^]. (This booster expands on the {name-example-http-api} booster).
+The {name-example-secured} example secures a REST endpoint using link:https://access.redhat.com/products/red-hat-single-sign-on[{RHSSO}^]. (This example expands on the {name-example-http-api} example).
 
 {RHSSO}:
 
@@ -24,8 +25,8 @@ The {name-example-secured} booster secures a REST endpoint using link:https://ac
 
 Securing an application with SSO enables you to add security to your applications while centralizing the security configuration.
 
-IMPORTANT:  This mission comes with {RHSSO} pre-configured for demonstration purposes, it does not explain its principles, usage, or configuration.
-Before using this mission, ensure that you are familiar with the basic concepts related to link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.1/html-single/getting_started_guide/[{RHSSO}^].
+IMPORTANT:  This example comes with {RHSSO} pre-configured for demonstration purposes, it does not explain its principles, usage, or configuration.
+Before using this example, ensure that you are familiar with the basic concepts related to link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.1/html-single/getting_started_guide/[{RHSSO}^].
 
 include::con_the-secured-project-structure.adoc[leveloffset=+1]
 
@@ -56,4 +57,3 @@ include::proc_running-the-wildflyswarm-secured-booster-integration-tests.adoc[le
 endif::[]
 
 include::ref_secured-sso-resources.adoc[leveloffset=+1]
-
