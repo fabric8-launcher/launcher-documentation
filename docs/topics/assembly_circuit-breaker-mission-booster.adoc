@@ -6,13 +6,14 @@
 
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-circuit-breaker-{parameter-runtime-anchor}']
-= {name-example-circuit-breaker} mission - {runtime} booster
+[id='example-circuit-breaker-{parameter-runtime-anchor}']
+= {name-example-circuit-breaker} example for {runtime}
 
 include::note-booster-unvailable-oso.adoc[leveloffset=+1]
 
 include::circuit-breaker-mission-intro-paragraph.adoc[leveloffset=+1]
 
-This mission shows you how to implement a Circuit Breaker and Fallback pattern in your services.
+This example shows you how to implement a Circuit Breaker and Fallback pattern in your services.
 
 include::con_the-circuit-breaker-design-pattern.adoc[leveloffset=+1]
 
@@ -39,4 +40,3 @@ endif::[]
 :parameter-example-name!:
 
 include::ref_circuit-breaker-resources.adoc[leveloffset=+1]
-

@@ -1,7 +1,8 @@
 [id='interacting-with-the-unmodified-health-check-booster_{context}']
-= Interacting with the unmodified {name-example-health-check} booster
+[id='interacting-with-the-unmodified-health-check-example_{context}']
+= Interacting with the unmodified {name-example-health-check} example
 
-Once you have the booster deployed, you will have a service called `{value-name-app}` running that exposes the following REST endpoints:
+Once you have the example deployed, you will have a service called `{value-name-app}` running that exposes the following REST endpoints:
 
 /api/greeting::
 ifdef::built-for-vertx,built-for-nodejs[Returns a JSON containing greeting of `name` parameter (or World as default value).]
@@ -147,4 +148,3 @@ The health check application generates the following messages:
 | Started | Docker container is ready to handle requests
 |===
 --
-
