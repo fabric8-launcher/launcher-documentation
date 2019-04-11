@@ -14,4 +14,3 @@ ifndef::built-for-vertx[* link:{link-mission-circuit-breaker-vertx}[{name-exampl
 ifndef::built-for-nodejs[* link:{link-mission-circuit-breaker-nodejs}[{name-example-circuit-breaker} mission - {Node} booster]]
 
 ifndef::built-for-thorntail[* link:{link-mission-circuit-breaker-nodejs}[{name-example-circuit-breaker} mission - {Thorntail} booster]]
-

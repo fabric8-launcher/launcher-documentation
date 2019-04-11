@@ -6,7 +6,8 @@
 
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-health-check-{parameter-runtime-anchor}']
-= {name-example-health-check} mission - {runtime} booster
+[id='example-health-check-{parameter-runtime-anchor}']
+= {name-example-health-check} example for {runtime}
 
 include::health-check-mission-intro-paragraph.adoc[leveloffset=+1]
 
@@ -44,4 +45,3 @@ endif::built-for-nodejs[]
 :parameter-example-name!:
 
 include::ref_health-check-resources.adoc[leveloffset=+1]
-
