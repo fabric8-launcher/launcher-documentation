@@ -7,7 +7,7 @@ In the following example, the link:https://stedolan.github.io/jq/[jq CLI tool] i
 
 .Prerequisites
 
-* The secured booster endpoint URL. For more information, see xref:getting-the-secured-booster-api-endpoint_{context}[].
+* The secured example endpoint URL. For more information, see xref:getting-the-secured-booster-api-endpoint_{context}[].
 * The `jq` command-line tool (optional). To download the tool and for more information, see https://stedolan.github.io/jq/.
 
 .Procedure
@@ -28,7 +28,7 @@ eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJRek1nbXhZMUhrQnpxTnR0SnkwMm5j
 ----
 `<SSO_AUTH_SERVER_URL>` is the url of the `secure-sso` service.
 
-The attributes, such as `username`, `password`, and `client_secret` are usually kept secret, but the above command uses the default provided credentials with this booster for demonstration purpose.
+The attributes, such as `username`, `password`, and `client_secret` are usually kept secret, but the above command uses the default provided credentials with this example for demonstration purpose.
 
 If you do not want to use `jq` to extract the token, you can run just the `curl` command and manually extract the access token.
 
@@ -63,7 +63,7 @@ $ curl -v -H "Authorization: Bearer <TOKEN>" http://<SERVICE_HOST>/{service-path
 ----
 ====
 
-`<SERVICE_HOST>` is the URL of the secured booster endpoint.
+`<SERVICE_HOST>` is the URL of the secured example endpoint.
 For more information, see xref:getting-the-secured-booster-api-endpoint_{context}[].
 --
 
@@ -86,7 +86,7 @@ MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoETnPmN55xBJjRzN/cs30OzJ9olkteLVNRjz
 -----END PUBLIC KEY-----
 ----
 +
-NOTE: This is the master realm public key from the {RHSSO} server deployment of the {name-example-secured} booster.
+NOTE: This is the master realm public key from the {RHSSO} server deployment of the {name-example-secured} example.
 
 .. Paste the `token` output from the client output into the _Encoded_ box.
 +

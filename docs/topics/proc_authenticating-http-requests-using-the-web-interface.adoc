@@ -24,13 +24,13 @@ The following procedure is an exercise for you to see how security is enforced, 
 .. Click the _Invoke_ button.
 +
 --
-.Unauthenticated {name-example-secured} Booster Web Interface
+.Unauthenticated {name-example-secured} Example Web Interface
 image::sso-main.png[]
 
 ifdef::node-js-sso-temp-workaround[]
 The services responds with an `HTTP 403 Forbidden` status code.
 
-NOTE: This is not the correct status code. It should be `HTTP 401 Unauthorized`. This issue link:https://github.com/nodeshift-starters/nodejs-rest-http-secured-redhat/issues/21[has been identified] and this booster will be updated as soon as it is resolved.
+NOTE: This is not the correct status code. It should be `HTTP 401 Unauthorized`. This issue link:https://github.com/nodeshift-starters/nodejs-rest-http-secured-redhat/issues/21[has been identified] and this example will be updated as soon as it is resolved.
 
 endif::node-js-sso-temp-workaround[]
 ifndef::node-js-sso-temp-workaround[]
@@ -48,7 +48,7 @@ endif::node-js-sso-temp-workaround[]
 --
 NOTE: You can see the access (bearer) token in the command line output at the bottom of the page.
 
-.Authenticated {name-example-secured} Booster Web Interface (as Alice)
+.Authenticated {name-example-secured} Example Web Interface (as Alice)
 image::sso-alice.png[]
 --
 
@@ -68,7 +68,7 @@ image::sso-invoke-alice.png[]
 Confirm that this sends an unauthenticated request to the Greeting service.
 .. Click the _Login_ button and log in as xref:rhsso-realm-model_{context}[the _admin_ user].
 +
-.Authenticated {name-example-secured} Booster Web Interface (as admin)
+.Authenticated {name-example-secured} Example Web Interface (as admin)
 image::sso-admin.png[]
 
 . Click the _Invoke_ button.

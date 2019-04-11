@@ -2,14 +2,14 @@
 
 = {RHSSO} deployment configuration
 
-The `service.sso.yaml` file in this booster contains all OpenShift configuration items to deploy a pre-configured {RHSSO} server.
+The `service.sso.yaml` file in this example contains all OpenShift configuration items to deploy a pre-configured {RHSSO} server.
 The SSO server configuration has been simplified for the sake of this exercise and does provide an out-of-the-box configuration, with pre-configured users and security settings.
 The `service.sso.yaml` file also contains very long lines, and some text editors, such as link:https://wiki.gnome.org/Apps/Gedit[gedit], may have issues reading this file.
 
 WARNING: It is not recommended to use this SSO configuration in production.
-Specifically, the simplifications made to the booster security configuration impact the ability to use it in a production environment.
+Specifically, the simplifications made to the example security configuration impact the ability to use it in a production environment.
 
-.SSO Booster Simplifications
+.SSO Example Simplifications
 [width="100%",options="header"]
 |====================================================================
 |Change |Reason |Recommendation
@@ -38,7 +38,7 @@ a|
 **Clients do not require SSL/TLS and the secured applications are not exposed over HTTPS**.
 
 a|
-The boosters are simplified by not requiring certificates generated for each runtime.
+The examples are simplified by not requiring certificates generated for each runtime.
 
 a|
 In production a secure application should use HTTPS rather than plain HTTP.
@@ -54,4 +54,3 @@ From a security perspective, the window an attacker would have to guess the acce
 It is recommended to keep this window short as it makes it much harder for a potential attacker to guess the current token.
 
 |====================================================================
-

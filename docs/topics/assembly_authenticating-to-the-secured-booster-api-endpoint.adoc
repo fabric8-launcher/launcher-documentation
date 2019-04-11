@@ -1,11 +1,12 @@
 
 [id='authenticating-to-the-secured-booster-api-endpoint_{context}']
-= Authenticating to the {name-example-secured} booster API endpoint
+[id='authenticating-to-the-secured-example-api-endpoint_{context}']
+= Authenticating to the {name-example-secured} example API endpoint
 
 :parent-context: {context}
 
-The {name-example-secured} booster provides a default HTTP endpoint that accepts `GET` requests if the caller is authenticated and authorized.
-The client first authenticates against the {RHSSO} server and then performs a `GET` request against the {name-example-secured} booster using the access token returned by the authentication step.
+The {name-example-secured} example provides a default HTTP endpoint that accepts `GET` requests if the caller is authenticated and authorized.
+The client first authenticates against the {RHSSO} server and then performs a `GET` request against the {name-example-secured} example using the access token returned by the authentication step.
 
 include::proc_getting-the-secured-booster-api-endpoint.adoc[leveloffset=+1]
 
@@ -16,4 +17,3 @@ include::proc_authenticating-http-requests-using-the-web-interface.adoc[leveloff
 ifdef::built-for-nodejs[:node-js-sso-temp-workaround!:]
 
 :context: {parent-context}
-

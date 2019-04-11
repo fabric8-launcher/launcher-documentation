@@ -1,12 +1,13 @@
 
 [id='getting-the-secured-booster-api-endpoint_{context}']
-= Getting the {name-example-secured} booster API endpoint
+[id='getting-the-secured-example-api-endpoint_{context}']
+= Getting the {name-example-secured} example API endpoint
 
-When using a client to interact with the booster, you must specify the {name-example-secured} booster endpoint, which is the _PROJECT_ID_ service.
+When using a client to interact with the example, you must specify the {name-example-secured} example endpoint, which is the _PROJECT_ID_ service.
 
 .Prerequisites
 
-* The {name-example-secured} booster deployed and running.
+* The {name-example-secured} example deployed and running.
 * The `oc` client authenticated.
 
 .Procedure
@@ -44,5 +45,5 @@ A sample output is shown in the following table:
 ====
 --
 +
-In the above example, the booster endpoint would be `\http://PROJECT_ID-myproject.LOCAL_OPENSHIFT_HOSTNAME`.
-`PROJECT_ID` is based on the name you entered when generating your booster using link:{link-launcher-oso}[{name-launcher-oso}] or the {name-launcher} tool.
+In the above example, the example endpoint would be `\http://PROJECT_ID-myproject.LOCAL_OPENSHIFT_HOSTNAME`.
+`PROJECT_ID` is based on the name you entered when generating your example using link:{link-launcher-oso}[{name-launcher-oso}] or the {name-launcher} tool.
