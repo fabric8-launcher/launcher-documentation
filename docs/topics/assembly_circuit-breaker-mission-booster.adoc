@@ -21,11 +21,11 @@ include::con_circuit-breaker-design-tradeoffs.adoc[leveloffset=+1]
 include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
 :parameter-example-name: {name-mission-circuit-breaker}
-:parameter-mission: circuit-breaker
+:parameter-example: circuit-breaker
 include::assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+1]
 
 include::assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+1]
-:parameter-mission!:
+:parameter-example!:
 
 include::proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+1]
 
