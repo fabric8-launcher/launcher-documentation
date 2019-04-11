@@ -1,15 +1,16 @@
 [id='deploying-a-booster-to-openshiftcontainerplatform_{context}']
-= Deploying a booster to {OpenShiftContainerPlatform}
+[id='deploying-an-example-to-openshiftcontainterplatform_{context}']
+= Deploying an example to {OpenShiftContainerPlatform}
 
 .Prerequisites
 
-* Have a booster created using link:{link-launcher-oso}[{name-launcher-oso}] or the {name-launcher} tool in xref:creating-and-deploying-a-booster-using-your-openshiftlocal_{context}[a {OpenShiftLocal}].
+* Have an example created using link:{link-launcher-oso}[{name-launcher-oso}] or the {name-launcher} tool in xref:creating-and-deploying-a-booster-using-your-openshiftlocal_{context}[a {OpenShiftLocal}].
 * Have access to an {OpenShiftContainerPlatform} Web console.
 * Have the `oc` CLI client installed.
 
 .Procedure
 
-. Clone your booster Github repository, or download and extract the booster ZIP archive.
+. Clone your example Github repository, or download and extract the example ZIP archive.
 . Get the command containing your authentication token for using the `oc` CLI client with your {OpenShiftContainerPlatform} Web Console:
 .. Login to your {OpenShiftContainerPlatform} Web console.
 .. Click on the question mark icon in the top right-hand corner of the Web console, next to your user name.
@@ -29,26 +30,26 @@ $ oc login OCP_URL --token=MYTOKEN
 $ oc new-project {value-name-project}
 ----
 
-. Navigate to the root directory of your booster.
+. Navigate to the root directory of your example.
 
-. Deploy your booster to {OpenShiftContainerPlatform}.
-.. If your booster uses Maven: 
+. Deploy your example to {OpenShiftContainerPlatform}.
+.. If your example uses Maven: 
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ mvn clean fabric8:deploy -Popenshift
 ----
-.. If your booster uses `npm`.
+.. If your example uses `npm`.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ npm install && npm run openshift
 ----
 
-. Open the `README.adoc` file in your booster's project and follow the instructions for interacting with your booster.
+. Open the `README.adoc` file in your example's project and follow the instructions for interacting with your example application.
 
 .Additional resources
-Take a look at the different runtime guides to learn more about runtimes as well as their boosters:
+Take a look at the different runtime guides to learn more about runtimes as well as their examples:
 
 * link:{link-guide-spring-boot}[{name-guide-spring-boot}]
 * link:{link-guide-vertx}[{name-guide-vertx}]
