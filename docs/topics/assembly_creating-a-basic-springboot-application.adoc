@@ -4,7 +4,7 @@
 
 :parent-context: {context}
 
-In addition to xref:mission-rest-http-spring-boot[using a booster], you can create new {runtime} applications from scratch and deploy them to OpenShift.
+In addition to xref:mission-rest-http-spring-boot[using an example], you can create new {runtime} applications from scratch and deploy them to OpenShift.
 
 :parameter-runtime: spring-boot
 :parameter-maven-command: $ mvn spring-boot:run

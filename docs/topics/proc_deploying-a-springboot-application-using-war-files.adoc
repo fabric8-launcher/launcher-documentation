@@ -15,7 +15,7 @@ You must configure your build and deployment settings to ensure that your applic
 
 .Prerequisites
 
-* A {SpringBoot} application, such as xref:spring-boot-available-missions-and-boosters[a booster].
+* A {SpringBoot} application, such as xref:spring-boot-available-missions-and-boosters[an example].
 * Fabric8 Maven Plugin used to deploy your application to OpenShift.
 * Spring Boot Maven Plugin used to package your application.
 

@@ -53,7 +53,7 @@ $ mvn clean fabric8:deploy -Popenshift
 +
 This command uses the Fabric8 Maven Plugin to launch the link:{link-s2i-process}[S2I process] on OpenShift and to start the pod.
 
-. Check the status of your booster and ensure your pod is running.
+. Check the status of your example and ensure your pod is running.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -69,7 +69,7 @@ The number in the middle will increase with each new build.
 The letters at the end are generated when the pod is created.
 
 
-. Once your booster is deployed and started, determine its route.
+. Once your example application is deployed and started, determine its route.
 +
 .Example Route Information
 [source,bash,options="nowrap",subs="attributes+"]
@@ -88,4 +88,3 @@ The route information of a pod gives you the base URL which you use to access it
 $ curl {parameter-url}
 {parameter-response}
 ----
-

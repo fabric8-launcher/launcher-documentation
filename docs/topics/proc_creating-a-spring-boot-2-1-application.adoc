@@ -77,4 +77,4 @@ $ curl http://localhost:8080
 .Additional information
 
 * As a recommended practice, you can configure liveness and readiness probes to enable health monitoring for your application when running on OpenShift.
-To learn how application health monitoring on OpenShift works, try the xref:mission-health-check-{parameter-runtime}[Health Check booster].
+To learn how application health monitoring on OpenShift works, try the xref:mission-health-check-{parameter-runtime}[Health Check example].
