@@ -21,14 +21,14 @@ include::topics/con_what-is-thorntail.adoc[leveloffset=+1]
 
 include::topics/runtime-info-product-version.adoc[leveloffset=+1]
 
-// MISSIONS
+// EXAMPLES
 include::topics/con_missions-and-cloud-native-development-on-openshift.adoc[leveloffset=+1]
 
 
-[[wf-swarm-available-missions-and-boosters]]
-== Available missions and boosters for {WildFlySwarm}
+[[wf-swarm-available-examples]]
+== Available examples for {WildFlySwarm}
 
-The following boosters are available for {WildFlySwarm}.
+The following examples are available for {WildFlySwarm}.
 
 
 // REST API
