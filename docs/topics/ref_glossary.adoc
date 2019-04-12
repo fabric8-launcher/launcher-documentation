@@ -4,7 +4,7 @@
 
 == Product and project names
 
-{name-launcher-oso}:: link:{link-launcher-oso}[{name-launcher-oso}] is a standalone getting started experience offered by Red Hat for jumpstarting cloud-native application development on OpenShift. It provides a hassle-free way of creating functional example applications, called missions, as well as an easy way to build and deploy those missions to OpenShift. 
+{name-launcher-oso}:: link:{link-launcher-oso}[{name-launcher-oso}] is a standalone getting started experience offered by Red Hat for jumpstarting cloud-native application development on OpenShift. It provides a hassle-free way of creating functional example applications as well as an easy way to build and deploy these examples on OpenShift. 
 
 {name-launcher}:: The {name-launcher} is the upstream project on which link:{link-launcher-oso}[{name-launcher-oso}] is based.
 
@@ -13,20 +13,19 @@
 
 == Terms specific to {name-launcher}
 
-[[glossary_booster]]
-Booster:: A language-specific implementation of a particular xref:glossary_mission[mission] on a particular xref:glossary_runtime[runtime]. Boosters are listed in a xref:glossary_booster_catalog[booster catalog].
+[[glossary_example]]
+Example:: An application specification, for example _a web service with a REST API._
 +
-For example, a booster is a web service with a REST API implemented using the {WildFlySwarm} runtime.
+Examples generally do not specify which language or platform they should run on; the description only contains the intended functionality.
 
-[[glossary_booster_catalog]]
-Booster Catalog:: A Git repository that contains information about boosters.
-
-[[glossary_mission]]
-Mission:: An application specification, for example _a web service with a REST API._
+[[glossary_example_application]]
+Example application:: A language-specific implementation of a particular xref:glossary_example[example] on a particular xref:glossary_runtime[runtime]. Examples are listed in a xref:glossary_example_application_catalog[example catalog].
 +
-Missions generally do not specify which language or platform they should run on; the description only contains the intended functionality.
+For example, an example application is a web service with a REST API implemented using the {WildFlySwarm} runtime.
+
+[[glossary_example_application_catalog]]
+Example Application Catalog:: A Git repository that contains information about examples.
 
 [[glossary_runtime]]
-Runtime:: A platform that executes xref:glossary_booster[boosters].
+Runtime:: A platform that executes xref:glossary_example_application[example application].
 For example, {WildFlySwarm} or {VertX}.
-
