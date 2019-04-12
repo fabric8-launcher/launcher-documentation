@@ -40,7 +40,7 @@ IMPORTANT: After your pod has started, leave this command running and execute th
 
 . Test your application. 
 +
-For example, if you had debug logging in the xref:mission-rest-http-nodejs[{name-example-http-api} example] to log the `name` variable in the `/api/greeting` method:
+For example, if you had debug logging in the xref:example-rest-http-nodejs[{name-example-http-api} example] to log the `name` variable in the `/api/greeting` method:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----

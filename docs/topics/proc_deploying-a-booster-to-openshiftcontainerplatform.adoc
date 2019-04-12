@@ -4,7 +4,7 @@
 
 .Prerequisites
 
-* Have an example created using link:{link-launcher-oso}[{name-launcher-oso}] or the {name-launcher} tool in xref:creating-and-deploying-a-booster-using-your-openshiftlocal_{context}[a {OpenShiftLocal}].
+* Have an example created using link:{link-launcher-oso}[{name-launcher-oso}] or the {name-launcher} tool in xref:creating-and-deploying-an-example-using-your-openshiftlocal_{context}[a {OpenShiftLocal}].
 * Have access to an {OpenShiftContainerPlatform} Web console.
 * Have the `oc` CLI client installed.
 

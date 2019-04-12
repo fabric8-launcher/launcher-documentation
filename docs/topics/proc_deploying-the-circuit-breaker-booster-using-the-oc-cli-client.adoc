@@ -11,9 +11,9 @@
 .Prerequisites
 
 * The example application created using {parameter-deployment}.
-ifndef::parameter-openshiftlocal[For more information, see xref:deploying-the-booster-using-launcher-oso_{context}[].]
+ifndef::parameter-openshiftlocal[For more information, see xref:deploying-the-example-using-launcher-oso_{context}[].]
 ifdef::parameter-openshiftlocal[]
-For more information, see xref:deploying-the-booster-using-the-launcher-tool_{context}[].
+For more information, see xref:deploying-the-example-using-the-launcher-tool_{context}[].
 * Your {name-launcher} tool URL.
 endif::[]
 

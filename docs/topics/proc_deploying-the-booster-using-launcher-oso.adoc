@@ -8,7 +8,7 @@
 //
 // Rationale: This procedure is identical in all deployments
 
-[id='deploying-the-booster-using-launcher-oso_{context}']
+[id='deploying-the-example-using-launcher-oso_{context}']
 [id='deploying-the-example-using-launcher-oso_{context}']
 = Deploying the example using {name-launcher-oso}
 

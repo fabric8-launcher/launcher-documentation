@@ -4,7 +4,7 @@
 
 :parent-context: {context}
 
-In addition to xref:mission-rest-http-wf-swarm[an example], you can create new {runtime} applications from scratch and deploy them to OpenShift.
+In addition to xref:example-rest-http-wf-swarm[using an example], you can create new {runtime} applications from scratch and deploy them to OpenShift.
 
 include::thorntail/docs/howto/writing-an-application-from-scratch/index.adoc[leveloffset=+1]
 
