@@ -2,7 +2,7 @@
 [id='examples-and-cloud-native-development-on-openshift_{context}']
 = Example applications and cloud-native development on OpenShift
 
-When developing applications on OpenShift, you can use example applications to kickstart your development.
+When developing applications on OpenShift, you can use examples to kickstart your development.
 
 [discrete]
 == Example applications

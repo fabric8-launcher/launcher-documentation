@@ -4,7 +4,7 @@ This example uses the link:https://www.npmjs.com/package/debug[debug package], b
 
 
 .Prerequisites
-* An application you want to debug. For example, xref:mission-rest-http-nodejs[a booster].
+* An application you want to debug. For example, xref:mission-rest-http-nodejs[an example].
 
 .Procedure
 
@@ -37,7 +37,7 @@ app.use('/api/greeting', (request, response) => {
   }
 ----
 +
-Depending on your application, this module may already be included. For example, when using the link:https://expressjs.com/en/starter/generator.html[express generator] to create your application, the `debug` module is already added to `package.json`. Some of the boosters, such as the xref:mission-rest-http-nodejs[{name-example-http-api} booster], already have the `debug` module in the `package.json`.
+Depending on your application, this module may already be included. For example, when using the link:https://expressjs.com/en/starter/generator.html[express generator] to create your application, the `debug` module is already added to `package.json`. Some of the examples, such as the xref:mission-rest-http-nodejs[{name-example-http-api} example], already have the `debug` module in the `package.json`.
 
 
 . Install the application dependencies.
