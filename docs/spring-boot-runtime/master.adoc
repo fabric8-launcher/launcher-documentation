@@ -24,13 +24,13 @@ include::topics/con_springboot-features-and-frameworks-summary.adoc[leveloffset=
 
 include::topics/proc_configuring-your-application-to-use-spring-boot.adoc[leveloffset=+1]
 
-// Missions
+// EXAMPLES
 include::topics/con_missions-and-cloud-native-development-on-openshift.adoc[leveloffset=+1]
 
-[[spring-boot-available-missions-and-boosters]]
-== Available missions and boosters for {SpringBoot}
+[[spring-boot-available-examples]]
+== Available examples {SpringBoot}
 
-The following boosters are available for {SpringBoot}.
+The following examples are available for {SpringBoot}.
 
 
 // REST API

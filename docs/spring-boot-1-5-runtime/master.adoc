@@ -29,7 +29,7 @@ include::topics/proc_configuring-your-application-to-use-spring-boot.adoc[levelo
 // EXAMPLES
 include::topics/con_missions-and-cloud-native-development-on-openshift.adoc[leveloffset=+1]
 
-[[spring-boot-available-missions-and-boosters]]
+[[spring-boot-available-examples]]
 == Available examples for {SpringBoot}
 
 The following examples are available for {SpringBoot}.
