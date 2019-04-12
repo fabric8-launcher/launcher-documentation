@@ -114,7 +114,7 @@ endif::[]
 :link-mission-health-check-thorntail: {link-guide-thorntail}#mission-health-check-wf-swarm
 :link-mission-health-check-vertx: {link-guide-vertx}#mission-health-check-vertx
 
-:link-mission-http-api-nodejs: {link-guide-nodejs}#mission-rest-http-nodejs
+:link-example-http-api-nodejs: {link-guide-nodejs}#mission-rest-http-nodejs
 :link-mission-http-api-spring-boot: {link-guide-spring-boot}#mission-rest-http-spring-boot
 :link-mission-http-api-thorntail: {link-guide-thorntail}#mission-rest-http-wf-swarm
 :link-mission-http-api-vertx: {link-guide-vertx}#mission-rest-http-vertx

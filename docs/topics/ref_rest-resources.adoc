@@ -24,5 +24,5 @@ ifndef::built-for-vertx[* link:{link-mission-http-api-vertx}[{name-example-http-
 
 ifndef::built-for-thorntail[* link:{link-mission-http-api-thorntail}[{name-example-http-api} mission - {Thorntail} booster]]
 
-ifndef::built-for-nodejs[* link:{link-mission-http-api-nodejs}[{name-example-http-api} mission - {Node} booster]]
+ifndef::built-for-nodejs[* link:{link-example-http-api-nodejs}[{name-example-http-api} mission - {Node} booster]]
 
