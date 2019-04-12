@@ -16,7 +16,7 @@ $ mvn spring-boot:run
 
 . Test your application to invoke debug logging. 
 +
-For example, to test the xref:mission-rest-http-spring-boot[{name-example-http-api} booster], you can invoke the `/api/greeting` method:
+For example, to test the xref:mission-rest-http-spring-boot[{name-example-http-api} example], you can invoke the `/api/greeting` method:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
