@@ -41,7 +41,7 @@ Keep the terminal window displaying the log output open so that you can watch th
 
 . Interact with your application:
 +
-For example, if you had debug logging in the xref:mission-rest-http-{context}[{name-example-http-api} example] to log the `message` variable in the `/api/greeting` method:
+For example, if you had debug logging in the xref:example-rest-http-{context}[{name-example-http-api} example] to log the `message` variable in the `/api/greeting` method:
 +
 --
 . Get the route of your application:

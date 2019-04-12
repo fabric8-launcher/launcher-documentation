@@ -10,7 +10,7 @@ In addition to the {OpenShiftLocal}, you can create and deploy the example on {O
 
 .Prerequisites
 
-* The example created using xref:deploying-the-secured-booster-to-openshiftlocal_{parent-context}[{OpenShiftLocal}].
+* The example created using xref:deploying-the-secured-example-to-openshiftlocal_{parent-context}[{OpenShiftLocal}].
 
 :parameter-deployment: {OpenShiftContainerPlatform}
 include::proc_authenticating-the-oc-cli-client.adoc[leveloffset=+1]
