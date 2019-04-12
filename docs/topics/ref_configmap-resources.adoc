@@ -13,11 +13,10 @@ ifdef::built-for-vertx[* link:http://vertx.io/docs/vertx-config/js/[Externalized
 
 ifdef::built-for-thorntail[* link:https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-guide/content/v/eee1f5ba4dd4f13855cbe98addd365ba29033810/configuration/index.html[Externalized Configuration with {WildFlySwarm}]]
 
-ifndef::built-for-spring-boot[* link:{link-mission-configmap-spring-boot}[{name-example-configmap} mission - {SpringBoot} booster]]
+ifndef::built-for-spring-boot[* link:{link-example-configmap-spring-boot}[{name-example-configmap} for {SpringBoot}]]
 
-ifndef::built-for-vertx[* link:{link-mission-configmap-vertx}[{name-example-configmap} mission - {VertX} booster]]
+ifndef::built-for-vertx[* link:{link-example-configmap-vertx}[{name-example-configmap} for {VertX} booster]]
 
-ifndef::built-for-thorntail[* link:{link-mission-configmap-thorntail}[{name-example-configmap} mission - {WildFlySwarm} booster]]
+ifndef::built-for-thorntail[* link:{link-example-configmap-thorntail}[{name-example-configmap} for {WildFlySwarm}]]
 
-ifndef::built-for-nodejs[* link:{link-mission-configmap-nodejs}[{name-example-configmap} mission - {Node} booster]]
-
+ifndef::built-for-nodejs[* link:{link-example-configmap-nodejs}[{name-example-configmap} for {Node} booster]]
