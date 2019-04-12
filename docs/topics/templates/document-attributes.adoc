@@ -89,40 +89,40 @@ endif::[]
 
 :link-launcher-oso: https://developers.redhat.com/launch
 
-:link-mission-cache-nodejs: {link-guide-nodejs}#mission-cache-nodejs
-:link-mission-cache-spring-boot: {link-guide-spring-boot}#mission-cache-spring-boot
-:link-mission-cache-thorntail: {link-guide-thorntail}#mission-cache-wf-swarm
-:link-mission-cache-vertx: {link-guide-vertx}#mission-cache-vertx
+:link-example-cache-nodejs: {link-guide-nodejs}#example-cache-nodejs
+:link-example-cache-spring-boot: {link-guide-spring-boot}#example-cache-spring-boot
+:link-example-cache-thorntail: {link-guide-thorntail}#example-cache-wf-swarm
+:link-example-cache-vertx: {link-guide-vertx}#example-cache-vertx
 
-:link-mission-circuit-breaker-nodejs: {link-guide-nodejs}#mission-circuit-breaker-nodejs
-:link-mission-circuit-breaker-spring-boot: {link-guide-spring-boot}#mission-circuit-breaker-spring-boot
-:link-mission-circuit-breaker-thorntail: {link-guide-thorntail}#mission-circuit-breaker-wf-swarm
-:link-mission-circuit-breaker-vertx: {link-guide-vertx}#mission-circuit-breaker-vertx
+:link-example-circuit-breaker-nodejs: {link-guide-nodejs}#example-circuit-breaker-nodejs
+:link-example-circuit-breaker-spring-boot: {link-guide-spring-boot}#example-circuit-breaker-spring-boot
+:link-example-circuit-breaker-thorntail: {link-guide-thorntail}#example-circuit-breaker-wf-swarm
+:link-example-circuit-breaker-vertx: {link-guide-vertx}#example-circuit-breaker-vertx
 
-:link-mission-configmap-nodejs: {link-guide-nodejs}#mission-configmap-nodejs
-:link-mission-configmap-spring-boot: {link-guide-spring-boot}#mission-configmap-spring-boot
-:link-mission-configmap-thorntail: {link-guide-thorntail}#mission-configmap-wf-swarm
-:link-mission-configmap-vertx: {link-guide-vertx}#mission-configmap-vertx
+:link-example-configmap-nodejs: {link-guide-nodejs}#example-configmap-nodejs
+:link-example-configmap-spring-boot: {link-guide-spring-boot}#example-configmap-spring-boot
+:link-example-configmap-thorntail: {link-guide-thorntail}#example-configmap-wf-swarm
+:link-example-configmap-vertx: {link-guide-vertx}#example-configmap-vertx
 
-:link-mission-crud-nodejs: {link-guide-nodejs}#mission-crud-nodejs
-:link-mission-crud-spring-boot: {link-guide-spring-boot}#mission-crud-spring-boot
-:link-mission-crud-thorntail: {link-guide-thorntail}#mission-crud-wf-swarm
-:link-mission-crud-vertx: {link-guide-vertx}#mission-crud-vertx
+:link-example-crud-nodejs: {link-guide-nodejs}#example-crud-nodejs
+:link-example-crud-spring-boot: {link-guide-spring-boot}#example-crud-spring-boot
+:link-example-crud-thorntail: {link-guide-thorntail}#example-crud-wf-swarm
+:link-example-crud-vertx: {link-guide-vertx}#example-crud-vertx
 
-:link-mission-health-check-nodejs: {link-guide-nodejs}#mission-health-check-nodejs
-:link-mission-health-check-spring-boot: {link-guide-spring-boot}#mission-health-check-spring-boot
-:link-mission-health-check-thorntail: {link-guide-thorntail}#mission-health-check-wf-swarm
-:link-mission-health-check-vertx: {link-guide-vertx}#mission-health-check-vertx
+:link-example-health-check-nodejs: {link-guide-nodejs}#example-health-check-nodejs
+:link-example-health-check-spring-boot: {link-guide-spring-boot}#example-health-check-spring-boot
+:link-example-health-check-thorntail: {link-guide-thorntail}#example-health-check-wf-swarm
+:link-example-health-check-vertx: {link-guide-vertx}#example-health-check-vertx
 
-:link-example-http-api-nodejs: {link-guide-nodejs}#mission-rest-http-nodejs
-:link-mission-http-api-spring-boot: {link-guide-spring-boot}#mission-rest-http-spring-boot
-:link-mission-http-api-thorntail: {link-guide-thorntail}#mission-rest-http-wf-swarm
-:link-mission-http-api-vertx: {link-guide-vertx}#mission-rest-http-vertx
+:link-example-http-api-nodejs: {link-guide-nodejs}#example-rest-http-nodejs
+:link-example-http-api-spring-boot: {link-guide-spring-boot}#example-rest-http-spring-boot
+:link-example-http-api-thorntail: {link-guide-thorntail}#example-rest-http-wf-swarm
+:link-example-http-api-vertx: {link-guide-vertx}#example-rest-http-vertx
 
-:link-mission-secured-nodejs: {link-guide-nodejs}#mission-rest-http-secured-nodejs
-:link-mission-secured-spring-boot: {link-guide-spring-boot}#mission-rest-http-secured-spring-boot
-:link-mission-secured-thorntail: {link-guide-thorntail}#mission-rest-http-secured-wf-swarm
-:link-mission-secured-vertx: {link-guide-vertx}#mission-rest-http-secured-vertx
+:link-example-secured-nodejs: {link-guide-nodejs}#example-rest-http-secured-nodejs
+:link-example-secured-spring-boot: {link-guide-spring-boot}#example-rest-http-secured-spring-boot
+:link-example-secured-thorntail: {link-guide-thorntail}#example-rest-http-secured-wf-swarm
+:link-example-secured-vertx: {link-guide-vertx}#example-rest-http-secured-vertx
 
 :link-repo-docs: https://github.com/fabric8-launcher/launcher-documentation
 :link-repo-wildfly-swarm: https://github.com/thorntail/thorntail/
@@ -130,7 +130,7 @@ endif::[]
 :link-s2i-process: https://docs.openshift.com/container-platform/latest/architecture/core_concepts/builds_and_image_streams.html#source-build
 
 
-// Mission Knowledge Proficiency
+// Example Knowledge Proficiency
 :proficiency-foundational: Foundational
 :proficiency-advanced: Advanced
 :proficiency-expert: Expert

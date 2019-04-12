@@ -25,6 +25,6 @@ Each example application is implemented in one or more runtimes.
 The {name-example-http-api} example is implemented for these runtimes:
 
 * link:{link-example-http-api-nodejs}[{Node}]
-* link:{link-mission-http-api-spring-boot}[{SpringBoot}]
-* link:{link-mission-http-api-vertx}[{VertX}]
-* link:{link-mission-http-api-thorntail}[{WildFlySwarm}]
+* link:{link-example-http-api-spring-boot}[{SpringBoot}]
+* link:{link-example-http-api-vertx}[{VertX}]
+* link:{link-example-http-api-thorntail}[{WildFlySwarm}]
