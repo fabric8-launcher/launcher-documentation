@@ -7,10 +7,10 @@ Follow the links below for more background information on the design principles 
 
 * link:https://martinfowler.com/bliki/CircuitBreaker.html[Martin Fowler: CircuitBreaker]
 
-ifndef::built-for-spring-boot[* link:{link-mission-circuit-breaker-spring-boot}[{name-example-circuit-breaker} mission - {SpringBoot} booster]]
+ifndef::built-for-spring-boot[* link:{link-example-circuit-breaker-spring-boot}[{name-example-circuit-breaker} for {SpringBoot}]]
 
-ifndef::built-for-vertx[* link:{link-mission-circuit-breaker-vertx}[{name-example-circuit-breaker} mission - {VertX} booster]]
+ifndef::built-for-vertx[* link:{link-example-circuit-breaker-vertx}[{name-example-circuit-breaker} for {VertX}]]
 
-ifndef::built-for-nodejs[* link:{link-mission-circuit-breaker-nodejs}[{name-example-circuit-breaker} mission - {Node} booster]]
+ifndef::built-for-nodejs[* link:{link-example-circuit-breaker-nodejs}[{name-example-circuit-breaker} for {Node}]]
 
-ifndef::built-for-thorntail[* link:{link-mission-circuit-breaker-nodejs}[{name-example-circuit-breaker} mission - {Thorntail} booster]]
+ifndef::built-for-thorntail[* link:{link-example-circuit-breaker-nodejs}[{name-example-circuit-breaker} for {Thorntail}]]

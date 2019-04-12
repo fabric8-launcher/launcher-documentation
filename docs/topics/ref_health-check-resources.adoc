@@ -11,11 +11,10 @@ More background and related information on health checking can be found here:
 
 * link:https://kubernetes.io/docs/api-reference/v1/definitions/#_v1_probe[Kubernetes Probes]
 
-ifndef::built-for-spring-boot[* link:{link-mission-health-check-spring-boot}[{name-example-health-check} mission - {SpringBoot} booster]]
+ifndef::built-for-spring-boot[* link:{link-example-health-check-spring-boot}[{name-example-health-check} for {SpringBoot}]]
 
-ifndef::built-for-vertx[* link:{link-mission-health-check-vertx}[{name-example-health-check} mission - {VertX} booster]]
+ifndef::built-for-vertx[* link:{link-example-health-check-vertx}[{name-example-health-check} for {VertX}]]
 
-ifndef::built-for-thorntail[* link:{link-mission-health-check-thorntail}[{name-example-health-check} mission - {WildFlySwarm} booster]]
+ifndef::built-for-thorntail[* link:{link-example-health-check-thorntail}[{name-example-health-check} for {WildFlySwarm}]]
 
-ifndef::built-for-nodejs[* link:{link-mission-health-check-nodejs}[{name-example-health-check} mission - {Node} booster]]
-
+ifndef::built-for-nodejs[* link:{link-example-health-check-nodejs}[{name-example-health-check} for {Node}]]
