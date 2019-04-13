@@ -53,7 +53,7 @@ $ mvn clean fabric8:deploy -Popenshift
 +
 This command uses the Fabric8 Maven Plugin to launch the link:{link-s2i-process}[S2I process] on OpenShift and to start the pod.
 
-. Check the status of your example and ensure your pod is running.
+. Check the status of your application and ensure your pod is running.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----

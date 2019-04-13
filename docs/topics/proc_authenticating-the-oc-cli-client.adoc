@@ -10,7 +10,7 @@
 [id='authenticating-the-oc-cli-client_{context}']
 = Authenticating the `oc` CLI client
 
-To work with example applications on {parameter-deployment} using the `oc` command-line client, you need to authenticate the client using the token provided by the {parameter-deployment} web interface.
+To work with example applications on {parameter-deployment} using the `oc` command-line client, you must authenticate the client using the token provided by the {parameter-deployment} web interface.
 
 .Prerequisites
 

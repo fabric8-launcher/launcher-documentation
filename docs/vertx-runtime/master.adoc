@@ -35,9 +35,9 @@ include::topics/proc_configuring-your-vertx-application-to-use-agroal.adoc[level
 include::topics/con_missions-and-cloud-native-development-on-openshift.adoc[leveloffset=+1]
 
 [[vertx-available-examples]]
-== Available examples for {Vertx}
+== Example applications for {Vertx}
 
-The following examples are available for {Vertx}.
+The following example applications are available for {Vertx}.
 
 
 // REST API

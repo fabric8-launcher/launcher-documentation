@@ -21,7 +21,7 @@ include::topics/con_missions-and-cloud-native-development-on-openshift.adoc[leve
 [[nodejs-available-examples]]
 == Available examples for {Node}
 
-The following examples are available for {Node}.
+The following example applications are available for {Node}.
 
 
 // REST API

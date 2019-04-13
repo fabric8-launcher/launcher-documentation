@@ -10,7 +10,7 @@
 
 .Procedure
 
-. Clone your example Github repository, or download and extract the example ZIP archive.
+. Clone the Github repository with your example application, or download and extract the example application ZIP archive.
 . Get the command containing your authentication token for using the `oc` CLI client with your {OpenShiftContainerPlatform} Web Console:
 .. Login to your {OpenShiftContainerPlatform} Web console.
 .. Click on the question mark icon in the top right-hand corner of the Web console, next to your user name.
@@ -49,7 +49,7 @@ $ npm install && npm run openshift
 . Open the `README.adoc` file in your example's project and follow the instructions for interacting with your example application.
 
 .Additional resources
-Take a look at the different runtime guides to learn more about runtimes as well as their examples:
+Take a look at the different runtime guides to learn more about the runtimes and their example applications:
 
 * link:{link-guide-spring-boot}[{name-guide-spring-boot}]
 * link:{link-guide-vertx}[{name-guide-vertx}]
