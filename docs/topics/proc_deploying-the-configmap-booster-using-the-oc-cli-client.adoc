@@ -6,8 +6,8 @@
 
 
 [id='deploying-the-configmap-booster-using-the-oc-cli-client_{context}']
-[id='deploying-the-configmap-example-using-the-oc-client_{context}']
-= Deploying the {name-example-configmap} example using the `oc` CLI client
+[id='deploying-the-configmap-example-application-using-the-oc-client_{context}']
+= Deploying the {name-example-configmap} example application using the `oc` CLI client
 
 .Prerequisites
 
@@ -43,7 +43,7 @@ $ oc new-project {value-name-project}
 ----
 
 ifdef::built-for-vertx,built-for-spring-boot,built-for-nodejs[]
-. Assign view access rights to the service account before deploying your example, so that the application can access the OpenShift API in order to read the contents of the ConfigMap.
+. Assign view access rights to the service account before deploying your example application, so that the application can access the OpenShift API in order to read the contents of the ConfigMap.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -51,7 +51,7 @@ $ oc policy add-role-to-user view -n $(oc project -q) -z default
 ----
 endif::built-for-vertx,built-for-spring-boot,built-for-nodejs[]
 
-. Navigate to the root directory of your project.
+. Navigate to the root directory of your application.
 
 ifdef::built-for-vertx,built-for-nodejs[]
 . Deploy your ConfigMap configuration to OpenShift using `app-config.yml`.
@@ -148,10 +148,10 @@ ifdef::built-for-nodejs[]
 $ npm install && npm run openshift
 ----
 +
-These commands install any missing module dependencies, then using the xref:about-nodeshift[Nodeshift] module, deploy the example on OpenShift.
+These commands install any missing module dependencies, then using the xref:about-nodeshift[Nodeshift] module, deploy the example application on OpenShift.
 endif::built-for-nodejs[]
 
-. Check the status of your example and ensure your pod is running.
+. Check the status of your application and ensure your pod is running.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -170,7 +170,7 @@ The number in the middle will increase with each new build.
 The letters at the end are generated when the pod is created.
 
 
-. Once your example is deployed and started, determine its route.
+. After your example is deployed and started, determine its route.
 +
 .Example Route Information
 [source,bash,options="nowrap",subs="attributes+"]

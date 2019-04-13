@@ -4,7 +4,7 @@
 
 == Product and project names
 
-{name-launcher-oso}:: link:{link-launcher-oso}[{name-launcher-oso}] is a standalone getting started experience offered by Red Hat for jumpstarting cloud-native application development on OpenShift. It provides a hassle-free way of creating functional example applications as well as an easy way to build and deploy these examples on OpenShift. 
+{name-launcher-oso}:: link:{link-launcher-oso}[{name-launcher-oso}] is a standalone getting started experience offered by Red Hat for jumpstarting cloud-native application development on OpenShift. It provides a hassle-free way of creating functional example applications as well as an easy way to build and deploy these example applications on OpenShift. 
 
 {name-launcher}:: The {name-launcher} is the upstream project on which link:{link-launcher-oso}[{name-launcher-oso}] is based.
 
@@ -19,13 +19,13 @@ Example:: An application specification, for example _a web service with a REST A
 Examples generally do not specify which language or platform they should run on; the description only contains the intended functionality.
 
 [[glossary_example_application]]
-Example application:: A language-specific implementation of a particular xref:glossary_example[example] on a particular xref:glossary_runtime[runtime]. Examples are listed in a xref:glossary_example_application_catalog[example catalog].
+Example application:: A language-specific implementation of a particular xref:glossary_example[example] on a particular xref:glossary_runtime[runtime]. Example applications are listed in a xref:glossary_example_application_catalog[example catalog].
 +
 For example, an example application is a web service with a REST API implemented using the {WildFlySwarm} runtime.
 
 [[glossary_example_application_catalog]]
-Example Application Catalog:: A Git repository that contains information about examples.
+Example Application Catalog:: A Git repository that contains information about example applications.
 
 [[glossary_runtime]]
-Runtime:: A platform that executes xref:glossary_example_application[example application].
+Runtime:: A platform that executes an xref:glossary_example_application[example application].
 For example, {WildFlySwarm} or {VertX}.

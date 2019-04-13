@@ -31,7 +31,7 @@ include::topics/con_missions-and-cloud-native-development-on-openshift.adoc[leve
 [[wf-swarm-available-examples]]
 == Available examples for {WildFlySwarm}
 
-The following examples are available for {WildFlySwarm}.
+The following example applications are available for {WildFlySwarm}.
 
 
 // REST API

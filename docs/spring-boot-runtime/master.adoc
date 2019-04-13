@@ -30,7 +30,7 @@ include::topics/con_missions-and-cloud-native-development-on-openshift.adoc[leve
 [[spring-boot-available-examples]]
 == Available examples {SpringBoot}
 
-The following examples are available for {SpringBoot}.
+The following example applications are available for {SpringBoot}.
 
 
 // REST API

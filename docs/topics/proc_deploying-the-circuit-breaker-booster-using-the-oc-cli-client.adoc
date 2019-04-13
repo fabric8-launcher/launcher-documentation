@@ -5,8 +5,8 @@
 // Rationale: This procedure is identical in all deployments.
 
 [id='deploying-the-circuit-breaker-booster-using-the-oc-cli-client_{context}']
-[id='deploying-the-circuit-breaker-example-using-the-oc-cli-client_{context}']
-= Deploying the {name-example-circuit-breaker} example using the `oc` CLI client
+[id='deploying-the-circuit-breaker-example-application-using-the-oc-cli-client_{context}']
+= Deploying the {name-example-circuit-breaker} example application using the `oc` CLI client
 
 .Prerequisites
 
@@ -41,7 +41,7 @@ $ unzip {value-name-project}.zip
 $ oc new-project {value-name-project}
 ----
 
-. Navigate to the root directory of your project.
+. Navigate to the root directory of your application.
 
 ifndef::built-for-nodejs[]
 . Use Maven to start the deployment to OpenShift.
@@ -67,7 +67,7 @@ These commands use the xref:about-nodeshift[Nodeshift] `npm` module to install y
 endif::built-for-nodejs[]
 
 
-. Check the status of your example and ensure your pod is running.
+. Check the status of your application and ensure your pod is running.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -87,7 +87,7 @@ The number in the middle will increase with each new build.
 The letters at the end are generated when the pod is created.
 
 
-. Once your example is deployed and started, determine its route.
+. After your example is deployed and started, determine its route.
 +
 .Example Route Information
 [source,bash,options="nowrap",subs="attributes+"]

@@ -6,7 +6,7 @@
 
 [id='deploying-the-secured-booster-using-the-oc-cli-client_{context}']
 [id='deploying-the-secured-example-using-the-oc-client_{context}']
-= Deploying the {name-example-secured} example using the `oc` CLI client
+= Deploying the {name-example-secured} example application using the `oc` CLI client
 
 .Prerequisites
 
@@ -38,7 +38,7 @@ $ unzip {value-name-project}.zip
 $ oc new-project {value-name-project}
 ----
 
-. Navigate to the root directory of your project.
+. Navigate to the root directory of your application.
 
 . Deploy the {RHSSO} server using the `service.sso.yaml` file from your example ZIP file:
 +
@@ -73,6 +73,6 @@ $ npm install && npm run openshift -- \
       -d SSO_AUTH_SERVER_URL=$(oc get route secure-sso -o jsonpath='{"https://"}{.spec.host}{"/auth\n"}')
 ----
 
-These commands install any missing module dependencies, then using the xref:about-nodeshift[Nodeshift] module, deploy the example on OpenShift.
+These commands install any missing module dependencies, then using the xref:about-nodeshift[Nodeshift] module, deploy the example application on OpenShift.
 --
 endif::built-for-nodejs[]

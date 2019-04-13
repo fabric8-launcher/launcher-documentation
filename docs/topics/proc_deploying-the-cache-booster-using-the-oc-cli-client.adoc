@@ -1,6 +1,6 @@
 [id='deploying-the-cache-booster-using-the-oc-cli-client_{context}']
-[id='deploying-the-cache-example-using-the-oc-client_{context}']
-= Deploying the {name-example-cache} example using the `oc` CLI client
+[id='deploying-the-cache-example-application-using-the-oc-client_{context}']
+= Deploying the {name-example-cache} example application using the `oc` CLI client
 
 .Prerequisites
 
@@ -35,7 +35,7 @@ $ unzip {value-name-project}.zip
 $ oc new-project {value-name-project}
 ----
 
-. Navigate to the root directory of your project.
+. Navigate to the root directory of your application.
 
 . Deploy the cache service.
 +
@@ -62,7 +62,7 @@ $ mvn clean fabric8:deploy -Popenshift
 ----
 endif::built-for-nodejs[]
 
-. Check the status of your example and ensure your pod is running.
+. Check the status of your application and ensure your pod is running.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -77,7 +77,7 @@ cache-server-123456789-aaaaa             1/1       Running     0          8m
 +
 Your 3 pods should have a status of `Running` once they are fully deployed and started.
 
-. Once your example is deployed and started, determine its route.
+. After your example is deployed and started, determine its route.
 +
 .Example Route Information
 [source,bash,options="nowrap",subs="attributes+"]
