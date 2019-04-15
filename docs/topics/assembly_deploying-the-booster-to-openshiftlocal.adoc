@@ -7,13 +7,13 @@
 // Rationale: This procedure is identical in all deployments.
 
 [id='deploying-the-booster-to-openshiftlocal_{context}']
-[id='deploying-the-example-to-openshiftlocal_{context}']
-= Deploying the {parameter-example-name} example to {OpenShiftLocal}
+[id='deploying-the-example-application-to-openshiftlocal_{context}']
+= Deploying the {parameter-example-name} example application to {OpenShiftLocal}
 
 :parent-context: {context}
 :context: {parent-context}-osl
 
-Use one of the following options to execute the {parameter-example-name} example locally on {OpenShiftLocal}:
+Use one of the following options to execute the {parameter-example-name} example application locally on {OpenShiftLocal}:
 
 * xref:deploying-the-example-using-the-launcher-tool_{context}[Using {name-launcher}]
 * xref:deploying-the-{parameter-example}-example-using-the-oc-cli-client_{context}[Using the `oc` CLI client]

@@ -18,8 +18,8 @@ The examples implement a link:http://microservices.io/patterns/microservices.htm
 You can use the examples for a variety of purposes:
 
 * A proof of technology demonstration
-* A teaching tool, or a sandbox for understanding how to develop applications for your project
-* They can also be updated or extended for your own use case
+* A learning tool, or a sandbox for understanding how to develop applications for your project
+* A starting point for updating or extending to your own use case
 
 Each example application is implemented in one or more runtimes.
 The {name-example-http-api} example is implemented for these runtimes:

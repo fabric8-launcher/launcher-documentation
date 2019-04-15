@@ -8,7 +8,7 @@
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-rest-http-secured-{parameter-runtime-anchor}']
 [id='example-rest-http-secured-{parameter-runtime-anchor}']
-= {name-example-secured} example for {runtime}
+= {name-example-secured} example application for {runtime}
 
 include::note-booster-unvailable-oso.adoc[leveloffset=+1]
 
@@ -16,7 +16,7 @@ include::note-booster-unvailable-oso.adoc[leveloffset=+1]
 Example proficiency level:
 xref:proficiency_advanced[*{proficiency-advanced}*].
 
-The {name-example-secured} example secures a REST endpoint using link:https://access.redhat.com/products/red-hat-single-sign-on[{RHSSO}^]. (This example expands on the {name-example-http-api} example).
+The {name-example-secured} example application secures a REST endpoint using link:https://access.redhat.com/products/red-hat-single-sign-on[{RHSSO}^]. (This example expands on the {name-example-http-api} example).
 
 {RHSSO}:
 

@@ -7,13 +7,13 @@
 // Rationale: This procedure is identical in all deployments.
 
 [id='deploying-the-booster-to-openshiftonline_{context}']
-[id='deploying-the-example-to-openshiftonline_{context}']
-= Deploying the {parameter-example-name} example to {OpenShiftOnline}
+[id='deploying-the-example-application-to-openshiftonline_{context}']
+= Deploying the {parameter-example-name} example application to {OpenShiftOnline}
 
 :parent-context: {context}
 :context: {parent-context}-oso
 
-Use one of the following options to execute the {parameter-example-name} example on {OpenShiftOnline}.
+Use one of the following options to execute the {parameter-example-name} example application on {OpenShiftOnline}.
 
 * xref:deploying-the-example-using-launcher-oso_{context}[Use {name-launcher-oso}]
 * xref:deploying-the-{parameter-example}-example-using-the-oc-cli-client_{context}[Use the `oc` CLI client]
