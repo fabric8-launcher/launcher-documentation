@@ -10,7 +10,7 @@
 
 .Procedure
 
-. In Developer Studio, right click on the root of the project _Project Explorer_ or _Package Explorer_ view.
+. In {DevStudio}, right click on the root of the project _Project Explorer_ or _Package Explorer_ view.
 . Choose _Team_ -> _Commit..._.
 . Drag all the changes you want to commit from the _Unstaged Changes_ section to the _Staged Changes_ section.
 . Enter your commit message and click _Commit and Push_.

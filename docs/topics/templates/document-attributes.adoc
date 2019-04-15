@@ -36,7 +36,7 @@ endif::[]
 :Node: Node.js
 :RHSSO: Red Hat SSO
 :WildFly: JBoss EAP
-:DevStudio: Red Hat Developer Studio
+:DevStudio: Red Hat CodeReady Studio
 
 
 // Names

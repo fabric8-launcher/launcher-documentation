@@ -11,7 +11,7 @@ Importing your booster's code creates a project in {DevStudio} and enables you t
 
 .Procedure
 
-. In Developer Studio, Click _File_ -> _Import_.
+. In {DevStudio}, Click _File_ -> _Import_.
 . Choose _Git_ -> _Projects from Git_ and click _Next_.
 . Choose _Existing local repository_ and click _Next_.
 . Click _Add_.
