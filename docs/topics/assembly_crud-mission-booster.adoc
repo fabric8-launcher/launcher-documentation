@@ -20,7 +20,7 @@ The runtime can choose between options such as using _JDBC_, _JPA_, or accessing
 The example application exposes an HTTP API, which provides endpoints that allow you to manipulate data by performing  _CRUD_ operations over HTTP.
 The _CRUD_ operations are mapped to HTTP `Verbs`.
 The API uses JSON formatting to receive requests and return responses to the user.
-The user can also use an UI provided by the example to use the application.
+The user can also use a user interface provided by the example to use the application.
 Specifically, this example provides an application that allows you to:
 
 * Navigate to the application web interface in your browser.

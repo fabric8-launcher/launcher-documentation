@@ -86,7 +86,7 @@ MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoETnPmN55xBJjRzN/cs30OzJ9olkteLVNRjz
 -----END PUBLIC KEY-----
 ----
 +
-NOTE: This is the master realm public key from the {RHSSO} server deployment of the {name-example-secured} example.
+NOTE: This is the master realm public key from the {RHSSO} server deployment of the {name-example-secured} example application.
 
 .. Paste the `token` output from the client output into the _Encoded_ box.
 +

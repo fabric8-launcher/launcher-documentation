@@ -1,7 +1,7 @@
 
 [id='creating-the-secured-booster-using-launcher_{context}']
-[id='creating-the-secured-example-using-launcher_{context}']
-= Creating the {name-example-secured} example using {name-launcher}
+[id='creating-the-secured-example-application-using-launcher_{context}']
+= Creating the {name-example-secured} example application using {name-launcher}
 
 .Prerequisites
 

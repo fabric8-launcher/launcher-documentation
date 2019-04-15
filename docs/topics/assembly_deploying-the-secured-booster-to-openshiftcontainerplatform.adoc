@@ -1,7 +1,7 @@
 
 [id='deploying-the-secured-booster-to-openshiftcontainerplatform_{context}']
-[id='deploying-the-secured-example-to-openshiftcontainerplatform_{context}']
-= Deploying the {name-example-secured} example to {OpenShiftContainerPlatform}
+[id='deploying-the-secured-example-application-to-openshiftcontainerplatform_{context}']
+= Deploying the {name-example-secured} example application to {OpenShiftContainerPlatform}
 
 :parent-context: {context}
 :context: {parent-context}-ocp

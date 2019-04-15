@@ -1,6 +1,6 @@
 [id='running-the-wildflyswarm-secured-booster-integration-tests_{context}']
-[id='running-the-wildflyswarm-secured-example-integration-tests_{context}']
-= Running the {WildFlySwarm} {name-example-secured} example integration tests
+[id='running-the-wildflyswarm-secured-example-application-integration-tests_{context}']
+= Running the {WildFlySwarm} {name-example-secured} example application integration tests
 
 [IMPORTANT]
 --

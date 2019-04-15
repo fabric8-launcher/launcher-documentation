@@ -1,12 +1,12 @@
 // This is a parameterized module. Parameters used:
 //
-//  parameter-example-name: human-readable name of the example. This is used in readable text
+//  parameter-example-name: human-readable name of the example application. This is used in readable text
 //
 // Rationale: This procedure is identical in all deployments.
 
 [id='deploying-the-booster-to-openshiftcontainerplatform_{context}']
-[id='deploying-the-example-to-openshiftcontainerplatform_{context}']
-= Deploying the {parameter-example-name} example to {OpenShiftContainerPlatform}
+[id='deploying-the-example-application-to-openshiftcontainerplatform_{context}']
+= Deploying the {parameter-example-name} example application to {OpenShiftContainerPlatform}
 
 The process of creating and deploying example applications to {OpenshiftContainerPlatform} is similar to {OpenShiftOnline}:
 
