@@ -16,4 +16,4 @@ The process of creating and deploying example applications to {OpenshiftContaine
 
 .Procedure
 
-* Follow the instructions in xref:deploying-the-example-to-openshiftonline_{context}[], only use the URL and user credentials from the {OpenShiftContainerPlatform} Web Console.
+* Follow the instructions in xref:deploying-the-example-application-to-openshiftonline_{context}[], only use the URL and user credentials from the {OpenShiftContainerPlatform} Web Console.
