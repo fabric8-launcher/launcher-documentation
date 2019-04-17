@@ -1,8 +1,8 @@
 [id='creating-and-deploying-a-booster-using-your-openshiftlocal_{context}']
-[id='creating-and-deploying-an-example-using-your-openshiftlocal_{context}']
-= Creating and deploying a booster using your {OpenShiftLocal}
+[id='creating-and-deploying-an-example-application-using-your-openshiftlocal_{context}']
+= Creating and deploying an example application using your {OpenShiftLocal}
 
-You can quickly create, build, and deploy a booster to a {OpenShiftLocal} using the {name-launcher} tool. The {name-launcher} tool creates a new repository in your GitHub account containing the booster's code and deploys it to your {OpenShiftLocal}. It can also create a ZIP of the booster for you to download and run on your localhost.
+You can quickly create, build, and deploy an example application to a {OpenShiftLocal} using the {name-launcher} tool. The {name-launcher} tool creates a new repository in your GitHub account containing the example application's code and deploys it to your {OpenShiftLocal}. It can also create a ZIP of the example application for you to download and run on your localhost.
 
 .Prerequisites
 
@@ -22,12 +22,12 @@ $ minishift console
 ----
 
 . Select _Launch Your Project_.
-. Follow the instructions to create a booster based on a mission, runtime, and target environment.
-. Open the `README.adoc` file in your booster project for more details about interacting with your booster.
+. Follow the instructions to select an example application, runtime, and target environment.
+. Open the `README.adoc` file in your example application project for more details about interacting with your example application.
 
 .Additional resources
 
-Take a look the different runtime guides to learn more about runtimes as well as their boosters:
+Take a look the different runtime guides to learn more about runtimes as well as their example applications:
 
 * link:{link-guide-spring-boot}[{name-guide-spring-boot}]
 * link:{link-guide-vertx}[{name-guide-vertx}]
