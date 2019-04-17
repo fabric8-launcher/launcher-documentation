@@ -78,7 +78,7 @@ for each of the secured endpoints.
 The OAuth 2.0 specification allows you to define a role for application clients that access secured resources on behalf of resource owners. The `master` realm has the following application clients defined:
 
 demoapp::
-This is a `confidential` type client with a client secret that is used to obtain an access token that contains grants for the `alice` user which enable `alice` to access the {WildFlySwarm}, {VertX}, {Node} and {SpringBoot} based REST example application deployments.
+This is a `confidential` type client with a client secret that is used to obtain an access token. The token contains grants for the `alice` user which enable `alice` to access the {WildFlySwarm}, {VertX}, {Node} and {SpringBoot} based REST example application deployments.
 
 secured-example-endpoint::
 The `secured-booster-endpoint` is a bearer-only type of client that requires a `booster-admin` role for accessing the associated resources, specifically the Greeting service.
