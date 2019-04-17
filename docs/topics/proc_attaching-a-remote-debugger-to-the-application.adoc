@@ -29,10 +29,7 @@ To quickly launch your debug configuration after the first time, click *Run->Deb
 
 .Additional resources
 
-* link:https://access.redhat.com/articles/1290703[Debug an OpenShift Java Application with {DevStudio}] on Red Hat Knowledgebase.
+* link:https://access.redhat.com/articles/1290703[Debug an OpenShift Java Application with JBoss Developer Studio] on Red Hat Knowledgebase.
 +
-[NOTE]
-====
 {DevStudio} was previously called JBoss Developer Studio.
-====
 * A https://blog.openshift.com/debugging-java-applications-on-openshift-kubernetes/[Debugging Java Applications On OpenShift and Kubernetes] article on OpenShift Blog.
