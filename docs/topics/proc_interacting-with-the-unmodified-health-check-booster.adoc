@@ -2,7 +2,7 @@
 [id='interacting-with-the-unmodified-health-check-example_{context}']
 = Interacting with the unmodified {name-example-health-check} example
 
-Once you have the example deployed, you will have a service called `{value-name-app}` running that exposes the following REST endpoints:
+After you deploy the example application, you will have the `{value-name-app}` service running. The `{value-name-app}` service exposes the following REST endpoints:
 
 /api/greeting::
 ifdef::built-for-vertx,built-for-nodejs[Returns a JSON containing greeting of `name` parameter (or World as default value).]
