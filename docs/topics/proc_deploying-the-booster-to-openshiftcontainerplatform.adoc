@@ -1,4 +1,4 @@
-// This is a parameterized module. Parameters used:
+deploying-the-example-application-to-openshiftonline_{context}// This is a parameterized module. Parameters used:
 //
 //  parameter-example-name: human-readable name of the example application. This is used in readable text
 //
