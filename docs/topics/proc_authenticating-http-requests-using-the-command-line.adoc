@@ -7,7 +7,7 @@ In the following example, the link:https://stedolan.github.io/jq/[jq CLI tool] i
 
 .Prerequisites
 
-* The secured example endpoint URL. For more information, see xref:getting-the-secured-example-api-endpoint_{context}[].
+* The secured example endpoint URL. For more information, see xref:getting-the-secured-example-application-api-endpoint_{context}[].
 * The `jq` command-line tool (optional). To download the tool and for more information, see https://stedolan.github.io/jq/.
 
 .Procedure
@@ -64,7 +64,7 @@ $ curl -v -H "Authorization: Bearer <TOKEN>" http://<SERVICE_HOST>/{service-path
 ====
 
 `<SERVICE_HOST>` is the URL of the secured example endpoint.
-For more information, see xref:getting-the-secured-example-api-endpoint_{context}[].
+For more information, see xref:getting-the-secured-example-application-api-endpoint_{context}[].
 --
 
 . Verify the signature of the access token.
