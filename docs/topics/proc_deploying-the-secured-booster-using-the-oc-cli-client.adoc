@@ -11,7 +11,7 @@
 .Prerequisites
 
 * The example application created using the {name-launcher} tool on a {OpenShiftLocal}.
-ifndef::parameter-ocp[For more information, see xref:creating-the-secured-example-using-launcher_{context}[].]
+ifndef::parameter-ocp[For more information, see xref:creating-the-secured-example-application-using-launcher_{context}[].]
 
 ifndef::parameter-ocp[* Your {name-launcher} URL.]
 * The `oc` client authenticated. For more information, see xref:authenticating-the-oc-cli-client_{context}[].
