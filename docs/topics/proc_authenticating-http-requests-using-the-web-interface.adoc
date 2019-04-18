@@ -15,7 +15,7 @@ The following procedure is an exercise for you to see how security is enforced, 
 
 .Prerequisites
 
-* The secured endpoint URL. For more information, see xref:getting-the-secured-example-api-endpoint_{context}[].
+* The secured endpoint URL. For more information, see xref:getting-the-secured-example-application-api-endpoint_{context}[].
 
 .Procedure
 
