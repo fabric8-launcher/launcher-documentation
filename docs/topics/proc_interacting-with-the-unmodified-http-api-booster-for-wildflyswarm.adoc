@@ -1,6 +1,6 @@
 [id='interacting-with-the-unmodified-http-api-booster-for-wildflyswarm_{context}']
-[id='interacting-with-the-unmodified-http-api-example-for-wildflyswarm_{context}']
-= Interacting with the unmodified {name-example-http-api} example for {WildFlySwarm}
+[id='interacting-with-the-unmodified-http-api-example-application-for-wildflyswarm_{context}']
+= Interacting with the unmodified {name-example-http-api} example application for {WildFlySwarm}
 
 The example provides a default HTTP endpoint that accepts GET requests.
 

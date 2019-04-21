@@ -1,6 +1,6 @@
 [id='interacting-with-the-unmodified-configmap-booster-for-springboot_{context}']
-[id='interacting-with-the-unmodified-configmap-example-for-springboot_{context}']
-= Interacting with the unmodified {name-example-configmap} example for {SpringBoot}
+[id='interacting-with-the-unmodified-configmap-example-application-for-springboot_{context}']
+= Interacting with the unmodified {name-example-configmap} example application for {SpringBoot}
 
 The example provides a default HTTP endpoint that accepts GET requests.
 
