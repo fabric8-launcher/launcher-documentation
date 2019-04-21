@@ -12,9 +12,9 @@
 .Prerequisites
 
 * The example application created using {parameter-deployment}.
-ifndef::parameter-openshiftlocal[For more information, see xref:deploying-the-example-using-launcher-oso_{context}[].]
+ifndef::parameter-openshiftlocal[For more information, see xref:deploying-the-example-application-using-launcher-oso_{context}[].]
 ifdef::parameter-openshiftlocal[]
-For more information, see xref:deploying-the-example-using-the-launcher-tool_{context}[].
+For more information, see xref:deploying-the-example-application-using-the-launcher-tool_{context}[].
 * Your {name-launcher} tool URL.
 endif::[]
 
@@ -170,7 +170,7 @@ The number in the middle will increase with each new build.
 The letters at the end are generated when the pod is created.
 
 
-. After your example is deployed and started, determine its route.
+. After your example application is deployed and started, determine its route.
 +
 .Example Route Information
 [source,bash,options="nowrap",subs="attributes+"]

@@ -5,9 +5,9 @@
 .Prerequisites
 
 * The example application created using {parameter-deployment}.
-ifndef::parameter-openshiftlocal[For more information, see xref:deploying-the-example-using-launcher-oso_{context}[].]
+ifndef::parameter-openshiftlocal[For more information, see xref:deploying-the-example-application-using-launcher-oso_{context}[].]
 ifdef::parameter-openshiftlocal[]
-For more information, see xref:deploying-the-example-using-the-launcher-tool_{context}[].
+For more information, see xref:deploying-the-example-application-using-the-launcher-tool_{context}[].
 * Your {name-launcher} tool URL.
 endif::[]
 
@@ -77,7 +77,7 @@ cache-server-123456789-aaaaa             1/1       Running     0          8m
 +
 Your 3 pods should have a status of `Running` once they are fully deployed and started.
 
-. After your example is deployed and started, determine its route.
+. After your example application is deployed and started, determine its route.
 +
 .Example Route Information
 [source,bash,options="nowrap",subs="attributes+"]

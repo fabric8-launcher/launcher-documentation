@@ -5,7 +5,7 @@
 // Rationale: This procedure is identical in all deployments
 
 [id='deploying-the-secured-booster-using-the-oc-cli-client_{context}']
-[id='deploying-the-secured-example-using-the-oc-client_{context}']
+[id='deploying-the-secured-example-application-using-the-oc-client_{context}']
 = Deploying the {name-example-secured} example application using the `oc` CLI client
 
 .Prerequisites

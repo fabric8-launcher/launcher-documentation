@@ -1,4 +1,4 @@
-deploying-the-example-application-to-openshiftonline_{context}// This is a parameterized module. Parameters used:
+// This is a parameterized module. Parameters used:
 //
 //  parameter-example-name: human-readable name of the example application. This is used in readable text
 //
@@ -12,7 +12,7 @@ The process of creating and deploying example applications to {OpenshiftContaine
 
 .Prerequisites
 
-* The example created using link:{link-launcher-oso}[{name-launcher-oso}] or link:{link-guide-minishift-installation}[the {name-launcher} tool].
+* The example application created using link:{link-launcher-oso}[{name-launcher-oso}] or link:{link-guide-minishift-installation}[the {name-launcher} tool].
 
 .Procedure
 
