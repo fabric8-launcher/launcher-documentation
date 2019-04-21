@@ -1,8 +1,8 @@
 // This is a parameterized module. Parameters used:
 //
 //
-//  parameter-example: id of the example. This is used in anchors file imports.
-//  parameter-example-name: used in the example title
+//  parameter-example: id of the mission. This is used in anchors file imports.
+//  parameter-example-name: used in the mission title
 //
 // Rationale: This procedure is identical in all deployments.
 // TODO: Add conditional includes for Node.
