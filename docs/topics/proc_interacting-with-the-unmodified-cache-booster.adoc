@@ -1,6 +1,6 @@
 [id='interacting-with-the-unmodified-cache-booster_{context}']
-[id='interacting-with-the-unmodified-cache-example_{context}']
-= Interacting with the unmodified {name-example-cache} example
+[id='interacting-with-the-unmodified-cache-example-application_{context}']
+= Interacting with the unmodified {name-example-cache} example application
 
 .Prerequisites
 

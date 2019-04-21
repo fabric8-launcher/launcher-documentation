@@ -1,6 +1,6 @@
 [id='interacting-with-the-unmodified-http-api-booster-for-vertx_{context}']
-[id='interacting-with-the-unmodified-http-api-example-for-vertx_{context}']
-= Interacting with the unmodified {name-example-http-api} example for {VertX}
+[id='interacting-with-the-unmodified-http-api-example-application-for-vertx_{context}']
+= Interacting with the unmodified {name-example-http-api} example application for {VertX}
 
 The example provides a default HTTP endpoint that accepts GET requests.
 

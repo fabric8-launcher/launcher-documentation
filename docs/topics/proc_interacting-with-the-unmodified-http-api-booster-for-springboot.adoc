@@ -1,6 +1,6 @@
 [id='interacting-with-the-unmodified-http-api-booster-for-springboot_{context}']
-[id='interacting-with-the-unmodfied-http-api-example-for-springboot_{context}']
-= Interacting with the unmodified {name-example-http-api} example for {SpringBoot}
+[id='interacting-with-the-unmodfied-http-api-example-application-for-springboot_{context}']
+= Interacting with the unmodified {name-example-http-api} example application for {SpringBoot}
 
 The example provides a default HTTP endpoint that accepts GET requests.
 

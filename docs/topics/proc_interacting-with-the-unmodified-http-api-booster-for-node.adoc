@@ -1,6 +1,6 @@
 [id='interacting-with-the-unmodified-http-api-booster-for-node_{context}']
-[id='interacting-with-the-unmodified-http-api-example-for-node_{context}']
-= Interacting with the unmodified {name-example-http-api} example for {Node}
+[id='interacting-with-the-unmodified-http-api-example-application-for-node_{context}']
+= Interacting with the unmodified {name-example-http-api} example application for {Node}
 
 The example provides a default HTTP endpoint that accepts GET requests.
 

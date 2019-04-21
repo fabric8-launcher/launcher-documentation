@@ -8,8 +8,8 @@
 // TODO: Add conditional includes for Node.
 
 [#interacting-with-the-unmodified-booster-{context}]
-[id='interacting-with-the-unmodified-example_{context}']
-= Interacting with the unmodified {runtime} {parameter-example-name} example
+[id='interacting-with-the-unmodified-example-application_{context}']
+= Interacting with the unmodified {runtime} {parameter-example-name} example application
 
 After you have the {runtime} example application deployed, you have the following services running:
 
