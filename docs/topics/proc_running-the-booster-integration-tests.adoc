@@ -6,10 +6,10 @@
 // Rationale: This procedure is highly similar for all examples except the Secured example.
 
 [id='running-the-booster-integration-tests_{context}']
-[id='running-the-example-integration-tests_{context}']
-= Running the {parameter-example-name} example integration tests
+[id='running-the-example-application-integration-tests_{context}']
+= Running the {parameter-example-name} example application integration tests
 
-This example includes a self-contained set of integration tests.
+This example application includes a self-contained set of integration tests.
 When run inside an OpenShift project, the tests:
 
 * Deploy a test instance of the application to the project.
