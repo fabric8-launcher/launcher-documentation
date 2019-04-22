@@ -1,12 +1,12 @@
-= ${mission} - ${runtime} Booster
+= ${mission} - ${runtime} Example Application
 
-IMPORTANT: While you can run and interact with this booster on localhost, you cannot take advantage of using the health check functionality with this booster without using OpenShift. For more details on using this booster with a single-node OpenShift cluster, CI/CD deployments, as well as the rest of the runtime, see the link:${guideURL}[${runtime} Runtime Guide].
+IMPORTANT: While you can run and interact with this example application on localhost, you cannot take advantage of using the health check functionality with this example application without using OpenShift. For more details on using this example application with a single-node OpenShift cluster, CI/CD deployments, as well as the rest of the runtime, see the link:${guideURL}[${runtime} Runtime Guide].
 
 ${prerequisite}
 
 ${cicdSection}
 
-== Running the Booster Locally
+== Running the Example Application Locally
 To run this booster on your local host:
 
 [source,bash,options="nowrap",subs="attributes+"]
@@ -18,8 +18,8 @@ $ cd ${targetRepository}
 $ ${localRunCMD}
 ----
 
-== Interacting with the Booster Locally
-To interact with your booster while its running, use the form at `http://localhost:8080` or the `curl` command:
+== Interacting with the Example Application Locally
+To interact with your booster while it is running, use the form at `http://localhost:8080` or the `curl` command:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -30,10 +30,10 @@ $ curl http://localhost:8080/api/greeting?name=Sarah
 {"content":"Hello, Sarah!"}
 ----
 
-== Running the Booster on a Single-node OpenShift Cluster
-If you have a single-node OpenShift cluster, such as Minishift or Red Hat Container Development Kit, link:http://launcher.fabric8.io/docs/minishift-installation.html[installed and running], you can also deploy your booster there. A single-node OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
+== Running the Example Application on a Single-node OpenShift Cluster
+If you have a single-node OpenShift cluster, such as Minishift or Red Hat Container Development Kit, link:http://launcher.fabric8.io/docs/minishift-installation.html[installed and running], you can also deploy your example application there. A single-node OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
 
-To deploy your booster to a running single-node OpenShift cluster:
+To deploy your example application to a running single-node OpenShift cluster:
 
 . Log in and create your project.
 +
@@ -47,9 +47,9 @@ $ ${OSORunCMD}
 ----
 
 
-== Interacting with the Booster on a Single-node OpenShift Cluster
+== Interacting with the Example Application on a Single-node OpenShift Cluster
 
-To interact with your booster while it's running on a Single-node OpenShift Cluster, you first need to obtain it's URL:
+To interact with your example application while it is running on a Single-node OpenShift Cluster, you first need to obtain its URL:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -59,7 +59,7 @@ ${value-name-app}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME
 ----
 
 
-You can use the form at your application's url or you can use the `curl` command:
+You can use the form at your application's URL or you can use the `curl` command:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -79,6 +79,6 @@ ${value-name-app}-1-26iy7   1/1       Running   5          18m
 When `READY` changes to `0/1`, if you re-execute a `curl` command to `api/greeting` or attempt to access the application's URL, it will be unavailable. When `READY` changes back to `1/1`, `curl` commands and the application URL will be available again.
 
 == More Information
-You can learn more about this booster and rest of the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].
+You can learn more about this example application and rest of the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].
 
 ${integrationTestSection}

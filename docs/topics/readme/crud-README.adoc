@@ -1,15 +1,15 @@
-= ${mission} - ${runtime} Booster
+= ${mission} - ${runtime} Example Application
 
-IMPORTANT: While you can run and interact with this booster on localhost, it requires that you also have a database installed and configured. This booster runs best when deployed on OpenShift with a PostgreSQL database. For more details on using this booster with a single-node OpenShift cluster, CI/CD deployments, as well as the rest of the runtime, see the link:${guideURL}[${runtime} Runtime Guide].
+IMPORTANT: While you can run and interact with this example application on localhost, it requires that you also have a database installed and configured. This example application runs best when deployed on OpenShift with a PostgreSQL database. For more details on using this example application with a single-node OpenShift cluster, CI/CD deployments, as well as the rest of the runtime, see the link:${guideURL}[${runtime} Runtime Guide].
 
 ${prerequisite}
 
 ${cicdSection}
 
-== Running the Booster on a Single-node OpenShift Cluster
-If you have a single-node OpenShift cluster, such as Minishift or Red Hat Container Development Kit, link:http://launcher.fabric8.io/docs/minishift-installation.html[installed and running], you can also deploy your booster there. A single-node OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
+== Running the Example Application on a Single-node OpenShift Cluster
+If you have a single-node OpenShift cluster, such as Minishift or Red Hat Container Development Kit, link:http://launcher.fabric8.io/docs/minishift-installation.html[installed and running], you can also deploy your example application there. A single-node OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
 
-To deploy your booster to a running single-node OpenShift cluster:
+To deploy your example application to a running single-node OpenShift cluster:
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc login -u developer -p developer
@@ -27,9 +27,9 @@ $ ${OSORunCMD}
 ----
 
 
-== Interacting with the Booster on a Single-node OpenShift Cluster
+== Interacting with the Example Application on a Single-node OpenShift Cluster
 
-To interact with your booster while it's running on a Single-node OpenShift Cluster, you first need to obtain it's URL:
+To interact with your example application while it is running on a Single-node OpenShift Cluster, you first need to obtain its URL:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -39,7 +39,7 @@ MY_APP_NAME-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME
 ----
 
 
-You can use the form at your application's url or you can use the `curl` command:
+You can use the form at your application's URL or you can use the `curl` command:
 
 .List all entries in the database
 [source,bash,options="nowrap",subs="attributes+"]
