@@ -1,13 +1,13 @@
-= ${mission} - ${runtime} Booster
+= ${mission} - ${runtime} Example Application
 
-IMPORTANT: This booster requires that you use link:https://access.redhat.com/products/red-hat-single-sign-on[Red Hat SSO] to issue access tokens for interacting with this booster and runs best when deployed on OpenShift. For more details on using this booster with a single-node OpenShift cluster as well as the rest of the runtime details, see the link:${guideURL}[${runtime} Runtime Guide].
+IMPORTANT: This example application requires that you use link:https://access.redhat.com/products/red-hat-single-sign-on[Red Hat SSO] to issue access tokens for interacting with this example application and runs best when deployed on OpenShift. For more details on using this example application with a single-node OpenShift cluster as well as the rest of the runtime details, see the link:${guideURL}[${runtime} Runtime Guide].
 
 ${prerequisite}
 
-== Running the Booster on a Single-node OpenShift Cluster
-If you have a single-node OpenShift cluster, such as Minishift or Red Hat Container Development Kit, link:http://launcher.fabric8.io/docs/minishift-installation.html[installed and running], you can deploy your booster there. A single-node OpenShift cluster provides you with access to a local cloud environment.
+== Running the Example Application on a Single-node OpenShift Cluster
+If you have a single-node OpenShift cluster, such as Minishift or Red Hat Container Development Kit, link:http://launcher.fabric8.io/docs/minishift-installation.html[installed and running], you can deploy your example application there. A single-node OpenShift cluster provides you with access to a local cloud environment.
 
-To deploy your booster to a running single-node OpenShift cluster:
+To deploy your example application to a running single-node OpenShift cluster:
 
 . Log in and create your project.
 +
@@ -26,9 +26,9 @@ $ oc create -f service.sso.yaml
 $ ${localRunCMD}
 ----
 
-== Interacting with the Booster on a Single-node OpenShift Cluster
+== Interacting with the Example Application on a Single-node OpenShift Cluster
 
-To interact with your booster while it's running on a Single-node OpenShift Cluster, you first need to obtain the secured booster endpoint URL, which is the _${value-name-app}_ service:
+To interact with your example application while it's running on a Single-node OpenShift Cluster, you first need to obtain the secured example application endpoint URL, which is the _${value-name-app}_ service:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -65,11 +65,11 @@ A sample output is shown in the following table:
 |===
 ====
 
-In the above example, the booster endpoint would be `\http://${value-name-app}-myproject.LOCAL_OPENSHIFT_HOSTNAME`.
+In the above example, the example application endpoint would be `\http://${value-name-app}-myproject.LOCAL_OPENSHIFT_HOSTNAME`.
 
-You can interact with the booster using the form at the secured endpoint URL and the link:${guideURL}#rhsso-realm-model_secured[provided users].
+You can interact with the example application using the form at the secured endpoint URL and the link:${guideURL}#rhsso-realm-model_secured[provided users].
 
-You can also interact with the booster using from the CLI with `curl` and link:https://stedolan.github.io/jq/[`jq`]:
+You can also interact with the example application using the CLI with `curl` and link:https://stedolan.github.io/jq/[`jq`]:
 
 . Request an access token with `curl`, the credentials, and `<SSO_AUTH_SERVER_URL>` and extract the token from the response with the `jq` command:
 +
@@ -87,7 +87,7 @@ eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJRek1nbXhZMUhrQnpxTnR0SnkwMm5j
 ----
 `<SSO_AUTH_SERVER_URL>` is the url of the `secure-sso` service.
 +
-The attributes, such as `username`, `password`, and `client_secret` are usually kept secret, but the above command uses the default provided credentials with this booster for demonstration purpose.
+The attributes, such as `username`, `password`, and `client_secret` are usually kept secret, but the above command uses the default provided credentials with this example application for demonstration purpose.
 +
 If you do not want to use `jq` to extract the token, you can run the `curl` command and manually extract the access token.
 +
@@ -117,10 +117,10 @@ $ > GET /api/greeting HTTP/1.1
 ----
 ====
 +
-`<SERVICE_HOST>` is the URL of the secured booster endpoint.
+`<SERVICE_HOST>` is the URL of the secured example application endpoint.
 
 
 == More Information
-You can learn more about this booster and rest of the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].
+You can learn more about this example application and rest of the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].
 
 ${integrationTestSection}

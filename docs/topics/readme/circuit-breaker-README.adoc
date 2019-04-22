@@ -1,15 +1,15 @@
-= ${mission} - ${runtime} Booster
+= ${mission} - ${runtime} Example Application
 
-IMPORTANT: This runs best when deployed to OpenShift in order to use the circuit breaker functionality. For more details on using this booster with a single-node OpenShift cluster, CI/CD deployments, as well as the rest of the runtime, see the link:${guideURL}[${runtime} Runtime Guide].
+IMPORTANT: This runs best when deployed to OpenShift in order to use the circuit breaker functionality. For more details on using this example application with a single-node OpenShift cluster, CI/CD deployments, as well as the rest of the runtime, see the link:${guideURL}[${runtime} Runtime Guide].
 
 ${prerequisite}
 
 ${cicdSection}
 
-== Running the Booster on a Single-node OpenShift Cluster
-If you have a single-node OpenShift cluster, such as Minishift or Red Hat Container Development Kit, link:http://launcher.fabric8.io/docs/minishift-installation.html[installed and running], you can also deploy your booster there. A single-node OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
+== Running the Example Application on a Single-node OpenShift Cluster
+If you have a single-node OpenShift cluster, such as Minishift or Red Hat Container Development Kit, link:http://launcher.fabric8.io/docs/minishift-installation.html[installed and running], you can also deploy your example application there. A single-node OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
 
-To deploy your booster to a running single-node OpenShift cluster:
+To deploy your example application to a running single-node OpenShift cluster:
 
 . Log in and create your project.
 +
@@ -26,9 +26,9 @@ $ oc new-project MY_PROJECT_NAME
 $ ${OSORunCMD}
 ----
 
-== Interacting with the Booster on a Single-node OpenShift Cluster
+== Interacting with the Example Application on a Single-node OpenShift Cluster
 
-To interact with your booster while it's running on a Single-node OpenShift Cluster, you first need to obtain it's URL:
+To interact with your example application while it is running on a Single-node OpenShift Cluster, you first need to obtain its URL:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -42,7 +42,7 @@ ${name-app-name}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME
 ----
 
 
-You can use the form at your application's url or you can use the `curl` command:
+You can use the form at your application's URL or you can use the `curl` command:
 
 
 [source,bash,options="nowrap",subs="attributes+"]
@@ -62,6 +62,6 @@ $ curl http://${greeting-app-name}-MY_PROJECT_NAME.LOCAL_OPENSHIFT_HOSTNAME/api/
 ----
 
 == More Information
-You can learn more about this booster and rest of the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].
+You can learn more about this example application and the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].
 
 ${integrationTestSection}
