@@ -1,6 +1,7 @@
 
 [id='committing-and-pushing-changes-to-the-github-repository-of-your-booster_{context}']
-= Committing and pushing changes to the GitHub repository of your booster
+[id='committing-and-pushing-changes-to-the-github-repository-of-your-example-application_{context}']
+= Committing and pushing changes to the GitHub repository of your example application
 
 {DevStudio} provides tooling for committing and pushing code through Git directly in the IDE. Alternatively, you can use {DevStudio} to make changes and push those changes with the Git CLI.
 
@@ -16,4 +17,3 @@
 . Enter your commit message and click _Commit and Push_.
 . Click _Close_ in the _Push Results_ window when prompted.
 . Observe your changes are now available in your GitHub repository.
-

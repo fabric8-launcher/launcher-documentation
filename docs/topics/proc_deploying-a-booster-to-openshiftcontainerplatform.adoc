@@ -30,7 +30,7 @@ $ oc login OCP_URL --token=MYTOKEN
 $ oc new-project {value-name-project}
 ----
 
-. Navigate to the root directory of your example.
+. Navigate to the root directory of your application.
 
 . Deploy your example to {OpenShiftContainerPlatform}.
 .. If your example uses Maven: 
@@ -46,7 +46,7 @@ $ mvn clean fabric8:deploy -Popenshift
 $ npm install && npm run openshift
 ----
 
-. Open the `README.adoc` file in your example's project and follow the instructions for interacting with your example application.
+. Open the `README.adoc` file in your example application's project and follow the instructions for interacting with your example application.
 
 .Additional resources
 Take a look at the different runtime guides to learn more about the runtimes and their example applications:
