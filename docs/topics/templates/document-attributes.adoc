@@ -68,8 +68,8 @@ endif::[]
 // Versions
 :version-fabric8-maven-plugin: 3.5.40
 
-:version-thorntail-product: 2.2.0.Final-redhat-00021
-:version-thorntail-community: 2.2.0.Final
+:version-thorntail-product: 2.4.0.Final-redhat-00013
+:version-thorntail-community: 2.4.0.Final
 
 :version-spring-boot: 2.1.3.RELEASE
 :version-spring-boot-bom: 2.1.3.Final-redhat-00001
