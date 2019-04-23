@@ -80,6 +80,9 @@ endif::[]
 
 :version-node-nodeshift: --dockerImage=registry.access.redhat.com/rhoar-nodejs/nodejs-8
 
+// Prerequisites
+:prerequisite-jdk-version: OpenJDK 8 or OpenJDK 11 installed.
+
 
 // Links
 :link-docs: https://launcher.fabric8.io

@@ -22,7 +22,7 @@ The following procedure shows you how to:
 .Prerequisites
 
 * Maven installed.
-* JDK 8 or later installed.
+* {prerequisite-jdk-version}
 
 .Procedure
 
