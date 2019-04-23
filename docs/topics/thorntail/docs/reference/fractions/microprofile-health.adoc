@@ -12,7 +12,7 @@
 
 .Configuration
 
-swarm.microprofile.health.security-realm:: 
+thorntail.microprofile.health.security-realm:: 
 Security realm configuration
 
 

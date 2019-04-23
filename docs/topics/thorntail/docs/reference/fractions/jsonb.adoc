@@ -1,0 +1,15 @@
+= JSON-B
+
+Provides support for JSON Binding according to JSR-367.
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>jsonb</artifactId>
+</dependency>
+----
+
+

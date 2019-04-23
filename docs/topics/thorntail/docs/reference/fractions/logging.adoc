@@ -4,7 +4,7 @@ Provides facilities to configure logging categories, levels and handlers.
 
 When specifying log-levels through properties, since
 they include dots, they should be placed between
-square brackets, such as `swarm.logging.loggers.[com.mycorp.logger].level`.
+square brackets, such as `thorntail.logging.loggers.[com.mycorp.logger].level`.
 
 
 .Maven Coordinates
@@ -18,610 +18,778 @@ square brackets, such as `swarm.logging.loggers.[com.mycorp.logger].level`.
 
 .Configuration
 
-swarm.logging.add-logging-api-dependencies:: 
+thorntail.logging.add-logging-api-dependencies:: 
 Indicates whether or not logging API dependencies should be added to deployments during the deployment process. A value of true will add the dependencies to the deployment. A value of false will skip the deployment from being processed for logging API dependencies.
 
-swarm.logging.async-handlers._KEY_.enabled:: 
+thorntail.logging.async-handlers._KEY_.enabled:: 
 If set to true the handler is enabled and functioning as normal, if set to false the handler is ignored when processing log messages.
 
-swarm.logging.async-handlers._KEY_.filter-spec:: 
+thorntail.logging.async-handlers._KEY_.filter-spec:: 
 A filter expression value to define a filter. Example for a filter that does not match a pattern: not(match("JBAS.*"))
 
-swarm.logging.async-handlers._KEY_.level:: 
+thorntail.logging.async-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this handler. Message levels lower than this value will be discarded.
 
-swarm.logging.async-handlers._KEY_.name:: 
+thorntail.logging.async-handlers._KEY_.name:: 
 The name of the handler.
 
-swarm.logging.async-handlers._KEY_.overflow-action:: 
+thorntail.logging.async-handlers._KEY_.overflow-action:: 
 Specify what action to take when the overflowing.  The valid options are 'block' and 'discard'
 
-swarm.logging.async-handlers._KEY_.queue-length:: 
+thorntail.logging.async-handlers._KEY_.queue-length:: 
 The queue length to use before flushing writing
 
-swarm.logging.async-handlers._KEY_.subhandlers:: 
+thorntail.logging.async-handlers._KEY_.subhandlers:: 
 The Handlers associated with this async handler.
 
-swarm.logging.console-handlers._KEY_.autoflush:: 
+thorntail.logging.console-handlers._KEY_.autoflush:: 
 Automatically flush after each write.
 
-swarm.logging.console-handlers._KEY_.enabled:: 
+thorntail.logging.console-handlers._KEY_.enabled:: 
 If set to true the handler is enabled and functioning as normal, if set to false the handler is ignored when processing log messages.
 
-swarm.logging.console-handlers._KEY_.encoding:: 
+thorntail.logging.console-handlers._KEY_.encoding:: 
 The character encoding used by this Handler.
 
-swarm.logging.console-handlers._KEY_.filter-spec:: 
+thorntail.logging.console-handlers._KEY_.filter-spec:: 
 A filter expression value to define a filter. Example for a filter that does not match a pattern: not(match("JBAS.*"))
 
-swarm.logging.console-handlers._KEY_.formatter:: 
+thorntail.logging.console-handlers._KEY_.formatter:: 
 Defines a pattern for the formatter.
 
-swarm.logging.console-handlers._KEY_.level:: 
+thorntail.logging.console-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this logger. Message levels lower than this value will be discarded.
 
-swarm.logging.console-handlers._KEY_.name:: 
+thorntail.logging.console-handlers._KEY_.name:: 
 The name of the handler.
 
-swarm.logging.console-handlers._KEY_.named-formatter:: 
+thorntail.logging.console-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.
 
-swarm.logging.console-handlers._KEY_.target:: 
+thorntail.logging.console-handlers._KEY_.target:: 
 Defines the target of the console handler. The value can be System.out, System.err or console.
 
-swarm.logging.custom-formatters._KEY_.attribute-class:: 
+thorntail.logging.custom-formatters._KEY_.attribute-class:: 
+The logging formatter class to be used.
+
+thorntail.logging.custom-formatters._KEY_.module:: 
+The module that the logging formatter depends on.
+
+thorntail.logging.custom-formatters._KEY_.properties:: 
+Defines the properties used for the logging formatter. All properties must be accessible via a setter method.
+
+thorntail.logging.custom-handlers._KEY_.attribute-class:: 
 The logging handler class to be used.
 
-swarm.logging.custom-formatters._KEY_.module:: 
-The module that the logging handler depends on.
-
-swarm.logging.custom-formatters._KEY_.properties:: 
-Defines the properties used for the logging handler. All properties must be accessible via a setter method.
-
-swarm.logging.custom-handlers._KEY_.attribute-class:: 
-The logging handler class to be used.
-
-swarm.logging.custom-handlers._KEY_.enabled:: 
+thorntail.logging.custom-handlers._KEY_.enabled:: 
 If set to true the handler is enabled and functioning as normal, if set to false the handler is ignored when processing log messages.
 
-swarm.logging.custom-handlers._KEY_.encoding:: 
+thorntail.logging.custom-handlers._KEY_.encoding:: 
 The character encoding used by this Handler.
 
-swarm.logging.custom-handlers._KEY_.filter-spec:: 
+thorntail.logging.custom-handlers._KEY_.filter-spec:: 
 A filter expression value to define a filter. Example for a filter that does not match a pattern: not(match("JBAS.*"))
 
-swarm.logging.custom-handlers._KEY_.formatter:: 
+thorntail.logging.custom-handlers._KEY_.formatter:: 
 Defines a pattern for the formatter.
 
-swarm.logging.custom-handlers._KEY_.level:: 
+thorntail.logging.custom-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this logger. Message levels lower than this value will be discarded.
 
-swarm.logging.custom-handlers._KEY_.module:: 
+thorntail.logging.custom-handlers._KEY_.module:: 
 The module that the logging handler depends on.
 
-swarm.logging.custom-handlers._KEY_.name:: 
+thorntail.logging.custom-handlers._KEY_.name:: 
 The name of the handler.
 
-swarm.logging.custom-handlers._KEY_.named-formatter:: 
+thorntail.logging.custom-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.
 
-swarm.logging.custom-handlers._KEY_.properties:: 
+thorntail.logging.custom-handlers._KEY_.properties:: 
 Defines the properties used for the logging handler. All properties must be accessible via a setter method.
 
-swarm.logging.file-handlers._KEY_.append:: 
+thorntail.logging.file-handlers._KEY_.append:: 
 Specify whether to append to the target file.
 
-swarm.logging.file-handlers._KEY_.autoflush:: 
+thorntail.logging.file-handlers._KEY_.autoflush:: 
 Automatically flush after each write.
 
-swarm.logging.file-handlers._KEY_.enabled:: 
+thorntail.logging.file-handlers._KEY_.enabled:: 
 If set to true the handler is enabled and functioning as normal, if set to false the handler is ignored when processing log messages.
 
-swarm.logging.file-handlers._KEY_.encoding:: 
+thorntail.logging.file-handlers._KEY_.encoding:: 
 The character encoding used by this Handler.
 
-swarm.logging.file-handlers._KEY_.file:: 
+thorntail.logging.file-handlers._KEY_.file:: 
 The file description consisting of the path and optional relative to path.
 
-swarm.logging.file-handlers._KEY_.filter-spec:: 
+thorntail.logging.file-handlers._KEY_.filter-spec:: 
 A filter expression value to define a filter. Example for a filter that does not match a pattern: not(match("JBAS.*"))
 
-swarm.logging.file-handlers._KEY_.formatter:: 
+thorntail.logging.file-handlers._KEY_.formatter:: 
 Defines a pattern for the formatter.
 
-swarm.logging.file-handlers._KEY_.level:: 
+thorntail.logging.file-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this logger. Message levels lower than this value will be discarded.
 
-swarm.logging.file-handlers._KEY_.name:: 
+thorntail.logging.file-handlers._KEY_.name:: 
 The name of the handler.
 
-swarm.logging.file-handlers._KEY_.named-formatter:: 
+thorntail.logging.file-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.
 
-swarm.logging.log-files._KEY_.file-size:: 
+thorntail.logging.json-formatters._KEY_.date-format:: 
+The date/time format pattern. The pattern must be a valid java.time.format.DateTimeFormatter.ofPattern() pattern. The default pattern is an ISO-8601 extended offset date-time format.
+
+thorntail.logging.json-formatters._KEY_.exception-output-type:: 
+Indicates how the cause of the logged message, if one is available, will be added to the JSON output.
+
+thorntail.logging.json-formatters._KEY_.key-overrides:: 
+Allows the names of the keys for the JSON properties to be overridden.
+
+thorntail.logging.json-formatters._KEY_.meta-data:: 
+Sets the meta data to use in the JSON format. Properties will be added to each log message.
+
+thorntail.logging.json-formatters._KEY_.pretty-print:: 
+Indicates whether or not pretty printing should be used when formatting.
+
+thorntail.logging.json-formatters._KEY_.print-details:: 
+Sets whether or not details should be printed. Printing the details can be expensive as the values are retrieved from the caller. The details include the source class name, source file name, source method name, source module name, source module version and source line number.
+
+thorntail.logging.json-formatters._KEY_.record-delimiter:: 
+The value to be used to indicate the end of a record. If set to null no delimiter will be used at the end of the record. The default value is a line feed.
+
+thorntail.logging.json-formatters._KEY_.zone-id:: 
+The zone ID for formatting the date and time. The system default is used if left undefined.
+
+thorntail.logging.log-files._KEY_.file-size:: 
 The size of the log file in bytes.
 
-swarm.logging.log-files._KEY_.last-modified-time:: 
+thorntail.logging.log-files._KEY_.last-modified-time:: 
 The date, in milliseconds, the file was last modified.
 
-swarm.logging.log-files._KEY_.last-modified-timestamp:: 
+thorntail.logging.log-files._KEY_.last-modified-timestamp:: 
 The date, in ISO 8601 format, the file was last modified.
 
-swarm.logging.log-files._KEY_.stream:: 
+thorntail.logging.log-files._KEY_.stream:: 
 Provides the server log as a response attachment. The response result value is the unique id of the attachment.
 
-swarm.logging.loggers._KEY_.category:: 
+thorntail.logging.loggers._KEY_.category:: 
 Specifies the category for the logger.
 
-swarm.logging.loggers._KEY_.filter-spec:: 
+thorntail.logging.loggers._KEY_.filter-spec:: 
 A filter expression value to define a filter. Example for a filter that does not match a pattern: not(match("JBAS.*"))
 
-swarm.logging.loggers._KEY_.handlers:: 
+thorntail.logging.loggers._KEY_.handlers:: 
 The handlers associated with the logger.
 
-swarm.logging.loggers._KEY_.level:: 
+thorntail.logging.loggers._KEY_.level:: 
 The log level specifying which message levels will be logged by the logger. Message levels lower than this value will be discarded.
 
-swarm.logging.loggers._KEY_.use-parent-handlers:: 
+thorntail.logging.loggers._KEY_.use-parent-handlers:: 
 Specifies whether or not this logger should send its output to its parent Logger.
 
-swarm.logging.logging-profiles._KEY_.async-handlers._KEY_.enabled:: 
+thorntail.logging.logging-profiles._KEY_.async-handlers._KEY_.enabled:: 
 If set to true the handler is enabled and functioning as normal, if set to false the handler is ignored when processing log messages.
 
-swarm.logging.logging-profiles._KEY_.async-handlers._KEY_.filter-spec:: 
+thorntail.logging.logging-profiles._KEY_.async-handlers._KEY_.filter-spec:: 
 A filter expression value to define a filter. Example for a filter that does not match a pattern: not(match("JBAS.*"))
 
-swarm.logging.logging-profiles._KEY_.async-handlers._KEY_.level:: 
+thorntail.logging.logging-profiles._KEY_.async-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this handler. Message levels lower than this value will be discarded.
 
-swarm.logging.logging-profiles._KEY_.async-handlers._KEY_.name:: 
+thorntail.logging.logging-profiles._KEY_.async-handlers._KEY_.name:: 
 The name of the handler.
 
-swarm.logging.logging-profiles._KEY_.async-handlers._KEY_.overflow-action:: 
+thorntail.logging.logging-profiles._KEY_.async-handlers._KEY_.overflow-action:: 
 Specify what action to take when the overflowing.  The valid options are 'block' and 'discard'
 
-swarm.logging.logging-profiles._KEY_.async-handlers._KEY_.queue-length:: 
+thorntail.logging.logging-profiles._KEY_.async-handlers._KEY_.queue-length:: 
 The queue length to use before flushing writing
 
-swarm.logging.logging-profiles._KEY_.async-handlers._KEY_.subhandlers:: 
+thorntail.logging.logging-profiles._KEY_.async-handlers._KEY_.subhandlers:: 
 The Handlers associated with this async handler.
 
-swarm.logging.logging-profiles._KEY_.console-handlers._KEY_.autoflush:: 
+thorntail.logging.logging-profiles._KEY_.console-handlers._KEY_.autoflush:: 
 Automatically flush after each write.
 
-swarm.logging.logging-profiles._KEY_.console-handlers._KEY_.enabled:: 
+thorntail.logging.logging-profiles._KEY_.console-handlers._KEY_.enabled:: 
 If set to true the handler is enabled and functioning as normal, if set to false the handler is ignored when processing log messages.
 
-swarm.logging.logging-profiles._KEY_.console-handlers._KEY_.encoding:: 
+thorntail.logging.logging-profiles._KEY_.console-handlers._KEY_.encoding:: 
 The character encoding used by this Handler.
 
-swarm.logging.logging-profiles._KEY_.console-handlers._KEY_.filter-spec:: 
+thorntail.logging.logging-profiles._KEY_.console-handlers._KEY_.filter-spec:: 
 A filter expression value to define a filter. Example for a filter that does not match a pattern: not(match("JBAS.*"))
 
-swarm.logging.logging-profiles._KEY_.console-handlers._KEY_.formatter:: 
+thorntail.logging.logging-profiles._KEY_.console-handlers._KEY_.formatter:: 
 Defines a pattern for the formatter.
 
-swarm.logging.logging-profiles._KEY_.console-handlers._KEY_.level:: 
+thorntail.logging.logging-profiles._KEY_.console-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this logger. Message levels lower than this value will be discarded.
 
-swarm.logging.logging-profiles._KEY_.console-handlers._KEY_.name:: 
+thorntail.logging.logging-profiles._KEY_.console-handlers._KEY_.name:: 
 The name of the handler.
 
-swarm.logging.logging-profiles._KEY_.console-handlers._KEY_.named-formatter:: 
+thorntail.logging.logging-profiles._KEY_.console-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.
 
-swarm.logging.logging-profiles._KEY_.console-handlers._KEY_.target:: 
+thorntail.logging.logging-profiles._KEY_.console-handlers._KEY_.target:: 
 Defines the target of the console handler. The value can be System.out, System.err or console.
 
-swarm.logging.logging-profiles._KEY_.custom-formatters._KEY_.attribute-class:: 
+thorntail.logging.logging-profiles._KEY_.custom-formatters._KEY_.attribute-class:: 
+The logging formatter class to be used.
+
+thorntail.logging.logging-profiles._KEY_.custom-formatters._KEY_.module:: 
+The module that the logging formatter depends on.
+
+thorntail.logging.logging-profiles._KEY_.custom-formatters._KEY_.properties:: 
+Defines the properties used for the logging formatter. All properties must be accessible via a setter method.
+
+thorntail.logging.logging-profiles._KEY_.custom-handlers._KEY_.attribute-class:: 
 The logging handler class to be used.
 
-swarm.logging.logging-profiles._KEY_.custom-formatters._KEY_.module:: 
-The module that the logging handler depends on.
-
-swarm.logging.logging-profiles._KEY_.custom-formatters._KEY_.properties:: 
-Defines the properties used for the logging handler. All properties must be accessible via a setter method.
-
-swarm.logging.logging-profiles._KEY_.custom-handlers._KEY_.attribute-class:: 
-The logging handler class to be used.
-
-swarm.logging.logging-profiles._KEY_.custom-handlers._KEY_.enabled:: 
+thorntail.logging.logging-profiles._KEY_.custom-handlers._KEY_.enabled:: 
 If set to true the handler is enabled and functioning as normal, if set to false the handler is ignored when processing log messages.
 
-swarm.logging.logging-profiles._KEY_.custom-handlers._KEY_.encoding:: 
+thorntail.logging.logging-profiles._KEY_.custom-handlers._KEY_.encoding:: 
 The character encoding used by this Handler.
 
-swarm.logging.logging-profiles._KEY_.custom-handlers._KEY_.filter-spec:: 
+thorntail.logging.logging-profiles._KEY_.custom-handlers._KEY_.filter-spec:: 
 A filter expression value to define a filter. Example for a filter that does not match a pattern: not(match("JBAS.*"))
 
-swarm.logging.logging-profiles._KEY_.custom-handlers._KEY_.formatter:: 
+thorntail.logging.logging-profiles._KEY_.custom-handlers._KEY_.formatter:: 
 Defines a pattern for the formatter.
 
-swarm.logging.logging-profiles._KEY_.custom-handlers._KEY_.level:: 
+thorntail.logging.logging-profiles._KEY_.custom-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this logger. Message levels lower than this value will be discarded.
 
-swarm.logging.logging-profiles._KEY_.custom-handlers._KEY_.module:: 
+thorntail.logging.logging-profiles._KEY_.custom-handlers._KEY_.module:: 
 The module that the logging handler depends on.
 
-swarm.logging.logging-profiles._KEY_.custom-handlers._KEY_.name:: 
+thorntail.logging.logging-profiles._KEY_.custom-handlers._KEY_.name:: 
 The name of the handler.
 
-swarm.logging.logging-profiles._KEY_.custom-handlers._KEY_.named-formatter:: 
+thorntail.logging.logging-profiles._KEY_.custom-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.
 
-swarm.logging.logging-profiles._KEY_.custom-handlers._KEY_.properties:: 
+thorntail.logging.logging-profiles._KEY_.custom-handlers._KEY_.properties:: 
 Defines the properties used for the logging handler. All properties must be accessible via a setter method.
 
-swarm.logging.logging-profiles._KEY_.file-handlers._KEY_.append:: 
+thorntail.logging.logging-profiles._KEY_.file-handlers._KEY_.append:: 
 Specify whether to append to the target file.
 
-swarm.logging.logging-profiles._KEY_.file-handlers._KEY_.autoflush:: 
+thorntail.logging.logging-profiles._KEY_.file-handlers._KEY_.autoflush:: 
 Automatically flush after each write.
 
-swarm.logging.logging-profiles._KEY_.file-handlers._KEY_.enabled:: 
+thorntail.logging.logging-profiles._KEY_.file-handlers._KEY_.enabled:: 
 If set to true the handler is enabled and functioning as normal, if set to false the handler is ignored when processing log messages.
 
-swarm.logging.logging-profiles._KEY_.file-handlers._KEY_.encoding:: 
+thorntail.logging.logging-profiles._KEY_.file-handlers._KEY_.encoding:: 
 The character encoding used by this Handler.
 
-swarm.logging.logging-profiles._KEY_.file-handlers._KEY_.file:: 
+thorntail.logging.logging-profiles._KEY_.file-handlers._KEY_.file:: 
 The file description consisting of the path and optional relative to path.
 
-swarm.logging.logging-profiles._KEY_.file-handlers._KEY_.filter-spec:: 
+thorntail.logging.logging-profiles._KEY_.file-handlers._KEY_.filter-spec:: 
 A filter expression value to define a filter. Example for a filter that does not match a pattern: not(match("JBAS.*"))
 
-swarm.logging.logging-profiles._KEY_.file-handlers._KEY_.formatter:: 
+thorntail.logging.logging-profiles._KEY_.file-handlers._KEY_.formatter:: 
 Defines a pattern for the formatter.
 
-swarm.logging.logging-profiles._KEY_.file-handlers._KEY_.level:: 
+thorntail.logging.logging-profiles._KEY_.file-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this logger. Message levels lower than this value will be discarded.
 
-swarm.logging.logging-profiles._KEY_.file-handlers._KEY_.name:: 
+thorntail.logging.logging-profiles._KEY_.file-handlers._KEY_.name:: 
 The name of the handler.
 
-swarm.logging.logging-profiles._KEY_.file-handlers._KEY_.named-formatter:: 
+thorntail.logging.logging-profiles._KEY_.file-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.
 
-swarm.logging.logging-profiles._KEY_.log-files._KEY_.file-size:: 
+thorntail.logging.logging-profiles._KEY_.json-formatters._KEY_.date-format:: 
+The date/time format pattern. The pattern must be a valid java.time.format.DateTimeFormatter.ofPattern() pattern. The default pattern is an ISO-8601 extended offset date-time format.
+
+thorntail.logging.logging-profiles._KEY_.json-formatters._KEY_.exception-output-type:: 
+Indicates how the cause of the logged message, if one is available, will be added to the JSON output.
+
+thorntail.logging.logging-profiles._KEY_.json-formatters._KEY_.key-overrides:: 
+Allows the names of the keys for the JSON properties to be overridden.
+
+thorntail.logging.logging-profiles._KEY_.json-formatters._KEY_.meta-data:: 
+Sets the meta data to use in the JSON format. Properties will be added to each log message.
+
+thorntail.logging.logging-profiles._KEY_.json-formatters._KEY_.pretty-print:: 
+Indicates whether or not pretty printing should be used when formatting.
+
+thorntail.logging.logging-profiles._KEY_.json-formatters._KEY_.print-details:: 
+Sets whether or not details should be printed. Printing the details can be expensive as the values are retrieved from the caller. The details include the source class name, source file name, source method name, source module name, source module version and source line number.
+
+thorntail.logging.logging-profiles._KEY_.json-formatters._KEY_.record-delimiter:: 
+The value to be used to indicate the end of a record. If set to null no delimiter will be used at the end of the record. The default value is a line feed.
+
+thorntail.logging.logging-profiles._KEY_.json-formatters._KEY_.zone-id:: 
+The zone ID for formatting the date and time. The system default is used if left undefined.
+
+thorntail.logging.logging-profiles._KEY_.log-files._KEY_.file-size:: 
 The size of the log file in bytes.
 
-swarm.logging.logging-profiles._KEY_.log-files._KEY_.last-modified-time:: 
+thorntail.logging.logging-profiles._KEY_.log-files._KEY_.last-modified-time:: 
 The date, in milliseconds, the file was last modified.
 
-swarm.logging.logging-profiles._KEY_.log-files._KEY_.last-modified-timestamp:: 
+thorntail.logging.logging-profiles._KEY_.log-files._KEY_.last-modified-timestamp:: 
 The date, in ISO 8601 format, the file was last modified.
 
-swarm.logging.logging-profiles._KEY_.log-files._KEY_.stream:: 
+thorntail.logging.logging-profiles._KEY_.log-files._KEY_.stream:: 
 Provides the server log as a response attachment. The response result value is the unique id of the attachment.
 
-swarm.logging.logging-profiles._KEY_.loggers._KEY_.category:: 
+thorntail.logging.logging-profiles._KEY_.loggers._KEY_.category:: 
 Specifies the category for the logger.
 
-swarm.logging.logging-profiles._KEY_.loggers._KEY_.filter-spec:: 
+thorntail.logging.logging-profiles._KEY_.loggers._KEY_.filter-spec:: 
 A filter expression value to define a filter. Example for a filter that does not match a pattern: not(match("JBAS.*"))
 
-swarm.logging.logging-profiles._KEY_.loggers._KEY_.handlers:: 
+thorntail.logging.logging-profiles._KEY_.loggers._KEY_.handlers:: 
 The handlers associated with the logger.
 
-swarm.logging.logging-profiles._KEY_.loggers._KEY_.level:: 
+thorntail.logging.logging-profiles._KEY_.loggers._KEY_.level:: 
 The log level specifying which message levels will be logged by the logger. Message levels lower than this value will be discarded.
 
-swarm.logging.logging-profiles._KEY_.loggers._KEY_.use-parent-handlers:: 
+thorntail.logging.logging-profiles._KEY_.loggers._KEY_.use-parent-handlers:: 
 Specifies whether or not this logger should send its output to its parent Logger.
 
-swarm.logging.logging-profiles._KEY_.pattern-formatters._KEY_.color-map:: 
+thorntail.logging.logging-profiles._KEY_.pattern-formatters._KEY_.color-map:: 
 The color-map attribute allows for a comma delimited list of colors to be used for different levels with a pattern formatter. The format for the color mapping pattern is level-name:color-name.Valid Levels; severe, fatal, error, warn, warning, info, debug, trace, config, fine, finer, finest Valid Colors; black, green, red, yellow, blue, magenta, cyan, white, brightblack, brightred, brightgreen, brightblue, brightyellow, brightmagenta, brightcyan, brightwhite
 
-swarm.logging.logging-profiles._KEY_.pattern-formatters._KEY_.pattern:: 
+thorntail.logging.logging-profiles._KEY_.pattern-formatters._KEY_.pattern:: 
 Defines a pattern for the formatter.
 
-swarm.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.append:: 
+thorntail.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.append:: 
 Specify whether to append to the target file.
 
-swarm.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.autoflush:: 
+thorntail.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.autoflush:: 
 Automatically flush after each write.
 
-swarm.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.enabled:: 
+thorntail.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.enabled:: 
 If set to true the handler is enabled and functioning as normal, if set to false the handler is ignored when processing log messages.
 
-swarm.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.encoding:: 
+thorntail.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.encoding:: 
 The character encoding used by this Handler.
 
-swarm.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.file:: 
+thorntail.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.file:: 
 The file description consisting of the path and optional relative to path.
 
-swarm.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.filter-spec:: 
+thorntail.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.filter-spec:: 
 A filter expression value to define a filter. Example for a filter that does not match a pattern: not(match("JBAS.*"))
 
-swarm.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.formatter:: 
+thorntail.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.formatter:: 
 Defines a pattern for the formatter.
 
-swarm.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.level:: 
+thorntail.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this logger. Message levels lower than this value will be discarded.
 
-swarm.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.name:: 
+thorntail.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.name:: 
 The name of the handler.
 
-swarm.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.named-formatter:: 
+thorntail.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.
 
-swarm.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.suffix:: 
+thorntail.logging.logging-profiles._KEY_.periodic-rotating-file-handlers._KEY_.suffix:: 
 Set the suffix string.  The string is in a format which can be understood by java.text.SimpleDateFormat. The period of the rotation is automatically calculated based on the suffix.
 
-swarm.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.append:: 
+thorntail.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.append:: 
 Specify whether to append to the target file.
 
-swarm.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.autoflush:: 
+thorntail.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.autoflush:: 
 Automatically flush after each write.
 
-swarm.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.enabled:: 
+thorntail.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.enabled:: 
 If set to true the handler is enabled and functioning as normal, if set to false the handler is ignored when processing log messages.
 
-swarm.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.encoding:: 
+thorntail.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.encoding:: 
 The character encoding used by this Handler.
 
-swarm.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.file:: 
+thorntail.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.file:: 
 The file description consisting of the path and optional relative to path.
 
-swarm.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.filter-spec:: 
+thorntail.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.filter-spec:: 
 A filter expression value to define a filter. Example for a filter that does not match a pattern: not(match("JBAS.*"))
 
-swarm.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.formatter:: 
+thorntail.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.formatter:: 
 Defines a pattern for the formatter.
 
-swarm.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.level:: 
+thorntail.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this logger. Message levels lower than this value will be discarded.
 
-swarm.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.max-backup-index:: 
+thorntail.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.max-backup-index:: 
 The maximum number of backups to keep.
 
-swarm.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.name:: 
+thorntail.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.name:: 
 The name of the handler.
 
-swarm.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.named-formatter:: 
+thorntail.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.
 
-swarm.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.rotate-on-boot:: 
+thorntail.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.rotate-on-boot:: 
 Indicates the file should be rotated each time the file attribute is changed. This always happens when at initialization time.
 
-swarm.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.rotate-size:: 
+thorntail.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.rotate-size:: 
 The size at which to rotate the log file.
 
-swarm.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.suffix:: 
+thorntail.logging.logging-profiles._KEY_.periodic-size-rotating-file-handlers._KEY_.suffix:: 
 Set the suffix string.  The string is in a format which can be understood by java.text.SimpleDateFormat. The period of the rotation is automatically calculated based on the suffix.
 
-swarm.logging.logging-profiles._KEY_.root-logger.filter-spec:: 
+thorntail.logging.logging-profiles._KEY_.root-logger.filter-spec:: 
 A filter expression value to define a filter. Example for a filter that does not match a pattern: not(match("JBAS.*"))
 
-swarm.logging.logging-profiles._KEY_.root-logger.handlers:: 
+thorntail.logging.logging-profiles._KEY_.root-logger.handlers:: 
 The handlers associated with the root logger.
 
-swarm.logging.logging-profiles._KEY_.root-logger.level:: 
+thorntail.logging.logging-profiles._KEY_.root-logger.level:: 
 The log level specifying which message levels will be logged by the root logger. Message levels lower than this value will be discarded.
 
-swarm.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.append:: 
+thorntail.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.append:: 
 Specify whether to append to the target file.
 
-swarm.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.autoflush:: 
+thorntail.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.autoflush:: 
 Automatically flush after each write.
 
-swarm.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.enabled:: 
+thorntail.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.enabled:: 
 If set to true the handler is enabled and functioning as normal, if set to false the handler is ignored when processing log messages.
 
-swarm.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.encoding:: 
+thorntail.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.encoding:: 
 The character encoding used by this Handler.
 
-swarm.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.file:: 
+thorntail.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.file:: 
 The file description consisting of the path and optional relative to path.
 
-swarm.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.filter-spec:: 
+thorntail.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.filter-spec:: 
 A filter expression value to define a filter. Example for a filter that does not match a pattern: not(match("JBAS.*"))
 
-swarm.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.formatter:: 
+thorntail.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.formatter:: 
 Defines a pattern for the formatter.
 
-swarm.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.level:: 
+thorntail.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this logger. Message levels lower than this value will be discarded.
 
-swarm.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.max-backup-index:: 
+thorntail.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.max-backup-index:: 
 The maximum number of backups to keep.
 
-swarm.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.name:: 
+thorntail.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.name:: 
 The name of the handler.
 
-swarm.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.named-formatter:: 
+thorntail.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.
 
-swarm.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.rotate-on-boot:: 
+thorntail.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.rotate-on-boot:: 
 Indicates the file should be rotated each time the file attribute is changed. This always happens when at initialization time.
 
-swarm.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.rotate-size:: 
+thorntail.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.rotate-size:: 
 The size at which to rotate the log file.
 
-swarm.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.suffix:: 
+thorntail.logging.logging-profiles._KEY_.size-rotating-file-handlers._KEY_.suffix:: 
 Set the suffix string. The string is in a format which can be understood by java.text.SimpleDateFormat. The suffix does not determine when the file should be rotated.
 
-swarm.logging.logging-profiles._KEY_.syslog-handlers._KEY_.app-name:: 
-The app name used when formatting the message in RFC5424 format. By default the app name is "java".
+thorntail.logging.logging-profiles._KEY_.socket-handlers._KEY_.autoflush:: 
+Automatically flush after each write.
 
-swarm.logging.logging-profiles._KEY_.syslog-handlers._KEY_.enabled:: 
+thorntail.logging.logging-profiles._KEY_.socket-handlers._KEY_.block-on-reconnect:: 
+If set to true the write methods will block when attempting to reconnect. This is only advisable to be set to true if using an asynchronous handler.
+
+thorntail.logging.logging-profiles._KEY_.socket-handlers._KEY_.enabled:: 
 If set to true the handler is enabled and functioning as normal, if set to false the handler is ignored when processing log messages.
 
-swarm.logging.logging-profiles._KEY_.syslog-handlers._KEY_.facility:: 
-Facility as defined by RFC-5424 (http://tools.ietf.org/html/rfc5424)and RFC-3164 (http://tools.ietf.org/html/rfc3164).
+thorntail.logging.logging-profiles._KEY_.socket-handlers._KEY_.encoding:: 
+The character encoding used by this Handler.
 
-swarm.logging.logging-profiles._KEY_.syslog-handlers._KEY_.hostname:: 
-The name of the host the messages are being sent from. For example the name of the host the application server is running on.
+thorntail.logging.logging-profiles._KEY_.socket-handlers._KEY_.filter-spec:: 
+A filter expression value to define a filter. Example for a filter that does not match a pattern: not(match("JBAS.*"))
 
-swarm.logging.logging-profiles._KEY_.syslog-handlers._KEY_.level:: 
+thorntail.logging.logging-profiles._KEY_.socket-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this logger. Message levels lower than this value will be discarded.
 
-swarm.logging.logging-profiles._KEY_.syslog-handlers._KEY_.port:: 
+thorntail.logging.logging-profiles._KEY_.socket-handlers._KEY_.named-formatter:: 
+The name of the defined formatter to be used on the handler.
+
+thorntail.logging.logging-profiles._KEY_.socket-handlers._KEY_.outbound-socket-binding-ref:: 
+Outbound socket reference for the socket connection.
+
+thorntail.logging.logging-profiles._KEY_.socket-handlers._KEY_.protocol:: 
+The protocol the socket should communicate over.
+
+thorntail.logging.logging-profiles._KEY_.socket-handlers._KEY_.ssl-context:: 
+The reference to the defined SSL context. This is only used if the protocol is set to SSL_TCP.
+
+thorntail.logging.logging-profiles._KEY_.syslog-handlers._KEY_.app-name:: 
+The app name used when formatting the message in RFC5424 format. By default the app name is "java".
+
+thorntail.logging.logging-profiles._KEY_.syslog-handlers._KEY_.enabled:: 
+If set to true the handler is enabled and functioning as normal, if set to false the handler is ignored when processing log messages.
+
+thorntail.logging.logging-profiles._KEY_.syslog-handlers._KEY_.facility:: 
+Facility as defined by RFC-5424 (http://tools.ietf.org/html/rfc5424)and RFC-3164 (http://tools.ietf.org/html/rfc3164).
+
+thorntail.logging.logging-profiles._KEY_.syslog-handlers._KEY_.hostname:: 
+The name of the host the messages are being sent from. For example the name of the host the application server is running on.
+
+thorntail.logging.logging-profiles._KEY_.syslog-handlers._KEY_.level:: 
+The log level specifying which message levels will be logged by this logger. Message levels lower than this value will be discarded.
+
+thorntail.logging.logging-profiles._KEY_.syslog-handlers._KEY_.port:: 
 The port the syslog server is listening on.
 
-swarm.logging.logging-profiles._KEY_.syslog-handlers._KEY_.server-address:: 
+thorntail.logging.logging-profiles._KEY_.syslog-handlers._KEY_.server-address:: 
 The address of the syslog server.
 
-swarm.logging.logging-profiles._KEY_.syslog-handlers._KEY_.syslog-format:: 
+thorntail.logging.logging-profiles._KEY_.syslog-handlers._KEY_.syslog-format:: 
 Formats the log message according to the RFC specification.
 
-swarm.logging.pattern-formatters._KEY_.color-map:: 
+thorntail.logging.logging-profiles._KEY_.xml-formatters._KEY_.date-format:: 
+The date/time format pattern. The pattern must be a valid java.time.format.DateTimeFormatter.ofPattern() pattern. The default pattern is an ISO-8601 extended offset date-time format.
+
+thorntail.logging.logging-profiles._KEY_.xml-formatters._KEY_.exception-output-type:: 
+Indicates how the cause of the logged message, if one is available, will be added to the XML output.
+
+thorntail.logging.logging-profiles._KEY_.xml-formatters._KEY_.key-overrides:: 
+Allows the names of the keys for the XML properties to be overridden.
+
+thorntail.logging.logging-profiles._KEY_.xml-formatters._KEY_.meta-data:: 
+Sets the meta data to use in the XML format. Properties will be added to each log message.
+
+thorntail.logging.logging-profiles._KEY_.xml-formatters._KEY_.namespace-uri:: 
+Sets the namespace URI used for each record if print-namespace attribute is true. Note that if no namespace-uri is defined and there are overridden keys no namespace will be written regardless if the print-namespace attribute is set to true.
+
+thorntail.logging.logging-profiles._KEY_.xml-formatters._KEY_.pretty-print:: 
+Indicates whether or not pretty printing should be used when formatting.
+
+thorntail.logging.logging-profiles._KEY_.xml-formatters._KEY_.print-details:: 
+Sets whether or not details should be printed. Printing the details can be expensive as the values are retrieved from the caller. The details include the source class name, source file name, source method name, source module name, source module version and source line number.
+
+thorntail.logging.logging-profiles._KEY_.xml-formatters._KEY_.print-namespace:: 
+Turns on or off the printing of the namespace for each <record/>. This is set to false by default.
+
+thorntail.logging.logging-profiles._KEY_.xml-formatters._KEY_.record-delimiter:: 
+The value to be used to indicate the end of a record. If set to null no delimiter will be used at the end of the record. The default value is a line feed.
+
+thorntail.logging.logging-profiles._KEY_.xml-formatters._KEY_.zone-id:: 
+The zone ID for formatting the date and time. The system default is used if left undefined.
+
+thorntail.logging.pattern-formatters._KEY_.color-map:: 
 The color-map attribute allows for a comma delimited list of colors to be used for different levels with a pattern formatter. The format for the color mapping pattern is level-name:color-name.Valid Levels; severe, fatal, error, warn, warning, info, debug, trace, config, fine, finer, finest Valid Colors; black, green, red, yellow, blue, magenta, cyan, white, brightblack, brightred, brightgreen, brightblue, brightyellow, brightmagenta, brightcyan, brightwhite
 
-swarm.logging.pattern-formatters._KEY_.pattern:: 
+thorntail.logging.pattern-formatters._KEY_.pattern:: 
 Defines a pattern for the formatter.
 
-swarm.logging.periodic-rotating-file-handlers._KEY_.append:: 
+thorntail.logging.periodic-rotating-file-handlers._KEY_.append:: 
 Specify whether to append to the target file.
 
-swarm.logging.periodic-rotating-file-handlers._KEY_.autoflush:: 
+thorntail.logging.periodic-rotating-file-handlers._KEY_.autoflush:: 
 Automatically flush after each write.
 
-swarm.logging.periodic-rotating-file-handlers._KEY_.enabled:: 
+thorntail.logging.periodic-rotating-file-handlers._KEY_.enabled:: 
 If set to true the handler is enabled and functioning as normal, if set to false the handler is ignored when processing log messages.
 
-swarm.logging.periodic-rotating-file-handlers._KEY_.encoding:: 
+thorntail.logging.periodic-rotating-file-handlers._KEY_.encoding:: 
 The character encoding used by this Handler.
 
-swarm.logging.periodic-rotating-file-handlers._KEY_.file:: 
+thorntail.logging.periodic-rotating-file-handlers._KEY_.file:: 
 The file description consisting of the path and optional relative to path.
 
-swarm.logging.periodic-rotating-file-handlers._KEY_.filter-spec:: 
+thorntail.logging.periodic-rotating-file-handlers._KEY_.filter-spec:: 
 A filter expression value to define a filter. Example for a filter that does not match a pattern: not(match("JBAS.*"))
 
-swarm.logging.periodic-rotating-file-handlers._KEY_.formatter:: 
+thorntail.logging.periodic-rotating-file-handlers._KEY_.formatter:: 
 Defines a pattern for the formatter.
 
-swarm.logging.periodic-rotating-file-handlers._KEY_.level:: 
+thorntail.logging.periodic-rotating-file-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this logger. Message levels lower than this value will be discarded.
 
-swarm.logging.periodic-rotating-file-handlers._KEY_.name:: 
+thorntail.logging.periodic-rotating-file-handlers._KEY_.name:: 
 The name of the handler.
 
-swarm.logging.periodic-rotating-file-handlers._KEY_.named-formatter:: 
+thorntail.logging.periodic-rotating-file-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.
 
-swarm.logging.periodic-rotating-file-handlers._KEY_.suffix:: 
+thorntail.logging.periodic-rotating-file-handlers._KEY_.suffix:: 
 Set the suffix string.  The string is in a format which can be understood by java.text.SimpleDateFormat. The period of the rotation is automatically calculated based on the suffix.
 
-swarm.logging.periodic-size-rotating-file-handlers._KEY_.append:: 
+thorntail.logging.periodic-size-rotating-file-handlers._KEY_.append:: 
 Specify whether to append to the target file.
 
-swarm.logging.periodic-size-rotating-file-handlers._KEY_.autoflush:: 
+thorntail.logging.periodic-size-rotating-file-handlers._KEY_.autoflush:: 
 Automatically flush after each write.
 
-swarm.logging.periodic-size-rotating-file-handlers._KEY_.enabled:: 
+thorntail.logging.periodic-size-rotating-file-handlers._KEY_.enabled:: 
 If set to true the handler is enabled and functioning as normal, if set to false the handler is ignored when processing log messages.
 
-swarm.logging.periodic-size-rotating-file-handlers._KEY_.encoding:: 
+thorntail.logging.periodic-size-rotating-file-handlers._KEY_.encoding:: 
 The character encoding used by this Handler.
 
-swarm.logging.periodic-size-rotating-file-handlers._KEY_.file:: 
+thorntail.logging.periodic-size-rotating-file-handlers._KEY_.file:: 
 The file description consisting of the path and optional relative to path.
 
-swarm.logging.periodic-size-rotating-file-handlers._KEY_.filter-spec:: 
+thorntail.logging.periodic-size-rotating-file-handlers._KEY_.filter-spec:: 
 A filter expression value to define a filter. Example for a filter that does not match a pattern: not(match("JBAS.*"))
 
-swarm.logging.periodic-size-rotating-file-handlers._KEY_.formatter:: 
+thorntail.logging.periodic-size-rotating-file-handlers._KEY_.formatter:: 
 Defines a pattern for the formatter.
 
-swarm.logging.periodic-size-rotating-file-handlers._KEY_.level:: 
+thorntail.logging.periodic-size-rotating-file-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this logger. Message levels lower than this value will be discarded.
 
-swarm.logging.periodic-size-rotating-file-handlers._KEY_.max-backup-index:: 
+thorntail.logging.periodic-size-rotating-file-handlers._KEY_.max-backup-index:: 
 The maximum number of backups to keep.
 
-swarm.logging.periodic-size-rotating-file-handlers._KEY_.name:: 
+thorntail.logging.periodic-size-rotating-file-handlers._KEY_.name:: 
 The name of the handler.
 
-swarm.logging.periodic-size-rotating-file-handlers._KEY_.named-formatter:: 
+thorntail.logging.periodic-size-rotating-file-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.
 
-swarm.logging.periodic-size-rotating-file-handlers._KEY_.rotate-on-boot:: 
+thorntail.logging.periodic-size-rotating-file-handlers._KEY_.rotate-on-boot:: 
 Indicates the file should be rotated each time the file attribute is changed. This always happens when at initialization time.
 
-swarm.logging.periodic-size-rotating-file-handlers._KEY_.rotate-size:: 
+thorntail.logging.periodic-size-rotating-file-handlers._KEY_.rotate-size:: 
 The size at which to rotate the log file.
 
-swarm.logging.periodic-size-rotating-file-handlers._KEY_.suffix:: 
+thorntail.logging.periodic-size-rotating-file-handlers._KEY_.suffix:: 
 Set the suffix string.  The string is in a format which can be understood by java.text.SimpleDateFormat. The period of the rotation is automatically calculated based on the suffix.
 
-swarm.logging.root-logger.filter-spec:: 
+thorntail.logging.root-logger.filter-spec:: 
 A filter expression value to define a filter. Example for a filter that does not match a pattern: not(match("JBAS.*"))
 
-swarm.logging.root-logger.handlers:: 
+thorntail.logging.root-logger.handlers:: 
 The handlers associated with the root logger.
 
-swarm.logging.root-logger.level:: 
+thorntail.logging.root-logger.level:: 
 The log level specifying which message levels will be logged by the root logger. Message levels lower than this value will be discarded.
 
-swarm.logging.size-rotating-file-handlers._KEY_.append:: 
+thorntail.logging.size-rotating-file-handlers._KEY_.append:: 
 Specify whether to append to the target file.
 
-swarm.logging.size-rotating-file-handlers._KEY_.autoflush:: 
+thorntail.logging.size-rotating-file-handlers._KEY_.autoflush:: 
 Automatically flush after each write.
 
-swarm.logging.size-rotating-file-handlers._KEY_.enabled:: 
+thorntail.logging.size-rotating-file-handlers._KEY_.enabled:: 
 If set to true the handler is enabled and functioning as normal, if set to false the handler is ignored when processing log messages.
 
-swarm.logging.size-rotating-file-handlers._KEY_.encoding:: 
+thorntail.logging.size-rotating-file-handlers._KEY_.encoding:: 
 The character encoding used by this Handler.
 
-swarm.logging.size-rotating-file-handlers._KEY_.file:: 
+thorntail.logging.size-rotating-file-handlers._KEY_.file:: 
 The file description consisting of the path and optional relative to path.
 
-swarm.logging.size-rotating-file-handlers._KEY_.filter-spec:: 
+thorntail.logging.size-rotating-file-handlers._KEY_.filter-spec:: 
 A filter expression value to define a filter. Example for a filter that does not match a pattern: not(match("JBAS.*"))
 
-swarm.logging.size-rotating-file-handlers._KEY_.formatter:: 
+thorntail.logging.size-rotating-file-handlers._KEY_.formatter:: 
 Defines a pattern for the formatter.
 
-swarm.logging.size-rotating-file-handlers._KEY_.level:: 
+thorntail.logging.size-rotating-file-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this logger. Message levels lower than this value will be discarded.
 
-swarm.logging.size-rotating-file-handlers._KEY_.max-backup-index:: 
+thorntail.logging.size-rotating-file-handlers._KEY_.max-backup-index:: 
 The maximum number of backups to keep.
 
-swarm.logging.size-rotating-file-handlers._KEY_.name:: 
+thorntail.logging.size-rotating-file-handlers._KEY_.name:: 
 The name of the handler.
 
-swarm.logging.size-rotating-file-handlers._KEY_.named-formatter:: 
+thorntail.logging.size-rotating-file-handlers._KEY_.named-formatter:: 
 The name of the defined formatter to be used on the handler.
 
-swarm.logging.size-rotating-file-handlers._KEY_.rotate-on-boot:: 
+thorntail.logging.size-rotating-file-handlers._KEY_.rotate-on-boot:: 
 Indicates the file should be rotated each time the file attribute is changed. This always happens when at initialization time.
 
-swarm.logging.size-rotating-file-handlers._KEY_.rotate-size:: 
+thorntail.logging.size-rotating-file-handlers._KEY_.rotate-size:: 
 The size at which to rotate the log file.
 
-swarm.logging.size-rotating-file-handlers._KEY_.suffix:: 
+thorntail.logging.size-rotating-file-handlers._KEY_.suffix:: 
 Set the suffix string. The string is in a format which can be understood by java.text.SimpleDateFormat. The suffix does not determine when the file should be rotated.
 
-swarm.logging.syslog-handlers._KEY_.app-name:: 
-The app name used when formatting the message in RFC5424 format. By default the app name is "java".
+thorntail.logging.socket-handlers._KEY_.autoflush:: 
+Automatically flush after each write.
 
-swarm.logging.syslog-handlers._KEY_.enabled:: 
+thorntail.logging.socket-handlers._KEY_.block-on-reconnect:: 
+If set to true the write methods will block when attempting to reconnect. This is only advisable to be set to true if using an asynchronous handler.
+
+thorntail.logging.socket-handlers._KEY_.enabled:: 
 If set to true the handler is enabled and functioning as normal, if set to false the handler is ignored when processing log messages.
 
-swarm.logging.syslog-handlers._KEY_.facility:: 
-Facility as defined by RFC-5424 (http://tools.ietf.org/html/rfc5424)and RFC-3164 (http://tools.ietf.org/html/rfc3164).
+thorntail.logging.socket-handlers._KEY_.encoding:: 
+The character encoding used by this Handler.
 
-swarm.logging.syslog-handlers._KEY_.hostname:: 
-The name of the host the messages are being sent from. For example the name of the host the application server is running on.
+thorntail.logging.socket-handlers._KEY_.filter-spec:: 
+A filter expression value to define a filter. Example for a filter that does not match a pattern: not(match("JBAS.*"))
 
-swarm.logging.syslog-handlers._KEY_.level:: 
+thorntail.logging.socket-handlers._KEY_.level:: 
 The log level specifying which message levels will be logged by this logger. Message levels lower than this value will be discarded.
 
-swarm.logging.syslog-handlers._KEY_.port:: 
+thorntail.logging.socket-handlers._KEY_.named-formatter:: 
+The name of the defined formatter to be used on the handler.
+
+thorntail.logging.socket-handlers._KEY_.outbound-socket-binding-ref:: 
+Outbound socket reference for the socket connection.
+
+thorntail.logging.socket-handlers._KEY_.protocol:: 
+The protocol the socket should communicate over.
+
+thorntail.logging.socket-handlers._KEY_.ssl-context:: 
+The reference to the defined SSL context. This is only used if the protocol is set to SSL_TCP.
+
+thorntail.logging.syslog-handlers._KEY_.app-name:: 
+The app name used when formatting the message in RFC5424 format. By default the app name is "java".
+
+thorntail.logging.syslog-handlers._KEY_.enabled:: 
+If set to true the handler is enabled and functioning as normal, if set to false the handler is ignored when processing log messages.
+
+thorntail.logging.syslog-handlers._KEY_.facility:: 
+Facility as defined by RFC-5424 (http://tools.ietf.org/html/rfc5424)and RFC-3164 (http://tools.ietf.org/html/rfc3164).
+
+thorntail.logging.syslog-handlers._KEY_.hostname:: 
+The name of the host the messages are being sent from. For example the name of the host the application server is running on.
+
+thorntail.logging.syslog-handlers._KEY_.level:: 
+The log level specifying which message levels will be logged by this logger. Message levels lower than this value will be discarded.
+
+thorntail.logging.syslog-handlers._KEY_.port:: 
 The port the syslog server is listening on.
 
-swarm.logging.syslog-handlers._KEY_.server-address:: 
+thorntail.logging.syslog-handlers._KEY_.server-address:: 
 The address of the syslog server.
 
-swarm.logging.syslog-handlers._KEY_.syslog-format:: 
+thorntail.logging.syslog-handlers._KEY_.syslog-format:: 
 Formats the log message according to the RFC specification.
 
-swarm.logging.use-deployment-logging-config:: 
+thorntail.logging.use-deployment-logging-config:: 
 Indicates whether or not deployments should use a logging configuration file found in the deployment to configure the log manager. If set to true and a logging configuration file was found in the deployments META-INF or WEB-INF/classes directory, then a log manager will be configured with those settings. If set false the servers logging configuration will be used regardless of any logging configuration files supplied in the deployment.
+
+thorntail.logging.xml-formatters._KEY_.date-format:: 
+The date/time format pattern. The pattern must be a valid java.time.format.DateTimeFormatter.ofPattern() pattern. The default pattern is an ISO-8601 extended offset date-time format.
+
+thorntail.logging.xml-formatters._KEY_.exception-output-type:: 
+Indicates how the cause of the logged message, if one is available, will be added to the XML output.
+
+thorntail.logging.xml-formatters._KEY_.key-overrides:: 
+Allows the names of the keys for the XML properties to be overridden.
+
+thorntail.logging.xml-formatters._KEY_.meta-data:: 
+Sets the meta data to use in the XML format. Properties will be added to each log message.
+
+thorntail.logging.xml-formatters._KEY_.namespace-uri:: 
+Sets the namespace URI used for each record if print-namespace attribute is true. Note that if no namespace-uri is defined and there are overridden keys no namespace will be written regardless if the print-namespace attribute is set to true.
+
+thorntail.logging.xml-formatters._KEY_.pretty-print:: 
+Indicates whether or not pretty printing should be used when formatting.
+
+thorntail.logging.xml-formatters._KEY_.print-details:: 
+Sets whether or not details should be printed. Printing the details can be expensive as the values are retrieved from the caller. The details include the source class name, source file name, source method name, source module name, source module version and source line number.
+
+thorntail.logging.xml-formatters._KEY_.print-namespace:: 
+Turns on or off the printing of the namespace for each <record/>. This is set to false by default.
+
+thorntail.logging.xml-formatters._KEY_.record-delimiter:: 
+The value to be used to indicate the end of a record. If set to null no delimiter will be used at the end of the record. The default value is a line feed.
+
+thorntail.logging.xml-formatters._KEY_.zone-id:: 
+The zone ID for formatting the date and time. The system default is used if left undefined.
 
 

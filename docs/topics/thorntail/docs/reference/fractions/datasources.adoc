@@ -64,7 +64,7 @@ An example of a MySQL datasource configuration with connection information, basi
 
 [source,yaml,options="nowrap"]
 ----
-swarm:
+thorntail:
   datasources:
     data-sources:
       MyDS:
@@ -84,7 +84,7 @@ An example of a PostgreSQL datasource configuration with connection information,
 
 [source,yaml,options="nowrap"]
 ----
-swarm:
+thorntail:
   datasources:
     data-sources:
       MyDS:
@@ -104,7 +104,7 @@ An example of an Oracle datasource configuration with connection information, ba
 
 [source,yaml,options="nowrap"]
 ----
-swarm:
+thorntail:
   datasources:
     data-sources:
       MyDS:
@@ -132,469 +132,472 @@ swarm:
 
 .Configuration
 
-swarm.datasources.data-sources._KEY_.allocation-retry:: 
+thorntail.datasources.data-sources._KEY_.allocation-retry:: 
 The allocation retry element indicates the number of times that allocating a connection should be tried before throwing an exception
 
-swarm.datasources.data-sources._KEY_.allocation-retry-wait-millis:: 
+thorntail.datasources.data-sources._KEY_.allocation-retry-wait-millis:: 
 The allocation retry wait millis element specifies the amount of time, in milliseconds, to wait between retrying to allocate a connection
 
-swarm.datasources.data-sources._KEY_.allow-multiple-users:: 
+thorntail.datasources.data-sources._KEY_.allow-multiple-users:: 
 Specifies if multiple users will access the datasource through the getConnection(user, password) method and hence if the internal pool type should account for that
 
-swarm.datasources.data-sources._KEY_.authentication-context:: 
+thorntail.datasources.data-sources._KEY_.authentication-context:: 
 The Elytron authentication context which defines the javax.security.auth.Subject that is used to distinguish connections in the pool.
 
-swarm.datasources.data-sources._KEY_.background-validation:: 
+thorntail.datasources.data-sources._KEY_.background-validation:: 
 An element to specify that connections should be validated on a background thread versus being validated prior to use. Changing this value can be done only on disabled datasource,  requires a server restart otherwise.
 
-swarm.datasources.data-sources._KEY_.background-validation-millis:: 
+thorntail.datasources.data-sources._KEY_.background-validation-millis:: 
 The background-validation-millis element specifies the amount of time, in milliseconds, that background validation will run. Changing this value can be done only on disabled datasource,  requires a server restart otherwise
 
-swarm.datasources.data-sources._KEY_.blocking-timeout-wait-millis:: 
+thorntail.datasources.data-sources._KEY_.blocking-timeout-wait-millis:: 
 The blocking-timeout-millis element specifies the maximum time, in milliseconds, to block while waiting for a connection before throwing an exception. Note that this blocks only while waiting for locking a connection, and will never throw an exception if creating a new connection takes an inordinately long time
 
-swarm.datasources.data-sources._KEY_.capacity-decrementer-class:: 
+thorntail.datasources.data-sources._KEY_.capacity-decrementer-class:: 
 Class defining the policy for decrementing connections in the pool
 
-swarm.datasources.data-sources._KEY_.capacity-decrementer-properties:: 
+thorntail.datasources.data-sources._KEY_.capacity-decrementer-properties:: 
 Properties to be injected in class defining the policy for decrementing connections in the pool
 
-swarm.datasources.data-sources._KEY_.capacity-incrementer-class:: 
+thorntail.datasources.data-sources._KEY_.capacity-incrementer-class:: 
 Class defining the policy for incrementing connections in the pool
 
-swarm.datasources.data-sources._KEY_.capacity-incrementer-properties:: 
+thorntail.datasources.data-sources._KEY_.capacity-incrementer-properties:: 
 Properties to be injected in class defining the policy for incrementing connections in the pool
 
-swarm.datasources.data-sources._KEY_.check-valid-connection-sql:: 
+thorntail.datasources.data-sources._KEY_.check-valid-connection-sql:: 
 Specify an SQL statement to check validity of a pool connection. This may be called when managed connection is obtained from the pool
 
-swarm.datasources.data-sources._KEY_.connectable:: 
+thorntail.datasources.data-sources._KEY_.connectable:: 
 Enable the use of CMR. This feature means that a local resource can reliably participate in an XA transaction.
 
-swarm.datasources.data-sources._KEY_.connection-listener-class:: 
+thorntail.datasources.data-sources._KEY_.connection-listener-class:: 
 Speciefies class name extending org.jboss.jca.adapters.jdbc.spi.listener.ConnectionListener that provides a possible to listen for connection activation and passivation in order to perform actions before the connection is returned to the application or returned to the pool.
 
-swarm.datasources.data-sources._KEY_.connection-listener-property:: 
+thorntail.datasources.data-sources._KEY_.connection-listener-property:: 
 Properties to be injected in class specidied in connection-listener-class
 
-swarm.datasources.data-sources._KEY_.connection-properties._KEY_.value:: 
+thorntail.datasources.data-sources._KEY_.connection-properties._KEY_.value:: 
 Each connection-property specifies a string name/value pair with the property name coming from the name attribute and the value coming from the element content
 
-swarm.datasources.data-sources._KEY_.connection-url:: 
+thorntail.datasources.data-sources._KEY_.connection-url:: 
 The JDBC driver connection URL
 
-swarm.datasources.data-sources._KEY_.credential-reference:: 
+thorntail.datasources.data-sources._KEY_.credential-reference:: 
 Credential (from Credential Store) to authenticate on data source
 
-swarm.datasources.data-sources._KEY_.datasource-class:: 
+thorntail.datasources.data-sources._KEY_.datasource-class:: 
 The fully qualified name of the JDBC datasource class
 
-swarm.datasources.data-sources._KEY_.driver-class:: 
+thorntail.datasources.data-sources._KEY_.driver-class:: 
 The fully qualified name of the JDBC driver class
 
-swarm.datasources.data-sources._KEY_.driver-name:: 
+thorntail.datasources.data-sources._KEY_.driver-name:: 
 Defines the JDBC driver the datasource should use. It is a symbolic name matching the the name of installed driver. In case the driver is deployed as jar, the name is the name of deployment unit
 
-swarm.datasources.data-sources._KEY_.elytron-enabled:: 
+thorntail.datasources.data-sources._KEY_.elytron-enabled:: 
 Enables Elytron security for handling authentication of connections. The Elytron authentication-context to be used will be current context if no context is specified (see authentication-context).
 
-swarm.datasources.data-sources._KEY_.enlistment-trace:: 
+thorntail.datasources.data-sources._KEY_.enlistment-trace:: 
 Defines if WildFly/IronJacamar should record enlistment traces
 
-swarm.datasources.data-sources._KEY_.exception-sorter-class-name:: 
+thorntail.datasources.data-sources._KEY_.exception-sorter-class-name:: 
 An org.jboss.jca.adapters.jdbc.ExceptionSorter that provides an isExceptionFatal(SQLException) method to validate if an exception should broadcast an error
 
-swarm.datasources.data-sources._KEY_.exception-sorter-properties:: 
+thorntail.datasources.data-sources._KEY_.exception-sorter-properties:: 
 The exception sorter properties
 
-swarm.datasources.data-sources._KEY_.flush-strategy:: 
+thorntail.datasources.data-sources._KEY_.flush-strategy:: 
 Specifies how the pool should be flush in case of an error.
 
-swarm.datasources.data-sources._KEY_.idle-timeout-minutes:: 
+thorntail.datasources.data-sources._KEY_.idle-timeout-minutes:: 
 The idle-timeout-minutes elements specifies the maximum time, in minutes, a connection may be idle before being closed. The actual maximum time depends also on the IdleRemover scan time, which is half of the smallest idle-timeout-minutes value of any pool. Changing this value can be done only on disabled datasource, requires a server restart otherwise.
 
-swarm.datasources.data-sources._KEY_.initial-pool-size:: 
+thorntail.datasources.data-sources._KEY_.initial-pool-size:: 
 The initial-pool-size element indicates the initial number of connections a pool should hold.
 
-swarm.datasources.data-sources._KEY_.jndi-name:: 
+thorntail.datasources.data-sources._KEY_.jndi-name:: 
 Specifies the JNDI name for the datasource
 
-swarm.datasources.data-sources._KEY_.jta:: 
+thorntail.datasources.data-sources._KEY_.jta:: 
 Enable JTA integration
 
-swarm.datasources.data-sources._KEY_.max-pool-size:: 
+thorntail.datasources.data-sources._KEY_.max-pool-size:: 
 The max-pool-size element specifies the maximum number of connections for a pool. No more connections will be created in each sub-pool
 
-swarm.datasources.data-sources._KEY_.mcp:: 
+thorntail.datasources.data-sources._KEY_.mcp:: 
 Defines the ManagedConnectionPool implementation, f.ex. org.jboss.jca.core.connectionmanager.pool.mcp.SemaphoreArrayListManagedConnectionPool
 
-swarm.datasources.data-sources._KEY_.min-pool-size:: 
+thorntail.datasources.data-sources._KEY_.min-pool-size:: 
 The min-pool-size element specifies the minimum number of connections for a pool
 
-swarm.datasources.data-sources._KEY_.new-connection-sql:: 
+thorntail.datasources.data-sources._KEY_.new-connection-sql:: 
 Specifies an SQL statement to execute whenever a connection is added to the connection pool
 
-swarm.datasources.data-sources._KEY_.password:: 
+thorntail.datasources.data-sources._KEY_.password:: 
 Specifies the password used when creating a new connection
 
-swarm.datasources.data-sources._KEY_.pool-fair:: 
+thorntail.datasources.data-sources._KEY_.pool-fair:: 
 Defines if pool use should be fair
 
-swarm.datasources.data-sources._KEY_.pool-prefill:: 
+thorntail.datasources.data-sources._KEY_.pool-prefill:: 
 Should the pool be prefilled. Changing this value can be done only on disabled datasource, requires a server restart otherwise.
 
-swarm.datasources.data-sources._KEY_.pool-use-strict-min:: 
+thorntail.datasources.data-sources._KEY_.pool-use-strict-min:: 
 Specifies if the min-pool-size should be considered strictly
 
-swarm.datasources.data-sources._KEY_.prepared-statements-cache-size:: 
+thorntail.datasources.data-sources._KEY_.prepared-statements-cache-size:: 
 The number of prepared statements per connection in an LRU cache
 
-swarm.datasources.data-sources._KEY_.query-timeout:: 
+thorntail.datasources.data-sources._KEY_.query-timeout:: 
 Any configured query timeout in seconds. If not provided no timeout will be set
 
-swarm.datasources.data-sources._KEY_.reauth-plugin-class-name:: 
+thorntail.datasources.data-sources._KEY_.reauth-plugin-class-name:: 
 The fully qualified class name of the reauthentication plugin implementation
 
-swarm.datasources.data-sources._KEY_.reauth-plugin-properties:: 
+thorntail.datasources.data-sources._KEY_.reauth-plugin-properties:: 
 The properties for the reauthentication plugin
 
-swarm.datasources.data-sources._KEY_.security-domain:: 
+thorntail.datasources.data-sources._KEY_.security-domain:: 
 Specifies the PicketBox security domain which defines the PicketBox javax.security.auth.Subject that are used to distinguish connections in the pool
 
-swarm.datasources.data-sources._KEY_.set-tx-query-timeout:: 
+thorntail.datasources.data-sources._KEY_.set-tx-query-timeout:: 
 Whether to set the query timeout based on the time remaining until transaction timeout. Any configured query timeout will be used if there is no transaction
 
-swarm.datasources.data-sources._KEY_.share-prepared-statements:: 
+thorntail.datasources.data-sources._KEY_.share-prepared-statements:: 
 Whether to share prepared statements, i.e. whether asking for same statement twice without closing uses the same underlying prepared statement
 
-swarm.datasources.data-sources._KEY_.spy:: 
+thorntail.datasources.data-sources._KEY_.spy:: 
 Enable spying of SQL statements
 
-swarm.datasources.data-sources._KEY_.stale-connection-checker-class-name:: 
+thorntail.datasources.data-sources._KEY_.stale-connection-checker-class-name:: 
 An org.jboss.jca.adapters.jdbc.StaleConnectionChecker that provides an isStaleConnection(SQLException) method which if it returns true will wrap the exception in an org.jboss.jca.adapters.jdbc.StaleConnectionException
 
-swarm.datasources.data-sources._KEY_.stale-connection-checker-properties:: 
+thorntail.datasources.data-sources._KEY_.stale-connection-checker-properties:: 
 The stale connection checker properties
 
-swarm.datasources.data-sources._KEY_.statistics-enabled:: 
+thorntail.datasources.data-sources._KEY_.statistics-enabled:: 
 Define whether runtime statistics are enabled or not.
 
-swarm.datasources.data-sources._KEY_.track-statements:: 
+thorntail.datasources.data-sources._KEY_.track-statements:: 
 Whether to check for unclosed statements when a connection is returned to the pool, result sets are closed, a statement is closed or return to the prepared statement cache. Valid values are: "false" - do not track statements, "true" - track statements and result sets and warn when they are not closed, "nowarn" - track statements but do not warn about them being unclosed
 
-swarm.datasources.data-sources._KEY_.tracking:: 
+thorntail.datasources.data-sources._KEY_.tracking:: 
 Defines if IronJacamar should track connection handles across transaction boundaries
 
-swarm.datasources.data-sources._KEY_.transaction-isolation:: 
+thorntail.datasources.data-sources._KEY_.transaction-isolation:: 
 Set the java.sql.Connection transaction isolation level. Valid values are: TRANSACTION_READ_UNCOMMITTED, TRANSACTION_READ_COMMITTED, TRANSACTION_REPEATABLE_READ, TRANSACTION_SERIALIZABLE and TRANSACTION_NONE. Different values are used to set customLevel using TransactionIsolation#customLevel
 
-swarm.datasources.data-sources._KEY_.url-delimiter:: 
+thorntail.datasources.data-sources._KEY_.url-delimiter:: 
 Specifies the delimiter for URLs in connection-url for HA datasources
 
-swarm.datasources.data-sources._KEY_.url-selector-strategy-class-name:: 
+thorntail.datasources.data-sources._KEY_.url-selector-strategy-class-name:: 
 A class that implements org.jboss.jca.adapters.jdbc.URLSelectorStrategy
 
-swarm.datasources.data-sources._KEY_.use-ccm:: 
+thorntail.datasources.data-sources._KEY_.use-ccm:: 
 Enable the use of a cached connection manager
 
-swarm.datasources.data-sources._KEY_.use-fast-fail:: 
+thorntail.datasources.data-sources._KEY_.use-fast-fail:: 
 Whether to fail a connection allocation on the first try if it is invalid (true) or keep trying until the pool is exhausted of all potential connections (false)
 
-swarm.datasources.data-sources._KEY_.use-java-context:: 
+thorntail.datasources.data-sources._KEY_.use-java-context:: 
 Setting this to false will bind the datasource into global JNDI
 
-swarm.datasources.data-sources._KEY_.use-try-lock:: 
+thorntail.datasources.data-sources._KEY_.use-try-lock:: 
 Any configured timeout for internal locks on the resource adapter objects in seconds
 
-swarm.datasources.data-sources._KEY_.user-name:: 
+thorntail.datasources.data-sources._KEY_.user-name:: 
 Specify the user name used when creating a new connection
 
-swarm.datasources.data-sources._KEY_.valid-connection-checker-class-name:: 
+thorntail.datasources.data-sources._KEY_.valid-connection-checker-class-name:: 
 An org.jboss.jca.adapters.jdbc.ValidConnectionChecker that provides an isValidConnection(Connection) method to validate a connection. If an exception is returned that means the connection is invalid. This overrides the check-valid-connection-sql element
 
-swarm.datasources.data-sources._KEY_.valid-connection-checker-properties:: 
+thorntail.datasources.data-sources._KEY_.valid-connection-checker-properties:: 
 The valid connection checker properties
 
-swarm.datasources.data-sources._KEY_.validate-on-match:: 
+thorntail.datasources.data-sources._KEY_.validate-on-match:: 
 The validate-on-match element specifies if connection validation should be done when a connection factory attempts to match a managed connection. This is typically exclusive to the use of background validation
 
-swarm.datasources.installed-drivers:: 
+thorntail.datasources.installed-drivers:: 
 List of JDBC drivers that have been installed in the runtime
 
-swarm.datasources.jdbc-drivers._KEY_.deployment-name:: 
+thorntail.datasources.jdbc-drivers._KEY_.datasource-class-info:: 
+The available properties for the datasource-class, and xa-datasource-class for the jdbc-driver
+
+thorntail.datasources.jdbc-drivers._KEY_.deployment-name:: 
 The name of the deployment unit from which the driver was loaded
 
-swarm.datasources.jdbc-drivers._KEY_.driver-class-name:: 
+thorntail.datasources.jdbc-drivers._KEY_.driver-class-name:: 
 The fully qualified class name of the java.sql.Driver implementation
 
-swarm.datasources.jdbc-drivers._KEY_.driver-datasource-class-name:: 
+thorntail.datasources.jdbc-drivers._KEY_.driver-datasource-class-name:: 
 The fully qualified class name of the javax.sql.DataSource implementation
 
-swarm.datasources.jdbc-drivers._KEY_.driver-major-version:: 
+thorntail.datasources.jdbc-drivers._KEY_.driver-major-version:: 
 The driver's major version number
 
-swarm.datasources.jdbc-drivers._KEY_.driver-minor-version:: 
+thorntail.datasources.jdbc-drivers._KEY_.driver-minor-version:: 
 The driver's minor version number
 
-swarm.datasources.jdbc-drivers._KEY_.driver-module-name:: 
+thorntail.datasources.jdbc-drivers._KEY_.driver-module-name:: 
 The name of the module from which the driver was loaded, if it was loaded from the module path
 
-swarm.datasources.jdbc-drivers._KEY_.driver-name:: 
+thorntail.datasources.jdbc-drivers._KEY_.driver-name:: 
 Defines the JDBC driver the datasource should use. It is a symbolic name matching the the name of installed driver. In case the driver is deployed as jar, the name is the name of deployment unit
 
-swarm.datasources.jdbc-drivers._KEY_.driver-xa-datasource-class-name:: 
+thorntail.datasources.jdbc-drivers._KEY_.driver-xa-datasource-class-name:: 
 The fully qualified class name of the javax.sql.XADataSource implementation
 
-swarm.datasources.jdbc-drivers._KEY_.jdbc-compliant:: 
+thorntail.datasources.jdbc-drivers._KEY_.jdbc-compliant:: 
 Whether or not the driver is JDBC compliant
 
-swarm.datasources.jdbc-drivers._KEY_.module-slot:: 
+thorntail.datasources.jdbc-drivers._KEY_.module-slot:: 
 The slot of the module from which the driver was loaded, if it was loaded from the module path
 
-swarm.datasources.jdbc-drivers._KEY_.profile:: 
+thorntail.datasources.jdbc-drivers._KEY_.profile:: 
 Domain Profile in which driver is defined. Null in case of standalone server
 
-swarm.datasources.jdbc-drivers._KEY_.xa-datasource-class:: 
+thorntail.datasources.jdbc-drivers._KEY_.xa-datasource-class:: 
 XA datasource class
 
-swarm.datasources.xa-data-sources._KEY_.allocation-retry:: 
+thorntail.datasources.xa-data-sources._KEY_.allocation-retry:: 
 The allocation retry element indicates the number of times that allocating a connection should be tried before throwing an exception
 
-swarm.datasources.xa-data-sources._KEY_.allocation-retry-wait-millis:: 
+thorntail.datasources.xa-data-sources._KEY_.allocation-retry-wait-millis:: 
 The allocation retry wait millis element specifies the amount of time, in milliseconds, to wait between retrying to allocate a connection
 
-swarm.datasources.xa-data-sources._KEY_.allow-multiple-users:: 
+thorntail.datasources.xa-data-sources._KEY_.allow-multiple-users:: 
 Specifies if multiple users will access the datasource through the getConnection(user, password) method and hence if the internal pool type should account for that
 
-swarm.datasources.xa-data-sources._KEY_.authentication-context:: 
+thorntail.datasources.xa-data-sources._KEY_.authentication-context:: 
 The Elytron authentication context which defines the javax.security.auth.Subject that is used to distinguish connections in the pool.
 
-swarm.datasources.xa-data-sources._KEY_.background-validation:: 
+thorntail.datasources.xa-data-sources._KEY_.background-validation:: 
 An element to specify that connections should be validated on a background thread versus being validated prior to use.
 
-swarm.datasources.xa-data-sources._KEY_.background-validation-millis:: 
+thorntail.datasources.xa-data-sources._KEY_.background-validation-millis:: 
 The background-validation-millis element specifies the amount of time, in milliseconds, that background validation will run.
 
-swarm.datasources.xa-data-sources._KEY_.blocking-timeout-wait-millis:: 
+thorntail.datasources.xa-data-sources._KEY_.blocking-timeout-wait-millis:: 
 The blocking-timeout-millis element specifies the maximum time, in milliseconds, to block while waiting for a connection before throwing an exception. Note that this blocks only while waiting for locking a connection, and will never throw an exception if creating a new connection takes an inordinately long time
 
-swarm.datasources.xa-data-sources._KEY_.capacity-decrementer-class:: 
+thorntail.datasources.xa-data-sources._KEY_.capacity-decrementer-class:: 
 Class defining the policy for decrementing connections in the pool
 
-swarm.datasources.xa-data-sources._KEY_.capacity-decrementer-properties:: 
+thorntail.datasources.xa-data-sources._KEY_.capacity-decrementer-properties:: 
 Properties to inject in class defining the policy for decrementing connections in the pool
 
-swarm.datasources.xa-data-sources._KEY_.capacity-incrementer-class:: 
+thorntail.datasources.xa-data-sources._KEY_.capacity-incrementer-class:: 
 Class defining the policy for incrementing connections in the pool
 
-swarm.datasources.xa-data-sources._KEY_.capacity-incrementer-properties:: 
+thorntail.datasources.xa-data-sources._KEY_.capacity-incrementer-properties:: 
 Properties to inject in class defining the policy for incrementing connections in the pool
 
-swarm.datasources.xa-data-sources._KEY_.check-valid-connection-sql:: 
+thorntail.datasources.xa-data-sources._KEY_.check-valid-connection-sql:: 
 Specify an SQL statement to check validity of a pool connection. This may be called when managed connection is obtained from the pool
 
-swarm.datasources.xa-data-sources._KEY_.connectable:: 
+thorntail.datasources.xa-data-sources._KEY_.connectable:: 
 Enable the use of CMR for this datasource. This feature means that a local resource can reliably participate in an XA transaction.
 
-swarm.datasources.xa-data-sources._KEY_.connection-listener-class:: 
+thorntail.datasources.xa-data-sources._KEY_.connection-listener-class:: 
 Speciefies class name extending org.jboss.jca.adapters.jdbc.spi.listener.ConnectionListener that provides a possible to listen for connection activation and passivation in order to perform actions before the connection is returned to the application or returned to the pool.
 
-swarm.datasources.xa-data-sources._KEY_.connection-listener-property:: 
+thorntail.datasources.xa-data-sources._KEY_.connection-listener-property:: 
 Properties to be injected in class specified in connection-listener-class
 
-swarm.datasources.xa-data-sources._KEY_.credential-reference:: 
+thorntail.datasources.xa-data-sources._KEY_.credential-reference:: 
 Credential (from Credential Store) to authenticate on data source
 
-swarm.datasources.xa-data-sources._KEY_.driver-name:: 
+thorntail.datasources.xa-data-sources._KEY_.driver-name:: 
 Defines the JDBC driver the datasource should use. It is a symbolic name matching the the name of installed driver. In case the driver is deployed as jar, the name is the name of deployment unit
 
-swarm.datasources.xa-data-sources._KEY_.elytron-enabled:: 
+thorntail.datasources.xa-data-sources._KEY_.elytron-enabled:: 
 Enables Elytron security for handling authentication of connections for recovery. The Elytron authentication-context to be used will be current context if no context is specified (see authentication-context).
 
-swarm.datasources.xa-data-sources._KEY_.enlistment-trace:: 
+thorntail.datasources.xa-data-sources._KEY_.enlistment-trace:: 
 Defines if WildFly/IronJacamar should record enlistment traces
 
-swarm.datasources.xa-data-sources._KEY_.exception-sorter-class-name:: 
+thorntail.datasources.xa-data-sources._KEY_.exception-sorter-class-name:: 
 An org.jboss.jca.adapters.jdbc.ExceptionSorter that provides an isExceptionFatal(SQLException) method to validate if an exception should broadcast an error
 
-swarm.datasources.xa-data-sources._KEY_.exception-sorter-properties:: 
+thorntail.datasources.xa-data-sources._KEY_.exception-sorter-properties:: 
 The exception sorter properties
 
-swarm.datasources.xa-data-sources._KEY_.flush-strategy:: 
+thorntail.datasources.xa-data-sources._KEY_.flush-strategy:: 
 Specifies how the pool should be flush in case of an error.
 
-swarm.datasources.xa-data-sources._KEY_.idle-timeout-minutes:: 
+thorntail.datasources.xa-data-sources._KEY_.idle-timeout-minutes:: 
 The idle-timeout-minutes elements specifies the maximum time, in minutes, a connection may be idle before being closed. The actual maximum time depends also on the IdleRemover scan time, which is half of the smallest idle-timeout-minutes value of any pool. Changing this value can be done only on disabled datasource, requires a server restart otherwise.
 
-swarm.datasources.xa-data-sources._KEY_.initial-pool-size:: 
+thorntail.datasources.xa-data-sources._KEY_.initial-pool-size:: 
 The initial-pool-size element indicates the initial number of connections a pool should hold.
 
-swarm.datasources.xa-data-sources._KEY_.interleaving:: 
+thorntail.datasources.xa-data-sources._KEY_.interleaving:: 
 An element to enable interleaving for XA connections
 
-swarm.datasources.xa-data-sources._KEY_.jndi-name:: 
+thorntail.datasources.xa-data-sources._KEY_.jndi-name:: 
 Specifies the JNDI name for the datasource
 
-swarm.datasources.xa-data-sources._KEY_.max-pool-size:: 
+thorntail.datasources.xa-data-sources._KEY_.max-pool-size:: 
 The max-pool-size element specifies the maximum number of connections for a pool. No more connections will be created in each sub-pool
 
-swarm.datasources.xa-data-sources._KEY_.mcp:: 
+thorntail.datasources.xa-data-sources._KEY_.mcp:: 
 Defines the ManagedConnectionPool implementation, f.ex. org.jboss.jca.core.connectionmanager.pool.mcp.SemaphoreArrayListManagedConnectionPool
 
-swarm.datasources.xa-data-sources._KEY_.min-pool-size:: 
+thorntail.datasources.xa-data-sources._KEY_.min-pool-size:: 
 The min-pool-size element specifies the minimum number of connections for a pool
 
-swarm.datasources.xa-data-sources._KEY_.new-connection-sql:: 
+thorntail.datasources.xa-data-sources._KEY_.new-connection-sql:: 
 Specifies an SQL statement to execute whenever a connection is added to the connection pool
 
-swarm.datasources.xa-data-sources._KEY_.no-recovery:: 
+thorntail.datasources.xa-data-sources._KEY_.no-recovery:: 
 Specifies if the connection pool should be excluded from recovery
 
-swarm.datasources.xa-data-sources._KEY_.no-tx-separate-pool:: 
+thorntail.datasources.xa-data-sources._KEY_.no-tx-separate-pool:: 
 Oracle does not like XA connections getting used both inside and outside a JTA transaction. To workaround the problem you can create separate sub-pools for the different contexts
 
-swarm.datasources.xa-data-sources._KEY_.pad-xid:: 
+thorntail.datasources.xa-data-sources._KEY_.pad-xid:: 
 Should the Xid be padded
 
-swarm.datasources.xa-data-sources._KEY_.password:: 
+thorntail.datasources.xa-data-sources._KEY_.password:: 
 Specifies the password used when creating a new connection
 
-swarm.datasources.xa-data-sources._KEY_.pool-fair:: 
+thorntail.datasources.xa-data-sources._KEY_.pool-fair:: 
 Defines if pool use should be fair
 
-swarm.datasources.xa-data-sources._KEY_.pool-prefill:: 
+thorntail.datasources.xa-data-sources._KEY_.pool-prefill:: 
 Should the pool be prefilled. Changing this value can be done only on disabled datasource, requires a server restart otherwise.
 
-swarm.datasources.xa-data-sources._KEY_.pool-use-strict-min:: 
+thorntail.datasources.xa-data-sources._KEY_.pool-use-strict-min:: 
 Specifies if the min-pool-size should be considered strictly
 
-swarm.datasources.xa-data-sources._KEY_.prepared-statements-cache-size:: 
+thorntail.datasources.xa-data-sources._KEY_.prepared-statements-cache-size:: 
 The number of prepared statements per connection in an LRU cache
 
-swarm.datasources.xa-data-sources._KEY_.query-timeout:: 
+thorntail.datasources.xa-data-sources._KEY_.query-timeout:: 
 Any configured query timeout in seconds. If not provided no timeout will be set
 
-swarm.datasources.xa-data-sources._KEY_.reauth-plugin-class-name:: 
+thorntail.datasources.xa-data-sources._KEY_.reauth-plugin-class-name:: 
 The fully qualified class name of the reauthentication plugin implementation
 
-swarm.datasources.xa-data-sources._KEY_.reauth-plugin-properties:: 
+thorntail.datasources.xa-data-sources._KEY_.reauth-plugin-properties:: 
 The properties for the reauthentication plugin
 
-swarm.datasources.xa-data-sources._KEY_.recovery-authentication-context:: 
+thorntail.datasources.xa-data-sources._KEY_.recovery-authentication-context:: 
 The Elytron authentication context which defines the javax.security.auth.Subject that is used to distinguish connections in the pool.
 
-swarm.datasources.xa-data-sources._KEY_.recovery-credential-reference:: 
+thorntail.datasources.xa-data-sources._KEY_.recovery-credential-reference:: 
 Credential (from Credential Store) to authenticate on data source
 
-swarm.datasources.xa-data-sources._KEY_.recovery-elytron-enabled:: 
+thorntail.datasources.xa-data-sources._KEY_.recovery-elytron-enabled:: 
 Enables Elytron security for handling authentication of connections for recovery. The Elytron authentication-context to be used will be current context if no context is specified (see authentication-context).
 
-swarm.datasources.xa-data-sources._KEY_.recovery-password:: 
+thorntail.datasources.xa-data-sources._KEY_.recovery-password:: 
 The password used for recovery
 
-swarm.datasources.xa-data-sources._KEY_.recovery-plugin-class-name:: 
+thorntail.datasources.xa-data-sources._KEY_.recovery-plugin-class-name:: 
 The fully qualified class name of the recovery plugin implementation
 
-swarm.datasources.xa-data-sources._KEY_.recovery-plugin-properties:: 
+thorntail.datasources.xa-data-sources._KEY_.recovery-plugin-properties:: 
 The properties for the recovery plugin
 
-swarm.datasources.xa-data-sources._KEY_.recovery-security-domain:: 
+thorntail.datasources.xa-data-sources._KEY_.recovery-security-domain:: 
 The security domain used for recovery
 
-swarm.datasources.xa-data-sources._KEY_.recovery-username:: 
+thorntail.datasources.xa-data-sources._KEY_.recovery-username:: 
 The user name used for recovery
 
-swarm.datasources.xa-data-sources._KEY_.same-rm-override:: 
+thorntail.datasources.xa-data-sources._KEY_.same-rm-override:: 
 The is-same-rm-override element allows one to unconditionally set whether the javax.transaction.xa.XAResource.isSameRM(XAResource) returns true or false
 
-swarm.datasources.xa-data-sources._KEY_.security-domain:: 
+thorntail.datasources.xa-data-sources._KEY_.security-domain:: 
 Specifies the PicketBox security domain which defines the javax.security.auth.Subject that are used to distinguish connections in the pool
 
-swarm.datasources.xa-data-sources._KEY_.set-tx-query-timeout:: 
+thorntail.datasources.xa-data-sources._KEY_.set-tx-query-timeout:: 
 Whether to set the query timeout based on the time remaining until transaction timeout. Any configured query timeout will be used if there is no transaction
 
-swarm.datasources.xa-data-sources._KEY_.share-prepared-statements:: 
+thorntail.datasources.xa-data-sources._KEY_.share-prepared-statements:: 
 Whether to share prepared statements, i.e. whether asking for same statement twice without closing uses the same underlying prepared statement
 
-swarm.datasources.xa-data-sources._KEY_.spy:: 
+thorntail.datasources.xa-data-sources._KEY_.spy:: 
 Enable spying of SQL statements
 
-swarm.datasources.xa-data-sources._KEY_.stale-connection-checker-class-name:: 
+thorntail.datasources.xa-data-sources._KEY_.stale-connection-checker-class-name:: 
 An org.jboss.jca.adapters.jdbc.StaleConnectionChecker that provides an isStaleConnection(SQLException) method which if it returns true will wrap the exception in an org.jboss.jca.adapters.jdbc.StaleConnectionException
 
-swarm.datasources.xa-data-sources._KEY_.stale-connection-checker-properties:: 
+thorntail.datasources.xa-data-sources._KEY_.stale-connection-checker-properties:: 
 The stale connection checker properties
 
-swarm.datasources.xa-data-sources._KEY_.statistics-enabled:: 
+thorntail.datasources.xa-data-sources._KEY_.statistics-enabled:: 
 Define whether runtime statistics are enabled or not.
 
-swarm.datasources.xa-data-sources._KEY_.track-statements:: 
+thorntail.datasources.xa-data-sources._KEY_.track-statements:: 
 Whether to check for unclosed statements when a connection is returned to the pool, result sets are closed, a statement is closed or return to the prepared statement cache. Valid values are: "false" - do not track statements, "true" - track statements and result sets and warn when they are not closed, "nowarn" - track statements but do not warn about them being unclosed
 
-swarm.datasources.xa-data-sources._KEY_.tracking:: 
+thorntail.datasources.xa-data-sources._KEY_.tracking:: 
 Defines if IronJacamar should track connection handles across transaction boundaries
 
-swarm.datasources.xa-data-sources._KEY_.transaction-isolation:: 
+thorntail.datasources.xa-data-sources._KEY_.transaction-isolation:: 
 Set the java.sql.Connection transaction isolation level. Valid values are: TRANSACTION_READ_UNCOMMITTED, TRANSACTION_READ_COMMITTED, TRANSACTION_REPEATABLE_READ, TRANSACTION_SERIALIZABLE and TRANSACTION_NONE. Different values are used to set customLevel using TransactionIsolation#customLevel.
 
-swarm.datasources.xa-data-sources._KEY_.url-delimiter:: 
+thorntail.datasources.xa-data-sources._KEY_.url-delimiter:: 
 Specifies the delimiter for URLs in connection-url for HA datasources
 
-swarm.datasources.xa-data-sources._KEY_.url-property:: 
+thorntail.datasources.xa-data-sources._KEY_.url-property:: 
 Specifies the property for the URL property in the xa-datasource-property values
 
-swarm.datasources.xa-data-sources._KEY_.url-selector-strategy-class-name:: 
+thorntail.datasources.xa-data-sources._KEY_.url-selector-strategy-class-name:: 
 A class that implements org.jboss.jca.adapters.jdbc.URLSelectorStrategy
 
-swarm.datasources.xa-data-sources._KEY_.use-ccm:: 
+thorntail.datasources.xa-data-sources._KEY_.use-ccm:: 
 Enable the use of a cached connection manager
 
-swarm.datasources.xa-data-sources._KEY_.use-fast-fail:: 
+thorntail.datasources.xa-data-sources._KEY_.use-fast-fail:: 
 Whether to fail a connection allocation on the first try if it is invalid (true) or keep trying until the pool is exhausted of all potential connections (false)
 
-swarm.datasources.xa-data-sources._KEY_.use-java-context:: 
+thorntail.datasources.xa-data-sources._KEY_.use-java-context:: 
 Setting this to false will bind the datasource into global JNDI
 
-swarm.datasources.xa-data-sources._KEY_.use-try-lock:: 
+thorntail.datasources.xa-data-sources._KEY_.use-try-lock:: 
 Any configured timeout for internal locks on the resource adapter objects in seconds
 
-swarm.datasources.xa-data-sources._KEY_.user-name:: 
+thorntail.datasources.xa-data-sources._KEY_.user-name:: 
 Specify the user name used when creating a new connection
 
-swarm.datasources.xa-data-sources._KEY_.valid-connection-checker-class-name:: 
+thorntail.datasources.xa-data-sources._KEY_.valid-connection-checker-class-name:: 
 An org.jboss.jca.adapters.jdbc.ValidConnectionChecker that provides an isValidConnection(Connection) method to validate a connection. If an exception is returned that means the connection is invalid. This overrides the check-valid-connection-sql element
 
-swarm.datasources.xa-data-sources._KEY_.valid-connection-checker-properties:: 
+thorntail.datasources.xa-data-sources._KEY_.valid-connection-checker-properties:: 
 The valid connection checker properties
 
-swarm.datasources.xa-data-sources._KEY_.validate-on-match:: 
+thorntail.datasources.xa-data-sources._KEY_.validate-on-match:: 
 The validate-on-match element specifies if connection validation should be done when a connection factory attempts to match a managed connection. This is typically exclusive to the use of background validation
 
-swarm.datasources.xa-data-sources._KEY_.wrap-xa-resource:: 
+thorntail.datasources.xa-data-sources._KEY_.wrap-xa-resource:: 
 Should the XAResource instances be wrapped in an org.jboss.tm.XAResourceWrapper instance
 
-swarm.datasources.xa-data-sources._KEY_.xa-datasource-class:: 
+thorntail.datasources.xa-data-sources._KEY_.xa-datasource-class:: 
 The fully qualified name of the javax.sql.XADataSource implementation
 
-swarm.datasources.xa-data-sources._KEY_.xa-datasource-properties._KEY_.value:: 
+thorntail.datasources.xa-data-sources._KEY_.xa-datasource-properties._KEY_.value:: 
 Specifies a property value to assign to the XADataSource implementation class. Each property is identified by the name attribute and the property value is given by the xa-datasource-property element content. The property is mapped onto the XADataSource implementation by looking for a JavaBeans style getter method for the property name. If found, the value of the property is set using the JavaBeans setter with the element text translated to the true property type using the java.beans.PropertyEditor
 
-swarm.datasources.xa-data-sources._KEY_.xa-resource-timeout:: 
+thorntail.datasources.xa-data-sources._KEY_.xa-resource-timeout:: 
 The value is passed to XAResource.setTransactionTimeout(), in seconds. Default is zero
 
-swarm.ds.connection.url:: 
+thorntail.ds.connection.url:: 
 Default datasource connection URL
 
-swarm.ds.name:: 
+thorntail.ds.name:: 
 Name of the default datasource
 
-swarm.ds.password:: 
-Defatul datasource connection password
+thorntail.ds.password:: 
+Default datasource connection password
 
-swarm.ds.username:: 
+thorntail.ds.username:: 
 Default datasource connection user name
 
-swarm.jdbc.driver:: 
-Defatul datasource JDBC driver name
+thorntail.jdbc.driver:: 
+Default datasource JDBC driver name
 
 

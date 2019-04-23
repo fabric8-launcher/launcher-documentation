@@ -12,220 +12,220 @@
 
 .Configuration
 
-swarm.resource-adapters.resource-adapters._KEY_.admin-objects._KEY_.class-name:: 
+thorntail.resource-adapters.resource-adapters._KEY_.admin-objects._KEY_.class-name:: 
 Specifies the fully qualified class name of an administration object.
 
-swarm.resource-adapters.resource-adapters._KEY_.admin-objects._KEY_.config-properties._KEY_.value:: 
+thorntail.resource-adapters.resource-adapters._KEY_.admin-objects._KEY_.config-properties._KEY_.value:: 
 Custom defined config property value.
 
-swarm.resource-adapters.resource-adapters._KEY_.admin-objects._KEY_.enabled:: 
+thorntail.resource-adapters.resource-adapters._KEY_.admin-objects._KEY_.enabled:: 
 Specifies if the administration object should be enabled.
 
-swarm.resource-adapters.resource-adapters._KEY_.admin-objects._KEY_.jndi-name:: 
+thorntail.resource-adapters.resource-adapters._KEY_.admin-objects._KEY_.jndi-name:: 
 Specifies the JNDI name for the administration object.
 
-swarm.resource-adapters.resource-adapters._KEY_.admin-objects._KEY_.use-java-context:: 
+thorntail.resource-adapters.resource-adapters._KEY_.admin-objects._KEY_.use-java-context:: 
 Setting this to false will bind the object into global JNDI.
 
-swarm.resource-adapters.resource-adapters._KEY_.archive:: 
+thorntail.resource-adapters.resource-adapters._KEY_.archive:: 
 Specifies the resource adapter archive.
 
-swarm.resource-adapters.resource-adapters._KEY_.beanvalidationgroups:: 
+thorntail.resource-adapters.resource-adapters._KEY_.beanvalidationgroups:: 
 Specifies the bean validation groups that should be used.
 
-swarm.resource-adapters.resource-adapters._KEY_.bootstrap-context:: 
+thorntail.resource-adapters.resource-adapters._KEY_.bootstrap-context:: 
 Specifies the unique name of the bootstrap context that should be used.
 
-swarm.resource-adapters.resource-adapters._KEY_.config-properties._KEY_.value:: 
+thorntail.resource-adapters.resource-adapters._KEY_.config-properties._KEY_.value:: 
 Custom defined config property value.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.allocation-retry:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.allocation-retry:: 
 The allocation retry element indicates the number of times that allocating a connection should be tried before throwing an exception.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.allocation-retry-wait-millis:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.allocation-retry-wait-millis:: 
 The allocation retry wait millis element specifies the amount of time, in milliseconds, to wait between retrying to allocate a connection.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.authentication-context:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.authentication-context:: 
 The Elytron authentication context which defines the javax.security.auth.Subject that is used to distinguish connections in the pool.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.authentication-context-and-application:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.authentication-context-and-application:: 
 Indicates that either application-supplied parameters, such as from getConnection(user, pw), or Subject (provided by Elytron after authenticating using configured authentication-context), are used to distinguish connections in the pool.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.background-validation:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.background-validation:: 
 An element to specify that connections should be validated on a background thread versus being validated prior to use. Changing this value requires a server restart.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.background-validation-millis:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.background-validation-millis:: 
 The background-validation-millis element specifies the amount of time, in milliseconds, that background validation will run. Changing this value requires a server restart.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.blocking-timeout-wait-millis:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.blocking-timeout-wait-millis:: 
 The blocking-timeout-millis element specifies the maximum time, in milliseconds, to block while waiting for a connection before throwing an exception. Note that this blocks only while waiting for locking a connection, and will never throw an exception if creating a new connection takes an inordinately long time.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.capacity-decrementer-class:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.capacity-decrementer-class:: 
 Class defining the policy for decrementing connections in the pool.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.capacity-decrementer-properties:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.capacity-decrementer-properties:: 
 Properties to inject in class defining the policy for decrementing connections in the pool.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.capacity-incrementer-class:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.capacity-incrementer-class:: 
 Class defining the policy for incrementing connections in the pool.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.capacity-incrementer-properties:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.capacity-incrementer-properties:: 
 Properties to inject in class defining the policy for incrementing connections in the pool.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.class-name:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.class-name:: 
 Specifies the fully qualified class name of a managed connection factory or admin object.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.config-properties._KEY_.value:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.config-properties._KEY_.value:: 
 Custom defined config property value.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.connectable:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.connectable:: 
 Enable the use of CMR. This feature means that a local resource can reliably participate in an XA transaction.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.elytron-enabled:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.elytron-enabled:: 
 Enables Elytron security for handling authentication of connections. The Elytron authentication-context to be used will be current context if no context is specified (see authentication-context).
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.enabled:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.enabled:: 
 Specifies if the resource adapter should be enabled.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.enlistment:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.enlistment:: 
 Defines if lazy enlistment should be used if supported by the resource adapter.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.enlistment-trace:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.enlistment-trace:: 
 Defines if WildFly/IronJacamar should record enlistment traces.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.flush-strategy:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.flush-strategy:: 
 Specifies how the pool should be flushed in case of an error.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.idle-timeout-minutes:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.idle-timeout-minutes:: 
 Specifies the maximum time, in minutes, a connection may be idle before being closed. The actual maximum time depends also on the IdleRemover scan time, which is half of the smallest idle-timeout-minutes value of any pool. Changing this value requires a server restart.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.initial-pool-size:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.initial-pool-size:: 
 Specifies the initial number of connections a pool should hold.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.interleaving:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.interleaving:: 
 An element to enable interleaving for XA connections.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.jndi-name:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.jndi-name:: 
 Specifies the JNDI name for the connection factory.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.max-pool-size:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.max-pool-size:: 
 Specifies the maximum number of connections for a pool. No more connections will be created in each sub-pool.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.mcp:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.mcp:: 
 Defines the ManagedConnectionPool implementation. For example: org.jboss.jca.core.connectionmanager.pool.mcp.SemaphoreArrayListManagedConnectionPool.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.min-pool-size:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.min-pool-size:: 
 Specifies the minimum number of connections for a pool.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.no-recovery:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.no-recovery:: 
 Specifies if the connection pool should be excluded from recovery.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.no-tx-separate-pool:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.no-tx-separate-pool:: 
 Oracle does not like XA connections getting used both inside and outside a JTA transaction. To workaround the problem you can create separate sub-pools for the different contexts.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.pad-xid:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.pad-xid:: 
 Specifies whether the Xid should be padded.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.pool-fair:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.pool-fair:: 
 Defines if pool use should be fair.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.pool-prefill:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.pool-prefill:: 
 Specifies if the pool should be prefilled. Changing this value requires a server restart.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.pool-use-strict-min:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.pool-use-strict-min:: 
 Specifies if the min-pool-size should be considered strict.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.recovery-authentication-context:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.recovery-authentication-context:: 
 The Elytron authentication context used for recovery (current authentication-context will be used if unspecified).
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.recovery-credential-reference:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.recovery-credential-reference:: 
 Credential (from Credential Store) to authenticate on recovery connection
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.recovery-elytron-enabled:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.recovery-elytron-enabled:: 
 Indicates that an Elytron authentication context will be used for recovery.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.recovery-password:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.recovery-password:: 
 The password used for recovery.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.recovery-plugin-class-name:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.recovery-plugin-class-name:: 
 The fully qualified class name of the recovery plugin implementation.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.recovery-plugin-properties:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.recovery-plugin-properties:: 
 The properties for the recovery plugin.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.recovery-security-domain:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.recovery-security-domain:: 
 The PicketBox security domain used for recovery.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.recovery-username:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.recovery-username:: 
 The user name used for recovery.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.same-rm-override:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.same-rm-override:: 
 Using this attribute, you can unconditionally set whether javax.transaction.xa.XAResource.isSameRM(XAResource) returns true or false.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.security-application:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.security-application:: 
 Indicates that application-supplied parameters, such as from getConnection(user, pw), are used to distinguish connections in the pool.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.security-domain:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.security-domain:: 
 Specifies the PicketBox security domain which defines the javax.security.auth.Subject that is used to distinguish connections in the pool.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.security-domain-and-application:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.security-domain-and-application:: 
 Indicates that either application-supplied parameters, such as from getConnection(user, pw), or Subject (from PicketBox security domain), are used to distinguish connections in the pool.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.sharable:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.sharable:: 
 Enable the use of sharable connections, which allows lazy association to be enabled if supported.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.tracking:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.tracking:: 
 Defines if IronJacamar should track connection handles across transaction boundaries.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.use-ccm:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.use-ccm:: 
 Enable the use of a cached connection manager.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.use-fast-fail:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.use-fast-fail:: 
 Whether to fail a connection allocation on the first try if it is invalid (true) or keep trying until the pool is exhausted of all potential connections (false).
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.use-java-context:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.use-java-context:: 
 Setting this to false will bind the object into global JNDI.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.validate-on-match:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.validate-on-match:: 
 This specifies if connection validation should be done when a connection factory attempts to match a managed connection. This is typically exclusive to the use of background validation.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.wrap-xa-resource:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.wrap-xa-resource:: 
 Specifies whether XAResource instances should be wrapped in an org.jboss.tm.XAResourceWrapper instance.
 
-swarm.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.xa-resource-timeout:: 
+thorntail.resource-adapters.resource-adapters._KEY_.connection-definitions._KEY_.xa-resource-timeout:: 
 The value is passed to XAResource.setTransactionTimeout(), in seconds.
 
-swarm.resource-adapters.resource-adapters._KEY_.module:: 
+thorntail.resource-adapters.resource-adapters._KEY_.module:: 
 Specifies the module from which resource adapter will be loaded
 
-swarm.resource-adapters.resource-adapters._KEY_.statistics-enabled:: 
+thorntail.resource-adapters.resource-adapters._KEY_.statistics-enabled:: 
 Define whether runtime statistics are enabled or not.
 
-swarm.resource-adapters.resource-adapters._KEY_.transaction-support:: 
+thorntail.resource-adapters.resource-adapters._KEY_.transaction-support:: 
 Specifies the transaction support level of the resource adapter.
 
-swarm.resource-adapters.resource-adapters._KEY_.wm-elytron-security-domain:: 
+thorntail.resource-adapters.resource-adapters._KEY_.wm-elytron-security-domain:: 
 Defines the name of the Elytron security domain that should be used.
 
-swarm.resource-adapters.resource-adapters._KEY_.wm-security:: 
+thorntail.resource-adapters.resource-adapters._KEY_.wm-security:: 
 Toggle on/off wm.security for this resource adapter. In case of false all wm-security-* parameters are ignored, even the defaults.
 
-swarm.resource-adapters.resource-adapters._KEY_.wm-security-default-groups:: 
+thorntail.resource-adapters.resource-adapters._KEY_.wm-security-default-groups:: 
 Defines a default groups list that should be added to the used Subject instance.
 
-swarm.resource-adapters.resource-adapters._KEY_.wm-security-default-principal:: 
+thorntail.resource-adapters.resource-adapters._KEY_.wm-security-default-principal:: 
 Defines a default principal name that should be added to the used Subject instance.
 
-swarm.resource-adapters.resource-adapters._KEY_.wm-security-domain:: 
+thorntail.resource-adapters.resource-adapters._KEY_.wm-security-domain:: 
 Defines the name of the PicketBox security domain that should be used.
 
-swarm.resource-adapters.resource-adapters._KEY_.wm-security-mapping-groups:: 
+thorntail.resource-adapters.resource-adapters._KEY_.wm-security-mapping-groups:: 
 List of groups mappings.
 
-swarm.resource-adapters.resource-adapters._KEY_.wm-security-mapping-required:: 
+thorntail.resource-adapters.resource-adapters._KEY_.wm-security-mapping-required:: 
 Defines if a mapping is required for security credentials.
 
-swarm.resource-adapters.resource-adapters._KEY_.wm-security-mapping-users:: 
+thorntail.resource-adapters.resource-adapters._KEY_.wm-security-mapping-users:: 
 List of user mappings.
 
 

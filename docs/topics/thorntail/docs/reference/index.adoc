@@ -14,6 +14,8 @@ include::fractions/datasources.adoc[leveloffset=+0]
 
 include::fractions/ee.adoc[leveloffset=+0]
 
+include::fractions/ee-security.adoc[leveloffset=+1]
+
 include::fractions/ejb.adoc[leveloffset=+0]
 
 include::fractions/elytron.adoc[leveloffset=+0]
@@ -21,6 +23,8 @@ include::fractions/elytron.adoc[leveloffset=+0]
 include::fractions/hibernate-validator.adoc[leveloffset=+0]
 
 include::fractions/hystrix.adoc[leveloffset=+0]
+
+include::fractions/infinispan.adoc[leveloffset=+0]
 
 include::fractions/io.adoc[leveloffset=+0]
 
@@ -31,6 +35,8 @@ include::fractions/jaxrs.adoc[leveloffset=+0]
 include::fractions/jaxrs-cdi.adoc[leveloffset=+1]
 
 include::fractions/jaxrs-jaxb.adoc[leveloffset=+1]
+
+include::fractions/jaxrs-jsonb.adoc[leveloffset=+1]
 
 include::fractions/jaxrs-jsonp.adoc[leveloffset=+1]
 
@@ -45,6 +51,8 @@ include::fractions/jmx.adoc[leveloffset=+0]
 include::fractions/jpa.adoc[leveloffset=+0]
 
 include::fractions/jsf.adoc[leveloffset=+0]
+
+include::fractions/jsonb.adoc[leveloffset=+0]
 
 include::fractions/jsonp.adoc[leveloffset=+0]
 

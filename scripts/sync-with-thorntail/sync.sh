@@ -5,8 +5,8 @@ TEMP_DIR="$(mktemp -d)"                                                     # Te
 
 REPO_NAME="wildfly-swarm"                                                   # Repository base name, and the directory name on the disk
 REPO_URL="git@github.com:wildfly-swarm-prod/${REPO_NAME}.git"               # Repo Git URL
-REPO_BRANCH="2.x"                                                         # Branch to be synchronized
-MAVEN_SETTINGS_URL="https://github.com/wildfly-swarm-prod/wildfly-swarm-repository/blob/master/debug-utils/settingsForLocalM2.xml" # Maven settings to use when building
+REPO_BRANCH="2.4.x"                                                         # Branch to be synchronized
+MAVEN_SETTINGS_URL="https://github.com/wildfly-swarm-prod/wildfly-swarm/blob/$REPO_BRANCH/boms/src/main/resources/custom-settings.xml" # Maven settings to use when building
 
 FILES_LIST="${SCRIPT_SRC}/files-to-sync.txt"                          # File with file- or directory names to synchronize
 FILES_DESTINATION="$(realpath ${SCRIPT_SRC}/../../docs/topics/thorntail)"  # Destination directory in this repository where to sync
@@ -53,6 +53,7 @@ git rev-parse HEAD > docs/commit.hash
 
 # Generate product fractions reference
 # WORKAROUND for ENTSWM-458: -Dswarm.docs.skip
+./release/run-pme.sh
 mvn clean install -DskipTests -Denforcer.skip -Dswarm.docs.skip -Dswarm.product.build -s $maven_settings_file
 cd docs
 mvn generate-resources -DskipTests -Denforcer.skip -Dswarm.docs.skip -Dswarm.product.build -s $maven_settings_file

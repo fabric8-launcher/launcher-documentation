@@ -1,0 +1,15 @@
+= JAX-RS + JSON-B
+
+Provides support within JAX-RS application for JSON Binding according to JSR-367.
+
+
+.Maven Coordinates
+[source,xml]
+----
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>jaxrs-jsonb</artifactId>
+</dependency>
+----
+
+

@@ -16,7 +16,7 @@ Use the `io.thorntail:microprofile-health` fraction instead.
 
 .Configuration
 
-swarm.monitor.security-realm:: 
+thorntail.monitor.security-realm:: 
 (not yet documented)
 
 

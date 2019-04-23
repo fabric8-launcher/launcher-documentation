@@ -1,0 +1,99 @@
+
+[id='commonly-used-system-properties_{context}']
+= Commonly used system properties
+
+This is a non-exhaustive list of system properties you are likely to use in your application:
+
+.General system properties
+thorntail.bind.address:: The interface to bind servers
++
+[cols="1,2a"]
+|===
+|Default
+|0.0.0.0
+|===
+
+thorntail.port.offset:: The global port adjustment
++
+[cols="1,2a"]
+|===
+|Default
+|0
+|===
+
+thorntail.context.path:: The context path for the deployed application
++
+[cols="1,2a"]
+|===
+|Default
+|/
+|===
+
+thorntail.http.port:: The port for the HTTP server
++
+[cols="1,2a"]
+|===
+|Default
+|8080
+|===
+
+thorntail.https.port:: The port for the HTTPS server
++
+[cols="1,2a"]
+|===
+|Default
+|8483
+|===
+
+thorntail.debug.port:: If provided, the Thorntail process will pause for debugging on the given port.
++
+--
+This option is only available when running an Arquillian test or starting the application using the `mvn thorntail:run` command, not when executing a JAR file.
+The JAR file execution requires normal Java debug agent parameters.
+
+[cols="1,2a"]
+|===
+|Default
+|
+|===
+--
+
+.Datasource-related system properties
+
+With JDBC driver autodetection, use the following properties to configure the datasource:
+
+thorntail.ds.name:: The name of the datasource
++
+[cols="1,2a"]
+|===
+|Default
+|ExampleDS
+|===
+
+thorntail.ds.username:: The user name to access the database
++
+[cols="1,2a"]
+|===
+|Default
+|_driver-specific_
+|===
+
+thorntail.ds.password:: The password to access the database
++
+[cols="1,2a"]
+|===
+|Default
+|_driver-specific_
+|===
+
+thorntail.ds.connection.url:: The JDBC connection URL
++
+[cols="1,2a"]
+|===
+|Default
+|_driver-specific_
+|===
+
+NOTE: For a full set of available properties, see the documentation for each fraction and the javadocs on class 
+https://github.com/thorntail/thorntail/blob/{version}/core/spi/src/main/java/org/wildfly/swarm/spi/api/SwarmProperties.java[SwarmProperties.java]
+
