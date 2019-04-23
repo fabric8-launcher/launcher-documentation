@@ -1,12 +1,13 @@
 
 [id='importing-your-booster-code-to-red-hat-jboss-developer-studio_{context}']
-= Importing your booster code to {DevStudio}
+[id='importing-your-example-application-code-red-hat-jboss-developer-studio_{context}']
+= Importing your example application code to {DevStudio}
 
-Importing your booster's code creates a project in {DevStudio} and enables you to start making changes.
+Importing your example application's code creates a project in {DevStudio} and enables you to start making changes.
 
 .Prerequisites
 
-* Your booster created and downloaded from link:{link-launcher-oso}[{name-launcher-oso}].
+* Your example application created and downloaded from link:{link-launcher-oso}[{name-launcher-oso}].
 * {DevStudio} running.
 
 .Procedure
@@ -16,9 +17,9 @@ Importing your booster's code creates a project in {DevStudio} and enables you t
 . Choose _Existing local repository_ and click _Next_.
 . Click _Add_.
 . Click _Browse_.
-. Navigate to the project folder of your booster and click _Open_.
-. Click the check box next to your booster project and click _Finish_.
-. Make sure your booster project is selected and click _Next_.
+. Navigate to the project folder of your example application and click _Open_.
+. Click the check box next to your example application project and click _Finish_.
+. Make sure your example application project is selected and click _Next_.
 . Select _Import as general project_ and click _Next_.
 . Click _Finish_.
 . Start editing your project after your import is complete.
