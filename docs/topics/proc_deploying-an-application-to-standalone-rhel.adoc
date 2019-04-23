@@ -20,7 +20,7 @@ Deploy your {parameter-runtime-name} application to Red Hat Enterprise Linux.
 * The Red Hat Maven repository link:{parameter-link-appdev-guide}[specified] in the `pom.xml` of your project.
 * RHEL 7 installed.
 * {prerequisite-jdk-version}
-* Maven 3.6.0 or later installed.
+* Maven 3.5.0 or later installed.
 
 
 .Procedure
