@@ -19,106 +19,106 @@ for example `jaxrs`, `cdi`, `datasources`, or `ejb`.
 
 .Configuration
 
-swarm.ee.annotation-property-replacement:: 
+thorntail.ee.annotation-property-replacement:: 
 Flag indicating whether Java EE annotations will have property replacements applied
 
-swarm.ee.context-services._KEY_.jndi-name:: 
+thorntail.ee.context-services._KEY_.jndi-name:: 
 The JNDI Name to lookup the context service.
 
-swarm.ee.context-services._KEY_.use-transaction-setup-provider:: 
+thorntail.ee.context-services._KEY_.use-transaction-setup-provider:: 
 Flag which indicates if the transaction setup provider should be used
 
-swarm.ee.default-bindings-service.context-service:: 
+thorntail.ee.default-bindings-service.context-service:: 
 The JNDI name where the default EE Context Service can be found
 
-swarm.ee.default-bindings-service.datasource:: 
+thorntail.ee.default-bindings-service.datasource:: 
 The JNDI name where the default EE Datasource can be found
 
-swarm.ee.default-bindings-service.jms-connection-factory:: 
+thorntail.ee.default-bindings-service.jms-connection-factory:: 
 The JNDI name where the default EE JMS Connection Factory can be found
 
-swarm.ee.default-bindings-service.managed-executor-service:: 
+thorntail.ee.default-bindings-service.managed-executor-service:: 
 The JNDI name where the default EE Managed Executor Service can be found
 
-swarm.ee.default-bindings-service.managed-scheduled-executor-service:: 
+thorntail.ee.default-bindings-service.managed-scheduled-executor-service:: 
 The JNDI name where the default EE Managed Scheduled Executor Service can be found
 
-swarm.ee.default-bindings-service.managed-thread-factory:: 
+thorntail.ee.default-bindings-service.managed-thread-factory:: 
 The JNDI name where the default EE Managed Thread Factory can be found
 
-swarm.ee.ear-subdeployments-isolated:: 
+thorntail.ee.ear-subdeployments-isolated:: 
 Flag indicating whether each of the subdeployments within a .ear can access classes belonging to another subdeployment within the same .ear. A value of false means the subdeployments can see classes belonging to other subdeployments within the .ear.
 
-swarm.ee.global-modules:: 
+thorntail.ee.global-modules:: 
 A list of modules that should be made available to all deployments.
 
-swarm.ee.jboss-descriptor-property-replacement:: 
+thorntail.ee.jboss-descriptor-property-replacement:: 
 Flag indicating whether JBoss specific deployment descriptors will have property replacements applied
 
-swarm.ee.managed-executor-services._KEY_.context-service:: 
+thorntail.ee.managed-executor-services._KEY_.context-service:: 
 The name of the context service to be used by the executor.
 
-swarm.ee.managed-executor-services._KEY_.core-threads:: 
+thorntail.ee.managed-executor-services._KEY_.core-threads:: 
 The minimum number of threads to be used by the executor. If left undefined the default core-size is calculated based on the number of processors. A value of zero is not advised and in some cases invalid. See the queue-length attribute for details on how this value is used to determine the queuing strategy.
 
-swarm.ee.managed-executor-services._KEY_.hung-task-threshold:: 
+thorntail.ee.managed-executor-services._KEY_.hung-task-threshold:: 
 The runtime, in milliseconds, for tasks to be considered hung by the managed executor service. If value is 0 tasks are never considered hung.
 
-swarm.ee.managed-executor-services._KEY_.jndi-name:: 
+thorntail.ee.managed-executor-services._KEY_.jndi-name:: 
 The JNDI Name to lookup the managed executor service.
 
-swarm.ee.managed-executor-services._KEY_.keepalive-time:: 
+thorntail.ee.managed-executor-services._KEY_.keepalive-time:: 
 When the number of threads is greater than the core, this is the maximum time, in milliseconds, that excess idle threads will wait for new tasks before terminating.
 
-swarm.ee.managed-executor-services._KEY_.long-running-tasks:: 
+thorntail.ee.managed-executor-services._KEY_.long-running-tasks:: 
 Flag which hints the duration of tasks executed by the executor.
 
-swarm.ee.managed-executor-services._KEY_.max-threads:: 
+thorntail.ee.managed-executor-services._KEY_.max-threads:: 
 The maximum number of threads to be used by the executor. If left undefined the value from core-size will be used. This value is ignored if an unbounded queue is used (only core-threads will be used in that case).
 
-swarm.ee.managed-executor-services._KEY_.queue-length:: 
+thorntail.ee.managed-executor-services._KEY_.queue-length:: 
 The executors task queue capacity. A length of 0 means direct hand-off and possible rejection will occur. An undefined length (the default), or Integer.MAX_VALUE, indicates that an unbounded queue should be used. All other values specify an exact queue size. If an unbounded queue or direct hand-off is used, a core-threads value greater than zero is required.
 
-swarm.ee.managed-executor-services._KEY_.reject-policy:: 
+thorntail.ee.managed-executor-services._KEY_.reject-policy:: 
 The policy to be applied to aborted tasks.
 
-swarm.ee.managed-executor-services._KEY_.thread-factory:: 
+thorntail.ee.managed-executor-services._KEY_.thread-factory:: 
 The name of the thread factory to be used by the executor.
 
-swarm.ee.managed-scheduled-executor-services._KEY_.context-service:: 
+thorntail.ee.managed-scheduled-executor-services._KEY_.context-service:: 
 The name of the context service to be used by the scheduled executor.
 
-swarm.ee.managed-scheduled-executor-services._KEY_.core-threads:: 
-The minimum number of threads to be used by the scheduled executor.
+thorntail.ee.managed-scheduled-executor-services._KEY_.core-threads:: 
+The number of threads to be used by the scheduled executor, even if they are idle. If this is not defined or is set to 0, the core pool size will be calculated based on the number of available processors.
 
-swarm.ee.managed-scheduled-executor-services._KEY_.hung-task-threshold:: 
+thorntail.ee.managed-scheduled-executor-services._KEY_.hung-task-threshold:: 
 The runtime, in milliseconds, for tasks to be considered hung by the scheduled executor. If 0 tasks are never considered hung.
 
-swarm.ee.managed-scheduled-executor-services._KEY_.jndi-name:: 
+thorntail.ee.managed-scheduled-executor-services._KEY_.jndi-name:: 
 The JNDI Name to lookup the managed scheduled executor service.
 
-swarm.ee.managed-scheduled-executor-services._KEY_.keepalive-time:: 
+thorntail.ee.managed-scheduled-executor-services._KEY_.keepalive-time:: 
 When the number of threads is greater than the core, this is the maximum time, in milliseconds, that excess idle threads will wait for new tasks before terminating.
 
-swarm.ee.managed-scheduled-executor-services._KEY_.long-running-tasks:: 
+thorntail.ee.managed-scheduled-executor-services._KEY_.long-running-tasks:: 
 Flag which hints the duration of tasks executed by the scheduled executor.
 
-swarm.ee.managed-scheduled-executor-services._KEY_.reject-policy:: 
+thorntail.ee.managed-scheduled-executor-services._KEY_.reject-policy:: 
 The policy to be applied to aborted tasks.
 
-swarm.ee.managed-scheduled-executor-services._KEY_.thread-factory:: 
+thorntail.ee.managed-scheduled-executor-services._KEY_.thread-factory:: 
 The name of the thread factory to be used by the scheduled executor.
 
-swarm.ee.managed-thread-factories._KEY_.context-service:: 
+thorntail.ee.managed-thread-factories._KEY_.context-service:: 
 The name of the context service to be used by the managed thread factory
 
-swarm.ee.managed-thread-factories._KEY_.jndi-name:: 
+thorntail.ee.managed-thread-factories._KEY_.jndi-name:: 
 The JNDI Name to lookup the managed thread factory.
 
-swarm.ee.managed-thread-factories._KEY_.priority:: 
+thorntail.ee.managed-thread-factories._KEY_.priority:: 
 The priority applied to threads created by the factory
 
-swarm.ee.spec-descriptor-property-replacement:: 
+thorntail.ee.spec-descriptor-property-replacement:: 
 Flag indicating whether descriptors defined by the Java EE specification will have property replacements applied
 
 

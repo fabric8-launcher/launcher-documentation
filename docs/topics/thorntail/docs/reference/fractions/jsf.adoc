@@ -1,6 +1,6 @@
 = JSF
 
-Provides support for JavaServer Faces according to JSR-344.
+Provides support for JavaServer Faces 2.3 according to JSR-372.
 
 
 .Maven Coordinates
@@ -14,7 +14,10 @@ Provides support for JavaServer Faces according to JSR-344.
 
 .Configuration
 
-swarm.jsf.default-jsf-impl-slot:: 
+thorntail.jsf.default-jsf-impl-slot:: 
 Default JSF implementation slot
+
+thorntail.jsf.disallow-doctype-decl:: 
+Specifies whether or not DOCTYPE declarations in JSF deployments should be disallowed. This setting can be overridden at the deployment level.
 
 

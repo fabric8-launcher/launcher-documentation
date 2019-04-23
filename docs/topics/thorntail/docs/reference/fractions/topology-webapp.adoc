@@ -12,10 +12,10 @@
 
 .Configuration
 
-swarm.topology.web-app.expose-topology-endpoint:: 
+thorntail.topology.web-app.expose-topology-endpoint:: 
 Flag to enable or disable the topology web endpoint
 
-swarm.topology.web-app.proxied-service-mappings:: 
+thorntail.topology.web-app.proxied-service-mappings:: 
 Service name to URL path proxy mappings
 
 

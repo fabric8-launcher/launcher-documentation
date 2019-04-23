@@ -12,7 +12,7 @@
 
 .Configuration
 
-swarm.opentracing.servlet.skipPattern:: 
+thorntail.opentracing.servlet.skipPattern:: 
 The servlet skip pattern as a Java compilable Pattern. Optional. Ex.: `/health-check`
 
 

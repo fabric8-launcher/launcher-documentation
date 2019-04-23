@@ -12,22 +12,22 @@
 
 .Configuration
 
-swarm.microprofile.jwt.default-missing-method-permissions-deny-access:: 
+thorntail.microprofile.jwt.default-missing-method-permissions-deny-access:: 
 If a JAX-RS resource has no class-level security metadata, then if this property is set to `true` and at least one resource method has security metadata all other resource methods without security metadata have an implicit `@DenyAll`, otherwise resource methods without security metadata are not secured
 
-swarm.microprofile.jwt.token.exp-grace-period:: 
+thorntail.microprofile.jwt.token.exp-grace-period:: 
 The JWT token expiration grace period in seconds 
 
-swarm.microprofile.jwt.token.issued-by:: 
+thorntail.microprofile.jwt.token.issued-by:: 
 The URI of the JWT token issuer
 
-swarm.microprofile.jwt.token.jwks-refresh-interval:: 
+thorntail.microprofile.jwt.token.jwks-refresh-interval:: 
 The interval at which the JWKS URI should be queried for keys (in minutes).
 
-swarm.microprofile.jwt.token.jwks-uri:: 
+thorntail.microprofile.jwt.token.jwks-uri:: 
 The JWKS URI from which to load public keys (if 'signer-pub-key' is set, this setting is ignored).
 
-swarm.microprofile.jwt.token.signer-pub-key:: 
+thorntail.microprofile.jwt.token.signer-pub-key:: 
 The public key of the JWT token signer. Can be prefixed 'file:' or 'classpath:' for key assets, otherwise the key contents are expected
 
 

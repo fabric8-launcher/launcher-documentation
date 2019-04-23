@@ -6,20 +6,33 @@
 == Prerequisites
 
 * A Maven-based application.
-* The `module.xml` file created according to relevant {WildFly} instructions.
+* The `module.xml` file created in the `src/main/resources/modules` directory according to relevant {WildFly} instructions.
   This file is necessary to expose the driver through JBoss Modules.
 
 [discrete]
 == Procedure
 
+. Add the `io.thorntail:datasources` dependency to the `pom.xml` file in your application:
++
+[source,xml]
+----
+<dependencies>
+  <dependency>
+    <groupId>io.thorntail</groupId>
+    <artifactId>datasources</artifactId>
+  </dependency>
+</dependencies>
+----
+
 . Edit the `project-defaults.yml` file to define the driver information.
 +
-In the `swarm` -> `datasources` -> `jdbc-drivers` tree, define the driver by
+In the `thorntail` -> `datasources` -> `jdbc-drivers` tree, define the driver by
 key, which will be used later for connecting it to the datasource.
+Set the `driver-module-name` to that defined in the `module.xml` file.
 +
 [source,yaml]
 ----
-swarm:
+thorntail:
   datasources:
     jdbc-drivers:
 include::src/main/resources/project-defaults.yml[tag=driver,indent=6]
