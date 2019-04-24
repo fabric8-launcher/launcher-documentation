@@ -1,11 +1,11 @@
 [id='updating-booster-catalog-for-local-openshiftlocal-testing_{context}']
 
-= Updating booster catalog for local {OpenShiftLocal} testing
+= Updating example application catalog for local {OpenShiftLocal} testing
 
 :parent-context: {context}
 
-One of important life cycle stages of a booster is testing it in a booster catalog.
-Create a custom booster catalog that links to the repository with your booster on GitHub, and test your booster by following the instructions below:
+One of important life cycle stages of an example application is testing it in a booster catalog.
+Create a custom booster catalog that links to the repository with your example application on GitHub, and test your example application by following the instructions below:
 
 include::proc_creating-custom-booster-catalog.adoc[leveloffset=+1]
 
@@ -15,4 +15,3 @@ include::proc_installing-launcher-tool-manually.adoc[leveloffset=+1]
 
 
 :context: {parent-context}
-

@@ -2,7 +2,7 @@
 [id='creating-a-rhoardoc-jira-release_{context}']
 = Creating a RHOARDOC JIRA release
 
-The JIRA _Release_ mechanism is used to track work between publishings of the documentation.
+The JIRA _Release_ mechanism is used to track work between publishes of the documentation.
 
 .Prerequisites
 
@@ -26,4 +26,3 @@ Do not rename the release for re-tags, for example `2018-12-07_2`.
 ** For runtime or unscheduled releases, describe what is being released, for example _{VertX} 3.6._
 . Enter the expected release date in the *Release date* field.
 . Click *Add* to create the release.
-

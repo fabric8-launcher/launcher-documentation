@@ -2,11 +2,10 @@
 
 = Repository location
 
-The repository for the mission and booster documentation, the Launchpad front page, and this contributor guide is hosted on GitHub in the link:{link-repo-docs}[{name-repo-docs}] repository.
+The repository for the example application and booster documentation, the Launchpad front page, and this contributor guide is hosted on GitHub in the link:{link-repo-docs}[{name-repo-docs}] repository.
 
 The runtime documentation repositories are hosted on the following locations:
 
 * Thorntail: link:https://github.com/thorntail/thorntail[thorntail/thorntail] (community) and link:https://github.com/wildfly-swarm-prod/wildfly-swarm[wildfly-swarm-prod/wildfly-swarm] (product, private), both in the `docs` subdirectory.
 * Spring Boot: link:https://github.com/spring-projects/spring-boot[spring-projects/spring-boot] in the `spring-boot-docs` subdirectory.
 * Eclipse Vert.x: link:https://github.com/eclipse/vert.x[eclipse/vert.x] in the `src/main/asciidoc` subdirectory.
-
