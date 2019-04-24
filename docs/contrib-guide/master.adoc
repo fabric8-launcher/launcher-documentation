@@ -8,7 +8,7 @@ include::topics/templates/document-attributes.adoc[]
 
 == {name-launcher} development
 
-This chapter contains information about developing your own runtimes or boosters, contributing changes to existing ones, and improving {name-launcher}.
+This chapter contains information about developing your own runtimes or example application, contributing changes to existing ones, and improving {name-launcher}.
 
 include::topics/assembly_updating-booster-catalog-for-local-openshiftlocal-testing.adoc[leveloffset=+2]
 
@@ -85,4 +85,3 @@ _TBD_
 
 [appendix]
 include::topics/ref_glossary.adoc[leveloffset=+1]
-
