@@ -85,7 +85,7 @@ include::topics/assembly_secured-mission-booster.adoc[leveloffset=+2]
 // CACHING
 :context: cache
 :parameter-runtime-anchor: wf-swarm
-include::topics/assembly_cache-mission-booster.adoc[leveloffset=+2]
+include::topics/assembly_cache-example-application.adoc[leveloffset=+2]
 :parameter-runtime-anchor!:
 
 
