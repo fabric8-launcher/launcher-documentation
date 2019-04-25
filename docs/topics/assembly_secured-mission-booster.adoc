@@ -40,7 +40,7 @@ include::con_{parameter-runtime}-sso-adapter-configuration.adoc[leveloffset=+1]
 
 include::assembly_deploying-the-secured-booster-to-openshiftlocal.adoc[leveloffset=+1]
 
-include::assembly_deploying-the-secured-booster-to-openshiftcontainerplatform.adoc[leveloffset=+1]
+include::assembly_deploying-the-secured-example-application-to-openshiftcontainerplatform.adoc[leveloffset=+1]
 
 include::assembly_authenticating-to-the-secured-example-application-api-endpoint.adoc[leveloffset=+1]
 
