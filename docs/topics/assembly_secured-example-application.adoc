@@ -10,7 +10,7 @@
 [id='example-rest-http-secured-{parameter-runtime-anchor}']
 = {name-example-secured} example application for {runtime}
 
-include::note-booster-unvailable-oso.adoc[leveloffset=+1]
+include::note-example-unavailable-oso.adoc[leveloffset=+1]
 
 // When changing this introduction, change also the secured-example-intro-paragraph.adoc file (used by the front-end).
 Example proficiency level:
@@ -38,7 +38,7 @@ include::con_rhsso-realm-model.adoc[leveloffset=+1]
 
 include::con_{parameter-runtime}-sso-adapter-configuration.adoc[leveloffset=+1]
 
-include::assembly_deploying-the-secured-booster-to-openshiftlocal.adoc[leveloffset=+1]
+include::assembly_deploying-the-secured-example-application-to-openshiftlocal.adoc[leveloffset=+1]
 
 include::assembly_deploying-the-secured-example-application-to-openshiftcontainerplatform.adoc[leveloffset=+1]
 

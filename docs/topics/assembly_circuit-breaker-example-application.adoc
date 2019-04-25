@@ -9,9 +9,9 @@
 [id='example-circuit-breaker-{parameter-runtime-anchor}']
 = {name-example-circuit-breaker} example for {runtime}
 
-include::note-booster-unvailable-oso.adoc[leveloffset=+1]
+include::note-example-unavailable-oso.adoc[leveloffset=+1]
 
-include::circuit-breaker-mission-intro-paragraph.adoc[leveloffset=+1]
+include::circuit-breaker-example-intro-paragraph.adoc[leveloffset=+1]
 
 This example shows you how to implement a Circuit Breaker and Fallback pattern in your services.
 
@@ -23,12 +23,12 @@ include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
 :parameter-example-name: {name-example-circuit-breaker}
 :parameter-example: circuit-breaker
-include::assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+1]
+include::assembly_deploying-the-example-application-to-openshiftonline.adoc[leveloffset=+1]
 
 include::assembly_deploying-the-example-application-to-openshiftlocal.adoc[leveloffset=+1]
 :parameter-example!:
 
-include::proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+1]
+include::proc_deploying-the-example-application-to-openshiftcontainerplatform.adoc[leveloffset=+1]
 
 include::proc_interacting-with-the-circuit-breaker-booster.adoc[leveloffset=+1]
 
