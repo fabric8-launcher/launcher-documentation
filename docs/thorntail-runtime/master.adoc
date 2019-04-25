@@ -168,7 +168,7 @@ endif::[]
 include::topics/ref_the-source-to-image-s2i-build-process.adoc[leveloffset=+1]
 
 [appendix]
-include::topics/proc_updating-the-deployment-configuration-of-a-booster.adoc[leveloffset=+1]
+include::topics/proc_updating-the-deployment-configuration-of-an-example-application.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/proc_configuring-jenkins-freestyle-project-to-deploy-an-application-with-fmp.adoc[leveloffset=+1]

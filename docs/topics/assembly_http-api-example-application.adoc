@@ -10,7 +10,7 @@
 [id='example-rest-http-{parameter-runtime-anchor}']
 = {name-example-http-api} example for {runtime}
 
-include::rest-level-0-mission-intro-paragraph.adoc[]
+include::rest-level-0-example-intro-paragraph.adoc[]
 
 This example introduces the mechanics of interacting with a remote service using the HTTP protocol. It allows you to:
 
@@ -19,7 +19,7 @@ This example introduces the mechanics of interacting with a remote service using
 * Execute an HTTP `GET` request on the `api/greeting` endpoint while passing in a String argument. This uses the `name` request parameter in the query string.
 * Receive a response in JSON format with a payload of `Hello, $name!` with `$name` replaced by the value of the `name` parameter passed into the request.
 
-include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
+include::proc_viewing-the-example-application-source-code-and-readme.adoc[leveloffset=+1]
 
 include::con_http-api-design-tradeoffs.adoc[leveloffset=+1]
 
@@ -32,10 +32,10 @@ include::assembly_deploying-the-example-application-to-openshiftlocal.adoc[level
 
 include::proc_deploying-the-example-application-to-openshiftcontainerplatform.adoc[leveloffset=+1]
 
-include::proc_interacting-with-the-unmodified-http-api-booster-for-{parameter-runtime}.adoc[leveloffset=+1]
+include::proc_interacting-with-the-unmodified-http-api-example-application-for-{parameter-runtime}.adoc[leveloffset=+1]
 
 ifndef::built-for-nodejs[]
-include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]
+include::proc_running-the-example-application-integration-tests.adoc[leveloffset=+1]
 endif::[]
 :parameter-example-name!:
 
