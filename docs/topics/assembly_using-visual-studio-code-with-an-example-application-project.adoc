@@ -12,5 +12,5 @@ You can use it to make changes to the code of your booster.
 
 include::proc_importing-your-booster-code-to-visual-studio-code.adoc[leveloffset=+1]
 
-include::proc_committing-and-pushing-changes-to-the-github-repository-of-your-booster-with-visual-studio-code.adoc[leveloffset=+1]
+include::proc_committing-and-pushing-changes-to-the-github-repository-of-your-example-application-with-visual-studio-code.adoc[leveloffset=+1]
 

@@ -12,5 +12,5 @@ You can use it to make changes to your booster's code.
 
 include::proc_importing-your-booster-code-to-red-hat-jboss-developer-studio.adoc[leveloffset=+1]
 
-include::proc_committing-and-pushing-changes-to-the-github-repository-of-your-booster.adoc[leveloffset=+1]
+include::proc_committing-and-pushing-changes-to-the-github-repository-of-your-example-application.adoc[leveloffset=+1]
 

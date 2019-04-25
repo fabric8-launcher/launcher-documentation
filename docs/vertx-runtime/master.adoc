@@ -32,7 +32,7 @@ include::topics/proc_configuring-your-application-to-use-vertx.adoc[leveloffset=
 include::topics/proc_configuring-your-vertx-application-to-use-agroal.adoc[leveloffset=+2]
 
 // EXAMPLES
-include::topics/con_missions-and-cloud-native-development-on-openshift.adoc[leveloffset=+1]
+include::topics/con_examples-and-cloud-native-development-on-openshift.adoc[leveloffset=+1]
 
 [[vertx-available-examples]]
 == Example applications for {Vertx}
@@ -44,7 +44,7 @@ The following example applications are available for {Vertx}.
 :context: http-api
 :parameter-runtime: vertx
 :parameter-runtime-anchor: vertx
-include::topics/assembly_http-api-mission-booster.adoc[leveloffset=+2]
+include::topics/assembly_http-api-example-application.adoc[leveloffset=+2]
 :parameter-runtime-anchor!:
 :parameter-runtime!:
 
@@ -83,7 +83,7 @@ include::topics/assembly_circuit-breaker-example-application.adoc[leveloffset=+2
 :context: secured
 :parameter-runtime: vertx
 :parameter-runtime-anchor: vertx
-include::topics/assembly_secured-mission-booster.adoc[leveloffset=+2]
+include::topics/assembly_secured-example-application.adoc[leveloffset=+2]
 :parameter-runtime-anchor!:
 :parameter-runtime!:
 

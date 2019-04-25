@@ -25,12 +25,12 @@ include::con_http-api-design-tradeoffs.adoc[leveloffset=+1]
 
 :parameter-example-name: {name-example-http-api}
 :parameter-example: http-api
-include::assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+1]
+include::assembly_deploying-the-example-application-to-openshiftonline.adoc[leveloffset=+1]
 
 include::assembly_deploying-the-example-application-to-openshiftlocal.adoc[leveloffset=+1]
 :parameter-example!:
 
-include::proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+1]
+include::proc_deploying-the-example-application-to-openshiftcontainerplatform.adoc[leveloffset=+1]
 
 include::proc_interacting-with-the-unmodified-http-api-booster-for-{parameter-runtime}.adoc[leveloffset=+1]
 
