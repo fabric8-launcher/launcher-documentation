@@ -24,13 +24,13 @@ include::proc_getting-the-launcher-tool-url-and-credentials.adoc[leveloffset=+1]
 
 :parameter-openshiftlocal:
 :parameter-deployment: {name-launcher}
-include::proc_deploying-the-booster-using-the-launcher-tool.adoc[leveloffset=+1]
+include::proc_deploying-the-example-application-using-the-launcher-tool.adoc[leveloffset=+1]
 
 :parameter-deployment: {OpenShiftLocal}
 include::proc_authenticating-the-oc-cli-client.adoc[leveloffset=+1]
 
 :parameter-deployment: {name-launcher} tool on a {OpenShiftLocal}
-include::proc_deploying-the-{parameter-example}-booster-using-the-oc-cli-client.adoc[leveloffset=+1]
+include::proc_deploying-the-{parameter-example}-example-application-using-the-oc-cli-client.adoc[leveloffset=+1]
 :parameter-deployment!:
 :parameter-openshiftlocal!:
 
