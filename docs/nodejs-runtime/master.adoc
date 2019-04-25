@@ -37,7 +37,7 @@ include::topics/assembly_http-api-mission-booster.adoc[leveloffset=+2]
 :context: configmap
 :parameter-runtime: node
 :parameter-runtime-anchor: nodejs
-include::topics/assembly_configmap-mission-booster.adoc[leveloffset=+2]
+include::topics/assembly_configmap-example-application.adoc[leveloffset=+2]
 :parameter-runtime-anchor!:
 :parameter-runtime!:
 
@@ -45,21 +45,21 @@ include::topics/assembly_configmap-mission-booster.adoc[leveloffset=+2]
 // CRUD
 :context: crud
 :parameter-runtime-anchor: nodejs
-include::topics/assembly_crud-mission-booster.adoc[leveloffset=+2]
+include::topics/assembly_crud-example-application.adoc[leveloffset=+2]
 :parameter-runtime-anchor!:
 
 
 // HEALTH CHECK
 :context: health-check
 :parameter-runtime-anchor: nodejs
-include::topics/assembly_health-check-mission-booster.adoc[leveloffset=+2]
+include::topics/assembly_health-check-example-application.adoc[leveloffset=+2]
 :parameter-runtime-anchor!:
 
 
 // CIRCUIT BREAKER
 :context: circuit-breaker
 :parameter-runtime-anchor: nodejs
-include::topics/assembly_circuit-breaker-mission-booster.adoc[leveloffset=+2]
+include::topics/assembly_circuit-breaker-example-application.adoc[leveloffset=+2]
 :parameter-runtime-anchor!:
 
 
