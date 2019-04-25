@@ -45,7 +45,7 @@ This example does not showcase a fully matured RESTful model (level 3), but it d
 
 include::con_crud-design-tradeoffs.adoc[leveloffset=+1]
 
-include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
+include::proc_viewing-the-example-application-source-code-and-readme.adoc[leveloffset=+1]
 
 :parameter-example-name: {name-example-crud}
 :parameter-example: crud
@@ -63,7 +63,7 @@ endif::[]
 ifndef::built-for-nodejs[]
 include::proc_interacting-with-the-crud-api.adoc[leveloffset=+1]
 
-include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]
+include::proc_running-the-example-application-integration-tests.adoc[leveloffset=+1]
 endif::[]
 :parameter-example-name!:
 

@@ -10,7 +10,7 @@ You can use it to make changes to the code of your booster.
 * Have a booster deployed to xref:deploying-a-booster-to-openshiftonline_{context}[{OpenShiftOnline}] or xref:creating-and-deploying-a-booster-using-your-openshiftlocal_{context}[{OpenShiftLocal}] using the _Deploy in OpenShift Online_ option.
 * Have link:https://code.visualstudio.com[Visual Studio Code] downloaded and installed.
 
-include::proc_importing-your-booster-code-to-visual-studio-code.adoc[leveloffset=+1]
+include::proc_importing-your-example-application-code-to-visual-studio-code.adoc[leveloffset=+1]
 
 include::proc_committing-and-pushing-changes-to-the-github-repository-of-your-example-application-with-visual-studio-code.adoc[leveloffset=+1]
 

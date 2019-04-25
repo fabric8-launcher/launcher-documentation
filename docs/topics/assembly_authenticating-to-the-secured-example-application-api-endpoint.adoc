@@ -8,7 +8,7 @@
 The {name-example-secured} example application provides a default HTTP endpoint that accepts `GET` requests if the caller is authenticated and authorized.
 The client first authenticates against the {RHSSO} server and then performs a `GET` request against the {name-example-secured} example application using the access token returned by the authentication step.
 
-include::proc_getting-the-secured-booster-api-endpoint.adoc[leveloffset=+1]
+include::proc_getting-the-secured-example-application-api-endpoint.adoc[leveloffset=+1]
 
 include::proc_authenticating-http-requests-using-the-command-line.adoc[leveloffset=+1]
 
