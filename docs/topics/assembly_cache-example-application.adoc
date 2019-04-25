@@ -22,7 +22,7 @@ This example shows you how to:
 
 include::con_how-caching-works-and-when-you-need-it.adoc[leveloffset=+1]
 
-include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
+include::proc_viewing-the-example-application-source-code-and-readme.adoc[leveloffset=+1]
 
 :parameter-example-name: {name-example-cache}
 :parameter-example: cache
@@ -33,10 +33,10 @@ include::assembly_deploying-the-example-application-to-openshiftlocal.adoc[level
 
 include::proc_deploying-the-example-application-to-openshiftcontainerplatform.adoc[leveloffset=+1]
 
-include::proc_interacting-with-the-unmodified-cache-booster.adoc[leveloffset=+1]
+include::proc_interacting-with-the-unmodified-cache-example-application.adoc[leveloffset=+1]
 
 ifndef::built-for-nodejs[]
-include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]
+include::proc_running-the-example-application-integration-tests.adoc[leveloffset=+1]
 endif::[]
 :parameter-example-name!:
 

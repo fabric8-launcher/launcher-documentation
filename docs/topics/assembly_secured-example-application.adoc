@@ -30,7 +30,7 @@ Before using this example, ensure that you are familiar with the basic concepts 
 
 include::con_the-secured-project-structure.adoc[leveloffset=+1]
 
-include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
+include::proc_viewing-the-example-application-source-code-and-readme.adoc[leveloffset=+1]
 
 include::ref_rhsso-deployment-configuration.adoc[leveloffset=+1]
 
@@ -45,15 +45,15 @@ include::assembly_deploying-the-secured-example-application-to-openshiftcontaine
 include::assembly_authenticating-to-the-secured-example-application-api-endpoint.adoc[leveloffset=+1]
 
 ifdef::built-for-vertx[]
-include::proc_running-the-vertx-secured-booster-integration-tests.adoc[leveloffset=+1]
+include::proc_running-the-vertx-secured-example-application-integration-tests.adoc[leveloffset=+1]
 endif::[]
 
 ifdef::built-for-spring-boot[]
-include::proc_running-the-springboot-secured-booster-integration-tests.adoc[leveloffset=+1]
+include::proc_running-the-springboot-secured-example-application-integration-tests.adoc[leveloffset=+1]
 endif::[]
 
 ifdef::built-for-thorntail[]
-include::proc_running-the-wildflyswarm-secured-booster-integration-tests.adoc[leveloffset=+1]
+include::proc_running-the-wildflyswarm-secured-example-application-integration-tests.adoc[leveloffset=+1]
 endif::[]
 
 include::ref_secured-sso-resources.adoc[leveloffset=+1]

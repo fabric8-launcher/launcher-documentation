@@ -1,9 +1,9 @@
 [id='updating-the-deployment-configuration-of-a-booster_{context}']
-[id='updating-the-deployment-configuration-of-an-example_{context}']
-= Updating the deployment configuration of an example
+[id='updating-the-deployment-configuration-of-an-example-application_{context}']
+= Updating the deployment configuration of an example application
 
-The deployment configuration for an example contains information related to deploying and running the example in OpenShift, such as route information or readiness probe location. 
-The deployment configuration of an example is stored in a set of YAML files. 
+The deployment configuration for an example application contains information related to deploying and running the application in OpenShift, such as route information or readiness probe location. 
+The deployment configuration of an example application is stored in a set of YAML files. 
 For examples that use the Fabric8 Maven Plugin, the YAML files are located in the `src/main/fabric8/` directory. For examples using Nodeshift, the YAML files are located in the `.nodeshift` directory.
 
 [IMPORTANT]

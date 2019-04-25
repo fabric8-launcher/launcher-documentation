@@ -19,7 +19,7 @@ include::con_the-circuit-breaker-design-pattern.adoc[leveloffset=+1]
 
 include::con_circuit-breaker-design-tradeoffs.adoc[leveloffset=+1]
 
-include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
+include::proc_viewing-the-example-application-source-code-and-readme.adoc[leveloffset=+1]
 
 :parameter-example-name: {name-example-circuit-breaker}
 :parameter-example: circuit-breaker
@@ -30,10 +30,10 @@ include::assembly_deploying-the-example-application-to-openshiftlocal.adoc[level
 
 include::proc_deploying-the-example-application-to-openshiftcontainerplatform.adoc[leveloffset=+1]
 
-include::proc_interacting-with-the-circuit-breaker-booster.adoc[leveloffset=+1]
+include::proc_interacting-with-the-circuit-breaker-example-application.adoc[leveloffset=+1]
 
 ifndef::built-for-nodejs[]
-include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]
+include::proc_running-the-example-application-integration-tests.adoc[leveloffset=+1]
 
 include::proc_using-hystrix-dashboard-to-monitor-the-circuit-breaker.adoc[leveloffset=+1]
 endif::[]
