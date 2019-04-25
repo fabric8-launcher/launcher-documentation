@@ -31,13 +31,13 @@ include::topics/proc_configuring-your-application-to-use-vertx.adoc[leveloffset=
 // agroal bit goes here
 include::topics/proc_configuring-your-vertx-application-to-use-agroal.adoc[leveloffset=+2]
 
-// MISSIONS
+// EXAMPLES
 include::topics/con_missions-and-cloud-native-development-on-openshift.adoc[leveloffset=+1]
 
-[[vertx-available-missions-and-boosters]]
-== Available missions and boosters for {Vertx}
+[[vertx-available-examples]]
+== Example applications for {Vertx}
 
-The following boosters are available for {Vertx}.
+The following example applications are available for {Vertx}.
 
 
 // REST API

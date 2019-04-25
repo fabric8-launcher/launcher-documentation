@@ -1,6 +1,7 @@
 
 [id='creating-the-secured-booster-using-launcher_{context}']
-= Creating the {name-mission-secured} booster using {name-launcher}
+[id='creating-the-secured-example-application-using-launcher_{context}']
+= Creating the {name-example-secured} example application using {name-launcher}
 
 .Prerequisites
 
@@ -10,7 +11,7 @@ For more information, see xref:getting-the-launcher-tool-url-and-credentials_{co
 .Procedure
 
 * Navigate to the {name-launcher} URL in a browser and log in.
-* Follow the on-screen instructions to create your booster in {runtime}.
+* Follow the on-screen instructions to create your example in {runtime}.
 When asked about which deployment type, select _I will build and run locally._
 * Follow on-screen instructions.
 +

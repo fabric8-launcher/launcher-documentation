@@ -27,4 +27,3 @@ The Circuit Breaker usually also contain an error reporting mechanism that notif
 * When the timeout period expires, a limited number of test calls are allowed to pass through to the remote service to determine whether it has healed, or remains unavailable.
 ** If the test calls fail, the Circuit Breaker keeps the service unavailable and keeps returning the fallback responses to incoming calls.
 ** If the test calls succeed, the Circuit Breaker closes, fully enabling traffic to reach the remote service again.
-

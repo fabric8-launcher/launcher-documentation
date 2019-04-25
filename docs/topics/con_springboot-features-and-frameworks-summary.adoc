@@ -2,10 +2,10 @@
 = {SpringBoot} features and frameworks summary
 
 
-This guide covers the design of modern applications using link:https://projects.spring.io/spring-boot/[Spring Boot]. These concepts support developing Web or Websocket applications using either a HTTP connector or non-blocking HTTP connector.
+This guide covers the design of modern applications using link:https://projects.spring.io/spring-boot/[Spring Boot]. These concepts support developing Web or Websocket applications using either an HTTP connector or non-blocking HTTP connector.
 The applications can be packaged and deployed without modification or updated to use cloud native features on OpenShift.
 
-The features in the table below are available as a collection of missions which run on OpenShift. Some features are native to Kubernetes, others are available from link:https://github.com/spring-cloud-incubator/spring-cloud-kubernetes[Spring Cloud Kubernetes].
+The features in the table below are available as a collection of example applications that run on OpenShift. Some features are native to Kubernetes, others are available from link:https://github.com/spring-cloud-incubator/spring-cloud-kubernetes[Spring Cloud Kubernetes].
 Features such as Actuator are available directly in {SpringBoot}.
 
 .Features and Frameworks Summary

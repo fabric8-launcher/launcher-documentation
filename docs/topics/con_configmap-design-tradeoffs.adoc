@@ -1,6 +1,6 @@
 [id='configmap-design-tradeoffs_{context}']
 
-= {name-mission-configmap} design tradeoffs
+= {name-example-configmap} design tradeoffs
 
 .Design Tradeoffs
 [width="100%",options="header"]

@@ -6,13 +6,14 @@
 
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-circuit-breaker-{parameter-runtime-anchor}']
-= {name-mission-circuit-breaker} mission - {runtime} booster
+[id='example-circuit-breaker-{parameter-runtime-anchor}']
+= {name-example-circuit-breaker} example for {runtime}
 
 include::note-booster-unvailable-oso.adoc[leveloffset=+1]
 
 include::circuit-breaker-mission-intro-paragraph.adoc[leveloffset=+1]
 
-This mission shows you how to implement a Circuit Breaker and Fallback pattern in your services.
+This example shows you how to implement a Circuit Breaker and Fallback pattern in your services.
 
 include::con_the-circuit-breaker-design-pattern.adoc[leveloffset=+1]
 
@@ -20,12 +21,12 @@ include::con_circuit-breaker-design-tradeoffs.adoc[leveloffset=+1]
 
 include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
-:parameter-mission-name: {name-mission-circuit-breaker}
-:parameter-mission: circuit-breaker
+:parameter-example-name: {name-example-circuit-breaker}
+:parameter-example: circuit-breaker
 include::assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+1]
 
 include::assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+1]
-:parameter-mission!:
+:parameter-example!:
 
 include::proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+1]
 
@@ -36,7 +37,6 @@ include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]
 
 include::proc_using-hystrix-dashboard-to-monitor-the-circuit-breaker.adoc[leveloffset=+1]
 endif::[]
-:parameter-mission-name!:
+:parameter-example-name!:
 
 include::ref_circuit-breaker-resources.adoc[leveloffset=+1]
-

@@ -6,15 +6,16 @@
 
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-cache-{parameter-runtime-anchor}']
-= {name-mission-cache} mission - {runtime} booster
+[id='example-cache-{parameter-runtime-anchor}']
+= {name-example-cache} example for {runtime}
 
 include::note-booster-unvailable-oso.adoc[leveloffset=+1]
 
-Mission proficiency level: xref:proficiency_advanced[*{proficiency-advanced}*].
+Example proficiency level: xref:proficiency_advanced[*{proficiency-advanced}*].
 
-The {name-mission-cache} mission demonstrates how to use a cache to increase the response time of applications.
+The {name-example-cache} example demonstrates how to use a cache to increase the response time of applications.
 
-This mission shows you how to:
+This example shows you how to:
 
 * Deploy a cache to OpenShift.
 * Use a cache within an application.
@@ -23,12 +24,12 @@ include::con_how-caching-works-and-when-you-need-it.adoc[leveloffset=+1]
 
 include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
-:parameter-mission-name: {name-mission-cache}
-:parameter-mission: cache
+:parameter-example-name: {name-example-cache}
+:parameter-example: cache
 include::assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+1]
 
 include::assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+1]
-:parameter-mission!:
+:parameter-example!:
 
 include::proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+1]
 
@@ -37,7 +38,6 @@ include::proc_interacting-with-the-unmodified-cache-booster.adoc[leveloffset=+1]
 ifndef::built-for-nodejs[]
 include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]
 endif::[]
-:parameter-mission-name!:
+:parameter-example-name!:
 
 include::ref_caching-resources.adoc[leveloffset=+1]
-

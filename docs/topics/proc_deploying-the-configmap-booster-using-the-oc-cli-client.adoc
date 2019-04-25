@@ -6,14 +6,15 @@
 
 
 [id='deploying-the-configmap-booster-using-the-oc-cli-client_{context}']
-= Deploying the {name-mission-configmap} booster using the `oc` CLI client
+[id='deploying-the-configmap-example-application-using-the-oc-client_{context}']
+= Deploying the {name-example-configmap} example application using the `oc` CLI client
 
 .Prerequisites
 
-* The booster application created using {parameter-deployment}.
-ifndef::parameter-openshiftlocal[For more information, see xref:deploying-the-booster-using-launcher-oso_{context}[].]
+* The example application created using {parameter-deployment}.
+ifndef::parameter-openshiftlocal[For more information, see xref:deploying-the-example-application-using-launcher-oso_{context}[].]
 ifdef::parameter-openshiftlocal[]
-For more information, see xref:deploying-the-booster-using-the-launcher-tool_{context}[].
+For more information, see xref:deploying-the-example-application-using-the-launcher-tool_{context}[].
 * Your {name-launcher} tool URL.
 endif::[]
 
@@ -42,7 +43,7 @@ $ oc new-project {value-name-project}
 ----
 
 ifdef::built-for-vertx,built-for-spring-boot,built-for-nodejs[]
-. Assign view access rights to the service account before deploying your booster, so that the booster can access the OpenShift API in order to read the contents of the ConfigMap.
+. Assign view access rights to the service account before deploying your example application, so that the application can access the OpenShift API in order to read the contents of the ConfigMap.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -50,7 +51,7 @@ $ oc policy add-role-to-user view -n $(oc project -q) -z default
 ----
 endif::built-for-vertx,built-for-spring-boot,built-for-nodejs[]
 
-. Navigate to the root directory of your booster.
+. Navigate to the root directory of your application.
 
 ifdef::built-for-vertx,built-for-nodejs[]
 . Deploy your ConfigMap configuration to OpenShift using `app-config.yml`.
@@ -75,7 +76,7 @@ data:
 ----
 endif::built-for-vertx,built-for-nodejs[]
 ifdef::built-for-thorntail[]
-. Deploy your ConfigMap configuration to OpenShift using `app-config.yml` in the root of the booster.
+. Deploy your ConfigMap configuration to OpenShift using `app-config.yml` in the root of the example.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -147,10 +148,10 @@ ifdef::built-for-nodejs[]
 $ npm install && npm run openshift
 ----
 +
-These commands install any missing module dependencies, then using the xref:about-nodeshift[Nodeshift] module, deploy the booster on OpenShift.
+These commands install any missing module dependencies, then using the xref:about-nodeshift[Nodeshift] module, deploy the example application on OpenShift.
 endif::built-for-nodejs[]
 
-. Check the status of your booster and ensure your pod is running.
+. Check the status of your application and ensure your pod is running.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -169,7 +170,7 @@ The number in the middle will increase with each new build.
 The letters at the end are generated when the pod is created.
 
 
-. Once your booster is deployed and started, determine its route.
+. After your example application is deployed and started, determine its route.
 +
 .Example Route Information
 [source,bash,options="nowrap",subs="attributes+"]

@@ -1,16 +1,17 @@
 // This is a parameterized module. Parameters used:
 //
 //
-//  parameter-mission: id of the mission. This is used in anchors file imports.
-//  parameter-mission-name: used in the mission title
+//  parameter-example: id of the example. This is used in anchors file imports.
+//  parameter-example-name: used in the example title
 //
 // Rationale: This procedure is identical in all deployments.
 // TODO: Add conditional includes for Node.
 
 [#interacting-with-the-unmodified-booster-{context}]
-= Interacting with the unmodified {runtime} {parameter-mission-name} booster
+[id='interacting-with-the-unmodified-example-application_{context}']
+= Interacting with the unmodified {runtime} {parameter-example-name} example application
 
-Once you have the {runtime} booster deployed, you have the following services running:
+After you have the {runtime} example application deployed, you have the following services running:
 
 `{value-name-app}-name`::
 Exposes the following endpoints:

@@ -1,15 +1,16 @@
 
 [id='deploying-the-secured-booster-to-openshiftcontainerplatform_{context}']
-= Deploying the {name-mission-secured} booster to {OpenShiftContainerPlatform}
+[id='deploying-the-secured-example-application-to-openshiftcontainerplatform_{context}']
+= Deploying the {name-example-secured} example application to {OpenShiftContainerPlatform}
 
 :parent-context: {context}
 :context: {parent-context}-ocp
 
-In addition to the {OpenShiftLocal}, you can create and deploy the booster on {OpenShiftContainerPlatform} with only minor differences. The most important difference is that you need to create the booster application on {OpenShiftLocal} before you can deploy it with {OpenShiftContainerPlatform}.
+In addition to the {OpenShiftLocal}, you can create and deploy the example on {OpenShiftContainerPlatform} with only minor differences. The most important difference is that you need to create the example application on {OpenShiftLocal} before you can deploy it with {OpenShiftContainerPlatform}.
 
 .Prerequisites
 
-* The booster created using xref:deploying-the-secured-booster-to-openshiftlocal_{parent-context}[{OpenShiftLocal}].
+* The example created using xref:deploying-the-secured-example-to-openshiftlocal_{parent-context}[{OpenShiftLocal}].
 
 :parameter-deployment: {OpenShiftContainerPlatform}
 include::proc_authenticating-the-oc-cli-client.adoc[leveloffset=+1]
@@ -21,4 +22,3 @@ include::proc_deploying-the-secured-booster-using-the-oc-cli-client.adoc[levelof
 
 
 :context: {parent-context}
-

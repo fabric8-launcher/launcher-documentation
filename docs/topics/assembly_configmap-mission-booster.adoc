@@ -7,11 +7,12 @@
 
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-configmap-{parameter-runtime-anchor}']
-= {name-mission-configmap} mission - {runtime} booster
+[id='example-configmap-{parameter-runtime-anchor}']
+= {name-example-configmap} example for {runtime}
 
 include::configmap-mission-intro-paragraph.adoc[leveloffset=+1]
 
-This mission shows you how to:
+This example shows you how to:
 
 * Set up and configure a `ConfigMap`.
 * Use the configuration provided by the `ConfigMap` within an application.
@@ -23,8 +24,8 @@ include::con_configmap-design-tradeoffs.adoc[leveloffset=+1]
 
 include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
-:parameter-mission-name: {name-mission-configmap}
-:parameter-mission: configmap
+:parameter-example-name: {name-example-configmap}
+:parameter-example: configmap
 include::assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+1]
 
 include::assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+1]
@@ -32,14 +33,13 @@ include::assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+1]
 include::proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+1]
 
 include::proc_interacting-with-the-unmodified-configmap-booster-for-{parameter-runtime}.adoc[leveloffset=+1]
-:parameter-mission!:
+:parameter-example!:
 
 ifndef::built-for-nodejs[]
 :parameter-configmap:
 include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]
 :parameter-configmap!:
 endif::[]
-:parameter-mission-name!:
+:parameter-example-name!:
 
 include::ref_configmap-resources.adoc[leveloffset=+1]
-

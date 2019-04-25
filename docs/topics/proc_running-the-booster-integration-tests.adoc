@@ -1,14 +1,15 @@
 // This is a parameterized module. Parameters used:
 //
 //  parameter-configmap: define to display ConfigMap-only content
-//  parameter-mission-name: used to display the mission name in the readable title
+//  parameter-example-name: used to display the example application name in the readable title
 //
-// Rationale: This procedure is highly similar for all boosters and mission except the Secured booster.
+// Rationale: This procedure is highly similar for all examples except the Secured example.
 
 [id='running-the-booster-integration-tests_{context}']
-= Running the {parameter-mission-name} booster integration tests
+[id='running-the-example-application-integration-tests_{context}']
+= Running the {parameter-example-name} example application integration tests
 
-This booster includes a self-contained set of integration tests.
+This example application includes a self-contained set of integration tests.
 When run inside an OpenShift project, the tests:
 
 * Deploy a test instance of the application to the project.
@@ -24,7 +25,7 @@ include::note-integration-tests-app-deletion-warning.adoc[]
 
 ifdef::parameter-configmap[]
 ifdef::built-for-vertx,built-for-spring-boot[]
-* View access permission assigned to the service account of your booster application. This allows your application to read the configuration from the ConfigMap:
+* View access permission assigned to the service account of your example application. This allows your application to read the configuration from the ConfigMap:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----

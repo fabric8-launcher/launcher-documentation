@@ -27,11 +27,10 @@ endif::built-for-vertx[]
 
 ifdef::built-for-thorntail[* link:http://resteasy.jboss.org/docs.html[RESTEasy Documentation]]
 
-ifndef::built-for-spring-boot[* link:{link-mission-crud-spring-boot}[{name-mission-crud} mission - {SpringBoot} booster]]
+ifndef::built-for-spring-boot[* link:{link-example-crud-spring-boot}[{name-example-crud} for {SpringBoot}]]
 
-ifndef::built-for-vertx[* link:{link-mission-crud-vertx}[{name-mission-crud} mission - {VertX} booster]]
+ifndef::built-for-vertx[* link:{link-example-crud-vertx}[{name-example-crud} for {VertX}]]
 
-ifndef::built-for-thorntail[* link:{link-mission-crud-thorntail}[{name-mission-crud} mission - {Thorntail} booster]]
+ifndef::built-for-thorntail[* link:{link-example-crud-thorntail}[{name-example-crud} for {Thorntail}]]
 
-ifndef::built-for-nodejs[* link:{link-mission-crud-nodejs}[{name-mission-crud} mission - {Node} booster]]
-
+ifndef::built-for-nodejs[* link:{link-example-crud-nodejs}[{name-example-crud} for {Node}]]
