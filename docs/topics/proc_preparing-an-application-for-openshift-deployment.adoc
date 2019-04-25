@@ -1,0 +1,53 @@
+// This is a parameterized module. Parameters used:
+//
+//  parameter-runtime-name: human-readable name of the runtime. This is used in readable text
+//  context: used in anchor IDs to conflicts due to duplicate IDs
+//
+// Rationale: This procedure is the same for 2 or more runtimes.
+
+[id='preparing-an-application-for-openshift-deplyoment_{context}']
+= Preparing {runtime} application for OpenShift deployment
+
+ifdef::built-for-vertx[]
+For deploying an {runtime} application to OpenShift, it must contain:
+endif::[]
+ifndef::built-for-vertx[]
+For deploying a {runtime} application to OpenShift, it must contain:
+endif::[]
+
+* Launcher profile information in the application’s `pom.xml` file.
+ifdef::built-for-vertx[]
+* A deployment yaml file containing environment details.
+endif::[]
+
+In the following procedure, a profile with Fabric8 Maven plugin is used for building and deploying the application to OpenShift.
+
+.Prerequisites
+
+* Maven is installed.
+
+.Procedure
+
+. Add the following content to the `pom.xml` file in the application root directory:
++
+ifdef::built-for-vertx[]
+[source,xml,options="nowrap",subs="attributes+"]
+----
+include::resources/vert-x/vertx-openshift-pom-config-example.xml[]
+----
+endif::[]
+ifdef::built-for-spring-boot[]
+[source,xml,options="nowrap",subs="attributes+"]
+----
+include::resources/spring-boot/spring-boot-openshift-pom-config-example.xml[]
+----
+endif::[]
+
+ifdef::built-for-vertx[]
+. Create `deployment.yaml` file in `src/main/fabric8` directory with the following content:
++
+[source,yaml,options="nowrap",subs="attributes+"]
+----
+include::resources/vert-x/vertx-fmp-deployment.yaml[]
+----
+endif::[]

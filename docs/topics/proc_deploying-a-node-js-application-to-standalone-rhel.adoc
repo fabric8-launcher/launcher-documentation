@@ -1,7 +1,7 @@
 [id='deploying-a-node-js-application-to-standalone-rhel_{context}']
 = Deploying a {Node} application to standalone Red Hat Enterprise Linux
 
-Deploy a {Node} application to Red Hat Enterprise Linux.
+You can deploy a {Node} application to standalone Red Hat Enterprise Linux using `npm`.
 
 .Prerequisites
 

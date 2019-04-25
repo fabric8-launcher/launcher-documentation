@@ -12,43 +12,6 @@
 [id='deploying-an-application-to-standalone-rhel-using-jar_{context}']
 = Deploying {runtime} application to standalone Red Hat Enterprise Linux using jar
 
-Deploy your {parameter-runtime-name} application to Red Hat Enterprise Linux.
-
-.Prerequisites
-
-* A Maven-based {parameter-runtime-name} application.
-* The Red Hat Maven repository link:{parameter-link-appdev-guide}[specified] in the `pom.xml` of your project.
-* RHEL 7 installed.
-* {prerequisite-jdk-version}
-* Maven 3.5.0 or later installed.
-
-
-.Procedure
-
-. Navigate to the directory with your application project:
-+
-[source,bash,subs="attributes+",options="nowrap"]
-----
-$ cd myApp
-----
-
-. Ensure that you properly configure the {parameter-runtime-name} Maven plugin:
-+
-[source,xml,options="nowrap",subs="attributes+"]
-----
-<project ... >
-ifdef::built-for-spring-boot,built-for-spring-boot-1-5[]
-  ...
-  <!-- Specify target artifact type for the repackage goal. -->
-  <packaging>jar</packaging>
-endif::[]
-  ...
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>{parameter-group-name-runtime-plugin}</groupId>
-        <artifactId>{parameter-artifact-name-runtime-plugin}</artifactId>
-        <version>{parameter-version-runtime-plugin}</version>
 ifdef::built-for-vertx[]
 To deploy an {runtime} application, use the `java -jar` command.
 endif::[]

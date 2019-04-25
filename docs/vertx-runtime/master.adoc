@@ -94,16 +94,10 @@ include::topics/assembly_secured-mission-booster.adoc[leveloffset=+2]
 include::topics/assembly_cache-mission-booster.adoc[leveloffset=+2]
 :parameter-runtime-anchor!:
 
-
+//Developing and deploying a basic vertx application
 :context: vertx
+include::topics/assembly_developing-and-deploying-vertx-application.adoc[leveloffset=+1]
 
-== Developing an application for the {VertX} runtime
-
-include::topics/assembly_creating-a-basic-vertx-application.adoc[leveloffset=+2]
-
-:parameter-runtime-name: {VertX}
-include::topics/proc_deploying-an-existing-application-to-openshift.adoc[leveloffset=+2]
-:parameter-runtime-name!:
 
 == Debugging
 

@@ -1,0 +1,68 @@
+[id='developing-a-nodejs-application_{context}']
+= Developing a {Node} application
+
+For a basic {Node} application, you must create a JavaScript file containing {Node} methods. 
+
+.Prerequisites
+* `npm` installed.
+
+.Procedure
+
+. Create a new directory `myApp`, and navigate to it.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mkdir myApp
+$ cd MyApp
+----
++
+This is the root directory for the application.
+
+. Initialize your application with npm.
++
+The rest of this example assumes the entry point is `app.js`, which you are prompted to set when running `npm init`.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ cd myApp
+$ npm init
+----
+
+. Create the entry point in a new file called `app.js`.
++
+.Example `app.js`
+[source,javascript,options="nowrap"]
+----
+const http = require('http');
+
+const server = http.createServer((request, response) => {
+  response.statusCode = 200;
+  response.setHeader('Content-Type', 'application/json');
+  
+  const greeting = {content: 'Hello, World!'};
+  
+  response.write(JSON.stringify(greeting));
+  response.end();
+});
+
+server.listen(8080, () => {
+  console.log('Server running at http://localhost:8080');
+});
+----
+
+
+. Start your application.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ node app.js
+Server running at http://localhost:8080
+----
+
+. Using `curl` or your browser, verify your application is running at `http://localhost:8080`.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl http://localhost:8080
+{"content":"Hello, World!"}
+----

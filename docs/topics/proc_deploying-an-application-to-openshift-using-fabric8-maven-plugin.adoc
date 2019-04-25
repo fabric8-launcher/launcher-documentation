@@ -8,7 +8,7 @@
 
 
 [id='deploying-an-application-to-openshift-using-fabric8-maven-plugin_{context}']
-= Deploying {runtime} application to OpenShift using Fabric8 Maven plugin
+= Deploying {runtime} application to OpenShift using Fabric8 Maven plugin 
 
 ifdef::built-for-vertx[]
 To deploy an {runtime} application to OpenShift, you must perform the following:
@@ -18,7 +18,7 @@ To deploy a {runtime} application to OpenShift, you must perform the following:
 endif::[]
 
 * Log in to OpenShift instance.
-* Deploy the application to the OpenShift instance.
+* Deploy the application to the OpenShift instance. 
 
 .Prerequisites
 
@@ -52,7 +52,7 @@ $ mvn clean fabric8:deploy -Popenshift
 +
 This command uses the {name-launcher} to launch the link:{link-s2i-process}[S2I process] on OpenShift and start the pod.
 
-. Verify the deployment.
+. Verify the deployment. 
 .. Check the status of your booster and ensure your pod is running.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -77,7 +77,7 @@ NAME                 HOST/PORT                                                  
 {value-name-app}         {value-name-app}-{value-name-project}.{value-route-openshift-hostname}      {value-name-app}      8080
 ----
 +
-The route information of a pod gives you the base URL which you use to access it.
+The route information of a pod gives you the base URL which you use to access it. 
 +
 In this example, `\http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}` is the base URL to access the application.
 

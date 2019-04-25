@@ -1,26 +1,31 @@
+[id='developing-and-deploying-vertx-application_{context}']
 
-[id='creating-a-basic-vertx-application_{context}']
-= Creating a basic {VertX} application
-
+= Developing and deploying {VertX} runtime application
 :parent-context: {context}
 
-In addition to xref:example-rest-http-vertx[using an example], you can create new {runtime} applications from scratch and deploy them to OpenShift.
+In addition to xref:mission-rest-http-vertx[using a booster], you can create new {VertX} applications from scratch and deploy them to OpenShift or standalone Red{nbsp}Hat Enterprise Linux.
 
 :parameter-runtime: vertx
 :parameter-maven-command: $ mvn vertx:run
 :parameter-response: Greetings!
 :parameter-url: http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}
-include::proc_creating-an-application.adoc[leveloffset=+1]
 
-include::proc_deploying-an-application-to-openshift.adoc[leveloffset=+1]
 
-:parameter-runtime-name: {VertX}
+//Developing an application
+include::proc_developing-an-application.adoc[leveloffset=+1]
+
+//Preparing and deploying application tp OpenShift
+include::assembly_deploying-an-application-to-openshift.adoc[leveloffset=+1]
+
 :parameter-group-name-runtime-plugin: io.reactiverse
 :parameter-artifact-name-runtime-plugin: vertx-maven-plugin
 :parameter-version-runtime-plugin: ${vertx-maven-plugin.version}
 :parameter-jar-file-name: my-app-fat.jar
 :parameter-link-appdev-guide: {link-guide-vertx}#creating-an-application_vertx
-include::proc_deploying-an-application-to-standalone-rhel.adoc[leveloffset=+1]
+
+//Preparing and deploying application to RHEL
+include::assembly_deploying-an-application-to-standalone-rhel.adoc[leveloffset=+1]
+
 :parameter-link-appdev-guide!:
 :parameter-jar-file-name!:
 :parameter-version-runtime-plugi!n:
@@ -33,7 +38,4 @@ include::proc_deploying-an-application-to-standalone-rhel.adoc[leveloffset=+1]
 :parameter-maven-command!:
 :parameter-runtime!:
 
-
-
 :context: {parent-context}
-

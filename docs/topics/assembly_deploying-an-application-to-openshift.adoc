@@ -1,0 +1,13 @@
+[id='deploying-an-application-to-openshift_{context}']
+= Deploying {runtime} application to OpenShift
+
+ifdef::built-for-vertx[]
+To deploy an {runtime} application to OpenShift, you must configure the application's `pom.xml` file. You can then deploy the application using Fabric8 Maven launcher.
+endif::[]
+ifndef::built-for-vertx[]
+To deploy a {runtime} application to OpenShift, you must configure the application's `pom.xml` file. You can then deploy the application using Fabric8 Maven launcher.
+endif::[]
+
+include::proc_preparing-an-application-for-openshift-deployment.adoc[leveloffset=+1]
+
+include::proc_deploying-an-application-to-openshift-using-fabric8-maven-plugin.adoc[leveloffset=+1]

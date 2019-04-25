@@ -9,34 +9,29 @@
 //  context: used in anchor IDs to conflicts due to duplicate IDs.
 //
 // Rationale: This procedure is the same for 2 or more runtimes.
-[id='deploying-an-application-to-standalone-rhel-using-jar_{context}']
-= Deploying {runtime} application to standalone Red Hat Enterprise Linux using jar
+[id='preparing-an-application-for-standalone-red-hat-enterprise-linux_{context}']
+= Preparing {runtime} application for standalone Red Hat Enterprise Linux deployment
 
-Deploy your {parameter-runtime-name} application to Red Hat Enterprise Linux.
-
-.Prerequisites
-
-* A Maven-based {parameter-runtime-name} application.
-* The Red Hat Maven repository link:{parameter-link-appdev-guide}[specified] in the `pom.xml` of your project.
-* RHEL 7 installed.
-* {prerequisite-jdk-version}
-* Maven 3.5.0 or later installed.
-
+ifdef::built-for-vertx[]
+For deploying an {runtime} application to standalone Red Hat Enterprise Linux, you must first package the application using Maven.
+endif::[]
+ifndef::built-for-vertx[]
+For deploying a {runtime} application to standalone Red Hat Enterprise Linux, you must first package the application using Maven.
+endif::[]
 
 .Procedure
 
-. Navigate to the directory with your application project:
+. Navigate to the directory with your application project.
 +
 [source,bash,subs="attributes+",options="nowrap"]
 ----
 $ cd myApp
 ----
 
-. Ensure that you properly configure the {parameter-runtime-name} Maven plugin:
+. Verify that the `pom.xml` file contains the following:
 +
 [source,xml,options="nowrap",subs="attributes+"]
 ----
-<project ... >
 ifdef::built-for-spring-boot,built-for-spring-boot-1-5[]
   ...
   <!-- Specify target artifact type for the repackage goal. -->
@@ -50,26 +45,43 @@ endif::[]
         <artifactId>{parameter-artifact-name-runtime-plugin}</artifactId>
         <version>{parameter-version-runtime-plugin}</version>
 ifdef::built-for-vertx[]
-To deploy an {runtime} application, use the `java -jar` command.
+        <executions>
+          <execution>
+            <id>vmp</id>
+            <goals>
+              <goal>initialize</goal>
+              <goal>package</goal>
+            </goals>
+          </execution>
+        </executions>
 endif::[]
-ifndef::built-for-vertx[]
-To deploy a {runtime} application, use the `java -jar` command.
+ifdef::built-for-thorntail[]
+        <executions>
+          <execution>
+            <goals>
+              <goal>package</goal>
+            </goals>
+          </execution>
+        </executions>
 endif::[]
-
-.Procedure
-
-. Start your application:
+ifdef::built-for-spring-boot,built-for-spring-boot-1-5[]
+        <executions>
+          <execution>
+              <goals>
+               <goal>repackage</goal>
+             </goals>
+          </execution>
+        </executions>
+endif::[]
+      </plugin>
+    </plugins>
+  </build>
+  ...
+----
+. Package your application using Maven.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ java -jar target/{parameter-jar-file-name}
+$ mvn clean package
 ----
 
-. Verify the deployment
-+
-Use `curl` or your browser to verify your application is running at `http://localhost:8080`:
-+
-[source,bash,options="nowrap"]
-----
-$ curl http://localhost:8080
-----
