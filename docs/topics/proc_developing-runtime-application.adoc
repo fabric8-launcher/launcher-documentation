@@ -7,7 +7,7 @@
 //
 // Rationale: This procedure is the same for 2 or more runtimes.
 
-[id='developing-an-application_{context}']
+[id='developing-runtime-application_{context}']
 = Developing {runtime} application
 
 For a basic {runtime} application, you need to create the following:
@@ -27,9 +27,6 @@ endif::[]
 
 * Maven installed.
 * {prerequisite-jdk-version}
-
-* Maven
-* JDK 8 or later
 
 .Procedure
 . Create a new directory `myApp`, and navigate to it.

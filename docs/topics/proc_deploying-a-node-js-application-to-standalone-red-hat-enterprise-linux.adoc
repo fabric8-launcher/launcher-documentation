@@ -1,4 +1,4 @@
-[id='deploying-a-node-js-application-to-standalone-rhel_{context}']
+[id='deploying-a-node-js-application-to-standalone-red-hat-enterprise-linux_{context}']
 = Deploying a {Node} application to standalone Red Hat Enterprise Linux
 
 You can deploy a {Node} application to standalone Red Hat Enterprise Linux using `npm`.
@@ -13,13 +13,6 @@ You can deploy a {Node} application to standalone Red Hat Enterprise Linux using
 
 .Procedure
 
-. Navigate to the directory with your application project:
-+
-[source,bash,subs="attributes+",options="nowrap"]
-----
-$ cd myApp
-----
-
 . If you have specified additional dependencies in the `package.json` file of your project, ensure that you install them before running your applications:
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -27,7 +20,7 @@ $ cd myApp
 $ npm install
 ----
 
-. Start your application.
+. Deploy the application from the application's root directory.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----

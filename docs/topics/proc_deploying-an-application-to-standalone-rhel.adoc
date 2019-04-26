@@ -9,8 +9,8 @@
 //  context: used in anchor IDs to conflicts due to duplicate IDs.
 //
 // Rationale: This procedure is the same for 2 or more runtimes.
-[id='deploying-an-application-to-standalone-rhel-using-jar_{context}']
-= Deploying {runtime} application to standalone Red Hat Enterprise Linux using jar
+[id='deploying-an-application-to-standalone-rhel_{context}']
+= Deploying an application to standalone Red Hat Enterprise Linux
 
 Deploy your {parameter-runtime-name} application to Red Hat Enterprise Linux.
 
@@ -50,13 +50,52 @@ endif::[]
         <artifactId>{parameter-artifact-name-runtime-plugin}</artifactId>
         <version>{parameter-version-runtime-plugin}</version>
 ifdef::built-for-vertx[]
-To deploy an {runtime} application, use the `java -jar` command.
+        <executions>
+          <execution>
+            <id>vmp</id>
+            <goals>
+              <goal>initialize</goal>
+              <goal>package</goal>
+            </goals>
+          </execution>
+        </executions>
 endif::[]
-ifndef::built-for-vertx[]
-To deploy a {runtime} application, use the `java -jar` command.
+ifdef::built-for-thorntail[]
+        <executions>
+          <execution>
+            <goals>
+              <goal>package</goal>
+            </goals>
+          </execution>
+        </executions>
 endif::[]
+ifdef::built-for-spring-boot,built-for-spring-boot-1-5[]
+        <executions>
+          <execution>
+              <goals>
+               <goal>repackage</goal>
+             </goals>
+          </execution>
+        </executions>
+endif::[]
+      </plugin>
+    </plugins>
+  </build>
+  ...
+</project>
+----
 
-.Procedure
+. Package your application:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn clean package
+----
++
+ifdef::built-for-vertx[The Vert.x Maven Plugin packages applications as fat jars link:https://reactiverse.io/vertx-maven-plugin/#introduction[by default].]
+ifdef::built-for-thorntail[The Thorntail Maven Plugin packages your application as an link:{link-guide-thorntail}#creating-an-uberjar_wf-swarm[_uberjar_].]
+ifdef::built-for-spring-boot,built-for-spring-boot-1-5[You can use the Spring Boot Maven Plugin to repackage your target artifacts as link:https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html#build-tool-plugins-maven-packaging[fat jars or WAR files].]
+
 
 . Start your application:
 +
@@ -65,9 +104,9 @@ endif::[]
 $ java -jar target/{parameter-jar-file-name}
 ----
 
-. Verify the deployment
-+
-Use `curl` or your browser to verify your application is running at `http://localhost:8080`:
+.Verification steps
+
+. Use `curl` or your browser to verify your application is running at `http://localhost:8080`
 +
 [source,bash,options="nowrap"]
 ----

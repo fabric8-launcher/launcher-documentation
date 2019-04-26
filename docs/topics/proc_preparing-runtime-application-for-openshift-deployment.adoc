@@ -5,7 +5,7 @@
 //
 // Rationale: This procedure is the same for 2 or more runtimes.
 
-[id='preparing-an-application-for-openshift-deplyoment_{context}']
+[id='preparing-runtime-application-for-openshift-deplyoment_{context}']
 = Preparing {runtime} application for OpenShift deployment
 
 ifdef::built-for-vertx[]

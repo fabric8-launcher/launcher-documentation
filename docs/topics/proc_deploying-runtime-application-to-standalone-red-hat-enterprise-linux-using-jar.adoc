@@ -9,26 +9,33 @@
 //  context: used in anchor IDs to conflicts due to duplicate IDs.
 //
 // Rationale: This procedure is the same for 2 or more runtimes.
-[id='deploying-an-application-to-standalone-rhel-using-jar_{context}']
+[id='deploying-runtime-application-to-standalone-red-hat-enterprise-linux-using-jar_{context}']
 = Deploying {runtime} application to standalone Red Hat Enterprise Linux using jar
 
 ifdef::built-for-vertx[]
-To deploy an {runtime} application, use the `java -jar` command.
+To deploy an {runtime} application to standalone Red{nbsp}Hat Enterprise Linux, use `java -jar` command.
 endif::[]
+// Please change the following conditional when using this module for a runtime other than vertx, springboot-*
+//
 ifndef::built-for-vertx[]
-To deploy a {runtime} application, use the `java -jar` command.
+To deploy a {runtime} application to standalone Red{nbsp}Hat Enterprise Linux, use `java -jar` command.
 endif::[]
+
+.Prerequisites
+
+* {prerequisite-jdk-version}
+
 
 .Procedure
 
-. Start your application:
+. Deploy the application from the application's root directory. The root directory of an application contains the `pom.xml` file.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ java -jar target/{parameter-jar-file-name}
 ----
 
-. Verify the deployment
+. Verify the deployment.
 +
 Use `curl` or your browser to verify your application is running at `http://localhost:8080`:
 +

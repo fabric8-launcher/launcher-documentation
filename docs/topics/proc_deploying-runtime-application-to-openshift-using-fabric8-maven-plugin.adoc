@@ -7,8 +7,8 @@
 // Rationale: This procedure is the same for 2 or more runtimes.
 
 
-[id='deploying-an-application-to-openshift-using-fabric8-maven-plugin_{context}']
-= Deploying {runtime} application to OpenShift using Fabric8 Maven plugin 
+[id='deploying-runtime-application-to-openshift-using-fabric8-maven-plugin_{context}']
+= Deploying {runtime} application to OpenShift using Fabric8 Maven plugin
 
 ifdef::built-for-vertx[]
 To deploy an {runtime} application to OpenShift, you must perform the following:

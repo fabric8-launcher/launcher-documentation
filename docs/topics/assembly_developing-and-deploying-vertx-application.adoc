@@ -12,10 +12,10 @@ In addition to xref:mission-rest-http-vertx[using a booster], you can create new
 
 
 //Developing an application
-include::proc_developing-an-application.adoc[leveloffset=+1]
+include::proc_developing-runtime-application.adoc[leveloffset=+1]
 
 //Preparing and deploying application tp OpenShift
-include::assembly_deploying-an-application-to-openshift.adoc[leveloffset=+1]
+include::assembly_deploying-runtime-application-to-openshift.adoc[leveloffset=+1]
 
 :parameter-group-name-runtime-plugin: io.reactiverse
 :parameter-artifact-name-runtime-plugin: vertx-maven-plugin
@@ -24,7 +24,7 @@ include::assembly_deploying-an-application-to-openshift.adoc[leveloffset=+1]
 :parameter-link-appdev-guide: {link-guide-vertx}#creating-an-application_vertx
 
 //Preparing and deploying application to RHEL
-include::assembly_deploying-an-application-to-standalone-rhel.adoc[leveloffset=+1]
+include::assembly_deploying-runtime-application-to-standalone-red-hat-enterprise-linux.adoc[leveloffset=+1]
 
 :parameter-link-appdev-guide!:
 :parameter-jar-file-name!:

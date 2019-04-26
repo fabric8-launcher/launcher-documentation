@@ -5,4 +5,4 @@ The {Node} runtime provides the core {Node} API which is documented in the link:
 
 include::proc_developing-a-nodejs-application.adoc[leveloffset=+1]
 include::assembly_deploying-a-nodejs-application-to-openshift.adoc[leveloffset=+1]
-include::proc_deploying-a-node-js-application-to-standalone-rhel.adoc[leveloffset=+1]
+include::proc_deploying-a-node-js-application-to-standalone-red-hat-enterprise-linux.adoc[leveloffset=+1]

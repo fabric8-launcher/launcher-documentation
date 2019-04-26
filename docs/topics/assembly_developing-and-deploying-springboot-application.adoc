@@ -12,11 +12,11 @@ The recommended approach for specifying and using supported and tested Maven art
 :parameter-response: {"content":"Greetings!"}
 :parameter-url: http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}
 ifdef::built-for-spring-boot-1-5[]
-include::proc_developing-an-application.adoc[leveloffset=+1]
+include::proc_developing-runtime-application.adoc[leveloffset=+1]
 
 endif::[]
 ifndef::built-for-spring-boot-1-5[]
-include::proc_developing-an-application.adoc[leveloffset=+1]
+include::proc_developing-runtime-application.adoc[leveloffset=+1]
 //include::proc_creating-a-spring-boot-2-1-application.adoc[leveloffset=+1]
 endif::[]
 
@@ -36,10 +36,10 @@ ifdef::built-for-spring-boot-1-5[]
 endif::[]
 
 :parameter-runtime-name: {SpringBoot}
-include::assembly_deploying-an-application-to-openshift.adoc[leveloffset=+1]
+include::assembly_deploying-runtime-application-to-openshift.adoc[leveloffset=+1]
 :parameter-runtime-name!:
 
-include::assembly_deploying-an-application-to-standalone-rhel.adoc[leveloffset=+1]
+include::assembly_deploying-runtime-application-to-standalone-red-hat-enterprise-linux.adoc[leveloffset=+1]
 
 //include::proc_deploying-an-application-to-standalone-rhel.adoc[leveloffset=+1]
 :parameter-link-appdev-guide!:
