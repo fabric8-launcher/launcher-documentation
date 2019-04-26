@@ -2,7 +2,7 @@
 [id='creating-a-rhoardoc-jira-release_{context}']
 = Creating a RHOARDOC JIRA release
 
-The JIRA _Release_ mechanism is used to track work between publishes of the documentation.
+The JIRA _Release_ mechanism is used to track work between two consecutive versions of the published documentation.
 
 .Prerequisites
 
