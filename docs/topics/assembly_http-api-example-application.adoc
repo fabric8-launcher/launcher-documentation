@@ -8,7 +8,7 @@
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-rest-http-{parameter-runtime-anchor}']
 [id='example-rest-http-{parameter-runtime-anchor}']
-= {name-example-http-api} example for {runtime}
+= {name-example-http-api} example application for {runtime}
 
 include::rest-level-0-example-intro-paragraph.adoc[]
 

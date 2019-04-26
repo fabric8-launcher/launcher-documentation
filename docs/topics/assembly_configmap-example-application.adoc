@@ -8,7 +8,7 @@
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-configmap-{parameter-runtime-anchor}']
 [id='example-configmap-{parameter-runtime-anchor}']
-= {name-example-configmap} example for {runtime}
+= {name-example-configmap} example application for {runtime}
 
 include::configmap-example-intro-paragraph.adoc[leveloffset=+1]
 
