@@ -33,6 +33,7 @@ ifdef::built-for-spring-boot-1-5[]
 endif::[]
 
 include::proc_deploying-an-application-to-standalone-rhel.adoc[leveloffset=+1]
+include::proc_deploying-an-application-to-standalone-rhel8.adoc[leveloffset=+1]
 :parameter-link-appdev-guide!:
 :parameter-jar-file-name!:
 :parameter-version-runtime-plugin!:

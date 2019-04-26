@@ -21,6 +21,7 @@ include::proc_deploying-an-application-to-openshift.adoc[leveloffset=+1]
 :parameter-jar-file-name: my-app-fat.jar
 :parameter-link-appdev-guide: {link-guide-vertx}#creating-an-application_vertx
 include::proc_deploying-an-application-to-standalone-rhel.adoc[leveloffset=+1]
+include::proc_deploying-an-application-to-standalone-rhel8.adoc[leveloffset=+1]
 :parameter-link-appdev-guide!:
 :parameter-jar-file-name!:
 :parameter-version-runtime-plugi!n:
