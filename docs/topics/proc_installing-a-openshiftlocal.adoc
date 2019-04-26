@@ -1,8 +1,8 @@
 [id='installing-a-openshiftlocal_{context}']
 [#installing-a-openshiftlocal]
-= Installing a {OpenShiftLocal}
+= Installing {Minishift}
 
-To use the {name-launcher} tool on a local cloud, you must have a {OpenShiftLocal} installed and configured. You can use either {Minishift} or {CDK}.
+To test the {name-launcher} tool on your local machine, you can use either {Minishift} or {CDK}.
 
 .Prerequisites
 
@@ -10,21 +10,21 @@ To use the {name-launcher} tool on a local cloud, you must have a {OpenShiftLoca
 
 .Procedure
 
-. Follow the instructions for installing the {OpenShiftLocal}:
+. Follow the instructions for installing {Minishift}:
 +
 --
 * The installation steps for {Minishift} are available link:https://docs.openshift.org/latest/minishift/getting-started/installing.html[in the OpenShift documentation].
 * The installation steps for {CDK} are available link:https://access.redhat.com/documentation/en-us/red_hat_container_development_kit/3.0/html-single/installation_guide/[in the {CDK} Installation Guide].
 
-NOTE: The steps for installing {OpenShiftLocal} vary by platform.
+NOTE: The steps for installing {Minishift} vary by platform.
 --
-. Verify you have the {OpenShiftLocal} installed and configured:
+. Verify you have the {Minishift} installed and configured:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ minishift version
 ----
-. Start and stop the {OpenShiftLocal}:
+. Start and stop {Minishift}:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -47,5 +47,4 @@ export PATH="/Users/john/.minishift/cache/oc/v3.5.5.8:$PATH"
 $ eval $(minishift oc-env)
 ----
 +
-WARNING: You must have the `oc` binary installed and it _must_ match the version of the {OpenShiftLocal} you are using.
-
+WARNING: You must have the `oc` binary installed and it _must_ match the version of {Minishift} that you are using.

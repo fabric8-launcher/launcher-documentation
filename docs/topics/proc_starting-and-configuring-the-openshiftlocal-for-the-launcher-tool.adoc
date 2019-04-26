@@ -1,27 +1,27 @@
 [id='starting-and-configuring-the-openshiftlocal-for-the-launcher-tool_{context}']
-= Starting and configuring the {OpenShiftLocal} for the {name-launcher} tool
+= Starting and configuring {Minishift} for the {name-launcher} tool
 
-This chapter contains instructions for starting the {OpenShiftLocal} and configuring it to execute the {name-launcher} tool.
+This chapter contains instructions for starting the {Minishift} and configuring it to execute the {name-launcher} tool.
 
-NOTE: Starting your {OpenShiftLocal} can trigger a download of large virtual machines or Linux container images. This can take a long time. Subsequent startups are expected to be shorter as long as the virtual machines and Linux container images remain cached.
+NOTE: Starting your {Minishift} can trigger a download of large virtual machines or Linux container images. This can take a long time. Subsequent startups are expected to be shorter as long as the virtual machines and Linux container images remain cached.
 
 [IMPORTANT]
 ====
-Because a {OpenShiftLocal} is intended for development purposes, it uses HTTPS for the web console and only provides a self-signed certificate. If your browser prevents you from accessing the page due to an SSL error, you must allow your browser to bypass SSL security policies for the {OpenShiftLocal} URL to use it. The screenshot below shows the warning message in the Google Chrome browser.
+Because {Minishift} is intended for development purposes, it uses HTTPS for the web console and only provides a self-signed certificate. If your browser prevents you from accessing the page due to an SSL error, you must allow your browser to bypass SSL security policies for the {Minishift} URL to use it. The screenshot below shows the warning message in the Google Chrome browser.
 
 image::minishift_sslwarning.png[SSL warning]
 ====
 
 .Prerequisites
 
-* xref:installing-a-openshiftlocal[{OpenShiftLocal} installed].
+* xref:installing-a-openshiftlocal[{Minishift} installed].
 
 .Procedure
 
-. Start the {OpenShiftLocal} with the default virtual machine driver:
+. Start {Minishift} with the default virtual machine driver:
 +
 --
-NOTE: Depending on your operating system, virtual machine driver, and the number of boosters you run, the memory allocated {OpenShiftLocal} can be insufficient. In this case, increase the memory allocation.
+NOTE: Depending on your operating system, virtual machine driver, and the number of boosters you run, the memory allocated to {Minishift} can be insufficient. In this case, increase the memory allocation.
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -45,7 +45,7 @@ Depending on your system configuration, it is possible that you must manually sp
 NOTE: On macOS, the default virtual machine driver, `xhyve`, can be unreliable. If you experience issues, specifying `VirtualBox` is a reliable alternative.
 --
 
-. Open the {OpenShiftLocal} Web console.
+. Open the {Minishift} Web console.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -61,4 +61,3 @@ Alternatively, use the URL provided in the log information.
 .. Select _Delete Project_.
 +
 image::minishift_consolehome.png[OpenShift Console Home]
-
