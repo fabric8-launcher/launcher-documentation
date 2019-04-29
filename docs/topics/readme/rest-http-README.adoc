@@ -1,12 +1,12 @@
-= ${mission} - ${runtime} Booster
+= ${mission} - ${runtime} Example Application
 
 ${prerequisite}
 
 ${cicdSection}
 
-== Runing the Booster Locally
+== Running the Example Application Locally
 
-To run this booster on your local host:
+To run this example application on your local host:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -17,9 +17,9 @@ $ cd ${targetRepository}
 $ ${localRunCMD}
 ----
 
-== Interacting with the Booster Locally
+== Interacting with the Example Application Locally
 
-To interact with your booster while it's running locally, use the form at `http://localhost:8080` or the `curl` command:
+To interact with your example application while it's running locally, use the form at `http://localhost:8080` or the `curl` command:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -31,22 +31,22 @@ $ curl http://localhost:8080/api/greeting?name=Sarah
 ----
 
 
-== Updating the Booster
-To update your booster:
+== Updating the Example Application
+To update your example application:
 
-. Stop your booster.
+. Stop your example application.
 +
-NOTE: To stop your running booster in a Linux or macOS terminal, use `CTRL+C`. In a Windows command prompt, you can use `CTRL + Break(pause)`.
+NOTE: To stop your running example application in a Linux or macOS terminal, use `CTRL+C`. In a Windows command prompt, you can use `CTRL + Break(pause)`.
 
 . Make your change (e.g. edit `${fileLocation}`).
-. Restart your booster.
+. Restart your example application.
 . Verify the change took effect.
 
 
-== Running the Booster on a Single-node OpenShift Cluster
-If you have a single-node OpenShift cluster, such as Minishift or Red Hat Container Development Kit, link:http://launcher.fabric8.io/docs/minishift-installation.html[installed and running], you can also deploy your booster there. A single-node OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
+== Running the Example Application on a Single-node OpenShift Cluster
+If you have a single-node OpenShift cluster, such as Minishift or Red Hat Container Development Kit, link:http://launcher.fabric8.io/docs/minishift-installation.html[installed and running], you can also deploy your example application there. A single-node OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
 
-To deploy your booster to a running single-node OpenShift cluster:
+To deploy your example application to a running single-node OpenShift cluster:
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc login -u developer -p developer
@@ -57,6 +57,6 @@ $ ${OSORunCMD}
 ----
 
 == More Information
-You can learn more about this booster and rest of the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].
+You can learn more about this example application and rest of the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].
 
 ${integrationTestSection}
