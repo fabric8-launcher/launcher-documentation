@@ -6,7 +6,8 @@
 
 // Do not change the anchor ID, it is set to this for URL routing reasons
 [id='mission-health-check-{parameter-runtime-anchor}']
-= {name-mission-health-check} mission - {runtime} booster
+[id='example-health-check-{parameter-runtime-anchor}']
+= {name-example-health-check} example for {runtime}
 
 include::health-check-mission-intro-paragraph.adoc[leveloffset=+1]
 
@@ -27,12 +28,12 @@ include::con_health-check-concepts.adoc[leveloffset=+1]
 
 include::proc_viewing-the-booster-source-code-and-readme.adoc[leveloffset=+1]
 
-:parameter-mission-name: {name-mission-health-check}
-:parameter-mission: health-check
+:parameter-example-name: {name-example-health-check}
+:parameter-example: health-check
 include::assembly_deploying-the-booster-to-openshiftonline.adoc[leveloffset=+1]
 
 include::assembly_deploying-the-booster-to-openshiftlocal.adoc[leveloffset=+1]
-:parameter-mission!:
+:parameter-example!:
 
 include::proc_deploying-the-booster-to-openshiftcontainerplatform.adoc[leveloffset=+1]
 
@@ -41,7 +42,6 @@ include::proc_interacting-with-the-unmodified-health-check-booster.adoc[leveloff
 ifndef::built-for-nodejs[]
 include::proc_running-the-booster-integration-tests.adoc[leveloffset=+1]
 endif::built-for-nodejs[]
-:parameter-mission-name!:
+:parameter-example-name!:
 
 include::ref_health-check-resources.adoc[leveloffset=+1]
-

@@ -1,7 +1,7 @@
 [id='configmap-resources_{context}']
-= {name-mission-configmap} resources
+= {name-example-configmap} resources
 
-More background and related information on {name-mission-configmap} and ConfigMap can be found here:
+More background and related information on {name-example-configmap} and ConfigMap can be found here:
 
 * link:https://docs.openshift.org/latest/dev_guide/configmaps.html[OpenShift ConfigMap Documentation]
 
@@ -13,11 +13,10 @@ ifdef::built-for-vertx[* link:http://vertx.io/docs/vertx-config/js/[Externalized
 
 ifdef::built-for-thorntail[* link:https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-guide/content/v/eee1f5ba4dd4f13855cbe98addd365ba29033810/configuration/index.html[Externalized Configuration with {WildFlySwarm}]]
 
-ifndef::built-for-spring-boot[* link:{link-mission-configmap-spring-boot}[{name-mission-configmap} mission - {SpringBoot} booster]]
+ifndef::built-for-spring-boot[* link:{link-example-configmap-spring-boot}[{name-example-configmap} for {SpringBoot}]]
 
-ifndef::built-for-vertx[* link:{link-mission-configmap-vertx}[{name-mission-configmap} mission - {VertX} booster]]
+ifndef::built-for-vertx[* link:{link-example-configmap-vertx}[{name-example-configmap} for {VertX}]]
 
-ifndef::built-for-thorntail[* link:{link-mission-configmap-thorntail}[{name-mission-configmap} mission - {WildFlySwarm} booster]]
+ifndef::built-for-thorntail[* link:{link-example-configmap-thorntail}[{name-example-configmap} for {WildFlySwarm}]]
 
-ifndef::built-for-nodejs[* link:{link-mission-configmap-nodejs}[{name-mission-configmap} mission - {Node} booster]]
-
+ifndef::built-for-nodejs[* link:{link-example-configmap-nodejs}[{name-example-configmap} for {Node}]]

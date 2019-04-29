@@ -60,11 +60,11 @@ image::minishift_launcher_booting.png[{name-launcher} booting]
 +
 A new browser tab opens with the {name-launcher} tool. This is the same service as `{link-launcher-oso}` but running in a {OpenShiftLocal}.
 
-. Start using your {name-launcher} tool to launch booster applications.
+. Start using your {name-launcher} tool to launch example applications.
 
 .Additional resources
-* See the link:{link-guide-getting-started}[{name-guide-getting-started}] for a walk-through of running a booster application.
-* Read the runtime guides for an overview of the runtimes and their boosters:
+* See the link:{link-guide-getting-started}[{name-guide-getting-started}] for a walk-through of running an example application.
+* Read the runtime guides for an overview of the runtimes and their example applications:
 ** link:{link-guide-spring-boot}[{name-guide-spring-boot}]
 ** link:{link-guide-vertx}[{name-guide-vertx}]
 ** link:{link-guide-thorntail}[{name-guide-thorntail}]

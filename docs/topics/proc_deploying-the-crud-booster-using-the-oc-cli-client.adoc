@@ -6,14 +6,15 @@
 
 
 [id='deploying-the-crud-booster-using-the-oc-cli-client_{context}']
-= Deploying the {name-mission-crud} booster using the `oc` CLI client
+[id='deploying-the-crud-example-application-using-the-oc-client_{context}']
+= Deploying the {name-example-crud} example application using the `oc` CLI client
 
 .Prerequisites
 
-* The booster application created using {parameter-deployment}.
-ifndef::parameter-openshiftlocal[For more information, see xref:deploying-the-booster-using-launcher-oso_{context}[].]
+* The example application created using {parameter-deployment}.
+ifndef::parameter-openshiftlocal[For more information, see xref:deploying-the-example-application-using-launcher-oso_{context}[].]
 ifdef::parameter-openshiftlocal[]
-For more information, see xref:deploying-the-booster-using-the-launcher-tool_{context}[].
+For more information, see xref:deploying-the-example-application-using-the-launcher-tool_{context}[].
 * Your {name-launcher} tool URL.
 endif::[]
 
@@ -41,12 +42,12 @@ $ unzip {value-name-project}.zip
 $ oc new-project {value-name-project}
 ----
 
-. Navigate to the root directory of your booster.
+. Navigate to the root directory of your application.
 
 . Deploy the PostgreSQL database to OpenShift.
 Ensure that you use the following values for user name, password, and database name when creating your database application.
-The booster application is pre-configured to use these values.
-Using different values prevents your booster application from integrating with the database.
+The example application is pre-configured to use these values.
+Using different values prevents your application from integrating with the database.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -87,10 +88,10 @@ ifdef::built-for-nodejs[]
 $ npm install && npm run openshift
 ----
 +
-These commands install any missing module dependencies, then using the xref:about-nodeshift[Nodeshift] module, deploy the booster on OpenShift.
+These commands install any missing module dependencies, then using the xref:about-nodeshift[Nodeshift] module, deploy the example application on OpenShift.
 endif::built-for-nodejs[]
 
-. Check the status of your booster and ensure your pod is running.
+. Check the status of your application and ensure your pod is running.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -102,7 +103,7 @@ NAME                             READY     STATUS      RESTARTS   AGE
 +
 Your `{value-name-app}-1-aaaaa` pod should have a status of `Running` and should be indicated as ready once it is fully deployed and started.
 
-. Once your booster is deployed and started, determine its route.
+. After your example application is deployed and started, determine its route.
 +
 .Example Route Information
 [source,bash,options="nowrap",subs="attributes+"]

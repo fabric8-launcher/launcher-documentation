@@ -18,7 +18,7 @@ Assume you have two applications: _service1_ and _service2_:
 * If _service1_ started using a cached value with a TTL of 1 second instead, that would be reduced to 10 calls over 10 seconds.
 ====
 
-.How the {name-mission-cache} mission works
+.How the {name-example-cache} example works
 
 . The _cache_, _cute name_, and _greeting_ services are deployed and exposed.
 . User accesses the web frontend of the _greeting_ service.
@@ -30,4 +30,3 @@ Assume you have two applications: _service1_ and _service2_:
 . User invokes the service multiple times to see the difference between cached and uncached operations.
 ** Cached operations are significantly faster than uncached operations.
 ** User can force the cache to be cleared before the TTL expires.
-

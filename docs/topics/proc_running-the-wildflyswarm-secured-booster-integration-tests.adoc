@@ -1,5 +1,6 @@
 [id='running-the-wildflyswarm-secured-booster-integration-tests_{context}']
-= Running the {WildFlySwarm} {name-mission-secured} booster integration tests
+[id='running-the-wildflyswarm-secured-example-application-integration-tests_{context}']
+= Running the {WildFlySwarm} {name-example-secured} example application integration tests
 
 [IMPORTANT]
 --
@@ -35,4 +36,3 @@ $ mvn clean verify -Popenshift,openshift-it -DSSO_AUTH_SERVER_URL=$(oc get route
 --
 oc delete -f service.sso.yaml
 --
-

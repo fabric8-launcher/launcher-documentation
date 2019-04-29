@@ -1,27 +1,27 @@
-= ${mission} - ${runtime} Booster
+= ${mission} - ${runtime} Example Application
 
-== Interacting with the Booster in Stage
-From your workspace, click _Stage - 1.0.1_ under _Applications_. This will open the stage version of your booster that you can interact with. For more details on interacting with this booster, see the link:${guideURL}[${runtime} Runtime Guide].
+== Interacting with the Example Application in Stage
+From your workspace, click _Stage - 1.0.1_ under _Applications_. This will open the stage version of your example application that you can interact with. For more details on interacting with this example application, see the link:${guideURL}[${runtime} Runtime Guide].
 
-NOTE: Deploying your booster to Stage may take a few minutes to complete.
+NOTE: Deploying your example application to Stage may take a few minutes to complete.
 
 
-== Promoting the Booster to Run
+== Promoting the Example Application to Run
 * From your workspace, click _${targetRepository}_ under _Pipelines_
 * Click _Input Required_ under _Approve_
 * Click _Promote_.
 * Click the blue link next to _Rollout to Run_.
-* Return to your workspace and click _Run - 1.0.1_ under _Applications_ to interact with the _Run_ version of this booster.
+* Return to your workspace and click _Run - 1.0.1_ under _Applications_ to interact with the _Run_ version of this example application.
 
-== Editing the Booster
+== Editing the Example Application
 * Click _Create_ at the top of the page.
 * Click _Create Workspace_.
 * Click _Open_.
 +
 NOTE: This will create a popup window so you may have to enable popups in your browser.
 
-* Make a change to your booster (e.g. edit `${fileLocation}`).
-* Click the _Run_ button (the triangle in the top next to the _Debug_ button) and choose _Run_ to build and deploy your booster in a temporary Che environment. Use the _Preview_ URL at the top of the log window to verify that your changes took effect.
+* Make a change to your example application (e.g. edit `${fileLocation}`).
+* Click the _Run_ button (the triangle in the top next to the _Debug_ button) and choose _Run_ to build and deploy your example application in a temporary Che environment. Use the _Preview_ URL at the top of the log window to verify that your changes took effect.
 
 == Promoting the Changes
 * Click _Git_ -> _Add to Index_ to stage your change.
@@ -32,4 +32,4 @@ NOTE: This will create a popup window so you may have to enable popups in your b
 * Click on _Run - 1.0.2_ under _Applications_ and verify that your changes took effect.
 
 
-You can learn more about this booster and rest of the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].
+You can learn more about this example application and rest of the ${runtime} runtime in the link:${guideURL}[${runtime} Runtime Guide].

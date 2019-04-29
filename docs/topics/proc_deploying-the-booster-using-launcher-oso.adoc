@@ -8,8 +8,9 @@
 //
 // Rationale: This procedure is identical in all deployments
 
-[id='deploying-the-booster-using-launcher-oso_{context}']
-= Deploying the booster using {name-launcher-oso}
+[id='deploying-the-example-application-using-launcher-oso_{context}']
+[id='deploying-the-example-application-using-launcher-oso_{context}']
+= Deploying the example application using {name-launcher-oso}
 
 .Prerequisites
 * An account at {parameter-deployment}.
@@ -17,4 +18,4 @@
 .Procedure
 
 . Navigate to the {parameter-launcher} URL in a browser and log in.
-. Follow on-screen instructions to create and launch your booster in {runtime}.
+. Follow on-screen instructions to create and launch your example application in {runtime}.

@@ -19,7 +19,7 @@ This enables you to break your business problems into smaller microservices whil
 These cloud-native development approaches take advantage of the capabilities provided by OpenShift and enable you to use patterns such as Circuit Breaker, Health Check, and Service Discovery.
 
 This guide takes you through cloud-native development on OpenShift.
-It shows you how to create and deploy example cloud-native applications called boosters to OpenShift using {name-launcher-oso} or the {name-launcher} tool.
+It shows you how to create and deploy example cloud-native applications to OpenShift using {name-launcher-oso} or the {name-launcher} tool.
 These example applications can serve as the foundation for your actual cloud-native microservices since they can be updated and redeployed using the same deployment process detailed in this guide.
 
 include::topics/con_introduction-to-productname.adoc[leveloffset=+1]
@@ -39,4 +39,3 @@ include::topics/assembly_using-red-hat-jboss-developer-studio-with-a-booster-pro
 
 [appendix]
 include::topics/ref_glossary.adoc[leveloffset=+1]
-

@@ -1,7 +1,8 @@
 [id='interacting-with-the-unmodified-configmap-booster-for-wildflyswarm_{context}']
-= Interacting with the unmodified {name-mission-configmap} booster for {WildFlySwarm}
+[id='interacting-with-the-unmodified-configmap-example-application-for-wildflyswarm_{context}']
+= Interacting with the unmodified {name-example-configmap} example application for {WildFlySwarm}
 
-The booster provides a default HTTP endpoint that accepts GET requests.
+The example provides a default HTTP endpoint that accepts GET requests.
 
 .Prerequisites
 
@@ -10,7 +11,7 @@ The booster provides a default HTTP endpoint that accepts GET requests.
 
 .Procedure
 
-. Use `curl` to execute a `GET` request against the booster. You can also use a browser to do this.
+. Use `curl` to execute a `GET` request against the example. You can also use a browser to do this.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -35,7 +36,7 @@ After you save this, the changes will be propagated to your OpenShift instance.
 $ oc rollout latest dc/{value-name-app}
 ----
 
-. Check the status of your booster and ensure your new pod is running.
+. Check the status of your example and ensure your new pod is running.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -50,7 +51,7 @@ Your specific pod name will vary.
 The number in the middle will increase with each new build.
 The letters at the end are generated when the pod is created.
 
-. Execute a `GET` request using `curl` against the booster with the updated ConfigMap configuration to see your updated greeting.
+. Execute a `GET` request using `curl` against the example with the updated ConfigMap configuration to see your updated greeting.
 You can also do this from your browser using the web form provided by the application.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -58,4 +59,3 @@ You can also do this from your browser using the web form provided by the applic
 $ curl http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}/api/greeting
 {"content":"Bonjour World from a ConfigMap!"}
 ----
-

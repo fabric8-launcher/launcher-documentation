@@ -4,7 +4,7 @@
 
 :parent-context: {context}
 
-In addition to xref:mission-rest-http-vertx[using a booster], you can create new {runtime} applications from scratch and deploy them to OpenShift.
+In addition to xref:example-rest-http-vertx[using an example], you can create new {runtime} applications from scratch and deploy them to OpenShift.
 
 :parameter-runtime: vertx
 :parameter-maven-command: $ mvn vertx:run
@@ -36,3 +36,4 @@ include::proc_deploying-an-application-to-standalone-rhel.adoc[leveloffset=+1]
 
 
 :context: {parent-context}
+

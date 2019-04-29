@@ -1,7 +1,8 @@
 [id='interacting-with-the-unmodified-configmap-booster-for-node_{context}']
-= Interacting with the unmodified {name-mission-configmap} booster for {Node}
+[id='interacting-with-the-unmodified-configmap-example-application-for-node_{context}']
+= Interacting with the unmodified {name-example-configmap} example application for {Node}
 
-The booster provides a default HTTP endpoint that accepts `GET` requests.
+The example provides a default HTTP endpoint that accepts `GET` requests.
 
 .Prerequisites
 
@@ -10,7 +11,7 @@ The booster provides a default HTTP endpoint that accepts `GET` requests.
 
 .Procedure
 
-. Use `curl` to execute a `GET` request against the booster.
+. Use `curl` to execute a `GET` request against the example.
 You can also use a browser to do this.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -30,7 +31,7 @@ Change the value for the `message` key to `Bonjour, %s from a ConfigMap !` and s
 
 . Update of the ConfigMap should be read by the application within an acceptable time (a few seconds) without requiring a restart of the application.
 
-. Execute a `GET` request using `curl` against the booster with the updated ConfigMap configuration to see your updated greeting.
+. Execute a `GET` request using `curl` against the example with the updated ConfigMap configuration to see your updated greeting.
 You can also do this from your browser using the web form provided by the application.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -38,4 +39,3 @@ You can also do this from your browser using the web form provided by the applic
 $ curl http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}/api/greeting
 {"content":"Bonjour, World from a ConfigMap !"}
 ----
-

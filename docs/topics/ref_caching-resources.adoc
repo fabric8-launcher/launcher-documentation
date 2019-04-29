@@ -4,11 +4,10 @@
 
 More background and related information on caching can be found here:
 
-ifndef::built-for-spring-boot[* link:{link-mission-cache-spring-boot}[{name-mission-cache} mission - {SpringBoot} booster]]
+ifndef::built-for-spring-boot[* link:{link-example-cache-spring-boot}[{name-example-cache} for {SpringBoot}]]
 
-ifndef::built-for-vertx[* link:{link-mission-cache-vertx}[{name-mission-cache} mission - {VertX} booster]]
+ifndef::built-for-vertx[* link:{link-example-cache-vertx}[{name-example-cache} for {VertX}]]
 
-ifndef::built-for-thorntail[* link:{link-mission-cache-thorntail}[{name-mission-cache} mission - {WildFlySwarm} booster]]
+ifndef::built-for-thorntail[* link:{link-example-cache-thorntail}[{name-example-cache} for {WildFlySwarm}]]
 
-ifndef::built-for-nodejs[* link:{link-mission-cache-nodejs}[{name-mission-cache} mission - {Node} booster]]
-
+ifndef::built-for-nodejs[* link:{link-example-cache-nodejs}[{name-example-cache} for {Node}]]

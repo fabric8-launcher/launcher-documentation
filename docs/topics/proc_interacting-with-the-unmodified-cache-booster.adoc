@@ -1,5 +1,6 @@
 [id='interacting-with-the-unmodified-cache-booster_{context}']
-= Interacting with the unmodified {name-mission-cache} booster
+[id='interacting-with-the-unmodified-cache-example-application_{context}']
+= Interacting with the unmodified {name-example-cache} example application
 
 .Prerequisites
 
@@ -25,4 +26,3 @@ When the TTL expires, the value is no longer cached.
 +
 Notice a significantly lower `duration` value since it is using a cached value.
 If you click _Clear the cache_, the cache is emptied.
-
