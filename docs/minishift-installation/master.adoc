@@ -9,8 +9,9 @@ include::topics/templates/document-attributes.adoc[]
 :context: minishift
 
 [.lead]
-This guide walks you through the process of installing the {name-launcher} tool on an {OpenShiftLocal}.
-This includes link:https://www.openshift.org/minishift/[{Minishift}], an all-in-one VM with link:https://www.okd.io[OKD^], or link:https://developers.redhat.com/products/cdk/overview/[{CDK}], a VM that includes OpenShift Container Platform.
+This guide walks you through the process of installing the {name-launcher} tool on an {OpenShiftCluster}.
+To test the launcher tool locally on your machine
+//This includes link:https://www.openshift.org/minishift/[{Minishift}], an all-in-one VM with link:https://www.okd.io[OKD^], or link:https://developers.redhat.com/products/cdk/overview/[{CDK}], a VM that includes OpenShift Container Platform.
 
 include::topics/con_how-the-launcher-tool-works.adoc[leveloffset=+1]
 
@@ -25,15 +26,9 @@ include::topics/proc_creating-a-github-personal-access-token.adoc[leveloffset=+1
 
 [id='installing-launcher-tool_{context}']
 == Installing {name-launcher} Tool
-Install a local customized instance of the {name-launcher} tool, which allows you to test the functionality or make modifications to the service using a web interface.
-
-//TODO: Replaced with operator-based installation procedure, as described in RHOARDOC-1603
-include::topics/proc_installing-launcher-tool-addon.adoc[leveloffset=+2]
+Install an instance of the {name-launcher} tool, which allows you to test the functionality or make modifications to the service using a web interface.
 
 include::topics/proc_installing-launcher-operator.adoc[leveloffset=+2]
-
-//TODO: Remove this section.
-//include::topics/proc_installing-launcher-tool-manually.adoc[leveloffset=+2]
 
 // temporary location for Nexus install
 [appendix]
