@@ -1,21 +1,15 @@
-// This is a parameterized module. Parameters used:
-//
-//   parameter-custom-catalog: A custom catalog is used instead of the default one
-//
-// Rationale: This module is useful both when setting up minishift as is and when testing a local
-// booster catalog.
+// Redefines the value of the URL placeholder from minishift-specific to a more general value.
+:value-url-osl-auth: OPENSHIFT_CLUSTER_URL
 
 [id='installing-launcher-tool-using-an-operator_{context}']
-= Installing {name-launcher} tool using an operator
-//link:https://docs.openshift.org/latest/minishift/using/addons.html[Add-ons] enable you to extend the behavior of {OpenShiftLocal}, and the {name-launcher} tool link:https://github.com/minishift/minishift-addons/tree/master/add-ons/fabric8-launcher[provides an add-on] as an installation option.
+= Installing the {name-launcher} tool using an operator
+
+Set up an operator to install the {name-launcher} tool on an OpenShift cluster.
+The following procedure works with
 
 .Prerequisites
 
-* Administrative access privileges to an OpenShift Cluster.
-* The link:https://github.com/fabric8-launcher/launcher-operator/tree/master[GitHub repository] containing the Launcher operator templates cloned locally on your system.
-//* The `cluster-admin` role assigned to your user account on the target OpenShift cluster.
-//* A link:{link-guide-minishift-installation}#creating-a-github-personal-access-token_minishift[GitHub personal access token].
-
+* Administrative access privileges to an OpenShift cluster using.
 
 .Procedure
 
@@ -26,8 +20,7 @@
 $ oc adm policy --as system:admin add-cluster-role-to-user cluster-admin USER_ACCOUNT_NAME
 ----
 
-// TODO: fix up variable in code example:
-. Log in to your {OpenShiftLocal}:
+. Log in to your {OpenShiftCluster} using your credentials:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -41,8 +34,9 @@ $ oc login {value-url-osl-auth}
 $ oc new-project launcher-operator
 ----
 
-. link:https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line[Create a personal GitHub access token]. Ensure that you set the following scope when creating the token:
-// https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/
+. link:https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line[Create a personal GitHub access token].
+Ensure that you set the following scope when creating the token:
+// TODO: replace this with OAuth: https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/
 
 * `repo`
 * `admin:repo_hook`
@@ -55,12 +49,12 @@ $ oc new-project launcher-operator
 $ oc create secret generic launcher-secrets --from-literal=github-token=GITHUB_TOKEN
 ----
 
-// TODO: add the clone repo step here, too
-. Navigate to the directory containing the cloned operator resources.
+. Clone the link:https://github.com/fabric8-launcher/launcher-operator[repository] containing the operator and navigate to the directory containing the cloned resources.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ cd launcher operator
+$ git clone git@github.com:fabric8-launcher/launcher-operator.git
+$ cd launcher-operator
 ----
 
 . Process the YAML templates in the `/deploy` subdirectory:
@@ -104,17 +98,15 @@ launcher-frontend-2-aaaaa      0/1       Running             0         6s
 ----
 $ oc get routes
 NAME       HOST/PORT                                PATH      SERVICES            PORT      TERMINATION   WILDCARD
-launcher   launcher.{value-route-osl-hostname}             launcher-frontend   <all>                   None
+launcher   launcher.{value-route-osl-hostname}                launcher-frontend   <all>                   None
 ----
 
-. Navigate to your {name-launcher} tool and start using your {name-launcher} tool to create a new application or launch one for the available examples.
+. Navigate to the route URL to start using {name-launcher}.
 
-////
 .Additional Resources
-* See the link:{link-guide-getting-started}[{name-guide-getting-started}] for a walk-through of running a booster application.
-* Read the runtime guides for an overview of the runtimes and their boosters:
+* See the link:{link-guide-getting-started}[{name-guide-getting-started}] for a walk-through of launching an example application.
+* Read the runtime guides for an overview of the runtimes and their examples:
 ** link:{link-guide-spring-boot}[{name-guide-spring-boot}]
 ** link:{link-guide-vertx}[{name-guide-vertx}]
 ** link:{link-guide-thorntail}[{name-guide-thorntail}]
 ** link:{link-guide-nodejs}[{name-guide-nodejs}]
-////
