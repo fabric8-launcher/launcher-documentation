@@ -38,7 +38,7 @@ This removes the item with the specified ID from the database and returns an HTT
 If you pass in an invalid ID, the call results in an HTTP error `404`.
 
 ifndef::built-for-nodejs[]
-This example also contains a set of automated xref:running-the-example-integration-tests_{context}[integration tests] that can be used to verify that the application is fully integrated with the database.
+This example also contains a set of automated xref:running-the-example-application-integration-tests_{context}[integration tests] that can be used to verify that the application is fully integrated with the database.
 endif::built-for-nodejs[]
 
 This example does not showcase a fully matured RESTful model (level 3), but it does use compatible HTTP verbs and status, following the recommended HTTP API practices.
