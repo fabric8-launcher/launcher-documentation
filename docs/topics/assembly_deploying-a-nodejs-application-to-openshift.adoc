@@ -1,7 +1,7 @@
 [id='deploying-a-nodejs-application-to-openshift_{context}']
 = Deploying a {Node} application to Openshift
 
-To deploy a {Node} application to OpenShift, you must first add `nodeshift` to the application and configure the `package.json` file. You can then deploy the application to OpenShift using `nodeshift`. 
+To deploy your {Node} application to OpenShift, add `nodeshift` to the application, configure the `package.json` file and then deploy using `nodeshift`. 
 
 include::proc_preparing-nodejs-application-for-openshift-deployment.adoc[leveloffset=+1]
 

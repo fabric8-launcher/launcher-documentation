@@ -66,3 +66,7 @@ Server running at http://localhost:8080
 $ curl http://localhost:8080
 {"content":"Hello, World!"}
 ----
+
+.Additional information
+
+* The {Node} runtime provides the core {Node} API which is documented in the link:https://nodejs.org/api/[{Node} API documentation^]. 

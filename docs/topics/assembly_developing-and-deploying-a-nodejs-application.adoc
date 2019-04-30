@@ -1,7 +1,9 @@
 [id='developing-and-deploying-a-nodejs-application_{context}']
 = Developing and deploying a {Node} application
 
-The {Node} runtime provides the core {Node} API which is documented in the link:https://nodejs.org/api/[{Node} API documentation^]. 
+:parent-context: {context}
+
+In addition to xref:example-rest-http-nodejs[using an example], you can create new {runtime} applications from scratch and deploy them to OpenShift.
 
 include::proc_developing-a-nodejs-application.adoc[leveloffset=+1]
 include::assembly_deploying-a-nodejs-application-to-openshift.adoc[leveloffset=+1]

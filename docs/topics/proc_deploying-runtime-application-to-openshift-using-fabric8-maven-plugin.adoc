@@ -11,10 +11,7 @@
 = Deploying {runtime} application to OpenShift using Fabric8 Maven plugin
 
 ifdef::built-for-vertx[]
-To deploy an {runtime} application to OpenShift, you must perform the following:
-endif::[]
-ifndef::built-for-vertx[]
-To deploy a {runtime} application to OpenShift, you must perform the following:
+To deploy your {runtime} application to OpenShift, you must perform the following:
 endif::[]
 
 * Log in to OpenShift instance.
