@@ -26,7 +26,12 @@ endif::[]
 .Prerequisites
 
 * Maven installed.
+ifdef::built-for-spring-boot-1-5[]
+* OpenJDK 8 installed.
+endif::[]
+ifndef::built-for-spring-boot-1-5[]
 * {prerequisite-jdk-version}
+endif::[]
 
 .Procedure
 . Create a new directory `myApp`, and navigate to it.

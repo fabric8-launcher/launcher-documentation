@@ -12,18 +12,17 @@
 [id='deploying-runtime-application-to-standalone-red-hat-enterprise-linux-using-jar_{context}']
 = Deploying {runtime} application to standalone Red Hat Enterprise Linux using jar
 
-ifdef::built-for-vertx[]
-To deploy an {runtime} application to standalone Red{nbsp}Hat Enterprise Linux, use `java -jar` command.
-endif::[]
-// Please change the following conditional when using this module for a runtime other than vertx, springboot-*
-//
-ifndef::built-for-vertx[]
-To deploy a {runtime} application to standalone Red{nbsp}Hat Enterprise Linux, use `java -jar` command.
-endif::[]
+To deploy your {runtime} application to standalone Red{nbsp}Hat Enterprise Linux, use `java -jar` command.
 
 .Prerequisites
 
+ifdef::built-for-spring-boot-1-5[]
+* OpenJDK 8 installed.
+endif::[]
+ifndef::built-for-spring-boot-1-5[]
 * {prerequisite-jdk-version}
+endif::[]
+
 
 
 .Procedure
