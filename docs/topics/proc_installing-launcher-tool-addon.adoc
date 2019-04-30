@@ -10,8 +10,13 @@
 link:https://docs.openshift.org/latest/minishift/using/addons.html[Add-ons] enable you to extend the behavior of {OpenShiftLocal}, and the {name-launcher} tool link:https://github.com/minishift/minishift-addons/tree/master/add-ons/fabric8-launcher[provides an add-on] as an installation option.
 
 .Prerequisites
-* xref:starting-and-configuring-the-openshiftlocal-for-the-launcher-tool_{context}[{OpenShiftLocal} running].
-* A link:{link-guide-minishift-installation}#creating-a-github-personal-access-token_minishift[GitHub personal access token].
+
+* Access to an OpenShift Cluster.
+* `cluster-admin` role assigned to you on the target OpenShift cluster.
+
+
+//* xref:starting-and-configuring-the-openshiftlocal-for-the-launcher-tool_{context}[{OpenShiftLocal} running].
+//* A link:{link-guide-minishift-installation}#creating-a-github-personal-access-token_minishift[GitHub personal access token].
 
 .Procedure
 

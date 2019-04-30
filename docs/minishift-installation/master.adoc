@@ -30,8 +30,10 @@ Install a local customized instance of the {name-launcher} tool, which allows yo
 //TODO: Replaced with operator-based installation procedure, as described in RHOARDOC-1603
 include::topics/proc_installing-launcher-tool-addon.adoc[leveloffset=+2]
 
+include::topics/proc_installing-launcher-operator.adoc[leveloffset=+2]
+
 //TODO: Remove this section.
-include::topics/proc_installing-launcher-tool-manually.adoc[leveloffset=+2]
+//include::topics/proc_installing-launcher-tool-manually.adoc[leveloffset=+2]
 
 // temporary location for Nexus install
 [appendix]
