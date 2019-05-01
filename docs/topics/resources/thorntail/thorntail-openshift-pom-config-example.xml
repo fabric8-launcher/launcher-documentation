@@ -1,0 +1,28 @@
+<!-- Specify the JDK builder image used to build your application. -->
+<properties>
+  <fabric8.generator.from>{name-s2i-image-openjdk}</fabric8.generator.from>
+</properties>
+
+...
+
+<profiles>
+    <profile>
+      <id>openshift</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>io.fabric8</groupId>
+            <artifactId>fabric8-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>resource</goal>
+                  <goal>build</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>

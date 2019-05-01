@@ -12,12 +12,7 @@
 [id='preparing-runtime-application-for-standalone-red-hat-enterprise-linux_{context}']
 = Preparing {runtime} application for standalone Red Hat Enterprise Linux deployment
 
-ifdef::built-for-vertx[]
-For deploying an {runtime} application to standalone Red Hat Enterprise Linux, you must first package the application using Maven.
-endif::[]
-ifndef::built-for-vertx[]
-For deploying a {runtime} application to standalone Red Hat Enterprise Linux, you must first package the application using Maven.
-endif::[]
+For deploying your {runtime} application to standalone Red Hat Enterprise Linux, you must first package the application using Maven.
 
 .Prerequisites
 

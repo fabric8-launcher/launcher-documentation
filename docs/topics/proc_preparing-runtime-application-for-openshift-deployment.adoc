@@ -8,12 +8,7 @@
 [id='preparing-runtime-application-for-openshift-deplyoment_{context}']
 = Preparing {runtime} application for OpenShift deployment
 
-ifdef::built-for-vertx[]
-For deploying an {runtime} application to OpenShift, it must contain:
-endif::[]
-ifndef::built-for-vertx[]
-For deploying a {runtime} application to OpenShift, it must contain:
-endif::[]
+For deploying your {runtime} application to OpenShift, it must contain:
 
 * Launcher profile information in the application’s `pom.xml` file.
 ifdef::built-for-vertx[]
@@ -34,6 +29,13 @@ ifdef::built-for-vertx[]
 [source,xml,options="nowrap",subs="attributes+"]
 ----
 include::resources/vert-x/vertx-openshift-pom-config-example.xml[]
+----
+endif::[]
+
+ifdef::built-for-thorntail[]
+[source,xml,options="nowrap",subs="attributes+"]
+----
+include::resources/thorntail/thorntail-openshift-pom-config-example.xml[]
 ----
 endif::[]
 ifdef::built-for-spring-boot[]
