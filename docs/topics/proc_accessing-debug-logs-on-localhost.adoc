@@ -12,7 +12,7 @@ Use the `DEBUG` environment variable when starting your application to enable de
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ DEBUG=mybooster npm start
+$ DEBUG=myexample npm start
 ----
 +
 The `debug` module can use link:https://www.npmjs.com/package/debug#wildcards[wildcards] to filter debugging messages. This is set using the `DEBUG` environment variable.
@@ -30,5 +30,5 @@ $ curl http://localhost:8080/api/greeting?name=Sarah
 +
 [source,options="nowrap",subs="attributes+"]
 ----
-mybooster name: Sarah +3m
+myexample name: Sarah +3m
 ----
