@@ -15,8 +15,8 @@
 
 Use one of the following options to execute the {parameter-example-name} example application locally on {OpenShiftLocal}:
 
-* xref:deploying-the-example-using-the-launcher-tool_{context}[Using {name-launcher}]
-* xref:deploying-the-{parameter-example}-example-using-the-oc-cli-client_{context}[Using the `oc` CLI client]
+* xref:deploying-the-example-application-using-the-launcher-tool_{context}[Using {name-launcher}]
+* xref:deploying-the-{parameter-example}-example-application-using-the-oc-cli-client_{context}[Using the `oc` CLI client]
 
 Although each method uses the same `oc` commands to deploy your application, using {name-launcher} provides an automated deployment workflow that executes the `oc` commands for you.
 
