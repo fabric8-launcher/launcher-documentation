@@ -77,3 +77,6 @@ endif::[]
 ----
 $ mvn clean package
 ----
++
+The resulting JAR file is in the `target` directory.
+
