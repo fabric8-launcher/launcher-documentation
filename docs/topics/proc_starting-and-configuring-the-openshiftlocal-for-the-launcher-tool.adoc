@@ -3,7 +3,7 @@
 
 This chapter contains instructions for starting the {Minishift} and configuring it to execute the {name-launcher} tool.
 
-NOTE: Starting your {Minishift} can trigger a download of large virtual machines or Linux container images. This can take a long time. Subsequent startups are expected to be shorter as long as the virtual machines and Linux container images remain cached.
+NOTE: Starting your {Minishift} can trigger a download of large virtual machines or Linux container images. This can take a long time. Subsequent startups are expected to be shorter if the virtual machines and Linux container images remain cached.
 
 [IMPORTANT]
 ====

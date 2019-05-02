@@ -10,7 +10,7 @@ The following procedure works with clusters running on OpenShift 3.11.
 .Prerequisites
 
 * Admin access to an OpenShift cluster.
-z
+
 .Procedure
 
 . Assign the `cluster-admin` role to your user account on the OpenShift cluster.
@@ -37,7 +37,7 @@ $ oc new-project launcher-operator
 . link:https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line[Create a personal GitHub access token].
 Ensure that you set the following scope when creating the token:
 // TODO: replace this with OAuth: https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/
-
++
 * `repo`
 * `admin:repo_hook`
 * `delete_repo`
@@ -49,7 +49,7 @@ Ensure that you set the following scope when creating the token:
 $ oc create secret generic launcher-secrets --from-literal=github-token=GITHUB_TOKEN
 ----
 
-. Clone the link:https://github.com/fabric8-launcher/launcher-operator[repository] containing the operator and navigate to the directory containing the cloned resources.
+. Download the link:https://github.com/fabric8-launcher/launcher-operator[repository] containing the operator and navigate to the directory containing the cloned resources.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -65,13 +65,13 @@ $  oc create -R -f ./deploy
 ----
 +
 Based on the templates, OpenShift automatically creates:
++
+* a custom resource definition for the Launcher operator
+* a service account for the Launcher operator
+* access role definitions for the launcher operator
+* access role bindings for the Launcher operator
 
-* a custom resource definition for the Launcher operator,
-* a service account for the Launcher operator,
-* access role definitions for the launcher operator, and
-* access role bindings for the Launcher operator.
-
-. Create the custom resource for the Launcher application.
+. Install the following custom resource in order to initiate the deployment of the {name-launcher} tool.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -97,8 +97,8 @@ launcher-frontend-2-aaaaa      0/1       Running             0         6s
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc get routes
-NAME       HOST/PORT                                PATH      SERVICES            PORT      TERMINATION   WILDCARD
-launcher   launcher.{value-route-osl-hostname}                launcher-frontend   <all>                   None
+NAME       HOST/PORT                                         PATH      SERVICES            PORT      TERMINATION   WILDCARD
+launcher   launcher.launcher.{value-route-osl-hostname}                launcher-frontend   <all>                   None
 ----
 
 . Navigate to the route URL to start using {name-launcher}.
