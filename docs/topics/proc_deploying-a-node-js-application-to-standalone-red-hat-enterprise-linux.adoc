@@ -13,7 +13,7 @@ You can deploy a {Node} application to standalone Red Hat Enterprise Linux using
 
 .Procedure
 
-. If you have specified additional dependencies in the `package.json` file of your project, ensure that you install them before running your applications:
+. If you have specified additional dependencies in the `package.json` file of your project, ensure that you install them before running your applications.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
