@@ -12,7 +12,7 @@ This example uses the link:https://www.npmjs.com/package/debug[debug package], b
 +
 [source,javascript,options="nowrap",subs="attributes+"]
 ----
-const debug = require('debug')('mybooster');
+const debug = require('debug')('myexample');
 ----
 
 . Add debug statements.

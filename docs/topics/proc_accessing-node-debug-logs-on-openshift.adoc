@@ -57,7 +57,7 @@ $ curl $APPLICATION_ROUTE/api/greeting?name=Sarah
 ----
 $ oc get dc
 ...
-$ oc set env dc DC_NAME DEBUG=mybooster
+$ oc set env dc DC_NAME DEBUG=myexample
 ----
 
 . Return to your pod logs to watch the update roll out.
@@ -89,7 +89,7 @@ $ curl $APPLICATION_ROUTE/api/greeting?name=Sarah
 [source,options="nowrap",subs="attributes+"]
 ----
 ...
-mybooster name: Sarah +3m
+myexample name: Sarah +3m
 ----
 
 
