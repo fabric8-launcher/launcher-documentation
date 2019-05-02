@@ -43,7 +43,7 @@ $ oc new-project {value-name-project}
 $ mvn clean fabric8:deploy -Popenshift
 ----
 +
-This command uses the {name-launcher} to launch the link:{link-s2i-process}[S2I process] on OpenShift and start the pod.
+This command uses the Fabric8 Maven Plugin to launch the link:{link-s2i-process}[S2I process] on OpenShift and start the pod.
 
 . Verify the deployment. 
 .. Check the status of your application and ensure your pod is running.
