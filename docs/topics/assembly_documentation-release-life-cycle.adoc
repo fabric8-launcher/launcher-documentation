@@ -6,6 +6,8 @@ The documentation releases occur periodically, and the work is tracked in JIRA.
 The person responsible is typically the Documentation Product Manager (DPM), but any member of the team with sufficient privileges can perform the respective tasks.
 The prerequisites are included separately with each task.
 
+The release tasks are tracked in clones of link:https://issues.jboss.org/browse/RHOARDOC-1627[RHOARDOC-1627^].
+
 include::proc_creating-a-rhoardoc-jira-release.adoc[leveloffset=+1]
 
 include::proc_releasing-launcher-docs.adoc[leveloffset=+1]
