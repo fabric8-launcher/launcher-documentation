@@ -5,7 +5,7 @@
 = Installing the {name-launcher} tool using an operator
 
 Set up an operator to install the {name-launcher} tool on an OpenShift cluster.
-The following procedure works with
+The following procedure works with clusters running OpenShift 3.11.
 
 .Prerequisites
 
@@ -42,7 +42,7 @@ Ensure that you set the following scope when creating the token:
 * `admin:repo_hook`
 * `delete_repo`
 
-. Create a new secret using the personal GitHub access token:
+. Create a new secret using your newly created personal GitHub access token:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
