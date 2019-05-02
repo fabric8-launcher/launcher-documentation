@@ -18,7 +18,7 @@ In {WildFlySwarm}, the security configuration breaks down into two notable asset
       <url-pattern>/api/greeting</url-pattern> <1>
     </web-resource-collection>
     <auth-constraint>
-      <role-name>booster-admin</role-name> <2>
+      <role-name>example-admin</role-name> <2>
     </auth-constraint>
   </security-constraint>
 
@@ -27,7 +27,7 @@ In {WildFlySwarm}, the security configuration breaks down into two notable asset
   </login-config>
 
   <security-role>
-    <role-name>booster-admin</role-name>
+    <role-name>example-admin</role-name>
   </security-role>
 </web-app>
 ----
@@ -41,7 +41,7 @@ In {WildFlySwarm}, the security configuration breaks down into two notable asset
 ----
 {
   "realm": "master", <1>
-  "resource": "secured-booster-endpoint", <2>
+  "resource": "secured-example-endpoint", <2>
   "realm-public-key": "...", <3>
   "auth-server-url": "${sso.auth.server.url}", <4>
   "ssl-required": "external",
@@ -58,4 +58,3 @@ In {WildFlySwarm}, the security configuration breaks down into two notable asset
 <5> If enabled the adapter will not attempt to authenticate users, but only verify bearer tokens.
 
 The `web.xml` enables keycloak and enforces protection of the Greeting service web resource endpoint. The `keycloak.json` configures the security adapter to interact with {RHSSO}.
-

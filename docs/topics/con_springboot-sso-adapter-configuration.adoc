@@ -13,13 +13,13 @@ $ # Adapter configuration
 keycloak.realm=${realm:master} <1>
 keycloak.realm-key=...
 keycloak.auth-server-url=${sso.auth.server.url} <2>
-keycloak.resource=${client.id:secured-booster-endpoint} <3>
+keycloak.resource=${client.id:secured-example-endpoint} <3>
 keycloak.credentials.secret=${secret:1daa57a2-b60e-468b-a3ac-25bd2dc2eadc} <4>
 keycloak.use-resource-role-mappings=true <5>
 keycloak.bearer-only=true <6>
 # Endpoint security configuration
 keycloak.securityConstraints[0].securityCollections[0].name=admin stuff <7>
-keycloak.securityConstraints[0].securityCollections[0].authRoles[0]=booster-admin <8>
+keycloak.securityConstraints[0].securityCollections[0].authRoles[0]=example-admin <8>
 keycloak.securityConstraints[0].securityCollections[0].patterns[0]=/api/greeting <9>
 ----
 
