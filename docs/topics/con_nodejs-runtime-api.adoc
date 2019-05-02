@@ -1,4 +1,0 @@
-[id='nodejs-runtime-api_{context}']
-= {Node} runtime API
-
-The {Node} runtime provides the core {Node} API which is documented in the link:https://nodejs.org/api/[{Node} API documentation^]. 
