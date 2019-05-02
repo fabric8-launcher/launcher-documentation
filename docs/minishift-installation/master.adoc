@@ -10,8 +10,10 @@ include::topics/templates/document-attributes.adoc[]
 
 [.lead]
 This guide walks you through the process of installing the {name-launcher} tool on an {OpenShiftCluster}.
-To test the launcher tool locally on your machine
-//This includes link:https://www.openshift.org/minishift/[{Minishift}], an all-in-one VM with link:https://www.okd.io[OKD^], or link:https://developers.redhat.com/products/cdk/overview/[{CDK}], a VM that includes OpenShift Container Platform.
+To test the launcher tool locally on your machine you can use:
+
+* link:https://www.openshift.org/minishift/[{Minishift}], an all-in-one VM with link:https://www.okd.io[OKD^]
+* link:https://developers.redhat.com/products/cdk/overview/[{CDK}], a VM that includes OpenShift Container Platform
 
 include::topics/con_how-the-launcher-tool-works.adoc[leveloffset=+1]
 
