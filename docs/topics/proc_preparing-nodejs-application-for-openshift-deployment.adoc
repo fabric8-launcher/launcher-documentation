@@ -4,7 +4,7 @@
 To prepare a {Node} application for OpenShift deployment, you must perform the following steps:
 
 * Add `nodeshift` to the application.
-* Add `openshift` and `start` entries to `package.json` file.  
+* Add `openshift` and `start` entries to the `package.json` file.  
 
 .Prerequisites
 * `npm` installed.

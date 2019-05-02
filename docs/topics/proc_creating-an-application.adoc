@@ -3,7 +3,7 @@
 //  context: used in anchor IDs to conflicts due to duplicate IDs.
 //  parameter-maven-command: This is used to substitute the Maven command appropriate to the runtime being used.
 //  parameter-response: The expected response provided by the Java application. Can either be formatted as plain text or a JSON object.
-//  parameter-runtime: Ensures that xrefs link to boosters for the appropriate runtime.
+//  parameter-runtime: Ensures that xrefs link to examples for the appropriate runtime.
 //
 // Rationale: This procedure is the same for 2 or more runtimes.
 
@@ -97,4 +97,4 @@ $ curl http://localhost:8080
 .Additional information
 
 * As a recommended practice, you can configure liveness and readiness probes to enable health monitoring for your application when running on OpenShift.
-To learn how application health monitoring on OpenShift works, try the xref:mission-health-check-{parameter-runtime}[Health Check booster].
+To learn how application health monitoring on OpenShift works, try the xref:example-health-check-{parameter-runtime}[Health Check example].

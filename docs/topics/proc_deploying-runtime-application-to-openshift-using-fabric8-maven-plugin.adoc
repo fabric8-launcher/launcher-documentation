@@ -12,15 +12,13 @@
 
 To deploy your {runtime} application to OpenShift, you must perform the following:
 
-* Log in to OpenShift instance.
+* Log in to your OpenShift instance.
 * Deploy the application to the OpenShift instance. 
 
 .Prerequisites
 
-The following needs to be pre-installed:
-
-* `oc` CLI client
-* Maven
+* `oc` CLI client installed.
+* Maven installed.
 
 .Procedure
 
@@ -48,7 +46,7 @@ $ mvn clean fabric8:deploy -Popenshift
 This command uses the {name-launcher} to launch the link:{link-s2i-process}[S2I process] on OpenShift and start the pod.
 
 . Verify the deployment. 
-.. Check the status of your booster and ensure your pod is running.
+.. Check the status of your application and ensure your pod is running.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
