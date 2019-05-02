@@ -39,7 +39,6 @@ Optionally, you can create a `.nodeshift` directory at the root of your project 
 .Example `.nodeshift/route.yaml`
 [source,yaml,options="nowrap",subs="attributes+"]
 ----
-apiVersion: v1
 kind: Route
 metadata:
   name: myapp
