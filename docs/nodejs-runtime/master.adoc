@@ -122,16 +122,8 @@ ifdef::launcher-docs-only[]
 include::topics/proc_exposing-application-metrics-using-prometheus-on-node-js.adoc[leveloffset=+3]
 endif::[]
 
-== Developing an application for the {Node} runtime
-
-include::topics/con_nodejs-runtime-api.adoc[leveloffset=+2]
-
-include::topics/proc_creating-a-nodejs-application.adoc[leveloffset=+2]
-
-include::topics/proc_deploying-a-node-js-application-to-standalone-rhel.adoc[leveloffset=+2]
-
-include::topics/proc_deploy-existing-nodejs-app.adoc[leveloffset=+2]
-
+// DEVELOPING AN APPLICATION
+include::topics/assembly_developing-and-deploying-a-nodejs-application.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/ref_about-nodeshift.adoc[leveloffset=+1]

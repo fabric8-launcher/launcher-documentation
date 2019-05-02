@@ -1,0 +1,14 @@
+[id='deploying-a-nodejs-application-to-openshift_{context}']
+= Deploying a {Node} application to Openshift
+
+:parent-context: {context}
+
+To deploy your {Node} application to OpenShift, add `nodeshift` to the application, configure the `package.json` file and then deploy using `nodeshift`. 
+
+// Preparing Nodejs application for Openshift deployment
+include::proc_preparing-nodejs-application-for-openshift-deployment.adoc[leveloffset=+1]
+
+// Deploing Nodejs application to Openshift
+include::proc_deploying-a-nodejs-application-to-openshift.adoc[leveloffset=+1]
+
+:context: {parent-context}

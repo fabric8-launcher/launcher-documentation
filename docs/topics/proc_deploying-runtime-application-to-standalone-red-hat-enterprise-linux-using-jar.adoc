@@ -1,0 +1,44 @@
+// This is a parameterized module. Parameters used:
+//
+// parameter-jar-file-name: runtime-specific default target Maven build artifact name.
+// parameter-version-runtime-plugin: runtime-specific name for the runtime version property variable in the POM file.
+// parameter-artifact-name-runtime-plugin: runtime plugin name in the POM file.
+// parameter-group-name-runtime-plugin: runtime plugin Maven artifact group name.
+// parameter-runtime-name: Runtime specific atribute for substituting the approrpiate expanded rumtime name.
+// parameter-link-appdev-guide: link to the procedure providing a complete example of the appropriate runtime-specific POM file configuration.
+//  context: used in anchor IDs to conflicts due to duplicate IDs.
+//
+// Rationale: This procedure is the same for 2 or more runtimes.
+[id='deploying-runtime-application-to-standalone-red-hat-enterprise-linux-using-jar_{context}']
+= Deploying {runtime} application to standalone Red Hat Enterprise Linux using jar
+
+To deploy your {runtime} application to standalone Red{nbsp}Hat Enterprise Linux, use `java -jar` command.
+
+.Prerequisites
+
+ifdef::built-for-spring-boot-1-5[]
+* OpenJDK 8 installed.
+endif::[]
+ifndef::built-for-spring-boot-1-5[]
+* {prerequisite-jdk-version}
+endif::[]
+* A JAR file with the application.
+
+
+.Procedure
+
+. Deploy the JAR file with the application.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ java -jar {parameter-jar-file-name}
+----
+
+. Verify the deployment.
++
+Use `curl` or your browser to verify your application is running at `http://localhost:8080`:
++
+[source,bash,options="nowrap"]
+----
+$ curl http://localhost:8080
+----

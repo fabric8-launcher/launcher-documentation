@@ -1,0 +1,51 @@
+[id='deploying-a-node-js-application-to-openshift_{context}']
+= Deploying a {Node} application to OpenShift
+
+You can deploy a {Node} application to OpenShift using `nodeshift`.
+
+.Prerequisites
+
+* The `oc` CLI client installed.
+* `npm` installed.
+* Ensure all the ports used by your application are correctly exposed when configuring your routes.
+
+.Procedure
+
+. Log in to your OpenShift instance with the `oc` client.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc login ...
+----
+
+. Use `nodeshift` to deploy the application to OpenShift.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ npm run openshift
+----
+
+. Expose the application in OpenShift using link:https://docs.openshift.com/online/dev_guide/routes.html[a route].
++
+.Example for exposing a service using a route
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc expose service myapp
+----
+
+
+Optionally, you can create a `.nodeshift` directory at the root of your project to include deployment yaml files. These files will create items such as routes when deploying your application to OpenShift using nodeshift. For example, to add a route during deployment, you could create a `.nodeshift/route.yaml` with the following:
+
+.Example `.nodeshift/route.yaml`
+[source,yaml,options="nowrap",subs="attributes+"]
+----
+kind: Route
+metadata:
+  name: myapp
+spec:
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: myapp
+----

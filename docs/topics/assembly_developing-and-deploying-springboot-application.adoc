@@ -1,23 +1,12 @@
-
 [id='creating-a-basic-springboot-application_{context}']
-= Creating a basic {SpringBoot} application
+= Developing and deploying a {SpringBoot} runtime application
 
 :parent-context: {context}
-
-In addition to xref:example-rest-http-spring-boot[using an example], you can create new {runtime} applications from scratch and deploy them to OpenShift.
 
 :parameter-runtime: spring-boot
 :parameter-maven-command: $ mvn spring-boot:run
 :parameter-response: {"content":"Greetings!"}
 :parameter-url: http://{value-name-app}-{value-name-project}.{value-route-openshift-hostname}
-ifdef::built-for-spring-boot-1-5[]
-include::proc_creating-an-application.adoc[leveloffset=+1]
-endif::[]
-ifndef::built-for-spring-boot-1-5[]
-include::proc_creating-a-spring-boot-2-1-application.adoc[leveloffset=+1]
-endif::[]
-
-
 :parameter-runtime-name: {SpringBoot}
 :parameter-group-name-runtime-plugin: org.springframework.boot
 :parameter-artifact-name-runtime-plugin: spring-boot-maven-plugin
@@ -32,16 +21,26 @@ ifdef::built-for-spring-boot-1-5[]
 :parameter-link-appdev-guide: {link-guide-spring-boot-1-5}#creating-a-basic-springboot-application_spring-boot
 endif::[]
 
-include::proc_deploying-an-application-to-standalone-rhel.adoc[leveloffset=+1]
+In addition to xref:example-rest-http-spring-boot[using an example], you can create new {runtime} applications from scratch and deploy them to OpenShift.
+
+The recommended approach for specifying and using supported and tested Maven artifacts in a {SpringBoot} application is to use the OpenShift Application Runtimes {SpringBoot} BOM.
+
+// Developing Springboot application
+include::proc_developing-runtime-application.adoc[leveloffset=+1]
+
+// Deploying Springboot application to OpenShift
+include::assembly_deploying-runtime-application-to-openshift.adoc[leveloffset=+1]
+
+// Deploying Springboot application to standalone Red Hat Enterprise Linux 
+include::assembly_deploying-runtime-application-to-standalone-red-hat-enterprise-linux.adoc[leveloffset=+1]
+
 :parameter-link-appdev-guide!:
+
 :parameter-jar-file-name!:
 :parameter-version-runtime-plugin!:
 :parameter-artifact-name-runtime-plugin!:
 :parameter-group-name-runtime-plugin!:
 :parameter-runtime-name!:
-
-
-include::proc_deploying-an-application-to-openshift.adoc[leveloffset=+1]
 :parameter-maven-command!:
 :parameter-response!:
 :parameter-url!:

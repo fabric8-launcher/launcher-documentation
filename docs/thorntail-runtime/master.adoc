@@ -91,22 +91,15 @@ include::topics/assembly_cache-mission-booster.adoc[leveloffset=+2]
 
 :context: wf-swarm
 
-== Developing an application for the {WildFlySwarm} runtime
-
-This sections contains information about creating your application and configuring the {WildFlySwarm} runtime for it.
-
 :version: {version-thorntail-product}
-include::topics/assembly_creating-a-basic-wildfly-swarm-application.adoc[leveloffset=+2]
+include::topics/assembly_developing-and-deploying-thorntail-application.adoc[leveloffset=+1]
 
-include::topics/proc_deploying-an-existing-wildflyswarm-application-to-openshift.adoc[leveloffset=+2]
+include::topics/thorntail/docs/assemblies/assembly_using-thorntail-maven-plugin.adoc[leveloffset=+1]
+include::topics/thorntail/docs/modules/con_fractions.adoc[leveloffset=+1]
+include::topics/thorntail/docs/howto/autodetect-fractions/index.adoc[leveloffset=+2]
+include::topics/thorntail/docs/howto/explicit-fractions/index.adoc[leveloffset=+2]
 
-include::topics/thorntail/docs/assemblies/assembly_using-thorntail-maven-plugin.adoc[leveloffset=+2]
-
-include::topics/thorntail/docs/modules/con_fractions.adoc[leveloffset=+2]
-include::topics/thorntail/docs/howto/autodetect-fractions/index.adoc[leveloffset=+3]
-include::topics/thorntail/docs/howto/explicit-fractions/index.adoc[leveloffset=+3]
-
-include::topics/thorntail/docs/howto/use-a-bom/index.adoc[leveloffset=+2]
+include::topics/thorntail/docs/howto/use-a-bom/index.adoc[leveloffset=+1]
 
 === Logging
 

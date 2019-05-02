@@ -1,0 +1,14 @@
+// As of this writing, this assembly is common for
+// Springboot, Thorntail, Vertx 
+[id='deploying-runtime-application-to-standalone-red-hat-enterprise-linux_{context}']
+= Deploying {runtime} application to standalone Red Hat Enterprise Linux
+
+:parent-context: {context}
+To deploy your {runtime} application to standalone Red{nbsp}Hat Enterprise Linux, configure the `pom.xml` file in the application, package it using Maven and deploy using the `java -jar` command. 
+
+// Preparing runtime application for standalone red hat enterprise linux deployment
+include::proc_preparing-runtime-application-for-standalone-red-hat-enterprise-linux-deployment.adoc[leveloffset=+1]
+
+// Deploying runtime application to standalone red hat enterprise linux
+include::proc_deploying-runtime-application-to-standalone-red-hat-enterprise-linux-using-jar.adoc[leveloffset=+1]
+:context: {parent-context}
