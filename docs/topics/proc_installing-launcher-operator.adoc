@@ -5,12 +5,12 @@
 = Installing the {name-launcher} tool using an operator
 
 Set up an operator to install the {name-launcher} tool on an OpenShift cluster.
-The following procedure works with clusters running OpenShift 3.11.
+The following procedure works with clusters running on OpenShift 3.11.
 
 .Prerequisites
 
-* Administrative access privileges to an OpenShift cluster using.
-
+* Admin access to an OpenShift cluster.
+z
 .Procedure
 
 . Assign the `cluster-admin` role to your user account on the OpenShift cluster.
