@@ -7,7 +7,7 @@ You can deploy a {Node} application to standalone Red Hat Enterprise Linux using
 
 * A {Node} application.
 * npm 6.4.1 installed
-* RHEL 7 installed.
+* RHEL 7 or RHEL 8 installed.
 * {Node} installed
 
 
