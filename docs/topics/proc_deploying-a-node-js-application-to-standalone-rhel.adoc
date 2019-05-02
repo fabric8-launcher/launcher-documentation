@@ -5,9 +5,9 @@ Deploy a {Node} application to Red Hat Enterprise Linux.
 
 .Prerequisites
 
-* A {Node} application.
+* A {Node} application listening on port 8080.
 * npm 6.4.1 installed
-* RHEL 7 installed.
+* RHEL 7 or RHEL 8 installed.
 * {Node} installed
 
 
