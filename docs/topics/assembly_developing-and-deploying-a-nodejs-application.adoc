@@ -5,6 +5,13 @@
 
 In addition to xref:example-rest-http-nodejs[using an example], you can create new {runtime} applications from scratch and deploy them to OpenShift.
 
+// Developing a Nodejs application
 include::proc_developing-a-nodejs-application.adoc[leveloffset=+1]
+
+// Deploying a Nodejs application to OpenShift
 include::assembly_deploying-a-nodejs-application-to-openshift.adoc[leveloffset=+1]
+
+// Deploying a Nodejs application to Standalone Red Hat Enterprise Linux
 include::proc_deploying-a-node-js-application-to-standalone-red-hat-enterprise-linux.adoc[leveloffset=+1]
+
+:context: {parent-context}
