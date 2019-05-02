@@ -22,16 +22,16 @@ endif::[]
 ifndef::built-for-spring-boot-1-5[]
 * {prerequisite-jdk-version}
 endif::[]
-
+* A JAR file with the application.
 
 
 .Procedure
 
-. Deploy the application from the application's root directory. The root directory of an application contains the `pom.xml` file.
+. Deploy the JAR file with the application.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ java -jar target/{parameter-jar-file-name}
+$ java -jar {parameter-jar-file-name}
 ----
 
 . Verify the deployment.
