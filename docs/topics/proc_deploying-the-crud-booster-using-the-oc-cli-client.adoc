@@ -5,8 +5,7 @@
 // Rationale: This procedure is identical in all deployments.
 
 
-[id='deploying-the-crud-booster-using-the-oc-cli-client_{context}']
-[id='deploying-the-crud-example-application-using-the-oc-client_{context}']
+[id='deploying-the-crud-example-application-using-the-oc-cli-client_{context}']
 = Deploying the {name-example-crud} example application using the `oc` CLI client
 
 .Prerequisites
