@@ -8,7 +8,7 @@ You can use it to make changes to the code of your example application.
 
 .Prerequisites
 
-* Have an example application deployed to xref:deploying-an-example-application-to-openshiftonline_{context}[{OpenShiftOnline}] or xref:creating-and-deploying-an-example-using-your-openshiftlocal_{context}[{OpenShiftLocal}] using the _Deploy in OpenShift Online_ option.
+* Have an example application deployed to {OpenShiftOnline}, or {OpenShiftLocal} using the _Deploy in OpenShift Online_ option.
 * Have link:https://code.visualstudio.com[Visual Studio Code] downloaded and installed.
 
 include::proc_importing-your-booster-code-to-visual-studio-code.adoc[leveloffset=+1]

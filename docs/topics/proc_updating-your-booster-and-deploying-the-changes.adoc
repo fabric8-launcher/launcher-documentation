@@ -6,7 +6,7 @@ To push changes to an example application running in {OpenShiftOnline} or your {
 
 .Prerequisites
 
-* Have an example application deployed to xref:deploying-an-example-application-to-openshiftonline_{context}[{OpenShiftOnline}] or xref:creating-and-deploying-an-example-application-using-your-openshiftlocal_{context}[{OpenShiftLocal}] using the _Deploy in OpenShift Online_ option.
+* Have an example application deployed to {OpenShiftOnline}, or {OpenShiftLocal} using the _Deploy in OpenShift Online_ option.
 
 
 .Procedure
