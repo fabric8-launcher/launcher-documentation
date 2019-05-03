@@ -1,4 +1,4 @@
-[id='application-development-on-openshift-with-fabric8-launcher']
+[id='application-development-on-openshift-with-fabric8-launcher_{context}']
 = Application Development on OpenShift with Fabric8 Launcher
 
 :parent-context: {context}

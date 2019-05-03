@@ -1,5 +1,5 @@
 
-[id='about-developers-redhat-com-launch_{context}]
+[id='about-developers-redhat-com-launch_{context}']
 = About {name-launcher-oso}
 
 link:{link-launcher-oso}[{name-launcher-oso}] is a stand-alone Red Hat project generator based on {name-launcher}.
