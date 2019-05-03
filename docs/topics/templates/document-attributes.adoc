@@ -25,7 +25,8 @@ endif::[]
 
 // Products
 :OpenShiftOnline: OpenShift Online
-:OpenShiftLocal: Single-node OpenShift Cluster
+:OpenShiftLocal: Minishift or CDK
+:OpenShiftCluster: OpenShift cluster
 :Minishift: Minishift
 :CDK: Red Hat Container Development Kit
 :OpenShiftContainerPlatform: OpenShift Container Platform
