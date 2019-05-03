@@ -4,9 +4,8 @@
 :parent-context: {context}
 
 // Assembly introduction
-:name-launcher: Fabric8
-include::con_fabric8-launcher.adoc[]
-include::con_how-the-launcher-tool-works.adoc[]
-:name-launcher!: []
+include::con_fabric8-launcher.adoc[leveloffset=+1]
+include::con_how-the-launcher-tool-works.adoc[leveloffset=+1]
+include::con_red-hat-openshift-application-runtimes.adoc[leveloffset=+1]
 
 :context: {parent-context}

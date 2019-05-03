@@ -1,6 +1,8 @@
 [id='application-development-on-openshift_{context}']
 = Application Development on OpenShift
 
+Application development on OpenShift provides you with cloud-native runtimes and prescribes approaches to developing, building, and deploying applications that use those cloud-native runtimes on OpenShift. These cloud-native development approaches take advantage of the capabilities provided by OpenShift and enable you to use patterns such as Circuit Breaker, Health Check, and Service Discovery.
+
 Application Development on OpenShift is:
 
 * A collection of runtimes, such as Thorntail and Spring Boot, designed to run on OpenShift.
@@ -9,3 +11,4 @@ Application Development on OpenShift is:
 The goal of Application Development on OpenShift is to provide prescriptive architectures, design patterns, tools, and best practices in ready-made example applications that you can execute on OpenShift to enable cloud-native development.
 
 Cloud-native development is an approach to developing, deploying, and running applications that take full advantage of cloud computing.
+

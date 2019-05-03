@@ -2,7 +2,7 @@
 [id='updating-your-example-application-and-deploying-the-changes_{context}']
 = Updating your example application and deploying the changes
 
-To push changes to this example application running in {OpenShiftOnline} or your {OpenShiftLocal}, you can push a new commit to the GitHub repository and start a new build.
+To push changes to an example application running in {OpenShiftOnline} or your {OpenShiftLocal}, you can push a new commit to the GitHub repository and start a new build.
 
 .Prerequisites
 
