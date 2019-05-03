@@ -1,0 +1,30 @@
+[id='available-runtimes_{context}']
+= Available Runtimes
+
+ifndef::product[]
+The following runtimes are available for developing your application in OpenShift:
+endif::[]
+ifdef::product[]
+The following runtimes are supported in {ProductName}:
+endif::[]
+
+{VertX}:: A tool-kit for building reactive event driven non blocking applications on JVM.
++
+See link:{link-guide-vertx}[{name-guide-vertx}] for information about {Vertx} application development.
+
+{Thorntail}:: A framework based on the popular {WildFly} Java application server to enable the creation of small, standalone microservice-based applications.
+Thorntail is capable of producing the so-called _just-enough app-server_ to support each component of your system.
++
+See link:{link-guide-thorntail}[{name-guide-thorntail}] for information about {Thorntail} application development.
+
+{SpringBoot}:: {SpringBoot} makes it easy to create stand-alone, production-grade Spring based applications that need very little Spring configuration.
++
+See link:{link-guide-spring-boot}[{name-guide-spring-boot}] (current version) for information about {SpringBoot} application development.
++
+See link:{link-guide-spring-boot-1-5}[{name-guide-spring-boot-1-5}] for information about {SpringBoot} 1.5 application development.
+
+
+{Node}:: An asynchronous event-driven JavaScript runtime designed to build scalable network applications.
++
+See link:{link-guide-nodejs}[{name-guide-nodejs}] for information about {Node} application development.
+

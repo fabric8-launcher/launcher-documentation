@@ -1,0 +1,15 @@
+[id='about-fabric8-launcher_{context}']
+= About {name-launcher}
+
+{name-launcher} is a project generator for cloud-native application development on OpenShift.
+It provides a way of creating functional example applications as well as an easy way to build and deploy these example applications on OpenShift.
+
+Using {name-launcher}, you can create and deploy an example application to OpenShift using the _Build and Deploy to OpenShift_ build process, which is based on the Source-to-Image (S2I) build process.
+_Build and Deploy to OpenShift_ configures OpenShift to pull the code of your example application from your GitHub repository, build the code, and deploy it to OpenShift.
+The benefit of this process is that it handles all the configuration, building, and deployment steps needed to get your example application running in OpenShift.
+It also allows you to quickly deploy code updates and see your changes in OpenShift.
+
+.Additional resources
+
+* For information about installing {name-launcher} in your OpenShift instance, see link:{link-guide-minishift-installation}[{name-guide-minishift-installation}].
+
