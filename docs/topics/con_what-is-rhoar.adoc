@@ -1,0 +1,16 @@
+
+[id='what-is-rhoar_{context}']
+= What is {ProductName}
+
+{ProductName} provides you with cloud-native runtimes and prescribes approaches to developing, building, and deploying applications that use those cloud-native runtimes on OpenShift.
+These cloud-native development approaches take advantage of the capabilities provided by OpenShift and enable you to use patterns such as Circuit Breaker, Health Check, and Service Discovery.
+
+Application Development on OpenShift is:
+
+* A collection of runtimes, such as {Thorntail} and {SpringBoot}, designed to run on OpenShift.
+* A prescriptive approach to cloud-native development on OpenShift.
+
+The goal of {ProductName} is to provide prescriptive architectures, design patterns, tools, and best practices in ready-made example applications that you can execute on OpenShift to enable cloud-native development.
+
+Cloud-native development is an approach to developing, deploying, and running applications that take full advantage of cloud computing.
+

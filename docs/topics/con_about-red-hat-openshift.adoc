@@ -1,0 +1,11 @@
+[id='about-red-hat-openshift_{context}']
+= About Red Hat OpenShift
+
+link:https://www.openshift.com[Red Hat OpenShift] is a container application platform that brings link:https://www.redhat.com/en/topics/containers/what-is-docker[Docker] and link:https://www.redhat.com/en/topics/containers/what-is-kubernetes[Kubernetes] to the enterprise.
+
+OpenShift helps manage, secure, and automate the deployment and monitoring of your applications.
+This enables you to break your business problems into smaller microservices while letting OpenShift provide a simpler way to deploy, monitor, and maintain microservices.
+
+link:{link-launcher-oso}[{OpenShiftOnline}] is a public cloud hosted by Red Hat.
+A {OpenShiftLocal} is a local cloud that you can install and execute on your local machine; this functionality is provided for example by link:https://developers.redhat.com/products/cdk/overview/[{CDK}] or link:https://www.openshift.org/minishift/[{Minishift}].
+

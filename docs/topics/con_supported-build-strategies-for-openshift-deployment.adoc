@@ -1,6 +1,11 @@
 [id='supported-build-strategies-for-openshift-deployment']
 = Supported Build Strategies for OpenShift Deployment
 
-OpenShift supports different link:https://docs.openshift.com/online/dev_guide/builds/index.html[build strategies] including Source-to-Image and Jenkins Pipeline. The {ProductName} example applications use the link:https://docs.openshift.com/online/architecture/core_concepts/builds_and_image_streams.html#source-build[Source-to-Image strategy] for simplicity of use and implementation. Other build strategies, such as the Jenkins Pipeline, are more complex, for example employing multiple servers for building or using webhooks to trigger builds.
+OpenShift supports different link:https://docs.openshift.com/online/dev_guide/builds/index.html[build strategies] including Source-to-Image and Jenkins Pipeline.
+{ProductName} example applications use the link:https://docs.openshift.com/online/architecture/core_concepts/builds_and_image_streams.html#source-build[Source-to-Image strategy] (S2I) for simplicity of use and implementation.
+Other build strategies, such as the Jenkins Pipeline, are more complex, for example employing multiple servers for building or using webhooks to trigger builds.
 
-Example applications created using the _Build and Deploy to OpenShift_ build process, wichi is based on Source-to-Image build strategy, can also be executed locally, as well as built locally and manually deployed to OpenShift. For more information on these options, see the `README.adoc` file of your example application.
+Example applications created using the _Build and Deploy to OpenShift_ build process, which is based on the S2I build strategy, can also be executed locally, as well as built locally and manually deployed to OpenShift.
+
+For more information on these options, see the `README.adoc` file of your example application.
+
