@@ -1,20 +1,20 @@
 [id='creating-and-deploying-a-booster-using-your-openshiftlocal_{context}']
 [id='creating-and-deploying-an-example-application-using-your-openshiftlocal_{context}']
-= Creating and deploying an example application using your {OpenShiftLocal}
+= Creating and deploying an example application using an OpenShift Cluster
 
-You can quickly create, build, and deploy an example application to a {OpenShiftLocal} using the {name-launcher} tool. The {name-launcher} tool creates a new repository in your GitHub account containing the example application's code and deploys it to your {OpenShiftLocal}. It can also create a ZIP of the example application for you to download and run on your localhost.
+You can quickly create, build, and deploy an example application to an OpenShift Cluster using the {name-launcher} tool. The {name-launcher} tool creates a new repository in your GitHub account containing the example application's code and deploys it to your OpenShift Cluster. It can also create a ZIP of the example application for you to download and run on your localhost.
 
 .Prerequisites
 
 * link:https://developers.redhat.com[Have a Red Hat Developers account]
 * link:https://github.com[Have a GitHub account]
-* link:{link-guide-minishift-installation}[Have a {OpenShiftLocal} installed]
-* link:{link-guide-minishift-installation}#installing-launcher-tool_minishift[Have the {name-launcher} tool installed to your {OpenShiftLocal}].
+* link:{link-guide-minishift-installation}[Have an OpenShift Cluster installed]
+* link:{link-guide-minishift-installation}#installing-launcher-tool_minishift[Have the {name-launcher} tool installed to your OpenShift Cluster].
 
 .Procedure
 
-. Navigate to the {name-launcher} tool on your {OpenShiftLocal} using your browser.
-** Optionally, use the following command to open the Web Console of your {OpenShiftLocal} in your browser in order to navigate to your {name-launcher} tool:
+. Navigate to the {name-launcher} tool on your OpenShift Cluster using your browser.
+** Optionally, use the following command to open the Web Console of your OpenShift Cluster in your browser in order to navigate to your {name-launcher} tool:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----

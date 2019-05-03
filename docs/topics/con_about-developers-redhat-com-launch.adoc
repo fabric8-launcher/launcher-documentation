@@ -1,0 +1,7 @@
+
+[id='about-developers-redhat-com-launch_{context}']
+= About {name-launcher-oso}
+
+link:{link-launcher-oso}[{name-launcher-oso}] is a stand-alone Red Hat project generator based on {name-launcher}.
+It provides an easy way to create, build, and deploy example applications to {OpenShiftOnline} or other OpenShift instances like {OpenShiftContainerPlatform} or your {OpenShiftLocal}.
+

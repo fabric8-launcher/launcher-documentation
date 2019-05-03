@@ -1,0 +1,16 @@
+[id='application-development-on-openshift-with-fabric8-launcher_{context}']
+= Application Development on OpenShift with Fabric8 Launcher
+
+:parent-context: {context}
+
+To get started developing applications on OpenShift, install {name-launcher} or use the Red Hat-provided service, link:{link-launcher-oso}[{name-launcher-oso}].
+
+// Assembly introduction
+include::con_about-fabric8-launcher.adoc[leveloffset=+1]
+
+include::con_how-the-launcher-tool-works.adoc[leveloffset=+1]
+
+include::con_about-developers-redhat-com-launch.adoc[leveloffset=+1]
+
+:context: {parent-context}
+

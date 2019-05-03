@@ -9,29 +9,24 @@ include::topics/templates/document-attributes.adoc[]
 :sectnums!:
 = {name-guide-getting-started}
 
-This guide covers basic information to get started using {ProductName}.
+This guide covers basic information to get started using {ProductName} for cloud-native development on OpenShift.
 
-Linux containers allow you to use different ecosystems, languages, and runtimes at the same time for solving business problems.
-Container platforms such as OpenShift manage, secure, and automate the deployment and monitoring of your applications.
-This enables you to break your business problems into smaller microservices while letting OpenShift provide a simpler way to deploy, monitor, and maintain microservices.
+It shows you how to create and deploy example cloud-native applications to OpenShift using {name-launcher-oso} or {name-launcher}.
 
-{ProductName} provides you with cloud-native runtimes and prescribes approaches to developing, building, and deploying applications that use those cloud-native runtimes on OpenShift.
-These cloud-native development approaches take advantage of the capabilities provided by OpenShift and enable you to use patterns such as Circuit Breaker, Health Check, and Service Discovery.
+These example applications can serve as the foundation for your actual cloud-native microservices because they can be updated and redeployed using the same deployment process detailed in this guide.
 
-This guide takes you through cloud-native development on OpenShift.
-It shows you how to create and deploy example cloud-native applications to OpenShift using {name-launcher-oso} or the {name-launcher} tool.
-These example applications can serve as the foundation for your actual cloud-native microservices since they can be updated and redeployed using the same deployment process detailed in this guide.
+include::topics/assembly_application-development-on-openshift.adoc[leveloffset=+1]
 
-include::topics/con_introduction-to-productname.adoc[leveloffset=+1]
+include::topics/assembly_application-development-on-openshift-with-fabric8-launcher.adoc[leveloffset=+1]
 
-include::topics/proc_deploying-a-booster-to-openshiftonline.adoc[leveloffset=+1]
+include::topics/con_available-runtimes.adoc[leveloffset=+1]
 
 include::topics/proc_creating-and-deploying-a-booster-using-your-openshiftlocal.adoc[leveloffset=+1]
 
-include::topics/proc_deploying-a-booster-to-openshiftcontainerplatform.adoc[leveloffset=+1]
-
+[appendix]
 include::topics/proc_updating-your-booster-and-deploying-the-changes.adoc[leveloffset=+1]
 
+[appendix]
 include::topics/assembly_using-red-hat-jboss-developer-studio-with-a-booster-project.adoc[leveloffset=+1]
 
 //include::topics/assembly_using-visual-studio-code-with-a-booster-project.adoc[leveloffset=+1]

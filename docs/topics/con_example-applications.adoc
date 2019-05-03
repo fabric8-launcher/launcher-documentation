@@ -1,0 +1,20 @@
+[id='example-applications_{context}']
+= Example Applications
+
+{ProductName} examples implement link:http://microservices.io/patterns/microservices.html[Microservice patterns] such as:
+
+* Health Check
+* REST or HTTP endpoint
+* link:https://docs.openshift.com/online/dev_guide/configmaps.html[Externalized Configuration]
+* Circuit Breaker
+
+Example applications use these patterns to show how to create the fundamental building blocks of cloud-native applications and services, such as:
+
+* Creating HTTP APIs.
+* Integrating your application with a relational database to provide persistent data storage.
+* Implementing the health check and circuit-breaker patterns to ensure that your services can withstand a traffic overload and network issues.
+* Externalizing the configuration of your applications to make them more secure and easier to scale.
+//* Securing your applications with {RHSSO} to provide authentication and authorization functionality
+
+Each example application is implemented in one or more runtimes.
+
