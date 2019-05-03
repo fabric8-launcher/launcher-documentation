@@ -8,7 +8,7 @@ You can use it to make changes to your example application's code.
 
 .Prerequisites
 
-* Have an example application deployed to xref:deploying-an-example-application-to-openshiftonline_{context}[{OpenShiftOnline}] or xref:creating-and-deploying-an-example-application-using-your-openshiftlocal_{context}[{OpenShiftLocal}] using the _Deploy in OpenShift Online_ option.
+* Have an example application deployed to {OpenShiftOnline}, or {OpenShiftLocal} using the _Deploy in OpenShift Online_ option.
 * Have {DevStudio} link:https://developers.redhat.com/products/devstudio/download/[downloaded from the Red Hat Developer Portal] and installed.
 
 include::proc_importing-your-booster-code-to-red-hat-jboss-developer-studio.adoc[leveloffset=+1]
