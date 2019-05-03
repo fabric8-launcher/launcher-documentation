@@ -1,0 +1,12 @@
+[id='application-development-on-openshift-with-fabric8-launcher']
+= Application Development on OpenShift with Fabric8 Launcher
+
+:parent-context: {context}
+
+// Assembly introduction
+:name-launcher: Fabric8
+include::con_fabric8-launcher.adoc[]
+include::con_how-the-launcher-tool-works.adoc[]
+:name-launcher!: []
+
+:context: {parent-context}

@@ -1,0 +1,20 @@
+[id='application-development-on-openshift_{context}']
+= Introduction to Application Development on OpenShift
+
+:parent-context: {context}
+// Assembly introduction
+Linux containers allow you to use different ecosystems, languages, and runtimes at the same time for solving business problems. Container platforms such as OpenShift manage, secure, and automate the deployment and monitoring of your applications. This enables you to break your business problems into smaller microservices while letting OpenShift provide a simpler way to deploy, monitor, and maintain microservices.
+
+Application Development on OpenShift provides you with cloud-native runtimes and prescribes approaches to developing, building, and deploying applications that use those cloud-native runtimes on OpenShift. These cloud-native development approaches take advantage of the capabilities provided by OpenShift and enable you to use patterns such as Circuit Breaker, Health Check, and Service Discovery.
+
+
+include::con_red-hat-openshift.adoc[leveloffset=+1]
+
+include::con_application-development-on-openshift.adoc[leveloffset=+1]
+
+include::con_example-applications.adoc[leveloffset=+1]
+
+include::con_supported-build-strategies-for-openshift-deployment.adoc[leveloffset=+1]
+
+
+:context: {parent-context}
