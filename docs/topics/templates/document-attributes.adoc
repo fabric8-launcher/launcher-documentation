@@ -90,6 +90,9 @@ endif::[]
 
 :link-launcher-oso: https://developers.redhat.com/launch
 
+:link-homepage-ocp: https://www.openshift.com/products/container-platform/
+:link-homepage-oso: https://www.openshift.com/products/online/
+
 :link-example-cache-nodejs: {link-guide-nodejs}#example-cache-nodejs
 :link-example-cache-spring-boot: {link-guide-spring-boot}#example-cache-spring-boot
 :link-example-cache-thorntail: {link-guide-thorntail}#example-cache-wf-swarm
