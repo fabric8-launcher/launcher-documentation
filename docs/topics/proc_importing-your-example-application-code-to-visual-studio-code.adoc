@@ -1,16 +1,17 @@
 
 [id='importing-your-booster-code-to-visual-studio-code_{context}']
-= Importing your booster code to Visual Studio Code
+[id='importing-your-example-application-code-to-visual-studio-code_{context}']
+= Importing your example application code to Visual Studio Code
 
-You can add the project folder of your booster code to an existing workspace in Visual Studio Code. This enables you to start making changes.
+You can add the project folder of your example application code to an existing workspace in Visual Studio Code. This enables you to start making changes.
 
 .Prerequisites
 
-* Your booster created and downloaded from link:{link-launcher-oso}[{name-launcher-oso}].
+* Your example application created and downloaded from link:{link-launcher-oso}[{name-launcher-oso}].
 * Visual Studio Code running.
 
 .Procedure
 
 . In Visual Studio Code, click _File_ -> _Add Folder to Workspace_.
-. Choose your booster project folder and click _Add_.
+. Choose your example application project folder and click _Add_.
 . Start editing your project.

@@ -7,7 +7,7 @@ ${prerequisite}
 ${cicdSection}
 
 == Running the Example Application Locally
-To run this booster on your local host:
+To run this example application on your local host:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -19,7 +19,7 @@ $ ${localRunCMD}
 ----
 
 == Interacting with the Example Application Locally
-To interact with your booster while it is running, use the form at `http://localhost:8080` or the `curl` command:
+To interact with your example application while it is running, use the form at `http://localhost:8080` or the `curl` command:
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----

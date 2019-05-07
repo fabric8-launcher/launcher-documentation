@@ -28,7 +28,7 @@ NOTE: This will create a popup window so you may have to enable popups in your b
 * Click _Git_ -> _Commit_ to commit your change. Ensure _Push to Origin_ is checked before clicking _Commit_.
 * Return to your workspace and verify that a new pipeline started. Once complete click on _Stage - 1.0.2_ under _Applications_ and verify your changes.
 * Click on _Run - 1.0.1_ under _Applications_ and verify that your changes *DO NOT* take effect.
-* Follow the same steps above to promote your booster to _Run_.
+* Follow the same steps above to promote your example application to _Run_.
 * Click on _Run - 1.0.2_ under _Applications_ and verify that your changes took effect.
 
 

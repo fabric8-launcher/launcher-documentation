@@ -1,5 +1,5 @@
-.Next Steps: Update your booster using Continuous Delivery
-Your booster is automatically configured to build and deploy with new commits.
+.Next Steps: Update your example application using Continuous Delivery
+Your example application is automatically configured to build and deploy with new commits.
 
 . Clone your project from GitHub.
 +
@@ -21,4 +21,4 @@ $ git push
 
 IMPORTANT: When changes are pushed to your GitHub repository, a new build is automatically triggered on your OpenShift project with those changes.
 
-More details on interacting with your booster can be found in your booster's link:{GITHUB_CREATE}/blob/master/README.adoc[README.adoc^].
+More details on interacting with your example application can be found in your booster's link:{GITHUB_CREATE}/blob/master/README.adoc[README.adoc^].
