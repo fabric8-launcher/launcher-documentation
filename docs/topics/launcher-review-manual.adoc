@@ -19,4 +19,4 @@ ifeval::["{runtime}" == "Node.js"]
 endif::[]
 
 
-Your project is available for download and is ready to build and deploy locally. Refer to the mission details in the link:{guideURL}[{guideName}^] for more information on building, deploying, and interacting with your booster.
+Your project is available for download and is ready to build and deploy locally. Refer to the link:{guideURL}[{guideName}^] for more information on building, deploying, and interacting with your example application.

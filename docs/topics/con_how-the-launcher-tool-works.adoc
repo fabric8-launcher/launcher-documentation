@@ -13,4 +13,3 @@ The {name-launcher} tool walks you through:
 
 * launches it directly to the same OpenShift instance, or
 * provides a downloadable ZIP version of the project for you to modify and deploy yourself.
-

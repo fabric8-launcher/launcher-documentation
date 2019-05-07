@@ -21,7 +21,7 @@ image::minishift_sslwarning.png[SSL warning]
 . Start {Minishift} with the default virtual machine driver:
 +
 --
-NOTE: Depending on your operating system, virtual machine driver, and the number of boosters you run, the memory allocated to {Minishift} can be insufficient. In this case, increase the memory allocation.
+NOTE: Depending on your operating system, virtual machine driver, and the number of example applications you run, the memory allocated {OpenShiftLocal} can be insufficient. In this case, increase the memory allocation.
 
 [source,bash,options="nowrap",subs="attributes+"]
 ----

@@ -1,0 +1,81 @@
+// This is a parameterized module. Parameters used:
+//
+//   parameter-custom-catalog: A custom catalog is used instead of the default one
+//
+// Rationale: This module is useful both when setting up minishift as is and when testing a local
+// example application catalog.
+
+[id='installing-launcher-tool-as-a-osl-addon_{context}']
+= Installing {name-launcher} Tool as a {Minishift} add-on
+link:https://docs.openshift.org/latest/minishift/using/addons.html[Add-ons] enable you to extend the behavior of {OpenShiftLocal}, and the {name-launcher} tool link:https://github.com/minishift/minishift-addons/tree/master/add-ons/fabric8-launcher[provides an add-on] as an installation option.
+
+.Prerequisites
+* xref:starting-and-configuring-the-openshiftlocal-for-the-launcher-tool_{context}[{OpenShiftLocal} running].
+* A link:{link-guide-minishift-installation}#creating-a-github-personal-access-token_minishift[GitHub personal access token].
+
+.Procedure
+
+. Ensure you are running a minishift instance which has at least 4 GB memory to run launcher
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ minishift config set memory 4096
+$ minishift start
+----
+
+. Download and install the {name-launcher} add-on.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ git clone git@github.com:minishift/minishift-addons.git
+$ minishift addon install minishift-addons/add-ons/fabric8-launcher/
+$ minishift addons apply fabric8-launcher \
+       --addon-env GITHUB_USERNAME=GH_USERNAME \
+       --addon-env GITHUB_TOKEN=TOKEN <1>
+----
+<1> Use your GitHub username and personal access token
++
+Installing the add-on creates a new project called `rhoarpad` where the {name-launcher} tool runs.
+
+. Log in to your {OpenShiftLocal} instance:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+oc login {value-url-osl-auth} -u developer -p developer
+----
+
+. Monitor the status of the {name-launcher} tool until it completes start up.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc project rhoarpad
+$ oc get pods -w
+NAME                           READY     STATUS              RESTARTS   AGE
+configmapcontroller-1-deploy   1/1       Running             0          46s
+configmapcontroller-1-aaaaa    0/1       ContainerCreating   0          44s
+launcher-backend-1-deploy      1/1       Running             0          46s
+...
+launcher-backend-2-aaaaa       0/1       Running             0         5s
+launcher-frontend-2-aaaaa      0/1       Running             0         6s
+----
+
+. Obtain the route of your {name-launcher} tool.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get routes
+NAME       HOST/PORT                                PATH      SERVICES            PORT      TERMINATION   WILDCARD
+launcher   launcher-rhoarpad.{value-route-osl-hostname}             launcher-frontend   <all>                   None
+----
+
+. Navigate to your {name-launcher} tool and start using your {name-launcher} tool to launch example applications.
++
+This is the same service as `{link-launcher-oso}` but running in a {OpenShiftLocal}.
+
+.Additional Resources
+* See the link:{link-guide-getting-started}[{name-guide-getting-started}] for a walk-through of running an example application.
+* Read the runtime guides for an overview of the runtimes and their example applications:
+** link:{link-guide-spring-boot}[{name-guide-spring-boot}]
+** link:{link-guide-vertx}[{name-guide-vertx}]
+** link:{link-guide-thorntail}[{name-guide-thorntail}]
+** link:{link-guide-nodejs}[{name-guide-nodejs}]

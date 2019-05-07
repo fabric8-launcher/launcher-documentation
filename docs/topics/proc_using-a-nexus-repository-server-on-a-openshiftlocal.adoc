@@ -49,7 +49,7 @@ It has not been tested for use with CDK.
 
 * The {name-launcher} tool deployed to your {OpenShiftLocal}.
 
-* A booster application deployed to your {OpenShiftLocal}.
+* An example application deployed to your {OpenShiftLocal}.
 
 
 .Procedure
@@ -106,7 +106,7 @@ oc volumes dc/nexus --add --name 'nexus-volume-1' --type 'pvc' --mount-path '/so
 ----
 --
 
-.  Navigate to the project containing your booster application.
+.  Navigate to the project containing your example application.
 +
 [source,bash,subs="attributes+"]
 ----
@@ -150,4 +150,3 @@ If your build uses Nexus to retrieve artifacts, the build log output should refe
 
 :nexus-project-name!:
 :scm-repo-url!:
-

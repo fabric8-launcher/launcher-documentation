@@ -1,6 +1,7 @@
 
 [id='committing-and-pushing-changes-to-the-github-repository-of-your-booster-with-visual-studio-code_{context}']
-= Committing and pushing changes to the GitHub repository of your booster with Visual Studio Code
+[id='committing-and-pushing-canges-to-the-github-repository-of-your-example-application-with-visual-studio-code_{context}']
+= Committing and pushing changes to the GitHub repository of your example application with Visual Studio Code
 
 Visual Studio Code provides tooling for committing and pushing code through Git directly in the IDE. Alternatively, you can use Visual Studio Code to make changes and push those changes with the Git CLI.
 

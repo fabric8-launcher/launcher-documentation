@@ -1,10 +1,10 @@
-.Next Steps: Run your booster.
+.Next Steps: Run your example application.
 
-Extract your booster:
+Extract your example application:
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ unzip {artifactId}.zip
 $ cd {artifactId}
 ----
 
-More details on running and interacting with your booster are available in `README.adoc`.
+More details on running and interacting with your example application are available in `README.adoc`.

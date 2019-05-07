@@ -3,7 +3,7 @@
 //   parameter-custom-catalog: A custom catalog is used instead of the default one
 //
 // Rationale: This module is useful both when setting up minishift as is and when testing a local
-// booster catalog.
+// example application catalog.
 
 [id='installing-launcher-tool-manually_{context}']
 = Installing {name-launcher} tool manually
