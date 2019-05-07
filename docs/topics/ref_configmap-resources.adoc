@@ -11,8 +11,6 @@ ifdef::built-for-spring-boot[* link:http://docs.spring.io/spring-boot/docs/curre
 
 ifdef::built-for-vertx[* link:http://vertx.io/docs/vertx-config/js/[Externalized Configuration with {VertX}]]
 
-ifdef::built-for-thorntail[* link:https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-guide/content/v/eee1f5ba4dd4f13855cbe98addd365ba29033810/configuration/index.html[Externalized Configuration with {WildFlySwarm}]]
-
 ifndef::built-for-spring-boot[* link:{link-example-configmap-spring-boot}[{name-example-configmap} for {SpringBoot}]]
 
 ifndef::built-for-vertx[* link:{link-example-configmap-vertx}[{name-example-configmap} for {VertX}]]
