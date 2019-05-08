@@ -41,6 +41,7 @@ endif::[]
 
 
 // Names
+:name-examples-catalog: Examples Catalog
 :name-docs: launcher.fabric8.io
 
 :name-launcher: Fabric8 Launcher

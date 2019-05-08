@@ -1,8 +1,9 @@
 
 [id='creating-custom-booster-catalog_{context}']
-= Creating custom booster catalog
+[id='creating-a-custom-examples-catalog_{context}']
+= Creating a custom {name-examples-catalog}
 
-By default, the {name-launcher} tool uses a booster catalog from the link:https://github.com/openshiftio/booster-catalog[openshiftio/booster-catalog] repository.
+By default, the {name-launcher} tool uses an examples catalog from the link:https://github.com/openshiftio/booster-catalog[openshiftio/booster-catalog] repository.
 If you do not want to use the default catalog, you can create one from scratch, or fork the default catalog and make changes to it. This chapter describes the procedure for modifying the default catalog.
 
 .Prerequisites
@@ -11,8 +12,8 @@ If you do not want to use the default catalog, you can create one from scratch, 
 
 .Procedure
 
-.Creating Custom Booster Catalog
-. Navigate to the link:https://github.com/openshiftio/booster-catalog[openshiftio/booster-catalog] repository, which hosts the default booster catalog.
+.Creating a Custom {name-examples-catalog}
+. Navigate to the link:https://github.com/openshiftio/booster-catalog[openshiftio/booster-catalog] repository, which hosts the default catalog.
 . Fork the repository by clicking _Fork_ in the top right corner of the page.
 . Clone the forked repository locally to your hard drive.
 . Make changes to the catalog, for example:
