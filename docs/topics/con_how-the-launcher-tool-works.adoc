@@ -1,15 +1,10 @@
-[id='how-fabric8-launcher-works_{context}']
-= How {name-launcher} works
+[id='how-the-launcher-tool-works_{context}']
+= How the {name-launcher} tool works
 
-{name-launcher} runs on OpenShift and lets you create functional example applications.
-The {name-launcher} tool walks you through:
+The {name-launcher} tool runs on OpenShift and lets you create functional example applications. The {name-launcher} tool walks you through:
 
-* choosing the mission you want to generate,
-* choosing the runtime you want to use,
-* choosing the capabilities your application will have, and
-* choosing how you want to build and execute the mission.
+* choosing the example application you want to generate,
+* choosing the runtime you want to use, and
+* choosing how you want to build and execute the example application.
 
-{name-launcher} uses your choices to generate a custom project, and:
-
-* launches it directly to the same OpenShift instance, or
-* provides a downloadable ZIP version of the project for you to modify and deploy yourself.
+The {name-launcher} tool uses your choices to generate a custom project, called an example application, and either launches it directly to the same OpenShift instance, or provides a downloadable ZIP version of the project.

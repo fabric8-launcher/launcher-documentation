@@ -21,4 +21,4 @@ $ git push
 
 IMPORTANT: When changes are pushed to your GitHub repository, a new build is automatically triggered on your OpenShift project with those changes.
 
-More details on interacting with your example application can be found in your booster's link:{GITHUB_CREATE}/blob/master/README.adoc[README.adoc^].
+More details on interacting with your example application can be found in the link:{GITHUB_CREATE}/blob/master/README.adoc[README.adoc^].
