@@ -1,4 +1,3 @@
-
 [id='creating-custom-booster-catalog_{context}']
 [id='creating-a-custom-examples-catalog_{context}']
 = Creating a custom {name-examples-catalog}

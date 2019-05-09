@@ -7,8 +7,6 @@
 [id='running-the-springboot-secured-booster-integration-tests_{context}']
 [id='running-the-springboot-secured-example-application-integration-tests_{context}']
 = Running the {SpringBoot} {name-example-secured} example application integration tests
-//[#running-the-secured-booster-integration-tests-on-{parameter-runtime}]
-//= Running the {name-example-secured} Booster Integration Tests on {runtime}
 
 .Prerequisites
 
