@@ -9,7 +9,9 @@ The following procedure works with clusters running on OpenShift 3.11.
 
 .Prerequisites
 
-* Admin access to an OpenShift cluster.
+* Github account
+* Admin access to an OpenShift cluster
+// This works for OCP v3.11
 
 .Procedure
 
@@ -20,7 +22,7 @@ The following procedure works with clusters running on OpenShift 3.11.
 $ oc adm policy --as system:admin add-cluster-role-to-user cluster-admin USER_ACCOUNT_NAME
 ----
 
-. Log in to your {OpenShiftCluster} using your user account with `cluster` credentials:
+. Log in to your {OpenShiftCluster} using your user account with `cluster-admin` credentials:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -34,21 +36,77 @@ $ oc login {value-url-osl-auth}
 $ oc new-project launcher-operator
 ----
 
-. link:https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line[Create a personal GitHub access token].
-Ensure that you set the following scope when creating the token:
-// TODO: replace this with OAuth: https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/
+// TODO: this will later be part of the multi-user laucher deployment
+. Register your {name-launcher} instance with OAuth.
 +
-* `repo`
-* `admin:repo_hook`
-* `delete_repo`
+--
+.. Log in to GitHub
 
-. Create a new secret using your newly created personal GitHub access token:
+.. link:https://github.com/settings/applications/new[Create a new GitHub OAuth application].
++
+Use `launcher` as the application name.
+
+.. Use `http://temporary` as a temporary value for the _Homepage URL_ and _Authorization callback URL_ fields.
+You must replace these value with the {name-launcher} frontend route URL when you obtain it.
+
+.. Click _Register Application_ to confirm your settings to obtain the Client ID and Client Secret for your {name-launcher} app.
+
+.. Create an OAuth secret for your {name-launcher} instance using the Client ID and Client Secret.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc create secret generic launcher-secrets --from-literal=github-token=GITHUB_TOKEN
+$ $ oc create secret generic launcher-oauth-github --from-literal=clientId=LAUNCHER_GITHUB_OAUTH_CLIENT_ID --from-literal=secret=LAUNCHER_GITHUB_OAUTH_CLIENT_SECRET
 ----
 
+// where exactly do you specify the URL in the YAML?
+.. Edit the custom resource definition YAML for your {name-launcher} instance to specify your OpenShift Web Console URL. 
+// Perhaps creating a new CRD from a template might be closer to real-life usage?  
++
+.launcher_cr.yaml
+[source,yaml,options="nowrap",subs="attributes+"]
+----
+apiVersion: launcher.fabric8.io/v1alpha2
+kind: Launcher
+metadata:
+  name: launcher
+spec:
+# OpenShift Configuration
+  openshift:
+    consoleUrl: YOUR_OPENSHIFT_WEB_CONSOLE_URL # Replace this with your OpenShift Web Console URL
+# OAuth Configuration
+  oauth:
+    enabled: true
+----
+
+.. Obtain the frontend URL of your {name-launcher} instance:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get route launcher --template={{.spec.host}}
+----
+
+// or is it a different project?
+//also, the 
+.. Create an OAuth client instance in your `launcher-operator` project.
+Ensure that you provide the OpenShift secret and frontend URL you obtained earlier.
++
+[source,options="nowrap",subs="attributes+"]
+----
+$ oc create -f <(echo '
+  kind: OAuthClient
+  apiVersion: oauth.openshift.io/v1
+  metadata:
+    name: launcher
+  secret: YOUR_LAUNCHER_OPENSHIFT_SECRET # Replace this with the secret you generated using your OAuth Client ID and Client Secret
+  redirectURIs:
+    - "http://YOUR_LAUNCHER_FRONTEND_URL" # Replace this with the fronted route URL of your {name-launcher} instance
+  grantMethod: prompt
+  ')
+----
+
+.. Update the values of the _Homepage URL_ and _Authorization callback URL_ fields in your {name-launcher} OAuth app configuration settings on GitHub to point to your launcher frontend route URL.
+--
+//TODO: Revise this step. It should not involve direct downloads from Github. The deployment templates should be accessible as a resource list (see also RHOARDOC-1644) that can be downloaded in 1 step.
 . Download and extract the link:https://github.com/fabric8-launcher/launcher-operator/archive/master.zip[ZIP file] containing the operator and navigate to the directory containing the extracted resources.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -56,6 +114,7 @@ $ oc create secret generic launcher-secrets --from-literal=github-token=GITHUB_T
 $ cd launcher-operator
 ----
 
+//TODO: this needs to be updated when the previous step gets revised.
 . Process the YAML templates in the `/deploy` subdirectory:
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -70,7 +129,7 @@ Based on the templates, OpenShift automatically installs:
 * access role definitions for the launcher operator
 * access role bindings for the Launcher operator
 
-. Install the following custom resource in order to initiate the deployment of the {name-launcher} tool.
+. Install the `launcher_cr.yaml` custom resource to initiate the deployment of the {name-launcher} tool.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -91,16 +150,18 @@ launcher-backend-2-aaaaa       0/1       Running             0         5s
 launcher-frontend-2-aaaaa      0/1       Running             0         6s
 ----
 
+////
 . Obtain the route of your {name-launcher} tool.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc get routes
-NAME       HOST/PORT                                         PATH      SERVICES            PORT      TERMINATION   WILDCARD
-launcher   launcher.launcher.{value-route-osl-hostname}                launcher-frontend   <all>                   None
+NAME                HOST/PORT                                         PATH      SERVICES            PORT      TERMINATION   WILDCARD
+launcher-frontend   launcher-frontend.launcher.{value-route-osl-hostname}                launcher-frontend   <all>                   None
 ----
+////
 
-. Navigate to the route URL to start using {name-launcher}.
+. Navigate to the frontend route URL to start using {name-launcher}.
 
 .Additional Resources
 * See the link:{link-guide-getting-started}[{name-guide-getting-started}] for a walk-through of launching an example application.
