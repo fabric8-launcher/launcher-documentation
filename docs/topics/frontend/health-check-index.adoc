@@ -1,4 +1,4 @@
-Vert.x Health Check Booster
+Vert.x Health Check Example Application
 ---------------------------
 
 Demonstrates how the Kubernetes health checks work to determine if a container is still alive (the _liveness_ of the container) and ready to serve the traffic for the HTTP endpoints of the application (the _readiness_ of the container).
