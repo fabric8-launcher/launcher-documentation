@@ -1,4 +1,5 @@
 [id='updating-booster-catalog-for-local-openshiftlocal-testing_{context}']
+[id='updating-examples-catalog-for-local-openshiftlocal-testing_{context}']
 
 = Updating {name-examples-catalog} for local {OpenShiftLocal} testing
 
@@ -7,7 +8,7 @@
 One of important life cycle stages of an example application is testing it in an {name-examples-catalog}.
 Create a custom {name-examples-catalog} that links to the repository with your example application on GitHub, and test your example application by following the instructions below:
 
-include::proc_creating-custom-booster-catalog.adoc[leveloffset=+1]
+include::proc_creating-custom-examples-catalog.adoc[leveloffset=+1]
 
 :parameter-custom-catalog:
 include::proc_installing-launcher-tool-manually.adoc[leveloffset=+1]
