@@ -55,7 +55,7 @@ You must replace these value with the {name-launcher} frontend route URL when yo
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ $ oc create secret generic launcher-oauth-github --from-literal=clientId=LAUNCHER_GITHUB_OAUTH_CLIENT_ID --from-literal=secret=LAUNCHER_GITHUB_OAUTH_CLIENT_SECRET
+$ oc create secret generic launcher-oauth-github --from-literal=clientId=LAUNCHER_GITHUB_OAUTH_CLIENT_ID --from-literal=secret=LAUNCHER_GITHUB_OAUTH_CLIENT_SECRET
 ----
 
 // where exactly do you specify the URL in the YAML?
@@ -124,9 +124,10 @@ $  oc create -R -f ./deploy
 +
 Based on the templates, OpenShift automatically installs:
 +
-* a custom resource definition for the Launcher operator
+* a custom resource definition for the {name-launcher} app
 * a service account for the Launcher operator
-* access role definitions for the launcher operator
+* a deployment of the Launcher operator
+* an access role definition for the Launcher operator
 * access role bindings for the Launcher operator
 
 . Install the `launcher_cr.yaml` custom resource to initiate the deployment of the {name-launcher} tool.
