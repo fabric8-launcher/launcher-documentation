@@ -19,12 +19,12 @@ Example:: An application specification, for example _a web service with a REST A
 Examples generally do not specify which language or platform they should run on; the description only contains the intended functionality.
 
 [[glossary_example_application]]
-Example application:: A language-specific implementation of a particular xref:glossary_example[example] on a particular xref:glossary_runtime[runtime]. Example applications are listed in a xref:glossary_example_application_catalog[example catalog].
+Example application:: A language-specific implementation of a particular xref:glossary_example[example] on a particular xref:glossary_runtime[runtime]. Example applications are listed in an xref:glossary_example_application_catalog[examples catalog].
 +
 For example, an example application is a web service with a REST API implemented using the {WildFlySwarm} runtime.
 
 [[glossary_example_application_catalog]]
-Example Application Catalog:: A Git repository that contains information about example applications.
+{name-examples-catalog}:: A Git repository that contains information about example applications.
 
 [[glossary_runtime]]
 Runtime:: A platform that executes an xref:glossary_example_application[example application].
