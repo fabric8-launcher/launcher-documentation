@@ -14,7 +14,7 @@ To prepare a {Node} application for OpenShift deployment, you must perform the f
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ npm install nodeshift --save
+$ npm install nodeshift --save-dev
 ----
 
 . Add the `openshift` and `start` entries to the `scripts` section in `package.json`.
@@ -28,7 +28,7 @@ $ npm install nodeshift --save
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "openshift": "nodeshift --strictSSL=false --metadata.out=deployment-metadata.json --build.forcePull=true {version-node-nodeshift}",
+    "openshift": "nodeshift --expose {version-node-nodeshift}",
     "start": "node app.js",
     ...
   }
