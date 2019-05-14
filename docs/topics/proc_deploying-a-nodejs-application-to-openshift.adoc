@@ -19,7 +19,6 @@ $ oc login ...
 ----
 
 . Use `nodeshift` to deploy the application to OpenShift.
-//Expose the application in OpenShift using link:https://docs.openshift.com/online/dev_guide/routes.html[a route].
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
