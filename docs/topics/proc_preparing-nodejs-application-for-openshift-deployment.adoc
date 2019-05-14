@@ -28,7 +28,7 @@ $ npm install nodeshift --save-dev
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "openshift": "nodeshift --expose {version-node-nodeshift}",
+    "openshift": "nodeshift --expose {option-base-image-node}",
     "start": "node app.js",
     ...
   }
