@@ -80,7 +80,7 @@ endif::[]
 :version-vertx: 3.6.3.redhat-00009
 :version-vertx-maven-plugin: 1.0.17
 
-:version-node-nodeshift: --dockerImage=registry.access.redhat.com/rhoar-nodejs/nodejs-8
+:option-base-image-node: --dockerImage=registry.access.redhat.com/rhoar-nodejs/nodejs-8
 
 // Prerequisites
 :prerequisite-jdk-version: OpenJDK 8 or OpenJDK 11 installed.
