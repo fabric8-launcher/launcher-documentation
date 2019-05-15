@@ -32,9 +32,5 @@ Install an instance of the {name-launcher} tool, which allows you to test the fu
 
 include::topics/proc_installing-launcher-operator.adoc[leveloffset=+2]
 
-// temporary location for Nexus install
-[appendix]
-include::topics/proc_using-a-nexus-repository-server-on-a-openshiftlocal.adoc[leveloffset=+1]
-
 [appendix]
 include::topics/ref_glossary.adoc[leveloffset=+1]
