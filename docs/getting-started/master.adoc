@@ -25,7 +25,7 @@ include::topics/proc_creating-and-deploying-an-example-application-using-your-op
 
 include::topics/proc_deploying-an-example-application-to-openshiftonline.adoc[leveloffset=+1]
 
-
+include::topics/proc_creating-a-new-application-launcher.adoc[leveloffset=+1]
 
 include::topics/proc_deploying-an-example-application-to-openshiftcontainerplatform.adoc[leveloffset=+1]
 [appendix]
