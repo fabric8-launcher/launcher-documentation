@@ -1,0 +1,65 @@
+[id='creating-a-new-application-using-the-launcher-tool']
+= Creating a new application using the {name-launcher} Tool
+
+// Build an assembly around this procedure by including context modules that describe individual capabilities in detail
+
+Set up a new application project directly on your {OpenShiftCluster} using the {name-launcher} tool.
+
+.Prerequisites
+
+. Access to an OpenShift cluster
+. link:{link-guide-minishift-installation}#installing-launcher-tool-using-an-operator_minishift[{name-launcher} installed] on your OpenShift cluster.
+. A GitHub account
+// This applies when using developers.redhat.com/launch:
+// . A Red Hat Developer Account
+
+
+.Procedure
+
+//. Click _Start_ on the Launcher landing page. 
+
+. Select _Create a New Application_ on the main Launcher screen.
+
+// OPTIONAL?
+. You can specify a name for your application project or use the default name that {name-launcher} generates.
+
+. Click _Configure a Frontend_ for your application.
+
+. Select a framework to build your application frontend with.
+You can choose between community and product releases of the listed frameworks.
+Select _None_ if you do not want {name-launcher} to configure a frontend for your app.
+
+. Click _Save_ when done to return to the previous screen.
+
+. Click _Configure a Backend_ for your application.
+
+. Select a runtime to build your application backend with.
+You can choose between community and product releases of the listed runtimes.
+Select _None_ if you do not want {name-launcher} to configure a backend for your app.
+
+. Select additional capabilities for your application.
+Check the boxes next to the capabilities you want to add to your application.
+You might need to specify additional options for some of the capabilities. 
+{name-launcher} automatically configures the selected capabilities when launching your app.
+Health Checks are added to your app by default.
+
+. Click _Save_ when done to return to the previous screen.
+
+. Connect a GitHub account to be used by the launcher.
+Click _Authorize_ in the _Destination Repository_ section of the screen.
+Log in to your GitHub account when you are redirected to the login prompt.
+
+. Click _Save_ when done to return to the previous screen.
+
+. Click _Configure_ in the _OpenShift Deployment_ section of the screen.
+Log in using your OpenShift account credentials to register a new cluster with the {naem-launcher} tool. 
+
+. Click _Save_ when done to return to the previous screen.
+
+. Click _Launch_ to deploy your project to an {OpenShiftCluster}.
+Alternatively, click _Download_ to download a ZIP file containing the generated project files. 
+
+// The {name-launcher} configures a repository automatically using the Github account you provided during installation.
+// Click the Edit icon in the top right-hand corner of the _Destination Repository_ box to change the default repository settings.  
+
+//.Additional Resources
