@@ -8,6 +8,8 @@ The following procedure describes the steps necessary to create a new applicatio
 
 * Configuring a frontend for your application.
 * Configuring a backend for your application.
+* Configuring an OpenShift Cluster
+* Authorizing a GitHub account to host the repository with the generated project files.
  
 
 .Prerequisites
@@ -52,6 +54,7 @@ Health Checks are added to your app by default.
 . Connect a GitHub account to be used by the launcher.
 Click _Authorize_ in the _Destination Repository_ section of the screen.
 Log in to your GitHub account when you are redirected to the login prompt.
+Follow the on-screen instructions to authorize your account.
 
 . Click _Save_ when done to return to the previous screen.
 
