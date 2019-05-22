@@ -4,6 +4,11 @@
 // Build an assembly around this procedure by including context modules that describe individual capabilities in detail
 
 Set up a new application project directly on your {OpenShiftCluster} using the {name-launcher} tool.
+The following procedure describes the steps necessary to create a new application project using {name-launcher}:
+
+* Configuring a frontend for your application.
+* Configuring a backend for your application.
+ 
 
 .Prerequisites
 
@@ -18,10 +23,9 @@ Set up a new application project directly on your {OpenShiftCluster} using the {
 
 //. Click _Start_ on the Launcher landing page. 
 
-. Select _Create a New Application_ on the main Launcher screen.
+. Select _Create a New Application_ on the main Launcher screen. 
 
-// OPTIONAL?
-. You can specify a name for your application project or use the default name that {name-launcher} generates.
+. Specify a name for your application project or use the default name that {name-launcher} provides.
 
 . Click _Configure a Frontend_ for your application.
 
@@ -39,7 +43,7 @@ Select _None_ if you do not want {name-launcher} to configure a backend for your
 
 . Select additional capabilities for your application.
 Check the boxes next to the capabilities you want to add to your application.
-You might need to specify additional options for some of the capabilities. 
+Depending on the capability, you might need to specify additional options. 
 {name-launcher} automatically configures the selected capabilities when launching your app.
 Health Checks are added to your app by default.
 
@@ -57,9 +61,6 @@ Log in using your OpenShift account credentials to register a new cluster with t
 . Click _Save_ when done to return to the previous screen.
 
 . Click _Launch_ to deploy your project to an {OpenShiftCluster}.
-Alternatively, click _Download_ to download a ZIP file containing the generated project files. 
+You can also click _Download_ to download a ZIP file containing the generated project files. 
 
-// The {name-launcher} configures a repository automatically using the Github account you provided during installation.
-// Click the Edit icon in the top right-hand corner of the _Destination Repository_ box to change the default repository settings.  
-
-//.Additional Resources
+ 
