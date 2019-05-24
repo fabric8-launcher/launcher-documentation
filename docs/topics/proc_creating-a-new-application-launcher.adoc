@@ -3,13 +3,13 @@
 
 // Build an assembly around this procedure by including context modules that describe individual capabilities in detail
 
-Set up a new application project directly on your {OpenShiftCluster} using the {name-launcher} tool.
-The following procedure describes the steps necessary to create a new application project using {name-launcher}:
+Set up a new application project and deploy it to an {OpenShiftCluster} using the {name-launcher} tool.
+The following procedure describes the main actions you need to perform when setting up your project using {name-launcher}:
 
-* Configuring a frontend for your application.
-* Configuring a backend for your application.
-* Configuring an OpenShift Cluster
-* Authorizing a GitHub account to host the repository with the generated project files.
+* Configure a frontend for your application.
+* Configure a backend for your application.
+* Connect to a GitHub account to host the repository with your project files.
+* Configure an OpenShift Cluster to host your deployed project. 
  
 
 .Prerequisites
@@ -29,41 +29,47 @@ The following procedure describes the steps necessary to create a new applicatio
 
 . Specify a name for your application project or use the default name that {name-launcher} provides.
 
-. Click _Configure a Frontend_ for your application.
+. Configure a frontend for your application.
 
-. Select a framework to build your application frontend with.
+.. Click _Configure a Frontend_.
+
+.. Select a framework that you want to use for your application frontend.
 You can choose between community and product releases of the listed frameworks.
-Select _None_ if you do not want {name-launcher} to configure a frontend for your app.
+If you do not want {name-launcher} to configure a frontend for your app, select _None_.
 
-. Click _Save_ when done to return to the previous screen.
+.. Click _Save_ when you are done.
 
-. Click _Configure a Backend_ for your application.
+. Configure a backend for your application
 
-. Select a runtime to build your application backend with.
+.. Click _Configure a Backend_.
+
+.. Select a runtime that you want to use for your application backend.
 You can choose between community and product releases of the listed runtimes.
-Select _None_ if you do not want {name-launcher} to configure a backend for your app.
+If you do not want {name-launcher} to configure a backend for your app select _None_.
 
-. Select additional capabilities for your application.
-Check the boxes next to the capabilities you want to add to your application.
-Depending on the capability, you might need to specify additional options. 
-{name-launcher} automatically configures the selected capabilities when launching your app.
+.. OPTIONAL: Select additional capabilities for your application.
+You might need to specify additional options depending on the capability you choose. 
 Health Checks are added to your app by default.
 
-. Click _Save_ when done to return to the previous screen.
+.. Click _Save_ when you are done.
 
-. Connect a GitHub account to be used by the launcher.
-Click _Authorize_ in the _Destination Repository_ section of the screen.
-Log in to your GitHub account when you are redirected to the login prompt.
-Follow the on-screen instructions to authorize your account.
+. Connect a GitHub account to your {laucher-name}.
 
-. Click _Save_ when done to return to the previous screen.
+.. Click _Authorize_ in the _Destination Repository_ section of the screen.
 
-. Click _Configure_ in the _OpenShift Deployment_ section of the screen.
+.. When you are redirected to the login prompt on Github, log in using your account credentials.
+
+// what is the actual name of the upstream launcher in GitHub?
+.. Click _Authorize fabric8-launcher_. When done, you are redirected back to the Launcher web interface.
+
+.. Click _Save_ return to the project setup screen in the Launcher.
+
+.. Click _Configure_ in the _OpenShift Deployment_ section of the screen.
 Log in using your OpenShift account credentials to register a new cluster with the {naem-launcher} tool. 
 
-. Click _Save_ when done to return to the previous screen.
+.. Click _Save_ when you are done.
 
 . Click _Launch_ to deploy your project to an {OpenShiftCluster}.
-You can also click _Download_ to download a ZIP file containing the generated project files. 
+Alternatively, click _Download_ to download a ZIP file containing the generated project files. 
 
  
