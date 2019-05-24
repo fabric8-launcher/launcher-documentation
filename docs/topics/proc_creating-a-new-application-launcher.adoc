@@ -20,9 +20,9 @@ The following procedure describes the main actions you need to perform when sett
 
 .Procedure
 
-//. Click _Start_ on the Launcher landing page. 
+. Click _Start_ on the Launcher landing page to access the main Launcher screen. 
 
-. Select _Create a New Application_ on the main Launcher screen. 
+. Select _Create a New Application_. 
 
 . Specify a name for your application project or use the default name that {name-launcher} provides.
 
