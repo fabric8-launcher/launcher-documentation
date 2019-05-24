@@ -9,7 +9,7 @@ The following procedure describes the main actions you need to perform when sett
 * Configure a frontend for your application.
 * Configure a backend for your application.
 * Connect to a GitHub account to host the repository with your project files.
-* Configure an OpenShift Cluster to host your deployed project. 
+* Configure an OpenShift Cluster to host your deployed application. 
  
 
 .Prerequisites
@@ -17,9 +17,6 @@ The following procedure describes the main actions you need to perform when sett
 . Access to an OpenShift cluster
 . link:{link-guide-minishift-installation}#installing-launcher-tool-using-an-operator_minishift[{name-launcher} installed] on your OpenShift cluster.
 . A GitHub account
-// This applies when using developers.redhat.com/launch:
-// . A Red Hat Developer Account
-
 
 .Procedure
 
@@ -57,10 +54,9 @@ Health Checks are added to your app by default.
 
 .. Click _Authorize_ in the _Destination Repository_ section of the screen.
 
-.. When you are redirected to the login prompt on Github, log in using your account credentials.
+.. When you are redirected to the login prompt on GitHub, log in using your account credentials.
 
-// what is the actual name of the upstream launcher in GitHub?
-.. Click _Authorize fabric8-launcher_. When done, you are redirected back to the Launcher web interface.
+.. Click _Authorize fabric8-launcher_. When authorization completes, you are redirected back to the Launcher web interface.
 
 .. Click _Save_ return to the project setup screen in the Launcher.
 
