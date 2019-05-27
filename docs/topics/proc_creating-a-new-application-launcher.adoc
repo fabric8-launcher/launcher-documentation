@@ -1,4 +1,4 @@
-[id='creating-a-new-application-using-the-launcher-tool']
+[id='creating-a-new-application-using-the-launcher-tool_{context}']
 = Creating a new application using the {name-launcher} Tool
 
 // Build an assembly around this procedure by including context modules that describe individual capabilities in detail
@@ -50,7 +50,7 @@ Health Checks are added to your app by default.
 
 .. Click _Save_ when you are done.
 
-. Connect a GitHub account to your {laucher-name}.
+. Connect a GitHub account to your {launcher-name}.
 
 .. Click _Authorize_ in the _Destination Repository_ section of the screen.
 
@@ -61,7 +61,7 @@ Health Checks are added to your app by default.
 .. Click _Save_ return to the project setup screen in the Launcher.
 
 .. Click _Configure_ in the _OpenShift Deployment_ section of the screen.
-Log in using your OpenShift account credentials to register a new cluster with the {naem-launcher} tool. 
+Log in using your OpenShift account credentials to register a new cluster with the {name-launcher} tool. 
 
 .. Click _Save_ when you are done.
 
