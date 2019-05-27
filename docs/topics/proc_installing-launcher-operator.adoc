@@ -29,11 +29,11 @@ $ oc adm policy --as system:admin add-cluster-role-to-user cluster-admin USER_AC
 $ oc login {value-url-osl-auth}
 ----
 
-. Create a project to host the operator:
+. Create a project to host the Launcher:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ oc new-project launcher-operator
+$ oc new-project launcher-infra
 ----
 
 // TODO: this will later be part of the multi-user laucher deployment
