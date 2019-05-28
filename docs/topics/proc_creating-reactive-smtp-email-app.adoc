@@ -1,0 +1,92 @@
+[id='creating-an-http-smtp-mail-service_{context}']
+= Creating a reactive {SpringBoot} SMTP mail service
+
+Create an SMTP email service with {SpringBoot} and WebFlux.
+
+.Prerequisites
+
+* Java JDK 8 or Java JDK 11 installed
+* Maven installed
+* A Maven-based application project configured link:{link-guide-spring-boot}#configuring-your-application-to-use-spring-boot_spring-boot[configured to use Spring Boot]
+// link to postfix config example in RHEL7 Docs
+* A SMTP mail server configured on your machine
+
+.Procedure
+
+. Add `vertx-spring-boot-starter-http` and `vertx-spring-boot-starter-mail` as dependencies in the `pom.xml` file of your project.
+
+.`pom.xml`
+[source,xml,options="nowrap",subs="attributes+"]
+----
+<project>
+...
+  <dependencies>
+  ...
+include::resources/spring-boot/reactive-examples/example-http-service-mail.pom.xml[tags=http-service-mail-pom-dependencies]
+  ...
+  <dependencies>
+...
+</project>
+----
+
+. Create a mail handler class for your application: 
++
+.src/main/java/dev/snowdrop/vertx/sample/mail/MailHandler.java`
+[source,java,options="nowrap",subs="attributes+"]
+----
+include::resources/spring-boot/reactive-examples/example-http-service-mail-handler.java[]
+----
+
+. Create the main class of your application:
++
+.`HttpSecuritySampleApplication.java`
+[source,java,options="nowrap",subs="attributes+"]
+----
+include::resources/spring-boot/reactive-examples/example-http-mail-service-app.java[]
+----
+
+. Create an `application.properties` file to store your SMTP server credentials:
++
+.`application.properties`
+[source,java,options="nowrap",subs="attributes+"]
+----
+vertx.mail.host=YOUR_SMTP_SERVER_HOSTNAME
+vertx.mail.username=YOUR_SMTP_SERVER_USERNAME
+vertx.mail.password=YOUR_SMTP_SERVER_PASSWORD
+----
+
+. Create a `src/main/resources/static/index.html` file that serves as the frontend of your application.
+Alternatively, use the link:https://raw.githubusercontent.com/snowdrop/vertx-spring-boot/master/vertx-spring-boot-samples/vertx-spring-boot-sample-mail/src/main/resources/static/index.html[example HTML email form] available for this procedure.
+
+. OPTIONAL: Run and test your application locally:
+
+.. Navigate to the root directory of your Maven project:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ cd myApp 
+----
+
+.. Package your application:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn clean package
+----
+
+.. Start your application from the command line.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ java -jar target/vertx-spring-boot-sample-mail.jar 
+----
+
+.. Navigate to `http://localhost:8080/index.html` using a browser to access the email form.
+
+.Additional resources
+
+Set up an SMTP mail server
+You can link:{link-guide-spring-boot}#deploying-runtime-application-to-openshift_spring-boot[deploy your application to an OpenShift cluster] using Fabric8 Maven Plugin
+You can also configure your application for link:{link-guide-spring-boot}#deploying-runtime-application-to-standalone-red-hat-enterprise-linux_spring-boot[deployment on standalone Red{nbsp}Hat Enterprise Linux].
+
+// add links to: https://spring.io/guides/gs/reactive-rest-service/

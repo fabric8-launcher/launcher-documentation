@@ -1,0 +1,19 @@
+[id='spring-web-reactive_{context}']
+= Spring Web
+
+The `spring-web` module provides the foundational elements of the reactive capabilities of  Spring WebFlux, including:
+
+* HTTP abstractions
+* Reactive Streams adapters for supported servers (Netty, Undertow)
+* codecs for encoding and decoding event stream data
+* the `WebHandler` API (a counterpart to the Servlet 3.1 I/O API that uses non-blocking contracts)
+
+Based on these capabilities, Spring WebFlux provides a choice between two programming models:
++
+Annotated Controllers::
+Consistent with Spring MVC and based on the same annotations from the `spring-web` module.
+In addition to the `spring-web` module from SpringMVC, its WebFlux counterpart also supports reactive `@RequestBody` arguments.
+
+Functional Endpoints::
+Based on Java 8 Lambda expressions and functional APIs, this programming model relies on a dedicated library (Reactor, in this case) that routes and and handles requests.
+As opposed to annotation-based endpoint controllers, that rely on declaring Intent and using callbacks to complete an activity, the reactive model allows request handling to be fully controlled.
