@@ -1,5 +1,5 @@
 [id='selecting-the-jdk-builder-image-for-your-application_{context}']
-= Selecting a JDK image for your application
+= Selecting a JDK image for your {runtime} application
 Edit your application `pom.xml` file to specify the image for building and running your {runtime} application.
 
 .Prerequisites
