@@ -28,7 +28,7 @@ include::resources/spring-boot/reactive-examples/example-http-service-webflux-po
 </project>
 ----
 
-. Create a new class for your application and define the router and handler methods. 
+. Create a main class for your application and define the router and handler methods. 
 
 .`HttpSampleApplication.java`
 [source,java,options="nowrap",subs="attributes+"]
@@ -36,5 +36,28 @@ include::resources/spring-boot/reactive-examples/example-http-service-webflux-po
 include::resources/spring-boot/reactive-examples/example-http-service-webflux.java[]
 ----
 
+. OPTIONAL: Run and test your application locally:
+.. Start your application from the command line:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ java -jar target/vertx-spring-boot-sample-http-0.0.1-SNAPSHOT.jar 
+----
+.. In a new terminal window, issue an HTTP request on the `/hello` endpoint:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl localhost:8080/hello
+Hello, World!
+----
+.. Provide a custom name with your request to get a personalized response:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl http://localhost:8080/hello?name=John
+Hello, John!
+----
+
 .Additional resources
-// add links to full files on GH?
+
+// Deploy your applications to an OpenShift cluster
