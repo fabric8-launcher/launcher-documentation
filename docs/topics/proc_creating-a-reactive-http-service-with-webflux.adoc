@@ -1,0 +1,40 @@
+[id='creating-a-reactive-spring-boot-http-service-with-webflux']
+= Creating a reactive {SpringBoot} HTTP service with WebFlux
+
+Create a basic reactive Hello World HTTP web service using {SpringBoot} and WebFlux.
+
+.Prerequisites
+
+* Java JDK 8 or Java JDK 11 installed
+* Maven installed
+* A Maven-based application project
+
+
+.Procedure
+
+. Add `vertx-spring-boot-starter` as a dependency in the `pom.xml` file of your project.
+
+.`pom.xml`
+[source,xml,options="nowrap",subs="attributes+"]
+----
+<project>
+...
+  <dependencies>
+  ...
+include::resources/spring-boot/reactive-examples/example-http-service-webflux-pom.xml[tags=http-service-pom-dependencies]
+  ...
+  <dependencies>
+...
+</project>
+----
+
+. Create a new class for your application and define the router and handler methods. 
+
+.`HttpSampleApplication.java`
+[source,java,options="nowrap",subs="attributes+"]
+----
+include::resources/spring-boot/reactive-examples/example-http-service-webflux.java[]
+----
+
+.Additional resources
+// add links to full files on GH?

@@ -1,28 +1,34 @@
 [id='creating-a-basic-springboot-application_{context}']
-= Developing and deploying a {SpringBoot} reactive application with WebFlux
+= Developing and deploying a reactive {SpringBoot} application with WebFlux
 
 :parent-context: {context}
 
 
 //In addition to xref:example-rest-http-spring-boot[using an example], you can create new {runtime} applications from scratch and deploy them to OpenShift.
-// TODO mention that these features are now tech preview, needs to be in the RN, too
-
+// TODO mention that these features are now tech preview, needs to be in the RN, too.
+// TODO: add section sepcifying that these examples use webflux, as opposed to other stah might be added in the future.
 
 The recommended approach for specifying and using supported and tested Maven artifacts in a {SpringBoot} application is to use the OpenShift Application Runtimes {SpringBoot} BOM.
 
 ////
 * [PROC] Creating a Reactive HTTP REST service
-//include::proc_creating-a-reactive-http-service.adoc[leveloffset=+1] 
+//include::proc_creating-a-reactive-http-service-with-webflux.adoc[leveloffset=+1]
+
 * [PROC] Using GitHub OAuth2 Authentication in a WebFlux Application
 //include::proc_oauth2-with-a-webflux-application.adoc[leveloffset=+1] 
+
 * [PROC] Implementing Basic and Form-Based Authentication in a WebFlux Application
 //include::proc_using baseic authentication-with-a-reactive-webflux-application.adoc[leveloffset=+1] 
+
 * [PROC] Implementing Chunked data handling in a  WebFlux Application
 //include::proc_using-chunked-data-processing-with-webflux-applications.adoc[leveloffset=+1] 
+
 * [PROC] Integrating a Ver.x Mail client with your WebFlux Application
 //include::proc_creating-a-reeactive-http-service.adoc[leveloffset=+1] 
+
 * [REF] Available Spring + Reactive Starters 
 //include::ref_spring-boot-vertx-starters.adoc[leveloffset=+1] 
+
 ∘   Vert.x Core Starter
 //include::ref_spring-boot-vertx-starters.adoc[leveloffset=+1]
 ∘   Vert.x HTTP Starter
