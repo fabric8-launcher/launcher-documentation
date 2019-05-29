@@ -61,3 +61,4 @@ Hello, John!
 .Additional resources
 
 // Deploy your applications to an OpenShift cluster
+// add links to: https://spring.io/guides/gs/reactive-rest-service/
