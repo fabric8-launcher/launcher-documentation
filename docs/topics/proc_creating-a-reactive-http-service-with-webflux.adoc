@@ -60,5 +60,7 @@ Hello, John!
 
 .Additional resources
 
+You can link:{link-guide-spring-boot}#deploying-runtime-application-to-openshift_spring-boot[configure your application for deployment on OpenShift] to run your reactive service in a cloud environment.
+
 // Deploy your applications to an OpenShift cluster
 // add links to: https://spring.io/guides/gs/reactive-rest-service/
