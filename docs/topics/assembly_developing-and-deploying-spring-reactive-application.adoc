@@ -1,6 +1,50 @@
 [id='developing-reactive-spring-boot-applications-webflux']
 = Developing reactive {SpringBoot} applications using Spring Reactive and Webflux
 
+
+:parent-context: {context}
+
+
+//In addition to xref:example-rest-http-spring-boot[using an example], you can create new {runtime} applications from scratch and deploy them to OpenShift.
+// TODO mention that these features are now tech preview, needs to be in the RN, too.
+// TODO: add section sepcifying that these examples use webflux, as opposed to other stah might be added in the future.
+
+
+
+////
+* [PROC] Creating a Reactive HTTP REST service
 include::proc_creating-a-reactive-http-service-with-webflux.adoc[leveloffset=+1]
 
+* [PROC] Using GitHub OAuth2 Authentication in a WebFlux Application
+//include::proc_oauth2-with-a-webflux-application.adoc[leveloffset=+1] 
+
+* [PROC] Implementing Basic and Form-Based Authentication in a WebFlux Application
 include::proc_creating-a-reactive-authenticated-http-service-with-webflux.adoc[leveloffset=+1]
+ 
+* [PROC] Implementing Chunked data handling in a  WebFlux Application
+//include::proc_using-chunked-data-processing-with-webflux-applications.adoc[leveloffset=+1] 
+
+* [PROC] Integrating a Ver.x Mail client with your WebFlux Application
+//include::proc_creating-a-reeactive-http-service.adoc[leveloffset=+1] 
+
+* [REF] Available Spring + Reactive Starters 
+//include::ref_spring-boot-vertx-starters.adoc[leveloffset=+1] 
+
+∘   Vert.x Core Starter
+//include::ref_spring-boot-vertx-starters.adoc[leveloffset=+1]
+∘   Vert.x HTTP Starter
+∘   Vert.x HTTP  Test Starter
+∘   Vert.x Actuator Starter
+∘   Vert.x Mail starter
+////
+
+// TODO: ensure the info in the deployment section is relevant
+////
+// Deploying Springboot application to OpenShift
+//include::assembly_deploying-runtime-application-to-openshift.adoc[leveloffset=+1]
+
+// Deploying Springboot application to standalone Red Hat Enterprise Linux 
+//include::assembly_deploying-runtime-application-to-standalone-red-hat-enterprise-linux.adoc[leveloffset=+1]
+////
+
+:context: {parent-context}
