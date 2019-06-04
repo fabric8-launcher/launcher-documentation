@@ -1,0 +1,6 @@
+[id='developing-reactive-spring-boot-applications-webflux']
+= Developing reactive {SpringBoot} applications using Spring Reactive and Webflux
+
+include::proc_creating-a-reactive-http-service-with-webflux.adoc[leveloffset=+1]
+
+include::proc_creating-a-reactive-authenticated-http-service-with-webflux.adoc[leveloffset=+1]
