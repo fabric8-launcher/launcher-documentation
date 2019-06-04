@@ -7,7 +7,9 @@ Create a basic reactive Hello World HTTP web service using {SpringBoot} and WebF
 
 * Java JDK 8 or Java JDK 11 installed
 * Maven installed
-* A Maven-based application project
+// this configuration might not apply entirely while examples still in tech preview
+* A Maven-based application project configured link:{link-guide-spring-boot}#configuring-your-application-to-use-spring-boot_spring-boot[configured to use Spring Boot]
+
 
 
 .Procedure
@@ -36,7 +38,20 @@ include::resources/spring-boot/reactive-examples/example-http-service-webflux-po
 include::resources/spring-boot/reactive-examples/example-http-service-webflux.java[]
 ----
 
-. OPTIONAL: Run and test your application locally:
+. OPTIONAL: Run and test your application locally 
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ cd myApp 
+----
+
+.. Package your application:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn clean package
+----
+
 .. Start your application from the command line:
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -60,7 +75,8 @@ Hello, John!
 
 .Additional resources
 
-You can link:{link-guide-spring-boot}#deploying-runtime-application-to-openshift_spring-boot[configure your application for deployment on OpenShift] to run your reactive service in a cloud environment.
+You can link:{link-guide-spring-boot}#deploying-runtime-application-to-openshift_spring-boot[deploy your application to an OpenShift cluster] using Fabric8 Maven Plugin.
+// TODO: link to the rest of reactive examples.
 
-// Deploy your applications to an OpenShift cluster
+
 // add links to: https://spring.io/guides/gs/reactive-rest-service/
