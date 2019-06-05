@@ -95,7 +95,7 @@ Hello, user!
 .. Alternatively, use a terminal to make an unauthenticated HTTP request on `localhost:8080`.
 You receive HTTP `401 Unauthorized` response from your application.
 +
-[source,options="nowrap",subs="attributes+"]
+[source,bash,options="nowrap",subs="attributes+"]
 ----
 $ curl -I http://localhost:8080
 HTTP/1.1 401 Unauthorized
@@ -109,10 +109,10 @@ X-XSS-Protection: 1 ; mode=block
 Referrer-Policy: no-referrer
 ----
 
-.. Issues an authenticated request using the example user credentials.
+.. Issue an authenticated request using the example user credentials.
 You receive a personalized response.
 +
-[source,options="nowrap",subs="attributes+"]
+[source,bash,options="nowrap",subs="attributes+"]
 ----
 $ curl -u user:user http://localhost:8080
 Hello, user!
@@ -122,6 +122,8 @@ Hello, user!
 
 You can link:{link-guide-spring-boot}#deploying-runtime-application-to-openshift_spring-boot[deploy your application to an OpenShift cluster] using Fabric8 Maven Plugin.
 // TODO: link to the rest of reactive examples.
+
+You can also configure your application for link:{name-guide-spring-boot}[deployment on standalone Red{nbsp}Hat Enterprise Linux].
 
 
 // add links to: https://spring.io/guides/gs/reactive-rest-service/
