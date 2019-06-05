@@ -20,7 +20,7 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-security</artifactId>
     </dependency>
-<!-- tag::http-service-authenticated-pom-dependencies[] -->
+<!-- end::http-service-authenticated-pom-dependencies[] -->
   </dependencies>
 
   <build>
