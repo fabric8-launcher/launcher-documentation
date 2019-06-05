@@ -3,7 +3,7 @@
 You can select the OpenJDK image used to build and deploy your application to OpenShift. 
 OpenJDK images are available for RHEL{nbsp}7 and RHEL{nbsp}8 with OpenJDK 8 or OpenJDK 11.
 
-[cols="3*", options=header]
+[cols="1,1,1", options=header]
 |===
 |OS
 |JDK
@@ -13,7 +13,7 @@ OpenJDK images are available for RHEL{nbsp}7 and RHEL{nbsp}8 with OpenJDK 8 or O
 |OpenJDK 8
 |link:https://access.redhat.com/containers/#/registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift[RHEL 7 with OpenJDK 8^]
 
-| 
+| RHEL 7
 |OpenJDK 11
 |link:https://access.redhat.com/containers/#/registry.access.redhat.com/openjdk/openjdk-11-rhel7[RHEL 7 with OpenJDK 11^]
 
@@ -21,10 +21,10 @@ OpenJDK images are available for RHEL{nbsp}7 and RHEL{nbsp}8 with OpenJDK 8 or O
 |OpenJDK 8
 |link:https://access.redhat.com/containers/#/registry.access.redhat.com/openjdk/openjdk-8-rhel8[RHEL 8 with OpenJDK 8^]
 
-| 
+| RHEL 8
 |OpenJDK 11
 |link:https://access.redhat.com/containers/?tab=overview#/registry.access.redhat.com/openjdk/openjdk-11-rhel8[RHEL 8 with OpenJDK^]
 |===
 
-NOTE: The use of RHEL 8-based containers on a RHEL 7 host has limited support, which includes OpenShift 3 and OpenShift 4 installed on RHEL 7.
-See the link:https://access.redhat.com/articles/4087871[RHEL Container Compatibility Matrix] for information regarding container support on RHEL 7 and RHEL 8.
+NOTE: The use of a RHEL{nbsp}8-based container on a RHEL{nbsp}7 host, for example OpenShift 3 or OpenShift 4, installed on RHEL{nbsp}7 has limited support.
+For more information, see the link:https://access.redhat.com/articles/4087871[RHEL Container Compatibility Matrix].
