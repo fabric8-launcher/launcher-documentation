@@ -28,6 +28,9 @@ The recommended approach for specifying and using supported and tested Maven art
 // Developing Springboot application
 include::proc_developing-runtime-application.adoc[leveloffset=+1]
 
+//Selecting the image to build and deploy your application
+include::proc_selecting-the-jdk-builder-image-for-your-application.adoc[leveloffset=+1]
+
 // Deploying Springboot application to OpenShift
 include::assembly_deploying-runtime-application-to-openshift.adoc[leveloffset=+1]
 
