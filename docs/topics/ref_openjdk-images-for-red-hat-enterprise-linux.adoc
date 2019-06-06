@@ -26,5 +26,7 @@ OpenJDK images are available for RHEL{nbsp}7 and RHEL{nbsp}8 with OpenJDK 8 or O
 |link:https://access.redhat.com/containers/?tab=overview#/registry.access.redhat.com/openjdk/openjdk-11-rhel8[RHEL 8 with OpenJDK^]
 |===
 
-NOTE: The use of a RHEL{nbsp}8-based container on a RHEL{nbsp}7 host, for example OpenShift 3 or OpenShift 4, installed on RHEL{nbsp}7 has limited support.
-For more information, see the link:https://access.redhat.com/articles/4087871[RHEL Container Compatibility Matrix].
+Your application must use a registry service account token to download RHEL 8-based images.
+
+NOTE: The use of a RHEL{nbsp}8-based container on a RHEL{nbsp}7 host, for example with OpenShift 3 or OpenShift 4, has limited support.
+For more information, see the link:https://access.redhat.com/support/policy/rhel-container-compatibility[Red Hat Enterprise Linux Container Compatibility Matrix].

@@ -3,7 +3,7 @@
 = Developing and deploying {VertX} runtime application
 :parent-context: {context}
 
-In addition to xref:example-rest-http-vertx[using an example], you can create new {VertX} applications from scratch and deploy them to OpenShift or standalone Red{nbsp}Hat Enterprise Linux.
+In addition to xref:example-rest-http-vertx[using an example], you can create a new {VertX} application from scratch and deploy it to OpenShift or standalone Red{nbsp}Hat Enterprise Linux.
 
 //Patameters for Vertx to be set when using shared assemblies and modules
 
@@ -21,7 +21,7 @@ In addition to xref:example-rest-http-vertx[using an example], you can create ne
 include::proc_developing-runtime-application.adoc[leveloffset=+1]
 
 //Selecting the image to build and deploy your application
-include::proc_selecting-the-jdk-builder-image-for-your-application.adoc[leveloffset=+1]
+//include::proc_selecting-the-jdk-builder-image-for-your-application.adoc[leveloffset=+1]
 
 //Preparing and deploying application tp OpenShift
 include::assembly_deploying-runtime-application-to-openshift.adoc[leveloffset=+1]
