@@ -11,7 +11,7 @@ In addition to xref:example-rest-http-wf-swarm[using an example], you can create
 include::thorntail/docs/howto/writing-an-application-from-scratch/index.adoc[leveloffset=+1]
 
 //Selecting the image to build and deploy your application
-include::proc_selecting-the-jdk-builder-image-for-your-application.adoc[leveloffset=+1]
+//include::proc_selecting-the-jdk-builder-image-for-your-application.adoc[leveloffset=+1]
 
 :parameter-runtime-name: {Thorntail}
 :parameter-maven-command: $ mvn thorntail:run
