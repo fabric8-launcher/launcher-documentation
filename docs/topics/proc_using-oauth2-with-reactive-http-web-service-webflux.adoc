@@ -8,7 +8,7 @@ Set up OAuth2 for your {SpringBoot} Webflux application and authenticate with it
 * Java JDK 8 or Java JDK 11 installed
 * A GitHub account
 * Maven installed
-* A Maven-based application project configured link:{link-guide-spring-boot}#configuring-your-application-to-use-spring-boot_spring-boot[configured to use Spring Boot]
+* A Maven-based application project link:{link-guide-spring-boot}#configuring-your-application-to-use-spring-boot_spring-boot[configured to use Spring Boot]
 
 
 .Procedure
@@ -16,7 +16,7 @@ Set up OAuth2 for your {SpringBoot} Webflux application and authenticate with it
 . link:https://github.com/settings/developers[Register a new OAuth 2 application] on your Github account.
 Ensure that you provide the following values in the registration form:
 //Note that these values only work when deploying the application on your local machine.
-* Home URL: `http://localhost:8080`
+* Homepage URL: `http://localhost:8080`
 * Authorization callback URL: `http://localhost:8080/login/oauth2/code/github`
 +
 Ensure that you save the client ID and a client secret that you receive upon completing the registration.
@@ -88,51 +88,15 @@ $ mvn clean package
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ java -jar target/vertx-spring-boot-sample-http-0.0.1-SNAPSHOT.jar 
+$ java -jar target/vertx-spring-boot-sample-http-oauth-0.0.1-SNAPSHOT.jar
 ----
 
-.. Navigate to `http://localhost:8080` using a browser to access the login screen.
+.. Navigate to `http://localhost:8080` using a browser.
+You are redirected to an OAuth2 application authorization screen on GitHub.
+If prompted, log in using your GitHub account credentials.
 
-.. Log in using the credentials below:
-+
---
-* username: user
-* password: user
---
-+
-You receive a customized greeting when you are logged in:
-+
-----
-Hello, user!
-----
-
-.. Navigate to `http://localhost:8080/logout` using and use the _Log out_ button to log out of your application.   
-
-.. Alternatively, use a terminal to make an unauthenticated HTTP request on `localhost:8080`.
-You receive HTTP `401 Unauthorized` response from your application.
-+
-[source,bash,options="nowrap",subs="attributes+"]
-----
-$ curl -I http://localhost:8080
-HTTP/1.1 401 Unauthorized
-WWW-Authenticate: Basic realm="Realm"
-Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-Pragma: no-cache
-Expires: 0
-X-Content-Type-Options: nosniff
-X-Frame-Options: DENY
-X-XSS-Protection: 1 ; mode=block
-Referrer-Policy: no-referrer
-----
-
-.. Issue an authenticated request using the example user credentials.
-You receive a personalized response.
-+
-[source,bash,options="nowrap",subs="attributes+"]
-----
-$ curl -u user:user http://localhost:8080
-Hello, user!
-----
+.. Click _Authorize_ to confirm.
+You are redirected to a screen showing a personalized greeting message. 
 
 .Additional resources
 
