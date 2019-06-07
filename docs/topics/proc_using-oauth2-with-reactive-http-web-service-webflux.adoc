@@ -1,0 +1,144 @@
+[id='using-oauth2-authentication-with-a-reactive-spring-boot-webflux-application']
+= Using OAuth2 authentication with a reactive {SpringBoot} WebFlux application
+
+Set up OAuth2 for your {SpringBoot} Webflux application and authenticate with it using your client ID and client secret. 
+
+.Prerequisites
+
+* Java JDK 8 or Java JDK 11 installed
+* A GitHub account
+* Maven installed
+* A Maven-based application project configured link:{link-guide-spring-boot}#configuring-your-application-to-use-spring-boot_spring-boot[configured to use Spring Boot]
+
+
+.Procedure
+
+. link:https://github.com/settings/developers[Register a new OAuth 2 application] on your Github account.
+Ensure that you provide the following values in the registration form:
+//Note that these values only work when deploying the application on your local machine.
+* Home URL: `http://localhost:8080`
+* Authorization callback URL: `http://localhost:8080/login/oauth2/code/github`
++
+Ensure that you save the client ID and a client secret that you receive upon completing the registration.
+
+. Add the following dependencies in the `pom.xml` file of your project:
+
+* `vertx-spring-boot-starter`
+* `spring-boot-starter-security`
+* `spring-boot-starter-oauth2-client`
+* `reactor-netty`
+
+Note that the `reactor-netty` client is required to ensure that `spring-boot-starter-oauth2-client` works properly. 
+
+.`pom.xml`
+[source,xml,options="nowrap",subs="attributes+"]
+----
+<project>
+...
+  <dependencies>
+  ...
+include::resources/spring-boot/reactive-examples/example-0auth2-with-reactive-http-application-webflux-pom.xml[tags=http-service-oauth2-pom-dependencies]
+  ...
+  <dependencies>
+...
+</project>
+----
+
+. Create an endpoint controller class for your application: 
++
+.`HelloController.java`
+[source,java,options="nowrap",subs="attributes+"]
+----
+include::resources/spring-boot/reactive-examples/example-oauth2-http-webflux-endpoint-controller.java[]
+----
+
+. Create the main class of your application:
++
+.`HttpSecuritySampleApplication.java`
+[source,java,options="nowrap",subs="attributes+"]
+----
+include::resources/spring-boot/reactive-examples/example-oauth2-webflux-application.java[]
+----
+
+. Create a YAML configuration file to store the OAuth2 client ID and client secret you received from GitHub upon registering your application.
++
+.`src/main/resources/application.yml`
+[source,java,options="nowrap",subs="attributes+"]
+----
+include::resources/spring-boot/reactive-examples/example-oauth2-client-configuration.yaml[]
+----
+
+. OPTIONAL: Run and test your application locally:
+
+.. Navigate to the root directory of your Maven project:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ cd myApp 
+----
+
+.. Package your application:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn clean package
+----
+
+.. Start your application from the command line:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ java -jar target/vertx-spring-boot-sample-http-0.0.1-SNAPSHOT.jar 
+----
+
+.. Navigate to `http://localhost:8080` using a browser to access the login screen.
+
+.. Log in using the credentials below:
++
+--
+* username: user
+* password: user
+--
++
+You receive a customized greeting when you are logged in:
++
+----
+Hello, user!
+----
+
+.. Navigate to `http://localhost:8080/logout` using and use the _Log out_ button to log out of your application.   
+
+.. Alternatively, use a terminal to make an unauthenticated HTTP request on `localhost:8080`.
+You receive HTTP `401 Unauthorized` response from your application.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl -I http://localhost:8080
+HTTP/1.1 401 Unauthorized
+WWW-Authenticate: Basic realm="Realm"
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-XSS-Protection: 1 ; mode=block
+Referrer-Policy: no-referrer
+----
+
+.. Issue an authenticated request using the example user credentials.
+You receive a personalized response.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl -u user:user http://localhost:8080
+Hello, user!
+----
+
+.Additional resources
+
+You can link:{link-guide-spring-boot}#deploying-runtime-application-to-openshift_spring-boot[deploy your application to an OpenShift cluster] using Fabric8 Maven Plugin.
+
+You can also configure your application for link:{link-guide-spring-boot}#deploying-runtime-application-to-standalone-red-hat-enterprise-linux_spring-boot[deployment on standalone Red{nbsp}Hat Enterprise Linux].
+
+
+// add links to: https://spring.io/guides/gs/reactive-rest-service/
