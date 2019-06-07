@@ -96,7 +96,9 @@ include::topics/assembly_cache-example-application.adoc[leveloffset=+2]
 // workaround to resolve ID conflicts:
 include::topics/assembly_developing-and-deploying-springboot-application.adoc[leveloffset=+1]
 
+ifdef::launcher-docs-only[]
 include::topics/assembly_developing-and-deploying-spring-reactive-application.adoc[leveloffset=+1]
+endif::[]
 
 == Debugging
 
