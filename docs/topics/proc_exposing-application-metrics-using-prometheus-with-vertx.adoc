@@ -63,7 +63,7 @@ $ ./prometheus
 
 .Procedure
 
-. Include the `vertx-micrometer`, `micrometer-registry-prometheus` and `vertx-web` dependencies in the `pom.xml` file of your application:
+. Include the `vertx-micrometer` and `vertx-web` dependencies in the `pom.xml` file of your application:
 +
 .pom.xml
 [source,xml]
@@ -71,11 +71,6 @@ $ ./prometheus
 <dependency>
   <groupId>io.vertx</groupId>
   <artifactId>vertx-micrometer-metrics</artifactId>
-</dependency>
-<dependency>
-  <groupId>io.micrometer</groupId>
-  <artifactId>micrometer-registry-prometheus</artifactId>
-  <version>1.0.0</version>
 </dependency>
 <dependency>
   <groupId>io.vertx</groupId>
