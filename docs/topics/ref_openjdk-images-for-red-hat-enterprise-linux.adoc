@@ -3,9 +3,6 @@
 You can select the OpenJDK image used to build and deploy your application to OpenShift. 
 OpenJDK images are available for RHEL{nbsp}7 and RHEL{nbsp}8 with OpenJDK 8 or OpenJDK 11.
 
-Your application must use a registry service account token to download a RHEL 8-based image.
-The procedures for creating a registry service account and downloading a RHEL 8-based image are available from the Red Hat Container Catalog links in the following table.
-
 [cols="1,1,1", options=header]
 |===
 |OS
@@ -28,6 +25,8 @@ The procedures for creating a registry service account and downloading a RHEL 8-
 |OpenJDK 11
 |link:https://access.redhat.com/containers/?tab=overview#/registry.access.redhat.com/openjdk/openjdk-11-rhel8[RHEL 8 with OpenJDK^]
 |===
+
+Your application must use a registry service account token to download RHEL 8-based images.
 
 NOTE: The use of a RHEL{nbsp}8-based container on a RHEL{nbsp}7 host, for example with OpenShift 3 or OpenShift 4, has limited support.
 For more information, see the link:https://access.redhat.com/support/policy/rhel-container-compatibility[Red Hat Enterprise Linux Container Compatibility Matrix].
