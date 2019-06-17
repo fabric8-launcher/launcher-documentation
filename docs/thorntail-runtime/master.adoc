@@ -5,8 +5,6 @@ include::topics/templates/document-attributes.adoc[]
 :product:
 :built-for-thorntail:
 
-//TODO: should be undefined once all runtimes move on to FMP 4.x
-:version-fabric8-maven-plugin: 4.1.0
 
 //override for a cleaner TOC
 :toclevels: 2
