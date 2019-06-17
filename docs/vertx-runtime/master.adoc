@@ -4,9 +4,6 @@ include::topics/templates/document-attributes.adoc[]
 :toclevels: 2
 :built-for-vertx:
 
-//TODO: should be undefined once all runtimes move on to FMP 4.x
-:version-fabric8-maven-plugin: 4.1.0
-
 = {name-guide-vertx}
 :runtime: {VertX}
 //var for front-end topics, if below is defined in topic, its used in docs, if not its used in the front end
