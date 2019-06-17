@@ -20,7 +20,6 @@ In the following procedure, a profile with Fabric8 Maven plugin is used for buil
 .Prerequisites
 
 * Maven is installed.
-* Docker or podman authentication into link:https://access.redhat.com/containers/[Red Hat Container Catalog] to access RHEL 8 images.
 
 .Procedure
 
