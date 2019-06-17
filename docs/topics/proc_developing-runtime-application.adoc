@@ -111,4 +111,3 @@ $ curl http://localhost:8080
 
 * As a recommended practice, you can configure liveness and readiness probes to enable health monitoring for your application when running on OpenShift.
 To learn how application health monitoring on OpenShift works, try the xref:example-health-check-{parameter-runtime}[Health Check example].
-* See xref:selecting-the-jdk-builder-image-for-your-application_{context}[Selecting the JDK image for your application] to specify the OpenJDK image used to build your application.

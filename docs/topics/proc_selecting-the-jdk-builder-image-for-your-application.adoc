@@ -1,9 +1,9 @@
 [id='selecting-the-jdk-builder-image-for-your-application_{context}']
-= Selecting the JDK image for your {runtime} application
-Edit the `pom.xml` file of your application to specify the image for building and running your {runtime} application.
+= Selecting a JDK image for your {runtime} application
+Edit your application `pom.xml` file to specify the image for building and running your {runtime} application.
 
 .Prerequisites
-* A Maven-based application.
+* A `pom.xml` file for your application.
 * Maven installed.
 
 .Procedure
@@ -11,28 +11,28 @@ Edit the `pom.xml` file of your application to specify the image for building an
 
 . Replace the `fabric8.generator.from` property to specify the version of RHEL and OpenJDK you intend to use.
 
-* RHEL 7 with OpenJDK 8
+RHEL 7 with OpenJKD 8::
 +
 [source,xml,options="nowrap",subs="attributes+"]
 ----
 <fabric8.generator.from>{name-2si-image-openjdk8-rhel7}</fabric8.generator.from>
 ----
 
-* RHEL 7 with OpenJDK 11
+RHEL 7 with OpenJDK 11::
 +
 [source,xml,options="nowrap",subs="attributes+"]
 ----
 <fabric8.generator.from>{name-2si-image-openjdk11-rhel7}</fabric8.generator.from>
 ----
 
-* RHEL 8 with OpenJDK 8
+RHEL 8 with OpenJDK 8::
 +
 [source,xml,options="nowrap",subs="attributes+"]
 ----
 <fabric8.generator.from>{name-2si-image-openjdk8-rhel8}</fabric8.generator.from>
 ----
 
-* RHEL 8 with OpenJDK 11
+RHEL 8 with OpenJDK 11::
 +
 [source,xml,options="nowrap",subs="attributes+"]
 ----
