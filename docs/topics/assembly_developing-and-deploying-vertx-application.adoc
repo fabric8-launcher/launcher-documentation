@@ -20,6 +20,9 @@ In addition to xref:example-rest-http-vertx[using an example], you can create a 
 //Developing an application
 include::proc_developing-runtime-application.adoc[leveloffset=+1]
 
+//Selecting the image to build and deploy your application
+//include::proc_selecting-the-jdk-builder-image-for-your-application.adoc[leveloffset=+1]
+
 //Preparing and deploying application tp OpenShift
 include::assembly_deploying-runtime-application-to-openshift.adoc[leveloffset=+1]
 
