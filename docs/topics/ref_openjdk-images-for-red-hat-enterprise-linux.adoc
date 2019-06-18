@@ -16,7 +16,7 @@ The authentication procedures are provided in the Red Hat Container Catalog link
 |OpenJDK 8
 |link:https://access.redhat.com/containers/#/registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift[RHEL 7 with OpenJDK 8^]
 
-| RHEL 7
+|RHEL 7
 |OpenJDK 11
 |link:https://access.redhat.com/containers/#/registry.access.redhat.com/openjdk/openjdk-11-rhel7[RHEL 7 with OpenJDK 11^]
 
@@ -24,7 +24,7 @@ The authentication procedures are provided in the Red Hat Container Catalog link
 |OpenJDK 8
 |link:https://access.redhat.com/containers/#/registry.access.redhat.com/openjdk/openjdk-8-rhel8[RHEL 8 with OpenJDK 8^]
 
-| RHEL 8
+|RHEL 8
 |OpenJDK 11
 |link:https://access.redhat.com/containers/?tab=overview#/registry.access.redhat.com/openjdk/openjdk-11-rhel8[RHEL 8 with OpenJDK 11^]
 |===
