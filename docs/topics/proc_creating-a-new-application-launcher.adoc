@@ -22,9 +22,10 @@ The following procedure describes the main actions you need to perform when sett
 
 . Click _Start_ on the Launcher landing page to access the main Launcher screen. 
 
-. Select _Create a New Application_. 
+. Select _Create a New Application_.
 
-. Specify a name for your application project or use the default name that {name-launcher} provides.
+. Specify a name for your application project.
+If you do not provide a name, {name-launcher} assigns a random name to your project.
 
 . Configure a frontend for your application.
 
@@ -54,18 +55,18 @@ Health Checks are added to your app by default.
 
 .. Click _Authorize_ in the _Destination Repository_ section of the screen.
 
-.. When you are redirected to the login prompt on GitHub, log in using your account credentials.
+.. When you are redirected to the login prompt on GitHub, log in using your account credentials. When logged in, you are redirected to the authorization screen.
 
 .. Click _Authorize fabric8-launcher_. When authorization completes, you are redirected back to the Launcher web interface.
 
-.. Click _Save_ return to the project setup screen in the Launcher.
+.. Click _Save_ to confirm your destination repository settings and return to the project setup screen in the Launcher.
 
 .. Click _Configure_ in the _OpenShift Deployment_ section of the screen.
-Log in using your OpenShift account credentials to register a new cluster with the {name-launcher} tool. 
+Log in using your OpenShift account credentials to connect your cluster to the {name-launcher} tool. 
 
 .. Click _Save_ when you are done.
 
-. Click _Launch_ to deploy your project to an {OpenShiftCluster}.
+. Click _Launch_ to deploy your project to the {OpenShiftCluster}.
 Alternatively, click _Download_ to download a ZIP file containing the generated project files. 
 
  
