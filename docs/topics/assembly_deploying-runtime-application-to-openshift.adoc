@@ -4,7 +4,11 @@
 = Deploying {runtime} application to OpenShift
 
 :parent-context: {context}
-To deploy your {runtime} application to OpenShift, configure the `pom.xml` file in your application and then deploy using the Fabric8 Maven plugin.
+To deploy your {runtime} application to OpenShift, configure the `pom.xml` file in your application and then use the Fabric8 Maven plugin.
+You can specify an OpenJDK image by replacing the `fabric8.generator.from` URL in the `pom.xml` file.
+
+//Supported OS and JDK images
+include::ref_openjdk-images-for-red-hat-enterprise-linux.adoc[leveloffset=+1]
 
 // Preparing runtime application for OpenShift deployment
 include::proc_preparing-runtime-application-for-openshift-deployment.adoc[leveloffset=+1]

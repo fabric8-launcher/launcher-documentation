@@ -1,0 +1,33 @@
+[id='openjdk-images-for-red-hat-enterprise-linux_{context}']
+= OpenJDK images for Red Hat Enterprise Linux
+You can select the OpenJDK image used to build and deploy your application to OpenShift. 
+OpenJDK images are available for RHEL{nbsp}7 and RHEL{nbsp}8 with OpenJDK 8 or OpenJDK 11.
+
+Docker or podman authentication into the Red Hat Container Catalog is required to access RHEL 8 images.
+The authentication procedures are provided in the Red Hat Container Catalog links in the following table.
+
+[cols="1,1,1", options=header]
+|===
+|OS
+|JDK
+|Red Hat Container Catalog
+
+|RHEL 7
+|OpenJDK 8
+|link:https://access.redhat.com/containers/#/registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift[RHEL 7 with OpenJDK 8^]
+
+|RHEL 7
+|OpenJDK 11
+|link:https://access.redhat.com/containers/#/registry.access.redhat.com/openjdk/openjdk-11-rhel7[RHEL 7 with OpenJDK 11^]
+
+|RHEL 8
+|OpenJDK 8
+|link:https://access.redhat.com/containers/#/registry.access.redhat.com/openjdk/openjdk-8-rhel8[RHEL 8 with OpenJDK 8^]
+
+|RHEL 8
+|OpenJDK 11
+|link:https://access.redhat.com/containers/?tab=overview#/registry.access.redhat.com/openjdk/openjdk-11-rhel8[RHEL 8 with OpenJDK 11^]
+|===
+
+NOTE: The use of a RHEL{nbsp}8-based container on a RHEL{nbsp}7 host, for example with OpenShift 3 or OpenShift 4, has limited support.
+For more information, see the link:https://access.redhat.com/support/policy/rhel-container-compatibility[Red Hat Enterprise Linux Container Compatibility Matrix].

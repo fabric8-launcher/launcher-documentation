@@ -20,6 +20,7 @@ In the following procedure, a profile with Fabric8 Maven plugin is used for buil
 .Prerequisites
 
 * Maven is installed.
+* Docker or podman authentication into link:https://access.redhat.com/containers/[Red Hat Container Catalog] to access RHEL 8 images.
 
 .Procedure
 
@@ -44,6 +45,36 @@ ifdef::built-for-spring-boot[]
 include::resources/spring-boot/spring-boot-openshift-pom-config-example.xml[]
 ----
 endif::[]
+
+. Replace the `fabric8.generator.from` property in the `pom.xml` file to specify OpenJDK image.
+
+* RHEL 7 with OpenJDK 8
++
+[source,xml,options="nowrap",subs="attributes+"]
+----
+<fabric8.generator.from>{name-2si-image-openjdk8-rhel7}</fabric8.generator.from>
+----
+
+* RHEL 7 with OpenJDK 11
++
+[source,xml,options="nowrap",subs="attributes+"]
+----
+<fabric8.generator.from>{name-2si-image-openjdk11-rhel7}</fabric8.generator.from>
+----
+
+* RHEL 8 with OpenJDK 8
++
+[source,xml,options="nowrap",subs="attributes+"]
+----
+<fabric8.generator.from>{name-2si-image-openjdk8-rhel8}</fabric8.generator.from>
+----
+
+* RHEL 8 with OpenJDK 11
++
+[source,xml,options="nowrap",subs="attributes+"]
+----
+<fabric8.generator.from>{name-2si-image-openjdk11-rhel8}</fabric8.generator.from>
+----
 
 ifdef::built-for-vertx[]
 . Create `deployment.yaml` file in `src/main/fabric8` directory with the following content:

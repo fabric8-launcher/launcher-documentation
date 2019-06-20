@@ -3,7 +3,7 @@
 = Developing and deploying {VertX} runtime application
 :parent-context: {context}
 
-In addition to xref:example-rest-http-vertx[using an example], you can create new {VertX} applications from scratch and deploy them to OpenShift or standalone Red{nbsp}Hat Enterprise Linux.
+In addition to xref:example-rest-http-vertx[using an example], you can create a new {VertX} application from scratch and deploy it to OpenShift or standalone Red{nbsp}Hat Enterprise Linux.
 
 //Patameters for Vertx to be set when using shared assemblies and modules
 
