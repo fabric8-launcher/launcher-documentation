@@ -1,5 +1,5 @@
 [id='using-oauth2-authentication-with-a-reactive-spring-boot-webflux-application_{context}']
-= Using OAuth2 authentication with a reactive {SpringBoot} WebFlux application
+= Using OAuth2 authentication in a reactive {SpringBoot} application with WebFlux
 
 Set up OAuth2 for your {SpringBoot} Webflux application and authenticate with it using your client ID and client secret. 
 
