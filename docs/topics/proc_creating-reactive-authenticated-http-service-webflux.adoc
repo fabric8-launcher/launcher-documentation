@@ -1,5 +1,5 @@
 [id='creating-basic-and-form-based-authentication-in-reactive-spring-boot-http-application-with-webflux_{context}']
-= Using basic and form-based authentication in a reactive {SpringBoot} HTTP service with WebFlux
+= Using basic authentication in a reactive {SpringBoot} WebFlux application.
 
 Create a reactive Hello World HTTP web service with basic form-based authentication using Spring Security and WebFlux.
 
