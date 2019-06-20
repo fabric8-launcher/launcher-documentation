@@ -1,4 +1,4 @@
-[id='using-server-sent-events-in-a-spring-reactive-application']
+[id='using-server-sent-events-in-a-spring-reactive-application_{context}']
 = Using Server-Sent Events in a Spring Reactive application
 
 Create a simple service that request and receives a stream of server-sent events (SSE)

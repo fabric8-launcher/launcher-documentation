@@ -1,5 +1,5 @@
-[id='creating-an-authenticated-reactive-spring-boot-http-service-with-webflux']
-= Creating an authenticated reactive {SpringBoot} HTTP service with WebFlux
+[id='creating-basic-and-form-based-authentication-in-reactive-spring-boot-http-application-with-webflux_{context}']
+= Using basic and form-based authentication in a reactive {SpringBoot} HTTP service with WebFlux
 
 Create a reactive Hello World HTTP web service with basic form-based authentication using Spring Security and WebFlux.
 
