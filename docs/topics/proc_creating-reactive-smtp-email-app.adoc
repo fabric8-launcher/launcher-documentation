@@ -1,5 +1,5 @@
-[id='creating-an-http-smtp-mail-service-with-webflux']
-= Creating a reactive {SpringBoot} SMTP mail app with WebFlux
+[id='creating-an-http-smtp-mail-service']
+= Creating a reactive {SpringBoot} SMTP mail service
 
 Create an SMTP email service with {SpringBoot} and WebFlux.
 
@@ -9,11 +9,11 @@ Create an SMTP email service with {SpringBoot} and WebFlux.
 * Maven installed
 * A Maven-based application project configured link:{link-guide-spring-boot}#configuring-your-application-to-use-spring-boot_spring-boot[configured to use Spring Boot]
 // link to postfix config example in RHEL7 Docs
-* A SMTP mail server
+* A SMTP mail server configured on your machine
 
 .Procedure
 
-. Add `vertx-spring-boot-starter` and `vertx-spring-boot-starter-mail` as dependencies in the `pom.xml` file of your project.
+. Add `vertx-spring-boot-starter-http` and `vertx-spring-boot-starter-mail` as dependencies in the `pom.xml` file of your project.
 
 .`pom.xml`
 [source,xml,options="nowrap",subs="attributes+"]
