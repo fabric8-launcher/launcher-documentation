@@ -1,6 +1,5 @@
 [id='developing-reactive-spring-boot-applications-webflux']
-= Developing reactive {SpringBoot} applications using Spring Reactive and Webflux
-
+= Developing reactive {SpringBoot} applications using Spring Reactive.
 
 :parent-context: {context}
 
@@ -12,8 +11,10 @@ include::proc_creating-reactive-authenticated-http-service-webflux.adoc[leveloff
 
 include::proc_using-oauth2-with-reactive-http-web-service-webflux.adoc[leveloffset=+1]
 
+// remove webflux from the filename and title
 include::proc_creating-reactive-smtp-email-app-webflux.adoc[leveloffset=+1]
 
+include::proc_using-server-sent-events-spring-reactive-app.adoc[leveloffset=+1]
 
 //In addition to xref:example-rest-http-spring-boot[using an example], you can create new {runtime} applications from scratch and deploy them to OpenShift.
 // TODO mention that these features are now tech preview, needs to be in the RN, too.
