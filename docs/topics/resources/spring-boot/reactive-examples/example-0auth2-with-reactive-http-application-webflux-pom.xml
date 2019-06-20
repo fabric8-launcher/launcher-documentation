@@ -14,7 +14,6 @@
     <dependency>
       <groupId>dev.snowdrop</groupId>
       <artifactId>vertx-spring-boot-starter-http</artifactId>
-      <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>

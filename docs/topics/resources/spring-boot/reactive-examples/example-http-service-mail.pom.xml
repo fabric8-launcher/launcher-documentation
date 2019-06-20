@@ -14,12 +14,10 @@
     <dependency>
       <groupId>dev.snowdrop</groupId>
       <artifactId>vertx-spring-boot-starter-http</artifactId>
-      <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>dev.snowdrop</groupId>
       <artifactId>vertx-spring-boot-starter-mail</artifactId>
-      <version>${project.version}</version>
     </dependency>
 <!-- end::http-service-mail-pom-dependencies[] -->
   </dependencies>
