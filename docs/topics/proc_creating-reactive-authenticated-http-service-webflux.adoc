@@ -12,7 +12,7 @@ Create a reactive Hello World HTTP web service with basic form-based authenticat
 
 .Procedure
 
-. Add `vertx-spring-boot-starter-http and `spring-boot-starter-security` as dependencies in the `pom.xml` file of your project.
+. Add `vertx-spring-boot-starter-http` and `spring-boot-starter-security` as dependencies in the `pom.xml` file of your project.
 
 .`pom.xml`
 [source,xml,options="nowrap",subs="attributes+"]
@@ -72,7 +72,7 @@ $ mvn clean package
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ java -jar target/vertx-spring-boot-sample-http-0.0.1-SNAPSHOT.jar 
+$ java -jar target/vertx-spring-boot-sample-http-security.jar 
 ----
 
 .. Navigate to `http://localhost:8080` using a browser to access the login screen.

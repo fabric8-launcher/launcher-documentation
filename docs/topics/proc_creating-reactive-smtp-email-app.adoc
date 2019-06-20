@@ -78,7 +78,7 @@ $ mvn clean package
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ java -jar target/vertx-spring-boot-sample-mail-0.0.1-SNAPSHOT.jar 
+$ java -jar target/vertx-spring-boot-sample-mail.jar 
 ----
 
 .. Navigate to `http://localhost:8080/index.html` using a browser to access the email form.

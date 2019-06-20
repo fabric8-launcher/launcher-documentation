@@ -23,7 +23,7 @@ Ensure that you save the client ID and a client secret that you receive upon com
 
 . Add the following dependencies in the `pom.xml` file of your project:
 
-* `vertx-spring-boot-starter-http
+* `vertx-spring-boot-starter-http`
 * `spring-boot-starter-security`
 * `spring-boot-starter-oauth2-client`
 * `reactor-netty`
@@ -88,7 +88,7 @@ $ mvn clean package
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ java -jar target/vertx-spring-boot-sample-http-oauth-0.0.1-SNAPSHOT.jar
+$ java -jar target/vertx-spring-boot-sample-http-oauth.jar
 ----
 
 .. Navigate to `http://localhost:8080` using a browser.
