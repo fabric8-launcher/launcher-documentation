@@ -1,0 +1,99 @@
+[id='using-server-sent-events-in-a-spring-reactive-application']
+= Using Server-Sent Events in a Spring Reactive application
+
+Create a simple service that request and receives a stream of server-sent events (SSE)
+The service accepts a HTTP request and responds by returning a continuous stream of events until you cancel the request.
+
+.Prerequisites
+
+* Java JDK 8 or Java JDK 11 installed
+* Maven installed
+// this configuration might not apply entirely while examples still in tech preview
+* A Maven-based application project configured link:{link-guide-spring-boot}#configuring-your-application-to-use-spring-boot_spring-boot[configured to use Spring Boot]
+
+
+.Procedure
+
+. Add `vertx-spring-boot-starter-http` as a dependency in the `pom.xml` file of your project.
+
+.`pom.xml`
+[source,xml,options="nowrap",subs="attributes+"]
+----
+<project>
+...
+  <dependencies>
+  ...
+include::resources/spring-boot/reactive-examples/example-sse-service-pom.xml[tags=sse-service-pom-dependencies]
+  ...
+  <dependencies>
+...
+</project>
+----
+
+. Create the main class of your application:
+
+.`SseExampleApplication.java`
+[source,java,options="nowrap",subs="attributes+"]
+----
+include::resources/spring-boot/reactive-examples/example-sse-application.java[]
+----
+
+. Create a Server-sent Event controller class for your application.
+In this example, the class generates a stream of random integers and outputs them into a terminal application.   
+
+.`SseController.java`
+[source,java,options="nowrap",subs="attributes+"]
+----
+include::resources/spring-boot/reactive-examples/example-sse-service-sse-controller.java[]
+----
+
+. OPTIONAL: Run and test your application locally 
+
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ cd myApp 
+----
+
+.. Package your application:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn clean package
+----
+
+.. Start your application from the command line:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ java -jar target/vertx-spring-boot-sample-sse-0.0.1-SNAPSHOT.jar 
+----
+.. In a new terminal window, issue a HTTP request to `localhost`.
+You start receiving a continuous stream of random integers from the Server-Sent Event controller:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ curl localhost:8080
+data:-2126721954
+
+data:-573499422
+
+data:1404187823
+
+data:1338766210
+
+data:-666543077
+...
+----
++
+Press `Ctrl`+`C` to cancel your HTTP request and terminate the stream of responses.
+
+
+.Additional resources
+
+You can link:{link-guide-spring-boot}#deploying-runtime-application-to-openshift_spring-boot[deploy your application to an OpenShift cluster] using Fabric8 Maven Plugin.
+
+You can also configure your application for link:{link-guide-spring-boot}#deploying-runtime-application-to-standalone-red-hat-enterprise-linux_spring-boot[deployment on standalone Red{nbsp}Hat Enterprise Linux].
+
+
+// add links to: https://spring.io/guides/gs/reactive-rest-service/
+// what are server-sent-events from  spring docs
