@@ -1,5 +1,5 @@
 [id='developing-reactive-spring-boot-applications-webflux_{context}']
-= Developing reactive applications with Vert.x Spring Boot
+= Developing reactive applications with {SpringReactive}
 
 :parent-context: {context}
 
@@ -11,7 +11,6 @@ include::proc_creating-reactive-authenticated-http-service-webflux.adoc[leveloff
 
 include::proc_using-oauth2-with-reactive-http-web-service-webflux.adoc[leveloffset=+1]
 
-// remove webflux from the filename and title
 include::proc_creating-reactive-smtp-email-app.adoc[leveloffset=+1]
 
 include::proc_using-server-sent-events-spring-reactive-app.adoc[leveloffset=+1]
