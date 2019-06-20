@@ -7,7 +7,7 @@
 
 include::proc_creating-a-reactive-http-service-with-webflux.adoc[leveloffset=+1]
 
-include::proc_creating-reactive-authenticated-http-service-webflux.adoc[leveloffset=+1]
+include::proc_using-basic-authentication-in-http-service-webflux.adoc[leveloffset=+1]
 
 include::proc_using-oauth2-with-reactive-http-web-service-webflux.adoc[leveloffset=+1]
 
