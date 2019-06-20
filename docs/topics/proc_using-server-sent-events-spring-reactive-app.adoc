@@ -65,7 +65,7 @@ $ mvn clean package
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ java -jar target/vertx-spring-boot-sample-sse-0.0.1-SNAPSHOT.jar 
+$ java -jar target/vertx-spring-boot-sample-sse.jar 
 ----
 .. In a new terminal window, issue a HTTP request to `localhost`.
 You start receiving a continuous stream of random integers from the Server-Sent Event controller:

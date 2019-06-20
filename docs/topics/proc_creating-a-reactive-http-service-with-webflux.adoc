@@ -14,7 +14,7 @@ Create a basic reactive Hello World HTTP web service using {SpringBoot} and WebF
 
 .Procedure
 
-. Add `vertx-spring-boot-starter-http as a dependency in the `pom.xml` file of your project.
+. Add `vertx-spring-boot-starter-http` as a dependency in the `pom.xml` file of your project.
 
 .`pom.xml`
 [source,xml,options="nowrap",subs="attributes+"]
@@ -56,7 +56,7 @@ $ mvn clean package
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ java -jar target/vertx-spring-boot-sample-http-0.0.1-SNAPSHOT.jar 
+$ java -jar target/vertx-spring-boot-sample-http.jar 
 ----
 .. In a new terminal window, issue an HTTP request on the `/hello` endpoint:
 +
