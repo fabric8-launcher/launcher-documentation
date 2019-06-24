@@ -4,6 +4,8 @@
 :parent-context: {context}
 
 //con_what is spring+reactive
+//include::con_spring-reactive-introduction.adoc[levelooffset=+1]
+
 
 include::proc_creating-a-reactive-http-service-with-webflux.adoc[leveloffset=+1]
 
@@ -13,6 +15,8 @@ include::proc_using-oauth2-with-reactive-http-web-service-webflux.adoc[leveloffs
 
 include::proc_creating-reactive-smtp-email-app.adoc[leveloffset=+1]
 
+//concept module added
+include::con_server-sent-events.adoc[leveloffset=+1]
 include::proc_using-server-sent-events-spring-reactive-app.adoc[leveloffset=+1]
 
 //In addition to xref:example-rest-http-spring-boot[using an example], you can create new {runtime} applications from scratch and deploy them to OpenShift.

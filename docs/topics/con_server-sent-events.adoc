@@ -1,0 +1,9 @@
+= Server-Sent Events
+
+Server-sent events (SSE) is a protocol that you can use to push unidirectional events form an event source to a web-based or browser-based client over HTTP.
+It is more light-weight compared to REST or WebSockets, and it does not require the target client to be aware of the protocol being used.
+As opposed to WebsSockets, it does not handle bidirectional communication beetween an event source 
+The specification for SSE is incorporated into HTML5, and is widely supported by browsers, including legacy versions. It can can be easily used from the command line and is relatively simple to set up compared to other protocols.
+SSE is suitable for use cases that require frequent updates from the server to the client, while updates from the client side to the server are expected to be less frequent and can therefore be handled over a different protocol, such as REST.
+Examples of such use cases include live social media feed updates or notifications sent to a client when new files are uploaded to a file server.
+ 
