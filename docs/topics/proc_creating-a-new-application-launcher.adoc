@@ -1,0 +1,72 @@
+[id='creating-a-new-application-using-the-launcher-tool_{context}']
+= Creating a new application using the {name-launcher} Tool
+
+// Build an assembly around this procedure by including context modules that describe individual capabilities in detail
+
+Set up a new application project and deploy it to an {OpenShiftCluster} using the {name-launcher} tool.
+The following procedure describes the main actions you need to perform when setting up your project using {name-launcher}:
+
+* Configure a frontend for your application.
+* Configure a backend for your application.
+* Connect to a GitHub account to host the repository with your project files.
+* Configure an OpenShift Cluster to host your deployed application. 
+ 
+
+.Prerequisites
+
+. Access to an OpenShift cluster
+. link:{link-guide-minishift-installation}#installing-launcher-tool-using-an-operator_minishift[{name-launcher} installed] on your OpenShift cluster.
+. A GitHub account
+
+.Procedure
+
+. Click _Start_ on the Launcher landing page to access the main Launcher screen. 
+
+. Select _Create a New Application_.
+
+. Specify a name for your application project.
+If you do not provide a name, {name-launcher} assigns a random name to your project.
+
+. Configure a frontend for your application.
+
+.. Click _Configure a Frontend_.
+
+.. Select a framework that you want to use for your application frontend.
+You can choose between community and product releases of the listed frameworks.
+If you do not want {name-launcher} to configure a frontend for your app, select _None_.
+
+.. Click _Save_ when you are done.
+
+. Configure a backend for your application
+
+.. Click _Configure a Backend_.
+
+.. Select a runtime that you want to use for your application backend.
+You can choose between community and product releases of the listed runtimes.
+If you do not want {name-launcher} to configure a backend for your app select _None_.
+
+.. OPTIONAL: Select additional capabilities for your application.
+You might need to specify additional options depending on the capability you choose. 
+Health Checks are added to your app by default.
+
+.. Click _Save_ when you are done.
+
+. Connect a GitHub account to your {launcher-name}.
+
+.. Click _Authorize_ in the _Destination Repository_ section of the screen.
+
+.. When you are redirected to the login prompt on GitHub, log in using your account credentials. When logged in, you are redirected to the authorization screen.
+
+.. Click _Authorize fabric8-launcher_. When authorization completes, you are redirected back to the Launcher web interface.
+
+.. Click _Save_ to confirm your destination repository settings and return to the project setup screen in the Launcher.
+
+.. Click _Configure_ in the _OpenShift Deployment_ section of the screen.
+Log in using your OpenShift account credentials to connect your cluster to the {name-launcher} tool. 
+
+.. Click _Save_ when you are done.
+
+. Click _Launch_ to deploy your project to the {OpenShiftCluster}.
+Alternatively, click _Download_ to download a ZIP file containing the generated project files. 
+
+ 
