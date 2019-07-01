@@ -45,9 +45,8 @@ The command options you use to configure `gpg2` or `gpg` are the same for both b
 
 . link:https://help.github.com/articles/generating-a-new-gpg-key/[Generate a new GPG key].
 . link:https://help.github.com/articles/adding-a-new-gpg-key-to-your-github-account[Add the GPG key to your GitHub account].
-. link:https://help.github.com/articles/telling-git-about-your-gpg-key/[Configure GPG with git] on your machine.
-+
-NOTE: Add `gpg2` or `gpg` as the signing program according to the linked instructions.
+. link:https://help.github.com/articles/telling-git-about-your-gpg-key/[Tell git about the signing key] on your machine.
+
 . In the _{name-repo-docs}_ repository, set automatic signing with your GPG key:
 +
 --
