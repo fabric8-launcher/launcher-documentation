@@ -37,14 +37,16 @@ To install Meld on Fedora, CentOS, or RHEL, run the following command (in Fedora
 
 To contribute, you must have a link:https://github.com/join[GitHub account] with GPG configured. To configure GPG:
 
-WARNING: On RHEL, CentOS, or Fedora, use the `gpg2` binary everywhere instead of `gpg`. On MacOS, use `gpg`.
+WARNING: On RHEL, CentOS, or Fedora, use the `gpg2` binary instead of `gpg`. On MacOS, use the `gpg` binary. 
 
 .Configuring GPG
+
+The command options you use to configure `gpg2` or `gpg` are the same for both binaries.
+
 . link:https://help.github.com/articles/generating-a-new-gpg-key/[Generate a new GPG key].
 . link:https://help.github.com/articles/adding-a-new-gpg-key-to-your-github-account[Add the GPG key to your GitHub account].
-. link:https://help.github.com/articles/telling-git-about-your-gpg-key/[Configure GPG with git] on your machine.
-+
-NOTE: On RHEL, CentOS, or Fedora, ensure to also add `gpg2` as the signing program according to the linked instructions.
+. link:https://help.github.com/articles/telling-git-about-your-gpg-key/[Tell git about the signing key] on your machine.
+
 . In the _{name-repo-docs}_ repository, set automatic signing with your GPG key:
 +
 --
