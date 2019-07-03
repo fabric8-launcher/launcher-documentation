@@ -24,7 +24,7 @@ include::proc_developing-runtime-application.adoc[leveloffset=+1]
 include::assembly_deploying-runtime-application-to-openshift.adoc[leveloffset=+1]
 
 //Preparing and deploying application to RHEL
-include::assembly_deploying-runtime-application-to-standalone-red-hat-enterprise-linux.adoc[leveloffset=+1]
+include::assembly_deploying-runtime-application-to-stand-alone-red-hat-enterprise-linux.adoc[leveloffset=+1]
 
 :parameter-link-appdev-guide!:
 :parameter-jar-file-name!:

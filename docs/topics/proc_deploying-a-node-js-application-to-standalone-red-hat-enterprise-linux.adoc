@@ -1,4 +1,4 @@
-[id='deploying-a-node-js-application-to-standalone-red-hat-enterprise-linux_{context}']
+[id='deploying-a-node-js-application-to-stand-alone-red-hat-enterprise-linux_{context}']
 = Deploying a {Node} application tostand-aloneRed Hat Enterprise Linux
 
 You can deploy a {Node} application tostand-aloneRed Hat Enterprise Linux using `npm`.
