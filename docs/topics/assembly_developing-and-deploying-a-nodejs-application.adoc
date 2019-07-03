@@ -12,6 +12,6 @@ include::proc_developing-a-nodejs-application.adoc[leveloffset=+1]
 include::assembly_deploying-a-nodejs-application-to-openshift.adoc[leveloffset=+1]
 
 // Deploying a Nodejs application tostand-aloneRed Hat Enterprise Linux
-include::proc_deploying-a-node-js-application-to-standalone-red-hat-enterprise-linux.adoc[leveloffset=+1]
+include::proc_deploying-a-node-js-application-to-stand-alone-red-hat-enterprise-linux.adoc[leveloffset=+1]
 
 :context: {parent-context}
