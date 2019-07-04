@@ -10,9 +10,9 @@
 //
 // Rationale: This procedure is the same for 2 or more runtimes.
 [id='preparing-runtime-application-for-stand-alone-red-hat-enterprise-linux_{context}']
-= Preparing {runtime} application forstand-aloneRed Hat Enterprise Linux deployment
+= Preparing {runtime} application for stand-alone Red Hat Enterprise Linux deployment
 
-For deploying your {runtime} application tostand-aloneRed Hat Enterprise Linux, you must first package the application using Maven.
+For deploying your {runtime} application to stand-alone Red Hat Enterprise Linux, you must first package the application using Maven.
 
 .Prerequisites
 

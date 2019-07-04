@@ -12,7 +12,7 @@ endif::[]
 +
 See link:{link-guide-vertx}[{name-guide-vertx}] for information about {Vertx} application development.
 
-{Thorntail}:: A framework based on the popular {WildFly} Java application server to enable the creation of small,stand-alonemicroservice-based applications.
+{Thorntail}:: A framework based on the popular {WildFly} Java application server to enable the creation of small, stand-alone microservice-based applications.
 Thorntail is capable of producing the so-called _just-enough app-server_ to support each component of your system.
 +
 See link:{link-guide-thorntail}[{name-guide-thorntail}] for information about {Thorntail} application development.
@@ -27,4 +27,3 @@ See link:{link-guide-spring-boot-1-5}[{name-guide-spring-boot-1-5}] for informat
 {Node}:: An asynchronous event-driven JavaScript runtime designed to build scalable network applications.
 +
 See link:{link-guide-nodejs}[{name-guide-nodejs}] for information about {Node} application development.
-
