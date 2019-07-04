@@ -4,7 +4,7 @@
 
 == Product and project names
 
-{name-launcher-oso}:: link:{link-launcher-oso}[{name-launcher-oso}] is astand-alonegetting started experience offered by Red Hat for jumpstarting cloud-native application development on OpenShift. It provides a way of creating functional example applications as well as an easy way to build and deploy these example applications on OpenShift. 
+{name-launcher-oso}:: link:{link-launcher-oso}[{name-launcher-oso}] is a stand-alone getting started experience offered by Red Hat for jumpstarting cloud-native application development on OpenShift. It provides a way of creating functional example applications as well as an easy way to build and deploy these example applications on OpenShift. 
 
 {name-launcher}:: The {name-launcher} is the upstream project on which link:{link-launcher-oso}[{name-launcher-oso}] is based.
 
