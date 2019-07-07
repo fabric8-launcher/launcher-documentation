@@ -36,6 +36,8 @@ include::topics/assembly_using-red-hat-jboss-developer-studio-with-an-example-ap
 
 //include::topics/assembly_using-visual-studio-code-with-an-example-application-project.adoc[leveloffset=+1]
 
+[appendix]
+include::topics/assembly_launcher-capabilities.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/ref_glossary.adoc[leveloffset=+1]

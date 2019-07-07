@@ -1,0 +1,8 @@
+[id='launcher-capabilities.adoc_{context}']
+= Launcher Capabilities
+
+:parent-context: {context}
+
+When you create a new application with link:{link-launcher-oso}[{name-launcher-oso}, your application includes a health check capability. The health check capability allows you to monitor the health of your application, which includes whether an application is available and whether it is able to service requests. In addition to a health check, you can also add a REST API or a relational database backend capability to your application.
+
+:parent-context: {context}
