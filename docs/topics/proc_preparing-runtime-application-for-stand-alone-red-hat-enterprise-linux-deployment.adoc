@@ -9,10 +9,10 @@
 //  context: used in anchor IDs to conflicts due to duplicate IDs.
 //
 // Rationale: This procedure is the same for 2 or more runtimes.
-[id='preparing-runtime-application-for-standalone-red-hat-enterprise-linux_{context}']
-= Preparing {runtime} application for standalone Red Hat Enterprise Linux deployment
+[id='preparing-runtime-application-for-stand-alone-red-hat-enterprise-linux_{context}']
+= Preparing {runtime} application for stand-alone Red Hat Enterprise Linux deployment
 
-For deploying your {runtime} application to standalone Red Hat Enterprise Linux, you must first package the application using Maven.
+For deploying your {runtime} application to stand-alone Red Hat Enterprise Linux, you must first package the application using Maven.
 
 .Prerequisites
 

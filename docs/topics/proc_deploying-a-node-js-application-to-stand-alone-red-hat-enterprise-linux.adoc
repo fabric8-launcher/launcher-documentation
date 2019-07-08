@@ -1,7 +1,7 @@
-[id='deploying-a-node-js-application-to-standalone-red-hat-enterprise-linux_{context}']
-= Deploying a {Node} application to standalone Red Hat Enterprise Linux
+[id='deploying-a-node-js-application-to-stand-alone-red-hat-enterprise-linux_{context}']
+= Deploying a {Node} application to stand-alone Red Hat Enterprise Linux
 
-You can deploy a {Node} application to standalone Red Hat Enterprise Linux using `npm`.
+You can deploy a {Node} application to stand-alone Red Hat Enterprise Linux using `npm`.
 
 .Prerequisites
 

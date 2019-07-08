@@ -9,10 +9,10 @@
 //  context: used in anchor IDs to conflicts due to duplicate IDs.
 //
 // Rationale: This procedure is the same for 2 or more runtimes.
-[id='deploying-runtime-application-to-standalone-red-hat-enterprise-linux-using-jar_{context}']
-= Deploying {runtime} application to standalone Red Hat Enterprise Linux using jar
+[id='deploying-runtime-application-to-stand-alone-red-hat-enterprise-linux-using-jar_{context}']
+= Deploying {runtime} application to stand-alone Red Hat Enterprise Linux using jar
 
-To deploy your {runtime} application to standalone Red{nbsp}Hat Enterprise Linux, use `java -jar` command.
+To deploy your {runtime} application to stand-alone Red{nbsp}Hat Enterprise Linux, use `java -jar` command.
 
 .Prerequisites
 

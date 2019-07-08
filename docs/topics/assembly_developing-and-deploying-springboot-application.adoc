@@ -31,8 +31,8 @@ include::proc_developing-runtime-application.adoc[leveloffset=+1]
 // Deploying Springboot application to OpenShift
 include::assembly_deploying-runtime-application-to-openshift.adoc[leveloffset=+1]
 
-// Deploying Springboot application to standalone Red Hat Enterprise Linux 
-include::assembly_deploying-runtime-application-to-standalone-red-hat-enterprise-linux.adoc[leveloffset=+1]
+// Deploying Springboot application to stand-alone Red Hat Enterprise Linux 
+include::assembly_deploying-runtime-application-to-stand-alone-red-hat-enterprise-linux.adoc[leveloffset=+1]
 
 :parameter-link-appdev-guide!:
 

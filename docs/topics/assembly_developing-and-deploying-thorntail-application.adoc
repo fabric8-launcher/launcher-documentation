@@ -21,8 +21,8 @@ include::thorntail/docs/howto/writing-an-application-from-scratch/index.adoc[lev
 // Deploying runtime application to openshift
 include::assembly_deploying-runtime-application-to-openshift.adoc[leveloffset=+1]
 
-// Deploying runtime application to standalone red hat enterprise linux
-include::assembly_deploying-runtime-application-to-standalone-red-hat-enterprise-linux.adoc[leveloffset=+1]
+// Deploying runtime application to stand-alone red hat enterprise linux
+include::assembly_deploying-runtime-application-to-stand-alone-red-hat-enterprise-linux.adoc[leveloffset=+1]
 
 :parameter-link-appdev-guide!:
 :parameter-jar-file-name!:
