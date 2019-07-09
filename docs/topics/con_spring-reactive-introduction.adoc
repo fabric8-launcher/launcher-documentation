@@ -1,0 +1,29 @@
+[id="spring-reactive-introduction_{context}"]
+= Spring Reactive
+
+The Spring reactive stack is built on link:https://projectreactor.io/[Project Reactor], a reactive library for building non-blocking applications on the JVM that implements messaging over HTTP based on the the link:https://www.reactive-streams.org/[Reactive Streams specification] and RxJava2.
+Reactor provides the link:https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html[`Flux`] and link:https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html[`Mono`] functional API types that enable asynchronous event stream processing.
+
+On top of the Reactor library, Spring Reactive relies on WebFlux, an asynchronous web application framework based on the Reactive Streams specifications.
+While WebFlux is designed to work primarily with Spring Reactor, due to its compliance with Reactive Streams, WebFlux can also operate in other asynchronous runtime environments, such as Netty or Undertow.
+
+The reactive foundation of WebFlux is incorporated into the `spring-web` module. This includes:
+
+* HTTP abstractions
+* Reactive Streams adapters for supported servers
+* codecs for encoding and decoding event stream data
+* the `WebHandler` API (a counterpart to the Servlet I/O API that uses non-blocking contracts)
+
+Similarity with SpringMVC::
+Due to the high degree of similarity between the SpringMVC API types and WebFlux API types, it is easy to re-apply knowledge of SpringMVC to programming applications with WebFLux.
+
+Annotated controllers::
+WebFlux retains the endpoint controller annotations introduced by SpringMVC (Both SpringMVC and WebFlux support reactive RxJava2 and Reactor return types).
+In addition to all the annotation types inherited from Spring MVC, WebFlux also supports `@RequestBody` arguments.
+
+Efficient resource usage::
+Reactor and WebFlux handle high volumes of concurrent events (on the order of tens of millions of messages per second) using a smaller amount of threads compared to Servlet-based libraries.
+
+Functional programming::
+Reactor interacts directly with the Java 8 Functional API, as well as `CompletablebFuture`, and `Stream` APIs.
+In addition to annotation-based endpoints, WebFlux also supports functional endpoints.
