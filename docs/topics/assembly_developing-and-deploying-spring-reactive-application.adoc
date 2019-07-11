@@ -3,10 +3,9 @@
 
 :parent-context: {context}
 
-//con_what is spring+reactive
-//include::con_spring-reactive-introduction.adoc[levelooffset=+1]
+include::con_spring-reactive-introduction.adoc[levelooffset=+1]
 
-
+//include::con_spring-web-reactive.adoc
 include::proc_creating-a-reactive-http-service-with-webflux.adoc[leveloffset=+1]
 
 include::proc_using-basic-authentication-in-http-service-webflux.adoc[leveloffset=+1]
