@@ -1,0 +1,12 @@
+[id='launcher-capabilities.adoc_{context}']
+= Launcher Capabilities
+
+:parent-context: {context}
+
+When you create a new application using link:{link-launcher-oso}[{name-launcher-oso}, you can add the basic building blocks of a cloud-based application. The {name-launcher-oso} refers to these building blocks as capabilities. An application you create using {name-launcher-oso} automatically includes a health check capability. In addition, you can add relational persistence to integrate with a relational database and HTTP API capabilities to your application.
+
+// The health check capability allows you to monitor the health of your application, which includes whether an application is available and whether it is able to service requests. In addition to a health check, you can also add a REST API or a relational database backend capability to your application.
+//
+
+include::con_launcher-health-check-capability.adoc[leveloffset=+1]
+:parent-context: {context}
