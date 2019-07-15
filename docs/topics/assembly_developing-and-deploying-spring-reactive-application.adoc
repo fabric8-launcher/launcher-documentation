@@ -3,7 +3,7 @@
 
 :parent-context: {context}
 
-include::con_spring-reactive-introduction.adoc[levelooffset=+1]
+include::con_spring-reactive-introduction.adoc[leveloffset=+1]
 
 //include::con_spring-web-reactive.adoc
 include::proc_creating-a-reactive-http-service-with-webflux.adoc[leveloffset=+1]
