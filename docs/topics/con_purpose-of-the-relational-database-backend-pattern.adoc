@@ -1,7 +1,7 @@
 [id=purpose-of-the-relational-database-backend-pattern_{context}]
 = Purpose of the Relational Database Backend pattern
 
-The example also demonstrates the ability of the HTTP application to locate and connect to a database in OpenShift.
+This example demonstrates the ability of the HTTP application to locate and connect to a database in OpenShift.
 Each runtime shows how to implement the connectivity solution best suited in the given case.
 The runtime can choose between options such as using _JDBC_, _JPA_, or accessing _ORM_ APIs directly.
 

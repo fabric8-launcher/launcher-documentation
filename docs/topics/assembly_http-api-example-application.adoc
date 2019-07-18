@@ -11,7 +11,6 @@
 = {name-example-http-api} example for {runtime}
 
 Example proficiency level:
-
 ifdef::docs-topic[xref:proficiency_foundational[*{proficiency-foundational}*].]
 ifndef::docs-topic[link:https://launcher.fabric8.io/docs/thorntail-runtime.html#proficiency_levels[*{proficiency-foundational}*^].]
 
