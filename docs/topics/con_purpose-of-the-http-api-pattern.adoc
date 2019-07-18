@@ -1,0 +1,9 @@
+[id='purpose-of-the-http-api-pattern_{context}']
+= Purpose of the HTTP API pattern
+
+The HTTP API pattern introduces the mechanics of interacting with a remote service using the HTTP protocol. It allows you to:
+
+* Execute an HTTP `GET` request on the `api/greeting` endpoint.
+* Receive a response in JSON format with a payload consisting of the `Hello, World!` String.
+* Execute an HTTP `GET` request on the `api/greeting` endpoint while passing in a String argument. This uses the `name` request parameter in the query string.
+* Receive a response in JSON format with a payload of `Hello, $name!` with `$name` replaced by the value of the `name` parameter passed into the request.

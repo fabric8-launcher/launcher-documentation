@@ -1,24 +1,7 @@
-// This is a parameterized assembly. Parameters used:
-//
-//  parameter-runtime-anchor: Which runtime this assembly is built for.
-//
-// Rationale: This assembly is nearly identical for all runtimes.
+[id=purpose-of-the-relational-database-backend-pattern_{context}]
+= Purpose of the relational database backend pattern
 
-// Do not change the anchor ID, it is set to this for URL routing reasons
-[id='mission-crud-{parameter-runtime-anchor}']
-[id='example-crud-{parameter-runtime-anchor}']
-= {name-example-crud} example for {runtime}
-
-Example proficiency level:
-ifdef::docs-topic[xref:proficiency_foundational[*{proficiency-foundational}*].]
-ifndef::docs-topic[link:https://launcher.fabric8.io/docs/thorntail-runtime.html#proficiency_levels[*{proficiency-foundational}*^].]
-
-The {name-example-crud} example expands on the {name-example-http-api} application to provide a basic example of performing _create_, _read_, _update_, and _delete_ (_CRUD_) operations on a PostgreSQL database using a simple HTTP API. _CRUD_ operations are the four basic functions of persistent storage, widely used when developing an HTTP API dealing with a database.
-include::note-example-unavailable-oso.adoc[leveloffset=+1]
-
-include::crud-example-intro-paragraph.adoc[leveloffset=+1]
-
-The example also demonstrates the ability of the HTTP application to locate and connect to a database in OpenShift.
+This example demonstrates the ability of the HTTP application to locate and connect to a database in OpenShift.
 Each runtime shows how to implement the connectivity solution best suited in the given case.
 The runtime can choose between options such as using _JDBC_, _JPA_, or accessing _ORM_ APIs directly.
 
@@ -47,28 +30,3 @@ This example also contains a set of automated xref:running-the-example-applicati
 endif::built-for-nodejs[]
 
 This example does not showcase a fully matured RESTful model (level 3), but it does use compatible HTTP verbs and status, following the recommended HTTP API practices.
-
-include::con_crud-design-tradeoffs.adoc[leveloffset=+1]
-
-:parameter-example-name: {name-example-crud}
-:parameter-example: crud
-include::assembly_deploying-the-example-application-to-openshiftonline.adoc[leveloffset=+1]
-
-include::assembly_deploying-the-example-application-to-openshiftlocal.adoc[leveloffset=+1]
-:parameter-example!:
-
-include::proc_deploying-the-example-application-to-openshiftcontainerplatform.adoc[leveloffset=+1]
-
-ifdef::built-for-nodejs[]
-include::proc_interacting-with-the-crud-api-on-node.adoc[leveloffset=+1]
-endif::[]
-
-ifndef::built-for-nodejs[]
-include::proc_interacting-with-the-crud-api.adoc[leveloffset=+1]
-
-include::proc_running-the-example-application-integration-tests.adoc[leveloffset=+1]
-endif::[]
-:parameter-example-name!:
-
-
-include::ref_relational-database-resources.adoc[leveloffset=+1]
