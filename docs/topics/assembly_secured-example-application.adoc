@@ -10,23 +10,19 @@
 [id='example-rest-http-secured-{parameter-runtime-anchor}']
 = {name-example-secured} example application for {runtime}
 
-include::note-example-unavailable-oso.adoc[leveloffset=+1]
-
-// When changing this introduction, change also the secured-example-intro-paragraph.adoc file (used by the front-end).
 Example proficiency level:
 xref:proficiency_advanced[*{proficiency-advanced}*].
 
-The {name-example-secured} example application secures a REST endpoint using link:https://access.redhat.com/products/red-hat-single-sign-on[{RHSSO}^]. (This example expands on the {name-example-http-api} example).
-
-{RHSSO}:
-
-* Implements the link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.1/html/securing_applications_and_services_guide/openid_connect_3[Open ID Connect] protocol which is an extension of the OAuth 2.0 specification.
-* Issues access tokens to provide clients with various access rights to secured resources.
-
+The {name-example-secured} example application expands on the {name-example-http-api} example application by securing a REST endpoint using link:https://access.redhat.com/products/red-hat-single-sign-on[{RHSSO}^].
+{RHSSO} implements the link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.1/html/securing_applications_and_services_guide/openid_connect_3[Open ID Connect] protocol, which is an extension of the OAuth 2.0 specification.
+{RHSSO} issues access tokens that provide clients with various access rights to secured resources.
 Securing an application with SSO enables you to add security to your applications while centralizing the security configuration.
 
-IMPORTANT:  This example comes with {RHSSO} pre-configured for demonstration purposes, it does not explain its principles, usage, or configuration.
+IMPORTANT:  This example comes with {RHSSO} pre-configured for demonstration purposes and does not explain its principles, usage, or configuration.
 Before using this example, ensure that you are familiar with the basic concepts related to link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.1/html-single/getting_started_guide/[{RHSSO}^].
+
+include::note-example-unavailable-oso.adoc[leveloffset=+1]
+
 
 include::con_the-secured-project-structure.adoc[leveloffset=+1]
 
