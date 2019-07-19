@@ -1,7 +1,7 @@
-[id='using-oauth2-authentication-with-a-reactive-spring-boot-webflux-application_{context}']
-= Using OAuth2 authentication in a reactive {SpringBoot} application with WebFlux
+[id='using-oauth2-authentication-in-a-reactive-spring-boot-application_{context}']
+= Using OAuth2 authentication in a reactive {SpringBoot} application.
 
-Set up OAuth2 for your {SpringBoot} Webflux application and authenticate with it using your client ID and client secret. 
+Set up link:https://oauth.net/2/[OAuth2 authentication] for your reactive {SpringBoot} application and authenticate using your client ID and client secret.
 
 .Prerequisites
 
@@ -27,9 +27,9 @@ Ensure that you save the client ID and a client secret that you receive upon com
 * `spring-boot-starter-security`
 * `spring-boot-starter-oauth2-client`
 * `reactor-netty`
-
-Note that the `reactor-netty` client is required to ensure that `spring-boot-starter-oauth2-client` works properly. 
-
++
+Note that the `reactor-netty` client is required to ensure that `spring-boot-starter-oauth2-client` works properly.
++
 .`pom.xml`
 [source,xml,options="nowrap",subs="attributes+"]
 ----
@@ -44,7 +44,7 @@ include::resources/spring-boot/reactive-examples/example-0auth2-with-reactive-ht
 </project>
 ----
 
-. Create an endpoint controller class for your application: 
+. Create an endpoint controller class for your application:
 +
 .`HelloController.java`
 [source,java,options="nowrap",subs="attributes+"]
@@ -74,7 +74,7 @@ include::resources/spring-boot/reactive-examples/example-oauth2-client-configura
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ cd myApp 
+$ cd myApp
 ----
 
 .. Package your application:
@@ -91,18 +91,20 @@ $ mvn clean package
 $ java -jar target/vertx-spring-boot-sample-http-oauth.jar
 ----
 
-.. Navigate to `http://localhost:8080` using a browser.
+.. Navigate to `http://localhost:8080` using a web browser.
 You are redirected to an OAuth2 application authorization screen on GitHub.
 If prompted, log in using your GitHub account credentials.
 
 .. Click _Authorize_ to confirm.
-You are redirected to a screen showing a personalized greeting message. 
+You are redirected to a screen showing a personalized greeting message.
 
 .Additional resources
 
-You can link:{link-guide-spring-boot}#deploying-runtime-application-to-openshift_spring-boot[deploy your application to an OpenShift cluster] using Fabric8 Maven Plugin.
+* You can link:{link-guide-spring-boot}#deploying-runtime-application-to-openshift_spring-boot[deploy your application to an OpenShift cluster] using Fabric8 Maven Plugin.
 
-You can also configure your application for link:{link-guide-spring-boot}#deploying-runtime-application-to-standalone-red-hat-enterprise-linux_spring-boot[deployment on standalone Red{nbsp}Hat Enterprise Linux].
+* You can also configure your application for link:{link-guide-spring-boot}#deploying-runtime-application-to-standalone-red-hat-enterprise-linux_spring-boot[deployment on standalone Red{nbsp}Hat Enterprise Linux].
 
+* For more information, see the link:https://spring.io/guides/tutorials/spring-boot-oauth2/[OAuth2 tutorial] in the Spring community documentation.
+Alternatively, see the tutorial on using link:https://developer.okta.com/blog/2019/03/12/oauth2-spring-security-guide?utm_campaign=text_website_all_multiple_dev_dev_oauth2-spring-security_null&utm_source=oauthio&utm_medium=cpc[OAuth2 with Spring Security].
 
-// add links to: https://spring.io/guides/gs/reactive-rest-service/
+* For the full OAuth2 authentication framework specification, see document link:https://tools.ietf.org/html/rfc6749[RFC-6749].

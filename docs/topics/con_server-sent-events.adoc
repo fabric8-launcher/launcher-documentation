@@ -1,9 +1,16 @@
-= Server-Sent Events
+[id="server-sent-events_{context}"]
+= Server-sent events
 
-Server-sent events (SSE) is a protocol that you can use to push unidirectional events form an event source to a web-based or browser-based client over HTTP.
-It is more light-weight compared to REST or WebSockets, and it does not require the target client to be aware of the protocol being used.
-As opposed to WebsSockets, it does not handle bidirectional communication beetween an event source 
-The specification for SSE is incorporated into HTML5, and is widely supported by browsers, including legacy versions. It can can be easily used from the command line and is relatively simple to set up compared to other protocols.
-SSE is suitable for use cases that require frequent updates from the server to the client, while updates from the client side to the server are expected to be less frequent and can therefore be handled over a different protocol, such as REST.
-Examples of such use cases include live social media feed updates or notifications sent to a client when new files are uploaded to a file server.
- 
+Server-sent events (SSE) is a reactive HTTP-based messaging protocol.
+SSE works by establishing a connection between the event source and the client, and allowing the event source, such as an application server or a messaging broker, to use this connection to push events to the client when they occur.
+The connection remains open after the updates are pushed, and can be re-used to push subsequent updates.
+SSE represents a more resource-efficient alternative to polling, where a new connection must be established each time the client polls the events source for updates.
+As opposed to WebSockets, SSE only pushes events in one direction (that is, from the source to the client).
+It does not handle bidirectional communication between the event source and the client.
+
+The specification for SSE is incorporated into HTML5, and is widely supported by web browsers, including their legacy versions.
+SSE can be used from the command line, and is relatively simple to set up compared to other protocols.
+
+SSE is suitable for use cases that require frequent updates from the server to the client, while updates from the client side to the server are expected to be less frequent.
+Updates form the client side to the server can then be handled handled over a different protocol, such as REST.
+Examples of such use cases include social media feed updates or notifications sent to a client when new files are uploaded to a file server.

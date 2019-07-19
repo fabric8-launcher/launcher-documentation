@@ -1,7 +1,7 @@
 [id='creating-basic-and-form-based-authentication-in-reactive-spring-boot-http-application-with-webflux_{context}']
-= Using basic authentication in a reactive {SpringBoot} WebFlux application.
+= Using basic and form-based authentication in a reactive {SpringBoot} WebFlux application.
 
-Create a reactive Hello World HTTP web service with basic form-based authentication using Spring Security and WebFlux.
+Create a reactive HTTP web service with Spring Security and WebFlux that uses basic and form-based authentication.
 
 .Prerequisites
 
@@ -28,7 +28,7 @@ include::resources/spring-boot/reactive-examples/example-http-service-authentica
 </project>
 ----
 
-. Create an endpoint controller class for your application: 
+. Create an endpoint controller class for your application:
 +
 .`HelloController.java`
 [source,java,options="nowrap",subs="attributes+"]
@@ -58,7 +58,7 @@ include::resources/spring-boot/reactive-examples/example-http-service-authentica
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ cd myApp 
+$ cd myApp
 ----
 
 .. Package your application:
@@ -72,10 +72,10 @@ $ mvn clean package
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ java -jar target/vertx-spring-boot-sample-http-security.jar 
+$ java -jar target/vertx-spring-boot-sample-http-security.jar
 ----
 
-.. Navigate to `http://localhost:8080` using a browser to access the login screen.
+.. Navigate to `http://localhost:8080` using a web browser to access the login screen.
 
 .. Log in using the credentials below:
 +
@@ -90,7 +90,7 @@ You receive a customized greeting when you are logged in:
 Hello, user!
 ----
 
-.. Navigate to `http://localhost:8080/logout` using and use the _Log out_ button to log out of your application.   
+.. Navigate to `http://localhost:8080/logout` using and use the _Log out_ button to log out of your application.
 
 .. Alternatively, use a terminal to make an unauthenticated HTTP request on `localhost:8080`.
 You receive HTTP `401 Unauthorized` response from your application.
@@ -120,9 +120,10 @@ Hello, user!
 
 .Additional resources
 
-You can link:{link-guide-spring-boot}#deploying-runtime-application-to-openshift_spring-boot[deploy your application to an OpenShift cluster] using Fabric8 Maven Plugin.
+* You can link:{link-guide-spring-boot}#deploying-runtime-application-to-openshift_spring-boot[deploy your application to an OpenShift cluster] using Fabric8 Maven Plugin.
 
-You can also configure your application for link:{link-guide-spring-boot}#deploying-runtime-application-to-standalone-red-hat-enterprise-linux_spring-boot[deployment on standalone Red{nbsp}Hat Enterprise Linux].
+* You can also configure your application for link:{link-guide-spring-boot}#deploying-runtime-application-to-standalone-red-hat-enterprise-linux_spring-boot[deployment on standalone Red{nbsp}Hat Enterprise Linux].
 
+* For the full specification of the Basic HTTP authentication scheme, see document link:https://tools.ietf.org/html/rfc7617[RFC-7617].
 
-// add links to: https://spring.io/guides/gs/reactive-rest-service/
+* For the full specification of HTTP authentication extensions for interactive clients, including form-based authentication, see document link:https://tools.ietf.org/html/rfc8053[RFC-8053].

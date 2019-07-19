@@ -1,20 +1,19 @@
-[id='creating-an-http-smtp-mail-service_{context}']
-= Creating a reactive {SpringBoot} SMTP mail service
+[id='creating-a-reactive-spring-boot-smtp-mail-application_{context}']
+= Creating a reactive {SpringBoot} SMTP mail application
 
-Create an SMTP email service with {SpringBoot} and WebFlux.
+Create a reactive SMTP email service with {SpringReactive}.
 
 .Prerequisites
 
 * Java JDK 8 or Java JDK 11 installed
 * Maven installed
 * A Maven-based application project configured link:{link-guide-spring-boot}#configuring-your-application-to-use-spring-boot_spring-boot[configured to use Spring Boot]
-// link to postfix config example in RHEL7 Docs
 * A SMTP mail server configured on your machine
 
 .Procedure
 
 . Add `vertx-spring-boot-starter-http` and `vertx-spring-boot-starter-mail` as dependencies in the `pom.xml` file of your project.
-
++
 .`pom.xml`
 [source,xml,options="nowrap",subs="attributes+"]
 ----
@@ -29,7 +28,7 @@ include::resources/spring-boot/reactive-examples/example-http-service-mail.pom.x
 </project>
 ----
 
-. Create a mail handler class for your application: 
+. Create a mail handler class for your application:
 +
 .src/main/java/dev/snowdrop/vertx/sample/mail/MailHandler.java`
 [source,java,options="nowrap",subs="attributes+"]
@@ -64,7 +63,7 @@ Alternatively, use the link:https://raw.githubusercontent.com/snowdrop/vertx-spr
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ cd myApp 
+$ cd myApp
 ----
 
 .. Package your application:
@@ -78,15 +77,15 @@ $ mvn clean package
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ java -jar target/vertx-spring-boot-sample-mail.jar 
+$ java -jar target/vertx-spring-boot-sample-mail.jar
 ----
 
-.. Navigate to `http://localhost:8080/index.html` using a browser to access the email form.
+.. Navigate to `http://localhost:8080/index.html` using a web browser to access the email form.
 
 .Additional resources
 
-Set up an SMTP mail server
-You can link:{link-guide-spring-boot}#deploying-runtime-application-to-openshift_spring-boot[deploy your application to an OpenShift cluster] using Fabric8 Maven Plugin
-You can also configure your application for link:{link-guide-spring-boot}#deploying-runtime-application-to-standalone-red-hat-enterprise-linux_spring-boot[deployment on standalone Red{nbsp}Hat Enterprise Linux].
+* For more information on setting up an SMTP mail server on RHEL 7, see the link:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html-single/system_administrators_guide/index#s1-email-mta[Mail Transport Agent Configuration] section in the RHEL 7 documentation.
 
-// add links to: https://spring.io/guides/gs/reactive-rest-service/
+* You can link:{link-guide-spring-boot}#deploying-runtime-application-to-openshift_spring-boot[deploy your application to an OpenShift cluster] using Fabric8 Maven Plugin
+
+* You can also configure your application for link:{link-guide-spring-boot}#deploying-runtime-application-to-standalone-red-hat-enterprise-linux_spring-boot[deployment on standalone Red{nbsp}Hat Enterprise Linux].

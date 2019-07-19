@@ -1,11 +1,15 @@
-[id='developing-reactive-spring-boot-applications-using-spring-boot-vertx_{context}']
+[id='developing-reactive-applications-using-spring-boot-vertx_{context}']
 = Developing reactive applications using {SpringReactive}
 
 :parent-context: {context}
 
+The following sections provide a conceptual introduction to functional principles behind {ProductShortName} Spring Reactive, as well as basic examples of implementing reactive application design patterns using the Spring Reactive starters.
+
+//NOTE: In this release of {SpringBoot}, {SpringReactive} Starters are available as Technology Preview and are thus subject to limited support by Red{nbsp}Hat under the link:https://access.redhat.com/support/offerings/techpreview[Technology Preview Features Support Scope].
+
 include::con_spring-reactive-introduction.adoc[leveloffset=+1]
 
-//include::con_spring-web-reactive.adoc
+include::con_spring-web-reactive.adoc[levelofset=+1]
 include::proc_creating-a-reactive-http-service-with-webflux.adoc[leveloffset=+1]
 
 include::proc_using-basic-authentication-in-http-service-webflux.adoc[leveloffset=+1]
@@ -14,12 +18,9 @@ include::proc_using-oauth2-with-reactive-http-web-service-webflux.adoc[leveloffs
 
 include::proc_creating-reactive-smtp-email-app.adoc[leveloffset=+1]
 
-//concept module added
 include::con_server-sent-events.adoc[leveloffset=+1]
 include::proc_using-server-sent-events-spring-reactive-app.adoc[leveloffset=+1]
 
-//In addition to xref:example-rest-http-spring-boot[using an example], you can create new {runtime} applications from scratch and deploy them to OpenShift.
-// TODO mention that these features are now tech preview, needs to be in the RN, too.
-// TODO: add section sepcifying that these examples use webflux, as opposed to other stah might be added in the future.
+In addition to xref:example-rest-http-spring-boot[using an example], you can also use Spring Reactive starters to create new {runtime} applications from scratch and deploy them to OpenShift.
 
 :context: {parent-context}
