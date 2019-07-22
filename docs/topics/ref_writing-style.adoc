@@ -7,7 +7,7 @@ If you do not have access to some of them, use the guides that are available to 
 
 IBM Style Guide:: A general guide to writing technical documentation. Available only in print or in commercial digital copies.
 
-link:http://stylepedia.net[Red Hat Stylepedia]:: A freely-available guide partially overlapping with the IBM Style Guide. Contains information about writing Red Hat–specific concepts.
+link:https://redhat-documentation.github.io/modular-docs/[Modularization Guidelines]:: A freely-available guide to writing in the modular style. It includes easy to use templates for all of your documentation needs.
 
 link:https://redhat-documentation.github.io/asciidoc-markup-conventions/[Red Hat AsciiDoc Conventions Samples Guide]:: A freely-available guide about writing particular elements in the AsciiDoc source code, for example GUI buttons, external links, or command blocks. It is important you follow these rules for consistency with other parts of the documentation.
 
@@ -26,4 +26,3 @@ Do *not* use:
 * `&amp;ndash;` because it breaks validation.
 * `&amp;#x2013;` even though `\{ndash\}` is currently set to it, because the attribute can change in the future.
 --
-
