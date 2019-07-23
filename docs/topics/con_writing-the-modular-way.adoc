@@ -3,6 +3,6 @@
 = Writing the modular way
 
 When authoring new content, do not write a monolithic piece of text, but write the information in smaller, self-contained pieces called modules.
-The modules used in this documentation use the templates described in the link:https://htmlpreview.github.io/?https://github.com/redhat-documentation/modular-docs/blob/Module-Reuse-Edits/modular-docs-manual/modular-docs-manual.html[Red Hat Modular Documentation Reference Guide].
+The modules used in this documentation use the templates described in the link:https://redhat-documentation.github.io/modular-docs/[Red Hat Modular Documentation Reference Guide].
 
 NOTE: You will be asked to modify new content that you submit if it does not follow the correct templates.
