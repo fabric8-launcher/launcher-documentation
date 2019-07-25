@@ -5,13 +5,15 @@
 = Installing the {name-launcher} tool using an operator
 
 Set up an operator to install the {name-launcher} tool on an OpenShift cluster.
-The following procedure works with clusters running on OpenShift 3.11.
+Configure OAuth2 authentication to enable multiple users to access the same instance of {name-launcher}.
+
+NOTE: The following procedure works on clusters running on OpenShift 3.11.
 
 .Prerequisites
 
 * Github account
 * Admin access to an OpenShift cluster
-// This works for OCP v3.11
+* {OpenShiftCluster} installed
 
 .Procedure
 
@@ -36,8 +38,8 @@ $ oc login {value-url-osl-auth}
 $ oc new-project launcher-infra
 ----
 
-// TODO: this will later be part of the multi-user laucher deployment
-. Register your {name-launcher} instance with OAuth.
+. Register your {name-launcher} instance with OAuth on GitHub.
+This enables multiple users to use the same instance by authenticating their GitHub user accounts against the the OAuth application that your {name-launcher} instance is registered to.
 +
 --
 .. Log in to GitHub
@@ -58,9 +60,7 @@ You must replace these value with the {name-launcher} frontend route URL when yo
 $ oc create secret generic launcher-oauth-github --from-literal=clientId=LAUNCHER_GITHUB_OAUTH_CLIENT_ID --from-literal=secret=LAUNCHER_GITHUB_OAUTH_CLIENT_SECRET
 ----
 
-// where exactly do you specify the URL in the YAML?
-.. Edit the custom resource definition YAML for your {name-launcher} instance to specify your OpenShift Web Console URL. 
-// Perhaps creating a new CRD from a template might be closer to real-life usage?  
+.. Edit the custom resource definition YAML for your {name-launcher} instance to specify your OpenShift Web Console URL.
 +
 .launcher_cr.yaml
 [source,yaml,options="nowrap",subs="attributes+"]
@@ -85,10 +85,8 @@ spec:
 $ oc get route launcher --template={{.spec.host}}
 ----
 
-// or is it a different project?
-//also, the 
 .. Create an OAuth client instance in your `launcher-operator` project.
-Ensure that you provide the OpenShift secret and frontend URL you obtained earlier.
+Ensure that you provide the OpenShift secret and frontend URL that you obtained earlier.
 +
 [source,options="nowrap",subs="attributes+"]
 ----
@@ -106,7 +104,6 @@ $ oc create -f <(echo '
 
 .. Update the values of the _Homepage URL_ and _Authorization callback URL_ fields in your {name-launcher} OAuth app configuration settings on GitHub to point to your launcher frontend route URL.
 --
-//TODO: Revise this step. It should not involve direct downloads from Github. The deployment templates should be accessible as a resource list (see also RHOARDOC-1644) that can be downloaded in 1 step.
 . Download and extract the link:https://github.com/fabric8-launcher/launcher-operator/archive/master.zip[ZIP file] containing the operator and navigate to the directory containing the extracted resources.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -114,8 +111,7 @@ $ oc create -f <(echo '
 $ cd launcher-operator
 ----
 
-//TODO: this needs to be updated when the previous step gets revised.
-. Process the YAML templates in the `/deploy` subdirectory:
+. Create and deploy the application resources defined by the YAML templates in the `/deploy` subdirectory:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
@@ -151,23 +147,17 @@ launcher-backend-2-aaaaa       0/1       Running             0         5s
 launcher-frontend-2-aaaaa      0/1       Running             0         6s
 ----
 
-////
-. Obtain the route of your {name-launcher} tool.
-+
-[source,bash,options="nowrap",subs="attributes+"]
-----
-$ oc get routes
-NAME                HOST/PORT                                         PATH      SERVICES            PORT      TERMINATION   WILDCARD
-launcher-frontend   launcher-frontend.launcher.{value-route-osl-hostname}                launcher-frontend   <all>                   None
-----
-////
-
 . Navigate to the frontend route URL to start using {name-launcher}.
 
 .Additional Resources
-* See the link:{link-guide-getting-started}[{name-guide-getting-started}] for a walk-through of launching an example application.
-* Read the runtime guides for an overview of the runtimes and their examples:
+
+* See the {name-guide-getting-started} section on link:{link-guide-getting-started}#creating-and-deploying-an-example-application-using-your-openshiftlocal_getting-started[using {name-launcher} to deploy example apps] to explore example applications available for different link:{link-guide-getting-started}#available-runtimes_getting-started[runtimes].
+* See the runtime guides for an overview of the runtimes and their examples:
 ** link:{link-guide-spring-boot}[{name-guide-spring-boot}]
 ** link:{link-guide-vertx}[{name-guide-vertx}]
 ** link:{link-guide-thorntail}[{name-guide-thorntail}]
 ** link:{link-guide-nodejs}[{name-guide-nodejs}]
+
+* You can also see the guide to link:{link-guide-getting-started}#creating-a-new-application-using-the-launcher-tool_getting-started[creating a new application using {name-launcher}] for instructions on creating custom applications using the {name-launcher} tool.
+
+:value-url-osl-auth!:
