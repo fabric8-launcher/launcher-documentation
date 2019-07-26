@@ -39,7 +39,7 @@ include::resources/spring-boot/reactive-examples/example-sse-application.java[]
 ----
 
 . Create a Server-sent Event controller class for your application.
-In this example, the class generates a stream of random integers and sends them to a terminal application.
+In this example, the class generates a stream of random integers and prints them to a terminal application.
 +
 .`SseController.java`
 [source,java,options="nowrap",subs="attributes+"]
