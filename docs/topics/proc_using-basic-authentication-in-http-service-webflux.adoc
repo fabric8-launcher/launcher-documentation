@@ -5,9 +5,9 @@ Create a reactive Hello World HTTP web service with basic form-based authenticat
 
 .Prerequisites
 
-* Java JDK 8 or Java JDK 11 installed
+* JDK 8 or JDK 11 installed
 * Maven installed
-* A Maven-based application project configured link:{link-guide-spring-boot}#configuring-your-application-to-use-spring-boot_spring-boot[configured to use Spring Boot]
+* A Maven-based application project link:{link-guide-spring-boot}#configuring-your-application-to-use-spring-boot_spring-boot[configured to use Spring Boot]
 
 
 .Procedure
@@ -90,7 +90,7 @@ You receive a customized greeting when you are logged in:
 Hello, user!
 ----
 
-.. Navigate to `http://localhost:8080/logout` using and use the _Log out_ button to log out of your application.
+.. Navigate to `http://localhost:8080/logout` using a web browser and use the _Log out_ button to log out of your application.
 
 .. Alternatively, use a terminal to make an unauthenticated HTTP request on `localhost:8080`.
 You receive HTTP `401 Unauthorized` response from your application.
@@ -123,3 +123,7 @@ Hello, user!
 * You can link:{link-guide-spring-boot}#deploying-runtime-application-to-openshift_spring-boot[deploy your application to an OpenShift cluster] using Fabric8 Maven Plugin.
 
 * You can also configure your application for link:{link-guide-spring-boot}#deploying-runtime-application-to-standalone-red-hat-enterprise-linux_spring-boot[deployment on standalone Red{nbsp}Hat Enterprise Linux].
+
+* For the full specification of the Basic HTTP authentication scheme, see document link:https://tools.ietf.org/html/rfc7617[RFC-7617].
+
+* For the full specification of HTTP authentication extensions for interactive clients, including form-based authentication, see document link:https://tools.ietf.org/html/rfc8053[RFC-8053].

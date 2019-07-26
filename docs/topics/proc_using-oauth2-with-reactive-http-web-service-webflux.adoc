@@ -5,7 +5,7 @@ Set up link:https://oauth.net/2/[OAuth2 authentication] for your reactive {Sprin
 
 .Prerequisites
 
-* Java JDK 8 or Java JDK 11 installed
+* JDK 8 or JDK 11 installed
 * A GitHub account
 * Maven installed
 * A Maven-based application project link:{link-guide-spring-boot}#configuring-your-application-to-use-spring-boot_spring-boot[configured to use Spring Boot]

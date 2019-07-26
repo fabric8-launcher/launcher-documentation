@@ -5,9 +5,9 @@ Create a reactive SMTP email service with {SpringReactive}.
 
 .Prerequisites
 
-* Java JDK 8 or Java JDK 11 installed
+* JDK 8 or JDK 11 installed
 * Maven installed
-* A Maven-based application project configured link:{link-guide-spring-boot}#configuring-your-application-to-use-spring-boot_spring-boot[configured to use Spring Boot]
+* A Maven-based application project link:{link-guide-spring-boot}#configuring-your-application-to-use-spring-boot_spring-boot[configured to use Spring Boot]
 * A SMTP mail server configured on your machine
 
 .Procedure

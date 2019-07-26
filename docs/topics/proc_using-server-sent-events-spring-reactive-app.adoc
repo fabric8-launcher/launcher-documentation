@@ -1,5 +1,5 @@
-[id='using-server-sent-events-in-a-spring-reactive-application_{context}']
-= Using Server-sent events in a Spring Reactive application
+[id='using-server-sent-events-in-a-reactive-spring-boot-application_{context}']
+= Using Server-sent events in a reactive {SpringBoot} application
 
 Create a simple service that accepts HTTP requests and returns a stream of server-sent events (SSE).
 When the client establishes a connection to the server and the streaming starts, the connection remains open. The server re-uses the connection to continuously push new events to the client.
@@ -7,9 +7,9 @@ Canceling the request closes the connection and stops the stream, causing the cl
 
 .Prerequisites
 
-* Java JDK 8 or Java JDK 11 installed
+* JDK 8 or JDK 11 installed
 * Maven installed
-* A Maven-based application project configured link:{link-guide-spring-boot}#configuring-your-application-to-use-spring-boot_spring-boot[configured to use Spring Boot]
+* A Maven-based application project link:{link-guide-spring-boot}#configuring-your-application-to-use-spring-boot_spring-boot[configured to use Spring Boot]
 
 
 .Procedure
@@ -39,7 +39,7 @@ include::resources/spring-boot/reactive-examples/example-sse-application.java[]
 ----
 
 . Create a Server-sent Event controller class for your application.
-In this example, the class generates a stream of random integers and outputs them into a terminal application.
+In this example, the class generates a stream of random integers and sends them to a terminal application.
 +
 .`SseController.java`
 [source,java,options="nowrap",subs="attributes+"]

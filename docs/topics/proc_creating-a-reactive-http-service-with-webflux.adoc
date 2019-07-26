@@ -5,9 +5,9 @@ Create a basic reactive Hello World HTTP web service using {SpringBoot} and WebF
 
 .Prerequisites
 
-* Java JDK 8 or Java JDK 11 installed
+* JDK 8 or JDK 11 installed
 * Maven installed
-* A Maven-based application project configured link:{link-guide-spring-boot}#configuring-your-application-to-use-spring-boot_spring-boot[configured to use Spring Boot]
+* A Maven-based application project link:{link-guide-spring-boot}#configuring-your-application-to-use-spring-boot_spring-boot[configured to use Spring Boot]
 
 .Procedure
 
@@ -35,7 +35,7 @@ include::resources/spring-boot/reactive-examples/example-http-service-webflux-po
 include::resources/spring-boot/reactive-examples/example-http-service-webflux.java[]
 ----
 
-. OPTIONAL: Run and test your application locally
+. OPTIONAL: Run and test your application locally:
 
 .. Navigate to the root directory of your Maven project:
 +
@@ -80,4 +80,4 @@ Hello, John!
 
 * You can also configure your application for link:{link-guide-spring-boot}#deploying-runtime-application-to-standalone-red-hat-enterprise-linux_spring-boot[deployment on standalone Red{nbsp}Hat Enterprise Linux].
 
-* For more detail on creating Reactive web services with {SpringBoot}, see the link:https://spring.io/guides/gs/reactive-rest-service/[Reactive REST service development guide] in the Spring community documentation.
+* For more detail on creating reactive web services with {SpringBoot}, see the link:https://spring.io/guides/gs/reactive-rest-service/[reactive REST service development guide] in the Spring community documentation.

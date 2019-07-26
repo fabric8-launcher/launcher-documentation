@@ -3,9 +3,7 @@
 
 :parent-context: {context}
 
-The following sections provide a conceptual introduction to functional principles behind {ProductShortName} Spring Reactive, as well as basic examples of implementing reactive application design patterns using the Spring Reactive starters.
-
-//NOTE: In this release of {SpringBoot}, {SpringReactive} Starters are available as Technology Preview and are thus subject to limited support by Red{nbsp}Hat under the link:https://access.redhat.com/support/offerings/techpreview[Technology Preview Features Support Scope].
+The following sections provide a conceptual introduction to functional principles behind {ProductShortName} reactive application programming with Spring, as well as basic examples of implementing reactive application design patterns using the {SpringReactive} starters.
 
 include::con_spring-reactive-introduction.adoc[leveloffset=+1]
 
@@ -21,6 +19,6 @@ include::proc_creating-reactive-smtp-email-app.adoc[leveloffset=+1]
 include::con_server-sent-events.adoc[leveloffset=+1]
 include::proc_using-server-sent-events-spring-reactive-app.adoc[leveloffset=+1]
 
-In addition to xref:example-rest-http-spring-boot[using an example], you can also use Spring Reactive starters to create new {runtime} applications from scratch and deploy them to OpenShift.
+In addition to xref:example-rest-http-spring-boot[using an example], you can also use {SpringReactive} starters to create new {runtime} applications from scratch and deploy them to OpenShift.
 
 :context: {parent-context}
