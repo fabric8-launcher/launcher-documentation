@@ -3,7 +3,8 @@
 
 :parent-context: {context}
 
-The following sections provide a conceptual introduction to functional principles behind {ProductShortName} reactive application programming with Spring, as well as basic examples of implementing reactive application design patterns using the {SpringReactive} starters.
+This section provides an introduction to developing applications in a reactive way using {ProductShortName} {SpringBoot} starters based on {SpringBoot} and Reactor Netty (developed as part of the {VertX} toolkit).
+The following examples demonstrate how you can use the starters to create reactive applications.
 
 include::con_spring-reactive-introduction.adoc[leveloffset=+1]
 
