@@ -39,7 +39,7 @@ endif::[]
 :WildFly: JBoss EAP
 :DevStudio: Red Hat CodeReady Studio
 // common name for Spring Reactive components
-:SpringReactive: SpringBoot with Vert.X
+:SpringReactive: Spring Boot with Vert.X
 
 
 // Names
