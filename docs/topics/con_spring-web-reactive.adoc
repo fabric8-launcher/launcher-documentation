@@ -1,0 +1,22 @@
+[id='reactive-spring-web_{context}']
+= Reactive Spring Web
+
+The `spring-web` module provides the foundational elements of the reactive capabilities of link:https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux[Spring WebFlux], including:
+
+* HTTP abstractions provided by the link:https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux-web-handler-api[`HttpHandler` API]
+* Reactive Streams adapters for supported servers (Netty, Undertow)
+* Codecs for encoding and decoding event stream data. This includes:
+** `DataBuffer`, an abstraction for different types of byte buffer representations (Netty `ByteBuf`, `java.nio.ByteBuffer`, as well as others)
+** Low-level contracts to encode and decode content independent of HTTP
+** `HttpMessageReader` and `HTTPMessageWriter` contracts to encode and decode HTTP message content
+* The `WebHandler` API (a counterpart to the Servlet 3.1 I/O API that uses non-blocking contracts).
+
+When designing your web application, you can choose between 2 programming models that Spring WebFlux provides:
+
+link:https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux-controller[Annotated Controllers]::
+Annotated controllers in Spring WebFlux are consistent with Spring MVC, and are based on the same annotations from the `spring-web` module.
+In addition to the `spring-web` module from SpringMVC, its WebFlux counterpart also supports reactive `@RequestBody` arguments.
+
+link:https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux-fn[Functional Endpoints]::
+Functional endpoints provided by spring WebFlux on Java 8 Lambda expressions and functional APIs, this programming model relies on a dedicated library (Reactor, in this case) that routes and handles requests.
+As opposed to annotation-based endpoint controllers that rely on declaring Intent and using callbacks to complete an activity, the reactive model based on functional endpoints allows request handling to be fully controlled by the application.

@@ -38,6 +38,8 @@ endif::[]
 :RHSSO: Red Hat SSO
 :WildFly: JBoss EAP
 :DevStudio: Red Hat CodeReady Studio
+// common name for Spring Reactive components
+:SpringReactive: Spring Boot with Vert.X
 
 
 // Names

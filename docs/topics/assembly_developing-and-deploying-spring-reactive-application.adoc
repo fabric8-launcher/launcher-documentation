@@ -1,0 +1,25 @@
+[id='developing-reactive-applications-using-spring-boot-vertx_{context}']
+= Developing reactive applications using {SpringReactive}
+
+:parent-context: {context}
+
+This section provides an introduction to developing applications in a reactive way using {ProductShortName} {SpringBoot} starters based on {SpringBoot} and Reactor Netty (developed as part of the {VertX} toolkit).
+The following examples demonstrate how you can use the starters to create reactive applications.
+
+include::con_spring-reactive-introduction.adoc[leveloffset=+1]
+
+include::con_spring-web-reactive.adoc[leveloffset=+1]
+include::proc_creating-a-reactive-http-service-with-webflux.adoc[leveloffset=+1]
+
+include::proc_using-basic-authentication-in-http-service-webflux.adoc[leveloffset=+1]
+
+include::proc_using-oauth2-with-reactive-http-web-service-webflux.adoc[leveloffset=+1]
+
+include::proc_creating-reactive-smtp-email-app.adoc[leveloffset=+1]
+
+include::con_server-sent-events.adoc[leveloffset=+1]
+include::proc_using-server-sent-events-spring-reactive-app.adoc[leveloffset=+1]
+
+In addition to xref:example-rest-http-spring-boot[using an example], you can also use {SpringReactive} starters to create new {runtime} applications from scratch and deploy them to OpenShift.
+
+:context: {parent-context}
