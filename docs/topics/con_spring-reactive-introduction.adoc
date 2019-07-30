@@ -1,8 +1,8 @@
 [id="introduction-to-spring-reactive_{context}"]
 = Introduction to {SpringReactive}
 
-The Spring reactive stack is built on link:https://projectreactor.io/[Project Reactor], a reactive library for building non-blocking applications on the JVM that implements messaging over HTTP based on the link:https://www.reactive-streams.org/[Reactive Streams specification] and RxJava2.
-Reactor provides the link:https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html[`Flux`] and link:https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html[`Mono`] functional API types that enable asynchronous event stream processing.
+The Spring reactive stack is built on link:https://projectreactor.io/docs/netty/release/reference/index.html[Reactor Netty], an asynchronous IO runtime based on link:https://projectreactor.io/docs[Project Reactor] and the link:https://netty.io/[Netty framework], that provides non-blocking TCP, HTTP, and UDP clients and servers, and implements link:https://projectreactor.io/docs/netty/release/reference/index.html#net-backpressure[backpressure] in a manner that complies with the Reactive Streams specification.
+Reactor Netty provides the link:https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html[`Flux`] and link:https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html[`Mono`] functional API types that enable asynchronous event stream processing.
 
 On top of the Reactor library, Spring reactive relies on link:https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux[WebFlux], an asynchronous event-driven web application framework based on the Reactive Streams specifications.
 While WebFlux is designed to work primarily with Spring Reactor, it can also operate in other asynchronous runtime environments, such as Netty or Undertow, due to its compliance with Reactive Streams.
@@ -16,51 +16,29 @@ Spring WebFlux and Reactor enable you to create applications that are:
 Reactive applications can handle large numbers of events using fewer computing and networking resources as compared to other application programming models.
 * Resilient: The application can handle failure of services it depend on without a negative impact on its overall quality of service.
 
-<<<<<<< Updated upstream
 Additional advantages of using Spring WebFlux include:
 
 Similarity with SpringMVC::
 The SpringMVC API types and WebFlux API types are similar, and it is easy for developers to apply knowledge of SpringMVC to programming applications with WebFlux.
-=======
-The Spring Reactive offering by Red{nbsp}Hat brings the benefits of Reactor and WebFlux to OpenShift and stand-alone RHEL, and introduces a number {VertX} extensions to the WebFLux framework.
-This allows you to retain the level of abstraction and rapid prototpying capabilities of {SpringBoot} while allowing
 
-// TODO:  these should be relocated to the Spring-Web implementation concepts
-Additional advantages of using Spring WebFlux include:
-
-Similarity with SpringMVC::
-The similarity between the SpringMVC API types and WebFlux API types, re-apply knowledge of SpringMVC to programming applications with WebFLux.
->>>>>>> Stashed changes
+The Spring Reactive offering by Red{nbsp}Hat brings the benefits of Reactor and WebFlux to OpenShift and stand-alone RHEL, and introduces a set of {VertX} extensions for the WebFLux framework.
+This allows you to retain the level of abstraction and rapid prototyping capabilities of {SpringBoot}, and provides an asynchronous IO API that handles the network communications between the services in your application in a fully reactive manner.
 
 Annotated controllers support::
 WebFlux retains the endpoint controller annotations introduced by SpringMVC (Both SpringMVC and WebFlux support reactive RxJava2 and Reactor return types).
-In addition to all the annotation types inherited from Spring MVC, WebFlux also supports `@RequestBody` arguments.
 
 Functional programming support::
 Reactor interacts with the Java 8 Functional API, as well as `CompletablebFuture`, and `Stream` APIs.
 In addition to annotation-based endpoints, WebFlux also supports functional endpoints.
 
-<<<<<<< Updated upstream
 .Additional resources
 
 See the following resources for additional in-depth information on the implementation details of technologies that are part of the Spring Reactive stack:
 
 * link:https://www.reactivemanifesto.org/[The Reactive Manifesto]
+* link:https://www.reactive-streams.org/[Reactive Streams specification]
 * link:https://www.reactive-streams.org/[Reference Documentation for the Reactive Streams specification]
 * link:https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html[Spring Framework reference documentation: Web Applications on Reactive Stack]
-* link:https://projectreactor.io/docs/core/release/reference/[Project Reactor reference documentation]
-* link:https://netty.io/[Netty project documentation]
+* link:https://projectreactor.io/docs/netty/release/reference/index.html[Reactor Netty documentation]
 * link:https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html[API Reference page for the `Mono` class in Project Reactor Documentation]
 * link:https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html[API Reference page for the `Flux` class in Project Reactor Documentation]
-=======
-//TODO: add additional resources section
-//Reactive manifesto: https://www.reactivemanifesto.org/
-
-
-////
-In our latest release we have introduced a few Spring WebFlux extensions for Vert.x. With them you can build your application the way you’re used to - using WebFlux and Project Reactor - while network communications are handled by the fast Vert.x servers and clients. This gives you a better customer support from Red Hat. As well as a possibility to make your whole system truly reactive.
-
-Having a reactive web API is just a first step to having fully reactive system. Inter-component communication, data access, cache and other utilities have to be reactive as well. Vert.x provides reactive clients for all of these types of technologies and we will gradually introduce them into our Vert.x Spring Boot starters.
-
-////
->>>>>>> Stashed changes

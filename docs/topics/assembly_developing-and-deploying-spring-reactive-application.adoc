@@ -8,7 +8,7 @@ The following examples demonstrate how you can use the starters to create reacti
 
 include::con_spring-reactive-introduction.adoc[leveloffset=+1]
 
-include::con_spring-web-reactive.adoc[levelofset=+1]
+include::con_spring-web-reactive.adoc[leveloffset=+1]
 include::proc_creating-a-reactive-http-service-with-webflux.adoc[leveloffset=+1]
 
 include::proc_using-basic-authentication-in-http-service-webflux.adoc[leveloffset=+1]
