@@ -60,24 +60,6 @@ You must replace these value with the {name-launcher} frontend route URL when yo
 $ oc create secret generic launcher-oauth-github --from-literal=clientId=LAUNCHER_GITHUB_OAUTH_CLIENT_ID --from-literal=secret=LAUNCHER_GITHUB_OAUTH_CLIENT_SECRET
 ----
 
-.. Edit the custom resource definition YAML for your {name-launcher} instance to specify your OpenShift Web Console URL.
-+
-.launcher_cr.yaml
-[source,yaml,options="nowrap",subs="attributes+"]
-----
-apiVersion: launcher.fabric8.io/v1alpha2
-kind: Launcher
-metadata:
-  name: launcher
-spec:
-# OpenShift Configuration
-  openshift:
-    consoleUrl: YOUR_OPENSHIFT_WEB_CONSOLE_URL # Replace this with your OpenShift Web Console URL
-# OAuth Configuration
-  oauth:
-    enabled: true
-----
-
 .. Obtain the frontend URL of your {name-launcher} instance:
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -126,7 +108,22 @@ Based on the templates, OpenShift automatically installs:
 * an access role definition for the Launcher operator
 * access role bindings for the Launcher operator
 
-. Install the `launcher_cr.yaml` custom resource to initiate the deployment of the {name-launcher} tool.
+. Edit the `launcher_cr.yaml` custom resource to add your OpenShift Console URL:
++
+.launcher_cr.yaml
+[source,yaml,options="nowrap",subs="attributes+"]
+----
+apiVersion: launcher.fabric8.io/v1alpha2
+kind: Launcher
+metadata:
+  name: launcher
+spec:
+# OpenShift Configuration
+  openshift:
+    consoleUrl: #<the OpenShift Console Url (ex: 'https://192.168.64.4:8443')>#
+----
+
+. Install the `launcher_cr.yaml` custom resource to deploy the {name-launcher} tool.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
