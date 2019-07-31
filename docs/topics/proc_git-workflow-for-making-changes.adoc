@@ -34,9 +34,14 @@ If you are unsure, ask someone from the team for help.
 --
 .. Label the pull request appropriately. For more information about labels, see xref:using-github-labels_{context}[].
 .. Reference the issue that your pull request resolves in the description, using the formulation `resolves $ID`, where `$ID` is the numerical ID of the issue. Doing this automatically closes the issue when the pull request is accepted.
-
+--
+. After your pull request is created, include a link to the edited document in a comment.
++
+--
+.. Preview the rendered documentation with the changes from the pull request by navigating to the `Conversation` tab of the pull request, clicking _Show All Checks_, and _Details_ next to the revealed `deploy/netlify`.
+.. Navigate to the edited document.
+.. Copy the URL and paste it in a new comment on the pull request.
+--
 A team member (a reviewer) will review your changes for factual and stylistic correctness. If the changes are acceptable, the reviewer merges them and closes the pull request. The reviewer may ask you to make further modifications if necessary, or file a pull request against your branch with their suggested modifications.
 
 NOTE: Do not worry that your pull request was closed, the changes are merged manually as opposed to the GitHub web UI.
---
-
