@@ -32,6 +32,9 @@ include::topics/proc_deploying-an-example-application-to-openshiftcontainerplatf
 include::topics/proc_updating-your-example-application-and-deploying-the-changes.adoc[leveloffset=+1]
 
 [appendix]
+include::topics/assembly_launcher-capabilities.adoc[leveloffset=+1]
+
+[appendix]
 include::topics/assembly_using-red-hat-jboss-developer-studio-with-an-example-application-project.adoc[leveloffset=+1]
 
 //include::topics/assembly_using-visual-studio-code-with-an-example-application-project.adoc[leveloffset=+1]

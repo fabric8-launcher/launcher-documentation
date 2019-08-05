@@ -1,0 +1,15 @@
+[id='launcher-health-check-capability.adoc_{context}']
+= Launcher health check capability
+
+:parent-context: {context}
+
+When you deploy an application, it is important to know if it is available and if it can start handling incoming requests. Implementing the _health check_ pattern allows you to monitor the health of an application, which includes if an application is available and whether it is able to service requests.
+
+NOTE: If you are not familiar with the health check terminology, see the xref:health-check-concepts_{context}[] section first.
+
+// include::con_launcher-health-check-capability.adoc[leveloffset=+1]
+include::con_purpose-of-the-health-check-pattern.adoc[leveloffset=+1]
+include::con_health-check-concepts.adoc[leveloffset=+1]
+include::ref_health-check-resources.adoc[leveloffset=+1]
+
+:context: {parent-context}

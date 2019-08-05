@@ -1,5 +1,5 @@
 [id="{name-launcher-oso}-health-check-capability_{context}"]
-= {name-launcher-oso} Health Check Capability
+= {name-launcher-oso} Health Check capability
 
 The health check capability enables you to monitor the health of your application by determining whether the application is available and whether it is able to process requests.
 
