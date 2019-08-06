@@ -26,7 +26,7 @@ NOTE: If there is no reference to an open issue and the change is not trivial, r
 +
 .. Preview the rendered documentation with the changes from the pull request by navigating to the `Conversation` tab of the pull request, clicking _Show All Checks_, and _Details_ next to the revealed `deploy/netlify`.
 +
-NOTE: Even though the page says `Prepare to launch`... you are in the right place. Click `Docs` in the top bar to navigate to the edited documentation.
+NOTE: Even though the page says _Prepare to launch..._ you are in the right place. Click _Docs_ in the top bar to navigate to the edited documentation.
 +
 .. If you are a writer, focus mainly on the requirements described in the xref:_requirements[] section.
 .. If you are a member of the QE team, focus mainly on the technical accuracy of the document.
