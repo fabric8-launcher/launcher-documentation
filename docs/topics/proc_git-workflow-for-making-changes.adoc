@@ -38,7 +38,7 @@ If you are unsure, ask someone from the team for help.
 . After your pull request is created, include a link to the edited document in a comment.
 +
 --
-.. Preview the rendered documentation with the changes from the pull request by navigating to the `Conversation` tab of the pull request, clicking _Show All Checks_, and _Details_ next to the revealed `deploy/netlify`.
+.. Preview the rendered documentation with the changes from the pull request by navigating to the _Conversation_ tab of the pull request, clicking _Show All Checks_, and _Details_ next to `deploy/netlify`.
 .. Navigate to the edited document.
 .. Copy the URL and paste it in a new comment on the pull request.
 --
