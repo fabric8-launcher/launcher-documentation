@@ -1,9 +1,9 @@
 [id="introduction-to-spring-reactive_{context}"]
 = Introduction to {SpringReactive}
 
-The Spring reactive stack is build on link:https://projectreactor.io[Project Reactor], a reactive library that implements backbressure and is compliant with the Reactive Streams specification. It provides the link:https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html[`Flux`] and link:https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html[`Mono`] functional API types that enable asynchronous event stream processing.
+The Spring reactive stack is build on link:https://projectreactor.io[Project Reactor], a reactive library that implements backpressure and is compliant with the Reactive Streams specification. It provides the link:https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html[`Flux`] and link:https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html[`Mono`] functional API types that enable asynchronous event stream processing.
 
-On top of Project Reactor, Spring provides link:https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux[WebFlux], an asynchronous event-driven web application framework. While WebFlux is designed to work primarily with link:https://projectreactor.io/docs/netty/release/reference/index.html[Reactor Netty], it can also operate with other reactive HTTP servers such as Vert.x.
+On top of Project Reactor, Spring provides link:https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux[WebFlux], an asynchronous event-driven web application framework. While WebFlux is designed to work primarily with link:https://projectreactor.io/docs/netty/release/reference/index.html[Reactor Netty], it can also operate with other reactive HTTP servers, such as {VertX}.
 
 
 Spring WebFlux and Reactor enable you to create applications that are:
