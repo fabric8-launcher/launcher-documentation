@@ -3,7 +3,7 @@
 
 :parent-context: {context}
 
-This section provides an introduction to developing applications in a reactive way using {ProductShortName} {SpringBoot} starters based on {SpringBoot} and Reactor Netty (developed as part of the {VertX} toolkit).
+This section provides an introduction to developing applications in a reactive way using {ProductShortName} {SpringBoot} starters based on {SpringBoot} and Eclipse Vert.x.
 The following examples demonstrate how you can use the starters to create reactive applications.
 
 include::con_spring-reactive-introduction.adoc[leveloffset=+1]

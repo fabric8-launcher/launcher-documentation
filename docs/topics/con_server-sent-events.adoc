@@ -1,9 +1,9 @@
 [id="server-sent-events_{context}"]
 = Server-sent events
 
-Server-sent events (SSE) is a reactive HTTP-based messaging protocol.
+Server-sent events (SSE) is a push technology allowing HTTP sever to send unidirectional updates to the client.
 SSE works by establishing a connection between the event source and the client.
-The event source, such as an application server or a messaging broker, uses this connection to push events to the client-side.
+The event source uses this connection to push events to the client-side.
 After the server pushes the events, the connection remains open, and can be used used to push subsequent events.
 When the client terminates the request on the server, the connection is closed.
 SSE represents a more resource-efficient alternative to polling, where a new connection must be established each time the client polls the event source for updates.

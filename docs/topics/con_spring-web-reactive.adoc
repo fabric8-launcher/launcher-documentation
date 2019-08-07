@@ -4,7 +4,7 @@
 The `spring-web` module provides the foundational elements of the reactive capabilities of link:https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux[Spring WebFlux], including:
 
 * HTTP abstractions provided by the link:https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux-web-handler-api[`HttpHandler` API]
-* Reactive Streams adapters for supported servers (Netty, Undertow)
+* Reactive Streams adapters for supported servers (Vert.x, Undertow and others)
 * Codecs for encoding and decoding event stream data. This includes:
 ** `DataBuffer`, an abstraction for different types of byte buffer representations (Netty `ByteBuf`, `java.nio.ByteBuffer`, as well as others)
 ** Low-level contracts to encode and decode content independent of HTTP
