@@ -1,5 +1,5 @@
 [id='purpose-of-the-health-check-pattern_{context}']
-= Purpose of the Health Check Pattern
+= Health check pattern
 
 The purpose of this use case is to demonstrate the health check pattern through the use of probing.
 Probing is used to report the liveness and readiness of an application.
