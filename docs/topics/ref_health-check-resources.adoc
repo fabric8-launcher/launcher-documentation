@@ -3,13 +3,9 @@
 
 More background and related information on health checking can be found here:
 
-* link:https://docs.openshift.com/container-platform/latest/dev_guide/application_health.html[Overview of Application Health in OpenShift]
-
-* link:https://kubernetes.io/docs/user-guide/walkthrough/k8s201/#health-checking[Health Checking in Kubernetes]
+* link:https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html/developer_guide/dev-guide-application-health[Application Health]
 
 * link:https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/[Kubernetes Liveness and Readiness Probes]
-
-* link:https://kubernetes.io/docs/api-reference/v1/definitions/#_v1_probe[Kubernetes Probes]
 
 ifndef::built-for-spring-boot[* link:{link-example-health-check-spring-boot}[{name-example-health-check} for {SpringBoot}]]
 
