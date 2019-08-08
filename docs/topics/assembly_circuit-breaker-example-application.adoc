@@ -19,8 +19,6 @@ include::con_the-circuit-breaker-design-pattern.adoc[leveloffset=+1]
 
 include::con_circuit-breaker-design-tradeoffs.adoc[leveloffset=+1]
 
-include::proc_viewing-the-example-application-source-code-and-readme.adoc[leveloffset=+1]
-
 :parameter-example-name: {name-example-circuit-breaker}
 :parameter-example: circuit-breaker
 include::assembly_deploying-the-example-application-to-openshiftonline.adoc[leveloffset=+1]

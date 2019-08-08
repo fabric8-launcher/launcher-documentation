@@ -45,8 +45,6 @@ This example does not showcase a fully matured RESTful model (level 3), but it d
 
 include::con_crud-design-tradeoffs.adoc[leveloffset=+1]
 
-include::proc_viewing-the-example-application-source-code-and-readme.adoc[leveloffset=+1]
-
 :parameter-example-name: {name-example-crud}
 :parameter-example: crud
 include::assembly_deploying-the-example-application-to-openshiftonline.adoc[leveloffset=+1]

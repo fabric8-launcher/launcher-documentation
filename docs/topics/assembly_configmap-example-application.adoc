@@ -22,8 +22,6 @@ include::con_the-externalized-configuration-design-pattern.adoc[leveloffset=+1]
 
 include::con_configmap-design-tradeoffs.adoc[leveloffset=+1]
 
-include::proc_viewing-the-example-application-source-code-and-readme.adoc[leveloffset=+1]
-
 :parameter-example-name: {name-example-configmap}
 :parameter-example: configmap
 include::assembly_deploying-the-example-application-to-openshiftonline.adoc[leveloffset=+1]

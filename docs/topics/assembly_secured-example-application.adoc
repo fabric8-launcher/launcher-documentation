@@ -30,8 +30,6 @@ Before using this example, ensure that you are familiar with the basic concepts 
 
 include::con_the-secured-project-structure.adoc[leveloffset=+1]
 
-include::proc_viewing-the-example-application-source-code-and-readme.adoc[leveloffset=+1]
-
 include::ref_rhsso-deployment-configuration.adoc[leveloffset=+1]
 
 include::con_rhsso-realm-model.adoc[leveloffset=+1]
