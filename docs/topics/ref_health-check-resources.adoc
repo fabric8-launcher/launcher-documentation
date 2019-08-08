@@ -3,7 +3,7 @@
 
 More background and related information on health checking can be found here:
 
-* link:https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html/developer_guide/dev-guide-application-health[Application Health]
+* link:https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html/developer_guide/dev-guide-application-health[Application Health in OpenShift]
 
 * link:https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/[Kubernetes Liveness and Readiness Probes]
 
