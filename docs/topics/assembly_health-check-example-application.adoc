@@ -26,8 +26,6 @@ If the application is not considered ready by the readiness probe, requests are 
 
 include::con_health-check-concepts.adoc[leveloffset=+1]
 
-include::proc_viewing-the-example-application-source-code-and-readme.adoc[leveloffset=+1]
-
 :parameter-example-name: {name-example-health-check}
 :parameter-example: health-check
 include::assembly_deploying-the-example-application-to-openshiftonline.adoc[leveloffset=+1]

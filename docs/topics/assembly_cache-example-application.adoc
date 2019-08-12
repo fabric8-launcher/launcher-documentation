@@ -22,8 +22,6 @@ This example shows you how to:
 
 include::con_how-caching-works-and-when-you-need-it.adoc[leveloffset=+1]
 
-include::proc_viewing-the-example-application-source-code-and-readme.adoc[leveloffset=+1]
-
 :parameter-example-name: {name-example-cache}
 :parameter-example: cache
 include::assembly_deploying-the-example-application-to-openshiftonline.adoc[leveloffset=+1]

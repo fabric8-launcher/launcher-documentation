@@ -19,8 +19,6 @@ This example introduces the mechanics of interacting with a remote service using
 * Execute an HTTP `GET` request on the `api/greeting` endpoint while passing in a String argument. This uses the `name` request parameter in the query string.
 * Receive a response in JSON format with a payload of `Hello, $name!` with `$name` replaced by the value of the `name` parameter passed into the request.
 
-include::proc_viewing-the-example-application-source-code-and-readme.adoc[leveloffset=+1]
-
 include::con_http-api-design-tradeoffs.adoc[leveloffset=+1]
 
 :parameter-example-name: {name-example-http-api}
