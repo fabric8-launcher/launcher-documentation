@@ -105,24 +105,16 @@ spec:
 $ oc create -f example/launcher_cr.yaml
 ----
 
-. Wait until the all the pods containing the application components of the {name-launcher} are in a `READY` state:
-+
---
-* `launcher-frontend`
-* `launcher-backend`
-* `launcher-creator-backend`
---
+. Wait until all pods containing the application components of {name-launcher} are in a `READY` state:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc get pods -w
 NAME                                READY     STATUS              RESTARTS   AGE
-launcher-creator-backend-1-deploy   1/1       Running             0          46s
-launcher-creator-backend-1-aaaaa    0/1       ContainerCreating   0          44s
-launcher-backend-1-deploy           1/1       Running             0          46s
+launcher-creator-backend-1-aaaaa    1/1       Running             0           8s
+launcher-backend-1-aaaaa            1/1       Running             0           5s
+launcher-frontend-1-aaaaa           1/1       Running             0           6s
 ...
-launcher-backend-2-aaaaa            1/1       Running             0           5s
-launcher-frontend-2-aaaaa           1/1       Running             0           6s
 ----
 
 .. Obtain the frontend URL of your {name-launcher} instance:
@@ -130,6 +122,7 @@ launcher-frontend-2-aaaaa           1/1       Running             0           6s
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc get route launcher --template={{.spec.host}}
+http://YOUR_LAUNCHER_FRONTEND_URL
 ----
 
 .. Create an OAuth client instance in your `launcher-operator` project.
@@ -156,12 +149,12 @@ $ oc create -f <(echo '
 .Additional Resources
 
 * See the {name-guide-getting-started} section on link:{link-guide-getting-started}#creating-and-deploying-an-example-application-using-your-openshiftlocal_getting-started[using {name-launcher} to deploy example apps] to explore example applications available for different link:{link-guide-getting-started}#available-runtimes_getting-started[runtimes].
+* You can also see the guide to link:{link-guide-getting-started}#creating-a-new-application-using-the-launcher-tool_getting-started[creating a new application using {name-launcher}] for instructions on creating custom applications using the {name-launcher} tool.
 * See the runtime guides for an overview of the runtimes and their examples:
 ** link:{link-guide-spring-boot}[{name-guide-spring-boot}]
 ** link:{link-guide-vertx}[{name-guide-vertx}]
 ** link:{link-guide-thorntail}[{name-guide-thorntail}]
 ** link:{link-guide-nodejs}[{name-guide-nodejs}]
 
-* You can also see the guide to link:{link-guide-getting-started}#creating-a-new-application-using-the-launcher-tool_getting-started[creating a new application using {name-launcher}] for instructions on creating custom applications using the {name-launcher} tool.
 
 :value-url-osl-auth!:
