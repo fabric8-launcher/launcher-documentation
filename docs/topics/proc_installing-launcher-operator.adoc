@@ -7,8 +7,6 @@
 Set up an operator to install the {name-launcher} tool on an OpenShift cluster.
 Configure OAuth2 authentication to enable multiple users to access the same instance of {name-launcher}.
 
-NOTE: The following procedure works on clusters running on OpenShift 3.11.
-
 .Prerequisites
 
 * Github account
