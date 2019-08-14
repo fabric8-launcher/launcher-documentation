@@ -51,7 +51,7 @@ Health Checks are added to your app by default.
 
 .. Click _Save_ when you are done.
 
-. Connect a GitHub account to your {launcher-name}.
+. Connect a GitHub account to your {name-launcher}.
 
 .. Click _Authorize_ in the _Destination Repository_ section of the screen.
 
