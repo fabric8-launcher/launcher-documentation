@@ -3,7 +3,7 @@
 
 :parent-context: {context}
 
-When you create a new application using link:{link-launcher-oso}[{name-launcher-oso}], you can add the basic building blocks of cloud-based applications. The link:{link-launcher-oso}[{name-launcher-oso}] refers to these building blocks as capabilities. Applications created with the link:{link-launcher-oso}[{name-launcher-oso}] automatically include a health check capability. You can also add REST API or relational database backend capabilities.
+When you create a new application using link:{link-launcher-oso}[{name-launcher-oso}], you can add the basic building blocks of cloud-based applications. The link:{link-launcher-oso}[{name-launcher-oso}] refers to these building blocks as capabilities. Available capabilities include a health check, a REST API, and a relational database backend.
 
 include::assembly_launcher-health-check-capability.adoc[leveloffset=+1]
 

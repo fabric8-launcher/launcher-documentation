@@ -1,0 +1,27 @@
+[id="viewing-the-health-check-capability-in-the-welcome-application_{context}"]
+= Viewing the health check capability in the Welcome application
+
+When you select the Create a New Application flow in link:{link-launcher-oso}[{name-launcher-oso}], you can also the Welcome Application. The Welcome Application includes the capabilities that you selected and provides a way you can interact with the capabilities.
+
+.Prerequisites
+* link:https://www.openshift.com[Have an {OpenShiftOnline} account]
+* Check which {OpenShiftOnline} cluster you belong to using link:https://manage.openshift.com[https://manage.openshift.com^].
+* link:https://developers.redhat.com[Have a Red Hat Developers account]
+* link:https://github.com[Have a GitHub account]
+
+.Procedure
+. Navigate to link:{link-launcher-oso}[{name-launcher-oso}] using your browser.
+. Select _Start_.
+. Select _Create a New Application_.
+** You may be prompted to log in to your Red Hat Developers account. If you are, click _Log in or register_ and complete the authentication steps.
+. You may be prompted to grant {name-launcher-oso} access to your GitHub and {OpenShiftOnline} accounts. This is a one-time action.
+
+//.Verification steps
+//(Optional) Provide the user with verification method(s) for the procedure, such as expected output or commands that can be used to check for success or failure.
+
+.Additional resources
+
+* A bulleted list of links to other material closely related to the contents of the procedure module.
+* Currently, modules cannot include xrefs, so you cannot include links to other content in your collection. If you need to link to another assembly, add the xref to the assembly that includes this module.
+* For more details on writing procedure modules, see the link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
+* Use a consistent system for file names, IDs, and titles. For tips, see _Anchor Names and File Names_ in link:https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide[Modular Documentation Reference Guide].
