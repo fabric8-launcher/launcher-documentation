@@ -97,7 +97,7 @@ spec:
     consoleUrl: # Replace this value with the URL you use to access your OpenShift Web Console (for example: 'https://192.168.64.4:8443').#
 ----
 
-. Install the `example/launcher_cr.yaml` custom resource to start the deployment of the {name-launcher} tool.
+. Create the application components of the {name-launcher} tool defined in the `example/launcher_cr.yaml` template to start the deployment.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
