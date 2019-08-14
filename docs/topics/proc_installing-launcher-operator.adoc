@@ -7,8 +7,6 @@
 Set up an operator to install the {name-launcher} tool on an OpenShift cluster.
 Configure OAuth2 authentication to enable multiple users to access the same instance of {name-launcher}.
 
-NOTE: The following procedure works on clusters running on OpenShift 3.11.
-
 .Prerequisites
 
 * Github account
@@ -59,33 +57,8 @@ You must replace these value with the {name-launcher} frontend route URL when yo
 ----
 $ oc create secret generic launcher-oauth-github --from-literal=clientId=LAUNCHER_GITHUB_OAUTH_CLIENT_ID --from-literal=secret=LAUNCHER_GITHUB_OAUTH_CLIENT_SECRET
 ----
-
-.. Obtain the frontend URL of your {name-launcher} instance:
-+
-[source,bash,options="nowrap",subs="attributes+"]
-----
-$ oc get route launcher --template={{.spec.host}}
-----
-
-.. Create an OAuth client instance in your `launcher-operator` project.
-Ensure that you provide the OpenShift secret and frontend URL that you obtained earlier.
-+
-[source,options="nowrap",subs="attributes+"]
-----
-$ oc create -f <(echo '
-  kind: OAuthClient
-  apiVersion: oauth.openshift.io/v1
-  metadata:
-    name: launcher
-  secret: YOUR_LAUNCHER_OPENSHIFT_SECRET # Replace this with the secret you generated using your OAuth Client ID and Client Secret
-  redirectURIs:
-    - "http://YOUR_LAUNCHER_FRONTEND_URL" # Replace this with the fronted route URL of your {name-launcher} instance
-  grantMethod: prompt
-  ')
-----
-
-.. Update the values of the _Homepage URL_ and _Authorization callback URL_ fields in your {name-launcher} OAuth app configuration settings on GitHub to point to your launcher frontend route URL.
 --
++
 . Download and extract the link:https://github.com/fabric8-launcher/launcher-operator/archive/master.zip[ZIP file] containing the operator and navigate to the directory containing the extracted resources.
 +
 [source,bash,options="nowrap",subs="attributes+"]
@@ -108,9 +81,10 @@ Based on the templates, OpenShift automatically installs:
 * an access role definition for the Launcher operator
 * access role bindings for the Launcher operator
 
-. Edit the `launcher_cr.yaml` custom resource to add your OpenShift Console URL:
+. Edit the `launcher_cr.yaml` custom resource located in the `example/` subdirectory.
+Use your OpenShift Console URL as the value of `consoleUrl`:
 +
-.launcher_cr.yaml
+.example/launcher_cr.yaml
 [source,yaml,options="nowrap",subs="attributes+"]
 ----
 apiVersion: launcher.fabric8.io/v1alpha2
@@ -120,41 +94,66 @@ metadata:
 spec:
 # OpenShift Configuration
   openshift:
-    consoleUrl: #<the OpenShift Console Url (ex: 'https://192.168.64.4:8443')>#
+    consoleUrl: # Replace this value with the URL you use to access your OpenShift Web Console (for example: 'https://192.168.64.4:8443').#
 ----
 
-. Install the `launcher_cr.yaml` custom resource to deploy the {name-launcher} tool.
+. Create the application components of the {name-launcher} tool defined in the `example/launcher_cr.yaml` template to start the deployment.
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc create -f example/launcher_cr.yaml
 ----
 
-. Monitor the status of the {name-launcher} tool until it completes start up.
+. Wait until all pods containing the application components of {name-launcher} are in a `READY` state:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc get pods -w
-NAME                           READY     STATUS              RESTARTS   AGE
-configmapcontroller-1-deploy   1/1       Running             0          46s
-configmapcontroller-1-aaaaa    0/1       ContainerCreating   0          44s
-launcher-backend-1-deploy      1/1       Running             0          46s
+NAME                                READY     STATUS              RESTARTS   AGE
+launcher-creator-backend-1-aaaaa    1/1       Running             0           8s
+launcher-backend-1-aaaaa            1/1       Running             0           5s
+launcher-frontend-1-aaaaa           1/1       Running             0           6s
 ...
-launcher-backend-2-aaaaa       0/1       Running             0         5s
-launcher-frontend-2-aaaaa      0/1       Running             0         6s
 ----
 
-. Navigate to the frontend route URL to start using {name-launcher}.
+. Obtain the frontend URL of your {name-launcher} instance:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc get route launcher --template={{.spec.host}}
+http://YOUR_LAUNCHER_FRONTEND_URL
+----
+
+. Create an OAuth client instance in your `launcher-operator` project.
+Ensure that you provide the OpenShift secret and frontend URL values that you obtained earlier:
++
+[source,options="nowrap",subs="attributes+"]
+----
+$ oc create -f <(echo '
+  kind: OAuthClient
+  apiVersion: oauth.openshift.io/v1
+  metadata:
+    name: launcher
+  secret: YOUR_LAUNCHER_OPENSHIFT_SECRET # Replace this with the secret you generated using your OAuth Client ID and Client Secret
+  redirectURIs:
+    - "http://YOUR_LAUNCHER_FRONTEND_URL" # Replace this with the fronted route URL of your {name-launcher} instance
+  grantMethod: prompt
+  ')
+----
+
+. Update the values of the _Homepage URL_ and _Authorization callback URL_ fields in your {name-launcher} OAuth app configuration settings on GitHub to the value of your launcher frontend route URL.
+
+. Navigate to the frontend route URL using a web browser to start using {name-launcher}.
 
 .Additional Resources
 
 * See the {name-guide-getting-started} section on link:{link-guide-getting-started}#creating-and-deploying-an-example-application-using-your-openshiftlocal_getting-started[using {name-launcher} to deploy example apps] to explore example applications available for different link:{link-guide-getting-started}#available-runtimes_getting-started[runtimes].
+* You can also see the guide to link:{link-guide-getting-started}#creating-a-new-application-using-the-launcher-tool_getting-started[creating a new application using {name-launcher}] for instructions on creating custom applications using the {name-launcher} tool.
 * See the runtime guides for an overview of the runtimes and their examples:
 ** link:{link-guide-spring-boot}[{name-guide-spring-boot}]
 ** link:{link-guide-vertx}[{name-guide-vertx}]
 ** link:{link-guide-thorntail}[{name-guide-thorntail}]
 ** link:{link-guide-nodejs}[{name-guide-nodejs}]
 
-* You can also see the guide to link:{link-guide-getting-started}#creating-a-new-application-using-the-launcher-tool_getting-started[creating a new application using {name-launcher}] for instructions on creating custom applications using the {name-launcher} tool.
 
 :value-url-osl-auth!:
