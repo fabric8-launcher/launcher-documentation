@@ -1,0 +1,7 @@
+Example proficiency level:
+//special case since topic is used by front end.
+ifdef::docs-topic[xref:proficiency_foundational[*{proficiency-foundational}*].]
+ifndef::docs-topic[link:https://launcher.fabric8.io/docs/thorntail-runtime.html#proficiency_levels[*{proficiency-foundational}*^].]
+
+
+{name-example-configmap} provides a basic example of using a ConfigMap to externalize configuration. _ConfigMap_ is an object used by OpenShift to inject configuration data as simple key and value pairs into one or more Linux containers while keeping the containers independent of OpenShift.
