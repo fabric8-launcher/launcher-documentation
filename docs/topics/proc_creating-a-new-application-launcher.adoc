@@ -15,7 +15,7 @@ The following procedure describes the main actions you need to perform when sett
 .Prerequisites
 
 . Access to an OpenShift cluster
-. link:{link-guide-minishift-installation}#installing-launcher-tool-using-an-operator_minishift[{name-launcher} installed] on your OpenShift cluster.
+. link:{link-guide-minishift-installation}#installing-launcher-tool-using-an-operator_minishift[{name-launcher} installed] on your OpenShift cluster
 . A GitHub account
 
 .Procedure

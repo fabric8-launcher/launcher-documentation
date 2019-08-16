@@ -1,0 +1,37 @@
+[id="viewing-capabilities-in-the-welcome-application_{context}"]
+= Viewing capabilities in the Welcome application
+
+When you create a new application using link:{link-launcher-oso}[{name-launcher-oso}], you can also create the Welcome application. The Welcome application provides an easy way to interact with the capabilities you select for your backend. 
+
+.Prerequisites
+* Access to an OpenShift cluster
+* link:{link-guide-getting-started}[{name-launcher} installed] on your OpenShift cluster
+* link:https://developers.redhat.com[Have a Red Hat Developer account]
+
+.Procedure
+. Navigate to link:{link-launcher-oso}[{name-launcher-oso}] using your browser.
+. Click *Start*. Use your Red Hat Developer account to log in.
+. Click *Create a New Application*.
+. Optional: Configure a frontend for your application.
+. Click *Configure a Backend*.
++
+You must select a runtime to add capabilities.
+
+.. Select a runtime from the *Runtime* list.
+.. Select Community or RHOAR from the *Version* list.
+.. Click the check box for a capability to include it in the Welcome application. The Health Checks capability is automatically selected.
++
+
+* Relational Persistence
++
+If you select Relational Persistence, choose a database type.
+* Health Checks
+* HTTP API
+
+.. Click *Save* to return to the Create New Application page.
+. Click *Configure Welcome App*.
+. Select the *Welcome app* check box and click *Save*.
+. Click *Download* to download a ZIP file with the Welcome application code.
+. Extract the ZIP file.
+. Navigate to the root directory of the Welcome application.
+. Open the `README.md` and follow the instructions to build and deploy the Welcome application to your OpenShift Cluster.
