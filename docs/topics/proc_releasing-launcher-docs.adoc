@@ -39,7 +39,35 @@ Replace `$REMOTE` with the name of the upstream remote.
 --
 
 . Request publication:
-.. File a pull request in the link:https://github.com/openshiftio/saas-launchpad/blob/master/launchpad-services/launcher-documentation.yaml#L2[openshiftio/saas-launchpad] repository, where you change the `hash` value to the hash of the commit you want to publish from the link:{link-repo-docs}[{name-repo-docs}] repository. Usually, this will be the latest commit in the `master` branch.
+.. Fork link:https://access.redhat.com/documentation/en-us/red_hat_jboss_web_server/5.0/html/red_hat_jboss_web_server_for_openshift/index[openshiftio/saas-launchpad].
+.. Clone your fork:
++
+[source,bash]
+----
+git clone git@github.com/${GIT_USER}/openshiftio/saas-launchpad.git
+----
+.. Add the repository as a remote on your fork:
++
+[source,bash]
+----
+git remote add upstream git@github.com:${GIT_USER}/openshiftio/saas-launchpad.git
+----
+.. Fetch upstream.
+.. Create a topic branch:
++
+[source,bash]
+----
+git checkout -v ${BRANCH_NAME} upstream/master
+----
+.. Edit the SHA in `launcher-documentation.yaml` on the topic branch and push your change to origin:
++
+The SHA value is from the commit you want to publish from the link:{link-repo-docs}[{name-repo-docs}] repository. Usually, this is the latest commit in the `master` branch
++
+[source,bash]
+----
+$ git push origin/${BRANCH_NAME}
+----
+.. File a pull request in the link:https://github.com/openshiftio/saas-launchpad/blob/master/launchpad-services/launcher-documentation.yaml#L2[openshiftio/saas-launchpad] repository.
 .. Wait for the pull request to be accepted. When that happens, verify that the link:{link-docs}[production build] succeeded.
 .. Once your changes have been merged and the build succeeds, delete the topic branch you used to introduce the update.
 +
@@ -52,4 +80,3 @@ $ git branch -d $TOPIC_BRANCH_NAME
 
 . Synchronize the sources to the Customer Portal stage.
 . Announce the publication.
-
