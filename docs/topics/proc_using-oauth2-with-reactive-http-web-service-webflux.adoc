@@ -54,7 +54,7 @@ include::resources/spring-boot/reactive-examples/example-oauth2-http-webflux-end
 
 . Create the main class of your application:
 +
-.`HttpSecuritySampleApplication.java`
+.`OAuthSampleApplication.java`
 [source,java,options="nowrap",subs="attributes+"]
 ----
 include::resources/spring-boot/reactive-examples/example-oauth2-webflux-application.java[]
