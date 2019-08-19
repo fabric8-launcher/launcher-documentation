@@ -92,9 +92,22 @@ kind: Launcher
 metadata:
   name: launcher
 spec:
+
 # OpenShift Configuration
   openshift:
     consoleUrl: # Replace this value with the URL you use to access your OpenShift Web Console (for example: 'https://192.168.64.4:8443').#
+
+# OAuth Configuration
+  oauth:
+    enabled: true
+    keycloakUrl: http://keycloakUrl # TODO: What is the approriate URL to use instead of the default here?#
+    keycloakRealm: launcher
+
+  git:
+    providers:
+    - id: GitHub
+      clientId: "LAUNCHER_GITHUB_OAUTH_CLIENT_ID"
+      clientSecret: "LAUNCHER_GITHUB_OAUTH_CLIENT_SECRET"
 ----
 
 . Create the application components of the {name-launcher} tool defined in the `example/launcher_cr.yaml` template to start the deployment.
