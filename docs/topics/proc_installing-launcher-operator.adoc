@@ -106,6 +106,7 @@ spec:
 
 # OpenShift Configuration
   openshift:
+    apiUrl: https://openshift.default.svc.cluster.local
     consoleUrl: # Replace this value with the URL you use to access your OpenShift Web Console (for example: 'https://192.168.64.4:8443').#
 
 # OAuth Configuration
