@@ -9,7 +9,7 @@ Configure OAuth2 authentication to enable multiple users to access the same inst
 
 .Prerequisites
 
-* Github account
+* A link:http://github.com[GitHub account]
 * Admin access to an OpenShift cluster
 * {OpenShiftCluster} installed
 
@@ -107,12 +107,13 @@ spec:
 # OpenShift Configuration
   openshift:
     apiUrl: https://openshift.default.svc.cluster.local
-    consoleUrl: # Replace this value with the URL you use to access your OpenShift Web Console (for example: 'https://192.168.64.4:8443').#
+    consoleUrl: OPENSHIFT_WEB_CONSOLE_URL # Replace this value with the URL you use to access your OpenShift Web Console (for example: 'https://192.168.64.4:8443').#
 
 # OAuth Configuration
   oauth:
     enabled: true
-    keycloakUrl: http://keycloakUrl # TODO: What is the approriate URL to use instead of the default here?#
+# Omit the following items if you are not using a Keycloak server for authorization.
+    keycloakUrl: KEYCLOAK_AUTH_URL # Replace this value with the URL of the Keycloak server instance that you use for authorization.#
     keycloakRealm: launcher
     keycloakClientId: launcher
 
@@ -160,7 +161,7 @@ $ oc create -f <(echo '
   apiVersion: oauth.openshift.io/v1
   metadata:
     name: launcher
-  secret: YOUR_LAUNCHER_OPENSHIFT_SECRET # Replace this with the secret you generated using your OAuth Client ID and Client Secret
+  secret: #YOUR_LAUNCHER_OPENSHIFT_SECRET # Replace this with the secret you generated using your OAuth Client ID and Client Secret
   redirectURIs:
     - "http://YOUR_LAUNCHER_FRONTEND_URL" # Replace this with the fronted route URL of your {name-launcher} instance
   grantMethod: prompt
