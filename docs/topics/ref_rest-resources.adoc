@@ -8,20 +8,20 @@ the Design of Network-based Software Architectures - Representational State Tran
 
 * link:https://martinfowler.com/articles/richardsonMaturityModel.html[Richardson Maturity Model]
 
-ifndef::built-for-nodejs[* link:https://www.jcp.org/en/jsr/detail?id=311[JSR 311: JAX-RS: The JavaTM API for RESTful Web Services]]
+ifndef::built-for-nodejs,built-for-getting-started[* link:https://www.jcp.org/en/jsr/detail?id=311[JSR 311: JAX-RS: The JavaTM API for RESTful Web Services]]
 
 ifdef::built-for-nodejs[* link:https://expressjs.com/[Express Web Framework]]
 
 ifdef::built-for-spring-boot[* link:https://spring.io/guides/gs/rest-service/[Building a RESTful Service with Spring]]
 
-ifdef::built-for-vertx[* link:http://vertx.io/blog/some-rest-with-vert-x/[Some Rest with {VertX}]]
+ifdef::built-for-vertx,built-for-getting-starte[* link:http://vertx.io/blog/some-rest-with-vert-x/[Some Rest with {VertX}]]
 
 ifdef::built-for-thorntail[* link:http://resteasy.jboss.org/docs.html[RESTEasy Documentation]]
 
-ifndef::built-for-spring-boot[* link:{link-example-http-api-spring-boot}[{name-example-http-api} for {SpringBoot}]]
+ifndef::built-for-spring-boot,built-for-getting-started[* link:{link-example-http-api-spring-boot}[{name-example-http-api} for {SpringBoot}]]
 
-ifndef::built-for-vertx[* link:{link-example-http-api-vertx}[{name-example-http-api} for {VertX}]]
+ifndef::built-for-vertx,built-for-getting-started[* link:{link-example-http-api-vertx}[{name-example-http-api} for {VertX}]]
 
-ifndef::built-for-thorntail[* link:{link-example-http-api-thorntail}[{name-example-http-api} for {Thorntail}]]
+ifndef::built-for-thorntail,built-for-getting-started[* link:{link-example-http-api-thorntail}[{name-example-http-api} for {Thorntail}]]
 
-ifndef::built-for-nodejs[* link:{link-example-http-api-nodejs}[{name-example-http-api} for {Node}]]
+ifndef::built-for-nodejs,built-for-getting-started[* link:{link-example-http-api-nodejs}[{name-example-http-api} for {Node}]]
