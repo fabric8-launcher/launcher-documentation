@@ -12,6 +12,7 @@ Available capabilities include:
 * Relational database backend
 
 include::assembly_launcher-health-check-capability.adoc[leveloffset=+1]
+include::assembly_launcher-rest-api-capability.adoc[leveloffset=+1]
 include::proc_viewing-capabilities-in-the-welcome-application.adoc[leveloffset=+1]
 
 :context: {parent-context}

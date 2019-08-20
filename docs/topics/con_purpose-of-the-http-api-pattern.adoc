@@ -1,5 +1,5 @@
 [id='purpose-of-the-http-api-pattern_{context}']
-= Purpose of the HTTP API Pattern
+= Purpose of the HTTP API pattern
 
 The HTTP API pattern introduces the mechanics of interacting with a remote service using the HTTP protocol. It allows you to:
 
