@@ -1,4 +1,3 @@
-
 package dev.snowdrop.vertx.sample.sse;
 
 import java.time.Duration;
@@ -20,3 +19,4 @@ public class SseController {
             .map(i -> random.nextInt())
             .log();
     }
+}

@@ -38,7 +38,7 @@ include::resources/spring-boot/reactive-examples/example-http-service-mail-handl
 
 . Create the main class of your application:
 +
-.`HttpSecuritySampleApplication.java`
+.`MailSampleApplication.java`
 [source,java,options="nowrap",subs="attributes+"]
 ----
 include::resources/spring-boot/reactive-examples/example-http-mail-service-app.java[]
