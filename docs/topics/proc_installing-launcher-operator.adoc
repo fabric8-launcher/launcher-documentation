@@ -9,7 +9,7 @@ Configure OAuth2 authentication to enable multiple users to access the same inst
 
 .Prerequisites
 
-* Github account
+* A link:http://github.com[GitHub account]
 * Admin access to an OpenShift cluster
 * {OpenShiftCluster} installed
 
@@ -81,6 +81,17 @@ Based on the templates, OpenShift automatically installs:
 * an access role definition for the Launcher operator
 * access role bindings for the Launcher operator
 
+. OPTIONAL: Verify that the pod containing the deployment operator is running and that its state is indicated as `READY`.
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$  oc get pods -w
+NAME                                READY     STATUS       RESTARTS   AGE
+launcher-operator-fffff0000-abc12   1/1       Running      0          3m
+----
++
+Press `CTRL`+`Z` to stop watching the pods.
+
 . Edit the `launcher_cr.yaml` custom resource located in the `example/` subdirectory.
 Use your OpenShift Console URL as the value of `consoleUrl`:
 +
@@ -92,9 +103,25 @@ kind: Launcher
 metadata:
   name: launcher
 spec:
+
 # OpenShift Configuration
   openshift:
-    consoleUrl: # Replace this value with the URL you use to access your OpenShift Web Console (for example: 'https://192.168.64.4:8443').#
+    apiUrl: https://openshift.default.svc.cluster.local
+    consoleUrl: OPENSHIFT_WEB_CONSOLE_URL # Replace this value with the URL you use to access your OpenShift Web Console (for example: 'https://192.168.64.4:8443').#
+
+# OAuth Configuration
+  oauth:
+    enabled: true
+# Omit the following items if you are not using a Keycloak server for authorization.
+    keycloakUrl: KEYCLOAK_AUTH_URL # Replace this value with the URL of the Keycloak server instance that you use for authorization.#
+    keycloakRealm: launcher
+    keycloakClientId: launcher
+
+  git:
+    providers:
+    - id: GitHub
+      clientId: "LAUNCHER_GITHUB_OAUTH_CLIENT_ID"
+      clientSecret: "LAUNCHER_GITHUB_OAUTH_CLIENT_SECRET"
 ----
 
 . Create the application components of the {name-launcher} tool defined in the `example/launcher_cr.yaml` template to start the deployment.
@@ -104,17 +131,17 @@ spec:
 $ oc create -f example/launcher_cr.yaml
 ----
 
-. Wait until all pods containing the application components of {name-launcher} are in a `READY` state:
+. Wait until the pod containing the {name-launcher} application is in a `READY` state:
 +
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 $ oc get pods -w
 NAME                                READY     STATUS              RESTARTS   AGE
-launcher-creator-backend-1-aaaaa    1/1       Running             0           8s
-launcher-backend-1-aaaaa            1/1       Running             0           5s
-launcher-frontend-1-aaaaa           1/1       Running             0           6s
+launcher-application-1-aaaaa        1/1       Running             0           8s
 ...
 ----
++
+Press `CTRL`+`Z` to stop watching the pods.
 
 . Obtain the frontend URL of your {name-launcher} instance:
 +
@@ -134,7 +161,7 @@ $ oc create -f <(echo '
   apiVersion: oauth.openshift.io/v1
   metadata:
     name: launcher
-  secret: YOUR_LAUNCHER_OPENSHIFT_SECRET # Replace this with the secret you generated using your OAuth Client ID and Client Secret
+  secret: #YOUR_LAUNCHER_OPENSHIFT_SECRET # Replace this with the secret you generated using your OAuth Client ID and Client Secret
   redirectURIs:
     - "http://YOUR_LAUNCHER_FRONTEND_URL" # Replace this with the fronted route URL of your {name-launcher} instance
   grantMethod: prompt
