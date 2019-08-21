@@ -6,7 +6,7 @@ As a team member, you can operate the Jenkins continuous integration (CI) system
 By default, only pull requests from trusted collaborators are built automatically.
 You can enable building a particular pull request from an untrusted collaborator or add the pull request author to the list of trusted collaborators.
 
-To issue a command, write it into a comment in a pull request in the link:{link-repo-docs}[{repo-docs-name}^] repository.
+To issue a command, write it into a comment in a pull request in the link:{link-repo-docs}[{name-repo-docs}^] repository.
 Do not write anything else in the comment.
 
 .List of Jenkins commands
@@ -30,4 +30,3 @@ Any future pull requests from the author will be built automatically.
 
 Use this command when a job failed or there is another error.
 |====
-

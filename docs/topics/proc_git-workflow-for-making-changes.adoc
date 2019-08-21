@@ -32,7 +32,7 @@ If you are unsure, ask someone from the team for help.
 . Create a pull request against the branch you based your contribution off. Ensure you also:
 +
 --
-.. Label the pull request appropriately. For more information about labels, see xref:using-github-labels_{context}[].
+.. Label the pull request appropriately.
 .. Reference the issue that your pull request resolves in the description, using the formulation `resolves $ID`, where `$ID` is the numerical ID of the issue. Doing this automatically closes the issue when the pull request is accepted.
 --
 . After your pull request is created, include a link to the edited document in a comment.

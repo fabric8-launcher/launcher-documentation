@@ -51,7 +51,7 @@ The recommended number of story points _per person per sprint_ is 13 in total.
 Description:: A complete description of the issue.
 
 Status:: The current status of the issue.
-For more information, see xref:rhoardoc-jira-workflow[].
+For more information, see xref:rhoardoc-jira-workflow_{context}[].
 
 Resolution:: How the issue was resolved.
 +
@@ -67,4 +67,3 @@ Due Date:: A specific date before which the issue should be resolved.
 +
 If not set, check the linked epic or parent issue if any.
 They might have a Due Date set.
-
