@@ -78,6 +78,6 @@ Hello, John!
 
 * You can link:{link-guide-spring-boot}#deploying-runtime-application-to-openshift_spring-boot[deploy your application to an OpenShift cluster] using Fabric8 Maven Plugin.
 
-* You can also configure your application for link:{link-guide-spring-boot}#deploying-runtime-application-to-standalone-red-hat-enterprise-linux_spring-boot[deployment on standalone Red{nbsp}Hat Enterprise Linux].
+* You can also configure your application for link:{link-guide-spring-boot}#deploying-runtime-application-to-standalone-red-hat-enterprise-linux_spring-boot[deployment on stand-alone Red{nbsp}Hat Enterprise Linux].
 
 * For more detail on creating reactive web services with {SpringBoot}, see the link:https://spring.io/guides/gs/reactive-rest-service/[reactive REST service development guide] in the Spring community documentation.
