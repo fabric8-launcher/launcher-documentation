@@ -122,7 +122,7 @@ Hello, user!
 
 * You can link:{link-guide-spring-boot}#deploying-runtime-application-to-openshift_spring-boot[deploy your application to an OpenShift cluster] using Fabric8 Maven Plugin.
 
-* You can also configure your application for link:{link-guide-spring-boot}#deploying-runtime-application-to-standalone-red-hat-enterprise-linux_spring-boot[deployment on standalone Red{nbsp}Hat Enterprise Linux].
+* You can also configure your application for link:{link-guide-spring-boot}#deploying-runtime-application-to-standalone-red-hat-enterprise-linux_spring-boot[deployment on stand-alone Red{nbsp}Hat Enterprise Linux].
 
 * For the full specification of the Basic HTTP authentication scheme, see document link:https://tools.ietf.org/html/rfc7617[RFC-7617].
 
