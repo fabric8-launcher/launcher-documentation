@@ -12,7 +12,7 @@ More background and related information on running relational databases in OpenS
 
 * link:http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven[REST APIs must be Hypertext driven]
 
-* link:https://martinfowler.com/articles/richardsonMaturityModel.html[Richardson Maturity Model]
+ifndef::built-for-getting-started[* link:https://martinfowler.com/articles/richardsonMaturityModel.html[Richardson Maturity Model]]
 
 ifndef::built-for-nodejs[* link:https://www.jcp.org/en/jsr/detail?id=311[JSR 311: JAX-RS: The JavaTM API for RESTful Web Services]]
 
@@ -27,10 +27,10 @@ endif::built-for-vertx[]
 
 ifdef::built-for-thorntail[* link:http://resteasy.jboss.org/docs.html[RESTEasy Documentation]]
 
-ifndef::built-for-spring-boot[* link:{link-example-crud-spring-boot}[{name-example-crud} for {SpringBoot}]]
+ifndef::built-for-spring-boot,built-for-getting-started[* link:{link-example-crud-spring-boot}[{name-example-crud} for {SpringBoot}]]
 
-ifndef::built-for-vertx[* link:{link-example-crud-vertx}[{name-example-crud} for {VertX}]]
+ifndef::built-for-vertx,built-for-getting-started[* link:{link-example-crud-vertx}[{name-example-crud} for {VertX}]]
 
-ifndef::built-for-thorntail[* link:{link-example-crud-thorntail}[{name-example-crud} for {Thorntail}]]
+ifndef::built-for-thorntail,built-for-getting-started[* link:{link-example-crud-thorntail}[{name-example-crud} for {Thorntail}]]
 
-ifndef::built-for-nodejs[* link:{link-example-crud-nodejs}[{name-example-crud} for {Node}]]
+ifndef::built-for-nodejs,built-for-getting-started[* link:{link-example-crud-nodejs}[{name-example-crud} for {Node}]]
