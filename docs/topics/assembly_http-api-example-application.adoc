@@ -10,14 +10,14 @@
 [id='example-rest-http-{parameter-runtime-anchor}']
 = {name-example-http-api} example for {runtime}
 
-include::rest-level-0-example-intro-paragraph.adoc[]
+Example proficiency level: xref:proficiency_foundational[*{proficiency-foundational}*]
 
-This example introduces the mechanics of interacting with a remote service using the HTTP protocol. It allows you to:
+The {name-example-http-api} example shows how to map business operations to a remote procedure call endpoint over HTTP using a REST framework. This corresponds to link:https://martinfowler.com/articles/richardsonMaturityModel.html#level0[Level 0 in the Richardson Maturity Model^].
+Creating an HTTP endpoint using REST and its underlying principles to define your API lets you quickly prototype and design the API flexibly.
 
-* Execute an HTTP `GET` request on the `api/greeting` endpoint.
-* Receive a response in JSON format with a payload consisting of the `Hello, World!` String.
-* Execute an HTTP `GET` request on the `api/greeting` endpoint while passing in a String argument. This uses the `name` request parameter in the query string.
-* Receive a response in JSON format with a payload of `Hello, $name!` with `$name` replaced by the value of the `name` parameter passed into the request.
+include::con_purpose-of-the-http-api-pattern.adoc[leveloffset=+1]
+
+include::proc_viewing-the-example-application-source-code-and-readme.adoc[leveloffset=+1]
 
 include::con_http-api-design-tradeoffs.adoc[leveloffset=+1]
 

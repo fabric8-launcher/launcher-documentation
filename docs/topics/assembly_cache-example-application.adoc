@@ -9,9 +9,7 @@
 [id='example-cache-{parameter-runtime-anchor}']
 = {name-example-cache} example for {runtime}
 
-include::note-example-unavailable-oso.adoc[leveloffset=+1]
-
-Example proficiency level: xref:proficiency_advanced[*{proficiency-advanced}*].
+Example proficiency level: xref:proficiency_advanced[*{proficiency-advanced}*]
 
 The {name-example-cache} example demonstrates how to use a cache to increase the response time of applications.
 
@@ -19,6 +17,8 @@ This example shows you how to:
 
 * Deploy a cache to OpenShift.
 * Use a cache within an application.
+
+include::note-example-unavailable-oso.adoc[leveloffset=+1]
 
 include::con_how-caching-works-and-when-you-need-it.adoc[leveloffset=+1]
 

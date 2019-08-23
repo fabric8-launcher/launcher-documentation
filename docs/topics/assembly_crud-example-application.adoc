@@ -9,9 +9,7 @@
 [id='example-crud-{parameter-runtime-anchor}']
 = {name-example-crud} example for {runtime}
 
-Example proficiency level:
-ifdef::docs-topic[xref:proficiency_foundational[*{proficiency-foundational}*].]
-ifndef::docs-topic[link:https://launcher.fabric8.io/docs/thorntail-runtime.html#proficiency_levels[*{proficiency-foundational}*^].]
+Example proficiency level: xref:proficiency_foundational[*{proficiency-foundational}*]
 
 The {name-example-crud} example expands on the {name-example-http-api} application to provide a basic example of performing _create_, _read_, _update_, and _delete_ (_CRUD_) operations on a PostgreSQL database using a simple HTTP API. _CRUD_ operations are the four basic functions of persistent storage, widely used when developing an HTTP API dealing with a database.
 include::note-example-unavailable-oso.adoc[leveloffset=+1]

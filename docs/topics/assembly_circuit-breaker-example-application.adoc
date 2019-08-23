@@ -9,9 +9,9 @@
 [id='example-circuit-breaker-{parameter-runtime-anchor}']
 = {name-example-circuit-breaker} example for {runtime}
 
-include::note-example-unavailable-oso.adoc[leveloffset=+1]
+Example proficiency level: xref:proficiency_foundational[*{proficiency-foundational}*]
 
-include::circuit-breaker-example-intro-paragraph.adoc[leveloffset=+1]
+The _Circuit Breaker_ example demonstrates a generic pattern for reporting the failure of a service and then limiting access to the failed service until it becomes available to handle requests. This helps prevent cascading failure in other services that depend on the failed services for functionality.
 
 This example shows you how to implement a Circuit Breaker and Fallback pattern in your services.
 
