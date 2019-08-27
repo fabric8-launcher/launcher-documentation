@@ -82,48 +82,19 @@ include::topics/assembly_cache-example-application.adoc[leveloffset=+2]
 :context: nodejs
 
 == Debugging
-This section contains information about debugging your {Node}{ndash}based application and using debug logging in both local and remote deployments.
+Debug your {Node}{ndash}based application to find and resolve problems. You can use debug logging in both local and remote deployments.
 
+include::topics/assembly_remote-debugging-a-node-application.adoc[leveloffset=+2]
 
-[#remote-debugging]
-=== Remote debugging
-To remotely debug an application, you need to start it in a debugging mode and attach a debugger to it.
+include::topics/assembly_debug-logging-for-a-node-application.adoc[leveloffset=+2]
 
-include::topics/proc_starting-your-application-locally-and-attaching-the-native-debugger.adoc[leveloffset=+3]
-
-include::topics/proc_starting-your-application-locally-and-attaching-the-v8-inspector.adoc[leveloffset=+3]
-
-:parameter-env-var-name: NODE_ENV
-:parameter-env-var-value: development
-:parameter-port: 5858
-//include::topics/proc_debug-start-v8-debug-nodejs-openshift.adoc[leveloffset=+3]
-include::topics/proc_starting-your-application-on-openshift-in-debugging-mode.adoc[leveloffset=+3]
-
-[#debug-logging]
-=== Debug logging
-
-Debug logging is a way to add detailed information to the application log when debugging.
-This allows you to:
-
-* Keep minimal logging output during normal operation of the application for improved readability and reduced disk space usage.
-* View detailed information about the inner workings of the application when resolving issues.
-
-include::topics/proc_add-debug-logging.adoc[leveloffset=+3]
-
-include::topics/proc_accessing-debug-logs-on-localhost.adoc[leveloffset=+3]
-
-include::topics/proc_accessing-node-debug-logs-on-openshift.adoc[leveloffset=+3]
 
 ifdef::launcher-docs-only[]
 == Monitoring your application
 
-=== Application metrics
+Monitoring helps you measure and evaluate the performance of your application. Monitor your {Node} application to ensures that it performs as expected. 
 
-include::topics/proc_exposing-application-metrics-using-prometheus-on-node-js.adoc[leveloffset=+3]
-endif::[]
-
-// DEVELOPING AN APPLICATION
-include::topics/assembly_developing-and-deploying-a-nodejs-application.adoc[leveloffset=+1]
+include::topics/assembly_application-metrics-for-node-applications.adoc[leveloffset=+2]
 
 [appendix]
 include::topics/ref_about-nodeshift.adoc[leveloffset=+1]

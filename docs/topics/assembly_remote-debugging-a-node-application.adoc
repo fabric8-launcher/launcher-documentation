@@ -1,0 +1,18 @@
+[id="remote-debugging-a-node-application_{context}"]
+= Remote debugging a {Node} application
+
+:parent-context: {context}
+
+You can remotely debug your application by starting the application in a debugging mode and attach a debugger to it.
+
+include::proc_starting-your-application-locally-and-attaching-the-native-debugger.adoc[leveloffset=+1]
+
+include::proc_starting-your-application-locally-and-attaching-the-v8-inspector.adoc[leveloffset=+1]
+
+:parameter-env-var-name: NODE_ENV
+:parameter-env-var-value: development
+:parameter-port: 5858
+//include::topics/proc_debug-start-v8-debug-nodejs-openshift.adoc[leveloffset=+3]
+include::proc_starting-your-application-on-openshift-in-debugging-mode.adoc[leveloffset=+1]
+
+:context: {parent-context}
