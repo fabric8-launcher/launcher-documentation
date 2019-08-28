@@ -1,0 +1,21 @@
+[id="debug-logging-for-a-vertx-application_{context}"]
+= Debug logging for an {VertX} application
+
+:parent-context: {context}
+
+{VertX} provides a built-in logging API.
+The default logging implementation for {VertX} uses the `java.util.logging` library that is link:https://docs.oracle.com/javase/8/docs/api/java/util/logging/package-summary.html[provided with the Java JDK^].
+Alternatively, {VertX} allows you to use a different logging framework, for example, link:https://logging.apache.org/log4j/2.x/javadoc.html[_Log4J_^] ({VertX} supports Log4J v1 and v2) or link:https://www.slf4j.org/docs.html[_SLF4J_^].
+
+include::proc_configuring-jul-logging-vertx.adoc[leveloffset=+1]
+
+include::proc_add-debug-logging-to-app-vertx.adoc[leveloffset=+1]
+
+include::proc_specify-a-custom-logging-framework-vertx.adoc[leveloffset=+1]
+
+// netty logging
+include::proc_configure-netty-logging-vertx.adoc[leveloffset=+1]
+
+include::proc_accessing-debug-logs-on-openshift.adoc[leveloffset=+1]
+
+:context: {parent-context}

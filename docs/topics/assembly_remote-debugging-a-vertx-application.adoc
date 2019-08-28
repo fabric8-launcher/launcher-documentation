@@ -1,0 +1,25 @@
+[id="remote-debugging-a-vertx-application_{context}"]
+= Remote debugging a {VertX} application
+
+:parent-context: {context}
+
+You can remotely debug your application by starting the application in debugging mode and attach a debugger to it.
+
+:parameter-debug-property: debug.port
+:parameter-maven-goal: vertx:debug
+include::proc_starting-your-application-locally-in-debugging-mode.adoc[leveloffset=+1]
+:parameter-debug-property!:
+:parameter-maven-goal!:
+
+//:parameter-uberjar-documented:
+//include::topics/proc_starting-an-uberjar-in-debugging-mode.adoc[leveloffset=+3]
+//:parameter-uberjar-documented!:
+
+:parameter-env-var-name: JAVA_DEBUG
+:parameter-env-var-value: true
+:parameter-port: 5005
+include::proc_starting-your-application-on-openshift-in-debugging-mode.adoc[leveloffset=+1]
+
+include::proc_attaching-a-remote-debugger-to-the-application.adoc[leveloffset=+1]
+
+:context: {parent-context}

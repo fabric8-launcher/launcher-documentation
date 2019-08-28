@@ -101,58 +101,16 @@ include::topics/assembly_developing-and-deploying-vertx-application.adoc[levelof
 
 == Debugging
 
-This sections contains information about debugging your {VertX}{ndash}based application both in local and remote deployments.
+This sections contains information about debugging your {VertX}{ndash}based application in local and remote deployments.
 
-=== Remote debugging
+include::topics/assembly_remote-debugging-a-vertx-application.adoc[leveloffset=+2]
 
-To remotely debug an application, you must first configure it to start in a debugging mode, and then attach a debugger to it.
+include::topics/assembly_debug-logging-for-a-vertx-application.adoc[leveloffset=+2]
 
 
-:parameter-debug-property: debug.port
-:parameter-maven-goal: vertx:debug
-include::topics/proc_starting-your-application-locally-in-debugging-mode.adoc[leveloffset=+3]
-:parameter-debug-property!:
-:parameter-maven-goal!:
+// Monitoring a {VertX} application
 
-//:parameter-uberjar-documented:
-//include::topics/proc_starting-an-uberjar-in-debugging-mode.adoc[leveloffset=+3]
-//:parameter-uberjar-documented!:
-
-:parameter-env-var-name: JAVA_DEBUG
-:parameter-env-var-value: true
-:parameter-port: 5005
-include::topics/proc_starting-your-application-on-openshift-in-debugging-mode.adoc[leveloffset=+3]
-
-include::topics/proc_attaching-a-remote-debugger-to-the-application.adoc[leveloffset=+3]
-
-=== Debug logging
-
-{VertX} provides a built-in logging API.
-The default logging implementation for {VertX} uses the `java.util.logging` library that is link:https://docs.oracle.com/javase/8/docs/api/java/util/logging/package-summary.html[provided with the Java JDK^].
-Alternatively, {VertX} allows you to use a different logging framework, for example, link:https://logging.apache.org/log4j/2.x/javadoc.html[_Log4J_^] ({VertX} supports Log4J v1 and v2) or link:https://www.slf4j.org/docs.html[_SLF4J_^].
-
-include::topics/proc_configuring-jul-logging-vertx.adoc[leveloffset=+3]
-
-include::topics/proc_add-debug-logging-to-app-vertx.adoc[leveloffset=+3]
-
-include::topics/proc_specify-a-custom-logging-framework-vertx.adoc[leveloffset=+3]
-
-// netty logging
-include::topics/proc_configure-netty-logging-vertx.adoc[leveloffset=+3]
-
-include::topics/proc_accessing-debug-logs-on-openshift.adoc[leveloffset=+3]
-
-== Monitoring your application
-
-This section contains information about monitoring your {VertX}{ndash}based application running on OpenShift.
-
-=== Accessing JVM metrics for your application on OpenShift
-
-include::topics/proc_accessing-jvm-metrics-using-the-hawtio-console-on-openshift.adoc[leveloffset=+3]
-
-ifdef::launcher-docs-only[]
-include::topics/proc_exposing-application-metrics-using-prometheus-with-vertx.adoc[leveloffset=+2]
-endif::[]
+include::topics/assembly_application-metrics-for-vertx-applications.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/ref_the-source-to-image-s2i-build-process.adoc[leveloffset=+1]
