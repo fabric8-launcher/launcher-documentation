@@ -1,0 +1,15 @@
+[id="application-metrics-for-springboot-applications_{context}"]
+= Application metrics for {SpringBoot} applications
+
+:parent-context: {context}
+
+Collect application metrics to measure the resource usage and performance of your {SpringBoot} application.
+You can analyze the collected data to better understand changes in resource usage or performance.
+
+include::proc_accessing-jvm-metrics-using-the-hawtio-console-on-openshift.adoc[leveloffset=+1]
+
+ifdef::launcher-docs-only[]
+include::proc_exposing-application-metrics-using-prometheus-with-spring-boot.adoc[leveloffset=+1]
+endif::[]
+
+:context: {parent-context}

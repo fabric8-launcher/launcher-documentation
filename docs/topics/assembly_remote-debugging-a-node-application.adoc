@@ -3,7 +3,7 @@
 
 :parent-context: {context}
 
-You can remotely debug your application by starting the application in a debugging mode and attach a debugger to it.
+You can remotely debug your application by starting the application in debugging mode and attach a debugger to it.
 
 include::proc_starting-your-application-locally-and-attaching-the-native-debugger.adoc[leveloffset=+1]
 

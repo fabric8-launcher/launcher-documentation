@@ -102,43 +102,15 @@ include::topics/assembly_developing-and-deploying-springboot-application.adoc[le
 
 == Debugging
 
-This sections contains information about debugging your {SpringBoot}{ndash}based application both in local and remote deployments.
+Debug your {SpringBoot}{ndash}based application to find and resolve problems. You can use debug logging in both local and remote deployments.
 
-=== Remote debugging
+include::topics/assembly_remote-debugging-a-springboot-application.adoc[leveloffset=+2]
 
-To remotely debug an application, you must first configure it to start in a debugging mode, and then attach a debugger to it.
+include::topics/assembly_debug-logging-for-a-springboot-application.adoc[leveloffset=+2]
 
-include::topics/proc_starting-your-springboot-application-locally-in-debugging-mode.adoc[leveloffset=+3]
+// Monitoring a {SpringBoot} application
 
-include::topics/proc_starting-an-uberjar-in-debugging-mode.adoc[leveloffset=+3]
-
-:parameter-env-var-name: JAVA_DEBUG
-:parameter-env-var-value: true
-:parameter-port: 5005
-include::topics/proc_starting-your-application-on-openshift-in-debugging-mode.adoc[leveloffset=+3]
-
-include::topics/proc_attaching-a-remote-debugger-to-the-application.adoc[leveloffset=+3]
-
-
-=== Debug logging
-
-include::topics/proc_add-springboot-debug-logging.adoc[leveloffset=+3]
-
-include::topics/proc_accessing-springboot-debug-logs-on-localhost.adoc[leveloffset=+3]
-
-include::topics/proc_accessing-debug-logs-on-openshift.adoc[leveloffset=+3]
-
-== Monitoring your application
-
-This section contains information about monitoring your {SpringBoot}{ndash}based application running on OpenShift.
-
-=== Accessing JVM metrics for your application on OpenShift
-
-include::topics/proc_accessing-jvm-metrics-using-the-hawtio-console-on-openshift.adoc[leveloffset=+3]
-
-ifdef::launcher-docs-only[]
-include::topics/proc_exposing-application-metrics-using-prometheus-with-spring-boot.adoc[leveloffset=+2]
-endif::[]
+include::topics/assembly_application-metrics-for-springboot-applications.adoc[leveloffset=+1]
 
 [appendix]
 include::topics/ref_the-source-to-image-s2i-build-process.adoc[leveloffset=+1]

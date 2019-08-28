@@ -1,0 +1,19 @@
+[id="remote-debugging-a-springboot-application_{context}"]
+= Remote debugging a {SpringBoot} application
+
+:parent-context: {context}
+
+You can remotely debug your application by starting the application in debugging mode and attach a debugger to it.
+
+include::proc_starting-your-springboot-application-locally-in-debugging-mode.adoc[leveloffset=+1]
+
+include::proc_starting-an-uberjar-in-debugging-mode.adoc[leveloffset=+1]
+
+:parameter-env-var-name: JAVA_DEBUG
+:parameter-env-var-value: true
+:parameter-port: 5005
+include::proc_starting-your-application-on-openshift-in-debugging-mode.adoc[leveloffset=+1]
+
+include::proc_attaching-a-remote-debugger-to-the-application.adoc[leveloffset=+1]
+
+:context: {parent-context}

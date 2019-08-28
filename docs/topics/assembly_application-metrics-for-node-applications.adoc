@@ -7,9 +7,5 @@ Collect application metrics to measure the resource usage and performance of you
 You can analyze the collected data to better understand changes in resource usage or performance.
 
 include::proc_exposing-application-metrics-using-prometheus-on-node-js.adoc[leveloffset=+1]
-endif::[]
-
-// DEVELOPING AN APPLICATION
-include::assembly_developing-and-deploying-a-nodejs-application.adoc[leveloffset=+1]
 
 :context: {parent-context}

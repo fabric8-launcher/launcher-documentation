@@ -1,0 +1,18 @@
+[id="debug-logging-for-a-springboot-application_{context}"]
+= Debug logging for a {SpringBoot} application
+
+:parent-context: {context}
+
+Debug logging is a way to add detailed information to the application log when debugging.
+The use of debug logging provides several advantages:
+
+* Keep minimal logging output during normal operation of the application for improved readability and reduced disk space usage.
+* View detailed information about the inner workings of the application when resolving issues.
+
+include::proc_add-springboot-debug-logging.adoc[leveloffset=+1]
+
+include::proc_accessing-springboot-debug-logs-on-localhost.adoc[leveloffset=+1]
+
+include::proc_accessing-debug-logs-on-openshift.adoc[leveloffset=+1]
+
+:context: {parent-context}

@@ -81,6 +81,9 @@ include::topics/assembly_cache-example-application.adoc[leveloffset=+2]
 
 :context: nodejs
 
+// DEVELOPING AN APPLICATION
+include::topics/assembly_developing-and-deploying-a-nodejs-application.adoc[leveloffset=+1]
+
 == Debugging
 Debug your {Node}{ndash}based application to find and resolve problems. You can use debug logging in both local and remote deployments.
 
@@ -92,9 +95,10 @@ include::topics/assembly_debug-logging-for-a-node-application.adoc[leveloffset=+
 ifdef::launcher-docs-only[]
 == Monitoring your application
 
-Monitoring helps you measure and evaluate the performance of your application. Monitor your {Node} application to ensures that it performs as expected. 
+Monitoring helps you measure and evaluate the performance of your application. Monitor your {Node}{ndash} application to ensures that it performs as expected. 
 
 include::topics/assembly_application-metrics-for-node-applications.adoc[leveloffset=+2]
+endif::[]
 
 [appendix]
 include::topics/ref_about-nodeshift.adoc[leveloffset=+1]
