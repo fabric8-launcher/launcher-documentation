@@ -96,8 +96,6 @@ include::topics/assembly_cache-example-application.adoc[leveloffset=+2]
 // workaround to resolve ID conflicts:
 include::topics/assembly_developing-and-deploying-springboot-application.adoc[leveloffset=+1]
 
-include::topics/assembly_developing-and-deploying-spring-reactive-application.adoc[leveloffset=+1]
-
 == Debugging
 
 This sections contains information about debugging your {SpringBoot}{ndash}based application both in local and remote deployments.
