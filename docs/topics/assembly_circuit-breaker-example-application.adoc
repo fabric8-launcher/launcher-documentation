@@ -15,6 +15,8 @@ The _Circuit Breaker_ example demonstrates a generic pattern for reporting the f
 
 This example shows you how to implement a Circuit Breaker and Fallback pattern in your services.
 
+include::note-example-unavailable-oso.adoc[leveloffset=+1]
+
 include::con_the-circuit-breaker-design-pattern.adoc[leveloffset=+1]
 
 include::con_circuit-breaker-design-tradeoffs.adoc[leveloffset=+1]

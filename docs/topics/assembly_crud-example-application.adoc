@@ -12,33 +12,10 @@
 Example proficiency level: xref:proficiency_foundational[*{proficiency-foundational}*]
 
 The {name-example-crud} example expands on the {name-example-http-api} application to provide a basic example of performing _create_, _read_, _update_, and _delete_ (_CRUD_) operations on a PostgreSQL database using a simple HTTP API. _CRUD_ operations are the four basic functions of persistent storage, widely used when developing an HTTP API dealing with a database.
+
 include::note-example-unavailable-oso.adoc[leveloffset=+1]
 
-include::crud-example-intro-paragraph.adoc[leveloffset=+1]
-
-The example also demonstrates the ability of the HTTP application to locate and connect to a database in OpenShift.
-Each runtime shows how to implement the connectivity solution best suited in the given case.
-The runtime can choose between options such as using _JDBC_, _JPA_, or accessing _ORM_ APIs directly.
-
-The example application exposes an HTTP API, which provides endpoints that allow you to manipulate data by performing  _CRUD_ operations over HTTP.
-The _CRUD_ operations are mapped to HTTP `Verbs`.
-The API uses JSON formatting to receive requests and return responses to the user.
-The user can also use a user interface provided by the example to use the application.
-Specifically, this example provides an application that allows you to:
-
-* Navigate to the application web interface in your browser.
-This exposes a simple website allowing you to perform _CRUD_ operations on the data in the `my_data` database.
-* Execute an HTTP `GET` request on the `api/fruits` endpoint.
-* Receive a response formatted as a JSON array containing the list of all fruits in the database.
-* Execute an HTTP `GET` request on the `api/fruits/*` endpoint while passing in a valid item ID as an argument.
-* Receive a response in JSON format containing the name of the fruit with the given ID.
-If no item matches the specified ID, the call results in an HTTP error 404.
-* Execute an HTTP `POST` request on the `api/fruits` endpoint passing in a valid `name` value to create a new entry in the database.
-* Execute an HTTP `PUT` request on the `api/fruits/*` endpoint passing in a valid ID and a name as an argument.
-This updates the name of the item with the given ID to match the name specified in your request.
-* Execute an HTTP `DELETE` request on the `api/fruits/*` endpoint, passing in a valid ID as an argument.
-This removes the item with the specified ID from the database and returns an HTTP code `204` (No Content) as a response.
-If you pass in an invalid ID, the call results in an HTTP error `404`.
+include::con_purpose-of-the-relational-database-backend-pattern.adoc[leveloffset=+1]
 
 ifndef::built-for-nodejs[]
 This example also contains a set of automated xref:running-the-example-application-integration-tests_{context}[integration tests] that can be used to verify that the application is fully integrated with the database.
