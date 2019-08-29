@@ -17,8 +17,6 @@ Creating an HTTP endpoint using REST and its underlying principles to define you
 
 include::con_purpose-of-the-http-api-pattern.adoc[leveloffset=+1]
 
-include::proc_viewing-the-example-application-source-code-and-readme.adoc[leveloffset=+1]
-
 include::con_http-api-design-tradeoffs.adoc[leveloffset=+1]
 
 :parameter-example-name: {name-example-http-api}
