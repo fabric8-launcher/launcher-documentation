@@ -36,7 +36,6 @@ See the following resources for additional in-depth information on the implement
 
 * link:https://www.reactivemanifesto.org/[The Reactive Manifesto]
 * link:https://www.reactive-streams.org/[Reactive Streams specification]
-* link:https://www.reactive-streams.org/[Reference Documentation for the Reactive Streams specification]
 * link:https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html[Spring Framework reference documentation: Web Applications on Reactive Stack]
 * link:https://projectreactor.io/docs/netty/release/reference/index.html[Reactor Netty documentation]
 * link:https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html[API Reference page for the `Mono` class in Project Reactor Documentation]
