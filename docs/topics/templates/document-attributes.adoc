@@ -79,8 +79,8 @@ endif::[]
 :version-spring-boot-bom: 2.1.6.SP3-redhat-00001
 :version-spring-boot-maven-plugin: 2.1.6.RELEASE
 
-:version-vertx: 3.7.1.redhat-00012
-:version-vertx-maven-plugin: 1.0.18
+:version-vertx: 3.8.1.redhat-00005
+:version-vertx-maven-plugin: 1.0.20
 
 :option-base-image-node: --dockerImage=registry.access.redhat.com/rhoar-nodejs/nodejs-8
 
