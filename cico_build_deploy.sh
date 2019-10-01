@@ -72,7 +72,7 @@ docker exec ${BUILDER_CONT} sh scripts/build_guides.sh
 chmod -R 0777 ${TARGET_DIR}/
 
 #LOGIN
-docker_login "${DEVSHIFT_USERNAME}" "${DEVSHIFT_PASSWORD}" "${REGISTRY_URI}"
+docker_login "${QUAY_USERNAME}" "${QUAY_PASSWORD}" "${REGISTRY_URI}"
 
 #BUILD DEPLOY IMAGE
 docker build -t ${DEPLOY_IMAGE} -f "${DOCKERFILE}" .
@@ -80,7 +80,6 @@ docker build -t ${DEPLOY_IMAGE} -f "${DOCKERFILE}" .
 #PUSH
 if [ -z "$CICO_LOCAL" ]; then
     TAG=$(echo $GIT_COMMIT | cut -c1-${DEVSHIFT_TAG_LEN})
-    docker_login "${QUAY_USERNAME}" "${QUAY_PASSWORD}" "${REGISTRY_URI}"
     tag_push "${REGISTRY_URL}:${TAG}"
     tag_push "${REGISTRY_URL}:latest"
 fi
