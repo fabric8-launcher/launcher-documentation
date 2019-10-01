@@ -3,7 +3,7 @@
 set -x
 
 GENERATOR_DOCKER_HUB_USERNAME=openshiftioadmin
-REGISTRY_URI="push.registry.devshift.net"
+REGISTRY_URI="quay.io"
 REGISTRY_NS="fabric8"
 REGISTRY_IMAGE="launcher-documentation"
 BUILDER_IMAGE="launcher-documentation-builder"
@@ -11,10 +11,10 @@ BUILDER_CONT="launcher-documentation-builder-container"
 DEPLOY_IMAGE="launcher-documentation-deploy"
 
 if [ "$TARGET" = "rhel" ]; then
-    REGISTRY_URL=${REGISTRY_URI}/osio-prod/${REGISTRY_NS}/${REGISTRY_IMAGE}
+    REGISTRY_URL=${REGISTRY_URI}/openshiftio/rhel-${REGISTRY_NS}-${REGISTRY_IMAGE}
     DOCKERFILE="Dockerfile.deploy.rhel"
 else
-    REGISTRY_URL=${REGISTRY_URI}/${REGISTRY_NS}/${REGISTRY_IMAGE}
+    REGISTRY_URL=${REGISTRY_URI}/openshiftio/${REGISTRY_NS}-${REGISTRY_IMAGE}
     DOCKERFILE="Dockerfile.deploy"
 fi
 
@@ -80,7 +80,7 @@ docker build -t ${DEPLOY_IMAGE} -f "${DOCKERFILE}" .
 #PUSH
 if [ -z "$CICO_LOCAL" ]; then
     TAG=$(echo $GIT_COMMIT | cut -c1-${DEVSHIFT_TAG_LEN})
-    docker_login "${DEVSHIFT_USERNAME}" "${DEVSHIFT_PASSWORD}" "${REGISTRY_URI}"
+    docker_login "${QUAY_USERNAME}" "${QUAY_PASSWORD}" "${REGISTRY_URI}"
     tag_push "${REGISTRY_URL}:${TAG}"
     tag_push "${REGISTRY_URL}:latest"
 fi
