@@ -9,8 +9,8 @@ The following procedure describes the main actions you need to perform when sett
 * Configure a frontend for your application.
 * Configure a backend for your application.
 * Connect to a GitHub account to host the repository with your project files.
-* Configure an OpenShift Cluster to host your deployed application. 
- 
+* Configure an OpenShift Cluster to host your deployed application.
+
 
 .Prerequisites
 
@@ -20,7 +20,7 @@ The following procedure describes the main actions you need to perform when sett
 
 .Procedure
 
-. Click _Start_ on the Launcher landing page to access the main Launcher screen. 
+. Click _Start_ on the Launcher landing page to access the main Launcher screen.
 
 . Select _Create a New Application_.
 
@@ -46,12 +46,12 @@ You can choose between community and product releases of the listed runtimes.
 If you do not want {name-launcher} to configure a backend for your app select _None_.
 
 .. OPTIONAL: Select additional capabilities for your application.
-You might need to specify additional options depending on the capability you choose. 
+You might need to specify additional options depending on the capability you choose.
 Health Checks are added to your app by default.
 
 .. Click _Save_ when you are done.
 
-. Connect a GitHub account to your {launcher-name}.
+. Connect a GitHub account to your {name-launcher}.
 
 .. Click _Authorize_ in the _Destination Repository_ section of the screen.
 
@@ -62,11 +62,9 @@ Health Checks are added to your app by default.
 .. Click _Save_ to confirm your destination repository settings and return to the project setup screen in the Launcher.
 
 .. Click _Configure_ in the _OpenShift Deployment_ section of the screen.
-Log in using your OpenShift account credentials to connect your cluster to the {name-launcher} tool. 
+Log in using your OpenShift account credentials to connect your cluster to the {name-launcher} tool.
 
 .. Click _Save_ when you are done.
 
 . Click _Launch_ to deploy your project to the {OpenShiftCluster}.
-Alternatively, click _Download_ to download a ZIP file containing the generated project files. 
-
- 
+Alternatively, click _Download_ to download a ZIP file containing the generated project files.
