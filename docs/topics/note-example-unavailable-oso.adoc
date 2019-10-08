@@ -1,3 +1,7 @@
+IMPORTANT
+====
+The following example is not meant to be run in a production environment.
+====
 //IMPORTANT: This example is not currently available on {OpenShiftOnline} Starter. You can still run it using a {OpenShiftLocal}. You can also use a manual workflow to deploy this example to {OpenShiftOnline} Pro and {OpenShiftContainerPlatform}.
 *Limitation:* Run this example application on a {OpenShiftLocal}. You can also use a manual workflow to deploy this example to {OpenShiftOnline} Pro and {OpenShiftContainerPlatform}.
 This example is not currently available on {OpenShiftOnline} Starter.
