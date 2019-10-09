@@ -58,14 +58,8 @@ Set the port for the default HTTPS listener
 thorntail.undertow.application-security-domains._KEY_.enable-jacc:: 
 Enable authorization using JACC
 
-thorntail.undertow.application-security-domains._KEY_.enable-jaspi:: 
-Enable JASPI authentication for the associated deployments.
-
 thorntail.undertow.application-security-domains._KEY_.http-authentication-factory:: 
 The HTTP Authentication Factory to be used by deployments that reference the mapped security domain.
-
-thorntail.undertow.application-security-domains._KEY_.integrated-jaspi:: 
-Should integrated JASPI be used or allow AsHoc identity creation.
 
 thorntail.undertow.application-security-domains._KEY_.override-deployment-config:: 
 Should the authentication configuration in the deployment be overridden by the factory.

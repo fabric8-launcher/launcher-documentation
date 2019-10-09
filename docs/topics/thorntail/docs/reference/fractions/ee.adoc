@@ -89,7 +89,7 @@ thorntail.ee.managed-scheduled-executor-services._KEY_.context-service::
 The name of the context service to be used by the scheduled executor.
 
 thorntail.ee.managed-scheduled-executor-services._KEY_.core-threads:: 
-The number of threads to be used by the scheduled executor, even if they are idle. If this is not defined or is set to 0, the core pool size will be calculated based on the number of available processors.
+The minimum number of threads to be used by the scheduled executor.
 
 thorntail.ee.managed-scheduled-executor-services._KEY_.hung-task-threshold:: 
 The runtime, in milliseconds, for tasks to be considered hung by the scheduled executor. If 0 tasks are never considered hung.
