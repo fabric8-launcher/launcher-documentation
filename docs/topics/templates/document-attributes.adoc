@@ -70,10 +70,10 @@ endif::[]
 :name-repo-docs: launcher-documentation
 
 // Versions
-:version-fabric8-maven-plugin: 4.1.0
+:version-fabric8-maven-plugin: 4.3.0
 
-:version-thorntail-product: 2.4.0.Final-redhat-00013
-:version-thorntail-community: 2.4.0.Final
+:version-thorntail-product: 2.5.0.Final-redhat-00016
+:version-thorntail-community: 2.5.0.Final
 
 :version-spring-boot: 2.1.6.RELEASE
 :version-spring-boot-bom: 2.1.6.SP3-redhat-00001
