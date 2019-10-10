@@ -57,9 +57,6 @@ The core thread pool size which is smaller than the maximum pool size. If undefi
 thorntail.jca.distributed-workmanagers._KEY_.long-running-threads._KEY_.current-thread-count:: 
 The current number of threads in the pool.
 
-thorntail.jca.distributed-workmanagers._KEY_.long-running-threads._KEY_.handoff-executor:: 
-An executor to delegate tasks to in the event that a task cannot be accepted. If not specified, tasks that cannot be accepted will be silently discarded.
-
 thorntail.jca.distributed-workmanagers._KEY_.long-running-threads._KEY_.keepalive-time:: 
 Used to specify the amount of time that pool threads should be kept running when idle; if not specified, threads will run until the executor is shut down.
 
@@ -108,9 +105,6 @@ The core thread pool size which is smaller than the maximum pool size. If undefi
 thorntail.jca.distributed-workmanagers._KEY_.short-running-threads._KEY_.current-thread-count:: 
 The current number of threads in the pool.
 
-thorntail.jca.distributed-workmanagers._KEY_.short-running-threads._KEY_.handoff-executor:: 
-An executor to delegate tasks to in the event that a task cannot be accepted. If not specified, tasks that cannot be accepted will be silently discarded.
-
 thorntail.jca.distributed-workmanagers._KEY_.short-running-threads._KEY_.keepalive-time:: 
 Used to specify the amount of time that pool threads should be kept running when idle; if not specified, threads will run until the executor is shut down.
 
@@ -150,9 +144,6 @@ The core thread pool size which is smaller than the maximum pool size. If undefi
 thorntail.jca.workmanagers._KEY_.long-running-threads._KEY_.current-thread-count:: 
 The current number of threads in the pool.
 
-thorntail.jca.workmanagers._KEY_.long-running-threads._KEY_.handoff-executor:: 
-An executor to delegate tasks to in the event that a task cannot be accepted. If not specified, tasks that cannot be accepted will be silently discarded.
-
 thorntail.jca.workmanagers._KEY_.long-running-threads._KEY_.keepalive-time:: 
 Used to specify the amount of time that pool threads should be kept running when idle; if not specified, threads will run until the executor is shut down.
 
@@ -188,9 +179,6 @@ The core thread pool size which is smaller than the maximum pool size. If undefi
 
 thorntail.jca.workmanagers._KEY_.short-running-threads._KEY_.current-thread-count:: 
 The current number of threads in the pool.
-
-thorntail.jca.workmanagers._KEY_.short-running-threads._KEY_.handoff-executor:: 
-An executor to delegate tasks to in the event that a task cannot be accepted. If not specified, tasks that cannot be accepted will be silently discarded.
 
 thorntail.jca.workmanagers._KEY_.short-running-threads._KEY_.keepalive-time:: 
 Used to specify the amount of time that pool threads should be kept running when idle; if not specified, threads will run until the executor is shut down.

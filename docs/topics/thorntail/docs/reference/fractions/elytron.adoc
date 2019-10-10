@@ -135,7 +135,7 @@ thorntail.elytron.certificate-authority-accounts._KEY_.alias::
 The alias of certificate authority account key in the keystore. If the alias does not already exist in the keystore, a certificate authority account key will be automatically generated and stored as a PrivateKeyEntry under the alias.
 
 thorntail.elytron.certificate-authority-accounts._KEY_.certificate-authority:: 
-The name of the certificate authority to use. Allowed values: 'LetsEncrypt'
+The name of the certificate authority to use. Allowed values: "LetsEncrypt"
 
 thorntail.elytron.certificate-authority-accounts._KEY_.contact-urls:: 
 A list of URLs that the certificate authority can contact about any issues related to this account.
@@ -386,20 +386,17 @@ The module to use to load the custom security event listener.
 thorntail.elytron.default-authentication-context:: 
 The default authentication context to be associated with all deployments.
 
-thorntail.elytron.default-ssl-context:: 
-Reference to the SSLContext which should be globally registered as the default.
-
 thorntail.elytron.dir-contexts._KEY_.authentication-context:: 
-The authentication context to obtain login credentials to connect to the LDAP server. Can be omitted if authentication-level is 'none' (anonymous).
+The authentication context to obtain login credentials to connect to the LDAP server. Can be omitted if authentication-level is "none" (anonymous).
 
 thorntail.elytron.dir-contexts._KEY_.authentication-level:: 
-The authentication level (security level/authentication mechanism) to use. Corresponds to SECURITY_AUTHENTICATION ('java.naming.security.authentication') environment property. Allowed values: 'none', 'simple', sasl_mech, where sasl_mech is a space-separated list of SASL mechanism names.
+The authentication level (security level/authentication mechanism) to use. Corresponds to SECURITY_AUTHENTICATION ("java.naming.security.authentication") environment property. Allowed values: "none", "simple", sasl_mech, where sasl_mech is a space-separated list of SASL mechanism names.
 
 thorntail.elytron.dir-contexts._KEY_.connection-timeout:: 
 The timeout for connecting to the LDAP server in milliseconds.
 
 thorntail.elytron.dir-contexts._KEY_.credential-reference:: 
-The credential reference to authenticate and connect to the LDAP server. Can be omitted if authentication-level is 'none' (anonymous).
+The credential reference to authenticate and connect to the LDAP server. Can be omitted if authentication-level is "none" (anonymous).
 
 thorntail.elytron.dir-contexts._KEY_.enable-connection-pooling:: 
 Indicates if connection pooling is enabled.
@@ -408,7 +405,7 @@ thorntail.elytron.dir-contexts._KEY_.module::
 Name of module that will be used as class loading base.
 
 thorntail.elytron.dir-contexts._KEY_.principal:: 
-The principal to authenticate and connect to the LDAP server. Can be omitted if authentication-level is 'none' (anonymous).
+The principal to authenticate and connect to the LDAP server. Can be omitted if authentication-level is "none" (anonymous).
 
 thorntail.elytron.dir-contexts._KEY_.properties:: 
 The additional connection properties for the DirContext.
@@ -430,9 +427,6 @@ A list of providers that are not allowed, and will be removed from the providers
 
 thorntail.elytron.file-audit-logs._KEY_.attribute-synchronized:: 
 Whether every event should be immediately synchronised to disk.
-
-thorntail.elytron.file-audit-logs._KEY_.autoflush:: 
-Whether every event should be immediately flushed to disk (If undefined will default to the value of synchronized).
 
 thorntail.elytron.file-audit-logs._KEY_.format:: 
 The format to use to record the audit event.
@@ -490,18 +484,6 @@ The name of the identity available from the security realm.
 
 thorntail.elytron.initial-providers:: 
 Reference to the Providers that should be registered ahead of all existing Providers.
-
-thorntail.elytron.jaspi-configurations._KEY_.application-context:: 
-The application-context this configuration is to be associated with or '*' for all application contexts.
-
-thorntail.elytron.jaspi-configurations._KEY_.description:: 
-Description of this configuration.
-
-thorntail.elytron.jaspi-configurations._KEY_.layer:: 
-The layer this configuration is to be associated with or '*' for all layers.
-
-thorntail.elytron.jaspi-configurations._KEY_.server-auth-modules:: 
-List of ServerAuthModule definitions for this configuration.
 
 thorntail.elytron.jdbc-realms._KEY_.principal-query:: 
 The authentication query used to authenticate users based on specific key types.
@@ -722,9 +704,6 @@ Reference to a sasl server factory to be wrapped by this definition.
 thorntail.elytron.periodic-rotating-file-audit-logs._KEY_.attribute-synchronized:: 
 Whether every event should be immediately synchronised to disk.
 
-thorntail.elytron.periodic-rotating-file-audit-logs._KEY_.autoflush:: 
-Whether every event should be immediately flushed to disk (If undefined will default to the value of synchronized).
-
 thorntail.elytron.periodic-rotating-file-audit-logs._KEY_.format:: 
 The format to use to record the audit event.
 
@@ -805,9 +784,6 @@ If set to true, the name must match the given pattern to make validation success
 
 thorntail.elytron.regex-validating-principal-transformers._KEY_.pattern:: 
 The regular expression to use for the principal transformer.
-
-thorntail.elytron.register-jaspi-factory:: 
-Should the Elytron JASPI factory be globally registered?
 
 thorntail.elytron.sasl-authentication-factories._KEY_.available-mechanisms:: 
 The SASL mechanisms available from this configuration after all filtering has been applied.
@@ -956,12 +932,6 @@ To request (but not to require) a client certificate on SSL handshake. If a secu
 thorntail.elytron.server-ssl-contexts._KEY_.wrap:: 
 Should the SSLEngine, SSLSocket, and SSLServerSocket instances returned be wrapped to protect against further modification.
 
-thorntail.elytron.server-ssl-sni-contexts._KEY_.default-ssl-context:: 
-The context to use if no SNI information is present, or if it does not match any mappings
-
-thorntail.elytron.server-ssl-sni-contexts._KEY_.host-context-map:: 
-A mapping between a server name and an SSContext
-
 thorntail.elytron.service-loader-http-server-mechanism-factories._KEY_.available-mechanisms:: 
 The HTTP mechanisms available from this factory instance.
 
@@ -990,10 +960,7 @@ thorntail.elytron.simple-role-decoders._KEY_.attribute::
 The name of the attribute from the identity to map directly to roles.
 
 thorntail.elytron.size-rotating-file-audit-logs._KEY_.attribute-synchronized:: 
-Whether every event should be immediately flushed to disk (If undefined will default to the value of synchronized).
-
-thorntail.elytron.size-rotating-file-audit-logs._KEY_.autoflush:: 
-Whether every event should be immediately flushed to disk.
+Whether every event should be immediately synchronised to disk.
 
 thorntail.elytron.size-rotating-file-audit-logs._KEY_.format:: 
 The format to use to record the audit event.

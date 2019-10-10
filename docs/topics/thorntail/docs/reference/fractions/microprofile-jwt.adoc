@@ -12,22 +12,49 @@
 
 .Configuration
 
+thorntail.microprofile.jwt.claims.groups:: 
+Default group name. This property can be used to support the JWT tokens without a 'groups' claim.
+
 thorntail.microprofile.jwt.default-missing-method-permissions-deny-access:: 
 If a JAX-RS resource has no class-level security metadata, then if this property is set to `true` and at least one resource method has security metadata all other resource methods without security metadata have an implicit `@DenyAll`, otherwise resource methods without security metadata are not secured
 
+thorntail.microprofile.jwt.enabled:: 
+Set this to false to disable the MP JWT authentication mechanism. Defaults to true.
+
+thorntail.microprofile.jwt.path.groups:: 
+Path to the claim containing an array of groups, for example: 'realm/groups'. It can be used if a token has no 'groups' claim but has the groups set in a different claim
+
+thorntail.microprofile.jwt.realm:: 
+Defines the security domain which should be used for MicroProfile JWT. If no security domain with this name exists, one will be created using sensible defaults.  If this option is set, then the @LoginConfig annotation is not needed but if it is present then its realmName property, if set, must have the same value as this option.
+
+thorntail.microprofile.jwt.roles.file:: 
+Roles properties file path, ignored if the roles.map property is set
+
+thorntail.microprofile.jwt.roles.map:: 
+Roles properties map
+
+thorntail.microprofile.jwt.token.cookie:: 
+Cookie name containing a JWT token. This property is ignored unless the 'thorntail.microprofile.jwt.token.header' is set to 'Cookie'
+
 thorntail.microprofile.jwt.token.exp-grace-period:: 
 The JWT token expiration grace period in seconds 
+
+thorntail.microprofile.jwt.token.header:: 
+HTTP header which is expected to contain a JWT token, default value is 'Authorization'
 
 thorntail.microprofile.jwt.token.issued-by:: 
 The URI of the JWT token issuer
 
 thorntail.microprofile.jwt.token.jwks-refresh-interval:: 
-The interval at which the JWKS URI should be queried for keys (in minutes).
+The interval at which the JWKS URI should be queried for keys (in minutes). It is ignored if the value of either signer-pub-key-location or jwks-uri is not HTTPS URI
 
 thorntail.microprofile.jwt.token.jwks-uri:: 
-The JWKS URI from which to load public keys (if 'signer-pub-key' is set, this setting is ignored).
+The JWKS URI from which to load public keys. This property is deprecated, use the 'thorntail.microprofile.jwt.token.signer-pub-key-location' property instead
 
 thorntail.microprofile.jwt.token.signer-pub-key:: 
-The public key of the JWT token signer. Can be prefixed 'file:' or 'classpath:' for key assets, otherwise the key contents are expected
+The public key of the JWT token signer. Can be prefixed 'file:' or 'classpath:' to refer to external assets, but this is deprecated; use 'thorntail.microprofile.jwt.token.signer-pub-key-location' instead
+
+thorntail.microprofile.jwt.token.signer-pub-key-location:: 
+Location of the public key of the JWT token signer. By default, or when the 'classpath:' prefix is present, this is a classpath resource. Can be prefixed with 'file:' to refer to an external file. Can also be a HTTPS URL of a JWK Set.
 
 

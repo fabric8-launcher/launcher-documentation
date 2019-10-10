@@ -18,6 +18,8 @@ include::fractions/ee-security.adoc[leveloffset=+1]
 
 include::fractions/ejb.adoc[leveloffset=+0]
 
+include::fractions/ejb-mdb.adoc[leveloffset=+1]
+
 include::fractions/elytron.adoc[leveloffset=+0]
 
 include::fractions/hibernate-validator.adoc[leveloffset=+0]
@@ -85,8 +87,6 @@ include::fractions/monitor.adoc[leveloffset=+0]
 include::fractions/msc.adoc[leveloffset=+0]
 
 include::fractions/naming.adoc[leveloffset=+0]
-
-include::fractions/netflix-guava.adoc[leveloffset=+0]
 
 include::fractions/netflix-rxjava.adoc[leveloffset=+0]
 
