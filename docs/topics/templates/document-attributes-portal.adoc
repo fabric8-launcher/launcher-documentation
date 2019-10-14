@@ -2,7 +2,6 @@
 :imagesdir: topics/images
 
 :ProductName: Red Hat OpenShift Application Runtimes
-:ProductShortName: RHOAR
 :ProductRelease: 1
 :ProductVersion: 1
 :DocInfoProductNumber: 1
@@ -19,4 +18,3 @@
 :link-guide-nodejs: {portal-base-url}/node.js_runtime_guide/
 
 :link-launcher-yaml: https://launcher.fabric8.io/latest-launcher-template
-
