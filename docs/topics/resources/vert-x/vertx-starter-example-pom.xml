@@ -9,7 +9,7 @@
   <packaging>jar</packaging>
 
   <name>My Application</name>
-  <description>Example application using RHOAR Vert.x</description>
+  <description>Example application using Vert.x</description>
 
   <properties>
     <vertx.version>{version-vertx}</vertx.version>
@@ -25,7 +25,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
 
-  <!-- Import dependencies from the RHOAR Vert.x BOM. -->
+  <!-- Import dependencies from the Vert.x BOM. -->
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -38,7 +38,7 @@
     </dependencies>
   </dependencyManagement>
 
-  <!-- Specify the RHOAR Vert.x artifacts that your application depends on. -->
+  <!-- Specify the Vert.x artifacts that your application depends on. -->
   <dependencies>
     <dependency>
       <groupId>io.vertx</groupId>
@@ -50,7 +50,7 @@
     </dependency>
   </dependencies>
 
-  <!-- Specify the repositories containing RHOAR artifacts. -->
+  <!-- Specify the repositories containing Vert.x artifacts. -->
   <repositories>
     <repository>
       <id>{red-hat-ga-repo-id}</id>
