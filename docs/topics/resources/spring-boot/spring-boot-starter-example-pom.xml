@@ -15,7 +15,7 @@
     <fabric8.generator.from>{name-s2i-image-openjdk}</fabric8.generator.from>
   </properties>
 
-  <!-- Import dependencies from the RHOAR Spring Boot BOM. -->
+  <!-- Import dependencies from the Spring Boot BOM. -->
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -57,7 +57,7 @@
     </plugins>
   </build>
 
-  <!-- Specify the repositories containing RHOAR artifacts -->
+  <!-- Specify the repositories containing Spring Boot artifacts -->
   <repositories>
     <repository>
       <id>{red-hat-ga-repo-id}</id>
