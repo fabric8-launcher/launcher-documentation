@@ -18,9 +18,9 @@ NOTE: The triple-dot indicates there are more files or directories in the partic
 │   │   │   ├── document-attributes-launcher.adoc <7>
 │   │   │   ├── document-attributes-portal.adoc <8>
 │   │   │   ├── environment.adoc <9>
-│   │   │   ├── ...
-│   │   │   └── thorntail <10>
+│   │   │   └── ...  
 │   │   ├── con_circuit-breaker-design-tradeoffs.adoc
+│   │   ├── thorntail <10>
 │   │   └── ...
 │   ├── $GUIDE_NAME/ <11>
 │   │   ├── master.adoc <12>
@@ -60,4 +60,3 @@ WARNING: Do not edit files in the `$REPO_HOME/docs/topics/thorntail` directory, 
 .Additional resources
 
 * xref:syncing-with-wildflyswarm-docs_{context}[]
-
