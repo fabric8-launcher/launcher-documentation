@@ -1,3 +1,8 @@
+[IMPORTANT]
+====
+The following example is not meant to be run in a production environment.
+====
+
 Example proficiency level:
 //special case since topic is used by front end.
 ifdef::docs-topic[xref:proficiency_foundational[*{proficiency-foundational}*].]
