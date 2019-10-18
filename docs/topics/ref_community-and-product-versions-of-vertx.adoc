@@ -8,6 +8,6 @@ Supported {Vertx} runtime artifacts are available in the link:https://maven.repo
 
 .Technology Preview {Vertx} Components
 
-Technology Preview {Vertx} components included with {ProductShortName} are not supported. The supportability of these components is defined by the link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope^].
+Red Hat does not provide full support for Technology Preview {Vertx} components. The supportability of such components is defined by the link:https://access.redhat.com/support/offerings/techpreview/[Technology Preview Features Support Scope^].
 
-For a complete list of supported and Technology Preview {Vertx} components available with this release of {ProductShortName}, see the link:https://access.redhat.com/documentation/en-us/red_hat_openshift_application_runtimes/1/html-single/red_hat_openshift_application_runtimes_release_notes/#rn-runtime-components-vertx[Release Notes^].
+For a complete list of {Vertx} components provided by Red Hat, both supported and Technology Preview, see the link:https://access.redhat.com/documentation/en-us/red_hat_openshift_application_runtimes/1/html-single/red_hat_openshift_application_runtimes_release_notes/#rn-runtime-components-vertx[Release Notes^].

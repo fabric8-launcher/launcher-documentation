@@ -5,7 +5,7 @@
 
 NOTE: {VertX} reactive components for {SpringBoot} are provided as a link:https://access.redhat.com/support/offerings/techpreview[Technology Preview].
 
-This section provides an introduction to developing applications in a reactive way using {ProductShortName} {SpringBoot} starters based on {SpringBoot} and {VertX}.
+This section provides an introduction to developing applications in a reactive way using {SpringBoot} starters based on {SpringBoot} and {VertX}.
 The following examples demonstrate how you can use the starters to create reactive applications.
 
 include::con_spring-reactive-introduction.adoc[leveloffset=+1]
