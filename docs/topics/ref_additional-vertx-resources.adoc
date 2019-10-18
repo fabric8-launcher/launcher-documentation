@@ -4,7 +4,7 @@
 * link:https://www.reactivemanifesto.org/[The Reactive Manifesto]
 * link:http://vertx.io[{VertX} project]
 * link:https://www.manning.com/books/vertx-in-action[Vert.x in Action]
-* link:http://middlewareblog.redhat.com/2017/05/04/vert-x-for-reactive-programming-in-red-hat-openshift-application-runtimes/[{VertX} for Reactive Programming in Red Hat OpenShift Application Runtimes]
+* link:http://middlewareblog.redhat.com/2017/05/04/vert-x-for-reactive-programming-in-red-hat-openshift-application-runtimes/[{VertX} for Reactive Programming]
 * link:https://developers.redhat.com/promotions/building-reactive-microservices-in-java/[Building Reactive Microservices in Java]
 * link:https://developers.redhat.com/promotions/vertx-cheatsheet/[{VertX} Cheat Sheet for Developers]
 * link:http://escoffier.me/vertx-hol/#_vert_x[Vert.x - From zero to (micro)-hero]

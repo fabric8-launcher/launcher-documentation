@@ -4,9 +4,8 @@
 For additional information about application development with OpenShift, see:
 
 * link:https://learn.openshift.com/[OpenShift Interactive Learning Portal^]
-* link:https://developers.redhat.com/products/rhoar/overview/[Red Hat OpenShift Application Runtimes Overview^]
+//* link:https://developers.redhat.com/products/rhoar/overview/[Red Hat Runtimes Overview^]
 
 To reduce network load and shorten the build time of your application, set up a Nexus mirror for Maven on your {OpenShiftLocal}:
 
 * link:https://docs.openshift.com/container-platform/3.11/dev_guide/dev_tutorials/maven_tutorial.html[Setting Up a Nexus Mirror for Maven^]
-

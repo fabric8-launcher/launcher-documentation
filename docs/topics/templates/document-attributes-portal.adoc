@@ -1,7 +1,7 @@
 
 :imagesdir: topics/images
 
-:ProductName: Red Hat OpenShift Application Runtimes
+//:ProductName: Red Hat OpenShift Application Runtimes
 :ProductRelease: 1
 :ProductVersion: 1
 :DocInfoProductNumber: 1
