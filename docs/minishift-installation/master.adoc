@@ -32,5 +32,9 @@ Install an instance of the {name-launcher} tool, which enables you to test the f
 
 include::topics/proc_installing-launcher-operator.adoc[leveloffset=+2]
 
+//Following topics are from the Getting Started With Red Hat OpenShift Application Runtimes guide
+include::topics/con_supported-build-strategies-for-openshift-deployment.adoc[leveloffset=+1]
+include::topics/proc_creating-a-new-application-launcher.adoc[leveloffset=+1]
+
 [appendix]
 include::topics/ref_glossary.adoc[leveloffset=+1]

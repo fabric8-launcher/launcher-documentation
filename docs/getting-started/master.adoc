@@ -17,25 +17,25 @@ These example applications can serve as the foundation for your actual cloud-nat
 
 include::topics/assembly_application-development-on-openshift.adoc[leveloffset=+1]
 
-include::topics/assembly_application-development-on-openshift-with-fabric8-launcher.adoc[leveloffset=+1]
+//include::topics/assembly_application-development-on-openshift-with-fabric8-launcher.adoc[leveloffset=+1]
 
 include::topics/con_available-runtimes.adoc[leveloffset=+1]
 
-include::topics/proc_creating-and-deploying-an-example-application-using-your-openshiftlocal.adoc[leveloffset=+1]
+//include::topics/proc_creating-and-deploying-an-example-application-using-your-openshiftlocal.adoc[leveloffset=+1]
 
-include::topics/proc_deploying-an-example-application-to-openshiftonline.adoc[leveloffset=+1]
+//include::topics/proc_deploying-an-example-application-to-openshiftonline.adoc[leveloffset=+1]
 
 include::topics/proc_creating-a-new-application-launcher.adoc[leveloffset=+1]
 
-include::topics/proc_deploying-an-example-application-to-openshiftcontainerplatform.adoc[leveloffset=+1]
-[appendix]
-include::topics/proc_updating-your-example-application-and-deploying-the-changes.adoc[leveloffset=+1]
+//include::topics/proc_deploying-an-example-application-to-openshiftcontainerplatform.adoc[leveloffset=+1]
+//[appendix]
+//include::topics/proc_updating-your-example-application-and-deploying-the-changes.adoc[leveloffset=+1]
 
-[appendix]
-include::topics/assembly_using-red-hat-jboss-developer-studio-with-an-example-application-project.adoc[leveloffset=+1]
+//[appendix]
+//include::topics/assembly_using-red-hat-jboss-developer-studio-with-an-example-application-project.adoc[leveloffset=+1]
 
 //include::topics/assembly_using-visual-studio-code-with-an-example-application-project.adoc[leveloffset=+1]
 
 
-[appendix]
-include::topics/ref_glossary.adoc[leveloffset=+1]
+//[appendix]
+//include::topics/ref_glossary.adoc[leveloffset=+1]
