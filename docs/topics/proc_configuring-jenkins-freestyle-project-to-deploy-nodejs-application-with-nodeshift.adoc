@@ -12,7 +12,7 @@ Similar to using nodeshift from your local host to deploy a {Node} application, 
 .Example using the Red Hat base image with nodeshift
 [source,bash,options="nowrap",subs="attributes+"]
 ----
-$ nodeshift --dockerImage=registry.access.redhat.com/rhoar-nodejs/nodejs-8 ...
+$ nodeshift --dockerImage=registry.access.redhat.com/rhscl/nodejs-10-rhel7 ...
 ----
 * The source of the application available in GitHub.
 
@@ -37,7 +37,7 @@ For example, if you configured a service account for Jenkins, ensure that accoun
 [source,bash,options="nowrap",subs="attributes+"]
 ----
 npm install -g nodeshift
-nodeshift --strictSSL=false --dockerImage=registry.access.redhat.com/rhoar-nodejs/nodejs-8 --namespace=MY_PROJECT
+nodeshift --dockerImage=registry.access.redhat.com/rhscl/nodejs-10-rhel7 --namespace=MY_PROJECT
 ----
 +
 Substitute `MY_PROJECT` with the name of the OpenShift project for your application.
