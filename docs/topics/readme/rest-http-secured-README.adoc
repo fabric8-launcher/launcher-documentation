@@ -5,7 +5,7 @@ IMPORTANT: This example application requires that you use link:https://access.re
 ${prerequisite}
 
 == Running the Example Application on a Single-node OpenShift Cluster
-If you have a single-node OpenShift cluster, such as Minishift or Red Hat Container Development Kit, link:http://launcher.fabric8.io/docs/minishift-installation.html[installed and running], you can deploy your example application there. A single-node OpenShift cluster provides you with access to a local cloud environment.
+If you have a single-node OpenShift cluster, such as Minishift or Red Hat Container Development Kit, installed and running, you can deploy your example application there. A single-node OpenShift cluster provides you with access to a local cloud environment.
 
 To deploy your example application to a running single-node OpenShift cluster:
 

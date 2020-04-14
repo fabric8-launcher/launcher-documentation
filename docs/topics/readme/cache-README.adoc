@@ -2,7 +2,7 @@
 
 [IMPORTANT]
 ====
-While you can run and interact with this example application on localhost, it requires that you also have a cache server installed and configured. This example application runs best when deployed on OpenShift with a JBoss Data Grid cache server. 
+While you can run and interact with this example application on localhost, it requires that you also have a cache server installed and configured. This example application runs best when deployed on OpenShift with a JBoss Data Grid cache server.
 For more details on using this example application with a single-node OpenShift cluster, CI/CD deployments, as well as the rest of the runtime, see the link:${guideURL}[${runtime} Runtime Guide].
 ====
 
@@ -11,7 +11,7 @@ ${prerequisite}
 ${cicdSection}
 
 == Running the Example Application on a Single-node OpenShift Cluster
-If you have a single-node OpenShift cluster, such as Minishift or Red Hat Container Development Kit, link:http://launcher.fabric8.io/docs/minishift-installation.html[installed and running], you can also deploy your example application there. A single-node OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
+If you have a single-node OpenShift cluster, such as Minishift or Red Hat Container Development Kit, installed and running, you can also deploy your example application there. A single-node OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
 
 To deploy your example application to a running single-node OpenShift cluster:
 
