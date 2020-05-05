@@ -119,6 +119,8 @@ objects:
         dnsPolicy: ClusterFirst
         securityContext: {}
         terminationGracePeriodSeconds: 30
+        serviceAccount: dsaas-deploy
+        serviceAccountName: dsaas-deploy
     test: false
     triggers:
     - type: ConfigChange
