@@ -19,7 +19,7 @@ $ oc new-project MY_PROJECT_NAME
 # Ensure that you use the following values for the user name, password and database name when creating your database application.
 # The pre-configured values are used in the `credentials-secret.yml` and `deployment.yml` files in the `src/main/fabric8` directory of your example application project.
 
-$ oc new-app -e POSTGRESQL_USER=luke -ePOSTGRESQL_PASSWORD=secret -ePOSTGRESQL_DATABASE=my_data centos/postgresql-10-centos7 --name=my-database
+$ oc new-app -e POSTGRESQL_USER=luke -ePOSTGRESQL_PASSWORD=secret -ePOSTGRESQL_DATABASE=my_data registry.access.redhat.com/rhscl/postgresql-10-rhel7 --name=my-database
 
 # Wait for `my-database` application to be running.
 
